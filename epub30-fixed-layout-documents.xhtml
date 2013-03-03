@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>EPUB 3 Fixed Layout Documents（日本語訳版）</title>
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<link rel="stylesheet" type="text/css" href="css/epub-print.css" media="print"/>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<link rel="stylesheet" href="js/google-code-prettify/prettify.css"/>
+<meta name="description" content="EPUB 3 Fixed-Layout Documents は、EPUB 3 のコンテキスト内で固定レイアウトドキュメントが意図しているレンダリング動作の宣言の語句を許可しているメタデータ要素の組を定義する。固定レイアウトの [ContentDocs30] XHTML コンテンツと SVG コンテンツおよびビットマップ画像の意図するレンダリングの寸法を表現するメカニズムもまた定義する。"/>
+<style>
+table { border: 1px solid rgb(100,100,100)}
+td, th { border: 1px solid rgb{150,150,150}; background-color: rgb(250,250,255); }
+td p {padding:0em; margin: 0em;}
+dl.property-values dt, dl.property-values dd { margin-top: 1em;}
+section.bibliography abbr {margin-right:1em;}
+nav.toc li { list-style-type: none }
+section.ex { border: 1px solid rgb(190,190,190); margin-bottom:2em; padding:0em 2em 2em 2em;}
+</style>
+<script src="http://www.google.com/jsapi/"></script>
+<script src="js/ajax-loader.js"></script>
+<script src="js/google-code-prettify/prettify.js"></script>
+</head>
+<body onload="prettyPrint()">
+<div class="attention">
+
+<p>この文書は「<a href="http://idpf.org/epub/fxl/">EPUB 3 Fixed-Layout Documents</a>」を日本語訳したものです。最新の文書は <a href="http://idpf.org/epub/fxl/">http://idpf.org/epub/fxl/</a> です。原文もしくは最新の情報を参照したい場合は、<a href="http://idpf.org/epub/fxl/">EPUB 3 Fixed-Layout Documents</a> を参照ください。</p>
+
+<p>この日本語訳は参考です。公式な文書ではありません。翻訳・解釈の正確性を保証しておりません。</p>
+
+<dl>
+<dt>公開日:</dt>
+<dd>2012-04-20</dd>
+<dt>改訂日:</dt>
+<dd>2012-11-12</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+<dt>校正者:</dt>
+<dd>Fumihiro Kato</dd>
+</dl>
+
+</div>
+
+<div class="attention">
+<p>本文中にある“合成された見開き”とは、隣接する二枚のページが見開きのページとして仮想的に一枚のページとなる状態を示す synthetic spread の日本語訳です。“両ページにまたがる図版”とは、“合成された見開き”の中央に位置するアイテムを示す center plate の日本語訳です。</p>
+<p>なお、本文中の <a href="http://idpf.org/epub/30/spec/epub30-publications.html#sec-terminology">EPUB Publications 3.0 - 1.2. Terminology</a> に定義されている用語は、なるべく原文のままとした。EPUB Publications 3.0 の<a href="epub30-publications.xhtml#sec-terminology">日本語訳</a>も参考ください。</p>
+<p>また、原文で斜体の箇所は日本語は括弧で囲み、英数字はそのまま斜体としました。</p>
+</div>
+
+<h1>EPUB 3 Fixed-Layout Documents</h1>
+<p class="bridgehead">情報文書</p>
+<dl class="printhistory">
+<dt>この版: </dt>
+<dd>
+<a href="http://www.idpf.org/epub/fxl/epub-fxl-20120313.html">http://www.idpf.org/epub/fxl/epub-fxl-20120313.html</a>
+</dd>
+<dt>最新版: </dt>
+<dd>
+<a href="http://idpf.org/epub/fxl/">http://idpf.org/epub/fxl/</a>
+</dd>
+<dt>前の版: </dt>
+<dd>
+<a href="http://www.idpf.org/epub/fxl/epub-fxl-20120308.html">http://www.idpf.org/epub/fxl/epub-fxl-20120308.html</a>
+</dd>
+</dl>
+<div class="legal">
+
+<p class="copyright">Copyright &copy; 2012 International Digital Publishing Forum<sup>&trade;</sup></p>
+
+<div class="legalnotice" title="Legal Notice">
+
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a class="link" href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+
+<p>EPUBは International Digital Publishing Forum の登録商標である。</p>
+
+</div>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Editors</p>
+<p>Markus Gylling (IDPF), Dave Cramer (Hachette)</p>
+<p class="bridgehead">Authors</p>
+<p>Takeshi Kanai (Sony), Peter Sorotokin (Adobe), Roger Webster (Barnes &amp; Noble), James Lester (Barnes &amp; Noble), Brady Kroupa (Barnes &amp; Noble), Garth Conboy (Google), Brady Duga (Google), MURATA Makoto (JEPA), Edward O’Connor (Apple), Luc Audrain (Hachette Livre), Hadrien Gardeur (Feedbooks)</p>
+</div>
+
+<p class="bridgehead">ドキュメントのステータス</p>
+
+<p>これは IDPF EPUB working group よって制作され、2012年3月13日に IDPF 理事会によって承認された IDPF 情報文書である。任意の時点で他のドキュメントによって更新されたり、置き換えられたり、廃止されることがある（may）。</p>
+
+<nav class="toc">
+<p><strong>目次</strong></p>
+<ol>
+<li><span class="chapter"><a href="#overview">目的とスコープ</a></span></li>
+<li><span class="chapter"><a href="#property-defs">プロパティの定義</a></span></li>
+<li>
+<ol>
+<li><span class="section"><a href="#property-layout">rendition:layout プロパティ</a></span></li>
+<li><span class="section"><a href="#property-orientation">rendition:orientation プロパティ</a></span></li>
+<li><span class="section"><a href="#property-spread">rendition:spread プロパティ</a></span></li>
+<li><span class="section"><a href="#properties-page-spread">page-spread-* プロパティ</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#usage">EPUB3 Package Document 内での redition プロパティの使用例</a></span></li>
+<li>
+<ol>
+<li><span class="section"><a href="#usage-prefix">Prefix マッピング</a></span></li>
+<li><span class="section"><a href="#syntax-itemref">spine itemref 要素の特定の名前と値の組</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#dimensions">コンテンツの寸法</a></span></li>
+<li>
+<ol>
+<li><span class="section"><a href="#dimensions-xhtml-svg">XHTML と SVG のためのコンテンツの寸法</a></span></li>
+<li>
+<ol>
+<li><span class="section"><a href="#dimensions-xhtml">XHTML で ICB の寸法を表現する</a></span></li>
+<li><span class="section"><a href="#dimensions-svg">SVG で ICB の寸法を表現する</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#dimensions-bitmap">ビットマップ画像のコンテンツの寸法</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#examples">付録 A. 用例</a></span></li>
+<li><span class="chapter"><a href="#mappings">付録 B. 対応表</a></span></li>
+<li><span class="chapter"><a href="#appabspos">付録 C. EPUB 3 で CSS の絶対位置指定を使用するときの注意</a></span></li>
+</ol>
+</nav>
+<section>
+
+<h2 id="overview"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#overview">&gt;</a>&nbsp;</span>目的とスコープ</h2>
+<!-- <p class="informative">This section is informative</p> -->
+
+<p>
+EPUB&reg; ドキュメントは、印刷書籍や PDF ファイルとは異なり、変化するように設計されている。コンテンツは画面や読者の要求に合わせてフローまたはリフローをする。EPUB 3.0 仕様書は“コンテンツの表現は、ユーザーがコンテンツの特定の表現に合わせるのではなく、ユーザーに合わせるべきである（should）”と述べている。</p>
+
+<p>しかしこの原則はすべての形式のドキュメントに適用されるわけではない。コンテンツとデザインは切り離すことができず、結び付けられている時がある。ささいな見た目の変更で意味が変化し、意味を失う危険がある。<em>固定レイアウトドキュメント</em>はコンテンツ制作者に表現をより詳細に制御できるようにするので、リフロー可能な EPUB コンテンツには適していない。</p>
+
+<p>本文書、EPUB 3 Fixed-Layout Documents は、EPUB 3 のコンテキスト内で固定レイアウトドキュメントが意図しているレンダリング動作の宣言の語句を許可しているメタデータ要素の組を定義する。固定レイアウトの <a href="#refContentDocs30">[ContentDocs30]</a> XHTML コンテンツと SVG コンテンツおよびビットマップ画像の意図するレンダリングの寸法を表現するメカニズムもまた定義する。</p>
+
+<div class="note" id="note-mechanisms">
+
+<h3 class="title">note</h3>
+
+<p>EPUB 3 は EPUB 3 ドキュメント内の固定レイアウトのコンテンツを表現する複数のメカニズムを提供する。固定レイアウトコンテンツが必要な場合、著者が選択するメカニズムは、望む精度、ファイルサイズ、アクセシビリティなどを含む複数の要因に依存するだろう。本文書は著者が選択するメカニズムを指示することを意図するものではない。</p>
+</div>
+</section>
+
+<section>
+
+<h2 id="property-defs"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-defs">&gt;</a>&nbsp;</span>プロパティの定義</h2>
+
+<section>
+
+<!-- rendition:layout -->
+<h3 id="property-layout"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-layout">&gt;</a>&nbsp;</span>rendition:layout プロパティ</h3>
+
+<table class="property-def-table">
+<tr>
+<th>名前</th>
+<td><p><code>rendition:layout</code></p></td>
+</tr>
+<tr>
+<th>概要</th>
+<td><p>指定した Publication または spine item がリフローかページ区切りなのかを規定する。</p></td>
+</tr>
+<tr>
+<th>値</th>
+<td><p><code>reflowable</code> | <code>pre-paginated</code></p></td>
+</tr>
+<tr>
+<th>使用例</th>
+<td><p>Package Document の <code>meta</code> 要素</p><p>Package Document の <code>itemref</code> 要素</p></td>
+</tr>
+<tr>
+<th>初期値</th>
+<td><p><code>meta</code> 内：reflowable</p><p><code>itemref</code> 内：<code>meta</code> を継承</p></td>
+</tr>
+<tr>
+<th>個数</th>
+<td><p><code>metadata</code> 内：0以上</p><p><code>itemref</code> 内：0以上</p></td>
+</tr>
+</table>
+
+<section>
+
+<h4 id="property-layout-usage"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-layout-usage">&gt;</a>&nbsp;</span>使用例</h4>
+
+<p id="property-layout-global"><code>rendition:layout</code> プロパティが Package Document の <code>meta</code> 要素に指定されている時、ページ区切りまたはリフローのレイアウト形式（以下に<a href="#property-layout-values">許可された値</a>を参照）が、それが指定された Publication（例えば全ての spine item）に包括的に適用されることを示している。</p>
+
+<p>‘reflowable’ は <code>meta</code> 要素が使用される状況のプロパティの初期値で、このプロパティを含んでいる <code>meta</code> 要素が Package Document のインスタンス内に現れない場合はこの値がグローバル値であると Reading System によって想定されなければならない（must）。</p>
+
+<p id="property-layout-local">
+<code>rendition:layout</code> プロパティは Package Document の spine <code>itemref</code> 要素へ局部的に指定してもよく（may）、この場合、指定された spine item の<a href="#property-layout-global">グローバル値</a>は上書きされる。（局部的な仕様の構文規則の細目は <a href="#syntax-itemref">spine itemref 要素の特定の名前と値の組</a>を参照してください。）</p>
+</section>
+<section>
+
+<h4 id="property-layout-values"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-layout-values">&gt;</a>&nbsp;</span>許可された値</h4>
+
+<p>次の値は <code>rendition:layout</code> プロパティの用途で定義されている。</p>
+
+<dl class="property-values">
+<dt>reflowable</dt>
+<dd>指定された spine item はページとして区切られない。Reading System はこの spine item をレンダリングする場合は動的なページネーションを適用してもよい（may）。</dd>
+<dt>pre-paginated</dt>
+<dd>指定された spine item はページとして区切られている。Reading System はこの spine item をレンダリングする時は、厳密に1枚のページを生成しなければならない（must）。(寸法の宣言に関する規則は <a href="#dimensions">コンテンツの寸法</a> を参照してください。) </dd>
+</dl>
+
+<div class="note" id="uaag">
+<h3 class="title">note</h3>
+<p>
+Reading System は一般的に、動的な様式の変化は意図しない結果をもたらす可能性が高いので、そうしたドキュメントの固有のプロパティがもたらす結果として、ページ区切りのドキュメントにユーザースタイルシートやユーザーエージェントスタイルシートの適用を制限または拒否する。Author は、リフローの代わりにページ区切りを使うことを選択した際に、こうした制約があることや、ユーザビリティやアクセシビリティに良くない影響があることを説明すべきである（should）。関連する情報は W3C User Agent Accessibility Guidelines の <a href="http://www.w3.org/TR/UAAG20/#gl-text-config">Guideline 1.4 - Provide text configuration</a> を参照されたい。</p>
+</div>
+</section>
+</section>
+<section>
+
+<!-- rendition:orientation -->
+<h3 id="property-orientation"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-orientation">&gt;</a>&nbsp;</span>rendition:orientation プロパティ</h3>
+
+<table class="property-def-table">
+<tbody>
+<tr>
+<th>名前</th>
+<td><p><code>rendition:orientation</code></p></td>
+</tr>
+<tr>
+<th>概要</th>
+<td><p>Author が指定した Publication または spine item が、どちらの方向に回転して表示するかを規定する。</p></td>
+</tr>
+<tr>
+<th>値</th>
+<td><p><code>landscape</code> | <code>portrait</code> | <code>auto</code></p></td>
+</tr>
+<tr>
+<th>使用例</th>
+<td><p>Package Document の <code>meta</code> 要素</p><p>Package Document の <code>itemref</code> 要素</p></td>
+</tr>
+<tr>
+<th>初期値</th>
+<td><p><code>meta</code> 内：auto</p><p><code>itemref</code> 内：<code>meta</code> を継承</p></td>
+</tr>
+<tr>
+<th>個数</th>
+<td><p><code>metadata</code> 内：0以上</p><p><code>itemref</code> 内：0以上</p></td>
+</tr>
+</tbody>
+</table>
+
+<section>
+
+<h4 id="property-orientation-usage"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-orientation-usage">&gt;</a>&nbsp;</span>使用例</h4>
+
+<p id="property-orientation-global"><code>rendition:orientation</code> プロパティが Package Document の <code>meta</code> 要素に指定されている時、意図された回転方向が、指定された Publication（例えば全ての spine item）に包括的に適用されることを示している。</p>
+
+<p>‘auto’ は <code>meta</code> 要素が使用される状況のプロパティの初期値で、この値はプロパティを運ぶ <code>meta</code> 要素が Package Document のインスタンス内に現れない場合はグローバル値であると Reading System によって想定されなければならない（must）。</p>
+
+<p id="property-orientation-local"><code>rendition:orientation</code> プロパティは Package Document の spine <code>itemref</code> 要素へ局部的に指定してもよく（may）、この場合、指定された spine item の<a href="#property-orientation-global">グローバル値</a>は上書きされる。（局部的な仕様の構文規則の細目は <a href="#syntax-itemref">spine itemref 要素の特定の名前と値の組</a>を参照してください。）</p>
+</section>
+<section>
+
+<h4 id="property-orientation-values"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-orientation-values">&gt;</a>&nbsp;</span>許可された値</h4>
+
+<p>次の値は <code>rendition:orientation</code> プロパティの用途で定義されている。</p>
+
+<dl class="property-values">
+<dt>landscape</dt>
+<dd>指定された spine item が横長（ランドスケープ）に表示されるのを目的にしている。</dd>
+<dt>portrait</dt>
+<dd>指定された spine item が縦長（ポートレート）に表示されるのを目的にしている。</dd>
+<dt>auto</dt>
+<dd>指定された spine item の向きは制限されない。</dd>
+</dl>
+
+<p>複数の回転方向をサポートしている Reading Systems は、指定された値が 'auto' でない限り、ユーザーに指定された回転方向を伝えるべきである（should）。意図を伝える手段は実装固有である。</p>
+</section>
+</section>
+<section>
+
+<!-- rendition:spread -->
+<h3 id="property-spread"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-spread">&gt;</a>&nbsp;</span>rendition:spread プロパティ</h3>
+
+<table class="property-def-table">
+<tbody>
+<tr>
+<th>名前</th>
+<td><p><code>rendition:spread</code></p></td>
+</tr>
+<tr>
+<th>概要</th>
+<td><p>Publication または spine item の、対象とする Reading System の合成された見開きの動作を規定する。</p></td>
+</tr>
+<tr>
+<th>値</th>
+<td><p><code>none</code> | <code>landscape</code> | <code>portrait</code> | <code>both</code> | <code>auto</code></p></td>
+</tr>
+<tr>
+<th>使用例</th>
+<td><p>Package Document の <code>meta</code> 要素</p><p>Package Document の <code>itemref</code> 要素</p></td>
+</tr>
+<tr>
+<th>初期値</th>
+<td><p><code>meta</code> 内：auto</p><p><code>itemref</code> 内：<code>meta</code> を継承</p></td>
+</tr>
+<tr>
+<th>個数</th>
+<td><p><code>metadata</code> 内：0以上</p><p><code>itemref</code> 内：0以上</p></td>
+</tr>
+</tbody>
+</table>
+
+<section>
+
+<h4 id="property-spread-usage"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-spread-usage">&gt;</a>&nbsp;</span>使用例</h4>
+
+<p id="property-spread-global"><code>rendition:spread</code> プロパティが Package Document の <code>meta</code> 要素に指定されている時、意図している合成された見開きの動作が、指定された Publication（例えば全ての spine item）に包括的に適用されることを示している。</p>
+
+<p>‘auto’ は <code>meta</code> 要素が使用される状況のプロパティの初期値で、この値はプロパティを運ぶ <code>meta</code> 要素が Package Document のインスタンス内に現れない場合はグローバル値であると Reading System によって想定されなければならない（must）。</p>
+
+<p id="property-spread-local"><code>rendition:spread</code> プロパティは Package Document の spine <code>itemref</code> 要素へ局部的に指定してもよく（may）、この場合、指定された spine item の<a href="#property-orientation-global">グローバル値</a>は上書きされる。（局部的な仕様の構文規則の細目は <a href="#syntax-itemref">spine itemref 要素の特定の名前と値の組</a>を参照してください。）</p>
+
+</section>
+<section>
+
+<h4 id="property-spread-values"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#property-spread-values">&gt;</a>&nbsp;</span>許可された値</h4>
+
+<p>
+以下の値は、<em>合成された見開き</em>は<em id="def-synthetic-spread">デバイスの画面上で同時に隣り合った二つのページがレンダリング</em>するとして定義され、<code>rendition:spread</code> プロパティの用途で定義されている。</p>
+
+<dl class="property-values">
+<dt>none</dt>
+<dd>Reading System は合成された見開きに、この spine item を取り入れてはならない（must not）。</dd>
+<dt>landscape</dt>
+<dd>Reading System はデバイスが横長（ランドスケープ）の向きの場合にのみ、合成された見開きに、この spine item を取り入れるべきである（should）。</dd>
+<dt>portrait</dt>
+<dd>Reading System はデバイスが縦長（ポートレート）の向きの場合にのみ、合成された見開きに、この spine item を取り入れるべきである（should）。</dd>
+<dt>both</dt>
+<dd>Reading System はデバイスの向きに関わらず合成された見開きに、この spine item を取り入れるべきである（should）。</dd>
+<dt>auto</dt>
+<dd>明確な合成された見開きの動作は定義していない。Reading System は表示領域の利用最適化プロセスの一部として、特定またはすべてのデバイスの回転方向に合成された見開きを使用してもよい（may）。</dd>
+</dl>
+
+<p>合成された見開きが XHTML Content Documens と SVG Content Documens のコンテキストの中で使われた時、寸法は見開きの中の1ページのサイズを表現する <a href="#dimensions-xhtml-svg">viewport/viewBox メタデータ</a>から得られる。</p>
+
+<div class="note">
+
+<h3 class="title">note</h3>
+
+<p><code>page-progression-direction</code> 属性とコンテンツドキュメントに含まれている局部的な page-progression-direction を使用して、全体の流れの方向性の宣言についての情報は <a href="epub30-publications.xhtml#sec-spine-elem">3.4.12 spine 要素</a>を参照してください。</p>
+
+<p><code>page-progression-direction</code> 属性と XHTML Content Document 内の <code>writing-mode</code> と <code>direction</code> プロパティの先行した規則の今後の仕様に関する議論は <a href="http://code.google.com/p/epub-revision/issues/detail?id=205">Issue 205</a> を参照してください。</p>
+
+</div>
+</section>
+</section>
+
+<section>
+
+<!-- page-spread-* -->
+<h3 id="properties-page-spread"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#properties-page-spread">&gt;</a>&nbsp;</span>page-spread-* プロパティ</h3>
+
+<table class="property-def-table">
+<tbody>
+<tr>
+<th>名前</th>
+<td><p><code>rendition:page-spread-center</code> <em>と、<a href="#refPublications30">[Publications30]</a> で定義されている <code>page-spread-left</code> と <code>page-spread-right</code></em></p></td>
+</tr>
+<tr>
+<th>概要</th>
+<td><p><a href="#def-synthetic-spread">合成された見開き</a>の Content Document での強制的な配置を規定する。</p></td>
+</tr>
+<tr>
+<th>使用例</th>
+<td><p>Package Document の spine <code>itemref</code> 要素</p></td>
+</tr>
+<tr>
+<th>個数</th>
+<td><p>0以上</p></td>
+</tr>
+</tbody>
+</table>
+
+<p>Reading System が合成された見開きを表示する時、標準の動作は、“次”の配置が <a href="http://idpf.org/epub/30/spec/epub30-publications.html#sec-spine-elem">page progression direction</a> を指定したページ、もしくはコンテンツドキュメントに含まれる局部的な宣言によって決定され、次に利用できる未実装のビューポートの中の次の Content Document を表示することによって、概念的に二つの隣接したビューポートで構成されるを見開きを配置する。spine itemref 要素の page-spread-* のいずれかのプロパティを与えることにより、著者は指定した Content Document を特定のビューポートに配置することを強制し、自動埋め込みの動作を上書きすることができる。</p>
+
+<p><code>page-spread-left</code> と <code>page-spread-right</code> プロパティは <a href="#refPublications30">[Publications30]</a> で定義されている。本文書は合成された見開きモードが隣接する二つのビューポートの代わりに、単一のビューポートを使用しなければならず（must）、画面中央に位置することを優先させるべきであり（should）、<code>rendition:page-spread-center</code> という追加のプロパティを定義している。</p>
+
+<p><code>rendition:page-spread-center</code> の存在はビューポートの寸法を変更しないことに注意してください。特にそれは全体の見開きの大きさを持つビューポートを作成する必要があることを示すものではない。<!--[already stated in para above:] It places a single half-spread viewport in the middle of the spread. -->重要なのは倍率が通常のページと中央見開きページの間で一致し続けることである。</p>
+
+<p><code>page-spread-left</code> と <code>page-spread-right</code>、<code>rendition:page-spread-center</code> プロパティはページ区切りコンテンツとリフローコンテンツの両方に適用され、それらは Reading System が合成された見開きを生成するときのみ適用する。</p>
+</section>
+</section>
+<section>
+
+<h2 id="usage"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#usage">&gt;</a>&nbsp;</span>EPUB3 Package Document 内での redition プロパティの使用例</h2>
+
+<section>
+
+<h3 id="usage-prefix"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#usage-prefix">&gt;</a>&nbsp;</span>Prefix マッピング</h3>
+
+<p>本文書で定義されたメタデータプロパティが EPUB 3 Package Document に含まれている場合、それらは <a href="epub30-publications.xhtml#sec-metadata-assoc">EPUB Publications 3.0 語彙の関連付け</a>で定義された <code>prefix</code> 属性を使用して URI <code>http://www.idpf.org/vocab/rendition/#</code> にマッピングされなければならない（must）。</p>
+
+<pre class="synopsis">&lt;package …  prefix="rendition: http://www.idpf.org/vocab/rendition/#"&gt; 
+    … 
+&lt;/package&gt;</pre>
+
+<p>実装者は <a href="#refPublications30">[Publications30]</a> の将来の改訂に配慮し、<a href="epub30-publications.xhtml#sec-metadata-reserved-vocabs">予約済みの語彙</a>として URI <code>http://www.idpf.org/vocab/rendition/#</code> に表される語彙を定めてもよい（may）。この場合、結果は a) <code>prefix</code> 属性を使用する明確なマッピングの宣言はもはや適用されず、b) 接頭辞 ‘rendition’ はこの語彙ために予約される。<a href="#refPublications30">[Publications30]</a> の将来の改訂で、Package Document の標準語彙として、ここに定義されたプロパティも統合してもよい（may）。この場合、ここに定義されたプロパティは、接頭辞なしで Package Document に生じるのを許可する。</p>
+
+<p>Package Document は（拡張性の詳細情報のための<a href="epub30-publications.xhtml#sec-metadata-assoc">語彙の関連付けメカニズム</a>を参照して）レイアウトの表現に関連する追加の独自のメタデータプロパティを含めてもよい（may）ことに注意してください。Reading System は、この文書内で定義されたプロパティのセマンティクスにより動作が矛盾するなら、このような表現は無視しなければならない（must）。</p>
+
+</section>
+<section>
+
+<h3 id="syntax-itemref"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#syntax-itemref">&gt;</a>&nbsp;</span>spine itemref 要素の特定の名前と値の組</h3>
+
+<p>本文書で定義された要素のコンテキスト、および Package Document の spine <code>itemref</code> 要素の <code>properties</code> 属性で要素の名前と値の組み合わせを指定する時は、以下の構文を使用しなければならない（must）。</p>
+
+<p>要素の名前と値は、区切り線として<em>ハイフン・マイナス</em>文字（<code>U+002D</code>）を使用し、単一の文字列で連結される。区切り文字の前後に空白を許可しないことに注意してください。</p>
+
+<p>例えば、<code>rendition:layout</code> 要素は spine item に与えられた ‘reflowable’ の値を持っていることを表現するために、‘rendition:layout-reflowable’ という文字列を使用する。</p>
+
+<pre class="synopsis">&lt;itemref … properties="rendition:layout-reflowable"/&gt; </pre>
+</section>
+</section>
+<section>
+
+<h2 id="dimensions"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#dimensions">&gt;</a>&nbsp;</span>コンテンツの寸法</h2>
+
+<p>このセクションは XHTML Content Document と SVG Content Document <a href="#refContentDocs30">[ContentDocs30]</a>、ビットマップ画像の寸法のプロパティの表現と解釈のための規則を定義する。</p>
+
+<p>本文書はどのように（XHTML や SVG、<a href="http://idpf.org/epub/fxl/icb">初期包含ブロック</a>などの）コンテンツが Reading System のコンテンツ表示領域内に配置について定義しない。</p>
+<section>
+
+<h3 id="dimensions-xhtml-svg"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#dimensions-xhtml-svg">&gt;</a>&nbsp;</span>XHTML と SVG のためのコンテンツの寸法</h3>
+
+<p><a href="#property-layout"><code>rendition:layout</code></a> 要素に ‘pre-paginated’ 値の組を持つそれぞれの XHTML と SVG の spine item は、下で定義されている（XHTMLの）viewport または（SVGの）viewBox の寸法の表現を含まなければならない（must）。</p>
+
+<p>XHTML Content Document と SVG Content Document の両方のために、CSS の<a href="http://www.w3.org/TR/CSS2/visudet.html#containing-block-details">初期包含ブロック</a>（<abbr id="icb" title="initial containing block">ICB</abbr>）で定義された（viewport/viewbox）の寸法の表現は CSS Pixels <a href="#refCSS21">[CSS]</a> で表される。</p>
+<section>
+
+<h4 id="dimensions-xhtml"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#dimensions-xhtml">&gt;</a>&nbsp;</span>XHTML で ICB の寸法を表現する</h4>
+
+<p>XHTML の ICB の寸法は <a href="#refMetaTags">[MetaTags]</a> による構文を使った meta タグの <code>viewport</code> を使用して表現されている。本文書のこの版では、幅と高さの指定のみ Reading System によって認識される必要がある。</p>
+
+<p>用例：</p>
+
+<pre class="synopsis">&lt;head&gt;
+    …
+    &lt;meta name="viewport" content="width=1200, height=600"/&gt;
+    …
+&lt;/head&gt;</pre>
+
+<p>Reading System は meta タグの viewport で宣言された ICB 寸法に XHTML を切り抜かなければならず（must）、そして初期包含ブロックの外側に位置するコンテンツは見えるようになっていない。ICB の縦横比が Reading System のコンテンツ表示領域の縦横比と一致していないとき、Reading System はユーザインタフェースに順応するため領域内の ICB を配置してもよい（may）。つまり、レターボックスがコンテンツの片側もしくは両側に表示されるかもしれない（may）。</p>
+</section>
+<section>
+
+<h4 id="dimensions-svg"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#dimensions-svg">&gt;</a>&nbsp;</span>SVG で ICB の寸法を表現する</h4>
+
+<p>SVG の ICB の寸法は <a href="#refSVG11">[SVG11]</a> <a href="http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute">viewBox 属性</a>を使用して表現される。</p>
+
+<p>用例：</p>
+
+<pre class="synopsis">&lt;svg xmlns="http://www.w3.org/2000/svg"
+    version="1.1" width="100%" height="100%"
+    viewBox="0 0 844 1200"&gt;
+    …
+&lt;/svg&gt; </pre>
+</section>
+</section>
+<section>
+
+<h3 id="dimensions-bitmap"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#dimensions-bitmap">&gt;</a>&nbsp;</span>ビットマップ画像のコンテンツの寸法</h3>
+
+<p>ビットマップ画像の寸法は “resolution tags” または変換のいずれかの形式を考慮しないなら、指定したビットマップの本質的な物理寸法（幅と高さの実際の物理的な総画素数）で表現される。</p>
+
+<p>コンテンツの寸法を取得この方法は（XHTML Content Document または SVG Content Document に埋め込まれていない）ビットマップ画像が spine から直接参照されたときのみ適用されることに注意してください。</p>
+</section>
+</section>
+
+<!-- appendix -->
+<section class="appendix">
+
+<!-- 付録 A. 用例 -->
+<h2 id="examples"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#examples">&gt;</a>&nbsp;</span>付録 A. 用例</h2>
+
+<!-- 用例 1 -->
+<section class="ex">
+
+<h3 id="ex1"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex1">&gt;</a>&nbsp;</span>用例 1</h3>
+
+<p>完全な固定レイアウト、横長（ランドスケープ）では合成された見開きを用いて表現することを意図とし、縦長（ポートレート）では見開きをしない。</p>
+
+<p class="bridgehead">Package Document</p>
+
+<pre class="synopsis">&lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;
+&lt;meta property="rendition:spread"&gt;landscape&lt;/meta&gt;</pre>
+
+<p class="bridgehead">XHTML</p>
+
+<p>全てのコンテンツドキュメントに含まれる。</p>
+
+<pre class="synopsis">&lt;meta name="viewport" content="width=512, height=600"/&gt;</pre>
+
+<p>注記：Reading System に見開きの動作を依存するには、<code>rendition:spread</code> 要素のどちらかを省略するか、または ‘auto’ を設定する。</p>
+
+</section>
+
+<!-- 用例 2 -->
+<section class="ex">
+
+<h3 id="ex2"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex2">&gt;</a>&nbsp;</span>用例 2</h3>
+
+<p>完全な固定レイアウト、見開きせず表示することを意図とし、横長（ランドスケープ）固定。</p>
+
+<p class="bridgehead">Package Document</p>
+
+<pre class="synopsis">&lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;
+&lt;meta property="rendition:spread"&gt;none&lt;/meta&gt;
+
+&lt;meta property="rendition:orientation"&gt;landscape&lt;/meta&gt;</pre>
+
+<p class="bridgehead">XHTML</p>
+
+<p>全てのコンテンツドキュメントに含まれる。</p>
+
+<pre class="synopsis">&lt;meta name="viewport" content="width=1024, height=600"/&gt;</pre>
+</section>
+
+<!-- 用例 3 -->
+<section class="ex">
+
+<h3 id="ex3"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex3">&gt;</a>&nbsp;</span>用例 3</h3>
+
+<p>タイトルページが1枚の固定レイアウトページであるリフローコンテンツで、固定レイアウトページは、デバイスが合成された見開きを表示した時に、右手の位置に配置されるのを意図している。</p>
+
+<p class="bridgehead">Package Document</p>
+
+<pre class="synopsis">&lt;meta property="rendition:layout"&gt;reflowable&lt;/meta&gt;
+&lt;meta property="rendition:spread"&gt;auto&lt;/meta&gt;        
+…
+
+&lt;itemref id="titlepage" properties="page-spread-right rendition:layout-pre-paginated"/&gt;</pre>
+
+<p class="bridgehead">XHTML</p>
+
+<p>コンテンツドキュメントにはタイトルページがあることを示している。</p>
+
+<pre class="synopsis">&lt;meta name="viewport" content="width=684, height=1024"/&gt;</pre>
+
+<p>この用例は、<code>rendition:layout</code> と <code>rendition:spread</code> プロパティの両方が初期値にセットされ、これらの2つの meta 要素は表示結果にいかなる影響を与えることなく省略できることを意味していることに注意してください。</p>
+
+</section>
+
+<!-- 用例 4 -->
+<section class="ex">
+
+<h3 id="ex4"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex4">&gt;</a>&nbsp;</span>用例 4</h3>
+
+<p>（もし使用しているなら）合成された見開きは両ページにまたがる図版によって機能しないようにしなければならない（must）、完全な固定レイアウトのコンテンツ。</p>
+
+<p class="bridgehead">Package Document</p>
+
+<pre class="synopsis">&lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;
+&lt;meta property="rendition:spread"&gt;auto&lt;/meta&gt;
+…
+&lt;itemref id="center-plate" properties="rendition:page-spread-center"/&gt;</pre>
+
+<p class="bridgehead">XHTML</p>
+
+<p>コンテンツドキュメントに両ページにまたがる図版コンテンツが含まれている。</p>
+<pre class="synopsis">&lt;meta name="viewport" content="width=512, height=600"/&gt;</pre>
+
+<p><!-- Note that even though the center plate viewport dimension expression indicates portrait orientation, the author has omitted the orientation property, leaving it to the Reading System to decide how to handle the situation. -->
+<code>rendition:spread<em class="code">=none</em></code> の表現は、<code>rendition:page-spread-center</code> プロパティがすでに合成された見開きを無効する指示をするセマンティクスが指定されていると、center plate 項目を必要としないことに注意してください。</p>
+
+<p>この例では、<code>rendition:spread</code> プロパティが初期値に設定され、表示結果にいかなる影響を与えることなく省略することができることにも注意してください。</p>
+</section>
+
+<!-- 用例 5 -->
+<section class="ex">
+
+<h3 id="ex5"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex5">&gt;</a>&nbsp;</span>用例 5</h3>
+
+<p>
+固定レイアウトの2ページの両ページにまたがる図版を含むリフローコンテンツは、デバイスの向きに関わらず、合成された見開きを使用して表現されることを意図している。出版物の未定義の他のリフロー部分は <code>rendition:spread</code> の全体の値が ‘auto’ に初期化されるため、見開いたままになる。</p>
+
+<p class="bridgehead">Package Document</p>
+
+<pre class="synopsis">&lt;spine page-progression-direction="ltr"&gt;
+    …
+    &lt;itemref id="center-plate-left" properties="rendition:spread-both page-spread-left"/&gt;
+    &lt;itemref id="center-plate-right" properties="rendition:spread-both page-spread-right"/&gt;
+    …
+&lt;/spine&gt;</pre>
+
+<p class="bridgehead">XHTML</p>
+
+<p>2つのコンテンツドキュメントは両ページにまたがる図版コンテンツを表示する。</p>
+
+<pre class="synopsis">&lt;meta name="viewport" content="width=512, height=600"/&gt;</pre>
+
+</section>
+
+<!-- 用例 6 -->
+<section class="ex">
+
+<h3 id="ex6"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex6">&gt;</a>&nbsp;</span>用例 6</h3>
+
+<p><a href="#refMediaQueries">[MediaQueries]</a> を使用して3つの異なる種類のデバイスに使用する3つに独立したスタイルシートを含む完全な固定レイアウトのコンテンツ。</p>
+
+<p class="bridgehead">Package Document</p>
+
+<pre class="synopsis">&lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;</pre>
+
+<p class="bridgehead">XHTML</p>
+
+<pre class="synopsis">&lt;link rel="stylesheet" href="eink-style.css" media="(max-monochrome: 3)"/&gt;
+&lt;link rel="stylesheet" href="skinnytablet-style.css" media="((color) and
+    (max-height:600px) and (orientation:landscape), (color) and (max-width:600px)
+    and (orientation:portrait))" /&gt;
+&lt;link rel="stylesheet" href="fattablet-style.css" media="((color) and
+    (min-height:601px) and (orientation:landscape), (color) and (min-width:601px)
+    and (orientation:portrait)" /&gt;</pre>
+</section>
+
+<!-- 用例 7 -->
+<section class="ex">
+
+<h3 id="ex7"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex7">&gt;</a>&nbsp;</span>用例 7</h3>
+
+<p>日本のマンガのページ進行方向は右から左である。各コンテンツドキュメントはビットマップ以外に何も含んでいない、とても単純な HTML で、CSS スタイルシートに関連付けられていない。</p>
+
+<p class="bridgehead">Package Document</p>
+
+<pre class="synopsis">&lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;
+&lt;meta property="rendition:spread"&gt;landscape&lt;/meta&gt;
+…
+&lt;spine page-progression-direction="rtl"&gt;
+    …
+&lt;/spine&gt; </pre>
+
+<p>HTML コンテンツドキュメントのページ進行方向は 'rtl' ではなく 'ltr' であることに注意してください。これは Reading System が、通常、標準の CSS スタイルシートを使用し、暗黙的にページ進行方向を 'ltr'<span class="note">（原文では rtl だが、ltrと思われる）</span>とするからである。各見開きは、はじめに右ページを使用して、次に左ページによって作成される。</p>
+
+<p class="bridgehead">XHTML</p>
+
+<p>全てのコンテンツドキュメントに含まれる。</p>
+
+<pre class="synopsis">&lt;meta name="viewport" content="width=512, height=600"/&gt; </pre>
+</section>
+
+<!-- 用例 8 -->
+<section class="ex">
+
+<h3 id="ex8"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ex8">&gt;</a>&nbsp;</span>用例 8</h3>
+
+<p>トップレベルのコンテンツの表示にビットマップ画像を用いる完全固定のレイアウトの出版物は、XHTML フォールバックを使用する。</p>
+<p class="bridgehead">Package Document</p>
+<pre class="synopsis">&lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;
+…
+&lt;manifest&gt;
+    &lt;item id="ch1" href="ch1.png" fallback="ch1x" … /&gt;
+    &lt;item id="ch2" href="ch2.png" fallback="ch2x" … /&gt;
+    &lt;item id="ch1x" href="ch1.xhtml" … /&gt;
+    &lt;item id="ch2x" href="ch2.xhtml" … /&gt;    
+&lt;/manifest&gt;
+&lt;spine&gt;
+    &lt;itemref idref="ch1" /&gt;
+    &lt;itemref idref="ch2" /&gt;
+&lt;/spine&gt; </pre>
+
+<p class="bridgehead">XHTML</p>
+
+<p>全てのフォールバックをする XHTML コンテンツドキュメントに含める。</p>
+<pre class="synopsis">&lt;meta name="viewport" content="width=1024, height=600"/&gt; </pre>
+
+</section>
+
+</section>
+
+<section class="appendix">
+
+<h2 id="mappings"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#mappings">&gt;</a>&nbsp;</span>付録 B. 対応表</h2>
+
+<p>以下の表は本文書で定義されている語彙を既存の独自の固定レイアウト表現のためのメタデータ語彙の一部にどう対応付けるかを述べている。</p>
+
+<h3 id="mappings-kf8">Amazon KF8 Children’s Format</h3>
+
+<table>
+<tbody>
+<tr>
+<th>Amazon プロパティ</th>
+<th>IDPF の対応 (接頭辞は省略) </th>
+</tr>
+<tr>
+<td>
+<p>fixed-layout (true | false)</p>
+</td>
+<td>
+<p>layout (reflowable | pre-paginated)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>original-resolution (width, ‘x’, height)</p>
+</td>
+<td>
+<p>viewport (<a href="#dimensions-xhtml">XHTML meta</a>)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>orientation (portrait | landscape)</p>
+</td>
+<td>
+<p>orientation (portrait | landscape | auto)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>book-type (children | comic)</p>
+</td>
+<td>
+<p>適用されない</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>RegionMagnification (true | false)</p>
+</td>
+
+<td>
+<p>独自。適用されない</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="mappings-sony">Sony Fixed-Layout</h3>
+
+<table>
+<tbody>
+<tr>
+<th>Sony プロパティ</th>
+<th>IDPF の対応 (接頭辞は省略) </th>
+</tr>
+<tr>
+<td><p>fixed-layout (true | false)</p></td>
+<td><p>layout (reflowable | pre-paginated)</p></td>
+</tr>
+<tr>
+<td><p>orientation (portrait | landscape | auto)</p></td>
+<td><p>orientation (portrait | landscape | auto)</p></td>
+</tr>
+<tr>
+<td><p>page-spread (full | double | auto)</p></td>
+<td><p>rendition:spread (none | portrait | landscape | both | auto)</p></td>
+</tr>
+<tr>
+<td><p>overflow-scroll (true | false)</p></td>
+<td><p>CSS で定義</p></td>
+</tr>
+<tr>
+<td><p>viewport</p></td>
+<td><p>viewport (<a href="#dimensions-xhtml">XHTML meta</a>)</p></td>
+</tr>
+</tbody>
+</table>
+
+<p><code>page-spread</code> の値は 'portrait' と 'both' は 'double' に対応し、'landscape' は 'auto' に対応、そして 'none' は 'full' に対応しているのに注意してください。</p>
+                
+<h3 id="mappings-appl">Apple Fixed-Layout</h3>
+
+<p>Apple は現在、META-INF 内の XML ファイルに、このメタデータの一部を格納している。</p>
+
+<table>
+<tbody>
+<tr>
+<th>Apple プロパティ</th>
+<th>IDPF の対応 (接頭辞は省略) </th>
+</tr>
+<tr>
+<td><p>fixed-layout (true | false)</p></td>
+<td><p>layout (reflowable | pre-paginated)</p></td>
+</tr>
+<tr>
+<td><p>viewport (<a href="#dimensions-xhtml">XHTML meta</a>)</p></td>
+<td><p>viewport (<a href="#dimensions-xhtml">XHTML meta</a>)</p></td>
+</tr>
+<tr>
+<td><p>orientation (landscape-only | portrait-only | none)</p></td>
+<td><p>orientation (landscape | portrait | auto)</p></td>
+</tr>
+<tr>
+<td><p>platform name</p></td>
+<td><p>相当する機能なし</p></td>
+</tr>
+<tr>
+<td><p>open-to-spread (true | false)</p></td>
+<td><p>相当する機能なし</p></td>
+
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="appendix">
+
+<h2 id="appabspos"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#appabspos">&gt;</a>&nbsp;</span>付録 C. EPUB 3 で CSS の絶対位置指定を使用するときの注意</h2>
+
+<p>EPUB 3 Content Document の <a href="epub30-contentdocs.xhtml#sec-css-2.1">Section 3.3.1</a> （"CSS 2.1"）の末尾にあるメモは固定レイアウトと EPUB 3 に関連するいくつかの誤解の原因となっている。本付録は仕様書が更新されるまでそのメモを明確にすることを意図している。</p>
+
+<p>メモには“Reading System が絶対位置指定のレイアウトをページ化するかどうか保証されていないので、絶対位置指定への依存は推奨されない。Reading System はそれらのプロパティの値をサポートしないかもしれない（may）。”とある。</p>
+
+<p>まず、仕様書の CSS のセクションの指定したその箇所は、この文は CSS を利用した固定レイアウトドキュメントのみ適用できることを記すべきである（should）。次に、このメモは position 要素の “absolute” 値が EPUB 3 CSS profile でないことを意味するものではない。<code>position:absolute</code> はベースライン（CSS 2.1）の一部なので、事実上 profile の一部である。（メモ上部の規範的な散文で述べられているように）<code>fixed</code> 値のみ EPUB 3 CSS Profile から除外する。</p>
+
+<p>結局このメモは、絶対位置指定レイアウトの CSS の使用や、これらの値をサポートしないかもしれない (may) 任意の Reading System に配信される予定のコンテンツなどにのみ依存することを妨げるものではない。 具体的には、EPUB 2.x Reading System にはこれらの値が EPUB 2 CSS Profile に含まれていないので、それらの値をサポートしていないだろう。絶対位置指定の CSS の多くの用途では、それらのプロパティの値が無視された場合、体良く機能を落とすだろうし、そのように振る舞うこと（非依存）が推奨される。</p>
+</section>
+<section class="bibliography appendix">
+<h2 id="references">参照・参考</h2>
+<p id="refContentDocs30"><abbr>[ContentDocs30]</abbr><a href="http://idpf.org/epub/30/spec/epub30-contentdocs.html">EPUB Content Documents 3.0</a></p>
+<p id="refCSS21"><abbr>[CSS]</abbr><a href="http://www.w3.org/TR/CSS2/">Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification</a></p>
+<p id="refMediaQueries"><abbr>[MediaQueries]</abbr><a href="http://www.w3.org/TR/css3-mediaqueries/">Media Queries</a></p>
+<p id="refMetaTags"><abbr>[MetaTags]</abbr><a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html">Supported Meta Tags</a> (informative)</p>
+<p id="refPublications30"><abbr>[Publications30]</abbr><a href="http://idpf.org/epub/30/spec/epub30-publications.html">EPUB Publications 3.0</a></p>
+<p id="refSVG11"><abbr>[SVG11]</abbr><a href="http://www.w3.org/TR/SVG/">Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a></p>
+</section>
+</body>
+</html>
