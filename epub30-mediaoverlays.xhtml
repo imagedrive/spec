@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
 <link rel="stylesheet" href="js/google-code-prettify/prettify.css"/>
 <meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/>
-<meta name="description" content="EPUB Media Overlays 3.0。 EPUB Media Overlays は、EPUB Content Document と同期する音声表現用に、[SMIL]（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義する。"/>
+<meta name="description" content="EPUB Media Overlays 3.0 は、EPUB Content Document と同期する音声表現用に、[SMIL]（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義する。"/>
 <script src="http://www.google.com/jsapi/"></script>
 <script src="js/ajax-loader.js"></script>
 <script src="js/google-code-prettify/prettify.js"></script>
@@ -31,7 +31,7 @@
 <dt>公開日:</dt>
 <dd>2012-07-07</dd>
 <dt>改訂日:</dt>
-<dd>2013-02-21</dd>
+<dd>2013-04-05</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 <dt>校正者:</dt>
@@ -52,7 +52,7 @@
 </dl>
 <p class="diff">前回のドラフトからの変更点の差分は、<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn3218&amp;old=3183&amp;r=3218&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub30-mediaoverlays.xml">このリンク</a>で入手可能である。</p>
 
-<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれません）のために、<a class="link" href="http://idpf.org/epub/30/spec/epub30-mediaoverlays-errata/">正誤表</a>を参照されたい。</p>
+<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれません）のために、<a class="link" href="http://idpf.org/epub/30/spec/epub30-mediaoverlays-errata/">正誤表（英語）</a>を参照されたい。</p>
 
 <div class="legal"><p class="copyright">Copyright &copy; 2010, 2011 International Digital Publishing Forum<sup>&trade;</sup></p>
 <div class="legalnotice" title="Legal Notice"><a id="d43094e48"/><p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a class="link" href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
@@ -164,7 +164,7 @@
 <div class="itemizedlist" id="epub-specs-listing">
 <ul class="itemizedlist">
 <li class="listitem">
-<p>EPUB 3 Overview <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a> は EPUBの有益な概要と、残りの EPUB 3 文書群のロードマップを提供する。EPUB 3 Overview は最初に読んでおく必要がある。</p>
+<p>EPUB 3 Overview <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a> は EPUBの有益な概要と、残りの EPUB 3 文書群のロードマップを提供する。EPUB 3 Overview は最初に読んでおくべきである（should）。</p>
 </li>
 <li class="listitem"><p>EPUB Publications 3.0 <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a> は出版レベルのセマンティクスと <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のための包括的な適合性要件を定義している。</p>
 </li>
@@ -193,10 +193,10 @@
 <div class="glosslist">
 <dl>
 <dt class="glossentry" title="EPUB Publication (or Publication)" id="gloss-epub-publication">EPUB Publication (or Publication)</dt>
-<dd><p><span class="phrase">本仕様と<a class="link" href="#sibling-specs">兄弟仕様</a></span>によって定義されているように、一組の相互関係のある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a>の集合から成っていて、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> でパッケージされている論理的な文書のエンティティ。</p></dd>
+<dd><p>（<span class="phrase">この仕様とその<a class="link" href="#sibling-specs">兄弟仕様</a></span>によって定義されるように）一組の相互関係のある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a>から成っていて、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> でパッケージされている論理的な文書のエンティティ。</p></dd>
 <dt class="glossentry" title="Publication Resource" id="gloss-publication-resource-cmt-or-foreign">Publication Resource</dt>
 <dd>
-<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のロジックと表示に関するコンテンツや命令を含むリソース。このリソースがない場合には、出版物は <a class="glossterm" href="#gloss-author" title="Author">Author</a> の意図したとおりに表示されないことがある。Publication Resource の例としては <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet (or Style Sheet)">EPUB Style Sheet</a>、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
+<p>コンテンツまたは <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のロジックと表示に関する命令を含んでいるリソース。このリソースがない場合には、出版物は <a class="glossterm" href="#gloss-author" title="Author">Author</a> の意図したとおりに表示されないことがある。Publication Resource の例としては <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet (or Style Sheet)">EPUB Style Sheet</a>、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
 
 <p>Package Document 自身を除いて Publication Resource は <span class="phrase"><a class="link" href="epub30-publications.xhtml#sec-manifest-elem">manifest</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> に記載されなければならず（must）、<span class="phrase"><a class="link" href="epub30-publications.xhtml#sec-resource-locations">Publication Resource の位置</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> で特に指定がない限り EPUB container ファイルにバンドルする必要がある。</p>
 

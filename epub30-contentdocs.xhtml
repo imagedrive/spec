@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>EPUB Content Documents 3.0</title>
+<title>EPUB Content Documents 3.0（日本語訳版）</title>
 <link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
 <link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
 <link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
 <link rel="stylesheet" href="js/google-code-prettify/prettify.css"/>
 <meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/>
-<meta name="description" content="本仕様、EPUB Content Documents 3.0 は、EPUBR Publications のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義する。"/>
+<meta name="description" content="EPUB Content Documents 3.0 は、EPUBR Publications のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義する。"/>
 <script src="http://www.google.com/jsapi/"></script>
 <script src="js/ajax-loader.js"></script>
 <script src="js/google-code-prettify/prettify.js"></script>
@@ -25,7 +31,7 @@
 <dt>公開日:</dt>
 <dd>2012-10-15</dd>
 <dt>改訂日:</dt>
-<dd>2012-11-12</dd>
+<dd>2013-04-05</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 <dt>校正者:</dt>
@@ -50,7 +56,7 @@
 
 <p class="diff">前回のドラフトからの変更点の差分は、<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn3218&amp;old=3183&amp;r=3218&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub30-contentdocs.xml">このリンク</a>で入手可能である。</p>
 
-<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="http://idpf.org/epub/30/spec/epub30-contentdocs-errata/">正誤表</a>を参照されたい。</p>
+<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="http://idpf.org/epub/30/spec/epub30-contentdocs-errata/">正誤表（英語）</a>を参照されたい。</p>
 
 <div class="legal">
 <p class="copyright">Copyright &#169; 2010, 2011 International Digital Publishing Forum<sup>&#8482;</sup></p>
@@ -63,13 +69,9 @@
 
 <div class="authorgroup">
 <p class="bridgehead">Editors</p>
-
 <p class="editor">Markus Gylling, DAISY Consortium </p>
-
 <p class="editor">William McCoy, International Digital Publishing Forum (IDPF) </p>
-
 <p class="editor">Elika J. Etemad, Invited Expert </p>
-
 <p class="editor">Matt Garrish, Invited Expert </p>
 </div>
 
@@ -244,7 +246,7 @@
 <dt><span class="section"><a href="#sec-pls-conf-rs">4.4. Reading System の適合性</a></span></dt>
 </dl>
 </dd>
-<dt><span class="appendix"><a href="#app-schemas">A. Schemas</a></span></dt>
+<dt><span class="appendix"><a href="#app-schemas">A. スキーマ</a></span></dt>
 <dd>
 <dl>
 <dt><span class="section"><a href="#app-xhtml-schema">A.1. XHTML Content Document スキーマ</a></span></dt>
@@ -285,13 +287,13 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overview-purpose-and-scope">&gt;</a>&#160;</span>1.1 目的とスコープ</h3>
 <p class="informative">このセクションは参考情報である。</p>
 
-<p>本仕様、EPUB Content Documents 3.0 は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUBR Publications</a> のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義する。</p>
+<p>本仕様、EPUB Content Documents 3.0 は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB&#174; Publications</a> のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義する。</p>
 
 <p id="sibling-specs">本仕様は EPUB 3 を構成する関連仕様の一つである。 EPUB 3 は XML や Web 標準に基づいたデジタル出版物の交換や配信形式の第 3 版である。この仕様は EPUB 3 を構成する以下の他の仕様と共に読み、理解することになっている：</p>
 
 <div class="itemizedlist" id="epub-specs-listing">
 <ul class="itemizedlist">
-<li class="listitem"><p>EPUB 3 Overview <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a> は EPUB の有益な概要と、残りの EPUB 3 document 群のロードマップを提供する。EPUB 3 Overview は最初に読んでおく必要がある。</p></li>
+<li class="listitem"><p>EPUB 3 Overview <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a> は EPUB の有益な概要と、残りの EPUB 3 document 群のロードマップを提供する。EPUB 3 Overview は最初に読んでおくべきである（should）</p></li>
 <li class="listitem"><p>EPUB Publications 3.0 <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a> は出版レベルのセマンティクスと <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のための包括的な適合性要件を定義している。</p></li>
 <li class="listitem"><p>EPUB Open Container Format (OCF) 3.0 <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr>OCF3</abbr>]</a> は関連するリソースの集合を単一のファイル（ZIP）の <a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> にカプセル化するためのファイル形式と処理モデルを定義する。</p></li>
 <li class="listitem"><p>EPUB Media Overlays 3.0 <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.0">[<abbr>MediaOverlays30</abbr>]</a> はテキストと音声の同期のための形式と処理モデルを定義する。</p></li>
@@ -338,9 +340,9 @@
 <div class="glosslist">
 <dl>
 <dt class="glossentry" title="EPUB Publication (or Publication)" id="gloss-epub-publication">EPUB Publication (or Publication)</dt>
-<dd><p>一組の相互関係のある <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">resources</a> から成っており、<span class="phrase">本仕様と<a class="link" href="#sibling-specs">兄弟仕様書</a></span>によって定義される <a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> でパッケージ化されている論理的な文書のエンティティ。</p></dd>
+<dd><p>（<span class="phrase">この仕様とその<a class="link" href="#sibling-specs">兄弟仕様</a></span>によって定義されるように）一組の相互関係のある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a>から成っていて、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> でパッケージ化されている論理的な文書のエンティティ。</p></dd>
 <dt class="glossentry" title="Publication Resource" id="gloss-publication-resource-cmt-or-foreign">Publication Resource</dt>
-<dd><p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のロジックと表示に関するコンテンツを含むリソース。このリソースがない場合には、出版物は <a class="glossterm" href="#gloss-author" title="Author">Author</a> の意図したとおりに表示されないことがある。Publication Resource の例としては <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet (or Style Sheet)">EPUB Style Sheet</a>、音声、動画、画像、埋め込みフォントとスクリプトが包含される。</p>
+<dd><p>コンテンツまたは <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のロジックと表示に関する命令を含んでいるリソース。このリソースがない場合には、出版物は <a class="glossterm" href="#gloss-author" title="Author">Author</a> の意図したとおりに表示されないことがある。Publication Resource の例としては <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet (or Style Sheet)">EPUB Style Sheet</a>、音声、動画、画像、埋め込みフォントとスクリプトが包含される。</p>
 <p>Package Document 自身を除いて Publication Resource を <span class="phrase"><a class="link" href="epub30-publications.xhtml#sec-manifest-elem">manifest</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> に記載しなければならず（must）、<span class="phrase"><a class="link" href="epub30-publications.xhtml#sec-resource-locations">Publication Resource の位置</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> で特に指定がない限り EPUB container ファイルにバンドルしなければならない（must）。</p>
 <p>Publication Resource でないリソースの例としては、Package Document の <span class="phrase"><a class="link" href="epub30-publications.xhtml#sec-link-elem">link</a> 要素 <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> で識別されるものと <a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> の外で解決する外部へのハイパーリンクで識別されるものが包含されている（例えば <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <code><a class="link" href="http://www.w3.org/TR/html5/Overview.html#the-a-element">a</a></code> 要素の <code>href</code> 属性）。</p></dd>
 <dt class="glossentry" title="Core Media Type Resource" id="gloss-publication-resource-cmt">Core Media Type Resource</dt>
@@ -625,15 +627,15 @@ XHTML Content Document のファイル名はファイル拡張子の <code class
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-xhtml-ssml-attrib">&gt;</a>&#160;</span>2.1.3.2 SSML 属性</h5>
 <div class="section" title="2.1.3.2.1 Overview" id="sec-cd-ssml-intro">
 <h6 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-ssml-intro">&gt;</a>&#160;</span>2.1.3.2.1 概要</h6>
-<p>W3C Speech Synthesis Markup Language <a class="biblioref" href="#refSSML" title="Speech Synthesis Markup Language (SSML) Version 1.1">[<abbr>SSML</abbr>]</a> は同期スピーチを生成する <a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">Text-to-Speech (TTS)</a> エンジンを支援するために使われる言語である。SSML は独立した文書形式として設計されているが、他のホスト言語内で使用するのにも適した意味も定義している。</p>
+<p>W3C Speech Synthesis Markup Language <a class="biblioref" href="#refSSML" title="Speech Synthesis Markup Language (SSML) Version 1.1">[<abbr>SSML</abbr>]</a> は同期スピーチを生成する<a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">テキスト読み上げ (TTS)</a> エンジンを支援するために使われる言語である。SSML は独立した文書形式として設計されているが、他のホスト言語内で使用するのにも適した意味も定義している。</p>
 
 <p>本仕様は、<a class="link" href="http://www.w3.org/TR/speech-synthesis11/#S3.1.10">SSML 1.1 <code>phoneme</code> 要素</a>の二つの属性（<code>ssml:ph</code> と <code>ssml:alphabet</code>） について見直し、EPUB XHTML Content Document 内で利用可能にする。</p>
 
-<p><a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">Text-to-Speech (TTS)</a> 機能のある Reading System は上記で定義されている SSML 属性をサポートするべきである（should）。</p>
+<p><a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">テキスト読み上げ (TTS)</a> 機能のある Reading System は上記で定義されている SSML 属性をサポートするべきである（should）。</p>
 
 <div class="note" title="note">
 <h3 class="title">note</h3>
-<p>同期スピーチに関連する EPUB 3 の機能に関するより詳細な情報は、<span class="phrase"><a class="link" href="epub30-overview.html#sec-tts">Text-to-speech</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
+<p>同期スピーチに関連する EPUB 3 の機能に関するより詳細な情報は、<span class="phrase"><a class="link" href="epub30-overview.xhtml#sec-tts">テキスト読み上げ</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
 </div>
 </div>
 
@@ -757,7 +759,7 @@ XHTML Content Document のファイル名はファイル拡張子の <code class
 
 <dt class="varlistentry"><span class="term">使用例</span></dt>
 <dd>
-<p><a class="link" href="http://www.w3.org/TR/html5/Overview.html#flow-content-0">Flow</a> と <a class="link" href="http://www.w3.org/TR/html5/Overview.html#phrasing-content-0">Inline</a> コンテンツ内。繰り返し可。</p>
+<p><a class="link" href="http://www.w3.org/TR/html5/Overview.html#flow-content-0">フロー</a>と<a class="link" href="http://www.w3.org/TR/html5/Overview.html#phrasing-content-0">インライン</a>コンテンツ内。繰り返し可。</p>
 </dd>
 
 <dt class="varlistentry"><span class="term">属性</span></dt>
@@ -958,7 +960,7 @@ XHTML Content Document のファイル名はファイル拡張子の <code class
 
 <dt class="varlistentry"><span class="term">使用例</span></dt>
 <dd>
-<p><code>head</code> の子要素か、<a class="link" href="http://www.w3.org/TR/html5/Overview.html#flow-content-0">Flow コンテンツ</a>内。繰り返し可。</p>
+<p><code>head</code> の子要素か、<a class="link" href="http://www.w3.org/TR/html5/Overview.html#flow-content-0">フローコンテンツ</a>内。繰り返し可。</p>
 </dd>
 
 <dt class="varlistentry"><span class="term">Attributes</span></dt>
@@ -1243,7 +1245,7 @@ EPUB Navigation Document は、<a class="glossterm" href="#gloss-epub-publicatio
 <h3 class="title">note</h3>
 <p>EPUB Navigation Document は、<a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr>OPF2</abbr>]</a> で定義されている NCX 文書型に優先される。</p>
 
-<p>EPUB 3 Publication が EPUB 2 Reading System の前方互換の目的のために、NCX document を包含するための情報は、<span class="phrase"><a class="link" href="epub30-publications.xhtml#ncx-superseded">NCX Superseded</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> で得られる。</p>
+<p>EPUB 3 Publication が EPUB 2 Reading System の前方互換の目的のために、NCX document を包含するための情報は、<span class="phrase"><a class="link" href="epub30-publications.xhtml#ncx-superseded">NCX の廃止</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> で得られる。</p>
 </div>
 </div>
 
@@ -1296,10 +1298,10 @@ User が要求したとき、Reading System は、リンクの提供の有効化
 <p id="confreq-nav-a"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a">&gt;</a>&#160;</span>各順序付きリストのリスト項目（<code><a class="link" href="http://www.w3.org/TR/html5/Overview.html#the-li-element">li</a></code>）は、主要な見出し、構造または Publication 内の関心のある他の位置を意味し、そして子 <code><a class="link" href="http://www.w3.org/TR/html5/Overview.html#the-a-element">a</a></code> 要素かそれとも子 <code><a class="link" href="http://www.w3.org/TR/html5/Overview.html#the-span-element">span</a></code> 要素を含まなければならない（must）。<code>a</code> 要素は、リンクの位置と Content Document 内のターゲットを表現する。<code>span</code> 要素は、異なるグループ（例えば、イラストの大きなリストは、それぞれの章ためにひとつなど、いくつかのリストに分割できる）の分類リストのための見出しとして機能する。</p>
 </li>
 <li class="listitem">
-<p id="confreq-nav-a-cnt"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-cnt">&gt;</a>&#160;</span>リスト項目のそれぞれの子 <code>a</code> または <code>span</code> 要素は、任意の妥当な <a class="link" href="http://www.w3.org/TR/html5/Overview.html#phrasing-content-0">HTML5 phrasing content</a> を含んでもよいが（may）、空白化規則の全ての子コンテンツとアプリケーションの連結した後のゼロ長の文字列の中に生じてはならない（must not）。</p>
+<p id="confreq-nav-a-cnt"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-cnt">&gt;</a>&#160;</span>リスト項目のそれぞれの子 <code>a</code> または <code>span</code> 要素は、任意の妥当な <a class="link" href="http://www.w3.org/TR/html5/Overview.html#phrasing-content-0">HTML5 のフレージング・コンテンツ</a>を含んでもよいが（may）、空白化規則の全ての子コンテンツとアプリケーションの連結した後のゼロ長の文字列の中に生じてはならない（must not）。</p>
 </li>
 <li class="listitem" id="confreq-nav-a-title">
-<p><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-title">&gt;</a>&#160;</span><code>a</code> 要素を固有のテキスト代替手段が提供されない <a class="link" href="http://dev.w3.org/html5/spec/Overview.html#embedded-content-0">HTML5 埋め込みコンテンツ</a>のインスタンスに含む場合、リンクラベルの代替のテキストレンダリングを持ったタイトル属性を包含しなければならない（must）。</p>
+<p><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-title">&gt;</a>&#160;</span><code>a</code> 要素を固有のテキスト代替手段が提供されない <a class="link" href="http://dev.w3.org/html5/spec/Overview.html#embedded-content-0">HTML5 の埋め込みコンテンツ</a>のインスタンスに含む場合、リンクラベルの代替のテキストレンダリングを持ったタイトル属性を包含しなければならない（must）。</p>
 </li>
 <li class="listitem">
 <p id="confreq-nav-a-href"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-href">&gt;</a>&#160;</span><code>a</code> 要素の <code>href</code> 属性で提供される相対 IRI の参照は、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> またはその中のフラグメントを解決しなければならない（must）。</p>
@@ -1502,7 +1504,7 @@ User が要求したとき、Reading System は、リンクの提供の有効化
 <dd>
 <p id="confreq-cd-svg-xml"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-cd-svg-xml">&gt;</a>&#160;</span> <span class="phrase"><span class="phrase"><a class="link" href="epub30-publications.xhtml#sec-xml-constraints">XML 適合性</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span> で定義されている XML 文書のための適合性の制約を満たさなければならない（must）。</span> </p>
 
-<p id="confreq-cd-svg-docprops-schema"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-cd-svg-docprops-schema">&gt;</a>&#160;</span><a class="xref" href="#app-svg-schema" title="A.3 SVG Content Document Schema">SVG Content Document Schema</a> で定義されている SVG Content Document スキーマに妥当で、<a class="xref" href="#sec-svg-restrictions" title="2.3.3 Restrictions on SVG 1.1">SVG 1.1 の制限</a>で述べられている全てのコンテンツの適合性の制約に準拠した <a class="link" href="http://www.w3.org/TR/SVG/intro.html#TermSVGDocumentFragment">SVG 1.1 document fragment</a> でなければならない（must）。</p>
+<p id="confreq-cd-svg-docprops-schema"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-cd-svg-docprops-schema">&gt;</a>&#160;</span><a class="xref" href="#app-svg-schema" title="A.3 SVG Content Document Schema">SVG Content Document スキーマ</a>で定義されている SVG Content Document スキーマに妥当で、<a class="xref" href="#sec-svg-restrictions" title="2.3.3 Restrictions on SVG 1.1">SVG 1.1 の制限</a>で述べられている全てのコンテンツの適合性の制約に準拠した <a class="link" href="http://www.w3.org/TR/SVG/intro.html#TermSVGDocumentFragment">SVG 1.1 document fragment</a> でなければならない（must）。</p>
 
 <p id="confreq-cd-svg-accessibility"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-cd-svg-accessibility">&gt;</a>&#160;</span><a class="biblioref" href="#refSVGAccess" title="Accessibility Features of SVG">[<abbr>SVG Access</abbr>]</a> で与えれているアクセシビリティのガイドラインに順守すべきである（should）。</p>
 </dd>
@@ -1684,7 +1686,7 @@ User が要求したとき、Reading System は、リンクの提供の有効化
 <li class="listitem"><p id="confreq-rs-scripted-ua"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-scripted-ua">&gt;</a>&#160;</span><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> に従ったスクリプトのユーザーエージェントとして、インタラクティブな <a class="glossterm" href="#gloss-content-document-epub-scripted" title="Scripted Content Document">Scripted Content Document</a> をレンダリングしてもよい。</p></li>
 <li class="listitem"><p id="confreq-rs-scripted-container"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-scripted-container">&gt;</a>&#160;</span>親の Content Document または Publication 内の他のコンテンツの DOM を変更する container-constrained スクリプトを許可してはならない（must not）、含んでいる矩形のサイズを操作するための指示を包含してはならない（must not）（注：たとえスクリプトは container-constrained でなくても、Reading System は、変更に制約を強要してもよい（may）（<a class="link" href="#feature-dom-manipulation">dom-manipulation feature</a> を参照されたい））。</p></li>
 <li class="listitem"><p id="confreq-rs-scripted-limit"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-scripted-limit">&gt;</a>&#160;</span>スクリプトの実行時に提供される機能に追加の制限を加えてもよい（may）（例えば、ネットワークの制限）。</p></li>
-<li class="listitem"><p id="confreq-rs-scripted-readingsystem-object"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-scripted-readingsystem-object">&gt;</a>&#160;</span><a class="xref" href="#app-epubReadingSystem" title="Appendix B. JavaScript epubReadingSystem Object">Appendix B, <em>JavaScript epubReadingSystem Object</em></a> で定義されている JavaScript の <code>navigator</code> 拡張オブジェクト  <code>epubReadingSystem</code> を実装しなければならない（must）。container-constrained スクリプトのコンテクストの<a class="xref" href="#app-ers-hasFeature-features" title="B.4.1.3 Features">機能</a>で定義されている <code>dom-manipulation</code> と <code>layout-change</code> 機能もサポートしなければならない（must）。</p></li>
+<li class="listitem"><p id="confreq-rs-scripted-readingsystem-object"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-scripted-readingsystem-object">&gt;</a>&#160;</span><a class="xref" href="#app-epubReadingSystem" title="Appendix B. JavaScript epubReadingSystem Object">付録 B, <em>JavaScript epubReadingSystem オブジェクト</em></a>で定義されている JavaScript の <code>navigator</code> 拡張オブジェクト  <code>epubReadingSystem</code> を実装しなければならない（must）。container-constrained スクリプトのコンテクストの<a class="xref" href="#app-ers-hasFeature-features" title="B.4.1.3 Features">機能</a>で定義されている <code>dom-manipulation</code> と <code>layout-change</code> 機能もサポートしなければならない（must）。</p></li>
 <li class="listitem"><p id="confreq-rs-scripted-prop"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-scripted-prop">&gt;</a>&#160;</span>EPUB Content Document にスクリプトを包含しているかどうかの正式な定義として <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a> の <a class="glossterm" href="#gloss-manifest" title="Manifest">manifest</a> <code>item</code> 要素の <code><span class="phrase"><a class="link" href="epub30-publications.xhtml#scripted">scripted</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a></span></code> プロパティを考慮しなければならない（must）。</p></li>
 </ul>
 </div>
@@ -1860,7 +1862,7 @@ User が要求したとき、Reading System は、リンクの提供の有効化
 
 <div class="note" title="note">
 <h3 class="title">note</h3>
-<p>合成音声に関連する EPUB 3 の機能の詳細な情報については、<span class="phrase"><a class="link" href="epub30-overview.html#sec-tts">Text-to-speech</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
+<p>合成音声に関連する EPUB 3 の機能の詳細な情報については、<span class="phrase"><a class="link" href="epub30-overview.xhtml#sec-tts">テキスト読み上げ</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
 </div>
 </div>
 
@@ -1891,7 +1893,7 @@ User が要求したとき、Reading System は、リンクの提供の有効化
 
 <div class="note" title="note">
 <h3 class="title">note</h3>
-<p>Reading System のフォント難読化の要件については、<span class="phrase"><a class="link" href="epub30-ocf.html#font-obfuscation">Font Obfuscation</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr>OCF3</abbr>]</a></span> を参照されたい。</p>
+<p>Reading System のフォント難読化の要件については、<span class="phrase"><a class="link" href="epub30-ocf.xhtml#font-obfuscation">フォント難読化</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr>OCF3</abbr>]</a></span> を参照されたい。</p>
 </div>
 </div>
 
@@ -2066,7 +2068,7 @@ User が要求したとき、Reading System は、リンクの提供の有効化
 
 <div class="note" title="note">
 <h3 class="title">note</h3>
-<p>合成音声に関連する EPUB 3 の機能の詳細な情報は、<span class="phrase"><a class="link" href="epub30-overview.html#sec-tts">Text-to-speech</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
+<p>合成音声に関連する EPUB 3 の機能の詳細な情報は、<span class="phrase"><a class="link" href="epub30-overview.xhtml#sec-tts">テキスト読み上げ</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
 </div>
 </div>
 
@@ -2312,7 +2314,7 @@ Reading System 開発者は、本仕様書から独立してこの機能のバ�
 </div>
 </div>
 </div>
-<p class="informative">この付録は参考ある</p>
+<p class="informative">この付録は参考である</p>
 
 <p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
 
@@ -2584,7 +2586,7 @@ Reading System 開発者は、本仕様書から独立してこの機能のバ�
 </div>
 
 <div class="biblioentry" title="EPUB Content Documents 3.0" id="refContentDocs3">
-<p>[<abbr>ContentDocs30</abbr>] <span class="title"><em> <a class="link" href="epub30-contentdocs.html">EPUB Content Documents 3.0</a> </em>. </span></p>
+<p>[<abbr>ContentDocs30</abbr>] <span class="title"><em> <a class="link" href="epub30-contentdocs.xhtml">EPUB Content Documents 3.0</a> </em>. </span></p>
 </div>
 
 <div class="biblioentry" title="HTML5: A vocabulary and associated APIs for HTML and XHTML" id="refHTML5">
@@ -2600,7 +2602,7 @@ Reading System 開発者は、本仕様書から独立してこの機能のバ�
 </div>
 
 <div class="biblioentry" title="EPUB Media Overlays 3.0" id="refOverlays3">
-<p>[<abbr>MediaOverlays30</abbr>] <span class="title"><em> <a class="link" href="epub30-mediaoverlays.html">EPUB Media Overlays 3.0</a> </em>. </span></p>
+<p>[<abbr>MediaOverlays30</abbr>] <span class="title"><em> <a class="link" href="epub30-mediaoverlays.xhtml">EPUB Media Overlays 3.0</a> </em>. </span></p>
 </div>
 
 <div class="biblioentry" title="Media Queries" id="refMediaQueries">
@@ -2612,7 +2614,7 @@ Reading System 開発者は、本仕様書から独立してこの機能のバ�
 </div>
 
 <div class="biblioentry" title="Open Container Format 3.0" id="refOCF30">
-<p>[<abbr>OCF3</abbr>] <span class="title"><em> <a class="link" href="epub30-ocf.html">Open Container Format 3.0</a> </em>. </span></p>
+<p>[<abbr>OCF3</abbr>] <span class="title"><em> <a class="link" href="epub30-ocf.xhtml">Open Container Format 3.0</a> </em>. </span></p>
 </div>
 
 <div class="biblioentry" title="Open Packaging Format 2.0.1" id="refOPF2">
@@ -2664,7 +2666,7 @@ Reading System 開発者は、本仕様書から独立してこの機能のバ�
 </div>
 
 <div class="biblioentry" title="EPUB 3 Structural Semantics Vocabulary" id="refEPUBStructureVocab">
-<p>[<abbr>StructureVocab</abbr>] <span class="title"><em> <a class="link" href="http://www.idpf.org/epub/vocab/structure/#">EPUB 3 Structural Semantics Vocabulary</a> </em>. </span></p>
+<p>[<abbr>StructureVocab</abbr>] <span class="title"><em> <a class="link" href="epub30-structuralsemanticsvocabulary.xhtml">EPUB 3 Structural Semantics Vocabulary</a> </em>. </span></p>
 </div>
 
 <div class="biblioentry" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)" id="refUnicode5">
@@ -2699,11 +2701,11 @@ Reading System 開発者は、本仕様書から独立してこの機能のバ�
 <div class="bibliodiv" title="Informative References">
 <h3 class="title">参考文献</h3>
 <div class="biblioentry" title="EPUB 3 Differences from EPUB 2.0.1" id="refEPUB3Changes">
-<p>[<abbr>EPUB3Changes</abbr>] <span class="title"><em> <a class="link" href="epub30-changes.html">EPUB 3 Differences from EPUB 2.0.1</a> </em>. </span><span class="author">William McCoy, et al. </span></p>
+<p>[<abbr>EPUB3Changes</abbr>] <span class="title"><em> <a class="link" href="epub30-changes.xhtml">EPUB 3 Differences from EPUB 2.0.1</a> </em>. </span><span class="author">William McCoy, et al. </span></p>
 </div>
 
 <div class="biblioentry" title="EPUB 3 Overview" id="refEPUB3Overview">
-<p>[<abbr>EPUB3Overview</abbr>] <span class="title"><em> <a class="link" href="epub30-overview.html">EPUB 3 Overview</a> </em>. </span><span class="author">Garth Conboy, et al. </span></p>
+<p>[<abbr>EPUB3Overview</abbr>] <span class="title"><em> <a class="link" href="epub30-overview.xhtml">EPUB 3 Overview</a> </em>. </span><span class="author">Garth Conboy, et al. </span></p>
 </div>
 
 <div class="biblioentry" title="Role Attribute" id="refPFRoleAttribute">

@@ -31,7 +31,7 @@
 <dt>公開日:</dt>
 <dd>2012-02-25</dd>
 <dt>改訂日:</dt>
-<dd>2013-02-21</dd>
+<dd>2013-04-05</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 <dt>校正者:</dt>
@@ -50,7 +50,7 @@
 <dt>前の版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/30/spec/epub30-publications-20110908.html">http://www.idpf.org/epub/30/spec/epub30-publications-20110908.html</a></dd>
 </dl><p class="diff">前回のドラフトからの変更点の差分は、<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn3218&amp;old=3183&amp;r=3218&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub30-publications.xml">このリンク</a>で入手可能である。</p>
-<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="./epub30-publications-errata/">正誤表</a>を参照されたい。</p>
+<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="http://www.idpf.org/epub/30/spec/epub30-publications-errata/">正誤表（英語）</a>を参照されたい。</p>
 
 <div class="legal"><p class="copyright">Copyright &copy; 2010, 2011 International Digital Publishing Forum<sup>&trade;</sup></p>
 
@@ -145,12 +145,12 @@
 
 <p>本仕様、EPUB Publications 3.0 は、出版レベルのセマンティクスと <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a> の形式を含むEPUB&reg; 3 と、この文書と他の <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> が従っている EPUB Publication をつくるために関連する方法に対する規則の適合必要条件を定める。</p>
 
-<p id="sibling-specs">本仕様は EPUB3 を構成する関連仕様の一つである。 EPUB 3 は XML や Web 標準に基づいたデジタル出版物の交換や配信形式の第 3 版である。この仕様は EPUB3 を構成する以下の他の仕様と共に読み、理解することになっている：</p>
+<p id="sibling-specs">本仕様は EPUB 3 を構成する関連仕様の一つである。 EPUB 3 は XML や Web 標準に基づいたデジタル出版物の交換や配信形式の第 3 版である。この仕様は EPUB 3 を構成する以下の他の仕様と共に読み、理解することになっている：</p>
 
 <div class="itemizedlist" id="epub-specs-listing">
 <ul class="itemizedlist">
 <li class="listitem">
-<p>EPUB 3 Overview <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a> は EPUB の有益な概要と、残りの EPUB 3 document  群のロードマップを提供する。EPUB 3 Overview は最初に読んでおく必要がある。</p>
+<p>EPUB 3 Overview <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a> は EPUB の有益な概要と、残りの EPUB 3 document  群のロードマップを提供する。EPUB 3 Overview は最初に読んでおくべきである（should）。</p>
 </li>
 <li class="listitem">
 <p>EPUB Content Documents 3.0 <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a> は <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のコンテキストで使用するための XHTML、SVG と CSS のプロファイルを定義する。</p>
@@ -172,10 +172,10 @@
 <div class="glosslist">
 <dl>
 <dt class="glossentry" title="EPUB Publication (or Publication)" id="gloss-epub-publication">EPUB Publication (or Publication)</dt>
-<dd><p><span class="phrase">本仕様と<a class="link" href="#sibling-specs">兄弟仕様</a></span>によって定義されているように、一組の相互関係のある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a> から成っていて、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> でパッケージ化されている論理的な文書のエンティティ。</p></dd>
+<dd><p>（<span class="phrase">この仕様とその<a class="link" href="#sibling-specs">兄弟仕様</a></span>によって定義されるように）一組の相互関係のある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a> から成っていて、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> でパッケージ化されている論理的な文書のエンティティ。</p></dd>
 
 <dt class="glossentry" title="Publication Resource" id="gloss-publication-resource-cmt-or-foreign">Publication Resource</dt>
-<dd><p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のロジックと表示に関するコンテンツや命令を含むリソース。このリソースがない場合には、出版物は <a class="glossterm" href="#gloss-author" title="Author">Author</a> の意図したとおりに表示されないことがある。Publication Resource の例としては <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet (or Style Sheet)">EPUB Style Sheet</a>、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
+<dd><p>コンテンツまたは <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> のロジックと表示に関する命令を含んでいるリソース。このリソースがない場合には、出版物は <a class="glossterm" href="#gloss-author" title="Author">Author</a> の意図したとおりに表示されないことがある。Publication Resource の例としては <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet (or Style Sheet)">EPUB Style Sheet</a>、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
 
 <p>Package Document 自身を除いて Publication Resource は <a class="xref" href="#sec-manifest-elem" title="3.4.10 The manifest Element">manifest</a> に記載しなければならず（must）、<a class="xref" href="#sec-resource-locations" title="5.3 Publication Resource Locations">Publication Resource の位置</a>で特に指定がない限り EPUB container ファイルにバンドルしなければならない（must）。</p>
 
@@ -1267,7 +1267,7 @@
 
 <div class="note" title="note">
 <h3 class="title">メモ</h3>
-<p><code>properties</code> 属性の使用については <a class="xref" href="#examples-item-properties" title="4.3.4. Examples">Manifest item properties examples</a> も参照されたい。</p>
+<p><code>properties</code> 属性の使用については <a class="xref" href="#examples-item-properties" title="4.3.4. Examples">Manifest item properties の例</a>も参照されたい。</p>
 </div>
 </div>
 
@@ -1294,7 +1294,7 @@
 </dd>
 <dt class="varlistentry" id="attrdef-spine-toc"><span class="term"><code class="literal">toc</code> <code class="option">[省略可（optional）]</code></span></dt>
 <dd><p><code>NCX</code> の置き換えを表す manifest の <code><a class="codelink" href="#elemdef-package-item">item</a></code> を識別することを意味する IDREF <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a></p>
-<p>詳細については <a class="xref" href="#ncx-superseded" title="3.4.12. NCX Superseded">NCX Superseded</a> を参照されたい。</p>
+<p>詳細については <a class="xref" href="#ncx-superseded" title="3.4.12. NCX Superseded">NCX の廃止</a> を参照されたい。</p>
 </dd>
 <dt class="varlistentry" id="attrdef-spine-page-progression-direction"><span class="term"><code class="literal">page-progression-direction</code> <code class="option">[省略可（optional）]</code></span></dt>
 <dd>
@@ -1320,9 +1320,9 @@
 </div>
 
 <!-- 3.4.12. NCX Superseded -->
-<p class="bridgehead" title="3.4.12. NCX Superseded" id="ncx-superseded">NCX Superseded</p>
+<p class="bridgehead" title="3.4.12. NCX Superseded" id="ncx-superseded">NCX の廃止</p>
 
-<p><a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr>OPF2</abbr>]</a> で定義されている NCX の機能は、<span class="phrase"><a class="link" href="epub30-contentdocs.xhtml#sec-xhtml-nav">EPUB Navigation Document</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a></span> に取って代わられている。EPUB 3Publication は EPUB2 Reading System の上位互換性のために NCX を（OPF2.0.1 で定義されている）を含めてもよいが（may）、EPUB 3 Reading System は EPUB Navigation Document を支持して NCX を無視しなければならない（must）。</p>
+<p><a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr>OPF2</abbr>]</a> で定義されている NCX の機能は、<span class="phrase"><a class="link" href="epub30-contentdocs.xhtml#sec-xhtml-nav">EPUB Navigation Document</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a></span> に取って代わられている。EPUB 3 Publication は EPUB2 Reading System の上位互換性のために NCX を（OPF2.0.1 で定義されている）を含めてもよいが（may）、EPUB 3 Reading System は EPUB Navigation Document を支持して NCX を無視しなければならない（must）。</p>
 
 <div class="note" title="note" id="note-ncx">
 <h3 class="title">メモ</h3>
@@ -1337,7 +1337,7 @@ EPUB 2 NCX と EPUB 3 Navigation Document は Package Document （それぞれ�
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-itemref-elem">&gt;</a>&nbsp;</span>3.4.13 <code>itemref</code> 要素</h4>
 
 <p>
-<code>spine</code> の子要素の <code>itemref</code> 要素は <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> の順次リストを表している。（<a class="link" href="#confreq-spine-itemtypes">typically</a> <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>）<code>itemref</code> 要素の順序は、出版物のデフォルトの読み上げ順序を定義する。</p>
+<code>spine</code> の子要素の <code>itemref</code> 要素は <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> の順次リストを表している。（<a class="link" href="#confreq-spine-itemtypes">典型的な</a> <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>）<code>itemref</code> 要素の順序は、出版物のデフォルトの読み上げ順序を定義する。</p>
 
 <div class="elem-synopsis" id="elemdef-spine-itemref">
 <dl>
@@ -1646,9 +1646,9 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z
 <p class="informative">このセクションは参考情報である。</p>
 
 <p>
-<code>property</code>、<code>properties</code>、<code>rel</code> と <code>scheme</code> 属性はメタデータ語彙の用語を表すために <a class="link" href="#sec-property-datatype" title="4.2.5 The property Data Type">property のデータ型</a> を使用する。CURIE <a class="biblioref" href="#refRDFa" title="RDFa in XHTML: Syntax and Processing">[<abbr>RDFa10</abbr>]</a> と同様に property のデータ型はコンパクトなフォームで IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr>RFC3987</abbr>]</a> を表し、標準化された語彙のメタデータ作成を簡略化する。</p>
+<code>property</code>、<code>properties</code>、<code>rel</code> と <code>scheme</code> 属性はメタデータ語彙の用語を表すために <a class="link" href="#sec-property-datatype" title="4.2.5 The property Data Type">property のデータ型</a>を使用する。CURIE <a class="biblioref" href="#refRDFa" title="RDFa in XHTML: Syntax and Processing">[<abbr>RDFa10</abbr>]</a> と同様に property のデータ型はコンパクトなフォームで IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr>RFC3987</abbr>]</a> を表し、標準化された語彙のメタデータ作成を簡略化する。</p>
 
-<p>プロパティ値は接頭辞と参照の組み合わせにより表現される。接頭辞とは、（リテラルまたは暗黙的かを問わず）一般的にある用語の語彙に解決される IRI の簡略マッピングである。接頭辞をその IRI 表現に変換し参照と組み合わせると、結果として IRI は通常、用語についての人間及び/または機械可読な情報を含んでいる語彙内のフラグメントに解決される。</p>
+<p>プロパティ値は接頭辞と参照の組み合わせにより表現される。接頭辞とは、（リテラルまたは暗黙的かを問わず）一般的にある用語の語彙に解決される IRI の簡略マッピングである。接頭辞をその IRI 表現に変換し参照と組み合わせると、結果として IRI は通常、用語についての人間および/または機械可読な情報を含んでいる語彙内のフラグメントに解決される。</p>
 
 <p>プロパティ値の処理に Reading System を支援するために接頭辞をマップするための IRI を確立する手段が必須であり、この仕様は、次の3つのメカニズムを定義しています：</p>
 
@@ -2525,80 +2525,88 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z
 <p>次の表は <a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">EPUB 3 Core Media Types</a> を示している。<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> が  Core Media Type の仕様に準拠している時、それが <a class="glossterm" href="#gloss-publication-resource-cmt" title="Core Media Type Resource">Core Media Type Resource</a> であるとフォールバック（詳細については、<a class="xref" href="#sec-fallback-processing-flow" title="5.2 Restrictions and Fallbacks">制限とフォールバック</a>を参照）することなく出版物に含めることができる。</p>
 <p>表の列には、以下の情報を表している：</p>
 
-<div class="variablelist" id="tbl-cmt-expl"><dl><dt class="varlistentry"><span class="term">Media Type</span></dt>
-<dd><p>
-MIME media type <a class="biblioref" href="#refRFC2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types (RFC 2046)">[<abbr>RFC2046</abbr>]</a> は <a class="xref" href="#sec-manifest-elem" title="3.4.10 The manifest Element">manifest</a> で指定された Publication Resource を表すために使用される。</p>
+<div class="variablelist" id="tbl-cmt-expl">
+<dl>
+<dt class="varlistentry"><span class="term">メディアタイプ</span></dt>
+<dd><p>MIME media type <a class="biblioref" href="#refRFC2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types (RFC 2046)">[<abbr>RFC2046</abbr>]</a> は <a class="xref" href="#sec-manifest-elem" title="3.4.10 The manifest Element">manifest</a> で指定された Publication Resource を表すために使用される。</p>
 </dd>
-<dt class="varlistentry"><span class="term">Content Type Definition</span></dt>
+<dt class="varlistentry"><span class="term">コンテンツタイプの定義</span></dt>
 <dd><p>仕様は特定の <a class="glossterm" href="#gloss-publication-resource-cmt" title="Core Media Type Resource">Core Media Type Resource</a> に準拠しなければならない（must）。</p>
 </dd>
-<dt class="varlistentry"><span class="term">Applies to</span></dt>
-<dd><p>Media Type と Content Type Definition に適合する  Publication Resource type 。</p>
+<dt class="varlistentry"><span class="term">適用</span></dt>
+<dd><p>メディアタイプとコンテンツタイプの定義に適合する Publication Resource のタイプ。</p>
 </dd>
-</dl></div>
+</dl>
+</div>
 <table id="tbl-core-media-types">
 <caption>EPUB Core Media Types</caption>
 <thead>
 <tr>
-<th id="tbl-cmt-string">Media Type</th>
-<th id="tbl-cmt-def">Content Type Definition</th>
-<th id="tbl-cmt-appl">Applies to</th> </tr>
+<th id="tbl-cmt-string">メディアタイプ</th>
+<th id="tbl-cmt-def">コンテンツタイプの定義</th>
+<th id="tbl-cmt-appl">適用</th>
+</tr>
 </thead>
 <tbody>
-<tr id="cmt-grp-image"> <th colspan="3"> Image Types </th>
+<tr id="cmt-grp-image"> <th colspan="3">画像タイプ</th>
 </tr>
 <tr id="cmt-gif"> <td> <code class="literal">image/gif</code> </td>
  <td> <a class="biblioref" href="#refGIF" title="GRAPHICS INTERCHANGE FORMAT(sm) Version 89a">[<abbr>GIF</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">GIF Images</td>
+ <td headers="tbl-cmt-appl">GIF 画像</td>
  </tr>
 <tr id="cmt-jpeg"> <td> <code>image/jpeg</code> </td>
  <td> <a class="biblioref" href="#refJPEG" title="JPEG Standard (JPEG ISO/IEC 10918-1 ITU-T Recommendation T.81)">[<abbr>JPEG</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">JPEG Images</td>
+ <td headers="tbl-cmt-appl">JPEG 画像</td>
  </tr>
 <tr id="cmt-png"> <td> <code>image/png</code> </td>
  <td> <a class="biblioref" href="#refPNG" title="Portable Network Graphics (PNG) Specification (Second Edition)">[<abbr>PNG</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">PNG Images</td>
+ <td headers="tbl-cmt-appl">PNG 画像</td>
  </tr>
-<tr id="cmt-svg11"> <td> <code>image/svg+xml</code> </td>
+<tr id="cmt-svg11">
+<td> <code>image/svg+xml</code></td>
  <td> <span class="phrase"><a class="link" href="epub30-contentdocs.xhtml#sec-svg">SVG Content Documents</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a></span> </td>
- <td headers="tbl-cmt-appl">SVG documents</td>
+ <td headers="tbl-cmt-appl">SVG 文書</td>
  </tr>
-<tr id="cmt-grp-content-documents"> <th colspan="3"> Application Types </th> </tr>
+<tr id="cmt-grp-content-documents">
+<th colspan="3">アプリケーションタイプ</th>
+</tr>
 <tr id="cmt-xhtml"> <td> <code>application/xhtml+xml</code> </td>
  <td> <span class="phrase"><a class="link" href="epub30-contentdocs.xhtml#sec-xhtml">XHTML Content Documents</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a></span> </td>
- <td headers="tbl-cmt-appl"><a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a>s and the <a class="glossterm" href="#gloss-content-document-epub-nav" title="EPUB Navigation Document">EPUB Navigation Document</a>. </td>
+ <td headers="tbl-cmt-appl"><a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a> と <a class="glossterm" href="#gloss-content-document-epub-nav" title="EPUB Navigation Document">EPUB Navigation Document</a></td>
  </tr>
 <tr id="cmt-ncx"> <td> <code>application/x-dtbncx+xml</code> </td>
  <td> <a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr>OPF2</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">The <a class="link" href="#note-ncx" title="note">superseded</a> NCX </td>
+ <td headers="tbl-cmt-appl"><a class="link" href="#note-ncx" title="note">廃止の</a> NCX </td>
  </tr>
 <tr id="cmt-opentype"> <td> <code>application/vnd.ms-opentype</code> </td>
  <td> <a class="biblioref" href="#refOpenType" title="ISO/IEC 14496-22:2009 - Information technology -- Coding of audio-visual objects -- Part 22: Open Font Format">[<abbr>OpenType</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">OpenType fonts</td>
+ <td headers="tbl-cmt-appl">OpenType フォント</td>
  </tr>
 <tr id="cmt-woff"> <td> <code>application/font-woff</code> </td>
  <td> <a class="biblioref" href="#refWOFF" title="WOFF File Format 1.0">[<abbr>WOFF</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">WOFF fonts</td>
+ <td headers="tbl-cmt-appl">WOFF フォント</td>
  </tr>
 <tr id="cmt-smil"> <td> <code>application/smil+xml</code> </td>
  <td> <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.0">[<abbr>MediaOverlays30</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">EPUB Media Overlay documents</td>
+ <td headers="tbl-cmt-appl">EPUB Media Overlay Document</td>
  </tr>
 <tr id="cmt-pls"> <td> <code>application/pls+xml</code> </td>
  <td> <a class="biblioref" href="#refPLS" title="Pronunciation Lexicon Specification 1.0 (PLS)">[<abbr>PLS</abbr>]</a> </td>
- <td headers="tbl-cmt-appl"><a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">Text-to-Speech (TTS)</a> Pronunciation lexicons</td>
+ <td headers="tbl-cmt-appl"><a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">Text-to-Speech (TTS)</a> 発音語彙</td>
  </tr>
-<tr id="cmt-grp-audio"> <th colspan="3"> Audio Types </th> </tr>
+<tr id="cmt-grp-audio"> <th colspan="3">オーディオタイプ</th> </tr>
 <tr id="cmt-mp3"> <td> <code>audio/mpeg</code></td>
  <td> <a class="biblioref" href="#refMP3" title="ISO/IEC 11172-3:1993 - Information technology -- Coding of moving pictures and associated audio for digital storage media at up to about 1,5 Mbit/s -- Part 3: Audio">[<abbr>MP3</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">MP3 audio</td>
+ <td headers="tbl-cmt-appl">MP3 オーディオ</td>
  </tr>
 <tr id="cmt-mp4-aac"> <td> <code>audio/mp4</code> </td>
  <td> <a class="biblioref" href="#refAAC" title="ISO/IEC 14496-3:2009 - Information technology -- Coding of audio-visual objects -- Part 3: Audio">[<abbr>AAC LC</abbr>]</a>, <a class="biblioref" href="#refMP4" title="Information technology -- Coding of audio-visual objects -- Part 14: MP4 file format">[<abbr>MP4</abbr>]</a> </td>
- <td headers="tbl-cmt-appl">AAC LC audio using MP4 container</td>
+ <td headers="tbl-cmt-appl">MP4 コンテナを使用している AAC LC オーディオ</td>
  </tr>
-<tr id="cmt-grp-text"> <th colspan="3"> Text Types </th> </tr>
-<tr id="cmt-css"> <td> <code>text/css</code> </td>
+<tr id="cmt-grp-text"> <th colspan="3">テキストタイプ</th>
+</tr>
+<tr id="cmt-css">
+<td><code>text/css</code></td>
  <td> <span class="phrase"><a class="link" href="epub30-contentdocs.xhtml#sec-css">EPUB Style Sheets</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a></span> </td>
  <td headers="tbl-cmt-appl"><a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet (or Style Sheet)">EPUB Style Sheet</a>s. </td>
  </tr>
@@ -2611,7 +2619,7 @@ MIME media type <a class="biblioref" href="#refRFC2046" title="Multipurpose Inte
 
 <div class="note" title="note">
 <h3 class="title">メモ</h3>
-<p>この仕様は Core Media Type などのビデオコーデックを定義しない。EPUB Publications のビデオコーデックのサポートに関する参考推奨事項については、上記の <a class="link" href="#note-video-codecs" title="note">EPUB Publication のメモ - Reading System の適合性</a>を参照されたい。</p>
+<p>この仕様は Core Media Type などのビデオコーデックを定義しない。EPUB Publication のビデオコーデックのサポートに関する参考推奨事項については、上記の <a class="link" href="#note-video-codecs" title="note">EPUB Publication のメモ - Reading System の適合性</a>を参照されたい。</p>
 </div>
 </div>
 
@@ -2682,7 +2690,7 @@ MIME media type <a class="biblioref" href="#refRFC2046" title="Multipurpose Inte
 
 <div class="note" title="note">
 <h3 class="title">メモ</h3>
-<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> でリモートリソースの取り込みは <a class="glossterm" href="#gloss-manifest" title="Manifest">manifest</a> の <code><a class="codelink" href="#sec-item-elem" title="3.4.11 The item Element">item</a></code> 要素の <code class="literal"><a class="codelink" href="#remote-resources">remote-resources</a></code> プロパティを介して指示される。</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication (or Publication)">EPUB Publication</a> でリモートリソースの取り込みは <a class="glossterm" href="#gloss-manifest" title="Manifest">manifest</a> <code><a class="codelink" href="#sec-item-elem" title="3.4.11 The item Element">item</a></code> 要素の <code class="literal"><a class="codelink" href="#remote-resources">remote-resources</a></code> プロパティを介して指示される。</p>
 </div>
 </div>
 <!-- 5.4 XML Conformance -->
@@ -2690,7 +2698,7 @@ MIME media type <a class="biblioref" href="#refRFC2046" title="Multipurpose Inte
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-xml-constraints">&gt;</a>&nbsp;</span>5.4 XML 適合性</h3>
 <p>XML ベースのメディアタイプであるいかなる <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> も、以下の制約を満たしていなければならない（must）：</p>
 
-<div class="conformance-list"><ul class="conformance-list"><li class="listitem"><p id="confreq-xml-wellformed"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-xml-wellformed">&gt;</a>&nbsp;</span>それは<a class="link" href="http://www.w3.org/TR/REC-xml-names/#Conformance">Conformance of Documents</a> <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr>XMLNS</abbr>]</a> で定義されている XML1.0 に準拠した文書でなければならない（must）。</p>
+<div class="conformance-list"><ul class="conformance-list"><li class="listitem"><p id="confreq-xml-wellformed"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-xml-wellformed">&gt;</a>&nbsp;</span>それは <a class="link" href="http://www.w3.org/TR/REC-xml-names/#Conformance">Conformance of Documents</a> <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr>XMLNS</abbr>]</a> で定義されている XML1.0 に準拠した文書でなければならない（must）。</p>
 </li>
 <li class="listitem"><p id="confreq-xml-extmarkupdecl"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-xml-extmarkupdecl">&gt;</a>&nbsp;</span><a class="link" href="http://www.w3.org/TR/2008/PER-xml-20080205/#NT-ExternalID">External identifiers</a> は文書型宣言 <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> に現れてはならない（must not）。</p>
 </li>
@@ -2824,7 +2832,7 @@ MIME media type <a class="biblioref" href="#refRFC2046" title="Multipurpose Inte
 </div>
 </div>
 
-<p class="informative">この付録は参考ある</p>
+<p class="informative">この付録は参考である</p>
 
 <p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
 
