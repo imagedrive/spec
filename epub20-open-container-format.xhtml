@@ -12,7 +12,7 @@
 <meta name="created" content="2010-04-24 00:49:07 +0900"/>
 <meta name="source-url" content="http://www.idpf.org/ocf/ocf1.0/download/ocf10.htm"/>
 <meta name="updated" content="2010-04-28 21:14:41 +0900"/>
-<title>Open Container Format (OCF) 2.0.1 v1.0.1 1.0 日本語版</title>
+<title>Open Container Format (OCF) 2.0.1 v1.0.1 1.0（日本語訳版）</title>
 <link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
 <link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
 </head>
@@ -22,7 +22,7 @@
 
 <p>この文書は「<a href="http://idpf.org/epub/20/spec/OCF_2.0.1_draft.doc">Open Container Format (OCF) 2.0.1 v1.0.1</a>」を日本語訳したものです。最新の文書は <a href="http://idpf.org/epub/20/spec/OCF_2.0.1_draft.doc">Open Container Format (OCF) 2.0.1 v1.0.1</a> です。原文もしくは最新の情報を参照したい場合は、<a href="http://idpf.org/epub/20/spec/OCF_2.0.1_draft.doc">Open Container Format (OCF) 2.0.1 v1.0.1</a> を参照ください。</p>
 
-<p>日本語訳は、佐藤直樹様が <a href="http://naoki.sato.name/">http://naoki.sato.name/</a> で公開している <a href="http://naoki.sato.name/ocf/ocf_1_0_spec_ja.html">OEBPS Container Format (OCF) 1.0</a> をベースにしました。<br/>
+<p>この日本語訳は、佐藤直樹様が <a href="http://naoki.sato.name/">http://naoki.sato.name/</a> で公開している <a href="http://naoki.sato.name/ocf/ocf_1_0_spec_ja.html">OEBPS Container Format (OCF) 1.0</a> をベースにしました。<br/>
 ですので、この翻訳に関する間違いなどの質問は、翻訳者へお願いします。</p>
 
 <p>この日本語訳は参考です。公式な文書ではありません。翻訳・解釈の正確性を保証しておりません。</p>
@@ -411,8 +411,7 @@ OEBPS/
 
 <p>抽象コンテナ:</p>
 
-<pre class="synopsis">
-META-INF/
+<pre class="synopsis">META-INF/
      container.xml -<i> 注: 複数の &lt;rootfile&gt; 要素を持つ</i>
      [manifest.xml]
      [metadata.xml]
@@ -432,8 +431,7 @@ PDF/
 
 <p>このときの META-INF/container.xml の内容は次のようになる。</p>
 
-<pre class="synopsis">
-&lt;?xml version="1.0"?&gt;
+<pre class="synopsis">&lt;?xml version="1.0"?&gt;
 &lt;container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;
      &lt;rootfiles&gt;
           &lt;rootfile full-path="OEBPS/Great Expectations.opf"
@@ -530,13 +528,9 @@ PDF/
 <div class="section" title="3.4 Container media type identification" id="sec-container-media-type-identification">
 <h3 class="title">3.4 コンテナメディアタイプの判別</h3>
 
-<p>
-アプリケーションは、ファイルのメディアタイプを決定することがしばしば必要である。
-これは通常、ファイルの拡張子を調べることで達成される。
-これは、ファイルの中身を調べることなく、ファイルの種類を決定する簡単な方法をアプリケーションに提供する。
+<p>アプリケーションは、ファイルのメディアタイプを決定することがしばしば必要である。これは通常、ファイルの拡張子を調べることで達成される。これは、ファイルの中身を調べることなく、ファイルの種類を決定する簡単な方法をアプリケーションに提供する。OCF コンテナファイルは、これらが OCF コンテナであることをアプリケーションの処理に識別させるために拡張子 <code>.epub</code> を使用するべきである（should）。</p>
 
-アプリケーションがファイルのメディアタイプを判別する必要がある、というケースは少なくない。通常はファイルの拡張子で判断する。アプリケーションはファイルの内部を調べること無く簡単にファイルの形式を判断できる。OCFコンテナファイルは、アプリケーションがOCFコンテナであることを判断できるように、拡張子".epub"を<b>使用するべきである（should）</b>。
-</p>
+<p>ここまで作業</p>
 
 <p>ファイルの拡張子からメディアタイプを判別するために、一般的にそのファイルを処理するエージェントはオペレーティングシステムにファイル拡張子とメディアタイプとの関係を登録する。OCFコンテナファイルを対象とするアプリケーションは、メディアタイプ"application/epub+zip"と、対応する拡張子".epub"を<b>登録すべきである（should）</b>。</p>
 
