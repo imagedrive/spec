@@ -1,0 +1,1510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd" [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY hellip "&#8230;">
+<!ENTITY lsquo "&#8216;">
+<!ENTITY rsquo "&#8217;">
+<!ENTITY ldquo "&#8220;">
+<!ENTITY rdquo "&#8221;">
+<!ENTITY reg "&#174;">
+<!ENTITY larr "&#8592;">
+<!ENTITY le "&#8804;">
+<!ENTITY ge "&#8805;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<title>CSS Device Adaptation（日本語訳版）</title>
+<link href="http://www.w3.org/TR/css-device-adapt/default.css" rel="stylesheet" type="text/css"/>
+<link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css"/>
+<style>
+.attention {
+margin:2em 0;
+padding:0.5em 1.5em;
+border:1px solid #b35454;
+color:#800;
+background-color:#fce9e9;
+font-size:80%; }
+
+.attention dl {
+line-height:1.5;}
+
+.attention dt {
+width:4em;
+float:left;
+clear:left;
+font-weight:normal; }
+
+.attention dd {
+display:block;}
+
+
+.note {
+margin:1em 0;
+padding:0.5em 1.5em;
+border:1px solid #b35454;
+color:#800;
+background-color:#fce9e9;
+font-size:80%; }
+
+span.note {
+margin:0;
+padding:0.2em; }
+
+/* 上書き */
+p + p, p + div.sidefigure + p {
+text-indent: 0em;
+margin-bottom:1em;
+line-height:1.4;
+}
+p, p.testlink + p, p.mtb
+{
+margin-bottom:1em;
+line-height:1.4;
+}
+dd > p
+{
+margin-bottom:0;
+}
+</style>
+</head>
+<body class="draft">
+
+<div class="attention">
+
+<p>この文書は <a href="http://www.w3.org/TR/css-device-adapt/">CSS Device Adaptation (W3C Working Draft 15 September 2011)</a> を日本語訳したものです。最新の文書は <a href="http://www.w3.org/TR/css-device-adapt/">http://www.w3.org/TR/css-device-adapt/</a> です。原文もしくは最新の情報を参照したい場合は、<a href="http://www.w3.org/TR/css-device-adapt/">CSS Device Adaptation</a> を参照ください。</p>
+
+<p>この日本語訳は参考です。公式な文書ではありません。翻訳・解釈の正確性を保証しておりません。</p>
+
+<p>なお、いくつかの訳語は、ミツエーリンクスサイトの<a href="http://standards.mitsue.co.jp/resources/w3c/">Web標準仕様 日本語訳</a>の<a href="http://standards.mitsue.co.jp/resources/w3c/TR/css3-mediaqueries/">メディアクエリー</a>を参考にしました。</p>
+
+<dl>
+
+<dt>公開日:</dt>
+<dd>2013-05-27</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+
+</dl>
+
+</div>
+
+<div class="head"> <!--begin-logo-->
+<p><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/Icons/w3c_home" width="72"/></a> <!--end-logo--></p>
+
+<h1>CSS Device Adaptation</h1>
+
+<h2 class="no-num no-toc" id="longstatus-date">2011年9月15日付 W3C 草案(Working Draft)</h2>
+
+<dl>
+<dt>この版:</dt>
+<dd><a href="http://www.w3.org/TR/2011/WD-css-device-adapt-20110915/">http://www.w3.org/TR/2011/WD-css-device-adapt-20110915/</a></dd>
+<dt>最新版:</dt>
+<dd><a href="http://www.w3.org/TR/css-device-adapt/">http://www.w3.org/TR/css-device-adapt/</a></dd>
+<dt>前の版:</dt>
+<dd>None</dd>
+<dt>Editor:</dt>
+<dd><a href="mailto:rune@opera.com">Rune Lillesveen</a> (<a href="http://www.opera.com/">Opera Software</a>)</dd>
+</dl>
+<!--begin-copyright-->
+<p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright" rel="license">Copyright</a> &copy; 2011 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>&reg;</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. W3C <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p>
+<!--end-copyright-->
+<hr title="Separator for header"/>
+</div>
+<h2 class="no-num no-toc" id="abstract">概要</h2>
+
+<p>この仕様は初期包含ブロック（initial containing block）に基いて使用されるビューポートのサイズや拡大率、向きを CSS で指定する製作者ための方法を提供する。</p>
+
+<h2 class="no-num no-toc" id="status-of-this-document">この文書のステータス</h2>
+<!--begin-status-->
+
+<p><em>このセクションは、この文書の公開時におけるステータスについて説明する。他の文書がこの文書を上書きする可能性に注意されたい。この技術文書や W3C から公開された他の文書の最新版は <a href="http://www.w3.org/TR/">W3C 技術文書インデックス</a> (http://www.w3.org/TR/) より探すことができる。</em></p>
+
+<p>草案としての公開は、W3C Member による支持を意味するものではない。この文書は草案段階にあり、更新、置き換え、もしくは廃止される可能性もある。策定中であることを記さずに、この文書を参照することは適当ではない。</p>
+
+<p>この文書に関する議論は、公開メーリングリスト <a href="mailto:www-style@w3.org">www-style@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/www-style/">アーカイブ</a>, <a href="http://www.w3.org/Mail/Request">参加の手引き</a>) 上で行うことが望ましい。メールを送信する際には、&#8220;css-device-adapt&#8221; を件名に含めていただきたい。たとえば &#8220;[<!---->css-device-adapt<!---->] <em>&hellip;コメントの要約&hellip;</em>&#8221; といった形が望ましいだろう。</p>
+
+<p>この文書は <a href="http://www.w3.org/Style/">Style Activity</a> の <a href="http://www.w3.org/Style/CSS/members">CSS Working Group</a> によって作成された。</p>
+
+<p>この文書は  <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a> の下で活動するグループにより作成された。W3C は <a href="http://www.w3.org/2004/01/pp-impl/32061/status" rel="disclosure">特許情報の開示に関する公開リスト</a> を関連する団体と共に、その成果物とあわせて管理している。リストには情報開示に関する説明もあるため、あわせて参照されたい。特許について十分に知識のある人物が、当該仕様に <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> が認められると判断した場合は、<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">W3C 特許方針の第 6 章</a> に従い情報を開示する必要がある。</p>
+<!--end-status-->
+
+<p>この文書は、CSS Device Adaptation Module の 草案の初版である。</p>
+
+<h2 class="no-num no-toc" id="table-of-contents">目次</h2>
+<!--begin-toc-->
+
+<ul class="toc">
+<li><a href="#introduction"><span class="secno">1. </span>はじめに</a></li>
+<li><a href="#values"><span class="secno">2. </span>値</a></li>
+<li><a href="#the-viewport"><span class="secno">3. </span>ビューポート</a></li>
+<li><a href="#the-viewport-rule"><span class="secno">4. </span><code class="css">@viewport</code> 規則</a>
+<ul class="toc">
+<li><a href="#syntax"><span class="secno">4.1. </span>構文</a></li>
+</ul>
+</li>
+<li><a href="#viewport-properties"><span class="secno">5. </span>ビューポートプロパティ</a>
+<ul class="toc">
+<li><a href="#the-lsquomin-widthrsquo-and-lsquomax-wid"><span class="secno">5.1. </span>&lsquo;<code class="property">min-width</code>&rsquo; と &lsquo;<code class="property">max-width</code>&rsquo; プロパティ</a></li>
+<li><a href="#the-lsquowidthrsquo-shorthand-property"><span class="secno">5.2. </span>&lsquo;<code class="property">width</code>&rsquo; ショートハンドプロパティ</a></li>
+<li><a href="#the-lsquomin-heightrsquo-and-lsquomax-he"><span class="secno">5.3. </span>&lsquo;<code class="property">min-height</code>&rsquo; と &lsquo;<code class="property">max-height</code>&rsquo; プロパティ</a></li>
+<li><a href="#the-lsquoheightrsquo-shorthand-property"><span class="secno">5.4. </span>&lsquo;<code class="property">height</code>&rsquo; ショートハンドプロパティ</a></li>
+<li><a href="#the-lsquozoomrsquo-property"><span class="secno">5.5. </span>&lsquo;<code class="property" title="zoom!!property">zoom</code>&rsquo; プロパティ</a></li>
+<li><a href="#the-lsquomin-zoomrsquo-property"><span class="secno">5.6. </span>&lsquo;<code class="property">min-zoom</code>&rsquo; プロパティ</a></li>
+<li><a href="#the-lsquomax-zoomrsquo-property"><span class="secno">5.7. </span>&lsquo;<code class="property">max-zoom</code>&rsquo; プロパティ</a></li>
+<li><a href="#the-lsquouser-zoomrsquo-property"><span class="secno">5.8. </span>&lsquo;<code class="property">user-zoom</code>&rsquo; プロパティ</a></li>
+<li><a href="#the-lsquoorientationrsquo-property"><span class="secno">5.9. </span>&lsquo;<code class="property">orientation</code>&rsquo; プロパティ</a></li>
+<li><a href="#the-lsquoresolutionrsquo-property"><span class="secno">5.10. </span>&lsquo;<code class="property">resolution</code>&rsquo; プロパティ</a></li>
+</ul>
+</li>
+<li><a href="#constraining-viewport-property-values"><span class="secno">6. </span>ビューポートプロパティ値の制約</a>
+<ul class="toc">
+<li><a href="#definitions"><span class="secno">6.1. </span>定義</a></li>
+<li><a href="#constraining-procedure"><span class="secno">6.2. </span>手順</a></li>
+</ul>
+</li>
+<li><a href="#media-queries"><span class="secno">7. </span>メディアクエリー</a></li>
+<li><a href="#cssom"><span class="secno">8. </span>CSSOM</a></li>
+<li><a href="#conformance"><span class="secno">9. </span>適合性</a></li>
+<li><a href="#viewport-meta-element"><span class="secno">10. </span>ビューポート <code class="html">META</code> 要素</a>
+<ul class="toc">
+<li><a href="#ua-stylesheet"><span class="secno">10.1. </span>UA スタイルシート</a></li>
+<li><a href="#meta-properties"><span class="secno">10.2. </span>プロパティ</a></li>
+<li><a href="#parsing-algorithm"><span class="secno">10.3. </span>解析アルゴリズム</a></li>
+<li><a href="#translation-into-viewport-properties"><span class="secno">10.4. </span><code class="css">@viewport</code> プロパティへの変換</a></li>
+</ul>
+</li>
+<li><a href="#handling-auto-zoom"><span class="secno">11. </span>&lsquo;<code class="property" title="zoom!!property">zoom</code>&rsquo;のための&lsquo;<code class="css" title="auto!!zoom">auto</code>&rsquo;の取り扱い</a></li>
+<li class="no-num"><a href="#acknowledgments">謝辞</a></li>
+<li class="no-num"><a href="#references">参照</a>
+<ul class="toc">
+<li class="no-num"><a href="#normative-references">引用文書</a></li>
+<li class="no-num"><a href="#other-references">他の文書</a></li>
+</ul>
+</li>
+<li class="no-num"><a href="#property-index">プロパティ一覧</a></li>
+<li class="no-num"><a href="#index">目次</a></li>
+</ul>
+<!--end-toc-->
+
+<h2 id="introduction"><span class="secno">1. </span>はじめに</h2>
+
+<p><em>このセクションは規範的ではない。</em></p>
+
+<p>CSS 2.1 <a href="#CSS21" rel="biblioentry">[CSS21]<!--{{!CSS21}}--></a> は、<a href="http://www.w3.org/TR/CSS21/visuren.html#viewport">ピューポート</a>のサイズを持つ連続メディアのための<a href="http://www.w3.org/TR/CSS21/visudet.html#containing-block-details">初期包含ブロック</a>を指定する。モバイルやハンドヘルドデバイスのブラウザは、一般的に、CSS 2.1 によって<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">推奨</a>される CSS のピクセルサイズが与える縮尺レベルにおいて、デスクトップブラウザのウィンドウに比べより狭いビューポートを持つ。</p>
+
+<p>狭いビューポートは、デスクトップブラウザで見栄えがするようにデザインされた文書のための課題である。この結果として、モバイルブラウザのベンダーは、ビューポートサイズとは異なって、典型的なデスクトップブラウザのウィンドウのそれに近い固定の初期包含ブロックサイズを使用する。加えて、スクロールやパン、拡大は、読書や対話をするために文書の全体と文書の特定エリアの拡大の変更に頻繁に使用される。</p>
+
+<p>そのような訳で、いくつかの DOCTYPE（例えば、XHTML Mobile Profile の場合）は、初期包含ブロックサイズとしてビューポートサイズを使用し、ハンドヘルドデバイスのために設計されているという前提でモバイル文書と認識して使用される。</p>
+
+<p>さらに、HTML の <code class="html">META</code> タグは、製作者が初期包含ブロックと直接的に初期の拡大率のサイズを指定するために導入された。最初に Safari/iPhone のブラウザのために Apple によって実装され、その後、Opera、Android、Fennec のブラウザに実装された。これらの実装は、完全な相互運用性ではなく、CSS のビューポート <code class="html">META</code> タグによって提供される機能の標準化の試みである。</p>
+
+<h2 id="values"><span class="secno">2. </span>値</h2>
+
+<p>この仕様は、<a href="#CSS3SYN" rel="biblioentry">[CSS3SYN]<!--{{!CSS3SYN}}--></a> の <a href="http://www.w3.org/TR/css3-syntax/#property-defs">CSS プロパティの定義規則</a>に従う。</p>
+
+<p>値型は、<a href="#CSS3VAL" rel="biblioentry">[CSS3VAL]<!--{{!CSS3VAL}}--></a> で定義される。</p>
+
+<h2 id="the-viewport"><span class="secno">3. </span>ビューポート</h2>
+
+<p>この仕様は、ユーザーエージェント（UA）によって提供されるビューポートのサイズを上書きする方法を紹介する。このため、私たちは<a href="#initial-viewport">初期ビューポート</a>と<a href="#actual-viewport">実測ビューポート</a>間の違いを取り入れる必要がある。</p>
+
+<dl>
+<dt><dfn id="initial-viewport">初期ビューポート（initial viewport）</dfn></dt>
+<dd>これは、任意の UA または製作者のスタイルで、UA のウィンドウまたは表示エリアによって与えられたビューポートを上書きする前に参照される。初期ビューポートは、ウィンドウや表示エリアのサイズと共に変更されることに注意されたい。</dd>
+<dt><dfn id="actual-viewport">実測ビューポート（actual viewport）</dfn></dt>
+<dd>これは、カスケードされたビューポートのプロパティの後に得られるビューポートであり、次の<a href="#constraining-procedure">制約手順</a>が適用される。</dd>
+</dl>
+
+<p><a href="#actual-viewport">実測ビューポート</a>が<a href="#initial-viewport">初期ビューポート</a>より大きいか、拡大率が<a href="#actual-viewport">実測ビューポート</a>の部分だけを表示させたり、<a href="#actual-viewport">実測ビューポート</a>がウィンドウまたは表示エリアの内側に収まらないとき、UA はスクロールやパンのメカニズムを提示するべきである（should）。</p>
+
+<p>これは、ドキュメントの基本方向が左から右（ltr）のとき、初期状態では<a href="#actual-viewport">実測ビューポート</a>とウィンドウまたは表示エリアの左上の角に揃っていることが推奨される。同様に、基本方向が右から左（rtl）のとき、右上の角に整列する。ドキュメントの基本方向は、HTML または XHTML ドキュメントの最初の <code class="html">BODY</code> 要素のための <code class="property">direction</code> プロパティの計算された値として定義される。他のドキュメントタイプの場合、root 要素のために計算された <code class="property">direction</code> である。</p>
+
+<p class="issue">"dbaron: これは、デスクトップブラウザ上で何をするものなのか？（そして、デスクトップブラウザは何か）。"最新のモバイルの動作のために参照される <a href="#ua-stylesheet">UA スタイルシート</a>とは対照的に、"デスクトップ"ブラウザは、典型的に UA スタイルを持たないと言う必要があり、@viewport のための UA スタイルシートは、デフォルト（実測ビューポートは初期ビューポート）を通して"デスクトップ"の動作に提供しない。</p>
+
+<h2 id="the-viewport-rule"><span class="secno">4. </span><code class="css">@viewport</code> 規則</h2>
+
+<p><code class="css">@viewport</code> の <a href="http://www.w3.org/TR/CSS21/syndata.html#at-rules">@規則</a>は、ピューポートを記述するプロパティ宣言のブロックに続く @keyword で構成される。</p>
+
+<p><code class="css">@viewport</code> 規則内部のプロパティ宣言は、ドキュメントのプロパティごとで、継承の影響はない。従って、&lsquo;<code class="css">inherit</code>&rsquo;キーワードを使用する宣言は省略される。これらは <code class="css">@page</code> プロパティと同様に働き、CSS のカスケード順に従う。従って、<code class="css">@viewport</code> 規則内のプロパティは、前述の規則からプロパティを上書きする。その結果、宣言は、プロパティのカスケーディングに影響をおよぼす !important を許可する。</p>
+
+<p class="issue">@viewport 規則は、トップレベルドキュメントのみに適用する必要があるか？　そうでなければ、フレーム内の異なる拡大率について言及する必要がある。</p>
+
+<p class="issue">Bert: @viewport と @page の相互作用は何か？</p>
+
+<div class="example">
+<p>この例は、デバイスの幅に合わせてピューポートを設定する。高さは幅から決定されるので、幅を設定するだけで十分であることに注意されたい。</p>
+
+<pre><!--
+  -->@viewport {
+<!--    -->  width: device-width;
+<!--    -->}<!--
+   --></pre>
+</div>
+
+<h3 id="syntax"><span class="secno">4.1. </span>構文</h3>
+
+<p><code class="css">@viewport</code> 規則の構文は、（CSS 2.1 <a href="#CSS21" rel="biblioentry">[CSS21]<!--{{!CSS21}}--></a> の<a href="http://www.w3.org/TR/CSS21/grammar.html">文法補足</a>から表記法を使用して）次の通りである：</p>
+
+<pre><!--
+    -->viewport
+<!---->  : VIEWPORT_SYM S*
+<!---->    '{' S* declaration? [ ';' S* declaration? ]* '}' S*<!--
+      -->;</pre>
+
+<p>また、次のトークンが加わる：</p>
+
+<pre>@{V}{I}{E}{W}{P}{O}{R}{T} {return VIEWPORT_SYM;}</pre>
+
+<p>次で：</p>
+
+<pre>V               v|\\0{0,4}(56|76)(\r\n|[ \t\r\n\f])?|\\v
+<!--  -->W               w|\\0{0,4}(57|77)(\r\n|[ \t\r\n\f])?|\\w</pre>
+
+<p><code>viewport</code> 非終端は <code>ruleset</code> や <code>media</code>、<code>page</code> の非終端とともに <code>stylesheet</code> の生成に追加される：</p>
+
+<pre><!--
+      -->stylesheet
+<!--  -->  : [ CHARSET_SYM STRING ';' ]?
+<!--  -->    [S|CDO|CDC]* [ import [ CDO S* | CDC S* ]* ]*
+<!--  -->    [ [ ruleset | media | page | viewport ] [ CDO S* | CDC S* ]* ]*
+<!--  -->  ;<!--
+ --></pre>
+
+<p>それはまた、<code class="css">@media</code> 規則内にネストされた <code class="css">@viewport</code> 規則を許可し、媒体の生成に追加される。<span class="note">これは、CSS 2.1 構文の拡張である。CSS3 Paged Media の草案も @media 内部に page を許可している</span>：</p>
+
+<pre><!--
+      -->media
+<!--  -->  : MEDIA_SYM S* media_list LBRACE S* [ ruleset | viewport ]* '}' S*
+<!--  -->  ;<!--
+ --></pre>
+
+<h2 id="viewport-properties"><span class="secno">5. </span>ビューポートプロパティ</h2>
+
+<p>このセクションは、<code class="css">@viewport</code> 規則内に許可されているプロパティを提示する。ここに記載されたもの以外のプロパティは削除される。</p>
+
+<p>相対的な長さの値は、初期値に対して解決される。例えば、&lsquo;<code class="property">em</code>&rsquo;は、font-size プロパティの初期値に対して解決される。</p>
+
+<h3 id="the-lsquomin-widthrsquo-and-lsquomax-wid"><span class="secno">5.1. </span>&lsquo;<a href="#min-width"><code class="property">min-width</code></a>&rsquo; と &lsquo;<a href="#max-width"><code class="property">max-width</code></a>&rsquo; プロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="min-width">min-width</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td><a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a></td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto" title="auto!!length">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td><a href="#initial-viewport">初期ビューポート</a>の width を参照されたい</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;、&lsquo;<a href="#device-width"><code class="css">device-width</code></a>&rsquo;、&lsquo;<a href="#device-height"><code class="css">device-height</code></a>&rsquo;、絶対的な長さ、またはパーセント値</td>
+</tr>
+</tbody>
+</table>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="max-width">max-width</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td><a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a></td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto" title="auto!!length">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td><a href="#initial-viewport">初期ビューポート</a>の width を参照されたい</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;、&lsquo;<a href="#device-width"><code class="css">device-width</code></a>&rsquo;、&lsquo;<a href="#device-height"><code class="css">device-height</code></a>&rsquo;、絶対的な長さ、またはパーセント値</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="http://www.w3.org/TR/CSS21/visudet.html#containing-block-details">初期包含ブロック</a>サイズの設定で使用される<a href="http://www.w3.org/TR/CSS21/visuren.html#viewport">ビューポート</a>の最小と最大の幅を指定し、</p>
+
+<p style="margin: 1em"><var><dfn id="ltviewport-lengthgt">&lt;viewport-length&gt;</dfn></var> = auto | device-width | device-height | <var>&lt;length&gt;</var> | <var>&lt;percentage&gt;</var></p>
+
+<p>値は次の意味を有する：</p>
+
+<dl>
+<dt>&lsquo;<code class="css"><dfn id="auto" title="auto!!length">auto</dfn></code>&rsquo;</dt>
+<dd>使用される値は、<a href="#constraining-procedure">制約手順</a>に従って他のプロパティ値から算出される。</dd>
+<dt>&lsquo;<code class="css"><dfn id="device-width">device-width</dfn></code>&rsquo;</dt>
+<dd>拡大率 1.0 で CSS ピクセルのスクリーンの幅。</dd>
+<dt>&lsquo;<code class="css"><dfn id="device-height">device-height</dfn></code>&rsquo;</dt>
+<dd>拡大率 1.0 で CSS ピクセルのスクリーンの高さ。</dd>
+<dt><var>&lt;length&gt;</var></dt>
+<dd><p>正の絶対値または相対的な長さ。</p></dd>
+<dt><var>&lt;percentage&gt;</var></dt>
+<dd><p>それぞれの水平と垂直の長さのために、拡大率 1.0 のときの<a href="#initial-viewport">初期ビューポート</a>の幅または高さに対するパーセンテージの値。正の値でなければならない（must）。</p></dd>
+</dl>
+
+<p>min-width と max-width プロパティは、<a href="#constraining-procedure">制約手順</a>へ入力される。幅は、最初に最小/最大の制約内にできるだけ近い<a href="#initial-viewport">初期ビューポート</a>に設定される。</p>
+
+<h3 id="the-lsquowidthrsquo-shorthand-property"><span class="secno">5.2. </span>&lsquo;<a href="#width"><code class="property">width</code></a>&rsquo; ショートハンドプロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="width">width</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td><a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a>{1,2}</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td>各プロパティを参照</td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>各プロパティを参照</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>各プロパティを参照</td>
+</tr>
+</tbody>
+</table>
+
+<p>これは min-width と max-width の両方を設定するためのショートハンドプロパティである。一つの <a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a> 値は、min-width と max-width の両方の値を設定する。二つの <a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a> 値は、一つ目の値は min-width、2つ目の値は max-width を設定する。</p>
+
+<h3 id="the-lsquomin-heightrsquo-and-lsquomax-he"><span class="secno">5.3. </span>&lsquo;<a href="#min-height"><code class="property">min-height</code></a>&rsquo; と &lsquo;<a href="#max-height"><code class="property">max-height</code></a>&rsquo; プロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="min-height">min-height</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td><a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a></td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto" title="auto!!length">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td><a href="#initial-viewport">初期ビューポート</a>の height を参照されたい</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;、&lsquo;<a href="#device-width"><code class="css">device-width</code></a>&rsquo;、&lsquo;<a href="#device-height"><code class="css">device-height</code></a>&rsquo;、絶対的な長さ、またはパーセント値</td>
+</tr>
+</tbody>
+</table>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="max-height">max-height</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td><a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a></td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto" title="auto!!length">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td><a href="#initial-viewport">初期ビューポート</a>の height を参照されたい</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;、&lsquo;<a href="#device-width"><code class="css">device-width</code></a>&rsquo;、&lsquo;<a href="#device-height"><code class="css">device-height</code></a>&rsquo;、絶対的な長さ、またはパーセント値</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="http://www.w3.org/TR/CSS21/visudet.html#containing-block-details">初期包含ブロック</a>サイズの設定で使用される<a href="http://www.w3.org/TR/CSS21/visuren.html#viewport">ビューポート</a>の最小と最大の高さを指定。</p>
+
+<p>min-height と max-height プロパティは、<a href="#constraining-procedure">制約手順</a>へ入力される。高さは、最初に最小/最大の制約内にできるだけ近い<a href="#initial-viewport">初期ビューポート</a>に設定される。</p>
+
+<h3 id="the-lsquoheightrsquo-shorthand-property"><span class="secno">5.4. </span>&lsquo;<a href="#height"><code class="property">height</code></a>&rsquo; ショートハンドプロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="height">height</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td><a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a>{1,2}</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td>各プロパティを参照</td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>各プロパティを参照</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>各プロパティを参照</td>
+</tr>
+</tbody>
+</table>
+
+<p>これは min-height と max-height の両方を設定するためのショートハンドプロパティである。一つの <a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a> 値は、min-height と max-height の両方の値を設定する。二つの <a href="#ltviewport-lengthgt">&lt;viewport-length&gt;</a> 値は、一つ目の値は min-height、2つ目の値は max-height を設定する。</p>
+
+<h3 id="the-lsquozoomrsquo-property"><span class="secno">5.5. </span>&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo; プロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="zoom" title="zoom!!property">zoom</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td>auto | &lt;number&gt; | &lt;percentage&gt;</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto0" title="auto!!zoom">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>拡大率そのもの</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo;、もしくは整数またはパーセンテージ。</td>
+</tr>
+</tbody>
+</table>
+
+<p>ウィンドウや表示エリアのための初期拡大率を指定する。これは拡大の虫眼鏡タイプである。初期拡大率から拡大率をインタラクティブに変更しても、初期または実測ビューポートのサイズに影響しない。</p>
+
+<p>値は、次の意味を持つ：<span class="issue">数字とパーセンテージの両方が許可されるべきか？<!-- http://lists.w3.org/Archives/Public/www-style/2010Oct/0321.html --></span></p>
+
+<dl>
+<dt>&lsquo;<code class="css"><dfn id="auto0" title="auto!!zoom">auto</dfn></code>&rsquo;</dt>
+<dd>拡大率は UA 依存である。UA は、ドキュメントの初期拡大率を見つけるために提供されているキャンバスエリアのサイズを使用してもよい（may）。&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo; の &lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo; 値を処理するために提案された方法は、<a href="#handling-auto-zoom">このセクション</a>を参照されたい。</dd>
+<dt><var>&lt;number&gt;</var></dt>
+<dd><p>正の数字は拡大率として使用する。1.0 は、拡大が行われないことを意味する。1.0 より大きな値は、ズームインの効果、1.0 より小さな値は、ズームアウトの効果を与える。</p></dd>
+<dt><var>&lt;percentage&gt;</var></dt>
+<dd><p>正のパーセンテージ値は、拡大率として使用する。100% 拡大は、拡大が行われないことを意味する。100% より大きな値は、ズームインの効果、100% より小さな値は、ズームアウトの効果を与える。</p></dd>
+</dl>
+
+<h3 id="the-lsquomin-zoomrsquo-property"><span class="secno">5.6. </span>&lsquo;<a href="#min-zoom"><code class="property">min-zoom</code></a>&rsquo; プロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="min-zoom">min-zoom</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td>auto | &lt;number&gt; | &lt;percentage&gt;</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto1" title="auto!!min-zoom">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>拡大率そのもの</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto1"><code class="css" title="auto!!min-zoom">auto</code></a>&rsquo;、もしくは整数またはパーセンテージ。</td>
+</tr>
+</tbody>
+</table>
+
+<p>許容する最小の拡大率を指定する。それは、&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo; の値が非 &lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo; を抑制する<a href="#constraining-procedure">制約手順</a>として使用するが、ユーザーインタラクションを介して設定できる許可された拡大率をまた制限できる。UA は、&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo; の使用した値が &lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo; で、実体の拡大率を選ぶとき、制約としてこの値を使用するべきである（should）。</p>
+
+<p>値は、次の意味を持つ：</p>
+
+<dl>
+<dt>&lsquo;<code class="css"><dfn id="auto1" title="auto!!min-zoom">auto</dfn></code>&rsquo;</dt>
+<dd>拡大率の下限は、UA 依存である。<a href="#constraining-procedure">制約手順</a>で使用される &lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo; プロパティ上の制約の最小値ではない。</dd>
+<dt><var>&lt;number&gt;</var></dt>
+<dd><p>拡大率の最小値を制限する正の数。</p></dd>
+<dt><var>&lt;percentage&gt;</var></dt>
+<dd><p>拡大率の最小値を制限する正のパーセンテージ。</p></dd>
+</dl>
+
+<h3 id="the-lsquomax-zoomrsquo-property"><span class="secno">5.7. </span>&lsquo;<a href="#max-zoom"><code class="property">max-zoom</code></a>&rsquo; プロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="max-zoom">max-zoom</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td>auto | &lt;number&gt; | &lt;percentage&gt;</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto2" title="auto!!max-zoom">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>拡大率そのもの</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto2"><code class="css" title="auto!!max-zoom">auto</code></a>&rsquo;、もしくは整数またはパーセンテージ。</td>
+</tr>
+</tbody>
+</table>
+
+<p>許容する最大の拡大率を指定する。それは、&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo; の値が非 &lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo; を抑制する<a href="#constraining-procedure">制約手順</a>として使用するが、ユーザーインタラクションを介して設定できる許可された拡大率をまた制限できる。UA は、&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo; の使用した値が &lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo; で、実体の拡大率を選ぶとき、制約としてこの値を使用するべきである（should）。</p>
+
+<p>値は、次の意味を持つ：</p>
+
+<dl>
+<dt>&lsquo;<code class="css"><dfn id="auto2" title="auto!!max-zoom">auto</dfn></code>&rsquo;</dt>
+<dd>拡大率の上限は、UA 依存である。<a href="#constraining-procedure">制約手順</a>で使用される &lsquo;<code class="property">zoom</code>&rsquo; プロパティ上の制約の最大値ではない。</dd>
+<dt><var>&lt;number&gt;</var></dt>
+<dd><p>拡大率の最大値を制限する正の数。</p></dd>
+<dt><var>&lt;percentage&gt;</var></dt>
+<dd><p>拡大率の最大値を制限する正のパーセンテージ。</p></dd>
+</dl>
+
+<h3 id="the-lsquouser-zoomrsquo-property"><span class="secno">5.8. </span>&lsquo;<a href="#user-zoom"><code class="property">user-zoom</code></a>&rsquo; プロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="user-zoom">user-zoom</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td>zoom | fixed</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#zoom0" title="zoom!!value">zoom</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#zoom0"><code class="css" title="zoom!!value">zoom</code></a>&rsquo;または&lsquo;<a href="#fixed"><code class="css">fixed</code></a>&rsquo;</td>
+</tr>
+</tbody>
+</table>
+
+<p>拡大率をユーザーのインタラクションによって変更できるかどうかを指定する。</p>
+
+<p>値は、次の意味を持つ：</p>
+
+<dl>
+<dt>&lsquo;<code class="css"><dfn id="zoom0" title="zoom!!value">zoom</dfn></code>&rsquo;</dt>
+<dd>ユーザーは、インタラクティブに拡大率を変更できる。</dd>
+<dt>&lsquo;<code class="css"><dfn id="fixed">fixed</dfn></code>&rsquo;</dt>
+<dd>ユーザーは、インタラクティブに拡大率を変更できない。</dd>
+</dl>
+
+<h3 id="the-lsquoorientationrsquo-property"><span class="secno">5.9. </span>&lsquo;<a href="#orientation"><code class="property">orientation</code></a>&rsquo; プロパティ</h3>
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="orientation">orientation</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td>auto | portrait | landscape</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto3" title="auto!!orientation">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto3"><code class="css" title="auto!!orientation">auto</code></a>&rsquo;または&lsquo;<a href="#portrait"><code class="css">portrait</code></a>&rsquo;、&lsquo;<a href="#landscape"><code class="css">landscape</code></a>&rsquo;。</td>
+</tr>
+</tbody>
+</table>
+
+<p>このプロパティは、ドキュメントが縦長モード（portrait mode）か横長モード（landscape mode）で表示されるのかを要求するのに使用する。方向がデバイスの傾斜によって変更される UA/デバイスの場合、製作者は、方向の変更を抑制するために、このプロパティを使用することができる。</p>
+
+<p>値は、次の意味を持つ：</p>
+
+<dl>
+<dt>&lsquo;<code class="css"><dfn id="auto3" title="auto!!orientation">auto</dfn></code>&rsquo;</dt>
+<dd>UA は、自動的に操作のデバイスの通常のモードに基づいて方向を選択する。UA は、デバイスが傾いたとき、表示の向きの変更を選択してもよい（may）。</dd>
+<dt>&lsquo;<code class="css"><dfn id="portrait">portrait</dfn></code>&rsquo;</dt>
+<dd>ドキュメントは、縦長表示で固定されるべきである（should）。</dd>
+<dt>&lsquo;<code class="css"><dfn id="landscape">landscape</dfn></code>&rsquo;</dt>
+<dd>ドキュメントは、横長表示で固定されるべきである（should）。</dd>
+</dl>
+
+<h3 id="the-lsquoresolutionrsquo-property"><span class="secno">5.10. </span>&lsquo;<a href="#resolution"><code class="property">resolution</code></a>&rsquo; プロパティ</h3>
+
+<p class="issue">このプロパティは at-risk である。</p>
+<!-- http://lists.w3.org/Archives/Public/www-style/2010Aug/0131.html -->
+
+<table class="propdef">
+<tbody>
+<tr>
+<td><em>名前:</em></td>
+<td><dfn id="resolution">resolution</dfn></td>
+</tr>
+<tr>
+<td><em>値:</em></td>
+<td>auto | device | &lt;resolution&gt;</td>
+</tr>
+<tr>
+<td><em>初期値:</em></td>
+<td><a href="#auto4" title="auto!!resolution">auto</a></td>
+</tr>
+<tr>
+<td><em>適用対象:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>継承:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>パーセンテージ:</em></td>
+<td>なし</td>
+</tr>
+<tr>
+<td><em>媒体:</em></td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<td><em>計算値:</em></td>
+<td>指定の&lsquo;<a href="#auto4"><code class="css" title="auto!!resolution">auto</code></a>&rsquo;や&lsquo;<a href="#device"><code class="css">device</code></a>&rsquo;、resolution 値。</td>
+</tr>
+</tbody>
+</table>
+
+<p>UA は、CSS 2.1 <a href="#CSS21" rel="biblioentry">[CSS21]<!--{{!CSS21}}--></a> に記載されているように<a href="http://www.w3.org/TR/CSS21/syndata.html#x40">参照画素</a>または物理的な<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units">単位</a>は CSS ピクセルと関連している。resolution プロパティは、CSS ピクセルの解像度を設定することにより、UA によって選択された CSS ピクセルサイズを上書くのに使用できる。それ故に、CSS では絶対的な単位はお互いに関連して固定され、例えば CSS ピクセルの解像度を変更することは CSS cm の物理的な長さを変更する。</p>
+
+<p>デバイスピクセルと CSS ピクセルの関連は、デバイスの解像度に依存する。240dpi のデバイス上で <code>resolution: 120dpi</code> の設定では、デバイスと CSS ピクセルの比率は 2:1 が提供されるが、120dpi のデバイスのとき比率は 1:1 となる。同様に、&lsquo;<a href="#device"><code class="css">device</code></a>&rsquo; 値は、つねに 1:1 の比率を維持するが、デバイス解像度に応じて異なる CSS ピクセルの解像度を提供する。</p>
+
+<p>このプロパティが設定されていると、&lsquo;<a href="#device-width"><code class="css">device-width</code></a>&rsquo;や&lsquo;<a href="#device-height"><code class="css">device-height</code></a>&rsquo;、<a href="#initial-viewport">初期ビューポート</a>のサイズに使用している長さに影響を与えることを注意されたい。</p>
+
+<p><dfn id="ltresolutiongt">&lt;resolution&gt;</dfn> 値は、装置識別子(&lsquo;<code   class="css">dpi</code>&rsquo;または&lsquo;<code class="css">dpcm</code>&rsquo;)が直に続く正の &lt;number&gt; である。</p>
+
+<p>値は、次の意味を持つ：</p>
+
+<dl>
+<dt>&lsquo;<code class="css"><dfn id="auto4" title="auto!!resolution">auto</dfn></code>&rsquo;</dt>
+<dd>UA の CSS ピクセルの解像度を使用する。</dd>
+<dt>&lsquo;<code class="css"><dfn id="device">device</dfn></code>&rsquo;</dt>
+<dd>CSS ピクセルの解像度として、デバイスの解像度を使用する。つまり、CSS とデバイスピクセルは一対一の関係にある。</dd>
+<dt><a href="#ltresolutiongt"><var>&lt;resolution&gt;</var></a></dt>
+<dd>固定の dpi や dpcm の値に CSS ピクセルの解像度を設定する。</dd>
+</dl>
+
+<h2 id="constraining-viewport-property-values"><span class="secno">6. </span>ビューポートプロパティ値の制約</h2>
+
+<h3 id="definitions"><span class="secno">6.1. </span>定義</h3>
+
+<p>次の手順のために：</p>
+
+<p>プロパティは、プロシージャ内のその時点で解決/強要された値を参照する。彼らは、初めにこれらの計算された値が決定される。</p>
+
+<p><code class="index" id="width0" title="width!!resolved">width</code> と <code class="index" id="height0" title="height!!resolved">height</code> は、ショートハンドプロパティではなく分解されたビューポートサイズを参照する。これらは両方とも初期値は&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;である。</p>
+
+<p>引数の一つが&lsquo;<code class="css">auto</code>&rsquo;である <code>MIN/MAX</code> の計算は、他の引数を解決する。例えば、<code>MIN(0.25, 'auto') = 0.25</code>、と <code>MAX(5, 'auto') = 5</code>。</p>
+
+<p><code class="index" id="initial-width" title="width!!initial">initial-width</code> は、拡大率 1.0 のときピクセル単位で<a href="#initial-viewport">初期ビューポート</a>の幅である。</p>
+
+<p><code class="index" id="initial-height" title="height!!initial">initial-height</code> は、拡大率 1.0 のときピクセル単位で<a href="#initial-viewport">初期ビューポート</a>の高さである。</p>
+
+<h3 id="constraining-procedure"><span class="secno">6.2. </span>手順</h3>
+
+<p>使用される値は、以下の過程を通して計算された値から決定される。</p>
+
+<p>ユーザーエージェントは、例えば、デバイスを横長モードから縦長モードに傾けたり、<a href="#initial-viewport">初期ビューポート</a>からウィンドウをリサイズしたとき、ユーザー環境の変化に応じて、必要なら、この手順の再実行とドキュメントの再レイアウトが期待されるが、必須ではない。</p>
+
+<h4 class="no-num no-toc" id="resolve-non-lsquoautorsquo-lengths-to-pi">ピクセル長の非&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;長を決定</h4>
+
+<ol>
+<li>&lsquo;<a href="#min-width"><code class="property">min-width</code></a>&rsquo;と&lsquo;<a href="#max-width"><code class="property">max-width</code></a>&rsquo;、&lsquo;<a href="#min-height"><code class="property">min-height</code></a>&rsquo;、&lsquo;<a href="#max-height"><code class="property">max-height</code></a>&rsquo;プロパティためのピクセル値に相対と絶対の長さとパーセンテージ、キーワード(&lsquo;<a href="#device-width"><code class="css">device-width</code></a>&rsquo;、&lsquo;<a href="#device-height"><code class="css">device-height</code></a>&rsquo;)を決定する</li>
+</ol>
+
+<h4 class="no-num no-toc" id="resolve-initial-width-and-height-from-mi">min/max プロパティから初期の <code title="width!!resolved">width</code> と <code title="height!!resolved">height</code> を決定</h4>
+
+<ol id="ol2">
+<li><code title="min-width!!resolved">min-width</code> または <code title="max-width!!resolved">max-width</code> が&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;でないとき、<code>width = MAX(min-width, MIN(max-width, initial-width))</code> を設定</li>
+<li><code title="min-height!!resolved">min-height</code> または <code title="max-height!!resolved">max-height</code> が&lsquo;<a href="#auto"><code class="css" title="auto!!length">auto</code></a>&rsquo;でないとき、<code>height = MAX(min-height, MIN(max-height, initial-height))</code> を設定</li>
+</ol>
+
+<h4 class="no-num no-toc" id="resolve-min-zoom-and-max-zoom-values"><code title="min-zoom!!resolved">min-zoom</code> と <code title="max-zoom!!resolved">max-zoom</code> 値の決定</h4>
+
+<ol id="ol4">
+<li><code title="min-zoom!!resolved">min-zoom</code> が&lsquo;<a href="#auto1"><code class="css" title="auto!!min-zoom">auto</code></a>&rsquo;でなく、<code title="max-zoom!!resolved">max-zoom</code> が&lsquo;<a href="#auto2"><code class="css" title="auto!!max-zoom">auto</code></a>&rsquo;でないとき、<code>max-zoom = MAX(min-zoom, max-zoom)</code> を設定</li>
+</ol>
+
+<h4 class="no-num no-toc" id="constrain-zoom-value-to-the-min-zoom-max"><code>[min-zoom, max-zoom]</code> の範囲に <code title="zoom!!resolved">zoom</code> 値を制約</h4>
+
+<ol id="ol5">
+<li>If <code title="zoom!!resolved">zoom</code> が&lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo;でないとき、<code>zoom = MAX(min-zoom, MIN(max-zoom, zoom))</code> を設定</li>
+</ol>
+
+<h4 class="no-num no-toc" id="resolve-width-value"><code title="width!!resolved">width</code> 値の決定</h4>
+
+<ol id="ol6">
+<li><code title="width!!resolved">width</code> と <code title="zoom!!resolved">zoom</code> が両方とも &lsquo;<code class="css">auto</code>&rsquo;のとき、<code>width = initial-width</code> を設定</li>
+<li><code title="width!!resolved">width</code> が &lsquo;<code class="css">auto</code>&rsquo;で、<code title="height!!resolved">height</code> が&lsquo;<code class="css">auto</code>&rsquo;のとき、<code>width = (initial-width / zoom)</code> を設定</li>
+<li><code title="width!!resolved">width</code> が&lsquo;<code class="css">auto</code>&rsquo;のとき、<code>width = height * (initial-width / initial-height)</code> を設定</li>
+</ol>
+
+<h4 class="no-num no-toc" id="resolve-height-value"><code title="height!!resolved">height</code> 値の決定</h4>
+
+<ol id="ol9">
+<li><code title="height!!resolved">height</code> が&lsquo;<code class="css">auto</code>&rsquo;のとき、<code>height = width * (initial-height / initial-width)</code> を設定</li>
+</ol>
+
+<h4 class="no-num no-toc" id="extend-width-and-height-to-fill-the-wind">指定された <code title="zoom!!resolved">zoom</code> のためにウィンドウ/表示エリアを埋める <code title="width!!resolved">width</code> と <code title="height!!resolved">height</code> の伸長</h4>
+
+<ol id="ol10">
+<li><code title="zoom!!resolved">zoom</code> または <code title="max-zoom!!resolved">max-zoom</code> が&lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo;でないとき、<code>width = MAX(width, (initial-width / MIN(zoom, max-zoom)))</code> を設定</li>
+<li><code title="zoom!!resolved">zoom</code> または <code title="max-zoom!!resolved">max-zoom</code> が&lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo;でないとき、<code>height = MAX(height, (initial-height / MIN(zoom, max-zoom)))</code> を設定</li>
+</ol>
+
+<div class="example">
+<p>この例は、幅のために使用する値は、指定された zoom 値でウィンドウ/表示エリアに合わせて増加されるのを示している。幅のための使用する値は、device-width が<a href="#initial-viewport">初期ビューポート</a>の幅と同じであると過程するなら、この場合、二倍の device-width である。</p>
+
+<pre><!--
+	  -->@viewport {
+<!--	  -->  width: device-width;
+<!--	  -->  zoom: 0.5;
+<!--      -->}<!--
+     --></pre>
+</div>
+
+<h2 id="media-queries"><span class="secno">7. </span>メディアクエリー</h2>
+
+<p>いくつかのメディア機能について、初期包含ブロックのサイズとデバイスの向きは、メディアクエリー評価の結果に影響し、メディアクエリーの <code class="css">@viewport</code> 規則の効果は、特別な注意が必要であることを意味する。</p>
+
+<p class="issue">Bert: @viewport を加えたとき、@media 内に @viewport を加えることはできますか？　それは何を意味しているか？</p>
+
+<p>Media Queries <a href="#MEDIAQ" rel="biblioentry">[MEDIAQ]<!--{{!MEDIAQ}}--></a> 仕様より：</p>
+
+<blockquote>
+<p>&ldquo;式を評価するためにスタイルを適用する必要はない。これは循環依存関係を避けるためである。たとえば、印刷された文書のアスペクト比はスタイルシートに影響されるだろうが、&lsquo;device-aspect-ratio&rsquo;に関わる式はユーザーエージェントが持つアスペクト比の規定値を基にする。&rdquo;（この訳は、<a href="http://standards.mitsue.co.jp/resources/w3c/TR/css3-mediaqueries/">ミツエーリンクス Web標準仕様 日本語訳 メディアクエリー</a>より引用した）</p>
+</blockquote>
+
+<p><code class="css">@viewport</code> 規則については、他の規則のためにメディアクエリーが評価される前に適用されることが推奨される。</p>
+
+<p>CSS 規則を適用するための推奨手順：</p>
+
+<ol>
+<li><code class="css">@viewport</code> 規則を適用する。<code class="css">@viewport</code> 規則がメディアクエリーに依存しているとき、<a href="#initial-viewport">初期ビューポート</a>のビューポートプロパティを使用する。</li>
+<li>スタイル規則を適用する。スタイル規則がメディアクエリーに依存しているとき、メディアクエリーを評価している際に、ステップ1から得られたビューポートプロパティを使用する。</li>
+</ol>
+
+<p class="note">ビューポートプロパティを使用するための原理は、スタイル規則のためのメディアクエリーを評価するために <code class="css">@viewport</code> 規則を適用することから得られ、メディアクエリーは、初期またはUAスタイルシートで指定されずレイアウトされたドキュメントの<a href="#actual-viewport">実測ビューポート</a>に一致するべきである（should）。UA スタイルシートは 980px のビューポート幅が与えられており、device-width と<a href="#initial-viewport">初期ビューポート</a>は 320px である以下の例を考えてみる。製作者は、文書を 400px を境に初期包含ブロックの幅の見た目を良くするために別々のスタイルを用意する。<a href="#actual-viewport">実測ビューポート</a>は、320px の幅を使用し、<a href="#actual-viewport">実測ビューポート</a>幅にスタイルを一致させるために、<code class="css">@viewport</code> 規則を適用した結果のビューポートは、メディアクエリーの評価を使用するべきである（should）。</p>
+
+<div class="example">
+
+<p>320px の device-width と 980px の UA スタイルシートのビューポート幅が与えられているとき、最初のメディアクエリーは一致しないが、次はそうなる。</p>
+
+<pre><!--
+	-->@viewport {
+<!--    -->  width: device-width;
+<!--    -->}
+<!--    -->
+<!--    -->@media screen and (min-width: 400px) {
+<!--    -->  div { color: red; }
+<!--    -->}
+<!--    -->
+<!--    -->@media screen and (max-width: 400px) {
+<!--    -->  div { color: green; }
+<!--    -->}<!--
+   --></pre>
+</div>
+
+<p>他の例：</p>
+
+<div class="example">
+
+<p><code class="css">@viewport</code> 規則は、メディアクエリーが評価する前に適用されるため、以下のメディアクエリーは、一致するべきである（should）。</p>
+
+<pre><!--
+	-->@media screen and (width: 397px) {
+<!--    -->  div { color: green; }
+<!--    -->}
+<!--    -->
+<!--    -->@viewport {
+<!--    -->  width: 397px;
+<!--    -->}<!--
+   --></pre>
+</div>
+
+<p>以下は、ビューポートプロパティの影響を受け、メディアクエリーに依存した <code class="css">@viewport</code> 規則の例である。</p>
+
+<div class="example">
+<p>緑色は、<a href="#initial-viewport">初期ビューポート</a>の幅は、二つ目の <code class="css">@viewport</code> 規則のメディアクエリーの評価のために使用されるから、div に適用されるべきであるが（should）、<a href="#actual-viewport">実測ビューポート</a>は、スタイル規則を適用されるときにメディアクエリーの評価のために使用される。</p>
+
+<pre><!--
+        -->@viewport {
+<!--    -->  width: 397px;
+<!--    -->}
+<!--    -->
+<!--    -->@media screen and (width: 397px) {
+<!--    -->  @viewport {
+<!--    -->    width: 500px;
+<!--    -->  }
+<!--    -->}
+<!--    -->
+<!--    -->@media screen and (width: 397px) {
+<!--    -->  div { color: green; }
+<!--    -->}<!--
+   --></pre>
+</div>
+
+<p>製作者は、ビューポートプロパティに影響された評価が、メディアクエリーに依存する <code class="css">@viewport</code> 規則を作成しないことを推奨する。また、<code class="css">@viewport</code> 規則は、メディアクエリーまたはリフローの不要な再評価を避けるために、可能な限りドキュメント内の早くに配置されていることが推奨されている。</p>
+
+<p>次の例は、メディアクエリーと <code class="css">@viewport</code> 規則の間の循環依存関係を示している。UA スタイルシートのビューポート幅が 200px より大きいとするなら、最初の viewport 規則は、100px の<a href="#actual-viewport">実測ビューポート</a>に適合する。メディアクエリーが<a href="#actual-viewport">実測ビューポート</a>に基づくとき、再計算では、最初のメディアクエリーを正として順番に二番目の <code class="css">@viewport</code> 規則を適用し、これは最初に戻ることを意味する。</p>
+
+<div class="example">
+<pre><!--
+        -->@media screen and (min-width: 200px) {
+<!--    -->  @viewport {
+<!--    -->    width: 100px;
+<!--    -->  }
+<!--    -->}
+<!--    -->
+<!--    -->@media screen and (max-width: 200px) {
+<!--    -->  @viewport {
+<!--    -->    width: 300px;
+<!--    -->  }
+<!--    -->}<!--
+   --></pre>
+</div>
+
+<p class="issue">デバイスの媒体特性（media feature）の実装のために接頭辞をつける（css pixel ratio (-webkit-device-pixel-ratio / -o-device-pixel-ratio)）。ここで、または新しいメディアクエリーのレベルで標準化するべきか？</p>
+
+<h2 id="cssom"><span class="secno">8. </span>CSSOM</h2>
+
+<p class="issue">CSSOM と CSSOM View 仕様のプロパティは、<span>ビューポート</span>と<span>初期包含ブロック</span>を参照されたい。それらのプロパティのいずれかが、<a href="#initial-viewport">初期ビューポート</a>ではなく<a href="#actual-viewport">実測ビューポート</a>を参照する必要があるとき、それらの例外は、対処する必要がある。<span class="note">訳注：原文ではadressedだがaddressedと解釈して「対処」と訳した</span></p>
+
+<p class="issue">window.devicePixelRatio の標準化？　もしかして CSSOM View 仕様でするべきかも？</p>
+
+<h2 id="conformance"><span class="secno">9. </span>適合性</h2>
+
+<p>適合する UA のための要件：</p>
+
+<ul>
+<li><p>&lsquo;<a href="#min-width"><code class="property">min-width</code></a>&rsquo;と&lsquo;<a href="#max-width"><code class="property">max-width</code></a>&rsquo;、&lsquo;<a href="#width"><code class="property">width</code></a>&rsquo;、&lsquo;<a href="#min-height"><code class="property">min-height</code></a>&rsquo;、&lsquo;<a href="#max-height"><code class="property">max-height</code></a>&rsquo;、&lsquo;<a href="#height"><code class="property">height</code></a>&rsquo;プロパティを、サポートしなければならない（must）。</p></li>
+<li><p>&lsquo;<a href="#min-zoom"><code class="property">min-zoom</code></a>&rsquo;と&lsquo;<a href="#max-zoom"><code class="property">max-zoom</code></a>&rsquo;、&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo;プロパティを、<a href="#constraining-procedure">制約手順</a>への入力としてサポートしなければならない（must）。しかしながら、UA は、ユーザーにドキュメントを表示するとき、異なる拡大率の使用を選択し、ユーザーとのインタクションのために異なる縮小率と拡大率の限界を使用してもよい（may）。</p>
+<p>これは、たとえば、適合するために拡大する機能がないことを UA に許可し、それがビューポートの大きさになるとき、相互運用性の実装を持つことになる。また、コンテンツが<a href="#actual-viewport">実測ビューポート</a>をオーバーフローしたときに、異なる拡大率の選択を UA に許可する。</p></li>
+
+<li><p>&lsquo;<a href="#user-zoom"><code class="property">user-zoom</code></a>&rsquo;と&lsquo;<a href="#orientation"><code class="property">orientation</code></a>&rsquo;プロパティのサポートは、省略可能である。</p></li>
+</ul>
+
+<p class="issue">それが保たれている場合、resolution プロパティに関して述べる必要はあるか？</p>
+
+<h2 id="viewport-meta-element"><span class="secno">10. </span>ビューポート <code class="html">META</code> 要素</h2>
+
+<p><em>このセクションは規範的ではない。</em></p>
+
+<p>このセクションは、この仕様に記載されている <code class="css">@viewport</code> 規則のプロパティへ、iPhone の Safari ブラウザに Apple によって最初に実装され、ビューポートの <code class="html">META</code> 要素のコンテンツ属性からのマッピングを記述する。</p>
+
+<h3 id="ua-stylesheet"><span class="secno">10.1. </span>UA スタイルシート</h3>
+
+<p>Safari の実装と一致するために、解析アルゴリズムと変換規則は、以下の UA スタイルシートに依存する。</p>
+
+<pre><!--
+      -->@viewport {
+<!--  -->  width: 980px;
+<!--  -->  min-zoom: 0.25;
+<!--  -->  max-zoom: 5;
+<!--  -->}<!--
+ --></pre>
+
+<p class="note">これらの値は、すべて UA に十分に適合しないことに注意されたい。0.25 の min-zoom を使用したら、iPhone のような 320px 幅のデバイス上で、1280px までの幅をウィンドウ内にドキュメントの幅を適合することができるが、240px ディスプレイのとき 960px となる。</p>
+
+<h3 id="meta-properties"><span class="secno">10.2. </span>プロパティ</h3>
+
+<p>ビューポート <code class="html">META</code> 要素内の認識されたプロパティは：</p>
+
+<ul>
+<li><code class="index" id="width1" title="width!!viewport META">width</code></li>
+<li><code class="index" id="height1" title="height!!viewport META">height</code></li>
+<li><code class="index" id="initial-scale">initial-scale</code></li>
+<li><code class="index" id="minimum-scale">minimum-scale</code></li>
+<li><code class="index" id="maximum-scale">maximum-scale</code></li>
+<li><code class="index" id="user-scalable">user-scalable</code></li>
+<li><code class="index" id="target-densitydpi">target-densityDpi</code><span class="issue">&lsquo;<a href="#resolution"><code class="property">resolution</code></a>&rsquo;が at-risk なので、 at-risk。</span></li>
+</ul>
+
+<h3 id="parsing-algorithm"><span class="secno">10.3. </span>解析アルゴリズム</h3>
+
+<p>以下は、iPhone の Safari によるテストから生成した <code class="html">META</code> タグの <code class="html">content</code> 属性を解析するためのアルゴリズムである。<span class="note" id="tested-safari">テストは、iOS 4 のiPhone の iPod touch で行われた。ブラウザの UA 文字列は：<code>"Mozilla/5.0 (iPod; U; CPU iPhone OS 4_0 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8A293 Safari/6531.22.7"</code>。</span>使用される擬似コード表記は、<a href="#Algorithms" rel="biblioentry">[Algorithms]</a> で使用される表記に基づいてる。空白クラスは、以下の文字（ascii）が含まれている： </p>
+
+<ul>
+<li>水平タブ（Horizontal tab） (0x09)</li>
+<li>改行（Line feed） (0x0a)</li>
+<li>復帰（Carriage return） (0x0d)</li>
+<li>空白文字（Space） (0x20)</li>
+</ul>
+
+<pre class="algorithm"><!--
+    --><span class="method"><span class="method-name">Parse-Content</span>(<span class="variable">S</span>)</span>
+<!----><span class="statement"><span class="variable">i</span> &larr; 1</span>
+<!----><span class="statement"><span class="keyword">while</span> <span class="variable">i</span> &le; <span class="op">length</span>[<span class="variable">S</span>]</span>
+<!----><span class="statement">    <span class="keyword">do</span> <span class="keyword">while</span> <span class="variable">i</span> &le; <span class="op">length</span>[<span class="variable">S</span>] and <span class="variable">S</span>[<span class="variable">i</span>] in [white-space, ',', '=']</span>
+<!----><span class="statement">        <span class="keyword">do</span> <span class="variable">i</span> &larr; <span class="variable">i</span> + 1</span>
+<!----><span class="statement">    <span class="keyword">if</span> <span class="variable">i</span> &le; <span class="op">length</span>[<span class="variable">S</span>]</span>
+<!----><span class="statement">        <span class="keyword">then</span> <span class="variable">i</span> &larr; <span class="method-name">Parse-Property</span>(<span class="variable">S</span>, <span class="variable">i</span>)</span>
+<!---->
+<!----><span class="method"><span class="method-name">Parse-Property</span>(<span class="variable">S</span>, <span class="variable">i</span>)</span>
+<!----><span class="statement"><span class="variable">start</span> &larr; <span class="variable">i</span></span>
+<!----><span class="statement"><span class="keyword">while</span> <span class="variable">i</span> &le; <span class="op">length</span>[<span class="variable">S</span>] and <span class="variable">S</span>[<span class="variable">i</span>] <span class="keyword">not</span> in [white-space, ',', '=']</span>
+<!----><span class="statement">    <span class="keyword">do</span> <span class="variable">i</span> &larr; <span class="variable">i</span> + 1</span>
+<!----><span class="statement"><span class="keyword">if</span> <span class="variable">i</span> &gt; <span class="op">length</span>[<span class="variable">S</span>] or <span class="variable">S</span>[<span class="variable">i</span>] = ','</span>
+<!----><span class="statement">    <span class="keyword">then</span> <span class="keyword">return</span> <span class="variable">i</span></span>
+<!----><span class="statement"><span class="variable">property-name</span> &larr; <span class="variable">S</span>[<span class="variable">start</span> .. (<span class="variable">i</span> - 1)]</span>
+<!----><span class="statement"><span class="keyword">while</span> <span class="variable">i</span> &le; <span class="op">length</span>[<span class="variable">S</span>] and <span class="variable">S</span>[<span class="variable">i</span>] <span class="keyword">not</span> in [',', '=']</span>
+<!----><span class="statement">    <span class="keyword">do</span> <span class="variable">i</span> &larr; <span class="variable">i</span> + 1</span>
+<!----><span class="statement"><span class="keyword">if</span> <span class="variable">i</span> &gt; <span class="op">length</span>[<span class="variable">S</span>] or <span class="variable">S</span>[<span class="variable">i</span>] = ','</span>
+<!----><span class="statement">    <span class="keyword">then</span> <span class="keyword">return</span> <span class="variable">i</span></span>
+<!----><span class="statement"><span class="keyword">while</span> <span class="variable">i</span> &le; <span class="op">length</span>[<span class="variable">S</span>] and <span class="variable">S</span>[<span class="variable">i</span>] in [white-space, '=']</span>
+<!----><span class="statement">    <span class="keyword">do</span> <span class="variable">i</span> &larr; <span class="variable">i</span> + 1</span>
+<!----><span class="statement"><span class="keyword">if</span> <span class="variable">i</span> &gt; <span class="op">length</span>[<span class="variable">S</span>] or <span class="variable">S</span>[<span class="variable">i</span>] = ','</span>
+<!----><span class="statement">    <span class="keyword">then</span> <span class="keyword">return</span> <span class="variable">i</span></span>
+<!----><span class="statement"><span class="variable">start</span> &larr; <span class="variable">i</span></span>
+<!----><span class="statement"><span class="keyword">while</span> <span class="variable">i</span> &le; <span class="op">length</span>[<span class="variable">S</span>] and <span class="variable">S</span>[<span class="variable">i</span>] <span class="keyword">not</span> in [white-space, ',', '=']</span>
+<!----><span class="statement">    <span class="keyword">do</span> <span class="variable">i</span> &larr; <span class="variable">i</span> + 1</span>
+<!----><span class="statement"><span class="variable">property-value</span> &larr; <span class="variable">S</span>[<span class="variable">start</span> .. (<span class="variable">i</span> - 1)]</span>
+<!----><span class="statement"><span class="method-name">Set-Property</span>(<span class="variable">property-name</span>, <span class="variable">property-value</span>)</span>
+<!----><span class="statement"><span class="keyword">return</span> <span class="variable">i</span></span><!--
+ --></pre>
+
+<p><span class="method-name">Set-Property</span> は、大文字と小文字を区別せず記載されたプロパティ名に一致する。<code class="variable">property-value</code> 文字列は、以下のように解釈される：</p>
+
+<ol>
+<li><code class="variable">property-value</code> の接頭辞が、<code>strtod</code> を使用して数値に変換できるとき、値はその数値になる。文字列の残りは無視される</li>
+<li>値が上に記載したように数値に変換できないとき、全体の <code class="variable">property-value</code> 文字列は、次の文字列（<code class="index" id="yes">yes</code>、<code class="index" id="no">no</code>、<code class="index" id="device-width0" title="device-width!!viewport META">device-width</code>、<code class="index" id="device-height0" title="device-height!!viewport META">device-height</code>）に大文字と小文字の区別なく一致する</li>
+<li>文字列が、既知の文字列のいずれにも一致しないとき、値は未知である</li>
+</ol>
+
+<h3 id="translation-into-viewport-properties"><span class="secno">10.4. </span><code class="css">@viewport</code> プロパティへの変換</h3>
+
+<p>単一の <code class="css">@viewport</code> 規則のみが含まれている DOM と全く同じ位置に、それは <code class="html">STYLE</code> 要素のように、ビューポートの <code class="html">META</code> 要素はカスケードで配置される。</p>
+
+<p>先のセクションで解析されたプロパティと値のペアのそれぞれは変換され、以下のように単一の @規則で追加される：</p>
+
+<h4 class="no-num no-toc" id="unknown-properties">未知のプロパティ</h4>
+
+<p>未知のプロパティは削除される。</p>
+
+<h4 class="no-num no-toc" id="the-width-and-height-properties"><code class="index" id="width2" title="width!!viewport META">width</code> と <code class="index" id="height2" title="height!!viewport META">height</code> プロパティ</h4>
+
+<p><code class="index" id="width3" title="width!!viewport META">width</code> と <code class="index" id="height3" title="height!!viewport META">height</code> のビューポートの <code class="html">META</code> プロパティは、同じ値の min と max プロパティへ効率的に設定され、&lsquo;<a href="#width"><code class="property">width</code></a>&rsquo;や&lsquo;<a href="#height"><code class="property">height</code></a>&rsquo;ショートハンドプロパティに変換される。</p>
+
+<ol>
+<li>負ではない数値は、ピクセル単位に変換され、<code>[1px, 10000px]</code> の範囲で固定される</li>
+<li>負の数値は削除される</li>
+<li><code class="index" id="device-width1" title="device-width!!viewport META">device-width</code> と <code class="index" id="device-height1" title="device-height!!viewport META">device-height</code> はキーワードとして使用される</li>
+<li>他のキーワードや未知の値は、1px に変換する</li>
+</ol>
+
+<p>非&lsquo;<code class="css">auto</code>&rsquo;と&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo;の宣言と&lsquo;<a href="#width"><code class="property">width</code></a>&rsquo;を持たない宣言をした <code class="css">@viewport</code> 規則内で変換したビューポートの <code class="html">META</code> 要素のために、<code class="css">@viewport</code> 規則へ</p>
+
+<pre>width: auto;</pre>
+
+<p>を追加する。</p>
+
+<div class="example">
+<p>この <code class="html">META</code> 要素は：</p>
+
+<pre><!--
+  -->&lt;meta name="viewport" content="initial-scale=1.0"&gt;<!--
+ --></pre>
+
+<p>以下に変換：</p>
+
+<pre><!--
+	-->@viewport {
+<!--	-->  zoom: 1.0;
+<!--	-->  width: auto;
+<!--	-->}<!--
+   --></pre>
+
+</div>
+
+<h4 class="no-num no-toc" id="the-initial-scale-minimum-scale-and-maxi"><code class="index" id="initial-scale0">initial-scale</code> と <code class="index" id="minimum-scale0">minimum-scale</code>、<code class="index" id="maximum-scale0">maximum-scale</code> プロパティ</h4>
+
+<p>プロパティは、以下の値に変換され、それぞれ&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo;と&lsquo;<a href="#min-zoom"><code class="property">min-zoom</code></a>&rsquo;、&lsquo;<a href="#max-zoom"><code class="property">max-zoom</code></a>&rsquo;に変換される。</p>
+
+<ol>
+<li>負ではない数値は、&lt;number&gt; 値に変換され、<code>[0.1, 10]</code> の範囲で固定される</li>
+<li>負の数値は削除される</li>
+<li><code class="index" id="yes0">yes</code> は 1 に変換される</li>
+<li><code class="index" id="device-width2" title="device-width!!viewport META">device-width</code> と <code class="index" id="device-height2" title="device-height!!viewport META">device-height</code> は 10 に変換される</li>
+<li><code class="index" id="no0">no</code> と未知の値は、0.1 に変換される。</li>
+</ol>
+
+<p>&lsquo;<a href="#max-zoom"><code class="property">max-zoom</code></a>&rsquo; 宣言がなく、非&lsquo;<code class="css">auto</code>&rsquo;で、UA スタイルシートの&lsquo;<a href="#max-zoom"><code class="property">max-zoom</code></a>&rsquo;値より大きい&lsquo;<a href="#min-zoom"><code class="property">min-zoom</code></a>&rsquo;値を <code class="css">@viewport</code> 規則で変換したビューポートの <code class="html">META</code> 要素については、&lsquo;<a href="#min-zoom"><code class="property">min-zoom</code></a>&rsquo;宣言値は、UA スタイルシートの&lsquo;<a href="#max-zoom"><code class="property">max-zoom</code></a>&rsquo;値に固定される。</p>
+
+<h4 class="no-num no-toc" id="the-user-scalable-property"><code class="index" id="user-scalable0">user-scalable</code> プロパティ</h4>
+
+<p><code class="index" id="user-scalable1">user-scalable</code> プロパティは、次の値の変換で、&lsquo;<a href="#user-zoom"><code class="property">user-zoom</code></a>&rsquo;に変換される</p>
+
+<ol>
+<li><code class="index" id="yes1">yes</code> と <code class="index" id="no1">no</code> は、それぞれ&lsquo;<a href="#zoom0"><code class="css" title="zoom!!value">zoom</code></a>&rsquo;と&lsquo;<a href="#fixed"><code class="css">fixed</code></a>&rsquo;に変換される。</li>
+<li>数値が <code>1</code>以上、<code>-1</code>以下のとき、<code class="index" id="device-width3" title="device-width!!viewport META">device-width</code> と <code class="index" id="device-height3" title="device-height!!viewport META">device-height</code> は、&lsquo;<a href="#zoom0"><code class="css" title="zoom!!value">zoom</code></a>&rsquo;にマッピングされる</li>
+<li><code>1</code> 未満、<code>-1</code> より大きい数値と未知の値は、&lsquo;<a href="#fixed"><code class="css">fixed</code></a>&rsquo;にマッピングされる</li>
+</ol>
+
+<div class="example">
+<p><code class="html">META</code> 要素は：</p>
+
+<pre>&lt;meta name="viewport" content="width=480, initial-scale=2.0, user-scalable=1"&gt;</pre>
+
+<p>以下の <code class="css">@viewport</code> ブロックに変換されるであろう：</p>
+
+<pre><!--
+	-->@viewport {
+<!--	-->  width: 480px;
+<!--	-->  zoom: 2.0;
+<!--	-->  user-zoom: zoom;
+<!--	-->}<!--
+   --></pre>
+
+</div>
+
+<h4 class="no-num no-toc" id="the-target-densitydpi-property"><code class="index" id="target-densitydpi0">target-densityDpi</code> プロパティ</h4>
+
+<p class="issue">&lsquo;<a href="#resolution"><code class="property">resolution</code></a>&rsquo; が at-risk なので at-risk。</p>
+
+<p class="note">このプロパティは、Android ブラウザで使用され、Safari はサポートしなかった Webkit の実装から、他とは異なる</p>
+
+<p><code class="index" id="target-densitydpi1">target-densityDpi</code> プロパティは、次の値の変換で、&lsquo;<a href="#resolution"><code class="property">resolution</code></a>&rsquo;に変換される。</p>
+
+<ol>
+<li><code>[70, 400]</code> の範囲の数値は、&lsquo;<code class="css">dpi</code>&rsquo; 値に変換される</li>
+<li><code class="index" id="device-dpi">device-dpi</code> は、&lsquo;<a href="#device"><code class="css">device</code></a>&rsquo;に変換される</li>
+<li><code class="index" id="low-dpi">low-dpi</code> は、120dpi に変換される</li>
+<li><code class="index" id="medium-dpi">medium-dpi</code> は、160dpi に変換される</li>
+<li><code class="index" id="high-dpi">high-dpi</code> は、240dpi に変換される</li>
+<li>他の値は削除される</li>
+</ol>
+
+<h2 id="handling-auto-zoom"><span class="secno">11. </span>&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo;のための&lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo;の取り扱い</h2>
+
+<p><em>このセクションは規範的ではない。</em></p>
+
+<p>このセクションは、使用される値が&lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo;であるとき、&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo;プロパティの実測値を選ぶ一つの方法を提示する。</p>
+
+<p>サイズ (<code>initial-width, initial-height</code>)による<a href="#initial-viewport">初期ビューポート</a>と、フォーマット構造がレンダリング(<code>rendered-width, rendered-height</code>)される <a href="http://www.w3.org/TR/CSS21/intro.html#canvas">canvas</a> 内の有限領域が与えられる。その領域は、<a href="#actual-viewport">実測ビューポート</a>と同じか、それ以上である。</p>
+
+<p>その後、&lsquo;<a href="#zoom"><code class="property" title="zoom!!property">zoom</code></a>&rsquo;の使用する値が、&lsquo;<a href="#auto0"><code class="css" title="auto!!zoom">auto</code></a>&rsquo;のとき、実測の拡大率は：</p>
+
+<pre>
+<!---->zoom = MAX(initial-width / rendered-width, initial-height / rendered-height)<!--
+ --></pre>
+
+<p>実測の拡大率は、 [min-zoom, max-zoom] 範囲によって更に制限されるべきである（should）。</p>
+
+<h2 class="no-num" id="acknowledgments">謝辞</h2>
+
+<h2 class="no-num" id="references">参照</h2>
+
+<h3 class="no-num" id="normative-references">引用文書</h3>
+<!--begin-normative-->
+<!-- Sorted by label -->
+
+<dl class="bibliography">
+<dt style="display: none"><!-- keeps the doc valid if the DL is empty --></dt>
+ <!---->
+<dt id="CSS21">[CSS21]</dt>
+<dd>Bert Bos; et al. <a href="http://www.w3.org/TR/2011/REC-CSS2-20110607"><cite>Cascading Style Sheets Level 2 Revision 1 (CSS&#160;2.1) Specification.</cite></a> 7 June 2011. W3C Recommendation. URL: <a href="http://www.w3.org/TR/2011/REC-CSS2-20110607">http://www.w3.org/TR/2011/REC-CSS2-20110607</a></dd>
+<!---->
+<dt id="CSS3SYN">[CSS3SYN]</dt>
+<dd>L. David Baron. <a href="http://www.w3.org/TR/2003/WD-css3-syntax-20030813"><cite>CSS3 module: Syntax.</cite></a> 13 August 2003. W3C Working Draft. (Work in progress.) URL: <a href="http://www.w3.org/TR/2003/WD-css3-syntax-20030813">http://www.w3.org/TR/2003/WD-css3-syntax-20030813</a>
+</dd>
+<!---->
+<dt id="CSS3VAL">[CSS3VAL]</dt>
+<dd>H&#229;kon Wium Lie; Chris Lilley. <a href="http://www.w3.org/TR/2006/WD-css3-values-20060919"><cite>CSS3 Values and Units.</cite></a> 19 September 2006. W3C Working Draft. (Work in progress.) URL: <a href="http://www.w3.org/TR/2006/WD-css3-values-20060919">http://www.w3.org/TR/2006/WD-css3-values-20060919</a></dd>
+<!---->
+<dt id="MEDIAQ">[MEDIAQ]</dt>
+<dd>H&#229;kon Wium Lie; et al. <a href="http://www.w3.org/TR/2010/CR-css3-mediaqueries-20100727/"><cite>Media Queries.</cite></a> 27 July 2010. W3C Candidate Recommendation. (Work in progress.) URL: <a href="http://www.w3.org/TR/2010/CR-css3-mediaqueries-20100727/">http://www.w3.org/TR/2010/CR-css3-mediaqueries-20100727/</a></dd>
+<!---->
+</dl>
+<!--end-normative-->
+
+<h3 class="no-num" id="other-references">他の文書</h3>
+
+<dl class="bibliography">
+<dt id="Algorithms">[Algorithms]</dt>
+<dd>Thomas H. Cormen; et al. <cite>Introduction to Algorithms, Second Edition, MIT Press.</cite></dd>
+</dl>
+
+<h2 class="no-num" id="property-index">プロパティ一覧</h2>
+<!--begin-properties-->
+
+<table class="proptable">
+<thead>
+<tr>
+<th>プロパティ</th>
+<th>値</th>
+<th>初期値</th>
+<th>適用対象</th>
+<th>継承</th>
+<th>パーセンテージ</th>
+<th>媒体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th><a class="property" href="#height">height</a></th>
+<td>&lt;viewport-length&gt;{1,2}</td>
+<td>各プロパティを参照</td>
+<td>なし</td>
+<td>なし</td>
+<td>各プロパティを参照</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#max-height">max-height</a></th>
+<td>&lt;viewport-length&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>初期ビューポートの width を参照されたい</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#max-width">max-width</a></th>
+<td>&lt;viewport-length&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>初期ビューポートの width を参照されたい</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#max-zoom">max-zoom</a></th>
+<td>auto | &lt;number&gt; | &lt;percentage&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>拡大率そのもの</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#min-height">min-height</a></th>
+<td>&lt;viewport-length&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>初期ビューポートの height を参照されたい</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#min-width">min-width</a></th>
+<td>&lt;viewport-length&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>初期ビューポートの height を参照されたい</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#min-zoom">min-zoom</a></th>
+<td>auto | &lt;number&gt; | &lt;percentage&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>拡大率そのもの</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#orientation">orientation</a></th>
+<td>auto | portrait | landscape</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>なし</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#resolution">resolution</a></th>
+<td>auto | device | &lt;resolution&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>なし</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#user-zoom">user-zoom</a></th>
+<td>zoom | fixed</td>
+<td>zoom</td>
+<td>なし</td>
+<td>なし</td>
+<td>なし</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><a class="property" href="#width">width</a></th>
+<td>&lt;viewport-length&gt;{1,2}</td>
+<td>各プロパティを参照</td>
+<td>なし</td>
+<td>なし</td>
+<td>各プロパティを参照</td>
+<td>visual, continuous</td>
+</tr>
+<tr>
+<th><span class="property">zoom</span></th>
+<td>auto | &lt;number&gt; | &lt;percentage&gt;</td>
+<td>auto</td>
+<td>なし</td>
+<td>なし</td>
+<td>拡大率そのもの</td>
+<td>visual, continuous</td>
+</tr>
+</tbody>
+</table>
+<!--end-properties-->
+
+<h2 class="no-num" id="index">目次</h2>
+<!--begin-index-->
+<ul class="indexlist">
+<li>actual viewport, <a href="#actual-viewport" title="actual viewport"><strong>3.</strong></a></li>
+<li>auto
+<ul>
+<li>length, <a href="#auto" title="auto, length"><strong>5.1.</strong></a></li>
+<li>max-zoom, <a href="#auto2" title="auto, max-zoom"><strong>5.7.</strong></a></li>
+<li>min-zoom, <a href="#auto1" title="auto, min-zoom"><strong>5.6.</strong></a></li>
+<li>orientation, <a href="#auto3" title="auto, orientation"><strong>5.9.</strong></a></li>
+<li>resolution, <a href="#auto4" title="auto, resolution"><strong>5.10.</strong></a></li>
+<li>zoom, <a href="#auto0" title="auto, zoom"><strong>5.5.</strong></a></li>
+</ul>
+</li>
+<li>device, <a href="#device" title="device"><strong>5.10.</strong></a></li>
+<li>device-dpi, <a href="#device-dpi" title="device-dpi">#</a></li>
+<li>device-height, <a href="#device-height" title="device-height"><strong>5.1.</strong></a>
+<ul>
+<li>viewport META, <a href="#device-height0" title="device-height, viewport META">10.3.</a>, <a href="#device-height1" title="device-height, viewport META">#</a>, <a href="#device-height2" title="device-height, viewport META">#</a>, <a href="#device-height3" title="device-height, viewport META">#</a></li>
+</ul>
+</li>
+<li>device-width, <a href="#device-width" title="device-width"><strong>5.1.</strong></a>
+<ul>
+<li>viewport META, <a href="#device-width0" title="device-width, viewport META">10.3.</a>, <a href="#device-width1" title="device-width, viewport META">#</a>, <a href="#device-width2" title="device-width, viewport META">#</a>, <a href="#device-width3" title="device-width, viewport META">#</a></li>
+</ul>
+</li>
+<li>fixed, <a href="#fixed" title="fixed"><strong>5.8.</strong></a></li>
+<li>height, <a href="#height" title="height"><strong>5.4.</strong></a>
+<ul>
+<li>initial, <a href="#initial-height" title="height, initial">6.1.</a></li>
+<li>resolved, <a href="#height0" title="height, resolved">6.1.</a></li>
+<li>viewport META, <a href="#height1" title="height, viewport META">10.2.</a>, <a href="#height2" title="height, viewport META">#</a>, <a href="#height3" title="height, viewport META">#</a></li>
+</ul>
+</li>
+<li>high-dpi, <a href="#high-dpi" title="high-dpi">#</a></li>
+<li>initial-scale, <a href="#initial-scale" title="initial-scale">10.2.</a>, <a href="#initial-scale0" title="initial-scale">#</a></li>
+<li>initial viewport, <a href="#initial-viewport" title="initial viewport"><strong>3.</strong></a></li>
+<li>landscape, <a href="#landscape" title="landscape"><strong>5.9.</strong></a></li>
+<li>low-dpi, <a href="#low-dpi" title="low-dpi">#</a></li>
+<li>max-height, <a href="#max-height" title="max-height"><strong>5.3.</strong></a></li>
+<li>maximum-scale, <a href="#maximum-scale" title="maximum-scale">10.2.</a>, <a href="#maximum-scale0" title="maximum-scale">#</a></li>
+<li>max-width, <a href="#max-width" title="max-width"><strong>5.1.</strong></a></li>
+<li>max-zoom, <a href="#max-zoom" title="max-zoom"><strong>5.7.</strong></a></li>
+<li>medium-dpi, <a href="#medium-dpi" title="medium-dpi">#</a></li>
+<li>min-height, <a href="#min-height" title="min-height"><strong>5.3.</strong></a></li>
+<li>minimum-scale, <a href="#minimum-scale" title="minimum-scale">10.2.</a>, <a href="#minimum-scale0" title="minimum-scale">#</a></li>
+<li>min-width, <a href="#min-width" title="min-width"><strong>5.1.</strong></a></li>
+<li>min-zoom, <a href="#min-zoom" title="min-zoom"><strong>5.6.</strong></a></li>
+<li>no, <a href="#no" title="no">10.3.</a>, <a href="#no0" title="no">#</a>, <a href="#no1" title="no">#</a></li>
+<li>orientation, <a href="#orientation" title="orientation"><strong>5.9.</strong></a></li>
+<li>portrait, <a href="#portrait" title="portrait"><strong>5.9.</strong></a></li>
+<li>resolution, <a href="#resolution" title="resolution"><strong>5.10.</strong></a></li>
+<li>&lt;resolution&gt;, <a href="#ltresolutiongt" title="&lt;resolution&gt;"><strong>5.10.</strong></a></li>
+<li>target-densityDpi, <a href="#target-densitydpi" title="target-densityDpi">10.2.</a>, <a href="#target-densitydpi0" title="target-densityDpi">#</a>, <a href="#target-densitydpi1" title="target-densityDpi">#</a></li>
+<li>user-scalable, <a href="#user-scalable" title="user-scalable">10.2.</a>, <a href="#user-scalable0" title="user-scalable">#</a>, <a href="#user-scalable1" title="user-scalable">#</a></li>
+<li>user-zoom, <a href="#user-zoom" title="user-zoom"><strong>5.8.</strong></a></li>
+<li>&lt;viewport-length&gt;, <a href="#ltviewport-lengthgt" title="&lt;viewport-length&gt;"><strong>5.1.</strong></a></li>
+<li>width, <a href="#width" title="width"><strong>5.2.</strong></a>
+<ul>
+<li>initial, <a href="#initial-width" title="width, initial">6.1.</a></li>
+<li>resolved, <a href="#width0" title="width, resolved">6.1.</a></li>
+<li>viewport META, <a href="#width1" title="width, viewport META">10.2.</a>, <a href="#width2" title="width, viewport META">#</a>, <a href="#width3" title="width, viewport META">#</a></li>
+</ul>
+</li>
+<li>yes, <a href="#yes" title="yes">10.3.</a>, <a href="#yes0" title="yes">#</a>, <a href="#yes1" title="yes">#</a></li>
+<li>zoom
+<ul>
+<li>property, <a href="#zoom" title="zoom, property"><strong>5.5.</strong></a></li>
+<li>value, <a href="#zoom0" title="zoom, value"><strong>5.8.</strong></a></li>
+</ul>
+</li>
+</ul>
+<!--end-index-->
+</body>
+</html>
