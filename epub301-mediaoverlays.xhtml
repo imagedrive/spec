@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>EPUB Media Overlays 3.0.1（日本語訳版）</title>
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/>
+<meta name="description" content="EPUB Media Overlays 3.0.1 は、EPUB Content Document と同期する音声表現用に、[SMIL]（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義する。"/>
+</head>
+<body>
+<div class="attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub3/latest/mediaoverlays">EPUB Media Overlays 3.0.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/mediaoverlays">http://www.idpf.org/epub3/latest/mediaoverlays</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub3/latest/mediaoverlays">EPUB Media Overlays 3.0.1</a> を参照されたい。</p>
+
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。<br/>また本文内の訳注は翻訳者の主観による補足である。</p>
+<p><a href="#sec-terminology">1.3. 用語</a>にあげられている名称は本文中でも基本的に原文のままとした。</p>
+<dl>
+
+<dt>公開日:</dt>
+<dd>2013-11-12</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+
+<div class="book" title="EPUB Media Overlays 3.0.1">
+<h1 class="title">EPUB Media Overlays 3.0.1</h1>
+<p class="identity"><span class="pubdate">2013年11月8日</span> <span class="releaseinfo">Draft Specification</span></p>
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays-20131108.html">http://www.idpf.org/epub/30/spec/epub30-mediaoverlays-20131108.html</a></dd>
+<dt>最新版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub3/latest/mediaoverlays">http://www.idpf.org/epub3/latest/mediaoverlays</a></dd>
+<dt>前の版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html">http://www.idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html</a></dd>
+</dl>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4848&amp;old=4469&amp;r=4848&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub30-mediaoverlays.xml">変更点の差分</a>は、入手可能である。</p>
+
+<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれません）のために、<a class="link" href="http://idpf.org/epub/30/spec/epub30-mediaoverlays-errata/">正誤表（英語）</a>を参照されたい。</p>
+
+<div class="legal"><p class="copyright">Copyright &copy; 2010-2013 International Digital Publishing Forum<sup>&trade;</sup></p>
+<div class="legalnotice" title="legalnotice">
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a class="link" href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+<p>EPUBは International Digital Publishing Forum の登録商標である。</p>
+</div>
+</div>
+<div class="authorgroup"><p class="bridgehead">Editors</p>
+<p class="editor">Marisa DeMeglio, DAISY Consortium </p>
+<p class="editor">Daniel Weck, DAISY Consortium </p>
+</div>
+<div class="toc"><p><strong>目次</strong></p>
+<dl>
+<dt><span class="chapter"><a href="#sec-overview">1. 要約</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-overview-purpose-and-scope">1.1. 目的とスコープ</a></span></dt>
+<dt><span class="section"><a href="#sec-overview-relationship">1.2. 他の使用との関連性</a></span></dt>
+<dt><span class="section"><a href="#sec-terminology">1.3. 用語</a></span></dt>
+
+<dt><span class="section"><a href="#sec-typography">1.4. 表記上の規則</a></span></dt>
+
+<dt><span class="section"><a href="#sec-conformance">1.5. 適合性宣言</a></span></dt></dl>
+
+<dt><span class="section"><a href="#sec-overview-nspfx">1.6. 名前空間接頭辞マッピング</a></span></dt>
+
+</dd>
+
+<dt><span class="chapter"><a href="#sec-media-overlays-document-definition">2. Media Overlay Document の定義</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#sec-overlays-introduction">2.1. 前置き</a></span></dt>
+<dt><span class="section"><a href="#sec-overlays-content-conf">2.2. コンテンツの適合性</a></span></dt>
+<dt><span class="section"><a href="#sec-overlays-rs-conf">2.3. リーディングシステムの適合性</a></span></dt>
+<dt><span class="section"><a href="#sec-overlays-def">2.4. Media Overlay Document の定義</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#sec-smil-smil-elem">2.4.1. <code class="markup">smil</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-smil-head-elem">2.4.2. <code class="markup">head</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-smil-metadata-elem">2.4.3. <code class="markup">metadata</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-smil-body-elem">2.4.4. <code class="markup">body</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-smil-seq-elem">2.4.5. <code class="markup">seq</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-smil-par-elem">2.4.6. <code class="markup">par</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-smil-text-elem">2.4.7. <code class="markup">text</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-smil-audio-elem">2.4.8. <code class="markup">audio</code> 要素</a></span></dt></dl>
+</dd>
+</dl>
+</dd>
+
+<dt><span class="chapter"><a href="#sec-overlay-docs">3. Media Overlays の制作</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-docs-overview">3.1. 要約</a></span></dt>
+<dt><span class="section"><a href="#sec-docs-relations">3.2. EPUB Content Document との関係</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-media-overlays-structure">3.2.1. 構造</a></span></dt>
+<dt><span class="section"><a href="#sec-media-overlays-granularity">3.2.2. 粒度</a></span></dt>
+<dt><span class="section"><a href="#sec-audio-video">3.2.3. 埋め込まれた音声と動画</a></span></dt>
+<dt><span class="section"><a href="#sec-tts">3.2.4. テキスト読み上げ</a></span></dt></dl>
+</dd>
+
+<dt><span class="section"><a href="#sec-docs-semantic-inflection">3.3. 意味の変化</a></span></dt>
+<dt><span class="section"><a href="#sec-docs-assoc-style">3.4. スタイル情報の関連付け</a></span></dt>
+<dt><span class="section"><a href="#sec-docs-package">3.5. パッケージング</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-package-including">3.5.1. Media Overlays を含める</a></span></dt>
+<dt><span class="section"><a href="#sec-package-metadata">3.5.2. Media Overlays のメタデータ語彙</a></span></dt></dl>
+</dd>
+</dl>
+</dd>
+
+<dt><span class="chapter"><a href="#sec-overlay-behaviors">4. 再生の動作</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-behaviors-loading">4.1. Media Overlays の読み込み</a></span></dt>
+<dt><span class="section"><a href="#sec-behaviors-playback">4.2. 基本的な再生</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-rsconf-timing-synch">4.2.1. タイミングと同期</a></span></dt>
+<dt><span class="section"><a href="#sec-rsconf-rendering-audio">4.2.2. 音声のレンダリング</a></span></dt>
+<dt><span class="section"><a href="#sec-rsconf-rendering-text">4.2.3. EPUB Content Document 要素のレンダリング</a></span></dt></dl>
+</dd>
+
+<dt><span class="section"><a href="#sec-behaviors-interaction">4.3. EPUB Content Document との相互作用</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-rsconf-navigation">4.3.1. ナビゲーション</a></span></dt>
+<dt><span class="section"><a href="#sec-embedded-media">4.3.2. 埋め込まれた音声と動画</a></span></dt>
+<dt><span class="section"><a href="#sec-text-to-speech">4.3.3. テキスト読み上げ</a></span></dt></dl>
+</dd>
+
+<dt><span class="section"><a href="#sec-behaviors-skip-escape">4.4. 読み飛ばし機能と回避機能</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="#sec-skippability">4.4.1. 読み飛ばし機能</a></span></dt>
+<dt><span class="section"><a href="#sec-escabaility">4.4.2. 回避機能</a></span></dt></dl>
+</dd>
+</dl>
+</dd>
+
+<dt><span class="appendix"><a href="#app-overlays-schema">A. Media Overlays スキーマ</a></span></dt>
+<dt><span class="appendix"><a href="#app-clock-examples">B. クロック値の例</a></span></dt>
+<dt><span class="appendix"><a href="#app-contributors">C. 謝辞と貢献者</a></span></dt>
+<dt><span class="bibliography"><a href="#references">参照・参考</a></span></dt></dl>
+</div>
+
+<div class="chapter" title="1 Overview" id="sec-overview">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overview">&gt;</a>&nbsp;</span>1 要約</h2>
+<div class="section" title="1.1 Purpose and Scope" id="sec-overview-purpose-and-scope">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overview-purpose-and-scope">&gt;</a>&nbsp;</span>1.1 目的とスコープ</h3>
+
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p>この仕様、EPUB Media Overlays 3.0.1 は、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> と同期する音声表現用に、<a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a>（同期マルチメディア統合言語）、<a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet（または Style Sheet）">EPUBR Style Sheet</a>、および EPUB Content Document の使用方法を定義する。</p>
+
+<p id="sibling-specs">この仕様は EPUB 3 を構成する関連仕様の一つである。 EPUB 3 は XML や Web 標準に基づいたデジタル出版物の交換や配信形式の第 3 版である。この仕様は EPUB 3 を構成する以下の他の仕様と共に読み、理解することになっている：</p>
+
+<div class="itemizedlist" id="epub-specs-listing">
+<ul class="itemizedlist">
+<li class="listitem">
+<p>EPUB 3 Overview <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a> は EPUBの有益な概要と、残りの EPUB 3 文書群のロードマップを提供する。EPUB 3 Overview は最初に読んでおくべきである（should）。</p>
+</li>
+<li class="listitem"><p>EPUB Publications 3.0.1 <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> はセマンティクスと <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の各 <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> のための包括的な適合性要件を定義している。</p>
+</li>
+<li class="listitem">
+<p>EPUB Content Documents 3.0.1 <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> は <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>のコンテキストで使用するための XHTML、SVG と CSS のプロファイルを定義する。</p>
+</li>
+<li class="listitem">
+<p>EPUB Open Container Format (OCF) 3.0.1 <a class="biblioref" href="#refOCF3" title="Open Container Format 3.0.1">[<abbr>OCF301</abbr>]</a> は関連するリソースの集合を単一のファイル（ZIP）の <a class="glossterm" href="#gloss-container" title="EPUB Container（または Container）">EPUB Container</a> にカプセル化するためのファイル形式と処理モデルを定義する。</p>
+</li>
+</ul>
+</div>
+</div>
+
+<!-- 1.2 Relationship to Other Specifications -->
+<div class="section" title="1.2 Relationship to Other Specifications" id="sec-overview-relationship">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overview-relationship">&gt;</a>&nbsp;</span>1.2 他の使用との関連性</h3>
+
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p>この仕様は <a class="xref" href="#sec-overlays-def" title="2.4 Media Overlay Document Definition">Media Overlay Document の定義</a>で定義された EPUB Media Overlays の要素と属性の派生元である <a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a> のサブセットに依存する。</p>
+</div>
+
+<!-- 1.3 Terminology -->
+<div class="section" title="1.3 Terminology" id="sec-terminology">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-terminology">&gt;</a>&nbsp;</span>1.3 用語</h3>
+<div class="glosslist">
+<dl>
+<dt class="glossentry" title="EPUB Publication" id="gloss-epub-publication">EPUB 出版物</dt>
+<dd>
+
+<p><span class="phrase">この仕様と<a class="link" href="#sibling-specs">兄弟仕様</a></span>に準拠したひとつ以上の <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> のコレクションは、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> をパッケージ化している。</p>
+<p>EPUB 出版物は典型的に単一の知的・芸術作品を表しているが、<span class="phrase">この仕様と<a class="link" href="#sibling-specs">兄弟仕様</a></span>は、コンテンツの性質を制限しない。</p>
+
+</dd>
+
+<dt class="glossentry" title="Rendition" id="gloss-rendition">Rendition</dt>
+<dd><p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のレンダリングを表現する相互関係のある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a>のセットから構成されている論理的な文書のエンティティ。</p></dd>
+
+<dt class="glossentry" title="Publication Resource" id="gloss-publication-resource-cmt-or-foreign">Publication Resource</dt>
+<dd>
+<p>コンテンツまたは <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の少なくともひとつの <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> のロジックと表示に関する命令を含んでいるリソース。このリソースがない場合には、EPUB 出版物は<a class="glossterm" href="#gloss-author" title="製作者">製作者</a>の意図したとおりに表示されないことがある。Publication Resource の例としては Rendition の <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet（または Style Sheet）">EPUB Style Sheet</a>、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
+
+<p>Package Document 自身を除いて、Rendition をレンダリングするために必要な Publication Resource は Rendition の <span class="phrase"><a class="link" href="epub30-publications.html#sec-manifest-elem">manifest</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> に記載され、（<span class="phrase"><a class="link" href="epub30-publications.html#sec-resource-locations">Publication Resource の位置</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> で特に指定がない限り）<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> ファイルにバンドルする。</p>
+
+<p>Publication Resource でないリソースの例としては、Package Document の <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-link-elem">link</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の外で解決する外部へのハイパーリンクで識別されるものが含まれている。（例えば <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#the-a-element">a</a></code> 要素の <code class="markup">href</code> 属性）</p>
+</dd>
+<dt class="glossentry" title="EPUB Content Document" id="gloss-content-document-epub">EPUB Content Document</dt>
+<dd>
+<p>EPUB Content Document の定義（<a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML</a> または <a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG</a>）のひとつに従う <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a>。</p>
+
+<p>EPUB Content Document は <a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">Core Media Type</a> であるため、<span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-fallback-processing-flow">フォールバック</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を提供することなく <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>に含まれていてもよい（may）。</p>
+</dd>
+<dt class="glossentry" title="XHTML Content Document" id="gloss-content-document-epub-xhtml">XHTML Content Document</dt>
+<dd>
+<p><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml">XHTML Content Documents</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> で定義されている <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> のプロファイルに準拠する <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>。</p>
+
+<p>XHTML Content Document は、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <a class="link" href="http://www.w3.org/TR/html5/Overview.html#the-xhtml-syntax">XHTML syntax</a> を使用する。</p>
+</dd>
+<dt class="glossentry" title="SVG Content Document" id="gloss-content-document-epub-svg">SVG Content Document</dt>
+<dd>
+<p><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-svg">SVG Content Documents</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> で表現された制約に準拠した <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a>。</p>
+</dd>
+<dt class="glossentry" title="EPUB Navigation Document" id="gloss-content-document-epub-nav">EPUB Navigation Document</dt>
+<dd>
+<p><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">EPUB Navigation Documents</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> で表される制約に従い、人間と機械が読み取り可能なグローバルなナビゲーション情報を含むのに特化した <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a>。</p>
+</dd>
+<dt class="glossentry" title="Core Media Type" id="gloss-core-media-type">Core Media Type</dt>
+<dd>
+<p><a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> 型のセットは、それに対するフォールバックは必須ではない。詳細については <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-publication-resources">Publication Resources</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を参照されたい。</p>
+</dd>
+<dt class="glossentry" title="Package Document" id="gloss-package-document">Package Document</dt>
+<dd><p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の特定の <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> について <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-package-documents">Package Documents</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> で定められいる文献の構造化メタデータをもたらしている <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a>。</p></dd>
+<dt class="glossentry" title="Manifest" id="gloss-manifest">Manifest</dt>
+<dd>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の特定の <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> を構成するすべての <a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> のリスト。</p>
+<p>詳細については <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-manifest-elem">manifest</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を参照されたい。</p>
+</dd>
+<dt class="glossentry" title="Spine" id="gloss-spine">Spine</dt>
+<dd>
+<p><a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">Publication Resource</a> の順序リストは、<span class="phrase"><a class="link" href="epub301-publications.xhtml#confreq-spine-itemtypes">一般的に</a></span> <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> の、EPUB 出版物の特定の<a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> の標準の読み上げ順序を表す。</p>
+<p>詳細については <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-spine-elem">spine</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を参照されたい。</p>
+</dd>
+<dt class="glossentry" title="Media Overlay Document" id="gloss-media-overlay-document">Media Overlay Document</dt>
+<dd>
+<p><span class="phrase">この仕様</span>で定義された同期再生を提供するために録音済みの音声ナレーションを <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a> と関連付ける XML ドキュメント。</p>
+</dd>
+<dt class="glossentry" title="Text-to-Speech (TTS)" id="gloss-tts">Text-to-Speech (TTS)</dt>
+<dd><p>合成音声を用いて人工的な人間の言葉のような <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>のテキストコンテンツのレンダリング。</p>
+</dd>
+<dt class="glossentry" title="EPUB Style Sheet（または Style Sheet）" id="gloss-stylesheet">EPUB Style Sheet（または Style Sheet）</dt>
+<dd><p>CSS のプロファイルに準拠する CSS スタイルシートは <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-css">EPUB Style Sheets</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> で定義されている。</p>
+</dd>
+<dt class="glossentry" title="Viewport" id="gloss-viewport">Viewport</dt>
+<dd><p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の内容が視覚的に<a class="glossterm" href="#gloss-user" title="読者">読者</a>に与えられる <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディングシステム（またはリーディングシステム）">EPUB リーディングシステム</a>の領域。</p>
+</dd>
+<dt class="glossentry" title="CSS Viewport" id="gloss-viewport-css">CSS Viewport</dt>
+<dd><p>CSS でスタイルされたコンテンツを表示できる <a class="glossterm" href="#gloss-viewport" title="Viewport">Viewport</a>。</p>
+</dd>
+<dt class="glossentry" title="EPUB Container（または Container）" id="gloss-container">EPUB Container（または Container）</dt>
+<dd><p><a class="biblioref" href="#refOCF3" title="Open Container Format 3.0.1">[<abbr>OCF301</abbr>]</a> で定義されている <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>用 ZIP ベースのパッケージングと配布のフォーマット。</p>
+</dd>
+<dt class="glossentry" title="製作者" id="gloss-author">製作者</dt>
+<dd><p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>（必ずしも、それが含まれるコンテンツとリソースの作者であるというわけではない）の制作に対して責任がある人または組織。</p>
+</dd>
+<dt class="glossentry" title="読者" id="gloss-user">読者</dt>
+<dd><p><a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディングシステム（またはリーディングシステム）">EPUB リーディングシステム</a>を使用して <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>を消費する個人。</p>
+</dd>
+<dt class="glossentry" title="EPUB リーディングシステム（またはリーディングシステム）" id="gloss-epub-reading-system">EPUB リーディングシステム（またはリーディングシステム）</dt>
+<dd><p>この仕様書と<a class="link" href="#sibling-specs">兄弟仕様</a>と方法の準拠で<a class="glossterm" href="#gloss-user" title="読者">読者</a>に提示するために <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>を処理するシステム。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+<div class="section" title="1.4 Typographic Conventions" id="sec-typography">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-typography">&gt;</a>&#160;</span>1.4 表記上の規則</h3>
+<p>次の表記上の規則は、この仕様に用いられる：</p>
+<div class="variablelist">
+<dl>
+<dt class="varlistentry"><span class="term"><code class="markup">markup</code></span></dt>
+<dd>
+<p>すべてのマークアップ（要素、属性、プロパティ）、コード（JavaScript、擬似コード）、機械処理可能な値（文字列、文字、メディアタイプ）とファイル名は、赤橙色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="code-link">markup</code></span></dt>
+<dd>
+<p>マークアップとコードの定義へのリンクは、下線と赤橙色の等幅フォントで示している。各セクションの最初のインスタンスのみリンクがされている。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="uri">http://www.idpf.org/</code></span></dt>
+<dd>
+<p>URI は紺色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link">hyperlink</span></span></dt>
+<dd>
+<p>ハイパーリンクは、青い下線で示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-ref">[reference]</span></span></dt>
+<dd>
+<p>規範的で参考情報は、角括弧で囲まれている。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="terminology">Term</span></span></dt>
+<dd>
+<p><a class="xref" href="#sec-terminology" title="1.3 Terminology">用語集</a>で定義されている用語は、キャピタルケースで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-def">Term</span></span></dt>
+<dd>
+<p>用語の定義へのリンクはL、点線の青い下線である。各セクションの最初のインスタンスのみリンクがされている。</p>
+</dd>
+</dl>
+</div>
+<div class="elem-synopsis">
+<dl>
+<dt class="varlistentry"><span class="term"/></dt>
+<dd>
+<p>規範的な要素、属性とプロパティの定義は、青いボックスにある。</p>
+</dd>
+</dl>
+</div>
+<div class="informalexample">
+<pre class="synopsis">有益なマークアップ例は、白いボックス内にある。</pre>
+</div>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>有益な注記は、"Note"の見出しがある黄色いボックス内にある。</p>
+</div>
+<div class="caution" title="caution">
+<h3 class="title">caution</h3>
+<p>有益な警告は、"Caution"の見出しがある赤いボックス内にある。</p>
+</div>
+</div>
+
+<!-- 1.4 Conformance Statements -->
+<div class="section" title="1.5 Conformance Statements" id="sec-conformance">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-conformance">&gt;</a>&nbsp;</span>1.5 適合性宣言</h3>
+
+<p>この文書内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">may</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr>RFC2119</abbr>]</a> の記述に従って解釈される。</p>
+
+
+<p>この仕様のすべてのセクションは規定ある。但し"このセクションは有益な情報である"という参考情報状態ラベルで識別される箇所を除く。セクションと付録への参考情報状態の適用は、含まれる可能性のあるすべての子コンテンツおよびサブセクションに適用される。</p>
+
+<p>この仕様のすべての例は有益な参考情報である。</p>
+
+</div>
+
+<div class="section" title="1.6 Namespace prefix mappings" id="sec-overview-nspfx">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overview-nspfx">&gt;</a>&nbsp;</span>1.6 名前空間接頭辞マッピング</h3>
+<p>便宜上、次の名前空間接頭辞マッピング <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr>XMLNS</abbr>]</a> はこの仕様を通して使用される：</p>
+<table id="tbl-nspfx">
+<tr>
+<th class="left">prefix</th>
+<th class="odd">namespace URI</th>
+</tr>
+<tr>
+<td class="left"><code class="markup">epub</code></td>
+<td class="odd"><code class="uri">http://www.idpf.org/2007/ops</code></td>
+</tr>
+</table>
+</div>
+
+</div>
+<!-- 2 Media Overlay Document Definition -->
+<div class="chapter" title="2 Media Overlay Document Definition" id="sec-media-overlays-document-definition">
+
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-media-overlays-document-definition">&gt;</a>&nbsp;</span>2 Media Overlay Document の定義</h2>
+<!-- 2.1 Introduction -->
+<div class="section" title="2.1 Introduction" id="sec-overlays-introduction">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overlays-introduction">&gt;</a>&nbsp;</span>2.1 前置き</h3>
+
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p>同期する音声ナレーションを組み込んだ本は主要な電子書籍、教材、印刷物を読むことのできない人向けに提供される電子書籍で見つけることができる。EPUB 3 では、これらの種類の本は録音済み音声ナレーションのタイミングや、それを EPUB Content Document マークアップにどう関係付けるかを記述するために Media Overlay Document を用いて作成される。Media Overlays のファイル形式は、XML でマルチメディア情報を同期表現する W3C 勧告の <a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">SMIL</a> のサブセットで定義される。</p>
+
+
+<p>Media Overlays の機能を <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディングシステム（またはリーディングシステム）">EPUB リーディングシステム</a>が機能をサポートしていない場合は無視するよう設計されている。EPUB 出版物の <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> に Media Overlays を含めることは、まるで Media Overlays が存在しないかのように Rendition を表示する Media Overlay 非対応のリーディングシステムの能力に影響を与えない。</p>
+
+<p>この仕様の将来のバージョンは動画メディアをサポート（例えばテキストと手話を同期する本）するかもしれないが、現バージョンは EPUB Content Document に含まれる音声メディアの同期のみサポートする。</p>
+</div>
+<!-- 2.2 Content Conformance -->
+<div class="section" title="2.2 Content Conformance" id="sec-overlays-content-conf">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overlays-content-conf">&gt;</a>&nbsp;</span>2.2 コンテンツの適合性</h3>
+
+<p><a class="glossterm" href="#gloss-media-overlay-document" title="Media Overlay Document">Media Overlay Document</a> は次の条件をすべて満たしていなければ<span class="rfc2119">ならない（must）</span>：</p>
+<div class="conformance-list">
+<dl>
+<dt class="varlistentry" id="confreq-mo-docprops"><span class="term">Document のプロパティ</span></dt>
+<dd>
+<p id="confreq-mo-xml"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-mo-xml">&gt;</a>&nbsp;</span><span class="phrase"><span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-xml-constraints">XML 適合性</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> で定義された XML 文書の適合性の制約を満たしていなければ<span class="rfc2119">ならない（must）</span>。</span></p>
+
+<p id="confreq-mo-docprops-schema"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-mo-docprops-schema">&gt;</a>&nbsp;</span><a class="xref" href="#app-overlays-schema" title="Appendix A. Media Overlays Schema">付録 A, <em>Media Overlays スキーマ</em></a>で定義されている Media Overlays のスキーマに対して妥当であること、および <a class="xref" href="#sec-overlays-def" title="2.4 Media Overlay Document Definition">Media Overlay Document の定義</a>で表現されるすべてのコンテンツの適合性の制約に準拠しなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p id="confreq-mo-docprops-structure"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-mo-docprops-structure">&gt;</a>&nbsp;</span><a class="xref" href="#sec-media-overlays-structure" title="3.2.1 Structure">構造</a>で提示されたように関連付けられている <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> の構造を反映しなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p id="confreq-mo-docprops-embed"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-mo-docprops-embed">&gt;</a>&nbsp;</span><a class="glossterm" href="#gloss-author" title="製作者">製作者</a>は<a class="xref" href="#sec-audio-video" title="3.2.3 Embedded Audio and Video">埋め込まれた音声と動画</a>で述べられているとおり、EPUB Content Document に埋め込まれた音声とビデオのコントロールする記述の使用を避ける<span class="rfc2119">べきである（should）</span>。</p>
+
+<p id="confreq-mo-docprops-semantics"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-mo-docprops-semantics">&gt;</a>&nbsp;</span><a class="xref" href="#sec-docs-semantic-inflection" title="3.3 Semantic Inflection">意味の変化</a>に記載されているとおり、適切なセマンティックマークアップを使う<span class="rfc2119">べきである（should）</span>。</p>
+
+<p id="confreq-mo-docprops-package"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-mo-docprops-package">&gt;</a>&nbsp;</span><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>は <a class="xref" href="#sec-docs-package" title="3.5 Packaging">Packaging</a> に示されるようにパッケージしなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+</dd>
+<dt class="varlistentry" id="confreq-mo-fileprops"><span class="term">File のプロパティ</span></dt>
+<dd>
+<p id="confreq-mo-fileprops-name"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-mo-fileprops-name">&gt;</a>&nbsp;</span>Media Overlay Document のファイル名はファイル拡張子の <code class="filename">.smil</code> を使用す<span class="rfc2119">べきである（should）</span>。</p>
+</dd>
+</dl>
+</div>
+</div>
+<!-- 2.3リーディングシステムConformance -->
+<div class="section" title="2.3リーディングシステムConformance" id="sec-overlays-rs-conf">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overlays-rs-conf">&gt;</a>&nbsp;</span>2.3 リーディングシステムの適合性</h3>
+
+<p><a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディングシステム（またはリーディングシステム）">EPUB リーディングシステム</a>の Media Overlays のサポートは<span class="rfc2119">省略可能（optional）</span>である。Media Overlays をサポートしているリーディングシステムは次の条件をすべて満たしていなければ<span class="rfc2119">ならない（must）</span></p>
+
+<div class="conformance-list">
+<ul class="conformance-list">
+<li class="listitem"><p id="confreq-rs-package-def"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-package-def">&gt;</a>&nbsp;</span>Media Overlay Document は、<a class="xref" href="#sec-overlays-def" title="2.4 Media Overlay Document Definition">Media Overlay Document の定義</a>で表現されるすべてのリーディングシステムの適合性の制約に準拠して処理しなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p id="confreq-rs-xhtml-svg"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-xhtml-svg">&gt;</a>&nbsp;</span>
+<a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a> をサポートしなければ<span class="rfc2119">ならず（must）</span>、<a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG Content Document</a> をサポートし<span class="rfc2119">てもよい（may）</span>。</p>
+
+<p id="confreq-rs-render"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-render">&gt;</a>&nbsp;</span>Media Overlay の要素は、<a class="xref" href="#sec-behaviors-playback" title="4.2 Basic Playback">基本的な再生</a>に記載されているようにレンダリングしなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p id="confreq-rs-navigation"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-navigation">&gt;</a>&nbsp;</span>Media Overlay は、<a class="xref" href="#sec-rsconf-navigation" title="4.3.1 Navigation">ナビゲーション</a>に記載されているように再生中は、<a class="glossterm" href="#gloss-user" title="読者">読者</a>の操作を許可しなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p id="confreq-rs-embed"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-embed">&gt;</a>&nbsp;</span><a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> に参照される埋め込まれた音声と動画は、<a class="xref" href="#sec-embedded-media" title="4.3.2 Embedded Audio and Video">埋め込まれた音声と動画</a>に記載されていることに留意し、規則に従わなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p id="confreq-rs-tts"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-tts">&gt;</a>&nbsp;</span><a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">テキスト読み上げ (TTS)</a> 機能を持つリーディングシステムは、<span class="phrase"><a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> <a class="link" href="epub301-publications.xhtml#confreq-rs-epub3-tts">リーディングシステムのテキスト読み上げの適合要件</a></span>に従う<span class="rfc2119">べきである（should）</span>。</p>
+
+<p id="confreq-rs-skip-escape"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-skip-escape">&gt;</a>&nbsp;</span><a class="xref" href="#sec-behaviors-skip-escape" title="4.4 Skippability and Escapability">読み飛ばし機能と回避機能</a>に記載されてる、読み飛ばしと回避の機能を提供す<span class="rfc2119">べきである（should）</span>。</p>
+</li>
+</ul>
+</div>
+
+<p>Media Overlay をサポートしていないリーディングシステムは以下の基準に対処しなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<div class="conformance-list">
+<ul class="conformance-list">
+<li class="listitem">
+<p id="confreq-rs-mo-ignore"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-rs-mo-ignore">&gt;</a>&nbsp;</span><a class="glossterm" href="#gloss-manifest" title="Manifest">manifest</a> <code class="markup"><span class="phrase"><a class="link" href="epub301-publications.xhtml#elemdef-package-item">item</a></span></code> 要素の <code class="markup">media-overlay</code> 属性と <code class="markup">media-type</code> 属性値が <code class="media-type">application/smil+xml</code> の manifest <code class="markup">item</code> 要素の両方を無視しなければ<span class="rfc2119">ならない（must）</span>。</p>
+</li>
+</ul></div>
+</div>
+
+<!-- 2.4 Media Overlay Document Definition -->
+<div class="section" title="2.4 Media Overlay Document Definition" id="sec-overlays-def">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overlays-def">&gt;</a>&nbsp;</span>2.4 Media Overlay Document の定義</h3>
+<p>特に指定のない限り、このセクションで定義されているすべての要素 <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> は名前空間  <code class="uri">http://www.w3.org/ns/SMIL</code> <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr>XMLNS</abbr>]</a> である。</p>
+
+<!-- 2.4.1 The smil Element -->
+<div class="section" title="2.4.1 The smil Element" id="sec-smil-smil-elem">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-smil-elem">&gt;</a>&nbsp;</span>2.4.1 <code class="literal">smil</code> 要素</h4>
+
+<p><code class="literal">smil</code> 要素は全ての Media Overlay Document のルート要素でなければ<span class="rfc2119">ならない（must）</span>。</p>
+<div class="elem-synopsis" id="elemdef-smil">
+<dl>
+<dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p> <code class="markup">smil</code> </p>
+</dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p><code class="markup">smil</code> 要素は Media Overlay Document のルート要素である。</p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd>
+<div class="elem-synopsis-attlist">
+<dl>
+<dt class="varlistentry"><span class="term"><code class="markup">version</code> <code class="option">[必須]</code> </span></dt>
+<dd><p>Media Overlay に準拠する <a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a> 仕様書のバージョン番号を指定する。</p>
+<p>属性は、このバージョンの仕様に準拠していることを示すための値に "<code class="value">3.0</code>" を持たねば<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="markup">id</code> <code class="option">[省略可]</code> </span></dt>
+<dd><p>要素の ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> はドキュメントのスコープ内で一意でなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+<dt class="varlistentry" id="attrdef-smil-prefix"><span class="term"> <code class="markup">epub:prefix</code> <code class="option">[省略可]</code> </span></dt>
+<dd><p>追加のメタデータ語彙接頭辞を宣言する。</p>
+<p>詳細については<a class="xref" href="#sec-docs-semantic-inflection" title="3.3 Semantic Inflection">意味の変化</a>を参照されたい。</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p>記述順序：<code class="markup"><a class="xref" href="#elemdef-smil-head">head</a></code> <code class="option">[省略可]</code>, <code class="markup"><a class="xref" href="#elemdef-smil-body">body</a></code> <code class="option">[必須]</code></p>
+</dd>
+</dl>
+</div>
+</div>
+
+<!-- 2.4.2 The head Element -->
+<div class="section" title="2.4.2 The head Element" id="sec-smil-head-elem">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-head-elem">&gt;</a>&nbsp;</span>2.4.2 <code class="markup">head</code> 要素</h4>
+<p><code class="markup">head</code> 要素は Media Overlay Document 内のメタデータのコンテナであり、0以上の子 <code class="markup">metadata</code> 要素で構成される。</p>
+<div class="elem-synopsis" id="elemdef-smil-head"><dl><dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p> <code class="markup">head</code> </p>
+</dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p><code class="markup">head</code> 要素は <code class="markup"><a class="xref" href="#elemdef-smil">smil</a></code> 要素の省略可能な最初の子要素。</p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd><p>なし</p>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p><code class="markup"><a class="xref" href="#elemdef-smil-metadata">metadata</a></code> <code class="option">[0またはひとつ]</code>。</p>
+</dd>
+</dl>
+</div>
+<p>この仕様は Media Overlay Document で必要とするメタデータのプロパティを定義していないとして <code class="markup">head</code> 要素は省略可能である。</p>
+</div>
+
+<!-- 2.4.3 The metadata Element -->
+<div class="section" title="2.4.3 The metadata Element" id="sec-smil-metadata-elem">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-metadata-elem">&gt;</a>&nbsp;</span>2.4.3 <code class="markup">metadata</code> 要素</h4>
+<p><code class="markup">metadata</code> 要素は Media Overlay Document のメタデータを表す。<code class="markup">metadata</code> 要素は任意のメタ情報の構造化言語で記述されたメタデータを含めることができる拡張ポイントである。</p>
+<div class="elem-synopsis" id="elemdef-smil-metadata">
+<dl>
+<dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p> <code class="markup">metadata</code> </p>
+</dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p><code class="markup"><a class="xref" href="#elemdef-smil-head">head</a></code> 要素の子。</p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd><p>なし</p>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p>任意の名前空間からの <code class="option">[0個以上]</code> の要素。</p>
+</dd>
+</dl>
+</div>
+<p>この仕様は Media Overlay Document に発生しなければ<span class="rfc2119">ならず（must）</span>、メタデータのプロパティを定義しない。<code class="markup">metadata</code> 要素は特別なメタデータの要件により提供される。</p>
+</div>
+<div class="section" title="2.4.4 The body Element" id="sec-smil-body-elem">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-body-elem">&gt;</a>&nbsp;</span>2.4.4 <code class="markup">body</code> 要素</h4>
+
+<p><code class="markup">body</code> 要素は Media Overlay Document に含まれているプレゼンテーションのための開始地点である。それは <code class="markup">par</code> と <code class="markup">seq</code> 要素の主要なシーケンスを含んでいる。</p>
+
+<div class="elem-synopsis" id="elemdef-smil-body">
+<dl>
+<dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p><code class="markup">body</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p><code class="markup">body</code> 要素は <code class="markup"><a class="xref" href="#elemdef-smil">smil</a></code> 要素に必須な二番目の子要素。</p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd><div class="elem-synopsis-attlist"><dl><dt class="varlistentry" id="addrdef-smil-body-type"><span class="term"><code class="markup">epub:type</code> <code class="option">[省略可]</code></span></dt>
+<dd><p><a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 内の対応する要素の構造的な意味の語句。</p>
+<p>値は<span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-property-datatype">プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の種類が空白で区切られたリストでである。詳細については<a class="xref" href="#sec-docs-semantic-inflection" title="3.3 Semantic Inflection">意味の変化</a>を参照されたい。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="markup">id</code> <code class="option">[省略可]</code></span></dt>
+<dd><p>要素の ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> はドキュメントのスコープ内で一意でなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+<dt class="varlistentry" id="attrdef-body-textref"><span class="term"><code class="markup">epub:textref</code> <code class="option">[省略可]</code></span></dt>
+<dd><p>対応する EPUB Content Document の相対的な IRI 参照 <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr>RFC3987</abbr>]</a> は、<a class="biblioref" href="#refXPTRSH" title="XPointer Shorthand Notation">[<abbr>XPTRSH</abbr>]</a> のように明確な要素を参照するフラグメント識別子を含んでいる。</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p>記述順序： <code class="markup"><a class="xref" href="#elemdef-smil-seq">seq</a></code> <code class="option">[0個以上]</code> または <code class="markup"><a class="xref" href="#elemdef-smil-par">par</a></code> <code class="option">[0個以上]</code></p>
+<p>少なくとも一つの <code class="markup">par</code> または <code class="markup">seq</code> が必要である。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" title="2.4.5 The seq Element" id="sec-smil-seq-elem">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-seq-elem">&gt;</a>&nbsp;</span>2.4.5 <code class="markup">seq</code> 要素</h4>
+<p><code class="markup">seq</code> 要素は順番にレンダリングされるメディアオブジェクトが含まれている。</p>
+<div class="elem-synopsis" id="elemdef-smil-seq">
+<dl>
+<dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p><code class="markup">seq</code></p></dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p>ひとつ以上の <code class="markup">seq</code> 要素は <code class="markup"><a class="xref" href="#elemdef-smil-body">body</a></code> と <code class="markup"><a class="xref" href="#elemdef-smil-seq">seq</a></code> 要素の子に出現し<span class="rfc2119">てもよい（may）</span></p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd>
+<div class="elem-synopsis-attlist">
+<dl>
+<dt class="varlistentry"><span class="term"><code class="markup">epub:type</code> <code class="option">[省略可]</code> </span></dt>
+<dd><p><a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 内の対応する要素の構造的な意味の語句。</p>
+<p>値は<span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-property-datatype">プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の種類が空白で区切られたリストである。詳細については<a class="xref" href="#sec-docs-semantic-inflection" title="3.3 Semantic Inflection">意味の変化</a>を参照されたい。</p>
+</dd>
+<dt class="varlistentry"><span class="term"> <code class="markup">id</code> <code class="option">[省略可]</code> </span></dt>
+<dd><p>要素の ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> はドキュメントのスコープ内で一意でなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+<dt class="varlistentry" id="attrdef-seq-textref"><span class="term"><code class="markup">epub:textref</code> <code class="option">[必須]</code></span></dt>
+<dd><p>対応する EPUB Content Document の相対的な IRI 参照 <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr>RFC3987</abbr>]</a> は、<a class="biblioref" href="#refXPTRSH" title="XPointer Shorthand Notation">[<abbr>XPTRSH</abbr>]</a> のように明確な要素を参照するフラグメント識別子を含んでいる。</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p>記述順序： <code class="markup"><a class="xref" href="#elemdef-smil-seq">seq</a></code> <code class="option">[0個以上]</code> または <code class="markup"><a class="xref" href="#elemdef-smil-par">par</a></code> <code class="option">[0個以上]</code></p>
+<p>少なくとも一つの <code class="markup">par</code> または <code class="markup">seq</code> が必要である。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" title="2.4.6 The par Element" id="sec-smil-par-elem">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-par-elem">&gt;</a>&nbsp;</span>2.4.6 <code class="markup">par</code> 要素</h4>
+<p><code class="markup">par</code> 要素は並列にレンダリングされるメディアオブジェクトが含まれている。</p>
+<div class="elem-synopsis" id="elemdef-smil-par">
+<dl>
+<dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p><code class="markup">par</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p>0個以上の <code class="markup">par</code> 要素は <code class="markup"><a class="xref" href="#elemdef-smil-body">body</a></code> と <code class="markup"><a class="xref" href="#elemdef-smil-seq">seq</a></code> 要素の子に出現し<span class="rfc2119">てもよい（may）</span></p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd>
+<div class="elem-synopsis-attlist">
+<dl>
+<dt class="varlistentry"><span class="term"><code class="markup">epub:type</code> <code class="option">[省略可]</code></span></dt>
+<dd><p><a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 内の対応する要素の構造的な意味の語句。</p>
+<p>値は<span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-property-datatype">プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の種類が空白で区切られたリストである。詳細については<a class="xref" href="#sec-docs-semantic-inflection" title="3.3 Semantic Inflection">意味の変化</a>を参照されたい。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="markup">id</code> <code class="option">[省略可]</code></span></dt>
+<dd><p>要素の ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> はドキュメントのスコープ内で一意でなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p>記述順序：<code class="markup"><a class="xref" href="#elemdef-smil-text">text</a></code> <code class="option">[必須]</code> と <code class="markup"><a class="xref" href="#elemdef-smil-audio">audio</a></code> <code class="option">[省略可]</code></p>
+
+<p><code class="markup"><a class="xref" href="#elemdef-smil-audio">audio</a></code> 要素は音声や動画メディア（<a class="xref" href="#sec-audio-video" title="3.2.3 Embedded Audio and Video">埋め込まれた音声と動画</a>を参照）または<a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">テキスト読み上げ (TTS)</a> 経由でレンダリングされた対象となる原文のコンテンツを参照している兄弟 <code class="markup"><a class="xref" href="#elemdef-smil-text">text</a></code> 要素がある場合に限り省略可能である。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" title="2.4.7 The text Element" id="sec-smil-text-elem">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-text-elem">&gt;</a>&nbsp;</span>2.4.7 <code class="markup">text</code> 要素</h4>
+<p><code class="markup">text</code> 要素は <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 内を参照する要素。<code class="markup">text</code> 要素は通常、テキスト要素を参照するだけでなく、他の EPUB Content Document のメディア要素（<a class="xref" href="#sec-audio-video" title="3.2.3 Embedded Audio and Video">埋め込まれた音声と動画</a>を参照）を参照することができる。</p>
+<div class="elem-synopsis" id="elemdef-smil-text">
+<dl>
+<dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p><code class="markup">text</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p><code class="markup"><a class="xref" href="#elemdef-smil-par">par</a></code> 要素の必須の子。</p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd>
+<div class="elem-synopsis-attlist">
+<dl>
+<dt class="varlistentry"><span class="term"><code class="markup">src</code> <code class="option">[必須]</code></span></dt>
+<dd><p>対応する EPUB Content Document の相対的な IRI 参照 <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr>RFC3987</abbr>]</a> は、<a class="biblioref" href="#refXPTRSH" title="XPointer Shorthand Notation">[<abbr>XPTRSH</abbr>]</a> のように明確な要素を参照するフラグメント識別子を含んでいる。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="markup">id</code> <code class="option">[省略可]</code></span></dt>
+<dd><p>要素の ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> はドキュメントのスコープ内で一意でなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p>空</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" title="2.4.8 The audio Element" id="sec-smil-audio-elem">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-smil-audio-elem">&gt;</a>&nbsp;</span>2.4.8 <code class="markup">audio</code> 要素</h4>
+<p><code class="markup">audio</code> 要素はオーディオメディアのクリップを表している。</p>
+<div class="elem-synopsis" id="elemdef-smil-audio">
+<dl>
+<dt class="varlistentry"><span class="term">要素名</span></dt>
+<dd><p><code class="markup">audio</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">使用方法</span></dt>
+<dd><p>audio または video メディアを参照している兄弟 <code class="markup"><a class="xref" href="#elemdef-smil-text">text</a></code> 要素である場合を除く <code class="markup"><a class="xref" href="#elemdef-smil-par">par</a></code> 要素の必須の子の場合に省略可能（<a class="xref" href="#sec-audio-video" title="3.2.3 Embedded Audio and Video">埋め込まれた音声と動画</a>を参照）である。</p>
+</dd>
+<dt class="varlistentry"><span class="term">属性</span></dt>
+<dd>
+<div class="elem-synopsis-attlist">
+<dl>
+<dt class="varlistentry"><span class="term"><code class="markup">id</code> <code class="option">[省略可]</code></span></dt>
+<dd><p>要素の ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> はドキュメントのスコープ内で一意でなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="markup">src</code> <code class="option">[必須]</code></span></dt>
+<dd><p>音声ファイルの相対的または絶対的 IRI 参照 <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr>RFC3987</abbr>]</a>。音声ファイルは <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-core-media-types">Core Media Types</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> 表に記載されている音声フォーマットのいずれかでなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+<dt class="varlistentry" id="attrdef-smil-clipBegin"><span class="term"><code class="markup">clipBegin</code> <code class="option">[省略可]</code></span></dt>
+<dd><p>音声クリップの開始地点に一致する物理的メディアへのオフセットを記述するクロック値。</p>
+
+<p>クロック値は <a class="link" href="http://www.w3.org/TR/SMIL/smil-timing.html#q22">SMIL クロック値</a>のサブセットで、<a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a> で定義されている。<a class="xref" href="#app-clock-examples" title="Appendix B. Examples of Clock Values">付録 B <em>クロック値の例</em></a> を参照されたい。</p>
+</dd>
+<dt class="varlistentry" id="attrdef-smil-clipEnd"><span class="term"><code class="markup">clipEnd</code> <code class="option">[省略可]</code></span></dt>
+<dd><p>音声クリップの終了地点に一致する物理的メディアへのオフセットを記述するクロック値。</p>
+<p>クロック値は <a class="link" href="http://www.w3.org/TR/SMIL/smil-timing.html#q22">SMIL クロック値</a>のサブセットで、<a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a> で定義されている。<a class="xref" href="#app-clock-examples" title="Appendix B. Examples of Clock Values">付録 B <em>クロック値の例</em></a> を参照されたい。</p>
+<p>終了位置の時系列オフセットは <code class="markup">clipBegin</code> 属性で指定された開始オフセットの後でなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+</dl>
+</div>
+</dd>
+<dt class="varlistentry"><span class="term">コンテンツモデル</span></dt>
+<dd><p>空</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="chapter" title="3 Creating Media Overlays" id="sec-overlay-docs">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overlay-docs">&gt;</a>&nbsp;</span>3 Media Overlays の制作</h2>
+<div class="section" title="3.1 Overview" id="sec-docs-overview">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-docs-overview">&gt;</a>&nbsp;</span>3.1 要約</h3>
+<p class="informative">このセクションは有益な情報である。</p>
+<p>出版物の録音済みナレーションは <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> の一部のそれぞれに対応する音声クリップの連続として表すことができる。単一の音声クリップは、例えば、一般的に単一のフレーズや段落を表現するが、他のクリップや文書のテキストに対する相対的な順番を推測しない。Media Overlays は <a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">SMIL</a> マークアップを使用し、EPUB Content Document 内の対応するテキスト（または他のメディア）に構造化された音声ナレーションを紐付けることにより、同期のこの問題を解決する。Media Overlays は、実際には、これらのクリップの再生順序を定義することを許可する SMIL 3.0 の単純化したサブセットである。</p>
+
+<p>Media Overlays 構成するために使用される主要な SMIL 要素は <code class="markup"><a class="markup" href="#elemdef-smil-body">body</a></code> （主な再生順序のために使用される）、<code class="markup"><a class="markup" href="#elemdef-smil-seq">seq</a></code> （再生順序）と <code class="markup"><a class="markup" href="#elemdef-smil-par">par</a></code> （並列再生）である。（これらと他の SMIL 要素のより詳細な情報は <a class="xref" href="#sec-overlays-def" title="2.4 Media Overlay Document Definition">Media Overlay Document の定義</a>を参照されたい。）</p>
+
+<p><code class="markup">par</code> 要素はオーバーレイの基本構成単位であり、EPUB Content Document のフレーズに対応している。要素は 1) フレーズのためのナレーションを含んだ音声クリップと 2) EPUB Content Document フラグメントに結びつけられたポインターという同期コンテンツの二つの重要な要素を提供する。<code class="markup">par</code> 要素はこの情報を表現する <code class="markup"><a class="markup" href="#elemdef-smil-audio">audio</a></code> 要素と <code class="markup"><a class="markup" href="#elemdef-smil-text">text</a></code> 要素という2つのメディア子要素を使用する。<code class="markup">par</code> 要素は並列にこれら子要素を表現するので、音声クリップと EPUB Content Document フラグメントは同期プレゼンテーションの結果、同時に再生される。</p>
+
+<p><code class="markup">text</code> 要素の <code class="markup">src</code> 属性は IRI 参照によって EPUB Content Document の関連したフレーズやセンテンス、または他のセグメントを参照する。<code class="markup">audio</code> 要素の <code class="markup">src</code> 属性は一致する音声クリップの位置を同様に参照し、省略可能な <code class="markup"><a class="markup" href="#attrdef-smil-clipBegin">clipBegin</a></code> と <code class="markup"><a class="markup" href="#attrdef-smil-clipEnd">clipEnd</a></code> 属性はクリップ内の特定のオフセットを示すために追加する。</p>
+
+<div class="informalexample">
+<p>次の例では、単一のフレーズまたはセンテンスの Media Overlays のマークアップを示している。</p>
+
+<pre class="synopsis">&lt;par&gt;
+    &lt;text src="chapter1.xhtml#sentence1"/&gt;
+    &lt;audio src="chapter1_audio.mp3" clipBegin="23s" clipEnd="30s"/&gt;
+&lt;/par&gt;</pre></div>
+
+<p><code class="markup">par</code> 要素はフレーズまたはセンテンスの連続を形成するために順番に一緒に配置される。すべての EPUB Content Document の要素が、音声ナレーションに関連するだけの Media Overlays の <code class="markup">par</code> 要素に対応するとは限らない。</p>
+
+<div class="informalexample"><p>次の例では、フレーズの再生順序を含む基本的な Media Overlay Document を示している。<code class="markup">body</code> 要素は文書全体の主な再生順序として機能する。</p>
+<pre class="synopsis">&lt;smil xmlns="http://www.w3.org/ns/SMIL"
+      version="3.0"&gt;
+    &lt;body&gt;
+        &lt;par id="par1"&gt;
+            &lt;text src="chapter1.xhtml#sentence1"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0s" clipEnd="10s"/&gt;
+        &lt;/par&gt;
+        &lt;par id="par2"&gt;
+            &lt;text src="chapter1.xhtml#sentence2"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="10s" clipEnd="20s"/&gt;
+        &lt;/par&gt;
+        &lt;par id="par3"&gt;
+            &lt;text src="chapter1.xhtml#sentence3"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="20s" clipEnd="30s"/&gt;
+        &lt;/par&gt;
+    &lt;/body&gt;
+&lt;/smil&gt;</pre></div>
+
+<p><code class="markup">par</code> 要素は部や章など、より複雑な構造を定義する <code class="markup">seq</code> 要素に追加することもできる（<a class="xref" href="#sec-media-overlays-structure" title="3.2.1 Structure">構造</a>を参照）。</p>
+
+</div>
+
+<div class="section" title="3.2 Relationship to the EPUB Content Document" id="sec-docs-relations">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-docs-relations">&gt;</a>&nbsp;</span>3.2 EPUB Content Document との関係</h3>
+
+<div class="note" title="note">
+
+<h3 class="title">note</h3>
+
+<p>このセクションでは、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> は <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a> と仮定する。Media Overlay は <a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG Content Document</a> で利用することができるが、再生の動作は一貫性のないものかもしれず、そのために相互運用性も保証されない。</p>
+</div>
+<div class="section" title="3.2.1 Structure" id="sec-media-overlays-structure">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-media-overlays-structure">&gt;</a>&nbsp;</span>3.2.1 構造 </h4>
+
+<p>Media Overlay 要素の順序付けは EPUB Content Document の初期設定の読み上げ順序に一致しなければ<span class="rfc2119">ならない（must）</span>。<code class="markup"><a class="markup" href="#elemdef-smil-par">par</a></code> 要素はフレーズを表し、<code class="markup"><a class="markup" href="#elemdef-smil-seq">seq</a></code> 要素（シークエンス）は例えば section、aside、header および footnote などのネスト化された EPUB Content Document のコンテナを表している。子要素の <code class="literal">seq</code> は他の <code class="markup">seq</code> または <code class="markup">par</code> の要素でなければ<span class="rfc2119">ならない（must）</span>。それぞれの <code class="markup">seq</code> 要素は IRI 参照によって一致する EPUB Content Document 要素を参照する <code class="markup"><a class="markup" href="#attrdef-body-textref">epub:textref</a></code> 属性を含まなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<div class="informalexample" id="example-mo-nesting"><p>次の例では、セクションのヘッダーとネスト化した図を含むサイドバーの両方を持つ章を表現したネスト化された <code class="markup">seq</code> 要素を含む Media Overlay Document を示している。</p>
+<pre class="synopsis">&lt;smil xmlns="http://www.w3.org/ns/SMIL"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      version="3.0"&gt;
+  &lt;body&gt;
+
+    &lt;!-- a chapter --&gt;
+    &lt;seq id="id1" epub:textref="chapter1.xhtml#sectionstart" epub:type="chapter"&gt;
+
+      &lt;!-- the section title --&gt;
+      &lt;par id="id2"&gt;
+        &lt;text src="chapter1.xhtml#section1_title"/&gt;
+        &lt;audio src="chapter1_audio.mp3" clipBegin="0:23:23.84" clipEnd="0:23:34.221"/&gt;
+      &lt;/par&gt;
+
+      &lt;!-- some sentences in the chapter --&gt;
+      &lt;par id="id3"&gt;
+        &lt;text src="chapter1.xhtml#text1"/&gt;
+        &lt;audio src="chapter1_audio.mp3" clipBegin="0:23:34.221" clipEnd="0:23:59.003"/&gt;
+      &lt;/par&gt;
+      &lt;par id="id4"&gt;
+        &lt;text src="chapter1.xhtml#text2"/&gt;
+        &lt;audio src="chapter1_audio.mp3" clipBegin="0:23:59.003" clipEnd="0:24:15.000"/&gt;
+      &lt;/par&gt;
+
+      &lt;!-- an informational sidebar --&gt;
+      &lt;seq id="id5" epub:textref="chapter1.xhtml#sidebar" epub:type="sidebar"&gt;
+        &lt;par id="id6"&gt;
+          &lt;text src="chapter1.xhtml#sidebartitle"/&gt;
+          &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:15.000" clipEnd="0:24:18.123"/&gt;
+        &lt;/par&gt;
+
+        &lt;!-- a figure within the sidebar --&gt;
+        &lt;seq id="id7" epub:textref="chapter1.xhtml#figure"&gt;
+          &lt;par id="id8"&gt;
+            &lt;text src="chapter1.xhtml#photo"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:18.123" clipEnd="0:24:28.764"/&gt;
+          &lt;/par&gt;
+          &lt;par id="id9"&gt;
+            &lt;text src="chapter1.xhtml#caption"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:28.764" clipEnd="0:24:50.010"/&gt;
+          &lt;/par&gt;
+        &lt;/seq&gt;
+
+        &lt;!-- some sentences in the sidebar --&gt;
+        &lt;par id="id10"&gt;
+          &lt;text src="chapter1.xhtml#sidebartext1"/&gt;
+          &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:50.010" clipEnd="0:25:28.530"/&gt;
+        &lt;/par&gt;
+        &lt;par id="id11"&gt;
+          &lt;text src="chapter1.xhtml#sidebartext2"/&gt;
+          &lt;audio src="chapter1_audio.mp3" clipBegin="0:25:28.530" clipEnd="0:25:45.515"/&gt;
+        &lt;/par&gt;
+      &lt;/seq&gt;
+
+      &lt;!-- more sentences in the chapter (outside the sidebar) --&gt;
+      &lt;par id="id12"&gt;
+          &lt;text src="chapter1.xhtml#text3"/&gt;
+          &lt;audio src="chapter1_audio.mp3" clipBegin="0:25:45.515" clipEnd="0:26:30.203"/&gt;
+      &lt;/par&gt;
+      &lt;par id="id13"&gt;
+          &lt;text src="chapter1.xhtml#text4"/&gt;
+          &lt;audio src="chapter1_audio.mp3" clipBegin="0:26:30.203" clipEnd="0:27:15.000"/&gt;
+      &lt;/par&gt;
+
+    &lt;/seq&gt;
+  &lt;/body&gt;
+&lt;/smil&gt;</pre>
+</div>
+
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p><code class="markup">seq</code> 要素内のサイドバー、セクションのヘッダー、図、表組や注釈のようなグループ化した構造にする理由は、それらの開始位置と終了位置を再生する時に識別できるようにするためである。リーディングシステムは、例えば長いサイドバーを読み飛ばしたり、改ページのアナウンスの解釈を停止させたり（<a class="xref" href="#sec-behaviors-skip-escape" title="4.4 Skippability and Escapability">読み飛ばし機能と回避機能</a>を参照）、または例えば表組など一揃いの構造に合わせて読み取りのモードをカスタマイズするように、特定の <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> のレイアウトにあわせて再生のオプションを提供できる。</p>
+</div>
+
+<div class="informalexample"><p>次の例では、<a class="link" href="#example-mo-nesting">前述の Media Overlay の例</a>に対応する EPUB Content Document を示している。</p>
+
+<pre class="synopsis">&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      xml:lang="en"
+      lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Media Overlays Example of EPUB Content Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body id="sec1"&gt;
+        &lt;section id="sectionstart" epub:type="chapter"&gt;
+            &lt;h1 id="section1_title"&gt;The Section Title&lt;/h1&gt;
+            &lt;p id="text1"&gt;The first phrase of the main text body.&lt;/p&gt;
+            &lt;p id="text2"&gt;The second phrase of the main text body.&lt;/p&gt;
+            &lt;aside id="sidebar" epub:type="sidebar"&gt;
+                &lt;h2 id="sidebartitle"&gt;The Sidebar Title&lt;/h2&gt;
+                &lt;figure id="figure"&gt;
+                    &lt;img id="photo"
+                         src="photo.png"
+                         alt="a photograph for which there is a caption" /&gt;
+                    &lt;figcaption id="caption"&gt;The photo caption&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;p id="sidebartext1"&gt;A phrase in the sidebar.&lt;/p&gt;
+                &lt;p id="sidebartext2"&gt;Another phrase in the sidebar&lt;/p&gt;
+            &lt;/aside&gt;
+            &lt;p id="text3"&gt;The third phrase of the main text body.&lt;/p&gt;
+            &lt;p id="text4"&gt;The fourth phrase of the main text body.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+</div>
+
+<div class="section" title="3.2.2 Granularity" id="sec-media-overlays-granularity">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-media-overlays-granularity">&gt;</a>&nbsp;</span>3.2.2 粒度</h4>
+
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p>Media Overlay <code class="markup"><a class="markup" href="#elemdef-smil-text">text</a></code> 要素 の <code class="markup">src</code> 属性は ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> によって <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> の要素を参照する。Media Overlay の粒度レベルは、どのように EPUB Content Document をマークアップしているかによって異なる。マークアップの最高のレベルが段落レベルであるならば、それは Media Overlay の同期が生み出すことのできる最も良いレベルである。同様に、小段落のマークアップに、例えば <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#the-span-element">span</a></code> 要素で表現されるフレーズやセンテンスなどが利用できるならば、それは Media Overlay 内で可能なより良い粒度である。より良い粒度は<a class="glossterm" href="#gloss-user" title="読者">読者</a>に、単語またはフレーズによるナビゲーションやテキストの検索、同期再生のための正確な結果を与えるが、Media Overlay Document のファイルサイズは増加する。</p>
+</div>
+
+<div class="section" title="3.2.3 Embedded Audio and Video" id="sec-audio-video">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-audio-video">&gt;</a>&nbsp;</span>3.2.3 埋め込まれた音声と動画</h4>
+
+<p>Media Overlay に関連付けられたすべての <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> は、動画、音声、画像などの埋め込みメディアを含ん<span class="rfc2119">でもよい（may）</span>。Media Overlay <code class="markup"><a class="markup" href="#elemdef-smil-text">text</a></code> 要素は ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> 値によって埋め込みメディアを参照する場合に使用し<span class="rfc2119">てもよい（may）</span>。</p>
+
+<p><code class="markup">text</code> 要素が音声を含む埋め込みメディアを参照する時、<code class="markup"><a class="markup" href="#elemdef-smil-audio">audio</a></code> 兄弟要素は必須ではないが、一つ含むことは許可されている。</p>
+
+<p><a class="glossterm" href="#gloss-author" title="製作者">製作者</a>は Media Overlay の再生動作と衝突するかもしれないので、参照される埋め込まれた EPUB Content Document メディアの再生を制御するスクリプトを使用することは避ける<span class="rfc2119">べきである（should）</span>。</p>
+</div>
+
+<div class="section" title="3.2.4 Text-to-Speech" id="sec-tts">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-tts">&gt;</a>&nbsp;</span>3.2.4 テキスト読み上げ</h4>
+
+<p>この仕様は録音済み音声クリップに加えて<a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">テキスト読み上げ (TTS)</a> の使用を許可している。<code class="markup"><a class="markup" href="#elemdef-smil-audio">audio</a></code> 兄弟要素を含まない Media Overlay の <code class="markup"><a class="markup" href="#elemdef-smil-text">text</a></code> 要素が対象となる <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 内部の要素を参照する時、参照された要素のコンテンツは TTS を経由してレンダリングできなければ<span class="rfc2119">ならない（must）</span>。たとえば、テキストの EPUB Content Document 要素もしくはテキストのフォールバックを含めることができる。</p>
+</div>
+
+</div>
+
+<div class="section" title="3.3 Semantic Inflection" id="sec-docs-semantic-inflection">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-docs-semantic-inflection">&gt;</a>&nbsp;</span>3.3 意味の変化</h3>
+
+<p>意味の変化を表現するために <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#attrdef-epub-type">epub:type 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> を、Media Overlay の <code class="markup"><a class="markup" href="#elemdef-smil-par">par</a></code>、<code class="markup"><a class="markup" href="#elemdef-smil-seq">seq</a></code> と <code class="markup"><a class="markup" href="#elemdef-smil-body">body</a></code> 要素に付与し<span class="rfc2119">てもよい（may）</span>。</p>
+
+<p>Media Overlay の <code class="markup">epub:type</code> 属性値は <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 内の <code class="markup">epub:type</code> 属性と同じように制限される。詳細については <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-semantic-inflection">XHTML 意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> を参照されたい。</p>
+
+<p><code class="markup">epub:type</code> 属性は、セマンティック型が示すリーディングシステムの適した動作を手助けする。これらの動作の例としては<a class="xref" href="#sec-behaviors-skip-escape" title="4.4 Skippability and Escapability">読み飛ばし機能と回避機能</a>と<a class="xref" href="#note-table-reading-mode" title="note">表組の読み上げモード</a>である。</p>
+
+<div class="informalexample"><p>次の例では、sidebar を含む Media Overlay のセマンティックなマークアップを示している。</p>
+
+<pre class="synopsis">&lt;smil xmlns="http://www.w3.org/ns/SMIL"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      version="3.0"&gt;
+    &lt;body&gt;
+        &lt;seq id="id1" epub:textref="chapter1.xhtml#sidebar" epub:type="sidebar"&gt;
+            &lt;par id="id2"&gt;
+                &lt;text src="chapter1.xhtml#sidebartitle"/&gt;
+                &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:15.000" clipEnd="0:24:18.123"/&gt;
+            &lt;/par&gt;
+            &lt;par id="id3"&gt;
+                &lt;text src="chapter1.xhtml#sidebartext1"/&gt;
+                &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:18.123" clipEnd="0:24:38.530"/&gt;
+            &lt;/par&gt;
+            &lt;par id="id4"&gt;
+                &lt;text src="chapter1.xhtml#sidebartext2"/&gt;
+                &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:38.530" clipEnd="0:25:00.515"/&gt;
+            &lt;/par&gt;
+        &lt;/seq&gt;
+    &lt;/body&gt;
+&lt;/smil&gt;</pre>
+</div>
+
+<p>この仕様は変更されていない<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-contentdocs-vocab-association">語彙の関連付け</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> で定義された語彙の関連付けメカニズムを採用する。<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-contentdocs-default-vocab">初期設定の語彙</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> の用語は Overlay Document 内で接頭辞を付けずに使用しなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+</div>
+<div class="section" title="3.4 Associating Style Information" id="sec-docs-assoc-style">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-docs-assoc-style">&gt;</a>&nbsp;</span>3.4 スタイル情報の関連付け</h3>
+
+<p>現在再生している <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 要素の視覚的なレンダリング情報は著者が定義したクラスを使用して <a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet（または Style Sheet）">EPUB Style Sheet</a> で表現してもよい（may）。著者が定義したクラス名はメタデータプロパティの <span class="property"><a class="xref" href="#active-class">active-class</a></span> と <span class="property"><a class="xref" href="#playback-active-class">playback-active-class</a></span> を使用して <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a> の metadata 内に宣言すべきである（should）。それによりクラス名が、リーディングシステムによって発見可能となる。</p>
+
+<p>この例では著者が現在再生している EPUB Content Document にスタイルの情報を関連付けることができる方法を示している。</p>
+
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>この例では <span class="property">-epub-media-overlay-active</span> と <span class="property">-epub-media-overlay-playing</span> を使用しているが、任意のクラス名が許可されている。クラス名の選択は、任意にサポートされている CSS の機能と共に使用してもよい（may）。</p>
+</div>
+
+<div class="informalexample">
+<p>Package Document のメタデータプロパティ <a class="xref" href="#active-class">active-class</a> と <a class="xref" href="#playback-active-class">playback-active-class</a> を使用して宣言された著者が定義した CSS のクラス名：</p>
+
+<pre class="synopsis">&lt;meta property="media:active-class"&gt;-epub-media-overlay-active&lt;/meta&gt;
+&lt;meta property="media:playback-active-class"&gt;-epub-media-overlay-playing&lt;/meta&gt;</pre>
+
+
+<p>著者が定義したクラス名を含んでいる EPUB Style Sheet：</p>
+
+<pre class="synopsis">/* emphasize the active element */
+.-epub-media-overlay-active {
+    background-color: yellow;
+    color: black !important;
+}
+
+/* fade out the inactive text */
+html.-epub-media-overlay-playing * {
+    color: gray;
+}</pre>
+
+<p>関連性のある EPUB Content Document の抜粋：</p>
+
+<pre class="synopsis">&lt;html&gt;
+…
+&lt;span id="txt1"&gt;This is the first phrase.&lt;/span&gt;
+&lt;span id="txt2"&gt;This is the second phrase.&lt;/span&gt;
+&lt;span id="txt3"&gt;This is the third phrase.&lt;/span&gt;
+…
+&lt;/html&gt;</pre>
+
+</div>
+
+<p>この例では、リーディングシステムが、それが再生時にアクティブになった時、EPUB Content Document の各テキスト要素に著者が定義した <span class="property">-epub-media-overlay-active</span> クラスを適用する。つまり、クラス名は要素がアクティブでない時は取り除かれる。読者はその要素が再生中は黄色の背景でスタイル付された各 EPUB Content Document 要素を見ることができる。</p>
+
+
+<p>リーディングシステムはまた、メディアオーバーレイの再生を開始するとき、EPUB Content Document のドキュメントの要素に製作者が定義した <span class="property">-epub-media-overlay-playing</span> クラスも適用する。クラス名は、再生を止めたとき、削除される。XHTML Content Document の場合、クラス名は、<code class="markup">html</code> 要素に適用されるであろう。SVG Content Document の場合、それは、<code class="markup">svg</code> 要素に適用されるであろう。読者は、メディアオーバーレイを再生する間、非アクティブなすべてのテキスト要素は灰色に反転に見えるであろう。再生を止めたとき、要素の色は、初期設定に戻るであろう。</p>
+
+
+</div>
+<div class="section" title="3.5 Packaging" id="sec-docs-package">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-docs-package">&gt;</a>&nbsp;</span>3.5 パッケージング</h3>
+
+<div class="section" title="3.5.1 Including Media Overlays" id="sec-package-including">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-package-including">&gt;</a>&nbsp;</span>3.5.1 Media Overlays を含める</h4>
+
+<p><a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a> の <a class="glossterm" href="#gloss-manifest" title="Manifest">Manifest</a> <span class="phrase"><a class="link" href="epub301-publications.xhtml#elemdef-package-item">item 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の <code class="markup"><span class="phrase"><a class="link" href="epub301-publications.xhtml#attrdef-item-media-overlay">media-overlay</a></span></code> 属性を介して Media Overlay を指定し<span class="rfc2119">てもよい（may）</span>。Media Overlay はそれ自体 manifest item であり、ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> によって参照されなければな<span class="rfc2119">らない（must）</span>。</p>
+
+<div class="informalexample"><p>次の例では、Package Document の manifest に Media Overlay を含む方法を示している。</p>
+
+<pre class="synopsis">&lt;manifest&gt;
+    &lt;item id="ch1"
+          href="chapter1.xhtml"
+          media-type="application/xhtml+xml"
+          media-overlay="ch1_audio"/&gt;
+    &lt;item id="ch1_audio"
+          href="chapter1_audio.smil"
+          media-type="application/smil+xml"/&gt;
+&lt;/manifest&gt;</pre>
+</div>
+
+<p>Media Overlay を参照する Manifest item は <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-core-media-types">Core Media Types</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> に規定された <code class="media-type">application/smil+xml</code> メディアタイプを持たなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p><code class="markup">media-overlay</code> 属性は、その参照された <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> の manifest <code class="markup">item</code> 要素にだけ付与されなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p>単一の Media Overlay ファイルは複数の EPUB Content Document を参照し<span class="rfc2119">てもよい（may）</span>、しかし EPUB Content Document は複数の Media Overlay ファイルによって参照されては<span class="rfc2119">ならない（must not）</span>。</p>
+
+<p>それぞれの EPUB Content Document の manifest <code class="markup">item</code> が、それに関連付けられる Media Overlay を持つのは必須ではない<span class="rfc2119">（not required）</span>。EPUB Content Document が Media Overlay によって完全にまた部分的に参照されるならば、その時、その manifest <code class="markup">item</code> のエントリーは <code class="markup">media-overlay</code> 属性を介してこれを指定しなれば<span class="rfc2119">ならない（must）</span>。</p>
+
+<p>これは前方互換のための追加である：2.0 のリーディングシステムはそれらを通常の方法で <code class="markup">media-overlay</code> 属性とプロセス文書を安全に無視し<span class="rfc2119">てもよい（may）</span>。</p>
+
+</div>
+
+<div class="section" title="3.5.2 Media Overlays Metadata Vocabulary" id="sec-package-metadata">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-package-metadata">&gt;</a>&nbsp;</span>3.5.2 Media Overlays のメタデータ語彙</h4>
+
+<p>次の表は <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a> のメタデータに使用するためのプロパティのセットと参照可能な語彙の構成の両方を定義する。</p>
+
+<p>この語彙を参照するためのベース IRI は <code class="uri">http://www.idpf.org/epub/vocab/overlays/#</code> である。</p>
+
+<div class="note" title="note">
+
+<h3 class="title">note</h3>
+
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-metadata-reserved-vocabs">media:</a></span> 接頭辞はパッケージメタデータ内のこれらのプロパティを内包するため <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> で予約済みである。</p>
+</div>
+
+<div class="informaltable" id="rdfa-vocab-overlays">
+<table border="1" id="active-class">
+<colgroup><col class="c1"/><col class="c2"/></colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">active-class</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要:</td>
+<td class="rdfa-property-desc">現在再生中の EPUB Content Document の要素に適用する著者が定義した CSS クラス名。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">許容された値:</td>
+<td class="entry"><code class="datatype">xsd:string</code></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数:</td>
+<td class="entry"><code class="option">0個以上</code></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例:</td>
+<td class="entry"><code class="prop-example">&lt;meta property="media:active-class"&gt;-epub-media-overlay-active&lt;/meta&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table border="1" id="duration">
+<colgroup><col class="c1"/><col class="c2"/></colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">duration</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要:</td>
+<td class="rdfa-property-desc">全体のプレゼンテーションもしくは特定の Media Overlay の時間。オーサリング時に知られる音声クリップとして計算された特定の時間で、外部リソースと音声合成からライブストリーミングは除く。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">許容された値:</td>
+<td class="entry"><p>クロック値。</p>
+<p>クロック値は <a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a> で定義されている <a class="link" href="http://www.w3.org/TR/SMIL/smil-timing.html#q22">SMIL clock values</a> のサブセットである。<a class="xref" href="#app-clock-examples" title="Appendix B. Examples of Clock Values">付録 B <em>クロック値の例</em></a>を参照されたい。</p>
+ </td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数:</td>
+<td class="entry">特定の <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a> とそれぞれの Media Overlay にひとつのみ。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例:</td>
+<td class="entry"><code class="prop-example">&lt;meta property="media:duration"&gt;1:36:20&lt;/meta&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table border="1" id="narrator">
+<colgroup><col class="c1"/><col class="c2"/></colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">narrator</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要:</td>
+<td class="rdfa-property-desc">ナレーターの名前を指定する。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">許容された値:</td>
+<td class="entry"><code class="datatype">xsd:string</code></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数:</td>
+<td class="entry"><code class="option">0個以上</code></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例:</td>
+<td class="entry"><code class="prop-example">&lt;meta property="media:narrator"&gt;Joe Speaker&lt;/meta&gt;</code></td>
+</tr>
+</tbody>
+</table>
+
+<table border="1" id="playback-active-class">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">playback-active-class</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要:</td>
+<td class="rdfa-property-desc">再生がアクティブなときに、EPUB Content Document のドキュメント要素に適用される製作者が定義した CSS のクラス名。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">許容された値:</td>
+<td class="entry"><code class="datatype">xsd:string</code></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数:</td>
+<td class="entry"><code class="option">0 または 1</code></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例:</td>
+<td class="entry"><code class="prop-example">&lt;meta property="media:playback-active-class"&gt;-epub-media-overlay-playing&lt;/meta&gt;</code></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<p>Package Document は各 Media Overlay および Rendition 全体の <span class="property">duration</span> を含めなければ<span class="rfc2119">ならない（must）</span>。Package Document は、各 Media Overlay が独自のナレーター持っているか、Rendition 全体に指定された一人のナレーターを持っている時、<span class="property">narrator</span> 情報を含ん<span class="rfc2119">でもよい（may）</span>。Package Document は現在再生中の EPUB Content Document 要素に適用される著者が定義した CSS クラス名を同様に含ん<span class="rfc2119">でもよい（may）</span>。</p>
+
+<p><code class="markup">meta</code> 要素が一つの Media Overlay Document に特有であるとき、<code class="markup">refines</code> 属性はどちらを参照するかに使用する。<code class="markup">refines</code> 属性のない <code class="markup">meta</code> 要素は Rendition 全体とみなされる。<span class="property">active-class</span> と <span class="property">playback-active-class</span> プロパティはつねに Rendition 全体に適用されるとみなされるので、<code class="markup">refines</code> 属性と組み合わせて使用しては<span class="rfc2119">ならない（must not）</span>。</p>
+
+<div class="informalexample"><p>次の例では、Media Overlay に関するメタデータを含む Package Document を示している。</p>
+<pre class="synopsis">&lt;package&gt;
+    &lt;metadata&gt;
+        …
+        &lt;meta property="media:duration" refines="#ch1_audio"&gt;0:32:29&lt;/meta&gt;
+        &lt;meta property="media:duration" refines="#ch2_audio"&gt;0:34:02&lt;/meta&gt;
+        &lt;meta property="media:duration" refines="#ch3_audio"&gt;0:29:49&lt;/meta&gt;
+        &lt;meta property="media:duration"&gt;1:36:20&lt;/meta&gt;
+        &lt;meta property="media:narrator"&gt;Joe Speaker&lt;/meta&gt;
+        &lt;meta property="media:active-class"&gt;-epub-media-overlay-active&lt;/meta&gt;
+        &lt;meta property="media:playback-active-class"&gt;-epub-media-overlay-playing&lt;/meta&gt;
+        …
+    &lt;/metadata&gt;
+    …
+&lt;/package&gt;</pre></div>
+</div>
+</div>
+</div>
+
+<div class="chapter" title="4 Playback Behaviors" id="sec-overlay-behaviors">
+
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overlay-behaviors">&gt;</a>&nbsp;</span>4 再生の動作</h2>
+
+<div class="section" title="4.1 Loading the Media Overlay" id="sec-behaviors-loading">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-behaviors-loading">&gt;</a>&nbsp;</span>4.1 Media Overlay の読み込み</h3>
+
+<p><a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディングシステム（またはリーディングシステム）">EPUB リーディングシステム</a>が <a class="glossterm" href="#gloss-package-document" title="Package Document">Package Document</a> を読み込む時、それは <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> に対応する Media Overlay を見出するために <a class="glossterm" href="#gloss-manifest" title="Manifest">manifest</a> <code class="markup"><span class="phrase"><a class="link" href="epub301-publications.xhtml#elemdef-package-item">item</a></span></code> 要素の <code class="markup">media-overlay</code> 属性を参照しなければ<span class="rfc2119">ならない（must）</span>。再生は目的の EPUB Content Document の開始地点に対応する Media Overlay の要素から開始しなければ<span class="rfc2119">ならない（must）</span>。EPUB Content Document の開始は開始時もしくは Media Overlay の真ん中にある要素に対応し<span class="rfc2119">てもよい（may）</span>ことに注意されたい。Media Overlay Document が再生を終了する時、リーディングシステムは（Package Document の <a class="glossterm" href="#gloss-spine" title="Spine">spine</a> に指定してある）次の EPUB Content Document を読み込むべき<span class="rfc2119">であり（should）</span>、そして同様にそれに対応する Media Overlay Document のいずれかを提供し、読み込む。</p>
+
+</div>
+
+<div class="section" title="4.2 Basic Playback" id="sec-behaviors-playback">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-behaviors-playback">&gt;</a>&nbsp;</span>4.2 基本的な再生</h3>
+
+<div class="section" title="4.2.1 Timing and Synchronization" id="sec-rsconf-timing-synch">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-rsconf-timing-synch">&gt;</a>&nbsp;</span>4.2.1 タイミングと同期</h4>
+
+<p>リーディングシステムは順番に <code class="markup"><a class="markup" href="#elemdef-smil-body">body</a></code> 要素の直下の子をレンダリングしなければ<span class="rfc2119">ならない（must）</span>。<code class="markup"><a class="markup" href="#elemdef-smil-seq">seq</a></code> 要素の子は順番にレンダリングされなければ<span class="rfc2119">ならず（must）</span>、そして最後の子の再生が終了した時に再生は完了する。<code class="markup"><a class="markup" href="#elemdef-smil-par">par</a></code> 要素の子は（それぞれが同時に開始して）並列にレンダリングされなければ<span class="rfc2119">ならなず（must）</span>、そして全ての子の再生が終了した時に再生は完了する。<code class="markup">body</code> 要素の最後の子の再生を完了する時、Media Overlay Document の再生は完了する。</p>
+
+</div>
+
+<div class="section" title="4.2.2 Rendering Audio" id="sec-rsconf-rendering-audio">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-rsconf-rendering-audio">&gt;</a>&nbsp;</span>4.2.2 音声のレンダリング</h4>
+
+<p>Media Overlay の <code class="markup"><a class="markup" href="#elemdef-smil-audio">audio</a></code> 要素を示されたら、リーディングシステムは <code class="markup"><a class="markup" href="#attrdef-smil-clipBegin">clipBegin</a></code> 属性によって与えられるクリップのオフセットタイム（時間偏差）から開始し、<code class="markup"><a class="markup" href="#attrdef-smil-clipEnd">clipEnd</a></code> 属性によって与えられるクリップのオフセットタイム（時間偏差）で終了する <code class="markup">src</code> 属性によって参照される音声リソースを再生しなければ<span class="rfc2119">ならない（must）</span>。以下の規則は守らなければ<span class="rfc2119">ならない（must）</span>：</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem"><p><code class="markup">clipBegin</code> が指定されていないとき、その値は "<code class="value">0</code>" みなされる。</p></li>
+<li class="listitem"><p><code class="markup">clipEnd</code> が指定されていないとき、その値は物理メディアの全体の長さとみなされる。</p></li>
+<li class="listitem"><p><code class="markup">clipEnd</code> が物理メディアの全体の長さを超えるとき、その値は物理メディアの全体の長さとみなされる。</p></li>
+</ul>
+</div>
+
+<p>ユーザーがコントロール可能な音声の再生オプションは、再生速度がピッチにより歪まないタイムスケールの変更を含めるべきである（should）。推奨範囲は半分から倍の速度である。</p>
+
+</div>
+
+<div class="section" title="4.2.3 Rendering EPUB Content Document Elements" id="sec-rsconf-rendering-text">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-rsconf-rendering-text">&gt;</a>&nbsp;</span>4.2.3 EPUB Content Document 要素のレンダリング</h4>
+
+<p>Media Overlay の <code class="markup"><a class="markup" href="#elemdef-smil-text">text</a></code> 要素が示されたら、リーディングシステムは <a class="glossterm" href="#gloss-viewport" title="Viewport">Viewport</a> 内に出現する <code class="markup">src</code> 属性によって参照される EPUB Content Document 要素を確保する<span class="rfc2119">べきである（should）</span>。Media Overlay を再生している間、<a class="glossterm" href="#gloss-viewport-css" title="CSS Viewport">CSS Viewport</a> を持つリーディングシステムは EPUB Content Document の適切な要素に、メタデータの <span class="property"><a class="xref" href="#active-class">active-class</a></span> と <span class="property"><a class="xref" href="#playback-active-class">playback-active-class</a></span> プロパティによって与えられるクラス名を付与する<span class="rfc2119">べきである（should）</span>。
+逆に言えば、クラス名は<a class="xref" href="#sec-docs-assoc-style" title="3.4 Associating Style Information">Associating Style Information</a> に記載されているとおり、再生状態が変化した時に、削除する<span class="rfc2119">べきである（should）</span>。
+</p>
+
+<p>メタデータの <span class="property">active-class</span> と <span class="property">playback-active-class</span> プロパティは省略可能で、省略した場合、リーディングシステムの動作は実装依存である。</p>
+
+</div>
+
+</div>
+
+<div class="section" title="4.3 Interacting with the EPUB Content Document" id="sec-behaviors-interaction">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-behaviors-interaction">&gt;</a>&nbsp;</span>4.3 EPUB Content Document との相互作用</h3>
+
+<div class="section" title="4.3.1 Navigation" id="sec-rsconf-navigation">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-rsconf-navigation">&gt;</a>&nbsp;</span>4.3.1 ナビゲーション</h4>
+
+<p>Media Overlay は <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> と密接に結合されているので、Media Overlay が再生している現在位置に基づき EPUB Content Document 内の位置を見つけるのはリーディングシステムにはとても容易である。<a class="glossterm" href="#gloss-user" title="読者">読者</a>が同期再生を中止し、<a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の別の場所に移動したら、同期再生はそのポイントで再生を再開しなければ<span class="rfc2119">ならない（must）</span>。例えば、EPUB Content Document の特定のページ番号が適切な場所なら、そのとき、Media Overlay での同じ場所へ移動して再生が開始される。</p>
+
+<p>これと同様のアプローチとして、<a class="glossterm" href="#gloss-content-document-epub-nav" title="EPUB Navigation Document">EPUB Navigation Document</a> 内のナビゲーションポイントを読者が選択し、Media Overlay の再生を同期することも考慮しておく。リーディングシステムはそのファイルを Media Overlay を読み込み、ナビゲーションポイントのターゲットの ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr>XML</abbr>]</a> に基づいて再生を開始するために正しい位置を見つける。</p>
+
+<div class="note" title="note">
+
+<h3 class="title">note</h3>
+
+<p>Media Overlay Document は <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a> が <a class="glossterm" href="#gloss-spine" title="Spine">spine</a> 内に含まれているかどうかに関わらず、そのコンテンツの同期再生を提供するために Navigation Document と直接結びつけてもよい（may）。リーディングシステムは EPUB Content Document 内の読者が現在いる場所に Navigation Document の Media Overlay の再生の同期を保つべきである（should）。</p>
+
+</div>
+
+<div class="note" title="note" id="note-table-reading-mode">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#note-table-reading-mode">&gt;</a>&nbsp;</span>note</h3>
+
+<p>Media Overlay Document 要素は EPUB Content Document の例えば表組などの構造物と結びつけてもよい（may）。リーディングシステムは、Media Overlay の再生は表組の列やセルの読者によるナビゲーションと同期した状態を確保するべきである（should）。リーディングシステムはまた、セルのコンテンツに先立ち対応する表組の見出しを再生してもよい（may）。</p>
+
+</div>
+
+</div>
+
+<div class="section" title="4.3.2 Embedded Audio and Video" id="sec-embedded-media">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-embedded-media">&gt;</a>&nbsp;</span>4.3.2 埋め込まれた音声と動画</h4>
+
+<p>Media Overlay が結びついている <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> はそれ自身に埋め込まれた動画や音声メディアを含ん<span class="rfc2119">でもよく（may）</span>、それは Media Overlay 要素で指示され<span class="rfc2119">てもよい（may）</span>。テキストや画像とは異なり、動画や音声メディアは本質的に時間を持っている。それ故に、リーディングシステムが Media Overlay の記述により同期のレンダリングをするとき、関連付けられている EPUB Content Document は埋め込まれている音声や動画メディアの初期設定の再生の動作を上書きしなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p>以下の規則は関連付けられている EPUB Content Document が<span class="italic">参照</span>している <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#video">video</a></code> または <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#audio">audio</a></code> 要素のみ適用されることに注意されたい。つまり、規則は Media Overlay（例えば、<code class="markup">src</code> 属性を介して）内の <code class="markup"><a class="markup" href="#elemdef-smil-text">text</a></code> 要素によって指示されるそれらの要素のみ適用する。Media Overlay 要素によって参照されない埋め込まれたメディアはこれらの規則の対象ではない。</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem"><p>EPUB Content Document に埋め込まれたすべての参照されている音声と動画メディアは、そのパブリックな再生インターフェース（一般的に再生/一時停止、タイムスライダ、音量など）が無効になっていなければ<span class="rfc2119">ならない（must）</span>。この動作は Media Overlay によって定義され予定されている再生シークエンスないしは、<a class="glossterm" href="#gloss-user" title="読者">読者</a>のインタラクションもしくはスクリプトの実行が行うことになっている任意の再生動作を無効にするインターフェースを要求する。結果として、リーディングシステムが再生モードにあるとき、これらを行う<span class="rfc2119">べきである（should）</span>：</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem"><p><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#attr-media-controls">controls</a></code> 属性によって定義された初期設定の動作を上書きする個々の動画/音声の UI コントロールを非表示にする。</p></li>
+<li class="listitem"><p>JavaScript の音声/動画再生 API（すなわち、初期設定の動作の一部として記述されている）を起動することにより EPUB Content Document に埋め込まれているスクリプトが実行されるのを防ぐ。コンテンツの制作者は埋め込まれた音声/動画メディアの再生をコントロールするために専用のスクリプトを埋め込んで出版することを避けることを<span class="rfc2119">推奨する（recommended）</span>。発行された Media Overlay はスクリプトが可能にするカスタム動作からの干渉のいかなるリスクもなしに同期した表示の全てのコントロールを保持するすることができる。</p>
+</li>
+</ul></div>
+</li>
+<li class="listitem"><p>EPUB Content Document に埋め込まれたすべての参照されている音声と動画メディアは、それらの"停止"状態に初期化され、それらのコンテンツの流れの中で0位置（おそらく <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#attr-video-poster">poster</a></code> 属性を使用して指定する画像）からいつでも再生されなければ<span class="rfc2119">ならない（must）</span>。この要件は <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> の <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#attr-media-autoplay">autoplay</a></code> 属性で定義されている初期設定の動作を上書きする。</p>
+</li>
+<li class="listitem"><p>EPUB Content Document がアクティブになる時、<a class="glossterm" href="#gloss-stylesheet" title="EPUB Style Sheet（または Style Sheet）">EPUB Style Sheet</a> の視覚を強調するルールは、その要素の <code class="markup">src</code> 属性によって参照されるコンテンツタイプにかかわらず適用する（例えば、メタデータの <a class="xref" href="#active-class">active-class</a> プロパティによって定義された CSS クラス名は、ホストの EPUB Content Document の中で可視化されている動画と音声のプレーヤーのコントロールに適用される<span class="rfc2119">べきである（should）</span>）。</p>
+</li>
+<li class="listitem"><p>テキストの断片や画像による Media Overlay の起動の初期設定の動作加えて、音声や動画の再生は（標準の <a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a> のタイミングモデルに従い）記述されている Media Overlay 同期によって暗示される時間と一致して起動や停止をしなければ<span class="rfc2119">ならない（must）</span>。2つの可能なシナリオがある：</p>
+
+<div class="itemizedlist"
+><ul class="itemizedlist">
+<li class="listitem"><p>Media Overlay の <code class="markup">text</code> 要素が <code class="markup"><a class="markup" href="#elemdef-smil-par">par</a></code> の親コンテナ内に <code class="markup"><a class="markup" href="#elemdef-smil-audio">audio</a></code> の兄弟を持たないとき、参照される EPUB Content Document の音声や動画メディアは（<code class="literal">text</code> 要素のライフスパンの末端の場所）終わりまで再生しなければ<span class="rfc2119">ならない（must）</span>。この場合、<code class="markup">text</code> 要素、すなわち親の <code class="markup">par</code> コンテナの潜在的な時間は、参照された音声もしくは動画クリップの時間である。</p>
+</li>
+<li class="listitem"><p>Media Overlay の <code class="markup">text</code> 要素が <code class="markup">par</code> の親コンテナ内に <code class="markup">audio</code> の兄弟を持っているとき、参照される EPUB Content Document の音声や動画メディアの再生の時間は <code class="markup">audio</code> の兄弟の時間によって制限されなければ<span class="rfc2119">ならない（must）</span>。この場合、親の <code class="markup">par</code> コンテナの実際の時間は、<code class="markup">text</code> 要素によって指し示された動画もしくは音声メディアの時間にかかかわらず子の音声クリップの時間である。この動作は（全時間に到達する前より）早く終点の再生が埋め込まれた動画もしくは音声メディアに生じてもよく（may）、また、並列な Media Overlay <code class="markup">audio</code> の再生以前の終点は完了する（この際、最後に再生される動画のフレームが、親の <code class="markup">par</code> コンテナの末端を表示したままにする<span class="rfc2119">べきである（should）</span>）。この動作は、<a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr>SMIL</abbr>]</a> の <code class="markup"><a class="markup" href="http://www.w3.org/TR/SMIL/smil-timing.html#adef-endsync">endsync</a></code> 属性の動作を暗黙に引き継ぐ Media Overlay の <code class="markup">audio</code> 要素に相当する。</p>
+
+<p>さらに、リーディングシステムは、音声出力が聴き手の要求に合致するよう調整できるように、それぞれ独立した音声トラック（すなわち、Media Overlay の <code class="markup">audio</code> 要素や EPUB Content Document 内に埋め込まれている音声もしくは動画メディアから）の音量のための読者のコントロールを公開する<span class="rfc2119">べきである（should）</span>。音声トラックを重複して持つのは、一般的にオーサリング時に関係しているのに注意されたい：コンテンツ制作者は通常、説明の目的のため動画トラック上に音声情報のレイヤーを加える。リーディングシステムは任意の特定の方法で同時に音量レベルを処理することは<span class="rfc2119">必須ではなく（not required）</span>、重複した音声の状態は制作段階で慎重に検討し取り扱うことを<span class="rfc2119">推奨する（recommended）</span>。</p>
+</li>
+</ul></div>
+</li>
+<li class="listitem"><p><code class="markup">text</code> 要素が Media Overlay 内でアクティブでなくなったとき、そして埋め込まれている動画や音声メディアを指しているとき、参照されているメディアは、それらの"停止"状態に初期化され、それらのコンテンツの流れの中で0位置（おそらく HTML5 マークアップ を使用して指定する画像）からいつでも再生されなければ<span class="rfc2119">ならない（must）</span>。</p>
+</li>
+</ul></div>
+</div>
+
+<div class="section" title="4.3.3 Text-to-Speech" id="sec-text-to-speech">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-text-to-speech">&gt;</a>&nbsp;</span>4.3.3 テキスト読み上げ</h4>
+
+<p><code class="markup"><a class="markup" href="#elemdef-smil-audio">audio</a></code> 兄弟要素を含まない Media Overlay <code class="markup"><a class="markup" href="#elemdef-smil-text">text</a></code> 要素が対象となる <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> 内部のテキストを参照する時、<a class="glossterm" href="#gloss-tts" title="Text-to-Speech (TTS)">テキスト読み上げ (TTS)</a> を利用できるリーディングシステムは TTS を使用して参照したテキストをレンダリングする<span class="rfc2119">べきである（should）</span>。</p>
+
+<p>リーディングシステムの適合性要件のように、対象となる EPUB Content Document の中に準備されたスピーチを関連付ける情報は Media Overlay レンダリングの一部として音声ストリームの再生に使用される<span class="rfc2119">べきである（should）</span>。<span class="phrase"><a class="link" href="epub301-publications.xhtml#confreq-rs-epub3-tts">リーディングシステムのテキスト読み上げの適合性要件</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を参照。</p>
+
+<p>Media Overlay の <code class="markup">text</code> 要素のライフスパンは結びついている音声合成のレンダリング時間に一致する。<code class="markup">text</code> 要素、すなわち親の <code class="markup">par</code> 要素の潜在的な時間は、テキスト読み上げエンジンの遂行によって決定され、音声出力に影響するスピーチ速度、停止や他の韻律パラメータのような要因をオーサリング時に知ることできない。</p>
+
+</div>
+</div>
+
+<div class="section" title="4.4 Skippability and Escapability" id="sec-behaviors-skip-escape">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-behaviors-skip-escape">&gt;</a>&nbsp;</span>4.4 読み飛ばし機能と回避機能</h3>
+<!-- 4.4.1 Skippability -->
+<div class="section" title="4.4.1 Skippability" id="sec-skippability">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-skippability">&gt;</a>&nbsp;</span>4.4.1 読み飛ばし機能</h4>
+
+<p><a class="glossterm" href="#gloss-user" title="読者">読者</a>は読書しながらサイドバー（sidebar）、脚注（footnote）、ページ番号（page number）または他の二次的な種類のコンテンツのようなコンテンツの特定の機能をオンまたはオフにすることができる。この機能は読み飛ばし機能と呼ばれている。リーディングシステムはユーザーがスキップ可能な機能のオプションを提供するかを決定するための Media Overlay 要素の <code class="markup"><a class="markup" href="#sec-docs-semantic-inflection" title="3.3 Semantic Inflection">epub:type</a></code> 属性によって提供される意味情報を使用する<span class="rfc2119">べきである（should）</span>。次の例ではリーディングシステムは、ユーザーに対ししばしば聞かされる煩わしい改ページ/ページ番号の通知のオンオフのオプションを提供する<span class="rfc2119">べきである（should）</span>。</p>
+
+<div class="informalexample">
+<p>次の例では、改ページを持つ Media Overlay Document を示している。</p>
+<pre class="synopsis">&lt;smil xmlns="http://www.w3.org/ns/SMIL"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      version="3.0"&gt;
+    &lt;body&gt;
+        &lt;!-- a paragraph --&gt;
+        &lt;par id="id1"&gt;
+            &lt;text src="chapter1.xhtml#para1"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0:23:22.000" clipEnd="0:24:15.000"/&gt;
+        &lt;/par&gt;
+
+        &lt;!-- a page number --&gt;
+        &lt;par id="id2" epub:type="pagebreak"&gt;
+            &lt;text src="chapter1.xhtml#pgbreak1"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:15.000" clipEnd="0:24:18.123"/&gt;
+        &lt;/par&gt;
+
+        &lt;!-- another paragraph --&gt;
+        &lt;par id="id3"&gt;
+            &lt;text src="chapter1.xhtml#para2"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:18.123" clipEnd="0:25:28.530"/&gt;
+        &lt;/par&gt;
+    &lt;/body&gt;
+&lt;/smil&gt;
+</pre>
+</div>
+<div class="informalexample">
+<p>次の例では、改ページを持つ EPUB Content Document を示している。</p>
+<pre class="synopsis">&lt;html … &gt;
+    …
+    &lt;body&gt;
+        &lt;p id="para1"&gt;This is the paragraph before the pagebreak … &lt;/p&gt;
+
+        &lt;br id="pgbreak1" epub:type="pagebreak" title="234"/&gt;
+
+        &lt;p id="para2"&gt;This is the paragraph after the pagebreak …&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>リーディングシステムがユーザーに読み飛ばし機能のオプションを提供す<span class="rfc2119">べきである（should）</span>ために、 <a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">[<abbr>StructureVocab</abbr>]</a> から以下の用語抜粋が有益な参考資料として提供される：</p>
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem"><p>sidebar</p></li>
+<li class="listitem"><p>practice</p></li>
+<li class="listitem"><p>marginalia</p></li>
+<li class="listitem"><p>annotation</p></li>
+<li class="listitem"><p>help</p></li>
+<li class="listitem"><p>note</p></li>
+<li class="listitem"><p>footnote</p></li>
+<li class="listitem"><p>rearnote</p></li>
+<li class="listitem"><p>pagebreak</p></li>
+</ul>
+</div>
+
+<p>Media Overlay はルートの <code class="markup">smil</code> 要素に <code class="markup"><a class="markup" href="#attrdef-smil-prefix">epub:prefix</a></code> 属性で定義して追加の語彙を使用し<span class="rfc2119">てもよい（may）</span>。<code class="markup">epub:type</code> 値に基づいた読み飛ばし機能のためのリーディングシステム のサポートは必ず行う<span class="rfc2119">べきではない（should not）</span>。</p>
+</div>
+<div class="section" title="4.4.2 Escapability" id="sec-escabaility">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-escabaility">&gt;</a>&nbsp;</span>4.4.2 回避機能</h4>
+<p>回避する項目は、例えば表組、リストやサイドバーのような入れ子になった構造で、聞き手が飛ばしたい時に入れ子構造の直後の場所から読むのを続ける。回避機能は全ての種類の項目を使用可能または無効にするわけではないので読み飛ばし機能とは異なるが、（たとえば読者が回避する前にコンテンツの一部を聞くことができるなど）そこからの出口を提供する。リーディングシステムは入れ子構造の回避を許可する<span class="rfc2119">べきである（should）</span>。リーディングシステムは <code class="markup"><a class="markup" href="#sec-docs-semantic-inflection" title="3.3 Semantic Inflection">epub:type</a></code> 属性（例えば <span class="property">glossary</span>）の値によって入れ子構造の開始位置を決定しなければ<span class="rfc2119">ならず（must）</span>、そして構造をスキップ再生し、その後にあるコンテンツの再生を再開するオプションを読者に提供する<span class="rfc2119">べきである（should）</span>。</p>
+
+<div class="informalexample"><p>次の例では、段落、用語集、別の段落を含む EPUB Content Document の Media Overlay Document を示している。回避機能をサポートするリーディングシステムは用語集の割り込み再生や文書の段落を続けて再生するオプションを読者に提供する。</p>
+<pre class="synopsis">&lt;smil xmlns="http://www.w3.org/ns/SMIL"
+      xmlns:epub="http://www.idpf.org/2007/ops"
+      version="3.0"&gt;
+    &lt;body&gt;
+        &lt;!-- a paragraph, part of the regular document text --&gt;
+        &lt;par id="id1"&gt;
+            &lt;text src="chapter1.xhtml#para1"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0:23:22.000" clipEnd="0:24:15.000"/&gt;
+        &lt;/par&gt;
+
+        &lt;!-- a glossary, which is a nested structure --&gt;
+        &lt;seq id="id2" epub:textref="chapter1.xhtml#g0" epub:type="glossary"&gt;
+            &lt;par id="id3" epub:type="glossterm"&gt;
+                &lt;text src="chapter1.xhtml#g1"/&gt;
+                &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:15.000" clipEnd="0:24:18.123"/&gt;
+            &lt;/par&gt;
+            &lt;par id="id4" epub:type="glossdef"&gt;
+                &lt;text src="chapter1.xhtml#g2"/&gt;
+                &lt;audio src="chapter1_audio.mp3" clipBegin="0:24:18.123" clipEnd="0:25:28.530"/&gt;
+            &lt;/par&gt;
+            &lt;par id="id5" epub:type="glossterm"&gt;
+                &lt;text src="chapter1.xhtml#g3"/&gt;
+                &lt;audio src="chapter1_audio.mp3" clipBegin="0:25:28.530" clipEnd="0:25:45.515"/&gt;
+            &lt;/par&gt;
+            &lt;par id="id6" epub:type="glossdef"&gt;
+                &lt;text src="chapter1.xhtml#g4"/&gt;
+                &lt;audio src="chapter1_audio.mp3" clipBegin="0:25:45.515" clipEnd="0:27:04.123"/&gt;
+            &lt;/par&gt;
+        &lt;/seq&gt;
+
+        &lt;!-- another paragraph, part of the document text that comes after the glossary --&gt;
+        &lt;par id="id7"&gt;
+            &lt;text src="chapter1.xhtml#para2"/&gt;
+            &lt;audio src="chapter1_audio.mp3" clipBegin="0:27:04.123" clipEnd="0:27:59.000"/&gt;
+        &lt;/par&gt;
+    &lt;/body&gt;
+&lt;/smil&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="appendix" title="Appendix A. Media Overlays Schema" id="app-overlays-schema">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#app-overlays-schema">&gt;</a>&nbsp;</span>付録 A. Media Overlays スキーマ</h2>
+</div>
+</div>
+</div>
+
+<p>Media Overlay のスキーマは <a class="link" href="http://idpf.org/epub/30/schema/media-overlay-30.nvdl">../schema/media-overlay-30.nvdl</a> である。</p>
+
+<p>このスキーマを使用する検証は <a class="biblioref" href="#refNVDL" title="ISO/IEC 19757-4: NVDL (Namespace-based Validation Dispatching Language)">[<abbr>NVDL</abbr>]</a>、<a class="biblioref" href="#refRelaxNG" title="ISO/IEC 19757-2: Regular-grammar-based validation - RELAX NG. Second Edition">[<abbr>RelaxNG</abbr>]</a>、<a class="biblioref" href="#refISOSchematron" title="ISO/IEC 19757-3: Rule-based validation - Schematron">[<abbr>ISOSchematron</abbr>]</a> と <a class="biblioref" href="#refXSDDatatypes" title="XML Schema Part 2: Datatypes Second Edition">[<abbr>XSD-DATATYPES</abbr>]</a> をサポートするプロセッサが必要になる。</p>
+
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>NVDL スキーマレイヤーは単独で埋め込まれた RELAX NG と ISO Schematron スキーマを使用して、マルチパスの検証することで代用できることに注意されたい。</p>
+</div>
+
+</div>
+
+<div class="appendix" title="Appendix B. Examples of Clock Values" id="app-clock-examples"><div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#app-clock-examples">&gt;</a>&nbsp;</span>付録 B. クロック値の例</h2>
+</div>
+</div>
+</div>
+
+<p class="informative">この付録は有益な情報である。</p>
+
+<p>以下は許可されたクロック値の例を示している：</p>
+
+<div class="informalexample">
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem"><p><code class="value">5:34:31.396</code> = 5 時 34 分 31 秒 396 ミリ秒</p></li>
+<li class="listitem"><p><code class="value">124:59:36</code> = 124 時間 59 分 36 秒</p></li>
+<li class="listitem"><p><code class="value">0:05:01.2</code> = 5 分 1 秒 200 ミリ秒</p></li>
+<li class="listitem"><p><code class="value">0:00:04</code> = 4 秒</p></li>
+<li class="listitem"><p><code class="value">09:58</code> = 9 分 58 秒</p></li>
+<li class="listitem"><p><code class="value">00:56.78</code> = 56 秒 780 ミリ秒</p></li>
+<li class="listitem"><p><code class="value">76.2s</code> = 76.2 秒 = 76 秒 200 ミリ秒</p></li>
+<li class="listitem"><p><code class="value">7.75h</code> = 7.75 時間 = 7 時間 45 分</p></li>
+<li class="listitem"><p><code class="value">13min</code> = 13 分</p></li>
+<li class="listitem"><p><code class="value">2345ms</code> = 2345 ミリ秒</p></li>
+<li class="listitem"><p><code class="value">12.345</code> = 12 秒 345 ミリ秒</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="acknowledgements" title="Appendix C. Acknowledgements and Contributors" id="app-contributors">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#app-contributors">&gt;</a>&nbsp;</span>付録 C. 謝辞と貢献者</h2>
+</div>
+</div>
+</div>
+<p class="informative">この付録は有益な情報である。</p>
+
+<p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
+
+<p>EPUB3 仕様は下に述べるリーダーシップにより2010年5月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した：</p>
+
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span> <span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span> <span class="wg-role">Vice-chair, Subgroup Lead</span></li>
+<li class="person"><span class="name"><span class="surname">McCoy</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> <span class="wg-role">Secretary</span></li>
+<li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span> <span class="wg-role">Subgroup Lead</span></li>
+<li class="person"><span class="name"><span class="surname">MURATA</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(JEPA EPUB Study Group)</span> <span class="wg-role">Subgroup Lead</span></li>
+<li class="person"><span class="name"><span class="surname">Sorotokin</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Adobe)</span> <span class="wg-role">Subgroup Lead</span></li>
+</ul>
+
+<p>ワーキンググループのアクティブメンバー：</p>
+
+<p class="bridgehead" title="C. IDPF Members"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#">&gt;</a>&nbsp;</span>IDPF Members</p>
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Abrams</span>, <span class="givenname">Willie</span></span> <span class="affiliation">(Ingram Digital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Acton</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Allesi</span>, <span class="givenname">Ana Maria</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Amos</span>, <span class="givenname">Dan</span></span> <span class="affiliation">(DNAML (DNL eBooks))</span> </li>
+<li class="person"><span class="name"><span class="surname">Arany</span>, <span class="givenname">Steve</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span> </li>
+<li class="person"><span class="name"><span class="surname">Artin</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Badger</span>, <span class="givenname">Brandon</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ballard</span>, <span class="givenname">Kevin</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Beard</span>, <span class="givenname">Elliot</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Belfanti</span>, <span class="givenname">Paul</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bell</span>, <span class="givenname">Graham</span></span> <span class="affiliation">(EDItEUR)</span> </li>
+
+<li class="person"><span class="name"><span class="surname">Bell</span>, <span class="givenname">Jeff</span></span> <span class="affiliation">(Microsoft)</span></li>
+
+<li class="person"><span class="name"><span class="surname">Bide</span>, <span class="givenname">Mark</span></span> <span class="affiliation">(EDItEUR)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bogaty</span>, <span class="givenname">Nick</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bowers</span>, <span class="givenname">Micah</span></span> <span class="affiliation">(Bluefire Productions)</span> </li>
+<li class="person"><span class="name"><span class="surname">Brantley</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Internet Archive)</span> </li>
+<li class="person"><span class="name"><span class="surname">Breglio</span>, <span class="givenname">Melissa</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Broome</span>, <span class="givenname">Karen</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">Brugge</span>, <span class="givenname">John</span></span> <span class="affiliation">(Benetech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Carbonell</span>, <span class="givenname">Oliver</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chang</span>, <span class="givenname">Phobos</span></span> <span class="affiliation">(Chinese Foundation for Digitization Technology)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chen</span>, <span class="givenname">Mei-Li</span></span> <span class="affiliation">(Institute for Information Industry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chen</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(ITRI)</span> </li>
+<li class="person"><span class="name"><span class="surname">Choi</span>, <span class="givenname">Soo</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chow</span>, <span class="givenname">King-Wai</span></span> <span class="affiliation">(ASTRI (Hong Kong Applied Science &amp; Technology Research Institute))</span> </li>
+<li class="person"><span class="name"><span class="surname">Clutter</span>, <span class="givenname">Mat</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cramer</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(Hachette Book Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cronin</span>, <span class="givenname">Margot</span></span> <span class="affiliation">(Bowker)</span> </li>
+<li class="person"><span class="name"><span class="surname">Daly</span>, <span class="givenname">Liza</span></span> <span class="affiliation">(Threepress)</span> </li>
+<li class="person"><span class="name"><span class="surname">De Meulemeester</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Jouve/Publishing Dimensions)</span> </li>
+<li class="person"><span class="name"><span class="surname">DeMeglio</span>, <span class="givenname">Marisa</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Deltour</span>, <span class="givenname">Romain</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Dougherty</span>, <span class="givenname">Casey</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Drake</span>, <span class="givenname">Jama</span></span> <span class="affiliation">(Impelsys)</span> </li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Elliott</span>, <span class="givenname">Ray</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Fahlgren</span>, <span class="givenname">Keith</span></span> <span class="affiliation">(Threepress)</span> </li>
+<li class="person"><span class="name"><span class="surname">Fain</span>, <span class="givenname">Guy</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Freese</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Aptara)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gardeur</span>, <span class="givenname">Hadrien</span></span> <span class="affiliation">(Feedbooks)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gold</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Digital Divide Data)</span> </li>
+<li class="person"><span class="name"><span class="surname">Goodwin</span>, <span class="givenname">Jonathan</span></span> <span class="affiliation">(Appfoundry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gopinath</span>, <span class="givenname">Anith</span></span> <span class="affiliation">(Impelsys)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gosling</span>, <span class="givenname">Andreas</span></span> <span class="affiliation">(Penguin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Grazioli</span>, <span class="givenname">Frank</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gunn</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(RNIB)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> </li>
+<li class="person"><span class="name"><span class="surname">Haas</span>, <span class="givenname">Matt</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hadfield</span>, <span class="givenname">Tom</span></span> <span class="affiliation">(CourseSmart)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hagino</span>, <span class="givenname">Masaaki</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hawkins</span>, <span class="givenname">Kevin</span></span> <span class="affiliation">(University of Michigan Library)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hayashi</span>, <span class="givenname">Junichi</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Heiberger</span>, <span class="givenname">Richard</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hepp</span>, <span class="givenname">Mike</span></span> <span class="affiliation">(Dartmouth Journal Services)</span> </li>
+<li class="person"><span class="name"><span class="surname">Herren</span>, <span class="givenname">Matthew</span></span> <span class="affiliation">(BlankPage)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hisashi</span>, <span class="givenname">Saiga</span></span> <span class="affiliation">(Sharp)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hoda</span>, <span class="givenname">Hisashi</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Howard</span>, <span class="givenname">William</span></span> <span class="affiliation">(Easypress)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hughes</span>, <span class="givenname">Dan</span></span> <span class="affiliation">(Liguori Publications)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hulse</span>, <span class="givenname">Leslie</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Imsieke</span>, <span class="givenname">Gerrit</span></span> <span class="affiliation">(le-tex)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jain</span>, <span class="givenname">Anupam</span></span> <span class="affiliation">(Innodata Isogen)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jie</span>, <span class="givenname">Fan</span></span> <span class="affiliation">(Gansu DUZHE Digital Sci&amp;Tech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Johnson</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(Ingram Digital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jung</span>, <span class="givenname">Kanghee</span></span> <span class="affiliation">(Incube Technologies)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kakar</span>, <span class="givenname">Samir</span></span> <span class="affiliation">(Aptara)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kanai</span>, <span class="givenname">Takeshi</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kasher</span>, <span class="givenname">Bob</span></span> <span class="affiliation">(BookMasters and Newgen Imaging)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kato</span>, <span class="givenname">Kazuyuki</span></span> <span class="affiliation">(East Co.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Keating</span>, <span class="givenname">Patrick</span></span> <span class="affiliation">(Bluefire Productions)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kerscher</span>, <span class="givenname">George</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kida</span>, <span class="givenname">Yasuo</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kim</span>, <span class="givenname">Jean</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kim</span>, <span class="givenname">HyunYoung</span></span> <span class="affiliation">(Incube Technologies)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kim</span>, <span class="givenname">Terry</span></span> <span class="affiliation">(INKA Entworks)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kitagawa</span>, <span class="givenname">Masahiro</span></span> <span class="affiliation">(Impress Holdings)</span> </li>
+<li class="person"><span class="name"><span class="surname">Koike</span>, <span class="givenname">Toshiaki</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kok</span>, <span class="givenname">Dan</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kotrch</span>, <span class="givenname">Steve</span></span> <span class="affiliation">(Simon &amp; Schuster)</span> </li>
+<li class="person"><span class="name"><span class="surname">Larroque</span>, <span class="givenname">Benoit</span></span> <span class="affiliation">(Feedbooks)</span> </li>
+<li class="person"><span class="name"><span class="surname">Levantovsky</span>, <span class="givenname">Vladimir</span></span> <span class="affiliation">(Monotype Imaging)</span> </li>
+<li class="person"><span class="name"><span class="surname">Lu</span>, <span class="givenname">Cho-Chin</span></span> <span class="affiliation">(Institute for Information Industry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Lynch</span>, <span class="givenname">Ryan</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">MacFarlane</span>, <span class="givenname">James</span></span> <span class="affiliation">(Easypress)</span> </li>
+<li class="person"><span class="name"><span class="surname">Makower</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mandelbaum</span>, <span class="givenname">David</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Manis</span>, <span class="givenname">Will</span></span> <span class="affiliation">(Metaplates)</span> </li>
+<li class="person"><span class="name"><span class="surname">McCloy-Kelley</span>, <span class="givenname">Liisa</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">McCoy</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(IDPF)</span> </li>
+<li class="person"><span class="name"><span class="surname">Menzies</span>, <span class="givenname">Tracey</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mitchell</span>, <span class="givenname">Chris</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Moore</span>, <span class="givenname">Helen</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Muller</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Murata</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(JEPA EPUB Study Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mussinelli</span>, <span class="givenname">Christina</span></span> <span class="affiliation">(Associazione Italiana Editori)</span> </li>
+<li class="person"><span class="name"><span class="surname">Nagai</span>, <span class="givenname">Yoshinori</span></span> <span class="affiliation">(Sharp)</span> </li>
+<li class="person"><span class="name"><span class="surname">Novelli</span>, <span class="givenname">Joe</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">O'Connor</span>, <span class="givenname">Edward</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ohmura</span>, <span class="givenname">Yoshinori</span></span> <span class="affiliation">(Impress Holdings)</span> </li>
+<li class="person"><span class="name"><span class="surname">Olenick</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(Bowker)</span> </li>
+<li class="person"><span class="name"><span class="surname">Oshiyama</span>, <span class="givenname">Taka</span></span> <span class="affiliation">(East Co.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Pagano</span>, <span class="givenname">Pat</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Picco</span>, <span class="givenname">Marty</span></span> <span class="affiliation">(AppFoundry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Prabhu</span>, <span class="givenname">John</span></span> <span class="affiliation">(HOV Services)</span> </li>
+<li class="person"><span class="name"><span class="surname">Pritchett</span>, <span class="givenname">James</span></span> <span class="affiliation">(Learning Ally (formerly RFB&amp;D))</span> </li>
+<li class="person"><span class="name"><span class="surname">Rao</span>, <span class="givenname">Vishnu</span></span> <span class="affiliation">(Sharp Laboratories)</span> </li>
+<li class="person"><span class="name"><span class="surname">Rivlin</span>, <span class="givenname">John</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Rubino</span>, <span class="givenname">Frank</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ruffino</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(Penguin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Rui Hua</span>, <span class="givenname">Wang</span></span> <span class="affiliation">(Gansu DUZHE Digital Sci&amp;Tech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ruse</span>, <span class="givenname">Tyler</span></span> <span class="affiliation">(LibreDigital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Sanicola</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(Penguin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Schirmer</span>, <span class="givenname">Lorenz</span></span> <span class="affiliation">(Monotype Imaging)</span> </li>
+<li class="person"><span class="name"><span class="surname">Severdia</span>, <span class="givenname">Ron</span></span><span class="affiliation">(Metrodigi, Inc.)</span></li>
+<li class="person"><span class="name"><span class="surname">Shiohama</span>, <span class="givenname">Daihei</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Shrivastava</span>, <span class="givenname">Abhishek</span></span> <span class="affiliation">(CourseSmart)</span> </li>
+
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span></li>
+
+<li class="person"><span class="name"><span class="surname">Slavin</span>, <span class="givenname">Wayne</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Slye</span>, <span class="givenname">Christopher</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Smith</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(IDPF)</span> </li>
+<li class="person"><span class="name"><span class="surname">Soiffer</span>, <span class="givenname">Neil</span></span> <span class="affiliation">(Design Science)</span> </li>
+<li class="person"><span class="name"><span class="surname">Sorotokin</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Stevenson</span>, <span class="givenname">Tobias</span></span> <span class="affiliation">(eBookArchitects)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tahara</span>, <span class="givenname">Kyoji</span></span> <span class="affiliation">(Toppan Printing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Takase</span>, <span class="givenname">Hiroshi</span></span> <span class="affiliation">(East Co.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tallent</span>, <span class="givenname">Joshua</span></span> <span class="affiliation">(eBookArchitects)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tanabe</span>, <span class="givenname">Shu</span></span> <span class="affiliation">(Toppan Printing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Thomas</span>, <span class="givenname">Vinu</span></span> <span class="affiliation">(Impelsys)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tsumagari</span>, <span class="givenname">Koichiro</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Valentine</span>, <span class="givenname">Chelsea</span></span> <span class="affiliation">(LibreDigital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Vangage</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Harlequin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Vido</span>, <span class="givenname">Ariel</span></span> <span class="affiliation">(Geografica Editora)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wait</span>, <span class="givenname">John</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Walkley</span>, <span class="givenname">George</span></span> <span class="affiliation">(Hachette Book Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Watters</span>, <span class="givenname">Kevin</span></span> <span class="affiliation">(Harlequin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Webster</span>, <span class="givenname">Roger</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Weck</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wei</span>, <span class="givenname">Selena</span></span> <span class="affiliation">(Chinese Foundation for Digitization Technology)</span> </li>
+<li class="person"><span class="name"><span class="surname">White</span>, <span class="givenname">Russell</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wiles</span>, <span class="givenname">Alexis</span></span> <span class="affiliation">(Overdrive, Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Witwer</span>, <span class="givenname">Adam</span></span> <span class="affiliation">(O'Reilly)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wright</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Young</span>, <span class="givenname">Liz</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Zu</span>, <span class="givenname">Alex</span></span> <span class="affiliation">(ASTRI (Hong Kong Applied Science &amp; Technology Research Institute))</span> </li>
+</ul><p class="bridgehead" title="C. Invited Experts/Observers"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#">&gt;</a>&nbsp;</span>Invited Experts/Observers</p>
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Bowes</span>, <span class="givenname">Rick</span></span></li>
+<li class="person"><span class="name"><span class="surname">Cazenove</span>, <span class="givenname">Rhys</span></span></li>
+<li class="person"><span class="name"><span class="surname">Collingridge</span>, <span class="givenname">Peter</span></span></li>
+<li class="person"><span class="name"><span class="surname">Cook</span>, <span class="givenname">Mike</span></span></li>
+<li class="person"><span class="name"><span class="surname">Etemad</span>, <span class="givenname">Elika J.</span></span> <span class="wg-role">W3C CSS WG Liason</span></li>
+<li class="person"><span class="name"><span class="surname">Forster</span>, <span class="givenname">Karen</span></span></li>
+<li class="person"><span class="name"><span class="surname">Freed</span>, <span class="givenname">Geoff</span></span></li>
+<li class="person"><span class="name"><span class="surname">Fujisawa</span>, <span class="givenname">Jun</span></span></li>
+<li class="person"><span class="name"><span class="surname">Garrish</span>, <span class="givenname">Matt</span></span></li>
+<li class="person"><span class="name"><span class="surname">Gould</span>, <span class="givenname">Bryan</span></span></li>
+<li class="person"><span class="name"><span class="surname">Gorner</span>, <span class="givenname">Martin</span></span></li>
+<li class="person"><span class="name"><span class="surname">Hsieh</span>, <span class="givenname">Michael</span></span></li>
+<li class="person"><span class="name"><span class="surname">Ishii</span>, <span class="givenname">Koji</span></span></li>
+<li class="person"><span class="name"><span class="surname">Johar</span>, <span class="givenname">Kenny</span></span></li>
+<li class="person"><span class="name"><span class="surname">Karlsson</span>, <span class="givenname">Mattias</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kennedy</span>, <span class="givenname">Dianne</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kilborn</span>, <span class="givenname">Peter</span></span></li>
+<li class="person"><span class="name"><span class="surname">Koppel</span>, <span class="givenname">Josh</span></span></li>
+<li class="person"><span class="name"><span class="surname">Lee</span>, <span class="givenname">Tommy</span></span></li>
+<li class="person"><span class="name"><span class="surname">Lu</span>, <span class="givenname">Kenny</span></span></li>
+<li class="person"><span class="name"><span class="surname">Lubeck</span>, <span class="givenname">Scott</span></span></li>
+<li class="person"><span class="name"><span class="surname">Masanori</span>, <span class="givenname">Kusunoki</span></span></li>
+<li class="person"><span class="name"><span class="surname">McKinney</span>, <span class="givenname">Steven</span></span></li>
+<li class="person"><span class="name"><span class="surname">Murakami</span>, <span class="givenname">Shinyu</span></span></li>
+<li class="person"><span class="name"><span class="surname">Ning</span>, <span class="givenname">Elliott</span></span></li>
+<li class="person"><span class="name"><span class="surname">Noring</span>, <span class="givenname">Jon</span></span></li>
+<li class="person"><span class="name"><span class="surname">Norton</span>, <span class="givenname">Paul</span></span></li>
+<li class="person"><span class="name"><span class="surname">Oishi</span>, <span class="givenname">Yasuharu</span></span></li>
+<li class="person"><span class="name"><span class="surname">Passey</span>, <span class="givenname">Lee</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rosmaita</span>, <span class="givenname">Gregory</span></span></li>
+<li class="person"><span class="name"><span class="surname">Seaman</span>, <span class="givenname">David</span></span></li>
+<li class="person"><span class="name"><span class="surname">Shan</span>, <span class="givenname">Walter</span></span></li>
+<li class="person"><span class="name"><span class="surname">Smith(tm)</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(W3C)</span> <span class="wg-role">W3C Liason</span></li>
+<li class="person"><span class="name"><span class="surname">Sperberg</span>, <span class="givenname">Roger</span></span></li>
+<li class="person"><span class="name"><span class="surname">Walsh</span>, <span class="givenname">Norman</span></span></li>
+<li class="person"><span class="name"><span class="surname">Zergaoui</span>, <span class="givenname">Mohamed</span></span></li>
+</ul>
+
+<p>より詳細な承認と EPUB の各バージョンへの貢献者については<span class="phrase"><a class="link" href="epub301-overview.xhtml#acknowledgements">謝辞と貢献者</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
+
+</div>
+
+<div class="bibliography" title="References" id="references">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#references">&gt;</a>&nbsp;</span>参照・参考</h2>
+</div>
+</div>
+</div>
+
+<div class="bibliodiv" title="Normative References">
+
+<h3 class="title">参照文献</h3>
+
+<div class="biblioentry" title="EPUB Content Documents 3.0.1" id="refContentDocs3"><p>[<abbr>ContentDocs301</abbr>] <span class="title"><em> <a class="link" href="epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="HTML5: A vocabulary and associated APIs for HTML and XHTML" id="refHTML5"><p>[<abbr>HTML5</abbr>] <span class="title"><em> <a class="link" href="http://www.w3.org/TR/html5/">HTML5: A vocabulary and associated APIs for HTML and XHTML</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="ISO/IEC 19757-3: Rule-based validation - Schematron" id="refISOSchematron"><p>[<abbr>ISOSchematron</abbr>] <span class="title"><em> <a class="link" href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c040833_ISO_IEC_19757-3_2006(E).zip">ISO/IEC 19757-3: Rule-based validation - Schematron</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="EPUB Media Overlays 3.0.1" id="refOverlays3"><p>[<abbr>MediaOverlays301</abbr>] <span class="title"><em> <a class="link" href="epub30-mediaoverlays.xhtml">EPUB Media Overlays 3.0.1</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="ISO/IEC 19757-4: NVDL (Namespace-based Validation Dispatching Language)" id="refNVDL"><p>[<abbr>NVDL</abbr>] <span class="title"><em> <a class="link" href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c038615_ISO_IEC_19757-4_2006(E).zip">ISO/IEC 19757-4: NVDL (Namespace-based Validation Dispatching Language)</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="Open Container Format 3.0" id="refOCF30"><p>[<abbr>OCF30</abbr>] <span class="title"><em><a class="link" href="../../30/spec/epub30-ocf.html">Open Container Format 3.0</a></em>. </span></p></div>
+
+<div class="biblioentry" title="Open Container Format 3.0.1" id="refOCF3"><p>[<abbr>OCF301</abbr>] <span class="title"><em> <a class="link" href="epub301-ocf.xhtml">Open Container Format 3.0.1</a> </em>. </span></p>
+</div>
+
+<div class="biblioentry" title="EPUB Publications 3.0.1" id="refPublications3"><p>[<abbr>Publications301</abbr>] <span class="title"><em> <a class="link" href="epub301-publications.xhtml">EPUB Publications 3.0.1</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)" id="refRFC2119"><p>[<abbr>RFC2119</abbr>] <span class="title"><em> <a class="link" href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a> (RFC 2119) </em>. </span><span class="date">March 1997. </span></p>
+</div>
+<div class="biblioentry" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)" id="refRFC3987"><p>[<abbr>RFC3987</abbr>] <span class="title"><em> <a class="link" href="http://tools.ietf.org/html/rfc3987">Internationalized Resource Identifiers (IRIs)</a> (RFC 3987) </em>. </span><span class="author">M Duerst, et al. </span><span class="date">January 2005. </span></p>
+</div>
+<div class="biblioentry" title="ISO/IEC 19757-2: Regular-grammar-based validation - RELAX NG. Second Edition" id="refRelaxNG"><p>[<abbr>RelaxNG</abbr>] <span class="title"><em> <a class="link" href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c052348_ISO_IEC_19757-2_2008(E).zip">ISO/IEC 19757-2: Regular-grammar-based validation - RELAX NG. Second Edition</a> </em>. </span><span class="date">2008-12-15. </span></p>
+</div>
+<div class="biblioentry" title="SMIL Version 3.0" id="refSMIL"><p>[<abbr>SMIL</abbr>] <span class="title"><em> <a class="link" href="http://www.w3.org/TR/SMIL/">SMIL Version 3.0</a> </em>. </span><span class="author">D. Bulterman, et al. </span><span class="date">01 December 2008. </span></p>
+</div>
+<div class="biblioentry" title="EPUB 3 Structural Semantics Vocabulary" id="refEPUBStructureVocab"><p>[<abbr>StructureVocab</abbr>] <span class="title"><em> <a class="link" href="epub301-vocab-structure.xhtml">EPUB 3 Structural Semantics Vocabulary</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)" id="refXML"><p>[<abbr>XML</abbr>] <span class="title"><em> <a class="link" href="http://www.w3.org/TR/2008/REC-xml-20081126/">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a> </em>. </span><span class="author">T. Bray, et al. </span><span class="date">26 November 2008. </span></p>
+</div>
+<div class="biblioentry" title="Namespaces in XML (Third Edition)" id="refXMLNamespaces"><p>[<abbr>XMLNS</abbr>] <span class="title"><em> <a class="link" href="http://www.w3.org/TR/xml-names/">Namespaces in XML (Third Edition)</a> </em>. </span><span class="author">T. Bray, D. Hollander, A. Layman, R. Tobin. W3C. </span><span class="date">8 December 2009. </span></p>
+</div>
+</div>
+
+<div class="biblioentry" title="XML Schema Part 2: Datatypes Second Edition" id="refXSDDatatypes">
+<p>[<abbr>XSD-DATATYPES</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/xmlschema-2/">XML Schema Part 2: Datatypes Second Edition</a></em>. </span> <span class="author">Paul V. Biron et al. </span> <span class="date">28 October 2004. </span></p></div>
+
+<div class="bibliodiv" title="Informative References">
+<h3 class="title">参考文献</h3>
+<div class="biblioentry" title="EPUB 3 Overview" id="refEPUB3Overview"><p>[<abbr>EPUB3Overview</abbr>] <span class="title"><em> <a class="link" href="epub301-overview.xhtml">EPUB 3 Overview</a> </em>. </span><span class="author">Garth Conboy, et al. </span></p>
+</div>
+<div class="biblioentry" title="XPointer Shorthand Notation" id="refXPTRSH"><p>[<abbr>XPTRSH</abbr>] <span class="title"><em> <a class="link" href="http://www.w3.org/TR/xptr-framework/#shorthand">XPointer Shorthand Notation</a> </em>. </span></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EPUB Indexes 1.0（日本語訳版）</title>
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<meta name="description" content="EPUB Indexes 1.0 の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを実現する方法と仕様に準拠している EPUB リーディングシステムで最適に処理されるように、EPUB 出版物のインデックスの構造とコンテンツをエンコードする一貫性のある方法を定義することである。"/>
+</head>
+<body>
+<div class="book" title="EPUB Indexes 1.0">
+<h1 class="title">EPUB Indexes 1.0</h1>
+<p class="identity"><span class="pubdate">2014年1月14日</span><span class="releaseinfo">Draft Specification</span></p>
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20140114.html">http://www.idpf.org/epub/idx/epub-indexes-20140114.html</a></dd>
+<dt>最新版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes.html">http://www.idpf.org/epub/idx/epub-indexes.html</a></dd>
+<dt>前の版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20131104.html">http://www.idpf.org/epub/idx/epub-indexes-20131104.html</a></dd>
+</dl>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4884&amp;old=4848&amp;r=4884&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub-indexes.xml">変更点の差分</a>は、入手可能である。</p>
+<p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="./epub-indexes-errata/">正誤表（英語）</a>を参照されたい。</p>
+<div class="legal">
+<p class="copyright">Copyright &copy; 2010-2013 International Digital Publishing Forum&trade;</p>
+<div class="legalnotice" title="Legal Notice" id="legalnotice">
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a class="link" href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+<p>EPUB は International Digital Publishing Forum の登録商標である。</p>
+</div>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Editors</p>
+<p class="editor">Michele Combs, American Society for Indexing (ASI) </p>
+<p class="editor">Tzviya Siegman, Wiley </p>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Authors</p>
+<p class="author">Luc Audrain, Hachette Livre </p>
+<p class="author">Bob Bolick, Invited expert </p>
+<p class="author">Karen Broome, Sony </p>
+<p class="author">Glenda Browne, Australian and New Zealand Society of Indexers (ANZSI) </p>
+<p class="author">Romain Deltour, DAISY Consortium </p>
+<p class="author">Matt Garrish, Invited expert </p>
+<p class="author">Markus Gylling, International Digital Publishing Forum </p>
+<p class="author">Jean Kaplansky, Aptara </p>
+<p class="author">Bill Kasdorf, Apex </p>
+<p class="author">Scott Prentice, Invited expert </p>
+<p class="author">David K. Ream, Leverage Technologies </p>
+</div>
+<div class="toc">
+<p><strong>目次</strong></p>
+<dl>
+<dt><span class="chapter"><a href="#s1">1.概要（Overview）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s1.1">1.1. 目的とスコープ（Purpose and Scope）</a></span></dt>
+<dt><span class="section"><a href="#s1.2">1.2. 用語（Terminology）</a></span></dt>
+<dt><span class="section"><a href="#s1.3">1.3. 適合性宣言（Conformance Statements）</a></span></dt>
+<dt><span class="section"><a href="#sec-typography">1.4. 表記上の規則（Typographic Conventions）</a></span></dt>
+</dl>
+</dd>
+<dt><span class="chapter"><a href="#s2">2. インデックスの定義（Indexes Definition）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s2.1">2.1. 前置き（Introduction）</a></span></dt>
+<dt><span class="section"><a href="#s2.2">2.2. コンテンツドキュメントと構成要素（Content Documents and Components）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s2.2.1">2.2.1. インデックス、インデックスヘッドノート（Index, Index Head Notes）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.2">2.2.2. インデックスグループ（Index Groups）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.3">2.2.3. エントリと用語（Entries and Terms）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.4">2.2.4. ロケータ（Locators）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.5">2.2.5. ロケータの範囲（Locator Ranges）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.6">2.2.6. ロケータの対象の構造的セマンティクス（Locator Target Structural Semantics）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.7">2.2.7. 相互参照（Cross-references）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.8">2.2.8. 用語カテゴリと一般的な相互参照の対象（Term Categories and Generic Cross-Reference Targets）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s2.2.8.1">2.2.8.1. 要約（Overview）</a></span></dt>
+<dt><span class="section"><a href="#s2.2.8.2">2.2.8.2. 用語カテゴリへのナビゲーション（Navigating to Term Categories）</a></span></dt>
+</dl>
+</dd>
+<dt><span class="section"><a href="#s2.2.9">2.2.9. 句読点とリードインワード（Punctuation and Lead-In Words）</a></span></dt>
+</dl>
+</dd>
+<dt><span class="section"><a href="#s2.3">2.3. インデックスの識別（Identification of an Index）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s2.3.1">2.3.1. 出版物に含まれているインデックスのみの識別（Identification of a Publication Containing Only Index(es)）</a></span></dt>
+<dt><span class="section"><a href="#s2.3.2">2.3.2. インデックスコンテンツドキュメントの識別（Identification of Index Content Document(s)）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s2.3.2.1">2.3.2.1. 単一ファイルのインデックス（Single-File Index(es)）</a></span></dt>
+<dt><span class="section"><a href="#s2.3.2.2">2.3.2.2. 複数ファイルのインデックスと <code class="markup">collection</code> 要素（Multi-File Index(es) and the <code class="markup">collection</code> Element）</a></span></dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><span class="section"><a href="#s2.4">2.4. ナビゲーションドキュメント（The Navigation Document）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s2.4.1">2.4.1. 一般的な勧告（General Recommendations）</a></span></dt>
+<dt><span class="section"><a href="#s2.4.2">2.4.2. 用語カテゴリのサポート（Term Categories Support）</a></span></dt>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt><span class="chapter"><a href="#s3">3. 適合性基準（Conformance Criteria）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#s3.1">3.1. コンテンツの適合性（Content Conformance）</a></span></dt>
+<dt><span class="section"><a href="#s3.2">3.2. リーディングシステムの適合性（Reading System Conformance）</a></span></dt>
+</dl>
+</dd>
+<dt><span class="appendix"><a href="#Appa">A. EPUB コンテンツドキュメント内のインデックスのスキーマ（Schema for Indexes in EPUB Content Documents）</a></span></dt>
+<dt><span class="appendix"><a href="#Appb">B. 例（Examples）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#B.1">B.1. 最も簡易なインデックス（Simplest possible index）</a></span></dt>
+<dt><span class="section"><a href="#B.2">B.2. 完全な例（Full example）</a></span></dt>
+<dt><span class="section"><a href="#B.3">B.3. 簡易なスタイルシート（Sample style sheet）</a></span></dt>
+</dl>
+</dd>
+<dt><span class="appendix"><a href="#Appc">C. リーディングシステムの実装提案（Reading System Implementation Suggestions）</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#C.1">C.1. 一般的なリーディングシステムのインデックスに関連する機能（General Reading System Features Relative to Indexes）</a></span></dt>
+<dt><span class="section"><a href="#C.2">C.2. 検索パラメータ（Search Parameters）</a></span></dt>
+<dt><span class="section"><a href="#C.3">C.3. インデックス用語の検索（Index Term Search）</a></span></dt>
+<dt><span class="section"><a href="#C.4">C.4. インデックスロケータの検索（Index Locator Search）</a></span></dt>
+<dt><span class="section"><a href="#C.5">C.5. ロケータ範囲のハイライト（Highlighting of Locator Ranges）</a></span></dt>
+<dt><span class="section"><a href="#C.6">C.6. インデックスのフィルタリング（Filtering of Indexes）</a></span></dt>
+<dt><span class="section"><a href="#C.7">C.7. ロケータの対象に関する追加情報の提供（Provision of Additional Information about Locator Targets）</a></span></dt>
+<dt><span class="section"><a href="#C.8">C.8. 用語カテゴリと一般的な相互参照の対象の拡張（Enhancements to Term Categories and Generic Cross-Reference Targets）</a></span></dt>
+<dt><span class="section"><a href="#C.9">C.9. 改善されたインデックスナビゲーション（Improved Index Navigation）</a></span></dt>
+</dl>
+</dd>
+<dt><span class="appendix"><a href="#Appd">D. この仕様で定義されている epub:type のアルファベット順リスト（Alphabetical list of epub:types defined in this specification）</a></span></dt>
+<dt><span class="appendix"><a href="#AppE">E. この仕様のインデックス（Index to this specification）</a></span></dt>
+<dt><span class="appendix"><a href="#acknowledgements">F. 謝辞と貢献者（Acknowledgements and Contributors）</a></span></dt>
+<dt><span class="bibliography"><a href="#references">参照・参考（References）</a></span></dt>
+</dl>
+</div>
+<div class="chapter" title="1 Overview" id="s1">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s1">&gt;</a>&nbsp;</span>1 概要</h2>
+<p>この仕様は、EPUB Publications 3.0.1 <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> について言及している。ここで言及されている要素は、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> である。</p>
+<div class="section" title="1.1 Purpose and Scope" id="s1.1">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s1.1">&gt;</a>&nbsp;</span>1.1 目的とスコープ</h3>
+
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p>この仕様の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを実現する方法と仕様に準拠している EPUB リーディングシステムで最適に処理されるように、EPUB 出版物の<a class="glossterm" href="#s1.2_j" title="index">インデックス</a>の構造とコンテンツをエンコードする一貫性のある方法を定義することである。リーディングシステムは、印刷物の索引の利点だけでなくインタラクティブな機能や印刷書籍では不可能な機能を提供するために、このエンコーディングを生かすことができる。</p>
+
+<p>出版されたコンテンツ内の情報を発見する四つの方法には、目次の使用、（順次読み込みを含む）閲覧、検索、インデックスの使用がある。これらの四つの手法は、異なる特徴を持ち、異なる目的を果たす。目次は、コンテンツ自身と同じ順序と同じ言葉を掲載し、出版物で取り上げられているコンテンツの構造の概要を提供する。閲覧は、ユーザーが出版物全体の流し読みと、興味ある部分の拾い読みを可能にする。検索は、ユーザーが検索文字列に一致（またはほぼ一致）する単語が出版物内のどの場所にあるのかを発見することを可能にするが、多くの場合、重要性や独自性を考査していないものを提供するか、あまりにも多くの結果を返すか、ほぼ同義語または階層的に異なる用語のいずれかを採用することで対象を間違えるなどする（例えば、“戦争”を検索すると“紛争”や“戦闘”が見つからなかったり、“犬”を検索すると“スパニエル”や“レトリバー”、“ダックスフント”が見つからなかったり）。</p>
+
+<p>インデックスは、他の三つの方法を同時に区別する独自の重要な特性を持っている。第一に、インデックスは、出版物のコンテンツを通じてダイレクトにトピックに基づくアクセスを提供する。第二に、インデックスは、一般的（広範囲）と特定の両方の精度の異なる程度よるトピックを包含する。第三に、インデックスは、トピック間の関連性を示す。第四に、インデックスは、（人間の）索引作製者によって選択と整理された名詞であると考えられたコンテンツのためだけのエントリを含む。</p>
+
+<p>インデックスは、閲覧可能な文書である。索引は、ユーザーが注意深く選択した用語を提供するだけでなく、推奨または関連する用語にユーザーを導く相互参照のネットワークを介し、トピックの考察のよりきめ細かい分析を提供するサブエントリの使用により、必要とする情報の発見を助ける。こうした理由で、索引もまた本のトピック範囲の深度の要点を提供し、有用なマーケティングツールとなりえる。</p>
+
+<p>インデックスは、（検索など）単純な文字列ではなく意味にフォーカスされており、アクセスポイントとして出版物で明確に使用される単語だけでなく、ユーザーが考えるであろう代替の用語も包含するので、“そのような用語はありません”とユーザーが取り残されることは少ない。インデックスは、しばしばリンクを辿るときに、期待されるコンテンツの種類を事前にユーザーに表示するための特別な機能を採用している（例えば、イタリック体のロケータは、<a class="glossterm" href="#s1.2_p" title="locator target">ロケータの対象</a>が図であることを示してもよい）。</p>
+
+<p>インデックスは、出版されたコンテンツをよりアクセシブルにする非常に有用で専門的なナビゲーションツールである。EPUB 規格は、インデックスは検索などの追加のナビゲーションのアプローチで統合することと、印刷本では不可能な革新的なアクセスの手段を可能にすることで、出版物のすべての部分からそれらへのアクセスが提供されることにより、さらに便利にしている（例えば、図の参照のみを見せる索引のフィルタリングや、テキストの選ばれた範囲に適用できるすべての索引の表示）。</p>
+
+<p>このドキュメントは、インデックスとリーディングシステムの検索の両方の相互作用に取り組んでいないが、それらが相互作用できる方法のいくつかの提案は、<a class="link" href="#Appc" title="Appendix C. Reading System Implementation Suggestions">付録 C. リーディングシステムの実装提案</a>の <a class="link" href="#C.3" title="C.3 Index Term Search">C.3</a> と <a class="link" href="#C.4" title="C.4 Index Locator Search">C.4</a> で見ることができる。</p>
+
+<p>このドキュメントは、インデックスのコンテンツや表現に取り組んでいない。インデックスのコンテンツ、制作、構成のためのガイドラインは、<em>ISO 999: 情報及びドキュメンテーション - インデックスの内容、構成及び表示の指針</em> <a class="biblioref" href="#refISO999" title="ISO 999:1996 Information and documentation -- Guidelines for the content, organization and presentation of indexes">[<abbr>ISO999</abbr>]</a> と <em>NISO Technical Report 2: インデックスと関連情報検索デバイスのガイドライン</em> <a class="biblioref" href="#refNISOTR02" title="NISO Technical Report 2: Guidelines for Indexes and Related Information Retrieval Devices">[<abbr>NISOTR02</abbr>]</a> で見つけることができる。</p>
+
+</div>
+
+<div class="section" title="1.2 Terminology" id="s1.2">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s1.2">&gt;</a>&nbsp;</span>1.2 用語</h3>
+<p id="sec-terminology">このセクションで掲載されている用語が、後のセクションでより詳細に説明または定義されている場合、セクション番号は丸括弧で示している。</p>
+
+<div class="note" title="note">
+
+<h3 class="title">note</h3>
+<p>以下の定義は、この仕様のコンテクスト内のみで明確にするために意図されており、他のコンテクストでの利用は異なるかもしれない。</p>
+</div>
+
+<div class="glosslist">
+<dl>
+<dt class="glossentry" title="child entry" id="s1.2_a">子エントリ（child entry）</dt>
+<dd>
+<p>他のエントリの直接の子孫である<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>で、これらは、大抵の場合、出版業界ではサブエントリと呼ばれている。</p>
+</dd>
+<dt class="glossentry" title="content document" id="s1.2_b">コンテンツドキュメント（content document）</dt>
+<dd>
+<p>EPUB Publication <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> で使用されている <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml">XHTML コンテンツドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span>。</p>
+</dd>
+<dt class="glossentry" title="cross-reference (2.2.7)" id="s1.2_c">相互参照（cross-reference） (<a class="link" href="#s2.2.7" title="2.2.7 Cross-references">2.2.7</a>)</dt>
+<dd>
+<p>相互参照は、同じインデックスまたは他のインデックスのひとつ以上の<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">相互参照の対象</a>へユーザーを誘導する。それは、ある<a class="glossterm" href="#s1.2_s" title="term">用語</a>から (1) （追加の情報を提供する）ひとつ以上の関連する<a class="glossterm" href="#s1.2_s" title="term">用語</a>または<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>または (2) （ユーザーがある用語を検索するが、概念的に異なる用語の下にインデックスされているとき）ひとつ以上の推奨する<a class="glossterm" href="#s1.2_s" title="term">用語</a>または<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>へユーザーを誘導する。相互参照は、通常、例えば“を見よ（see）”または“も見よ（see also）”のリードインの単語で始まる。</p>
+<p>以下の例では、<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>は並字で、相互参照は太字である。</p>
+<p> </p>
+<div class="literallayout">
+<p>北京（Peking）.  <span class="bold"><strong>北京（Beijing）<em>を見よ</em></strong></span>. [推奨する用語へユーザーを誘導]<br/>
+戦闘（battles）.  <span class="bold"><strong><em>特定の戦闘の名称を見よ</em></strong></span>. [推奨する用語カテゴリにユーザーを誘導]<br/>
+サツマイモ（sweet potatoes）, 63.  <span class="bold"><strong>サツマイモ（yams）<em>も見よ</em></strong></span>. [関連する用語へユーザーを誘導]<br/>
+ジャガイモ（potatoes）, 55-59, 61.  <span class="bold"><strong><em>特定のジャガイモの品種も見よ</em></strong></span>. [関連する用語カテゴリにユーザーを誘導]<br/>
+サツマイモ（yams）, 82. <span class="bold"><strong><em>サツマイモの品種の名前も見よ</em>; イモの祭り（Yam Festival）（ガーナ）; サツマイモの粉（yam powder）</strong></span> [関連する用語カテゴリと二つの関連する用語へユーザーを誘導]<br/></p>
+</div>
+<p> </p>
+</dd>
+<dt class="glossentry" title="cross-reference target (2.2.7)" id="s1.2_d">相互参照の対象（cross-reference target） (<a class="link" href="#s2.2.7" title="2.2.7 Cross-references">2.2.7</a>)</dt>
+<dd>
+<p><a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">相互参照</a>によって示されている<a class="glossterm" href="#s1.2_s" title="term">用語</a>または<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>。</p>
+</dd>
+<dt class="glossentry" title="editor's note (2.2.3)" id="s1.2_e">編集者注（editor's note） (<a class="link" href="#s2.2.3" title="2.2.3 Entries and Terms">2.2.3</a>)</dt>
+<dd>
+<p><a class="glossterm" href="#s1.2_s" title="term">用語</a>を伴う説明文。時には“編集後記（editorial note）”や“スコープノート（scope note）”と呼ばれる。</p>
+</dd>
+<dt class="glossentry" title="entry (2.2.3)" id="s1.2_f">エントリ（entry） (<a class="link" href="#s2.2.3" title="2.2.3 Entries and Terms">2.2.3</a>)</dt>
+<dd>
+<p>任意の関連する<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>、<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">相互参照</a>、<a class="glossterm" href="#s1.2_e" title="editor's note (2.2.3)">編集者注</a>、<a class="glossterm" href="#s1.2_a" title="child entry">子エントリ</a>加えた<a class="glossterm" href="#s1.2_s" title="term">用語</a>。用語はエントリとして単独で存在することはできず、少なくともひとつのロケータ、相互参照、編集者注、子エントリを持たなければ<span class="rfc2119">ならない（must）</span>。</p>
+</dd>
+<dt class="glossentry" title="generic cross-reference target (2.2.8)" id="s1.2_g">一般的な相互参照の対象（generic cross-reference target） (<a class="link" href="#s2.2.8" title="2.2.8 Term Categories and Generic Cross-Reference Targets">2.2.8</a>)</dt>
+<dd>
+<p><a class="glossterm" href="#s1.2_s" title="term">用語</a>よりもむしろ、<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>の<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">相互参照の対象</a>。</p>
+</dd>
+<dt class="glossentry" title="group title (2.2.2)" id="s1.2_h">グループタイトル（group title） (<a class="link" href="#s2.2.2" title="2.2.2 Index Groups">2.2.2</a>)</dt>
+<dd>
+<p><a class="glossterm" href="#s1.2_k" title="index group (2.2.2)">インデックスグループ</a>のタイトル。</p>
+</dd>
+<dt class="glossentry" title="head notes (2.2.1)" id="s1.2_i">ヘッドノート（頭注）（head notes） (<a class="link" href="#s2.2.1" title="2.2.1 Index, Index Head Notes">2.2.1</a>)</dt>
+<dd>
+<p><span class="rfc2119">任意（Optional）</span>の有益なコンテンツは、<a class="glossterm" href="#s1.2_l" title="index title (2.2.1)">インデックスタイトル</a>、使用方法の説明、<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>の形式、情報の範囲、<a class="glossterm" href="#s1.2_m" title="legend (2.2.1)">レジェンド</a>などのように、インデックスの最適化をしてユーザーが利用できるように、<a class="glossterm" href="#s1.2_j" title="index">インデックス</a>の最上部に出現する。</p>
+</dd>
+<dt class="glossentry" title="index" id="s1.2_j">インデックス（index）</dt>
+<dd>
+<p><span class="rfc2119">任意（optional）</span>の<a class="glossterm" href="#s1.2_i" title="head notes (2.2.1)">ヘッドノート</a>セクションとひとつ以上の<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>から成るインデックス全体。</p>
+</dd>
+<dt class="glossentry" title="index group (2.2.2)" id="s1.2_k">インデックスグループ（index group） (<a class="link" href="#s2.2.2" title="2.2.2 Index Groups">2.2.2</a>)</dt>
+<dd>
+<p>例えば、全て<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>は、<span class="rfc2119">任意（optional）</span>の<a class="glossterm" href="#s1.2_h" title="group title (2.2.2)">グループタイトル</a>で文字“A”で始まるような、インデックス内の連続したメインエントリのシリーズ。</p>
+</dd>
+<dt class="glossentry" title="index title (2.2.1)" id="s1.2_l">インデックスタイトル（index title） (<a class="link" href="#s2.2.1" title="2.2.1 Index, Index Head Notes">2.2.1</a>)</dt>
+<dd>
+<p>例えば“最初の行のインデックス”や“名前のインデックス”のような、<a class="glossterm" href="#s1.2_j" title="index">インデックス</a>のタイトル。</p>
+</dd>
+<dt class="glossentry" title="legend (2.2.1)" id="s1.2_m">レジェンド（凡例）（legend ） (<a class="link" href="#s2.2.1" title="2.2.1 Index, Index Head Notes">2.2.1</a>)</dt>
+<dd>
+<p>（<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>、特殊な記号、特殊なテキストの書式、イニシャルや略語などの接頭語としての）<a class="glossterm" href="#s1.2_j" title="index">インデックス</a>やその意味で使用される略語または特別な記号のリスト。</p>
+</dd>
+<dt class="glossentry" title="locator (2.2.4)" id="s1.2_n">ロケータ（locator） (<a class="link" href="#s2.2.4" title="2.2.4 Locators">2.2.4</a>)</dt>
+<dd>
+<p><a class="glossterm" href="#s1.2_s" title="term">用語</a>と索引を付けられたコンテンツの位置との間を接続する。</p>
+</dd>
+<dt class="glossentry" title="locator range (2.2.5)" id="s1.2_o">ロケータの範囲（locator range） (<a class="link" href="#s2.2.5" title="2.2.5 Locator Ranges">2.2.5</a>)</dt>
+<dd>
+<p>テキストの範囲に<a class="glossterm" href="#s1.2_s" title="term">用語</a>を繋ぐ<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>の組み合わせ。</p>
+</dd>
+<dt class="glossentry" title="locator target" id="s1.2_p">ロケータの対象（locator target）</dt>
+<dd>
+<p><a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>によって指されているコンテンツの一部。これは、単一の点またはコンテンツの範囲のどちらかである。</p>
+</dd>
+<dt class="glossentry" title="main entry" id="s1.2_q">メインエントリ（main entry）</dt>
+<dd>
+<p>親エントリを持たない<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>。</p>
+</dd>
+<dt class="glossentry" title="parent context" id="s1.2pc">親コンテクスト（parent context）</dt>
+<dd>
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-property-datatype">プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span>は、この仕様で定義されている epub:type 属性を介して暗黙的かそれとも明示的な、<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-content-type-attribute">意味論的に変化している</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> 最も近い祖先の要素によって持たれる。</p>
+</dd>
+<dt class="glossentry" title="term" id="s1.2_s">用語（term）</dt>
+<dd>
+<p>単語、語句、文字列、グリフやインデックス可能なトピックを表す画像。例えば、名前、場所、コンセプトなど。</p>
+</dd>
+<dt class="glossentry" title="term category (2.2.8)" id="s1.2_t">用語カテゴリ（term category） (<a class="link" href="#s2.2.8" title="2.2.8 Term Categories and Generic Cross-Reference Targets">2.2.8</a>)</dt>
+<dd>
+<p>カテゴリは、それら間を関連付けを作成するために<a class="glossterm" href="#s1.2_s" title="term">用語</a>に適用する、例えば、<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>“花”は、インデックス用語の“デイジー”や“ユリ”、“バラ”に関連付けのに使用されてもよい。これらの用語カテゴリは、統制語彙から引き出されて<span class="rfc2119">もよく（may）</span>、特定のインデックスの必要に応じて発展されて<span class="rfc2119">もよい（may）</span>。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" title="1.3 Conformance Statements" id="s1.3">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s1.3">&gt;</a>&nbsp;</span>1.3 適合性宣言</h3>
+<p>この文書内のキーワード、<span class="rfc2119">MUST</span>、<span class="rfc2119">MUST NOT</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHOULD NOT</span>、<span class="rfc2119">SHOULD</span>、<span class="rfc2119">SHOULD NOT</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">MAY</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr>RFC2119</abbr>]</a> の記述に従って解釈される。</p>
+
+<p>この仕様のすべてのセクションは、例または“このセクションは有益な情報である”という参考情報状態ラベルで識別されるセクションを除いて規定である。セクションと付録への参考情報状態の適用は、含まれる可能性のあるすべての子コンテンツおよびサブセクションに適用される。</p>
+
+<p>この仕様は、すでに <a class="link" href="http://idpf.org/epub/vocab/structure/">EPUB Structural Semantics Vocabulary</a> <a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">[<abbr>StructureVocab</abbr>]</a> に包含されているインデックスのセマンティクスとの後方互換性を維持し、さらに改良と拡張をしている。</p>
+
+</div>
+<div class="section" title="1.4 Typographic Conventions" id="sec-typography">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-typography">&gt;</a>&nbsp;</span>1.4 表記上の規則</h3>
+<p>次の表記上の規則は、この仕様に用いられる：</p>
+<div class="variablelist">
+<dl>
+<dt class="varlistentry"><span class="term"><code class="markup">markup</code></span></dt>
+<dd>
+<p>すべてのマークアップ（要素、属性、プロパティ）、コード（JavaScript、擬似コード）、機械処理可能な値（文字列、文字、メディアタイプ）とファイル名は、赤橙色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="code-link">markup</code></span></dt>
+<dd>
+<p>マークアップとコードの定義へのリンクは、下線と赤橙色の等幅フォントで示している。各セクションの最初のインスタンスのみリンクがされている。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="uri">http://www.idpf.org/</code></span></dt>
+<dd>
+<p>URI は紺色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link">hyperlink</span></span></dt>
+<dd>
+<p>ハイパーリンクは、青い下線で示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-ref">[reference]</span></span></dt>
+<dd>
+<p>規範的で参考情報は、角括弧で囲まれている。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="terminology">Term</span></span></dt>
+<dd>
+<p><a class="xref" href="#sec-terminology" title="1.3 Terminology">用語集</a>で定義されている用語は、キャピタルケースで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-def">Term</span></span></dt>
+<dd>
+<p>用語の定義へのリンクは、点線の青い下線である。各セクションの最初のインスタンスのみリンクがされている。</p>
+</dd>
+</dl>
+</div>
+<div class="elem-synopsis">
+<dl>
+<dt class="varlistentry"><span class="term"/></dt>
+<dd>
+<p>規範的な要素、属性とプロパティの定義は、青いボックスにある。</p>
+</dd>
+</dl>
+</div>
+<div class="informalexample">
+<pre class="synopsis">有益なマークアップ例は、白いボックス内にある。</pre>
+</div>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>有益な注記は、"Note"の見出しがある黄色いボックス内にある。</p>
+</div>
+<div class="caution" title="caution">
+<h3 class="title">caution</h3>
+<p>有益な警告は、"Caution"の見出しがある赤いボックス内にある。</p>
+</div>
+</div>
+</div>
+<div class="chapter" title="2 Indexes Definition" id="s2">
+<h2 class="title">
+<span class="link-marker">
+<a class="hidden-reveal" title="Link here" href="#s2">&gt;</a>&nbsp;</span>2 インデックスの定義</h2>
+<div class="section" title="2.1 Introduction" id="s2.1">
+<h3 class="title">
+<span class="link-marker">
+<a class="hidden-reveal" title="Link here" href="#s2.1">&gt;</a>&nbsp;</span>2.1 前置き</h3>
+<p class="informative">このセクションは有益な情報である。</p>
+<p>簡単に述べると、インデックスは、おそらく人間のユーザーが効果的にインデックスを利用する追加情報（<a class="glossterm" href="#s1.2_i" title="head notes (2.2.1)">ヘッドノード</a>）を伴うひとつ以上の<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>で構成されている。例1は、すべての予想される構成部品を持つエントリを示している。エントリは、次のひとつ以上続く“猫”などの<a class="glossterm" href="#s1.2_s" title="term">用語</a>から構成されている：（1）どこでそのトピックの議論が出版物のコンテンツ内で発生したかと示している<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>（例えば、“77-80”）、（2）詳細または限定的なトピックの<a class="glossterm" href="#s1.2_a" title="child entry">サブエントリ</a>（例えば、“ダイエット”）、（3）他のエントリへユーザーを向かわせる<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">参照</a>（例えば、“野生の猫も参照されたい”）、（4）<a class="glossterm" href="#s1.2_e" title="editor's note (2.2.3)">編集後記</a>（例えば、“ネコ亜目の家猫”）。サブエントリ（すなわち、子孫や子エントリ）はトピック構造の階層を提供し、彼ら自身が上記の四つの項目のひとつ以上が続いていることに注意されたい。</p>
+<div class="informalexample" id="ex1">
+<p>例 1、可能な限りすべてのコンポーネントを持つエントリ：</p>
+<pre class="synopsis">
+	cats 
+		Ed. Note: domestic cats from the subfamily Felinae
+		coat types, 7:5-7:6
+		diet, 7:1 
+		lifespan, 7:7-7:9 
+		training, 8:1
+		see also wildcats</pre>
+</div>
+
+<p>インデックスのエントリは、インデックスファイルに出現した順番でリーディングシステムによって表示される。</p>
+
+<p>ユーザーは、本の章（“章のようなインデックス”）を読んだり辞書をめくるのと同様に、望む情報を見つけるために順番にインデックスを閲覧することができるが、この仕様は、ユーザーとインデックス、テキスト間のさらなる相互作用を実現するエンコーディングもまた提案している（詳細は、<a class="link" href="#s2.2.6" title="2.2.6 Locator Target Structural Semantics">2.2.6 ロケータの対象の構造的セマンティクス</a>と <a class="link" href="#s2.2.8" title="2.2.8 Term Categories and Generic Cross-Reference Targets">2.2.8 用語カテゴリと一般的な相互参照の対象</a>、<a class="link" href="#Appc" title="Appendix C. Reading System Implementation Suggestions">付録 C. リーディングシステムの実装提案</a>を参照されたい）。</p>
+
+</div>
+
+<div class="section" title="2.2 Content Documents and Components" id="s2.2">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2">&gt;</a>&nbsp;</span>2.2 コンテンツドキュメントと構成要素</h3>
+
+<div class="section" title="2.2.1 Index, Index Head Notes" id="s2.2.1">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.1">&gt;</a>&nbsp;</span>2.2.1 インデックス、インデックスヘッドノート</h4>
+
+<p>EPUB 出版物は、ひとつ以上のインデックスを含んで<span class="rfc2119">もよい（may）</span>。インデックスは、ひとつ以上の<a class="glossterm" href="#s1.2_b" title="content document">コンテンツドキュメント</a>から成り立って<span class="rfc2119">もよく（may）</span>、またそれは他のインデックスや他のコンテンツの型式（例えば、章）を含むコンテンツドキュメント内に埋め込まれて<span class="rfc2119">もよい（may）</span>。どこで発生しても、インデックスは、<code class="markup">index</code> 値を持つ <code class="markup">epub:type</code> 属性の要素内に包まれなければ<span class="rfc2119">ならない（must）</span>。インデックスが、ひとつ以上の完全なコンテンツドキュメントでマークアップされている場合、<code class="markup">body</code> 要素（<code>&lt;body epub:type="index"&gt;</code>）が使用されなければ<span class="rfc2119">ならない（must）</span>。インデックスまたはインデックスの一部が、コンテンツの他の型式を含むようなコンテンツドキュメントに埋め込まれている場合、任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素は、それを包む（例として、<code>&lt;section epub:type="index"&gt;</code>）のに使用されて<span class="rfc2119">もよい（may）</span>。</p>
+
+<div class="elem-synopsis" id="bb-index">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>index のための最も外部の <code class="markup">epub:type</code> 値</p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p>インデックスを包む要素は必須である</p>
+<p>任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素または <code class="markup">body</code> を使用する</p>
+<p><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘッディングコンテンツ</a>要素をひとつのみ含んで<span class="rfc2119">もよい（may）</span></p>
+<p>子セマンティクスの <code class="markup">index-headnotes</code> を持つ要素をひとつのみ含んで<span class="rfc2119">もよい（may）</span></p>
+<p>子セマンティクスの <code class="markup">index-entry-list</code> または <code class="markup">index-group</code> を持つ要素をひとつ含まなければ<span class="rfc2119">ならない（must）</span></p>
+<p>この仕様で定義されている子セマンティクスプロパティを持つ他のいかなる要素も含んでは<span class="rfc2119">ならない（must not）</span></p>
+</dd>
+</dl>
+</div>
+<p><code class="markup">epub:type </code> 属性値に <code class="markup">index</code> を包含している要素は、<code class="markup">epub:type </code> 属性値に <code class="markup">index-headnotes</code> を包含する要素をひとつ含んで<span class="rfc2119">もよい（may）</span>。<a class="glossterm" href="#s1.2_i" title="head notes (2.2.1)">ヘッドノート</a>は、しばしばインデックスの使用をより効果的にするため、ユーザーに必要な追加情報を伝達するためにインデックスに使用される。ヘッドノートのセクションは<span class="rfc2119">省略可能である（optional）</span>。
+
+
+使用する場合、それは <code class="markup">epub:type </code> 属性値に <code class="markup">index-headnotes</code> を包含する <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup"><a class="link" href="http://www.w3.org/TR/html5/sections.html#the-header-element">header</a></code> 要素か <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素から構成される。この要素は、<a class="glossterm" href="#s1.2_m" title="legend (2.2.1)">レジェンド</a>か任意の他の適切か有益な情報を含んで<span class="rfc2119">もよい（may）</span>。</p>
+
+<div class="elem-synopsis" id="bb-headnotes">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p>
+<code class="markup">index-headnotes</code>
+</p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>インデックスの情報を解釈または使用してユーザーを支援する物語調または他のコンテンツ</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p>
+<code class="markup">index</code>
+</p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+
+<p><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup"><a class="link" href="http://www.w3.org/TR/html5/sections.html#the-header-element">header</a></code> または<a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素を使用する</p>
+
+<p>子セマンティクスの <code class="markup">index-legend</code> を持つひとつ以上の要素を含んで<span class="rfc2119">もよい（may）</span></p>
+
+<p>任意の妥当な <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> 要素を含んで<span class="rfc2119">もよい（may）</span></p>
+
+</dd>
+</dl>
+</div>
+<div class="informalexample" id="ex2">
+<p>例 2、物語調のテキストとインデックスのタイトルを含んでいる典型的なヘッドノートのセクション：</p>
+<pre class="synopsis">&lt;header epub:type="index-headnotes"&gt;
+	&lt;h1&gt;Subject Index&lt;/h1&gt;
+
+	&lt;p&gt;This is an index to the main text of the book; content in the appendices has not been indexed.  
+	References are to section and paragraphs. The number preceding the colon is the number of the section; 
+	the number following the colon is the paragraph number within the section.&lt;/p&gt;
+
+	&lt;p&gt;Alphabetization is word-by-word: New York comes before Newtown.&lt;/p&gt;
+&lt;/header&gt;</pre>
+</div>
+
+<p id="s2.2.1_a">ヘッドノートは、<code class="markup">epub:type</code> 属性値 <code class="markup">index-legend</code> を使用して示されている（略称や記号、インデックスで使用されている特別なフォーマットとそれらの意味を掲載している）<a class="glossterm" href="#s1.2_m" title="legend (2.2.1)">レジェンド</a>を含んで<span class="rfc2119">もよい（may）</span>。レジェンドデータはひとつ以上の名前または値のペアで構成されているため、データ自体は、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> 定義リスト（<code class="markup">dl</code>、<code class="markup">dt</code>、<code class="markup">dd</code>）構造を使用してエンコードされる<span class="rfc2119">べきである（should）</span>。これはレジェンドを機械可読にし、リーディングシステムでの操作を可能にする。</p>
+
+<div class="elem-synopsis" id="bb-legend">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-legend</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>インデックスで使用されている記号や略称、特別なフォーマットとそれらの意味を掲載</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-headnotes</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p>任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素または <code class="markup">dl</code> で使用する</p>
+</dd>
+</dl>
+</div>
+<div class="informalexample" id="ex3">
+<p>例 3、<code class="markup">dl</code> 要素のレジェンド：</p>
+<pre class="synopsis">&lt;header epub:type="index-headnotes"&gt;
+	&lt;p&gt;The following abbreviations are used in this index.&lt;/p&gt;
+	&lt;dl epub:type="index-legend"&gt;
+		&lt;dt&gt;Civ. R.&lt;/dt&gt;&lt;dd&gt;Civil Rule&lt;/dd&gt;
+		&lt;dt&gt;Crim. R.&lt;/dt&gt;&lt;dd&gt;Criminal Rule&lt;/dd&gt;
+		&lt;dt&gt;§&lt;/dt&gt;&lt;dd&gt;Statute&lt;/dd&gt;
+	&lt;/dl&gt;
+	&lt;p&gt;The following formatting conventions are used in this index-&lt;/p&gt;
+	&lt;dl epub:type="index-legend"&gt;
+		&lt;dt&gt;bold text&lt;/dt&gt;&lt;dd&gt;main discussion/definition of topic&lt;/dd&gt;
+		&lt;dt&gt;italic text&lt;/dt&gt;&lt;dd&gt;indicates figure&lt;/dd&gt;
+		&lt;dt&gt;'t' following a locator&lt;/dt&gt;&lt;dd&gt;indicates table&lt;/dd&gt;
+	&lt;/dl&gt;
+&lt;/header&gt; </pre>
+</div>
+<div class="informalexample" id="ex4">
+<p>例 4、<code class="markup">section</code> 要素のレジェンド：</p>
+<pre class="synopsis">&lt;header epub:type="index-headnotes&gt;
+	&lt;p&gt;The following abbreviations are used in this index.&lt;/p&gt;
+	&lt;section epub:type="index-legend"&gt;
+		&lt;h2&gt;Abbreviations and definitions&lt;/h2&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;Civ. R.&lt;/dt&gt;&lt;dd&gt;Civil Rule&lt;/dd&gt;
+			&lt;dt&gt;Crim. R.&lt;/dt&gt;&lt;dd&gt;Criminal Rule&lt;/dd&gt;
+			&lt;dt&gt;§&lt;/dt&gt;&lt;dd&gt;Statute&lt;/dd&gt;
+		&lt;/dl&gt;
+	&lt;/section&gt;	
+&lt;/header&gt; </pre>
+</div>
+
+<p>以下の<span class="rfc2119">省略可能</span>な<a class="glossterm" href="#s1.2_i" title="head notes (2.2.1)">ヘッドノート</a>は、以下のセクション <a class="link" href="#s2.2.2" title="2.2.2 Index Groups">2.2.2</a> と <a class="link" href="#s2.2.3" title="2.2.3 Entries and Terms">2.2.3</a> に記載されているようなひとつ以上の<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>が含まれているインデックスの集合である。</p>
+
+<div class="informalexample" id="ex5">
+<p>例 5、インデックスヘッドノートを持ち、コンテンツドキュメント全体から成るインデックス：</p>
+<pre class="synopsis">&lt;body epub:type="index"&gt;
+	&lt;header epub:type="index-headnotes"&gt;
+		...
+	&lt;/header&gt;
+	...&lt;!-- entries go here --&gt;
+&lt;/body&gt; </pre>
+</div>
+<div class="informalexample" id="ex6">
+<p>例 6、インデックスヘッドノートを持たず、コンテンツドキュメント全体から成るインデックス：</p>
+<pre class="synopsis">&lt;body epub:type="index"&gt;
+	...&lt;!-- entries go here --&gt;
+&lt;/body&gt; </pre>
+</div>
+<div class="informalexample" id="ex7">
+<p>例 7、インデックスヘッドノートを持ち、コンテンツドキュメントの一部分から成るインデックス：</p>
+<pre class="synopsis">&lt;section epub:type="index"&gt;
+	&lt;header epub:type="index-headnotes"&gt;
+		...
+	&lt;/header&gt;
+	...&lt;!-- entries go here --&gt;
+&lt;/section&gt; </pre>
+</div>
+<div class="informalexample" id="ex8">
+<p>例 8、インデックスヘッドノートを持たず、コンテンツドキュメントの一部分から成るインデックス：</p>
+<pre class="synopsis">&lt;section epub:type="index"&gt;
+	...&lt;!-- entries go here --&gt;
+&lt;/section&gt; </pre>
+</div>
+</div>
+
+<div class="section" title="2.2.2 Index Groups" id="s2.2.2">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.2">&gt;</a>&nbsp;</span>2.2.2 インデックスグループ</h4>
+
+<p><a class="glossterm" href="#s1.2_k" title="index group (2.2.2)">インデックスグループ</a>は、例えば、すべてのエントリが“A”で始まる連続した<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>のグループを包むために使用されて<span class="rfc2119">もよい（may）</span>。インデックスグループは、<code class="markup">epub:type</code> 属性値 <code class="markup">index-group</code> の使用で生成される。</p>
+
+<p>インデックスグループが使用されたとき、すべてのエントリは、グループの一部でなければ<span class="rfc2119">ならない（must）</span>。言い換えれば、<code class="markup">epub:type</code> 属性値に <code class="markup">index</code> を包含する任意の要素のために、(1) エントリが含まれているすべての子は、<code class="markup">index-group</code> の <code class="markup">epub:type</code> 属性値か (2) エントリが含まれている唯一の子がなければならない（must）、そしてそれは <code class="markup">epub:type</code> 属性値が、暗黙的に <code class="markup">index-entry-list</code> 値を持つ <code class="markup">ul</code> 要素でなければ<span class="rfc2119">ならない（must）</span>（エントリ・リストの情報は <a class="link" href="#s2.2.3" title="2.2.3 Entries and Terms">2.2.3 エントリと用語</a>を参照されたい）。</p>
+
+<p><a class="glossterm" href="#s1.2_k" title="index group (2.2.2)">インデックスグループ</a>は、最初の子として、そのグループのタイトルを含んで<span class="rfc2119">もよい（may）</span>。</p>
+
+<div class="elem-synopsis" id="bb-group">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-group</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>共通の特徴を共有する連続した<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>のシリーズ</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p>任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素を使用する</p>
+<p><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>要素に含まれて<span class="rfc2119">もよい（may）</span></p>
+<p>子セマンティクス <code class="markup">index-entry-list</code> を持つ要素をひとつのみ含まなければ<span class="rfc2119">ならない（must）</span></p>
+<p>この仕様で定義されている子セマンティクスプロパティを持ついかなる他の要素も含んでは<span class="rfc2119">ならない（must not）</span></p>
+</dd>
+</dl>
+</div>
+
+<div class="informalexample" id="ex9">
+<p>例 9、インデックスグループ：</p>
+<pre class="synopsis"> ...
+&lt;section epub:type="index"&gt;
+	...
+	&lt;section epub:type="index-group"&gt;
+		&lt;h1&gt;A&lt;/h1&gt;
+		...[entries beginning with "A"]
+	&lt;/section&gt;
+	&lt;section epub:type="index-group"&gt;
+		&lt;h1&gt;B&lt;/h1&gt;
+		...[entries beginning with "B"]
+	&lt;/section&gt;
+&lt;/section&gt;
+...
+</pre>
+</div>
+</div>
+
+<div class="section" title="2.2.3 Entries and Terms" id="s2.2.3">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.3">&gt;</a>&nbsp;</span>2.2.3 エントリと用語</h4>
+
+<p>上記に記載されているように<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>がグループ化されているかされていないか関わらず、<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">インデックスエントリ</a>の一覧は、<code class="markup">ul</code> 要素を使用してエンコードされなければ<span class="rfc2119">ならず（must）</span>、各<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">インデックスエントリ</a>は、<code class="markup">li</code> 要素を使用してエンコードされなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p>(1) <code class="markup">ul</code> が <code class="markup">index-headnotes</code> 内側で発生するか、(2) 異なる値が明示的に与えられるか、そうでなければこの仕様によって暗示されていない限り、<code class="markup">index-entry-list</code> の <code class="markup">epub:type</code> 属性値は、インデックス内のすべての <code class="markup">ul</code> 要素に暗黙的に指定される。</p>
+
+<div class="elem-synopsis" id="bb-entry-list">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-entry-list</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>連続した<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>または連続した<a class="glossterm" href="#s1.2_a" title="child entry">サブエントリ</a>のシリーズ</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index</code> または <code class="markup">index-group</code>、<code class="markup">index-entry</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p><code class="markup">ul</code> 要素で使用する</p>
+<p>祖先が、<code class="markup">index-headnotes</code> 内を除き、<code class="markup">index</code> 型のとき暗黙である</p>
+<p>子セマンティクス <code class="markup">index-entry</code> を持つひとつ以上の要素を含まなければ<span class="rfc2119">ならない（must）</span></p>
+<p>この仕様で定義されている子セマンティクスプロパティを持ついかなる他の要素も含んでは<span class="rfc2119">ならない（must not）</span></p>
+</dd>
+</dl>
+</div>
+<p><code class="markup">index-entry</code> の <code class="markup">epub:type</code> 属性値は、その親の <code class="markup">ul</code> が暗黙的または明示的に <code class="markup">index-entry-list</code> の <code class="markup">epub:type</code> 属性値を包含するところのすべての <code class="markup">li</code> 要素に暗黙的に示される。</p>
+<div class="elem-synopsis" id="bb-entry">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-entry</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>ひとつのエントリ</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-entry-list</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p><code class="markup">li</code> 要素で使用する</p>
+<p>親 <code class="markup">ul</code> が <code class="markup">index-entry-list</code> 型のとき暗黙である</p>
+<p>子セマンティクス <code class="markup">index-term</code> を持つひとつの要素を含まなければ<span class="rfc2119">ならない（must）</span></p>
+<p>以下の少なくともひとつを含まなければ<span class="rfc2119">ならない（must）</span>：</p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr>
+<td>子セマンティクス <code class="markup">index-entry-list</code> を持つ唯一の要素</td>
+</tr>
+<tr>
+<td>子セマンティクス <code class="markup">index-locator-list</code> を持つ唯一の要素または子セマンティクス <code class="markup">index-locator</code> と <code class="markup">index-locator-range</code> を持つひとつ以上の組み合わせ</td>
+</tr>
+<tr>
+<td>子セマンティクス <code class="markup">index-editor-note</code> を持つ唯一の要素</td>
+</tr>
+<tr>
+<td>子セマンティクス <code class="markup">index-xref-preferred</code> を持つひとつ以上の要素または子セマンティクス <code class="markup">index-xref-related</code> を持つひとつ以上の要素</td>
+</tr>
+</table>
+<p>この仕様で定義されている子セマンティクスプロパティを持ついかなる他の要素も含んでは<span class="rfc2119">ならない（must not）</span></p>
+</dd>
+</dl>
+</div>
+<div class="elem-synopsis" id="bb-term">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-term</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>インデックス可能なコンテンツを表す単語、語句、文字列、グリフまたは画像</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-entry</code> または <code class="markup">index-xref-preferred</code>、<code class="markup">index-xref-related</code></p>
+<p>もうひとつの方法として、<code class="markup">index-entry</code> または <code class="markup">index-xref-preferred</code>、<code class="markup">index-xref-related</code> として同じ要素を持って<span class="rfc2119">もよい（may）</span></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p>任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a>要素、典型的に <code class="markup">span</code> を使用する</p>
+</dd>
+</dl>
+</div>
+<p>エントリは、<code class="markup">index-term</code> の <code class="markup">epub:type</code> 属性値を持つ唯一の要素に加えて、以下のひとつ以上を含まなければ<span class="rfc2119">ならない（must）</span>：(1)（<code class="markup">epub:type</code> 属性に <code class="markup">index-entry-list</code> を包含する要素内の）ひとつ以上の<a class="glossterm" href="#s1.2_a" title="child entry">サブエントリ</a>；(2) ひとつ以上の<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>（<a class="link" href="#s2.2.4" title="2.2.4 Locators">2.2.4 ロケータ</a>を参照されたい）；(3) ひとつの<a class="glossterm" href="#s1.2_e" title="editor's note (2.2.3)">編集者注</a>（その要素は <code class="markup">epub:type</code> 属性値に <code class="markup">index-editor-note</code> を包含する）；(4) ひとつ以上の <a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>（<a class="link" href="#s2.2.7" title="2.2.7 Cross-references">2.2.7 相互参照</a>を参照されたい）。</p>
+
+<p>例 10 は、<a class="glossterm" href="#s1.2_a" title="child entry">サブエントリ</a>が含まれている<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>の最初の事例を示している。上記のように、<code class="markup">epub:type</code> 値 <code class="markup">index-entry-list</code> と <code class="markup">index-entry</code> は、特定の場合で暗示されており、明示的に記述する必要なく、例 10 は、説明のために明示的に記述しているが、以降の例ではそうしていない。</p>
+
+<div class="informalexample" id="ex10">
+<p>例 10、サブエントリを追加した用語：</p>
+<p>ユーザーへ表示されるようなエントリ：</p>
+<pre class="synopsis">
+	Black, John, 
+		birth, 75
+		death, 78 </pre>
+
+<p>すべての epub:type 値に明示的な記述を持つコード化されたエントリ：</p>
+
+<pre class="synopsis">&lt;ul epub:type="index-entry-list"&gt;
+	&lt;li epub:type="index-entry"&gt;
+		&lt;span epub:type="index-term"&gt;Black, John&lt;/span&gt;
+		&lt;ul epub:type="index-entry-list"&gt;
+			&lt;li epub:type="index-entry"&gt;
+				&lt;span epub:type="index-term"&gt;birth&lt;/span&gt;
+				&lt;a epub:type="index-locator"&gt;¶75&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li epub:type="index-entry"&gt;
+				&lt;span epub:type="index-term"&gt;death&lt;/span&gt;
+				&lt;a epub:type="index-locator"&gt;¶78&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</pre>
+</div>
+
+<p>例 11 から 13 は、<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>で使用することができる他の三つの <code class="markup">epub:type</code> 値を示している。上記のように、特定のエントリは、任意の組み合わせで、これらの値のいくつかを持つ要素を含んで<span class="rfc2119">もよい（may）</span>。以下の例は、<code class="markup">epub:type</code> 属性値 <code class="markup">index-entry-list</code> と <code class="markup">index-entry</code> が暗黙的に示され、表示はされない。</p>
+
+<div class="informalexample" id="ex11">
+<p>例 11、<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>を追加した<a class="glossterm" href="#s1.2_s" title="term">用語</a>（ロケータの仕様については <a class="link" href="#s2.2.4" title="2.2.4 Locators">2.2.4 ロケータ</a>を参照されたい）：</p>
+<pre class="synopsis">&lt;ul&gt;
+	&lt;li&gt;
+		&lt;span epub:type="index-term"&gt;Heston, Charlton&lt;/span&gt;
+		&lt;a epub:type="index-locator" href="..."&gt;¶53&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+<div class="elem-synopsis" id="bb-editor-note">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-editor-note</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>単一のエントリに関連している<a class="glossterm" href="#s1.2_e" title="editor's note (2.2.3)">編集者注</a></p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-entry</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p>任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#flow-content">フローコンテンツ</a>要素で使用する</p>
+</dd>
+</dl>
+</div>
+<div class="informalexample" id="ex12">
+<p>例 12、<a class="glossterm" href="#s1.2_e" title="editor's note (2.2.3)">編集者注</a>を追加した<a class="glossterm" href="#s1.2_s" title="term">用語</a>：</p>
+<pre class="synopsis"> &lt;ul&gt;
+	&lt;li&gt;
+		&lt;span epub:type="index-term"&gt;Heston, Charlton&lt;/span&gt;
+		&lt;span epub:type="index-editor-note"&gt;Charlton Heston (1923-2008), actor in numerous American films.&lt;/span&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+<div class="informalexample" id="ex13">
+<p>例 13、<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>を追加した<a class="glossterm" href="#s1.2_s" title="term">用語</a>（仕様については <a class="link" href="#s2.2.7" title="2.2.7 Cross-references">2.2.7 相互参照</a>を参照されたい）：</p>
+<pre class="synopsis"> &lt;ul&gt;
+	&lt;li&gt;
+		&lt;span epub:type="index-term"&gt;Peking&lt;/span&gt;
+		&lt;span epub:type="index-xref-preferred"&gt;See 
+			&lt;a epub:type="index-term" href="..."&gt;Beijing&lt;/a&gt;.
+		&lt;/span&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+<p id="glindex">標準的なインデックスの異形である“glindex”は、後付けの結合と/または空白を節約する手段として時々使用される用語集（glossary）とインデックスを組み合わせたものである。glindex では、メインエントリの一部またはすべては、用語集に見られるような定義に続いている。この場合、<a class="link" href="http://idpf.org/epub/vocab/structure/">EPUB Structural Semantics Vocabulary</a> <a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">[<abbr>StructureVocab</abbr>]</a> の用語集のプロパティは、例 14 に示しているように、この仕様で概説されているインデックスのプロパティと組み合わせて使用される<span class="rfc2119">べきである（should）</span>。</p>
+<div class="informalexample" id="ex14">
+<p>例 14、用語集とインデックスの組み合わせ（“glindex”）：</p>
+<pre class="synopsis">&lt;body epub:type="glossary index"&gt;
+   ...
+   &lt;ul epub:type="index-entry-list"&gt;
+       &lt;li&gt;&lt;!-- implied epub:type of index-entry --&gt;
+           &lt;span epub:type="index-term glossterm"&gt;adjective&lt;/span&gt;
+           &lt;span epub:type="index-locator-range"&gt;75-77&lt;/span&gt;
+           &lt;span epub:type="glossdef"&gt;A word that modifies, quantifies, identifies, or describes a noun or words acting as a noun.&lt;/span&gt;
+       &lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/body&gt;</pre>
+</div>
+</div>
+
+<div class="section" title="2.2.4 Locators" id="s2.2.4">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.4">&gt;</a>&nbsp;</span>2.2.4 ロケータ</h4>
+
+<p><a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>は、暗黙的もしくは明示的に <code class="markup">index-locator</code> の <code class="markup">epub:type</code> 値を持つ <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup"><a class="link" href="http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element">a</a></code> 要素で表される。ロケータは、典型的に EPUB 出版物のいくつかの場所を指定している <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup">href</code> 属性を持っており、それが <code class="markup">href</code> 属性値を持っていない場合、ロケータは実用的でないであろう。リーディングシステムは、一般的な <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> ハイパーリンクとして明示的または暗示的な <code class="markup">epub:type</code> なしでアンカーを解釈しなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>紙の本は、一般的にロケータとしてページや節、段落番号を使用する。電子書籍は、従来のページ番号や段落番号、節番号、単純な通し番号、用語、アイコン、ロケータを表す部分として必要な何か他のものを使用してもよい（may）。</p>
+</div>
+<div class="elem-synopsis" id="bb-locator">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-locator</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>インデックス化されたコンテンツへの参照</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-entry</code> や <code class="markup">index-locator-list</code>、<code class="markup">index-locator-range</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup">a</code> 要素で使用する</p>
+<p>親コンテクストが <code class="markup">index-locator-list</code> または <code class="markup">index-locator-range</code> の時に暗示的である</p>
+<p><code class="markup">href</code> 属性を持って<span class="rfc2119">もよい（may）</span></p>
+</dd>
+</dl>
+</div>
+<div class="informalexample" id="ex15">
+<p>例 15、<code class="markup">href</code> を持たない<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>：</p>
+<p>コード：</p>
+<pre class="synopsis">	&lt;a epub:type="index-locator"&gt;&lt;img alt="phone" src="phone-icon.png"/&gt;&lt;/a&gt;
+	...
+	&lt;a epub:type="index-locator"&gt;35&lt;/a&gt;
+	...
+	&lt;a epub:type="index-locator"&gt;II:14&lt;/a&gt; </pre>
+<p>表示（ひとつの可能性のある方法）：</p>
+<pre class="synopsis">
+<span class="inlinemediaobject">
+<img src="phone-icon.png" alt="Phone icon followed by text locators."/>
+</span>
+</pre>
+</div>
+<div class="informalexample" id="ex16">
+<p>例 16、<code class="markup">href</code> を持つ<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>：</p>
+<p>コード：</p>
+<pre class="synopsis">
+	&lt;a epub:type="index-locator" href="..."&gt;&lt;img alt="phone" src="phone-icon.png"/&gt;&lt;/a&gt;
+	...
+	&lt;a epub:type="index-locator" href="..."&gt;35&lt;/a&gt;
+	...
+	&lt;a epub:type="index-locator" href="..."&gt;II:14&lt;/a&gt;</pre>
+<p>表示（ひとつの可能性のある方法）：</p>
+<pre class="synopsis">
+<span class="inlinemediaobject">
+<img src="phone-icon2.png" alt="Phone icon followed by text locators."/>
+</span>
+</pre>
+</div>
+
+<p>インデックスの<a class="glossterm" href="#s1.2_s" title="term">用語</a>はまた、<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>を人間が読む文字列として機能して<span class="rfc2119">もよい（may）</span>：</p>
+
+<div class="informalexample" id="ex17">
+<p>例 17、ロケータのテキストとして機能する用語：</p>
+<p>コード：</p>
+<pre class="synopsis">
+&lt;span epub:type="index-term"&gt;
+	&lt;a epub:type="index-locator" href="..."&gt;Berlin&lt;/a&gt;
+&lt;/span&gt;
+&lt;span epub:type="index-term"&gt;
+	&lt;a epub:type="index-locator" href="..."&gt;Paris&lt;/a&gt;
+&lt;/span&gt; 
+			
+</pre>
+<p>表示（ひとつの可能性のある方法）：</p>
+<pre class="synopsis">
+<a class="link" href="#ex15">Berlin</a>
+<a class="link" href="#ex15">Paris</a>
+</pre>
+</div>
+<p id="s2.2.4_a"><code class="markup">epub:type</code> 属性値 <code class="markup">index-locator</code> は、上記の例で示すように、各 <code class="markup">a</code> 要素に明示的に設定されて<span class="rfc2119">もよい（may）</span>。もうひとつの方法として、<code class="markup">index-locator</code> の <code class="markup">epub:type</code> は、<code class="markup">a</code> 要素が <code class="markup">index-locator-list</code> または <code class="markup">index-locator-range</code> の<a class="glossterm" href="#s1.2pc" title="parent context">親コンテクスト</a>を持つとき暗示的に示される。ロケータのリストは、以下で説明されている。<a class="glossterm" href="#s1.2_o" title="locator range (2.2.5)">ロケータの範囲</a>をコード化するのはセクション <a class="link" href="#s2.2.5" title="2.2.5 Locator Ranges">2.2.5 ロケータの範囲</a>を参照されたい。</p>
+
+<div class="elem-synopsis" id="bb-locator-list">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-locator-list</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>連続した <code class="markup">index-locator</code> または <code class="markup">index-locator-range</code> のシリーズ</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-entry</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup">ul</code> 要素で使用する</p>
+<p>子セマンティクス <code class="markup">index-locator</code> を持つひとつ以上の要素を含めなければ<span class="rfc2119">ならない（must）</span></p>
+</dd>
+</dl>
+</div>
+<div class="informalexample" id="ex18">
+<p>例 18、明示的に設定された <code class="markup">index-locator</code> の値：</p>
+<pre class="synopsis"> &lt;ul epub:type="index-entry-list"&gt;
+	&lt;li epub:type="index-entry"&gt;
+		&lt;span epub:type="index-term"&gt;Heston, Charlton&lt;/span&gt;
+		&lt;a epub:type="index-locator" href="..."&gt;53&lt;/a&gt;
+		&lt;a epub:type="index-locator" href="..."&gt;76-79&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;span epub:type="index-term"&gt;Howard, Leslie&lt;/span&gt;
+		&lt;a epub:type="index-locator" href="..."&gt;62&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+
+<div class="informalexample" id="ex19">
+<p>例 19、<code class="markup">index-locator-list</code> を使用することで、<code class="markup">index-locator</code> の値を暗示的に示している：</p>
+<pre class="synopsis"> &lt;ul epub:type="index-entry-list"&gt;
+	&lt;li epub:type="index-entry"&gt;
+		&lt;span epub:type="index-term"&gt;Heston, Charlton&lt;/span&gt;
+		&lt;!-- locators wrapped in locator-list --&gt;
+		&lt;ul epub:type="index-locator-list"&gt;
+			&lt;!-- epub:type value index-locator is implied for all a elements due to ancestor with epub:type value locator-list --&gt;
+			&lt;li&gt;&lt;a href="..."&gt;53&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="..."&gt;76-79&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li epub:type="index-entry"&gt;
+		&lt;span epub:type="index-term"&gt;Howard, Leslie&lt;/span&gt;
+		&lt;ul epub:type="index-locator-list"&gt;
+			&lt;li&gt;&lt;a href="..."&gt;62&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+<p><a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>のリストのネストは、例えば、例 20 に示されるように、ロケータの異なるサブセットに異なるクラスを適用するなど、いくつかの理由が求められるときに許可されている。</p>
+<div class="informalexample" id="ex20">
+<p>例 20、ネストされたリスト内のロケータ：</p>
+<pre class="synopsis"> &lt;ul epub:type="index-locator-list"&gt;
+	&lt;li&gt;
+		&lt;ul class="..."&gt;
+			&lt;!-- epub:type value index-locator is implied for all a elements due to ancestor with epub:type value locator-list --&gt;
+			&lt;li&gt;&lt;a href="..."&gt;3:5&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="..."&gt;9&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="..."&gt;14&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;ul class="..."&gt;
+			&lt;li&gt;&lt;a href="..."&gt;5:7&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="..."&gt;9&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+</div>
+
+<div class="section" title="2.2.5 Locator Ranges" id="s2.2.5">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.5">&gt;</a>&nbsp;</span>2.2.5 ロケータの範囲</h4>
+
+<p>上記の例では、他のコンテンツの<em>範囲</em>（<code>&lt;a href="..."&gt;7:6-7:9&lt;/a&gt;</code>）を参照しながら、<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>のいくつかは単一のポイント（<code>&lt;a href="..."&gt;3:5&lt;/a&gt;</code>）を参照する。<a class="glossterm" href="#s1.2_o" title="locator range (2.2.5)">ロケータの範囲</a>は、epub:type の <code class="markup">locator-range</code> を使用することで識別される<span class="rfc2119">べきである（should）</span>。例 21 から 23 は、<a class="glossterm" href="#s1.2_o" title="locator range (2.2.5)">ロケータの範囲</a>をコード化する様々な方法を示している。</p>
+
+<div class="elem-synopsis" id="bb-locator-range">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p><code class="markup">index-locator-range</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>単一のポイントよりはむしろ、コンテンツの範囲を識別</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-entry</code> または <code class="markup">index-locator-list</code></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p>任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#flow-content">フローコンテンツ</a>要素で使用する</p>
+<p>子セマンティクス <code class="markup">index-locator</code> を持つひとつか二つの要素を含めなければ<span class="rfc2119">ならない（must）</span></p>
+</dd>
+</dl>
+</div>
+<div class="informalexample" id="ex21">
+<p>例 21、範囲は、範囲の開始のみを指定する単一の <code class="markup">a</code> 要素でタグ付けされ、範囲の終わりがどこかの識別は提供されていないことに注意されたい：</p>
+<pre class="synopsis"> &lt;ul epub:type="index-locator-list"&gt;
+	&lt;li epub:type="index-locator-range"&gt;
+&lt;a href="chap2.xhtml#p076"&gt;76-79&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+<div class="informalexample" id="ex22">
+<p>例 22、範囲は、<a class="link" href="http://idpf.org/epub/linking/cfi/epub-cfi.html">Canonical Fragment Identifiers</a> <a class="biblioref" href="#refEPUBCFI" title="EPUB Canonical Fragment Identifier (epubcfi) Specification">[<abbr>EPUBCFI</abbr>]</a> を使用して、範囲全体を指定する単一の <code class="markup">a</code> 要素でタグ付けされる：</p>
+<pre class="synopsis"> &lt;ul epub:type="index-locator-list"&gt;
+	&lt;li epub:type="index-locator-range"&gt;
+&lt;a href="epubcfi(/6/4[chap01ref]!/4[body01], /156[para76]/1:0, /170[para79]/1:0)"&gt;76-79&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+<p>範囲は、<code class="markup">index-locator-range</code> の <code class="markup">epub:type</code> 属性値を持つ要素に包まれた、範囲の開始を指定するひとつ目と範囲の終わり指定する二つ目の二つの <code class="markup">a</code> 要素を使用してコード化されて<span class="rfc2119">もよい（may）</span>。</p>
+<div class="informalexample" id="ex23">
+<p>例 23、範囲は二つの <code class="markup">a</code> 要素でタグ付されている：</p>
+<pre class="synopsis">&lt;ul epub:type="index-locator-list"&gt;
+	&lt;li epub:type="index-locator-range"&gt;
+		&lt;a href="chap2.xhtml#p07.6"&gt;7.6&lt;/a&gt;-&lt;a href="chap2.xhtml#p07.9"&gt;7.9&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+</div>
+
+<div class="section" title="2.2.6 Locator Target Structural Semantics" id="s2.2.6">
+
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.6">&gt;</a>&nbsp;</span>2.2.6 ロケータの対象の構造的セマンティクス</h4>
+
+<p><a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>は、例えば図、表、脚注などへのロケータポイントかどうか、それが指しているオブジェクトに関する情報を含んで<span class="rfc2119">もよい（may）</span>。各ロケータ対象の構造的セマンティクス（structural semantics）は、<code class="markup">epub:type</code> 属性の値によって示されて<span class="rfc2119">もよい（may）</span>。</p>
+
+<p>インデックスの<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>は、<code class="markup">a</code> 要素に包含するために <a class="link" href="http://idpf.org/epub/vocab/structure/">EPUB Structural Semantics Vocabulary</a> <a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">[<abbr>StructureVocab</abbr>]</a> の用語の推奨された XHTML コンテクストを拡張し、他の関連した語彙からの用語は、<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-contentdocs-vocab-association">語彙の関連性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> ガイドラインに従って使用して<span class="rfc2119">もよい（may）</span>。</p>
+
+<div class="informalexample" id="ex24">
+<p>例 24、構造的セマンティクス情報を持つロケータ：</p>
+<pre class="synopsis">&lt;!-- note use of "figure" "table" and "footnote" --&gt;
+&lt;a href="..." epub:type="index-locator figure"&gt;18&lt;/a&gt;
+&lt;a href="..." epub:type="index-locator table"&gt;345-349&lt;/a&gt;
+&lt;a href="..." epub:type="index-locator footnote"&gt;28&lt;/a&gt; </pre>
+</div>
+</div>
+<div class="section" title="2.2.7 Cross-references" id="s2.2.7">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.7">&gt;</a>&nbsp;</span>2.2.7 相互参照</h4>
+
+<p><a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>は、(1) （推奨または関連する）相互参照の型式と (2) 目的となる<a class="glossterm" href="#s1.2_s" title="term">用語</a>または<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>の二つの型式の情報を伝達する。それ故に、二つの別個の <code class="markup">epub:type</code> 値は<span class="rfc2119">必須である（required）</span>。</p>
+
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>この推奨と関連する相互参照の両方の特徴は、<a class="biblioref" href="#refDocBook" title="DocBook Specifications">[<abbr>DocBook</abbr>]</a> の <code class="markup">see</code> と <code class="markup">seealso</code> 要素、<a class="biblioref" href="#refDITA" title="Darwin Information Typing Architecture (DITA) Version 1.2">[<abbr>DITA</abbr>]</a> の <code class="markup">index-see</code> と <code class="markup">index-see-also</code> 要素、そして <a class="biblioref" href="#refTEI" title="TEI: P5 Guidelines">[<abbr>TEI</abbr>]</a> の参照要素のさらなる活用のための <code class="markup">type</code> 属性の使用と同等である。</p>
+
+<p>相互参照は、通常、例えば（推奨する相互参照のための）“見よ”または（関連する相互参照のための）“も見よ”など、どの型式かをユーザーに示すために異なるリードインテキストで始まる。</p>
+
+</div>
+<p> <a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>が、関連か推奨なのかを示すために、以下の <code class="markup">epub:type</code> 値のひとつを使用する：</p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr>
+<td><code class="markup">index-xref-preferred</code> は、推奨する用語または用語カテゴリにユーザーを誘導する</td>
+</tr>
+<tr>
+<td><code class="markup">index-xref-related</code> は、関連する用語または用語カテゴリにユーザーを誘導する</td>
+</tr>
+</table>
+<p>加えて、参照された用語が、<a class="glossterm" href="#s1.2_s" title="term">用語</a>なのか<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>なのかを示すために、以下の <code class="markup">epub:type</code> 値のひとつを使用する：</p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr>
+<td><code class="markup">index-term</code> は、<a class="glossterm" href="#s1.2_s" title="term">用語</a>を参照する</td>
+</tr>
+<tr>
+<td><code class="markup">index-term-category</code> は、<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>を参照する</td>
+</tr>
+</table>
+<div class="elem-synopsis" id="bb-xref">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p> </p>
+<div class="literallayout">
+<p><code class="markup">index-xref-preferred</code>
+<br/> 
+<code class="markup">index-xref-related</code></p>
+</div>
+<p> </p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>ひとつの<a class="glossterm" href="#s1.2_s" title="term">用語</a>からひとつ以上の他の<a class="glossterm" href="#s1.2_s" title="term">用語</a>か<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>を参照する</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p>
+<code class="markup">index-entry</code>
+</p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p>任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#flow-content">フローコンテンツ</a>要素を使用する</p>
+<p>子セマンティクス <code class="markup">index-term</code> また<code class="markup">index-term-category</code> を持つひとつ以上の要素を含めるか、<code class="markup">index-term</code> または <code class="markup">index-term-category</code> として同じ要素を持たなければ<span class="rfc2119">ならない（must）</span></p>
+</dd>
+</dl>
+</div>
+<div class="elem-synopsis" id="bb-term-category">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p>
+<code class="markup">index-term-category</code>
+</p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>用語のカテゴリ（例えば、“特定の戦いの名前”）を表している単語、語句、文字列、グリフまたは画像</p>
+</dd>
+<dt class="varlistentry"><span class="term">必須の親のコンテクスト</span></dt>
+<dd>
+<p><code class="markup">index-xref-preferred</code> または <code class="markup">index-xref-related</code></p>
+<p>もうひとつの方法として、<code class="markup">index-xref-preferred</code> または <code class="markup">index-xref-related</code> として同じ要素に持って<span class="rfc2119">もよい（may）</span></p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p><a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup">a</code> 要素で使用する</p>
+</dd>
+</dl>
+</div>
+
+<p>このセクションの例 25 から 32 はすべて、ドキュメント内に決め打ちでリードインテキスト（例えば、“見よ”または“も見よ”）を持っていることに注意されたい。望むならば、これらはその代わりに <a class="biblioref" href="#refCSS21" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">[<abbr>CSS2.1</abbr>]</a> スタイルシートで削除と生成ができる。これについての詳細は <a class="link" href="#s2.2.9" title="2.2.9 Punctuation and Lead-In Words">2.2.9 句読点とリードインワード</a>を参照されたい。</p>
+
+<p>単一の要素は、例 25 に見られるように、これらが単一の<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">相互参照の対象</a>であるとき、両方に必要な <code class="markup">epub:type</code> 値を持って<span class="rfc2119">もよい（may）</span>。</p>
+
+<div class="informalexample" id="ex24">
+<p>例 24、単一の要素でコード化された相互参照：</p>
+<pre class="synopsis"> &lt;a href="..." epub:type="index-xref-preferred index-term"&gt;Beijing&lt;/a&gt; </pre>
+</div>
+<p>もうひとつの方法として、例 26 に見られるように、これらが複数の<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">相互参照の対象</a>である場合、二つの <code class="markup">epub:type</code> 値は、それぞれのために“推奨”と“関連”する情報の繰り返しを避けるのに異なる要素で持って<span class="rfc2119">もよい（may）</span>。</p>
+<div class="informalexample" id="ex26">
+<p>例 26、分割した要素でコード化された相互参照：</p>
+<pre class="synopsis"> &lt;span epub:type="index-xref-related&gt;See also 
+	&lt;a href="..." epub:type="index-term"&gt;glucose&lt;/a&gt;, 
+	&lt;a href="..." epub:type="index-term"&gt;sucrose&lt;/a&gt;.
+&lt;/span&gt; </pre>
+</div>
+
+<p><a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>は、<code class="markup">href</code> 属性に <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr>RFC3987</abbr>]</a> を包含して<span class="rfc2119">もよく（may）</span>、リーディングシステムでそれを実行可能にして<span class="rfc2119">もよい（may）</span>。</p>
+
+<p>以下の三つの例は、特定の<a class="glossterm" href="#s1.2_s" title="term">用語</a>にユーザーを向かわせる相互参照のオプションを示している。いずれの場合にも、相互参照内の <code class="markup">href</code> 属性の値は、対応する <code class="markup">index-entry</code> の <code class="markup">id</code> 属性に一致するので、リンクが実行可能であることに注意されたい。</p>
+
+<div class="informalexample" id="ex27">
+<p>例 27、推奨する用語への相互参照：</p>
+<pre class="synopsis"> &lt;!-- note id attribute beij --&gt;
+&lt;li epub:type="index-entry" id="beij"&gt;
+	&lt;span epub:type="index-term"&gt;Beijing&lt;/span&gt;
+	&lt;a epub:type="index-locator"&gt;113-120&lt;/a&gt;
+&lt;/li&gt;
+...
+&lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;Peking&lt;/span&gt;
+	&lt;span epub:type="index-xref-preferred"&gt;See
+		&lt;!-- note href attribute #beij --&gt;
+		&lt;a epub:type="index-term" href="#beij"&gt;Beijing&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/li&gt;</pre>
+</div>
+<div class="informalexample" id="ex28">
+<p>例 28、関連する用語への相互参照：</p>
+<pre class="synopsis"> &lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;sweet potatoes&lt;/span&gt;
+	&lt;span epub:type="index-xref-related"&gt;See also
+		&lt;!-- note href attribute #yams --&gt;
+		&lt;a epub:type="index-term" href="#yams"&gt;yams&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/li&gt;
+...
+&lt;!-- note id attribute yams --&gt;
+&lt;li epub:type="index-entry" id="yams"&gt;
+	&lt;span epub:type="index-term"&gt;yams&lt;/span&gt;
+	&lt;a epub:type="index-locator"&gt;93-97&lt;/a&gt;
+&lt;/li&gt;</pre>
+</div>
+<div class="informalexample" id="ex29">
+<p>例 29、複数の用語への相互参照：</p>
+<pre class="synopsis"> &lt;!-- note id attribute --&gt;
+&lt;li epub:type="index-entry" id="blig"&gt;
+	&lt;span epub:type="index-term"&gt;blight (potato)&lt;/span&gt;
+	&lt;a epub:type="index-locator"&gt;72-73&lt;/a&gt;
+&lt;/li&gt;
+...
+&lt;!-- note id attribute --&gt;
+&lt;li epub:type="index-entry" id="gray"&gt;
+	&lt;span epub:type="index-term"&gt;gray mold&lt;/span&gt;
+	&lt;a epub:type="index-locator"&gt;85&lt;/a&gt;
+&lt;/li&gt;
+...
+&lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;potato diseases&lt;/span&gt;
+	&lt;a epub:type="index-locator"&gt;21-25&lt;/a&gt;
+	&lt;span epub:type="index-xref-related"&gt;See also 
+		&lt;!-- href attributes matching id's --&gt;
+ 		&lt;a epub:type="index-term" href="#blig"&gt;blight (potato)&lt;/a&gt;, 
+ 		&lt;a epub:type="index-term" href="#gray"&gt;gray mold&lt;/a&gt;,
+		&lt;a epub:type="index-term" href="#powd"&gt;powdery mildew&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/li&gt;
+...
+&lt;!-- note id attribute --&gt;
+&lt;li epub:type="index-entry" id="powd"&gt;
+	&lt;span epub:type="index-term"&gt;powdery mildew&lt;/span&gt;
+	&lt;a epub:type="index-locator"&gt;93-97&lt;/a&gt;
+&lt;/li&gt; </pre>
+</div>
+<p id="s2.2.7_a">例 30 から 31 は<a class="glossterm" href="#s1.2_g" title="generic cross-reference target (2.2.8)">一般的な相互参照の対象</a>を見られたい。</p>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>それらを実行可能にする唯一の妥当な <code class="markup">href</code> を必要とする上の例とは異なり、実行可能な<a class="glossterm" href="#s1.2_g" title="generic cross-reference target (2.2.8)">一般的な相互参照</a>の対象は、同様に、<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> の特定のコンテンツを必要とする。詳細については <a class="link" href="#s2.2.8" title="2.2.8 Term Categories and Generic Cross-Reference Targets">2.2.8 用語カテゴリと一般的な相互参照の対象</a>を参照されたい。</p>
+</div>
+<div class="informalexample" id="ex30">
+<p>例 30、推奨する用途のカテゴリへの相互参照：</p>
+<pre class="synopsis"> &lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;battles&lt;/span&gt;
+	&lt;span epub:type="index-xref-preferred"&gt;See 
+		&lt;a epub:type="index-term-category" href="nav.xhtml#battles"&gt;names of specific battles&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/li&gt; </pre>
+</div>
+<div class="informalexample" id="ex31">
+<p>例 31、関連する用語のカテゴリへの相互参照：</p>
+<pre class="synopsis"> &lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;battles&lt;/span&gt;
+	&lt;a epub:type="index-locator" href="..."&gt;18-25&lt;/a&gt;
+	&lt;a epub:type="index-locator" href="..."&gt;28-32&lt;/a&gt;
+	&lt;span epub:type="index-xref-related"&gt;See also 
+		&lt;a epub:type="index-term-category" href="nav.xhtml#battles"&gt;names of specific battles&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/li&gt; </pre>
+</div>
+<p>最後に、相互参照は、用語とカテゴリ両方へユーザーを向かわせて<span class="rfc2119">もよい（may）</span>。</p>
+<div class="informalexample" id="ex32">
+<p>例 32、三つの用語とひとつの用語カテゴリへの相互参照：</p>
+<pre class="synopsis"> &lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;yams&lt;/span&gt;
+	&lt;a href="..." epub:type="index-locator"&gt;82&lt;/a&gt;
+	&lt;span epub:type="index-xref-related"&gt;See also 
+		&lt;!-- references to specific index terms --&gt;
+		&lt;a epub:type="index-term" href="#yfes"&gt;Yam Festival (Ghana)&lt;/a&gt;
+		&lt;a epub:type="index-term" href="#ypow"&gt;yam powder&lt;/a&gt;
+		&lt;a epub:type="index-term" href="#yrec"&gt;yam recipes&lt;/a&gt;
+		&lt;!-- reference to category of terms --&gt;
+		&lt;a epub:type="index-term-category" href="nav.xhtml#yamcult"&gt;names of yam cultivars&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/li&gt; </pre>
+</div>
+</div>
+
+<div class="section" title="2.2.8 Term Categories and Generic Cross-Reference Targets" id="s2.2.8">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.8">&gt;</a>&nbsp;</span>2.2.8 用語カテゴリと一般的な相互参照の対象</h4>
+
+<div class="section" title="2.2.8.1 Overview" id="s2.2.8.1">
+<h5 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.8.1">&gt;</a>&nbsp;</span>2.2.8.1 要約</h5>
+
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p>参照が一般的な<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>の場合――つまり、<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">対象</a>のひとつは<a class="glossterm" href="#s1.2_s" title="term">用語</a>よりはむしろ<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>――の参照は、実行可能か実行不可能である。上記の<a class="link" href="#ex31">例 31</a> を考慮してみると、アメリカの南北戦争の本に登場するかもしれない。<code class="markup">href</code> 属性が不足していることで明らかなように実行不可能な相互参照である：</p>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term&gt;battles&lt;/span&gt;
+	&lt;span epub:type="index-xref-preferred"&gt;See &lt;a epub:type="index-term-category"&gt;names of specific battles&lt;/a&gt;&lt;/span&gt;
+&lt;/li&gt;</pre>
+</div>
+
+<p>これが実行不可能なままな場合、ユーザーは、すべての戦いの名前を知る（または推測しようとする）か、それらの名前が表れるかどうかを確認するために、インデックスを閲覧したり検索したりする必要がある。ユーザーが正しく推測しない場合は、インデックスに現れないエントリを見つけるために、いくつかの関連性あるエントリを見落としたり、時間を無駄にするかもしれない。印刷物は、このための対処法はないが、電子書籍の技術は、相互参照から容易にアクセスでき、インデックスのすべての戦争の完全なリストをユーザーに提供するよいオプションを提供する。</p>
+
+<p>完全な実装、これは、伝統的な紙のインデックスでは使用することのできない非常に便利な機能を提供する。ユーザーが相互参照のこの型式に遭遇するとき、語句“特定の戦闘の名前”をクリックすると、リーディングシステムは、一致するカテゴリ内の用語の一覧を提供する。その次に、ユーザーが、希望する用語を選択すると、リーディングシステムは、インデックス内の用語を提供する。次に、ユーザーはテキスト内の詳解へ行く望むロケータを選択できる。（この詳細は、<a class="link" href="#C.8" title="C.8 Enhancements to Term Categories and Generic Cross-Reference Targets">C.8 用語カテゴリと一般的な相互参照の対象の拡張</a>を参照されたい）</p>
+
+</div>
+
+<div class="section" title="2.2.8.2 Navigating to Term Categories" id="s2.2.8.2">
+<h5 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.8.2">&gt;</a>&nbsp;</span>2.2.8.2 用語カテゴリへのナビゲーション</h5>
+
+<p>これを実現するために、(1) <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は <code class="markup">index-term-categories</code> の <code class="markup">epub:type</code> 属性値を持ち、関連性のあるインデックス用語の完全な一覧を含む <code class="markup">nav</code> 要素を包含しなければ<span class="rfc2119">ならず（must）</span>、(2) インデックス内の<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>は、<code class="markup">epub:type</code> 属性値 <code class="markup">index-term-category</code> とその一覧を示している <code class="markup">href</code> 属性値持たなければ<span class="rfc2119">ならない（must）</span>。ナビゲーションドキュメントの要件は <a class="link" href="#s2.4.2" title="2.4.2 Term Categories Support">2.4.2. 用語カテゴリのサポート</a>に概説されている。インデックスドキュメントの要件は、以下に示されている。</p>
+
+<div class="informalexample" id="ex33">
+<p>例 33、用語カテゴリのためにコード化したインデックスドキュメント：</p>
+<pre class="synopsis">&lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;battles&lt;/span&gt;
+	&lt;span epub:type="index-xref-preferred"&gt;See 
+		&lt;!-- note href attribute, pointing to nav document --&gt;
+		&lt;a epub:type="index-term-category" href="nav.xhtml#battles"&gt;names of specific battles&lt;/a&gt; 
+	&lt;/span&gt;
+&lt;/li&gt;
+...
+&lt;!-- note id attribute --&gt;
+&lt;li epub:type="index-entry" id="chan"&gt;
+	&lt;span epub:type="index-term"&gt;Chancellorsville&lt;/span&gt;
+	&lt;a epub:type="index-locator" href="..."&gt;65&lt;/a&gt;
+&lt;/li&gt;
+...
+&lt;!-- note id attribute --&gt;
+&lt;li epub:type="index-entry" id="man1"&gt;
+	&lt;span epub:type="index-term"&gt;First Manassas&lt;/span&gt;
+	&lt;a epub:type="index-locator" href="..."&gt;58&lt;/a&gt;
+&lt;/li&gt;
+...
+&lt;!-- note id attribute --&gt;
+&lt;li epub:type="index-entry" id="gett"&gt;
+	&lt;span epub:type="index-term"&gt;Gettysburg&lt;/span&gt;
+	&lt;a epub:type="index-locator" href="..."&gt;72-73&lt;/a&gt;
+&lt;/li&gt;
+... </pre>
+</div>
+
+<p>ユーザーエクスペリエンスの向上と、この仕様によって可能になる<a class="glossterm" href="#s1.2_g" title="generic cross-reference target (2.2.8)">一般的な相互参照の対象</a>に関連する他の拡張されたリーディングシステムの機能のために <a class="link" href="#C.8" title="C.8 Enhancements to Term Categories and Generic Cross-Reference Targets">C.8 用語カテゴリと一般的な相互参照の対象の拡張</a>を参照されたい。</p>
+
+</div>
+</div>
+<div class="section" title="2.2.9 Punctuation and Lead-In Words" id="s2.2.9">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.9">&gt;</a>&nbsp;</span>2.2.9 句読点とリードインワード</h4>
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p><a class="link" href="#s2.2.7" title="2.2.7 Cross-references">2.2.7 相互参照</a>と <a class="link" href="#s2.2.8" title="2.2.8 Term Categories and Generic Cross-Reference Targets">2.2.8 用語カテゴリと一般的な相互参照の対象</a>の例に見られるとおり、インデックスは、多くの場合、<a class="glossterm" href="#s1.2_f" title="entry (2.2.3)">エントリ</a>の情報の分割（例えば、<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>の間にコンマ、<a class="glossterm" href="#s1.2_s" title="term">用語</a>にの後にコロン、エントリの終わりにピリオド）または視覚的要素を区別する（例えば、斜体で書かれた<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>）ために句読点や特定の書式を採用しているインデックスもまたしばしば一貫したリードインテキスト（例えば、推奨する相互参照のための“見よ”と関連する相互参照のための“も見よ”）を採用している。この句読点と形式、リードインテキストは、インデックス内に明確に決め打ちすることもできるが、もしこれらに一貫性があるなら、これらは <a class="biblioref" href="#refCSS21" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">[<abbr>CSS2.1</abbr>]</a> スタイルシートを介して省略したり、動的に挿入することができる。</p>
+
+<p>例えば、これはエンドユーザーへの望ましい表示であると仮定する。コロン、ピリオド、斜体の使用に注意されたい：</p>
+
+<div class="literallayout">
+<p>
+<br/> Paris: 53, 76-79, 92-98.<br/> Peking: <em>see</em> Beijing.<br/> 
+</p>
+</div>
+<div class="informalexample" id="ex34">
+<p>例 34、句読点、リードインの単語と決め打ちされた書式：</p>
+<pre class="synopsis">&lt;li epub:type="index-entry"&gt;
+	&lt;!-- colon following term --&gt;
+	&lt;span epub:type="index-term"&gt;Paris&lt;/span&gt;:
+	&lt;!-- hard-coded commas separating locators --&gt;
+	&lt;a epub:type="locator" href="..."&gt;53&lt;/a&gt;, 
+	&lt;a epub:type="locator" href="..."&gt;76-79&lt;/a&gt;, 
+	&lt;a epub:type="locator" href="..."&gt;92-98&lt;/a&gt;.
+&lt;/li&gt;
+...
+&lt;li epub:type="index-entry"&gt;
+	&lt;!-- colon following term --&gt;
+	&lt;span epub:type="index-term"&gt;Peking&lt;/span&gt;: 
+	&lt;!-- hard-coded italics, lead-in word "see" --&gt;
+	&lt;span epub:type="index-xref-preferred"&gt;&lt;i&gt;see &lt;/i&gt; 
+		&lt;!-- period following term --&gt;
+		&lt;a epub:type="index-term" href="..."&gt;Beijing&lt;/a&gt;. 
+	&lt;/span&gt;
+&lt;/li&gt;
+</pre>
+</div>
+<div class="informalexample" id="ex35">
+<p>例 35、句読点の省略：</p>
+<pre class="synopsis">&lt;li epub:type="index-entry"&gt;
+	&lt;!-- no colon following term --&gt;
+	&lt;span epub:type="index-term"&gt;Paris&lt;/span&gt; 
+	&lt;!-- no commas between locators or period at the end --&gt;
+	&lt;a epub:type="locator" href="..."&gt;53&lt;/a&gt;
+	&lt;a epub:type="locator" href="..."&gt;76-79&lt;/a&gt;
+	&lt;a epub:type="locator" href="..."&gt;92-98&lt;/a&gt;
+&lt;/li&gt;
+...
+&lt;li epub:type="index-entry"&gt;
+	&lt;!-- no colon following term --&gt;
+	&lt;span epub:type="index-term"&gt;Peking&lt;/span&gt; 
+	&lt;span epub:type="index-xref-preferred"&gt;&lt;i&gt;see &lt;/i&gt; 
+		&lt;!-- no period following term --&gt;
+		&lt;a epub:type="index-term" href="..."&gt;Beijing&lt;/a&gt; 
+	&lt;/span&gt;
+&lt;/li&gt;</pre>
+</div>
+<div class="informalexample" id="ex36">
+<p>例 36、句読点と書式、リードインの単語の省略：</p>
+<pre class="synopsis">&lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;Paris&lt;/span&gt;
+	&lt;a epub:type="locator" href="..."&gt;53&lt;/a&gt;
+	&lt;a epub:type="locator" href="..."&gt;76-79&lt;/a&gt;
+	&lt;a epub:type="locator" href="..."&gt;92-98&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;li epub:type="index-entry"&gt;
+	&lt;span epub:type="index-term"&gt;Peking&lt;/span&gt;
+	&lt;span epub:type="index-xref-preferred"&gt;
+		&lt;a epub:type="index-term" href="..."&gt;Beijing&lt;/a&gt;
+	&lt;/span&gt;
+&lt;/li&gt;</pre>
+</div>
+</div>
+</div>
+<div class="section" title="2.3 Identification of an Index" id="s2.3">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.3">&gt;</a>&nbsp;</span>2.3 インデックスの識別</h3>
+
+<p>インデックスは、それらが巨大な出版物のコンポーネントであるか出版物自身であることを表しているかに関わらず、パッケージドキュメント内で識別されなければ<span class="rfc2119">ならない（must）</span>。出版物の形式に応じて、パッケージドキュメントの <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-metadata-elem">metadata</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> かそれとも <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-manifest-elem">manifest</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> でこの性質は識別される。</p>
+
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>この情報は、EPUB 出版物を開くときインデックスの任意の必要な前処理を行うためにリーディングシステムによって使用されてもよい（may）。</p>
+</div>
+<div class="section" title="2.3.1 Identification of a Publication Containing Only Index(es)" id="s2.3.1">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.3.1">&gt;</a>&nbsp;</span>2.3.1 出版物に含まれているインデックスのみの識別</h4>
+<p>出版社がインデックスとして出版物の主要な目的を識別したいと望むなら、出版物は、この特定の性質を持つパッケージメタデータの <a class="link" href="http://dublincore.org/documents/2010/10/11/dcmi-type-vocabulary">dc:type</a> <a class="biblioref" href="#refDCMIType" title="DCMI Type Vocabulary. DCMI Usage Board, 11 October 2010">[<abbr>DCMIType</abbr>]</a> 要素に包含されることで、特殊な形式として識別される<span class="rfc2119">べきである（should）</span>。</p>
+
+<div class="informalexample" id="ex37">
+<p>例 37、出版物全体がインデックス：</p>
+<pre class="synopsis">&lt;metadata&gt;
+...
+&lt;dc:type&gt;index&lt;/dc:type&gt;
+...
+&lt;/metadata&gt; </pre>
+</div>
+</div>
+<div class="section" title="2.3.2 Identification of Index Content Document(s)" id="s2.3.2">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.3.2">&gt;</a>&nbsp;</span>2.3.2 インデックスコンテンツドキュメントの識別</h4>
+<div class="section" title="2.3.2.1 Single-File Index(es)" id="s2.3.2.1">
+<h5 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.3.2.1">&gt;</a>&nbsp;</span>2.3.2.1 単一ファイルのインデックス</h5>
+<p>セクション <a class="link" href="#s2.2.1" title="2.2.1 Index, Index Head Notes">2.2.1</a> に記載されているように、インデックスが、完全に単一のコンテンツドキュメントに含まれている場合、インデックスを含んでいる各コンテンツドキュメントは、コンテンツドキュメントの manifest item に <span class="property">index</span> のプロパティ持たなければ<span class="rfc2119">ならない（must）</span>。</p>
+<div class="informalexample" id="ex38">
+<p>例 38、ひとつのコンテンツドキュメントから成るインデックス：</p>
+<pre class="synopsis">&lt;manifest&gt;
+&lt;item href="index01.xhtml" properties="index" ... /&gt;
+&lt;/manifest&gt;</pre>
+</div>
+<p><span class="property">index</span> プロパティは、上記の <a class="link" href="#s2.3.1" title="2.3.1 Identification of a Publication Containing Only Index(es)">2.3.1</a> で説明されている通り、出版物全体がインデックスとして定義されているとき、manifest item で暗黙的に指定される。</p>
+</div>
+
+<div class="section" title="2.3.2.2 Multi-File Index(es) and the collection Element" id="s2.3.2.2">
+<h5 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.3.2.2">&gt;</a>&nbsp;</span>2.3.2.2 複数ファイルのインデックスと <code class="markup">collection</code> 要素</h5>
+
+<p>単一のインデックスが複数のコンテンツドキュメントに分散している場合、インデックスのコンテンツは、インデックス <a class="biblioref" href="#refDCMIType" title="DCMI Type Vocabulary. DCMI Usage Board, 11 October 2010">[<abbr>DCMIType</abbr>]</a> に設定された <code class="markup">role</code> 属性を持つパッケージドキュメントの <code class="markup">collection</code> 要素を使用して識別されなければ<span class="rfc2119">ならない（must）</span>。セクション <a class="link" href="#s2.3.1" title="2.3.1 Identification of a Publication Containing Only Index(es)">2.3.1</a> で説明されている通り、出版物の主要の目的は、インデックスとして識別されている場合でも、これらが実行されなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<p>この仕様で定義されている <code class="markup">index</code> の役割は、次のように <code class="markup">collection</code> 要素を制限する：</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+<p>子 <code class="markup">collection</code> 要素を包含して<span class="rfc2119">もよい（may）</span></p>
+</li>
+<li class="listitem">
+<p>子 <code class="markup">collection</code> 要素は、<code class="markup">index-group</code> として定義された <code class="markup">role</code> を持たなければ<span class="rfc2119">ならない（must）</span></p>
+</li>
+<li class="listitem">
+<p>リンクは、コンテンツドキュメントかフラグメントに解決されなければ<span class="rfc2119">ならない（must）</span></p>
+</li>
+</ul>
+</div>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>collection 内の link 要素の順序は、<code class="markup">spine</code> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> の要素の表示に影響を及ぼさない。</p>
+</div>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>インデックスは、単一のコンテンツドキュメントかそれとも collection によってグループ化された複数のコンテンツドキュメントは、同様にリーディングシステムによって処理される<span class="rfc2119">べきである（should）</span>。これは、<a class="link" href="#Appc" title="Appendix C. Reading System Implementation Suggestions">付録 C. リーディングシステムの実装提案</a>で説明されている機能を可能にするものである。</p>
+</div>
+<div class="informalexample" id="ex39">
+<p>例 39、二つに分割されたインデックスを含む出版物で、それぞれは collection 要素で識別されている：</p>
+<pre class="synopsis">&lt;package&gt;
+...
+&lt;collection role="index"&gt;
+	&lt;link href="subjectIndex01.xhtml" /&gt;
+	&lt;link href="subjectIndex02.xhtml" /&gt;
+	&lt;link href="subjectIndex03.xhtml" /&gt;
+&lt;/collection&gt;
+&lt;collection role="index"&gt;
+	&lt;link href="chap1.xhtml#nameIndex1" /&gt;
+	&lt;link href="chap2.xhtml#nameIndex2" /&gt;
+&lt;/collection&gt;
+...
+&lt;/package&gt; </pre>
+</div>
+<p>この仕様で定義されている <code class="markup">index-group</code> の役割は、次のように <code class="markup">collection</code> 要素を制限する：</p>
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+<p><code class="markup">index-group</code> は、<code class="markup">index</code> の役割を持つコレクションのサブコレクションでなければ<span class="rfc2119">ならない（must）</span></p>
+</li>
+<li class="listitem">
+<p>さらに深くサブコレクションを含んでは<span class="rfc2119">ならない（must not）</span></p>
+</li>
+<li class="listitem">
+<p>リンクは、コンテンツドキュメントかフラグメントに解決されなければ<span class="rfc2119">ならない（must）</span></p>
+</li>
+</ul>
+</div>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>sub-collection 内の link 要素の順序は、spine <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> 内の要素の表示に影響を及ぼさない。</p>
+</div>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p>インデックスグループは、単一のコンテンツドキュメントかそれとも sub-collection によってグループ化された複数のコンテンツドキュメントは、同様にリーディングシステムによって処理される<span class="rfc2119">べきである（should）</span>。これは、<a class="link" href="https://docs.google.com/document/d/1Fss743etKDXBFlHBDhzvFP27IEbUad0mLCCGK2h2ayY/edit#bookmark=id.qdwwusxr2eee">付録 C. リーディングシステムの実装提案</a>で説明されている機能を可能にするものである。</p>
+</div>
+<div class="informalexample" id="ex40">
+<p>例 40、その幾つかは複数のコンテンツドキュメントに“またがる” <a class="glossterm" href="#s1.2_k" title="index group (2.2.2)">index-groups</a> を持つ index を含む出版物。これらは、<code>role="index-group"</code> を持つ子 collection 要素を使用することで識別される：</p>
+<pre class="synopsis">&lt;package&gt;
+   ...
+   &lt;collection role="index"&gt;
+      &lt;collection role="index-group"&gt;
+         &lt;link href="subjectIndex-a01.xhtml" /&gt;
+         &lt;link href="subjectIndex-a02.xhtml" /&gt;
+         &lt;link href="subjectIndex-a03.xhtml" /&gt;
+      &lt;/collection&gt;
+      &lt;link href="subjectIndex-b.xhtml" /&gt;
+      &lt;collection role="index-group"&gt;
+         &lt;link href="subjectIndex-c01.xhtml" /&gt;
+         &lt;link href="subjectIndex-c02.xhtml" /&gt;
+         &lt;link href="subjectIndex-c03.xhtml" /&gt;
+      &lt;/collection&gt;
+      &lt;link href="subjectIndex-d.xhtml" /&gt;
+      &lt;link href="subjectIndex-e.xhtml" /&gt;
+      ...
+   &lt;/collection&gt;
+   ...
+&lt;/package&gt; </pre>
+</div>
+</div>
+</div>
+</div>
+<div class="section" title="2.4 The Navigation Document" id="s2.4">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.4">&gt;</a>&nbsp;</span>2.4 ナビゲーションドキュメント</h3>
+<div class="section" title="2.4.1 General Recommendations" id="s2.4.1">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.4.1">&gt;</a>&nbsp;</span>2.4.1 一般的な勧告</h4>
+
+<p><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は、すべてのインデックスを指す<span class="rfc2119">べきである（should）</span>。<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav-def-types-landmarks">landmarks nav 要素</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は、インデックスだけなく存在している任意の<a class="glossterm" href="#s1.2_k" title="index group (2.2.2)">インデックスグループ</a>もリンクに包含する<span class="rfc2119">べきである（should）</span>。</p>
+
+<div class="informalexample" id="ex41">
+<p>例 41、インデックスとインデックスグループのデータへのリンクを持つ <code class="markup">landmarks</code> の要素：</p>
+<pre class="synopsis">&lt;nav epub:type="landmarks"&gt;
+	&lt;h2&gt;Guide&lt;/h2&gt;
+	&lt;ol&gt;
+		&lt;li&gt;&lt;a epub:type="toc" href="#toc"&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a epub:type="loi" href="content.xhtml#loi"&gt;List of Illustrations&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a epub:type="bodymatter" href="content.xhtml#bodymatter"&gt;Start of Content&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a epub:type="index" href="index.xhtml#idx1"&gt;Subject Index&lt;/a&gt;
+			&lt;ol hidden=""&gt;
+				&lt;li&gt;&lt;a epub:type="index-group" href="index.xhtml#A"&gt;A&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a epub:type="index-group" href="index.xhtml#B"&gt;B&lt;/a&gt;&lt;/li&gt;
+				...
+			&lt;/ol&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a epub:type="index" href="index.xhtml#idx2"&gt;Author Index&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt; </pre>
+</div>
+</div>
+<div class="section" title="2.4.2 Term Categories Support" id="s2.4.2">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.4.2">&gt;</a>&nbsp;</span>2.4.2 用語カテゴリのサポート</h4>
+
+<p>実行可能な一般的な相互参照は、インデックス内に<a class="glossterm" href="#s1.2_g" title="generic cross-reference target (2.2.8)">一般的な相互参照の対象</a>と<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> 内に関連する<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>を要求する。<a class="link" href="#s2.2.8" title="2.2.8 Term Categories and Generic Cross-Reference Targets">セクション 2.2.8</a> は、インデックスにおける一般的な相互参照の対象を作成する方法を説明する。このセクションは、ナビゲーションドキュメントに用語カテゴリの構造を作成する方法を説明する。</p>
+
+<p>用語カテゴリを含んでいる <code class="markup">nav</code> 要素は、<code class="markup">epub:type</code> 属性に <code class="markup">index-term-categories</code> を設定していなければ<span class="rfc2119">ならない（must）</span>。</p>
+
+<div class="elem-synopsis" id="bb-term-categories">
+<dl>
+<dt class="varlistentry"><span class="term">Structural Semantics Vocabulary</span></dt>
+<dd>
+<p>
+<code class="markup">index-term-categories</code>
+</p>
+</dd>
+<dt class="varlistentry"><span class="term">定義</span></dt>
+<dd>
+<p>インデックスの<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>に関連している用語のリストのためのラッパー</p>
+</dd>
+<dt class="varlistentry"><span class="term">HTML で使用するコンテクスト</span></dt>
+<dd>
+<p><code class="markup">nav</code> で使用する</p>
+<p>繰り返して<span class="rfc2119">もよい（may）</span></p>
+</dd>
+</dl>
+</div>
+<p>EPUB <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> にある <code class="markup">index-term-categories</code> <code class="markup">nav</code> 要素は、すべての<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>の一覧を含み、各用語カテゴリは、そのカテゴリの一部の用語をすべて含む。各 <code class="markup">a</code> は、インデックスドキュメント内の用語エントリを指す <code class="markup">href</code> 属性値を持つ。<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は、<code class="markup">epub:type</code> 属性値 <code class="markup">index-term-categories</code> を持つ複数の <code class="markup">nav</code> 要素を含んでもよい（may）（例えば、複数のインデックスを持つ出版物で、出版社は、各インデックスのために別々の <code class="markup">index-term-categories</code> を持つことを望んでもよい（may））。</p>
+<div class="informalexample" id="ex42">
+<p>例 42、ナビゲーションドキュメント内でサポートされる用語カテゴリ：</p>
+<pre class="synopsis">&lt;nav epub:type="index-term-categories" hidden=""&gt;
+&lt;!-- hidden attribute prevents term categories from being rendered in the content flow --&gt;
+&lt;ul&gt;
+	&lt;li id="battles"&gt;battles
+		&lt;ol&gt;
+			&lt;!-- a's pointing to all terms in this term category --&gt;
+			&lt;li&gt;&lt;a href="index.xhtml#chan"&gt;Chancellorsville&lt;/a&gt;&lt;/li&gt; 
+			&lt;li&gt;&lt;a href="index.xhtml#man1"&gt;First Manassas&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="index.xhtml#gett"&gt;Gettysburg&lt;/a&gt;&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/li&gt;
+	...
+	&lt;!-- more than one term category may be included --&gt;
+	&lt;li id="generals"&gt;Confederate generals
+		&lt;ol&gt;
+			&lt;li&gt;&lt;a href="index.xhtml#grant"&gt;Grant, Ulysses S.&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="index.xhtml#lee"&gt;Lee, Robert E.&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="index.xhtml#pick"&gt;Pickett, George&lt;/a&gt;&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/li&gt;
+&lt;/ul&gt; </pre>
+</div>
+<div class="note" title="note">
+<h3 class="title">note</h3>
+<p><code class="markup">index-term-categories</code> <code class="markup">nav</code> 要素は、典型的にコンテンツフローの一部としてユーザーに表示されることを意図していないので、それは典型的に <code class="markup"><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav-def-hidden">hidden</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span></code> 属性を持つ<span class="rfc2119">べきである（should）</span>。</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="chapter" title="3 Conformance Criteria" id="s3">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s3">&gt;</a>&nbsp;</span>3 適合性基準</h2>
+<div class="section" title="3.1 Content Conformance" id="s3.1">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s3.1">&gt;</a>&nbsp;</span>3.1 コンテンツの適合性</h3>
+
+<p>この仕様に準拠している EPUB Publication <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> は、以下の基準のすべてを満たさなければ<span class="rfc2119">ならない（must）</span>：</p>
+
+<table border="0" summary="Simple list" class="simplelist">
+<tr>
+<td><a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> で定義されている妥当な EPUB 出版物でなければ<span class="rfc2119">ならない（must）</span></td>
+</tr>
+<tr>
+<td><span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-package-documents">パッケージドキュメント</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> <a class="biblioref" href="#refOverlays30" title="EPUB Media Overlays 3.0">[<abbr>MediaOverlays30</abbr>]</a> は、この仕様の<a class="link" href="#s2.3" title="2.3 Identification of an Index">セクション 2.3</a> に準拠しているメタデータを含まなければ<span class="rfc2119">ならない（must）</span>。</td>
+</tr>
+<tr>
+<td><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> <a class="biblioref" href="#refContentDocs30" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a> は、この仕様の<a class="link" href="#s2.4" title="2.4 The Navigation Document">セクション 2.4</a> に詳しく述べられている追加の必要要件に適合する<span class="rfc2119">べきである（should）</span>。</td>
+</tr>
+<tr>
+<td><code class="markup">epub:type</code> 属性に、この仕様の<a class="link" href="#s2.2.1" title="2.2.1 Index, Index Head Notes">セクション 2.2.1</a> に準拠しているコンテンツモデルであるところの <code class="markup">index</code> の値を持っている少なくともひとつの要素を持つ少なくともひとつのコンテンツドキュメントを含まなければ<span class="rfc2119">ならない（must）</span>。</td>
+</tr>
+</table>
+</div>
+<div class="section" title="3.2 Reading System Conformance" id="s3.2">
+<h3 class="title">
+<span class="link-marker">
+<a class="hidden-reveal" title="Link here" href="#s3.2">&gt;</a>&nbsp;</span>3.2 リーディングシステムの適合性</h3>
+<p>この仕様は、EPUB 3.0.1 によって<span class="rfc2119">要求される（required）</span>以外の追加のリーディングシステムの適合性基準はない。</p>
+</div>
+</div>
+<div class="appendix" title="Appendix A. Schema for Indexes in EPUB Content Documents" id="Appa">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title">
+<span class="link-marker">
+<a class="hidden-reveal" title="Link here" href="#Appa">&gt;</a>&nbsp;</span>付録 A. EPUB コンテンツドキュメント内のインデックスのスキーマ</h2>
+</div>
+</div>
+</div>
+<p>EPUB Indexes specification に適合している XHTML コンテンツドキュメントの追加スキーマは、<a class="link" href="http://www.idpf.org/epub/idx/schema/epub-idx-10.sch">http://www.idpf.org/epub/idx/schema/epub-idx-10.sch</a> で入手可能である。</p>
+</div>
+<div class="appendix" title="Appendix B. Examples" id="Appb">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title">
+<span class="link-marker">
+<a class="hidden-reveal" title="Link here" href="#Appb">&gt;</a>&nbsp;</span>付録 B. 例</h2>
+</div>
+</div>
+</div>
+<p class="informative">この付録は有益な情報である。</p>
+<div class="section" title="B.1 Simplest possible index" id="B.1">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#B.1">&gt;</a>&nbsp;</span>B.1 最も簡易なインデックス</h3>
+<p>この仕様に適合した最も簡易なインデックスの例を以下に示す。</p>
+<div class="informalexample">
+<pre class="synopsis"> 
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en-US" lang="en-US"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8"/&gt;
+		&lt;title&gt;Simplest Index&lt;/title&gt;
+	&lt;/head&gt;
+  
+	&lt;body epub:type="index"&gt;
+		&lt;h2&gt;Simplest index&lt;/h2&gt;
+		&lt;ul epub:type="index-entry-list"&gt;
+		&lt;!-- epub:type index-entry is implied for all li's, due to ancestor with epub:type of index-entry-list --&gt;
+			&lt;li&gt;&lt;span epub:type="index-term"&gt;abbreviations&lt;/span&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;52&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span epub:type="index-term"&gt;accents&lt;/span&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;20&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span epub:type="index-term"&gt;blogs&lt;/span&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;98&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span epub:type="index-term"&gt;cold calling&lt;/span&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;68&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span epub:type="index-term"&gt;Facebook&lt;/span&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;viii&lt;/a&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;96&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span epub:type="index-term"&gt;inversion&lt;/span&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;53&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span epub:type="index-term"&gt;Twitter&lt;/span&gt;, 
+				&lt;a epub:type="index-locator" href="..."&gt;37-42&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+</div>
+</div>
+<div class="section" title="B.2 Full example" id="B.2">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#B.2">&gt;</a>&nbsp;</span>B.2 完全な例</h3>
+<p>サブエントリ、相互参照、用語カテゴリなどを含んでいるより完全なインデックスの例は、<a class="link" href="http://carpeindexum.com/idpf/index_sample.xhtml">ここ</a>で入手できる。</p>
+<p>関連するサンプルのナビゲーションドキュメントは、<a class="link" href="http://carpeindexum.com/idpf/nav.xhtml">ここ</a>で入手可能である。<a class="link" href="#s2.4.2" title="2.4.2 Term Categories Support">2.4.2. 用語カテゴリのサポート</a>で述べたように、<code class="markup">item-categories</code> <code class="markup">nav</code> 要素は、実行可能な一般的な相互参照の対象を実演するために非表示にしていない。</p>
+<p>その他の例は、<a class="link" href="#AppE" title="Appendix E. Index to this specification">付録 E</a> のこの仕様のインデックスもまた参照されたい。</p>
+</div>
+<div class="section" title="B.3 Sample style sheet" id="B.3">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#B.3">&gt;</a>&nbsp;</span>B.3 簡易なスタイルシート</h3>
+<p><a class="link" href="#s2.2.9" title="2.2.9 Punctuation and Lead-In Words">2.2.9 句読点とリードインワード</a>で述べられている通り、句読点とリードインの単語は、インデックスのコードから省略し、<code class="markup">:before</code> 擬似要素を使用して <a class="biblioref" href="#refCSS21" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">[<abbr>CSS2.1</abbr>]</a> スタイルシートを介して挿入できる。これは一貫性を確保し、インデックスドキュメントのサイズを減少させる。</p>
+</div>
+</div>
+<div class="appendix" title="Appendix C. Reading System Implementation Suggestions" id="Appc">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#Appc">&gt;</a>&nbsp;</span>付録 C. リーディングシステムの実装提案</h2>
+</div>
+</div>
+</div>
+<p class="informative">この付録は有益な情報である。</p>
+<p>実行可能なリンクの有無に関わらず最終章として位置づけられている基本的なインデックスの機能は、すでにいくつかの EPUB 出版物で提供されている。この仕様は、新しい特徴と機能を可能にし、そのいくつかは以下の章で説明している。リーディングシステムのメーカーや開発者が、これらと他の新しい可能性を活用することを期待している。</p>
+
+<div class="section" title="C.1 General Reading System Features Relative to Indexes" id="C.1">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.1">&gt;</a>&nbsp;</span>C.1 一般的なリーディングシステムのインデックスに関連する機能</h3>
+
+<p><a class="link" href="#s3.2" title="3.2 Reading System Conformance">3.2 リーディングシステムの適合性</a>に述べられている通り、この仕様に従ってエンコードされるインデックスは、最小限の機能――すなわち、それは目次からのアクセスと直線的な方法でページ付けすることができるために、EPUB 3.0.1 で定義されているものと同様のリーディングシステムの適合性基準を持つ。</p>
+
+<p>しかし、インデックスの独自の性質とそれらが持つユーザーとの対話の方法のために、この仕様によって可能な機能の最小のセットを以下に表示する。</p>
+
+<p>リーディングシステムは、</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+<p>トップに移動することなくインデックス内のどこからでも、もし存在するなら、任意のレジェンドの表示を、</p>
+</li>
+<li class="listitem">
+<p>トップに移動することなくインデックス内のどこからでも、もし存在するなら、ヘッドノートの表示を、</p>
+</li>
+<li class="listitem">
+<p>ナビゲーションドキュメントや目次（例えば、ユーザーがそのグループに移動するために文字をクリックできるように、持続的なフローティング・アルファベットバーを表示することにより）に戻ることなく特定のインデックスグループに容易に移動するのを、</p>
+</li>
+<li class="listitem">
+<p>ナビゲーションドキュメントや目次（例えば、テキスト内からインデックスにワンクリックでアクセスするのを可能にしたり、またはその両方が同時にアクセスできるようにテキストとは別のウィンドウにインデックスを表示することにより）に戻ることなくインデックスに移動するのを、</p>
+</li>
+<li class="listitem">
+<p>すなわち、出版物の本文のみ、インデックスのみもしくは両方を検索からインデックスの包含または除外するのを、</p>
+</li>
+<li class="listitem">
+<p>上にスクロールすることなく、主なエントリ用語まで、現状当てはまる先祖の用語を表示したりアクセスすることを（<a class="link" href="#C.9" title="C.9 Improved Index Navigation">C.9 改善されたインデックスナビゲーション</a>を見よ）、</p>
+</li>
+</ul>
+<p>ユーザーが望むように許可する。</p>
+</div>
+</div>
+
+<div class="section" title="C.2 Search Parameters" id="C.2">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.2">&gt;</a>&nbsp;</span>C.2 検索パラメータ</h3>
+<p>パッケージドキュメントは、ひとつ以上のインデックスが EPUB 出版物に存在するとき識別し、インデックスが XHTML ファイルの一部なのか単一の XHTML ファイルなのか複数の XHTML ファイルから構成されているのかに関する情報を提供する。（<a class="link" href="#s2.3" title="2.3 Identification of an Index">2.3 （パッケージドキュメント内の）インデックスの識別</a>を見よ）。この情報は、ユーザーが EPUB と相互作用して、どのインデックスを含むべきかについて、ユーザーに選択を提示することをリーディングシステムに許可する。例えば、リーディングシステムは、ユーザーにコンテンツドキュメントとして直接インデックスを閲覧したり、基本的な検索（つまり、テキストのみの検索やインデックスを加えたテキスト検索、インデックスのみの検索、すべてのインデックスの検索など）からインデックスを包含したり除外することを許可する。</p>
+</div>
+
+<div class="section" title="C.3 Index Term Search" id="C.3">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.3">&gt;</a>&nbsp;</span>C.3 インデックス用語の検索</h3>
+
+<p>目次とは違い、インデックスは、しばしばテキストと結合して“行きつ戻りつ”方式で使用される。つまり、ユーザーはしばしばテキストからインデックスへ移動し、すべての関連情報を探すために再び戻るリーディングシステムは、テキスト内で単語をハイライトにするかそれとも検索を実施し検索用語を入力することによって、テキスト内でこれらの場所を失うことなく、インデックス内の場所へユーザーが直行できるように、ユーザーをサポートできる。</p>
+
+<p>例えば、ユーザーは、テキスト内の単語や語句を選択し、そのとき一致するすべてのインデックスエントリの表示を引き起こすことができ、それから、ユーザーは、インデックスに切り替える用語のひとつをクリックし、テキスト内の他の場所に運ばれるロケータをクリックするか、ディスプレイを閉じて、テキスト内の元の場所に戻るかを選択できる。（“戻る”ボタンを持つリーディングシステムは、すでにこの機能をいくらか提供している。）</p>
+
+<p>リーディングシステムは、ユーザーが検索ボックスを開き、検索語句を入力して、任意の一致するインデックスエントリの表示をもたらすことも許可する。インデックスから見つかったデータは、用語集のような本の本文と他の部分から単独または検索結果と一緒に表示することができる。これは、ユーザーが、一度で最も適したコンテンツを選択することを可能にするワンストップショップを提供するであろう。</p>
+
+</div>
+<div class="section" title="C.4 Index Locator Search" id="C.4">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.4">&gt;</a>&nbsp;</span>C.4 インデックスロケータの検索</h3>
+
+<p>リーディングシステムは、テキストの選択した範囲に関連するすべてのインデックスエントリを検索するために、逆方向にインデックス内のロケータとテキスト内のこれらのターゲットをリンクして横断することができる。したがって、例えば、ユーザーは、彼らに関連しているテキストを含んでいるトピックをの範囲を選択し、選択したセグメントのどこかを示すロケータが含まれているすべてインデックスエントリを表示を引き起こすことができる。</p>
+
+<p>リーディングシステムは、便利なさまざまな方法を利用し、実装できる：</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+<p>リーディングシステムは、インデックスにユーザーに導き、関連用語のみ表示するためにそれをフィルターする</p>
+</li>
+<li class="listitem">
+<p>リーディングシステムは、ポップアップウィンドウに関連するインデックス用語を表示し、ユーザーは望む用語を選択し、リーディングシステムは、インデックス内の用語にユーザーを導く</p>
+</li>
+<li class="listitem">
+<p>リーディングシステムは、ポップアップウィンドウに関連用語とこれらすべてに関連するロケータを表示し、ユーザーは望むロケータを選択し、リーディングシステムはテキスト内のターゲットにユーザーを導く</p>
+</li>
+</ul>
+</div>
+<p>リーディングシステム開発者は、疑いなく、他の可能性の考慮をするであろう。</p>
+</div>
+<div class="section" title="C.5 Highlighting of Locator Ranges" id="C.5">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.5">&gt;</a>&nbsp;</span>C.5 ロケータ範囲のハイライト</h3>
+
+<p>リーディングシステムは、<a class="link" href="#s2.2.5" title="2.2.5 Locator Ranges">2.2.5 ロケータの範囲</a>で説明したように始点と終点が識別されるとき、ユーザーが、<a class="glossterm" href="#s1.2_o" title="locator range (2.2.5)">ロケータの範囲</a>をクリックするとき、リーディングシステムは、テキスト内の<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">ターゲット</a>にユーザーを導き、特定の範囲をハイライトすることができるように、ロケータの範囲を有効に使うことができる。この明瞭な指示は、ユーザーが素早く関連する文章を特定し、どこから読み初め、どこで読むのを止めるのかを知る手助けする。</p>
+</div>
+<div class="section" title="C.6 Filtering of Indexes" id="C.6">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.6">&gt;</a>&nbsp;</span>C.6 インデックスのフィルタリング</h3>
+<p><a class="link" href="#s2.2.6" title="2.2.6 Locator Target Structural Semantics">2.2.6 ロケータの対象の構造的セマンティクス</a>で簡単に述べたとおり、<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>の<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">対象</a>の性質に関する情報は、ユーザーがこれら特定の要求に応じてインデックスをフィルタリングすることを許可しているリーディングシステムによって利用できる。例えば、ユーザーは用語や表また図、幾つかの他の構成部品と関連するロケータのみを表示するために、インデックスをフィルタリングすることができる。従って、画像のみを見たいと望むユーザーは、テキストを指している多数のロケータを閲覧することはないであろう。</p>
+
+<p>複数のインデックスは、しばしば非常に複雑なまたは非常に長い書籍で使用される。例えば、第二次世界大戦の歴史は、主題のインデックスや戦闘のインデックス、名前のインデックスを包含するかもしれない。望ましい用語を見つけるために複数のインデックスを行き来しての選択をユーザーに要求することは、恐らく時間と労力の浪費する。<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>によってフィルタリングされる単一のインデックスはこれらすべてを表示することは、ユーザーエクスペリエンスを簡素化するであろう。</p>
+
+<p>コンテンツドキュメントのサブセットのみを表示/レンダリングするこの機能は、インデックスだけでなく、電子書籍の一般的な関心事である。現時点での最小解決方法は、構造的セマンティクス情報（<a class="link" href="#s2.2.6" title="2.2.6 Locator Target Structural Semantics">2.2.6</a>）に関連する代替スタイルシート <a class="biblioref" href="#refCSS21" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">[<abbr>CSS2.1</abbr>]</a> を使用することである：</p>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;!-- a persistent style sheet --&gt;
+&lt;link rel="stylesheet" href="default.css"&gt;
+&lt;!-- some alternate style sheets --&gt;
+&lt;link rel="alternate stylesheet" href="figures.css" title="Show only figure entries/locators" class="figures"/&gt;
+&lt;link rel="alternate stylesheet" href="tables.css" title="Show only table entries/locators" class="tables"/&gt; 
+</pre>
+</div>
+<p>より高機能なリーディングシステムと拡張されたエンコードオプションは、最終的に代替スタイルシートの必要性を削除し、インデックスエントリ自体のメタデータに基づき“オンザフライ”でフィルタリングできることが望まれる。例えば、多くの技術書は、テキストに出現する順にすべての図の一覧を、本の最初に図のリストを包含する。リーディングシステムが <code class="markup">epub:type</code> 値によってフィルタリングする能力を組み込んでいるとき、インデックスは、トピックによって分類された図のリストを生成するために、図を指す<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>を持つ用語のみ表示するためにフィルタリングできる。巨大なインデックスの望まれたサブセットのみを表示する能力は、印刷本/インデックスの環境では不可能な機能であり、潜在的にユーザーに有益である。</p>
+</div>
+<div class="section" title="C.7 Provision of Additional Information about Locator Targets" id="C.7">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.7">&gt;</a>&nbsp;</span>C.7 ロケータの対象に関する追加情報の提供</h3>
+
+<p><a class="link" href="#s2.2.6" title="2.2.6 Locator Target Structural Semantics">2.2.6 ロケータの対象の構造的セマンティクス</a>で簡単に述べたとおり、リーディングシステムは、ロケータリンクを横断するときに見つける“物”の形式に関する情報をエンドユーザーに与えるために、ロケータの<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">対象</a>の性質に関する情報の存在を有効に使用することができる。例えば、ユーザが、図を指すために適切にエンコードされた（<code>&lt;a epub:type="index-locator figure"&gt;</code>）<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>の上をウロウロしたり他の場所をフォーカスしたとき、“ツールチップ”スタイルのポップアップは、ユーザーにこれを知らせるために、合図（例えば、単語“fig”や“table”または文字“f”または“t”）を表示することができる。</p>
+
+<p>リーディングシステムは、ユーザーが<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>の上をウロウロしたり他の場所をフォーカスするとき、プレビューの種類として、<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">ターゲット</a>のどちらか一方の側（または、<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">ターゲット</a>が範囲のとき、範囲のどちらか一方の側）にコンテンツの一部を含んでいるツールチップスタイルのポップアップで表示するために<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>からテキスト内のその<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">ターゲット</a>との間のリンクを有効に使用することができる。これは、ユーザーが、<a class="glossterm" href="#s1.2_d" title="cross-reference target (2.2.7)">ターゲット</a>がその場所に表示されるコンテクストを認識することを可能に、リンクを横断するかどうかを選択をする。（明らかに、テキスト内アンカーの配置の精度が高いほど、この機能の有用性は高い。）ユーザーはそれに慣れているので、多くの検索エンジンは、すでに検索結果のこれらの表示するこの機能を提供している。</p>
+
+</div>
+<div class="section" title="C.8 Enhancements to Term Categories and Generic Cross-Reference Targets" id="C.8">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.8">&gt;</a>&nbsp;</span>C.8 用語カテゴリと一般的な相互参照の対象の拡張</h3>
+
+<p><a class="link" href="#s2.2.8" title="2.2.8 Term Categories and Generic Cross-Reference Targets">セクション 2.2.8 用語カテゴリと一般的な相互参照の対象</a>は、ターゲットとして<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>の使用を可能にする定義済みリストの使用について説明している。この解決方法は、すぐに実現可能ではあるものの、最終目標に到達するためにユーザーは数回のクリックが必要である。</p>
+
+<p>リーディングシステムは、ユーザーが、インデックス内の元の<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>とカテゴリ内の<a class="glossterm" href="#s1.2_s" title="term">用語</a>のリストの両方を見て、望んだ用語の選択ができるようにすることで、ポップアップウィンドウや分割フレームに<a class="glossterm" href="#s1.2_t" title="term category (2.2.8)">用語カテゴリ</a>を表示することでこの問題を軽減するであろう。</p>
+
+<p><a class="link" href="#C.6" title="C.6 Filtering of Indexes">C.6 インデックスのフィルタリング</a>と同様に、より洗練されたリーディングシステムと拡張エンコードオプションは、静的な定義済みの用語カテゴリ一覧の必要性が廃止されることを期待している。例えば、EPUBの将来のバージョンは、実在のインデックス用語（<code>&lt;span epub:type="index-term" category="battle"&gt;Gettysburg&lt;/span&gt;</code> のようなもの）にカテゴリ情報を埋め込むことを許可するかもしれないし、将来のリーディングシステムは、特定カテゴリのすべての用語の一覧をユーザーのために動的な配置と表示に使用することができる。</p>
+</div>
+<div class="section" title="C.9 Improved Index Navigation" id="C.9">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#C.9">&gt;</a>&nbsp;</span>C.9 改善されたインデックスナビゲーション</h3>
+
+<p>リーディングシステムは、ユーザーが、メインエントリまたはエントリのエントリグループの展開と折りたたみを許可するために、適切な <code class="markup">epub:type</code> 値を持つ適切な要素内の<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>と<a class="glossterm" href="#s1.2_a" title="child entry">子エントリ</a>の入れ子になったラッピングを有効に使うことができる。例えば、標準のインデックスの表現は、メインエントリのみ表示でき、それから、ユーザーが調査中の望むメインエントリを発見したとき、彼らは<a class="glossterm" href="#s1.2_n" title="locator (2.2.4)">ロケータ</a>と/またはサブエントリを表示するために展開することができる。リーディングシステムは、インデックスまたはインデックスグループ内のすべてのサブエントリを素早く表示または非表示するために“展開”または“折りたたみ”もまた提供することができる。インデックスの下にまとめるこの能力は、ユーザーが、より素早くメインエントリの用語を通じて閲覧することを可能にする。</p>
+
+<p>入れ子になったラッピングは、ユーザーがインデックスを通じて下にスクロールし、画面の上部に表現された“パンくず”足あとを表示するためにも利用でき、<a class="glossterm" href="#s1.2_q" title="main entry">メインエントリ</a>の上に位置する現在利用可能なすべての親エントリを示す。これは、ユーザーが常にエントリの完全な階層構造にアクセスできることを確保する。</p>
+
+<p>リーディングシステムは、ユーザーが、ドキュメントの先頭にスクロールして戻ること強いられることなく、インデックスの任意の位置からこの情報にアクセスするのを可能にする<a class="glossterm" href="#s1.2_i" title="head notes (2.2.1)">ヘッドノート</a>や<a class="glossterm" href="#s1.2_m" title="legend (2.2.1)">レジェンド</a>のための <code class="markup">epub:type</code> 値の存在を有効に利用できる。</p>
+
+<p>リーディングシステムは、ユーザーに、手動で全インデックスをスクロールすることを強いるよりはむしろ、インデックスのグループナビゲーションを可能にする <code class="markup">epub:type</code> 値 <code class="markup">index-group</code> の存在を有効に利用できる。例えば、リーディングシステムは、ユーザーが特定の文字をクリックし、そのグループに直接行くことができるように、水平のアルファベットバーを表示できる。</p>
+</div>
+</div>
+<div class="appendix" title="Appendix D. Alphabetical list of epub:types defined in this specification" id="Appd">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#Appd">&gt;</a>&nbsp;</span>付録 D. この仕様で定義されている epub:type のアルファベット順リスト</h2>
+</div>
+</div>
+</div>
+<p>以下の <code class="markup">epub:type</code> 値は、この仕様書で定義されている。</p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr>
+<td><a class="link" href="#bb-editor-note">index-editor-note</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-entry">index-entry</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-entry-list">index-entry-list</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-group">index-group</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-headnotes">index-headnotes</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-index">index</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-legend">index-legend</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-locator">index-locator</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-locator-list">index-locator-list</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-locator-range">index-locator-range</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-term">index-term</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-term-categories">index-term-categories</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-term-category">index-term-category</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-xref">index-xref-preferred</a></td>
+</tr>
+<tr>
+<td><a class="link" href="#bb-xref">index-xref-related</a></td>
+</tr>
+</table>
+</div>
+<div class="appendix" title="Appendix E. Index to this specification" id="AppE">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#AppE">&gt;</a>&nbsp;</span>付録 E. この仕様のインデックス</h2>
+</div>
+</div>
+</div>
+<p><a class="link" href="epub-indexes-index.html">この仕様書へのインデックス</a>は作成済みで、Web でシミュレーションされた用語カテゴリを含んでいる。</p>
+
+<p>同じインデックスのコンテンツは、この仕様に従って、<a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-index-xhtml.txt">EPUB3 出版物のためにタグ付けされた</a>ものも利用可能で、他の例の代わりとしてもよい（may）。インデックスに関連する<a class="link" href="http://www.idpf.org/epub/idx/nav-insertions-xhtml.txt">ナビゲーションドキュメント</a>と<a class="link" href="http://www.idpf.org/epub/idx/package-insertions-xhtml.txt">パッケージドキュメント</a>から関連した構造もまた利用可能である。</p>
+</div>
+<div class="acknowledgements" title="Appendix F. Acknowledgements and Contributors" id="acknowledgements">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#acknowledgements">&gt;</a>&nbsp;</span>付録 F. 謝辞と貢献者</h2>
+</div>
+</div>
+</div>
+<p class="informative">この付録は有益な情報である。</p>
+<p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
+
+<p>EPUB 3 Indexes Specification 1.0 は以下に述べるリーダーシップにより2011年12月のメンバーシップによって承認された憲章の元で動作し、国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の Indexes Working Group によって調整した：</p>
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Browne</span>, <span class="givenname">Glenda</span></span> <span class="affiliation">(Australia and New Zealand Society of Indexers (ANZSI))</span> <span class="wg-role">Co-secretary</span></li>
+<li class="person"><span class="name"><span class="surname">Combs</span>, <span class="givenname">Michele</span></span> <span class="affiliation">(American Society for Indexing (ASI))</span> <span class="wg-role">Co-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(DAISY Consortium)</span> <span class="wg-role">Advisor</span></li>
+<li class="person"><span class="name"><span class="surname">Ream</span>, <span class="givenname">David</span></span> <span class="affiliation">(Leverage Technologies; American Society for Indexing (ASI))</span> <span class="wg-role">Co-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span> <span class="wg-role">Co-secretary</span></li>
+</ul>
+
+<p>出版された時点でのワーキンググループのアクティブメンバー：</p>
+<p class="bridgehead" title="F. IDPF Members"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#">&gt;</a>&nbsp;</span>IDPF Members</p>
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Audrain</span>, <span class="givenname">Luc</span></span> <span class="affiliation">(Hachette Livre)</span></li>
+<li class="person"><span class="name"><span class="surname">Broome</span>, <span class="givenname">Karen</span></span> <span class="affiliation">(Sony)</span></li>
+<li class="person"><span class="name"><span class="surname">Chow</span>, <span class="givenname">King-Wai</span></span> <span class="affiliation">(Hong Kong Applied Science &amp; Technology Research Institute Company Limited (ASTRI))</span></li>
+<li class="person"><span class="name"><span class="surname">Deltour</span>, <span class="givenname">Romain</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
+<li class="person"><span class="name"><span class="surname">Echallier</span>, <span class="givenname">Nicholas</span></span> <span class="affiliation">(Nordcompo Multimedia)</span></li>
+<li class="person"><span class="name"><span class="surname">Haas</span>, <span class="givenname">Matt</span></span> <span class="affiliation">(Pearson)</span></li>
+<li class="person"><span class="name"><span class="surname">Kaplansky</span>, <span class="givenname">Jean</span></span> <span class="affiliation">(Aptara)</span></li>
+<li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span></li>
+<li class="person"><span class="name"><span class="surname">Kida</span>, <span class="givenname">Yasuo</span></span> <span class="affiliation">(Apple Inc.)</span></li>
+<li class="person"><span class="name"><span class="surname">MURATA</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(Japan Electronic Publishing Association (JEPA))</span></li>
+<li class="person"><span class="name"><span class="surname">Russell</span>, <span class="givenname">Mary</span></span> <span class="affiliation">(Australia and New Zealand Society of Indexers (ANZSI))</span></li>
+<li class="person"><span class="name"><span class="surname">Sorotokin</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Google)</span></li>
+<li class="person"><span class="name"><span class="surname">Wright</span>, <span class="givenname">Jan</span></span> <span class="affiliation">(American Society for Indexing (ASI))</span></li>
+</ul>
+<p class="bridgehead" title="F. Invited Experts/Observers">
+<span class="link-marker">
+<a class="hidden-reveal" title="Link here" href="#">&gt;</a>&nbsp;</span>Invited Experts/Observers</p>
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Bolick</span>, <span class="givenname">Bob</span></span></li>
+<li class="person"><span class="name"><span class="surname">Garrish</span>, <span class="givenname">Matt</span></span></li>
+<li class="person"><span class="name"><span class="surname">Prentice</span>, <span class="givenname">Scott</span></span></li>
+</ul>
+</div>
+<div class="bibliography" title="References" id="references">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#references">&gt;</a>&nbsp;</span>参照・参考</h2>
+</div>
+</div>
+</div>
+<div class="bibliodiv" title="Normative References">
+<h3 class="title">参照文献</h3>
+<div class="biblioentry" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification" id="refCSS21">
+<p>[<abbr>CSS2.1</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/CSS2/">Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification</a></em>. </span> <span class="author">Bert Bos, et al. </span> <span class="date">7 June 2011. </span> </p>
+</div>
+<div class="biblioentry" title="EPUB Content Documents 3.0" id="refContentDocs30">
+<p>[<abbr>ContentDocs30</abbr>] <span class="title">
+<em>
+   <a class="link" href="epub30-contentdocs.xhtml">EPUB Content Documents 3.0</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" title="EPUB Content Documents 3.0.1" id="refContentDocs3">
+<p>[<abbr>ContentDocs301</abbr>] <span class="title"><em><a class="link" href="epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="DCMI Type Vocabulary. DCMI Usage Board, 11 October 2010" id="refDCMIType">
+<p>[<abbr>DCMIType</abbr>] <span class="title"><em><a class="link" href="http://dublincore.org/documents/2010/10/11/dcmi-type-vocabulary">DCMI Type Vocabulary.</a> DCMI Usage Board, 11 October 2010</em>. </span></p>
+</div>
+<div class="biblioentry" title="EPUB Canonical Fragment Identifier (epubcfi) Specification" id="refEPUBCFI">
+<p>[<abbr>EPUBCFI</abbr>] <span class="title"><em><a class="link" href="http://www.idpf.org/epub/linking/cfi/epub-cfi.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="HTML5: A vocabulary and associated APIs for HTML and XHTML" id="refHTML5">
+<p>[<abbr>HTML5</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/html5/">HTML5: A vocabulary and associated APIs for HTML and XHTML</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="EPUB Media Overlays 3.0" id="refOverlays30">
+<p>[<abbr>MediaOverlays30</abbr>] <span class="title">
+<em>
+<a class="link" href="epub30-mediaoverlays.xhtml">EPUB Media Overlays 3.0</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" title="EPUB Publications 3.0.1" id="refPublications3">
+<p>[<abbr>Publications301</abbr>] <span class="title"><em><a class="link" href="epub301-publications.xhtml">EPUB Publications 3.0.1</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)" id="refRFC2119">
+<p>[<abbr>RFC2119</abbr>] <span class="title"><em><a class="link" href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a> (RFC 2119) </em>. </span><span class="date">March 1997. </span></p>
+</div>
+<div class="biblioentry" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)" id="refRFC3987">
+<p>[<abbr>RFC3987</abbr>] <span class="title"><em><a class="link" href="http://tools.ietf.org/html/rfc3987">Internationalized Resource Identifiers (IRIs)</a> (RFC 3987) </em>. </span> <span class="author">M Duerst, et al. </span> <span class="date">January 2005. </span></p>
+</div>
+<div class="biblioentry" title="EPUB 3 Structural Semantics Vocabulary" id="refEPUBStructureVocab">
+<p>[<abbr>StructureVocab</abbr>] <span class="title"><em><a class="link" href="http://www.idpf.org/epub/vocab/structure/#">EPUB 3 Structural Semantics Vocabulary</a></em>. </span></p>
+</div>
+</div>
+<div class="bibliodiv" title="Informative References">
+<h3 class="title">参考文献</h3>
+<div class="biblioentry" title="Darwin Information Typing Architecture (DITA) Version 1.2" id="refDITA">
+<p>[<abbr>DITA</abbr>] <span class="title"><em><a class="link" href="http://www.docbook.org/specs/">Darwin Information Typing Architecture (DITA) Version 1.2</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="DocBook Specifications" id="refDocBook">
+<p>[<abbr>DocBook</abbr>] <span class="title"><em><a class="link" href="http://www.docbook.org/specs/">DocBook Specifications</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="ISO 999:1996 Information and documentation -- Guidelines for the content, organization and presentation of indexes" id="refISO999">
+<p>[<abbr>ISO999</abbr>] <span class="title"><em><a class="link" href="http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=5446">ISO 999:1996 Information and documentation -- Guidelines for the content, organization and presentation of indexes</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="NISO Technical Report 2: Guidelines for Indexes and Related Information Retrieval Devices" id="refNISOTR02">
+<p>[<abbr>NISOTR02</abbr>] <span class="title"><em><a class="link" href="http://www.niso.org/publications/tr/tr02.pdf">NISO Technical Report 2: Guidelines for Indexes and Related Information Retrieval Devices</a></em>. </span></p>
+</div>
+<div class="biblioentry" title="TEI: P5 Guidelines" id="refTEI">
+<p>[<abbr>TEI</abbr>] <span class="title"><em><a class="link" href="http://www.tei-c.org/Guidelines/P5">TEI: P5 Guidelines</a></em>. </span></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

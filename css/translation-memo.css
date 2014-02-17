@@ -32,3 +32,57 @@ font-size:80%; }
 span.note {
 margin:0;
 padding:0.2em; }
+/*
+.legalnotice p {
+line-height:1.7;
+}
+
+.appendix p {
+line-height:1.7;
+}
+*/
+
+/* 検証用 */
+/*
+* {
+font-family:"IPAexゴシック";
+}
+*/
+
+/* 編集 */
+
+.legalnotice p,
+.section p {
+line-height:1.6;
+}
+
+del,
+del a,
+del th,
+del td {
+text-decoration:line-through;
+color:#00f;
+}
+
+ins,
+ins div,
+ins p,
+ins span,
+ins h1,
+ins h2,
+ins h3,
+ins h4,
+ins h5,
+ins h6,
+ins a,
+ins a code,
+ins a:link,
+ins a:visited,
+ins pre,
+ins dt,
+ins dd,
+ins table,
+ins li,
+ins p code {
+color:#f00;
+}

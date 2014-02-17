@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>EPUB 3.0.1 Changes from EPUB 3.0（日本語訳版）</title>
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/>
+<meta name="description" content="EPUB 3.0.1 Changes from EPUB 3 は、以前にリリースされた EPUB 3 から EPUB 3.0.1 での変更点について有益な方法で説明する。"/>
+<link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+</head>
+<body>
+<div class="attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub3/latest/changes">EPUB 3.0.1 Changes from EPUB 3.0</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub3/latest/changes">EPUB 3.0.1 Changes from EPUB 3.0</a> を参照されたい。</p>
+
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+
+<dt>公開日:</dt>
+<dd>2013-11-12</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+
+<div class="book" title="EPUB 3.0.1 Changes from EPUB 3.0">
+
+<h1 class="title">EPUB 3.0.1 Changes from EPUB 3.0</h1>
+
+<p class="identity"><span class="pubdate">2013年11月8日</span> <span class="releaseinfo">Draft Specification</span></p>
+
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/301/spec/epub30-changes-20131108.html">http://www.idpf.org/epub/301/spec/epub30-changes-20131108.html</a></dd>
+<dt>最新版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a></dd>
+<dt>前の版</dt>
+<dd>N/A</dd>
+</dl>
+
+<p class="diff"></p>
+
+<div class="legal"><p class="copyright">Copyright c 2010-2013 International Digital Publishing Forum(TM)</p>
+
+<div class="legalnotice" title="legalnotice">
+
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a class="link" href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+
+<p>EPUBは International Digital Publishing Forum の登録商標である。</p>
+
+</div>
+
+</div>
+
+<div class="authorgroup">
+
+<p class="bridgehead">Editors</p>
+
+<p class="editor">Markus Gylling, International Digital Publishing Forum (IDPF)</p>
+
+<p class="editor">Matt Garrish, Invited Expert</p>
+
+</div>
+<div class="toc"><p><strong>目次</strong></p>
+<dl>
+<dt><span class="chapter"><a href="#sec-introduction">1. 前置き</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#sec-diff-intro-history">1.1. EPUB の改訂履歴</a></span></dt>
+</dl>
+</dd>
+<dt><span class="chapter"><a href="#sec-publications">2. EPUB 出版物</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#sec-pub-spine">2.1. <code class="markup">spine</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-source">2.2. <code class="markup">dc:source</code> 要素</a></span></dt>
+
+<dt><span class="section"><a href="#sec-pub-type">2.3. <code class="markup">dc:type</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-collection">2.4. <code class="markup">collection</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-reserved-prefixes">2.5. 予約済み接頭辞</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-collection-metadata">2.6. Collections メタデータ</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-link-rel">2.7. Link relationships</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-record">2.8. The <span class="property">record</span> プロパティ</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-fxl">2.9. Fixed layout metadata</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-rendition-flow">2.10. <span class="property">rendition:flow</span> プロパティ</a></span></dt>
+<dt><span class="section"><a href="#sec-pub-align-x-center">2.11. <span class="property">rendition:align-x-center</span> プロパティ</a></span></dt>
+
+</dl>
+</dd>
+<dt><span class="chapter"><a href="#sec-contentdocs">3. EPUB Content Documents</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#sec-cd-reserved-prefixes">3.1. 予約済み接頭辞</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-semantic-enrichment">3.2. セマンティクスの強化</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-trigger-events">3.3. <code class="markup">trigger</code> 要素</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-custom-attr">3.4. Custom 属性</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-aria-describedat">3.5. <code class="markup">aria-describedat</code> 属性</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-new-css">3.6. 新しい CSS 3 モジュール</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-writing-modes">3.7. CSS Writing Modes</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-header-footers">3.8. <span class="property">oeb-page-head</span> と <span class="property">oeb-page-foot</span> プロパティ</a></span></dt>
+<dt><span class="section"><a href="#sec-cd-schemas">3.9. RelaxNG スキーマ</a></span></dt>
+</dl>
+</dd>
+<dt><span class="chapter"><a href="#sec-ocf">4. EPUB Open Container Format (OCF)</a></span></dt>
+<dd>
+<dl>
+<dt><span class="section"><a href="#sec-ocf-terminology">4.1. 用語</a></span></dt>
+<dt><span class="section"><a href="#sec-ocf-comp-order">4.2. 難読化アルゴリズム</a></span></dt>
+</dl>
+</dd>
+
+<dt><span class="chapter"><a href="#sec-mediaoverlays">5. EPUB Media Overlays</a></span></dt>
+
+<dd>
+<dl>
+<dt><span class="section"><a href="#sec-mo-playback-active-class">5.1. <span class="property">playback-active-class</span> プロパティ</a></span></dt>
+</dl>
+</dd>
+
+<dt><span class="chapter"><a href="#sec-structurevocab">6. Structural Semantics Vocabulary</a></span></dt>
+
+<dt><span class="appendix"><a href="#app-contributors">A. 謝辞と貢献者</a></span></dt>
+<dt><span class="bibliography"><a href="#references">参照・参考</a></span></dt>
+</dl>
+
+</div>
+
+<div class="chapter" title="1 Introduction" id="sec-introduction">
+
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-introduction">&gt;</a>&nbsp;</span>1 前置き</h2>
+
+<p>EPUB&reg; は XML や Web 標準に基づいたデジタル出版物の交換や配信形式である。EPUB 出版物は、電子書籍、雑誌、出版物のその他の形式を表現し、オンラインやオフラインで消費するために配布することができる Web コンテンツの信頼性の高いパッケージと考えることができる。</p>
+
+<p>この文書、EPUB 3.0.1 Changes from EPUB 3 は、重要な変更と追加を強調し、EPUB  3.0 仕様の最初の小改訂で行った変更を説明する。</p>
+
+<p>この文書は参考である。EPUB 3 の正確な情報は EPUB 仕様書を参照されたい：</p>
+
+
+
+<div class="itemizedlist" id="sibling-specs">
+<ul class="itemizedlist">
+<li class="listitem"><p>EPUB Publications 3.0.1 <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> は出版レベルのセマンティクスと EPUB 出版物のための包括的な適合性要件を定義している。</p></li>
+<li class="listitem"><p>EPUB Content Documents 3.0.1 <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> は EPUB 出版物のコンテキストで使用するための XHTML、SVG と CSS のプロファイルを定義する。</p></li>
+<li class="listitem"><p>EPUB Open Container Format (OCF) 3.0.1 <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0.1">[<abbr>OCF301</abbr>]</a> は関連するリソースの集合を単一のファイル（ZIP）の Container にカプセル化するためのファイル形式と処理モデルを定義する。</p></li>
+<li class="listitem"><p>EPUB Media Overlays 3.0.1 <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.0.1">[<abbr>MediaOverlays301</abbr>]</a> は形式とテキストと音声の同期のための処理モデルを定義する。</p></li>
+</ul>
+
+</div>
+
+<p>特に指定のない限り、ここで使用される用語は、これらの仕様書で定義された意味を持つ。</p>
+
+<div class="section" title="1.1 EPUB Revision History" id="sec-diff-intro-history">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-diff-intro-history">&gt;</a>&nbsp;</span>1.1 EPUB の改訂履歴</h3>
+
+<p>EPUB は、Open EBook Publication Structure (OEBPS) として知られている交換フォーマットが起源である。OEBPS 1.0 は、後に International Digital Publishing Forum (IDPF) となる組織の Open eBook Forum により 1999 年に承認された。次の改訂 1.1 と 1.2 は、それぞれ 2001 年と 2002 年に IDPF により承認された。</p>
+
+<p>配信・交換として使用できる標準フォーマットの要求が存在することに気が付き、OEPBS のための単一ファイルのコンテナフォーマットとして 2005 後半に作業は開始され、そしてそれは 2006 年に OEBPS Container Format (OCF) として IDPF により承認された。OEBPS の 2.0 版の作業は、OCF と一緒に Open Package Format (OPF)、Open Publication Format (OPF) の仕様書の三つ組から成り、2007 年の 10 月に名前を変更した EPUB2.0 として承認をされ、並行して開始された。仕様書の正誤表を明確にし、改正することを主な意図とした 2.0 仕様書のセットをメンテナンスアップデートした EPUB 2.0.1 は、2010 年 9 月に承認された。<a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr>OPF2</abbr>]</a> <a class="biblioref" href="#refOPS2" title="Open Publication Structure 2.0.1">[<abbr>OPS2</abbr>]</a> <a class="biblioref" href="#refOCF2" title="Open Container Format 2.0.1">[<abbr>OCF2</abbr>]</a></p>
+
+<p> EPUB 仕様の主要な新しい 3.0 版の作業は、HTML5 とより密接に EPUB を連携することを目標に、2010年に開始され、新しいネイティブのマルチメディア機能、洗礼された CSS レイアウトのレンダリング、フォント埋め込み、スクリプトのインタラクティビティ、拡張されたグローバルな言語のサポート、改良されたアクセシビリティをもたらす。新しい仕様、EPUB Media Overlays も取り入れられ、EPUB 出版物にテキストと音声の同期を可能にする。より標準の仕様名に合わせるため、Open Package Format specification は EPUB Publications と名前を変更し、Open Publication Format specification は EPUB Content Documents と名前を変更された。EPUB 3.0 仕様は、2011年10月に承認された。<a class="biblioref" href="#refPublications30" title="EPUB Publications 3.0">[<abbr>Publications30</abbr>]</a> <a class="biblioref" href="#refContentDocs30" title="EPUB Content Documents 3.0">[<abbr>ContentDocs30</abbr>]</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr>OCF30</abbr>]</a> <a class="biblioref" href="#refOverlays30" title="EPUB Media Overlays 3.0">[<abbr>MediaOverlays30</abbr>]</a></p>
+
+</div>
+
+</div>
+
+<div class="chapter" title="2 Changes to EPUB Publications" id="sec-publications">
+
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-publications">&gt;</a>&nbsp;</span>2 EPUB 出版物</h2>
+
+
+<div class="section" title="2.1 The spine element" id="sec-pub-spine">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-spine">&gt;</a>&nbsp;</span>2.1 <code class="markup">spine</code> 要素</h3>
+<p><span class="phrase"><a class="link" href="epub30-publications.html#sec-spine-elem">spine</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の Content Document から参照されている全ての Content Document は、それが自身が、<code class="markup">spine</code> に記載されなければならない。</p>
+</div>
+
+<div class="section" title="2.2 The dc:source element" id="sec-pub-source">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-source">&gt;</a>&nbsp;</span>2.2 <code class="markup">dc:source</code> 要素</h3>
+
+
+<p><span class="phrase"><a class="link" href="epub30-publications.html#sec-opf-dcsource">dc:source 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> </span>は、ひとつのみという規制は削除された。</p>
+<p>ページネーションのための印刷物ソースの識別は、新しい <span class="phrase"><a class="link" href="epub30-publications.html#source-of">source-of プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を持つ <code class="markup">dc:source</code> 要素を改良することで行われる。</p>
+
+
+</div>
+
+<div class="section" title="2.3 The dc:type element" id="sec-pub-type">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-type">&gt;</a>&nbsp;</span>2.3 <code class="markup">dc:type</code> 要素</h3>
+
+
+<p><span class="phrase"><a class="link" href="epub30-publications.html#sec-opf-dctype">dc:type 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、ひとつのみという規制は削除された。</p>
+<p>この要素で使用することのできる IDPF で認められた型の一覧については、<a class="link" href="vocab-package-types.xhtml">EPUB Registry of Publication Types</a> を参照されたい。</p>
+
+
+<div class="section" title="2.4 The collection element" id="sec-pub-collection">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-collection">&gt;</a>&nbsp;</span>2.4 <code class="markup">collection</code> 要素</h3>
+
+<p>新しい <span class="phrase"><a class="link" href="epub30-publications.html#sec-collection-elem">collection 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、EPUB 3 の特殊な挙動とレンダリングを開発するためのフレームワークを提供する。これは、著者による出版物仕様で定義されている使用を意図していないが、上で構築される機能のための拡張ポイントを提供する。例えば、複数の XHTML Content Documents を横断する分割したインデックスの識別と再結合（例えば、機械処理や表示）を可能するために、<a class="link" href="http://www.idpf.org/epub/idx">EPUB Indexes specification</a> が使用される。</p>
+</div>
+
+<div class="section" title="2.5 Reserved prefixes" id="sec-pub-reserved-prefixes">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-reserved-prefixes">&gt;</a>&nbsp;</span>2.5 予約済み接頭辞</h3>
+
+<p>パッケージメタデータで使用できる予約済み接頭辞の一覧は、仕様改定と離れ接頭辞を追加し易くするために、Publications 仕様から削除された。接頭辞の一覧は、<a class="link" href="http://www.idpf.org/epub/vocab/package/pfx">EPUB Publications Reserved Prefixes</a> で見ることができる。</p>
+
+<p>接頭辞 <code class="markup">sch</code> は、<a class="link" href="http://www.schema.org">schema.org</a> メタデータを包含するために予約された。</p>
+</div>
+
+<div class="section" title="2.6 Collections metadata" id="sec-pub-collection-metadata">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-collection-metadata">&gt;</a>&nbsp;</span>2.6 Collections metadata</h3>
+
+<p><code class="markup">meta</code> 要素のメタデータプロパティは、EPUB 出版物が属しているコレクションの識別を可能にするために拡張された。<span class="phrase"><a class="link" href="epub30-publications.html#belongs-to-collection">belongs-to-collection プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、コレクションのタイトルと <span class="phrase"><a class="link" href="epub30-publications.html#collection-type">collection-type</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span>、コレクションの性質（シリーズとセットは、定義済みの値）を識別する。</p>
+</div>
+
+<div class="section" title="2.7 Link relationships" id="sec-pub-link-rel">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-link-rel">&gt;</a>&nbsp;</span>2.7 Link relationships</h3>
+
+<p><span class="phrase"><a class="link" href="epub30-publications.html#elemdef-opf-link">link 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> <code class="markup">rel</code> 属性で使用できるプロパティの語彙は、リビジョン間の新しい関連性を追加できるように <a class="link" href="vocab-package-link.xhtml">EPUB Link Relationships Vocabulary</a> で定義されている。</p>
+</div>
+
+<div class="section" title="2.8 The record property" id="sec-pub-record">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-record">&gt;</a>&nbsp;</span>2.8 <span class="property">record</span> プロパティ</h3>
+
+<p>新しい汎用的な <a class="link" href="http://www.idpf.org/epub/vocab/package/link/index.html#record">record プロパティ</a>は、メディアタイプによって識別することのできる任意のメタデータレコードの参照を可能にする <code class="markup">link</code> 要素のために追加された。</p>
+</div>
+
+<div class="section" title="2.9 Fixed layout-metadata" id="sec-pub-fxl">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-fxl">&gt;</a>&nbsp;</span>2.9 Fixed-layout メタデータ</h3>
+
+<p>以前は <a class="link" href="http://www.idpf.org/epub/fxl/epub-fxl-20120313.html">EPUB 3 Fixed-Layout Documents</a> に定義されていた Fixed-Layout メタデータは、<a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> と <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> 仕様に結合された。<span class="phrase"><a class="link" href="epub30-publications.html#sec-package-metadata-fxl">fixed-layout メタデータプロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の全ては出版物に定義されており、これらのプロパティのサポートは、リーディングシステムに要求される。</p>
+</div>
+
+<div class="section" title="2.10 The rendition:flow property" id="sec-pub-rendition-flow">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-rendition-flow">&gt;</a>&nbsp;</span>2.10 <span class="property">rendition:flow</span> プロパティ</h3>
+
+<p><span class="phrase"><a class="link" href="epub30-publications.html#layout-property-flow">rendition:flow プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span>は、Content Document の流れ（例えば、連続した流れの生成）を、望む方法で指示することを製作者に許可するために追加された。</p>
+</div>
+
+<div class="section" title="2.11 The rendition:align-x-center property" id="sec-pub-align-x-center">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-align-x-center">&gt;</a>&nbsp;</span>2.11 <span class="property">rendition:align-x-center</span> プロパティ</h3>
+
+<p><span class="phrase"><a class="link" href="epub30-publications.html#layout-property-align-x-center">rendition:align-x-center プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、Content Document を水平方向にセンタリングされる指定を製作者ができるようにするために追加された。このプロパティは、主に、中扉（Naka-Tobira）の問題を処理するために追加された。</p>
+</div>
+
+
+</div>
+</div>
+
+<div class="chapter" title="3 EPUB Content Documents" id="sec-contentdocs">
+
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-contentdocs">&gt;</a>&nbsp;</span>3 EPUB Content Documents</h2>
+
+<p>本セクションは、EPUB 3 で提示された主要な新しいまた変更された機能と構成概念を説明する。</p>
+
+<div class="section" title="3.1 Reserved prefixes" id="sec-cd-reserved-prefixes">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-reserved-prefixes">&gt;</a>&nbsp;</span>3.1 予約済み接頭辞</h3>
+
+<p><code class="markup">epub:type</code> 属性で使用できる予約済み接頭辞の一覧は、仕様改定と離れ接頭辞を追加し易くするために、Content Document 仕様から削除された。接頭辞の一覧は、<a class="link" href="vocab-structure-pfx.xhtml">EPUB Content Documents Reserved Prefixes</a> で見ることができる。</p>
+
+
+</div>
+
+<div class="section" title="3.2 Semantic Enrichment" id="sec-cd-semantic-enrichment">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-semantic-enrichment">&gt;</a>&nbsp;</span>3.2 セマンティクスの強化</h3>
+
+
+
+<p>両 <a class="biblioref" href="#refRDFa" title="RDFa Core 1.1 - Second Edition">[<abbr>RDFa11</abbr>]</a> と <a class="biblioref" href="#refMicrodata" title="HTML Microdata (20121025)">[<abbr>Microdata</abbr>]</a> 属性は、現在、XHTML Content Document で使用するために有効である。<a class="link" href="http://www.schema.org">schema.org</a> で定義されているような語彙は、コンテンツを強化するために、これらの属性を使用することができる。</p>
+
+
+</div>
+
+<div class="section" title="3.3 The trigger element" id="sec-cd-trigger-events">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-trigger-events">&gt;</a>&nbsp;</span>3.3 <code class="markup">trigger</code> 要素</h3>
+
+
+<p>次の <a class="biblioref" href="#refEVENTS" title="XML Events">[<abbr>XML Events</abbr>]</a> は、標準の挙動を上書きし、イベント：<code class="markup">phase</code>、<code class="markup">defaultAction</code>、<code class="markup">propagate</code> の伝播を防ぐために、<span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-xhtml-epub-trigger">trigger 要素</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> </span> に追加された。</p>
+
+</div>
+
+<div class="section" title="3.4 Custom Attributes" id="sec-cd-custom-attr">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-custom-attr">&gt;</a>&nbsp;</span>3.4 カスタム属性</h3>
+
+
+<p><span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-xhtml-custom-attributes">カスタム属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は、現在、XHTML Content Document に許可されている。</p>
+<p>相互運用性を向上させるために、IDPF は、<a class="link" href="http://www.idpf.org/extensions/attributes/index.html">registry of custom attributes</a> をメンテナンスしている。</p>
+<p>（カスタム属性は常にその仕様で概説されている要件を満たす提供を SVG に許可されていることを注意されたい。）</p>
+
+
+</div>
+
+<div class="section" title="3.5 The aria-describedat attribute" id="sec-cd-aria-describedat">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-aria-describedat">&gt;</a>&nbsp;</span>3.5 <code class="markup">aria-describedat</code> 属性</h3>
+
+
+<p>新しい <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr>WAI-ARIA-1.1</abbr>]</a> <span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-xhtml-aria-describedat">aria-describedat 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> が追加され、任意の要素に追加できるアウトオブバンド記述が許可される。この属性から参照された記述は、EPUB Container の内部または外部に設置することができる。</p>
+
+
+
+</div>
+
+<div class="section" title="3.6 New CSS 3 modules" id="sec-cd-new-css">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-new-css">&gt;</a>&nbsp;</span>3.6 新しい CSS 3 モジュール</h3>
+
+
+<p>二つの新しいモジュールが、ベースラインプロファイルに追加された：</p>
+<div class="itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+<p><a class="link" href="http://www.w3.org/TR/2013/WD-css-text-decor-3-20130103/">CSS Text Decoration Module Level 3</a></p>
+</li>
+<li class="listitem">
+<p><a class="link" href="http://www.w3.org/TR/css3-selectors/">Selectors Level 3</a></p>
+</li>
+</ul>
+</div>
+
+
+
+</div>
+
+<div class="section" title="3.7 CSS Writing Modes" id="sec-cd-writing-modes">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-writing-modes">&gt;</a>&nbsp;</span>3.7 CSS Writing Modes</h3>
+
+
+<p>CSS Writing Mode プロパティの構文と値は変更されている。詳細は、<span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-css-writing-modes">CSS Writing Modes</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> を参照されたい。</p>
+
+
+
+</div>
+
+<div class="section" title="3.8 The oeb-page-head and oeb-page-foot properties" id="sec-cd-header-footers">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-header-footers">&gt;</a>&nbsp;</span>3.8 <span class="property">oeb-page-head</span> と <span class="property">oeb-page-foot</span> プロパティ</h3>
+
+
+<p><span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-css-oeb-head-foot">oeb-page-head と oeb-page-foot プロパティ</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> の使用は、これらのプロパティは将来の版で削除もしくは置き換えられると予想されているので、現在では推奨されていない。</p>
+
+</div>
+
+<div class="section" title="3.9 RelaxNG schemas" id="sec-cd-schemas">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-schemas">&gt;</a>&nbsp;</span>3.9 RelaxNG スキーマ</h3>
+
+
+<p>Content Document 仕様は、外部でメンテナンスされている <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> と <abbr>SVG</abbr> スキーマのスナップショットをもはや参照しない。スキーマは、 それらの仕様（主に HTML5）への変更から最新の状態を維持することができるように切り離されている。</p>
+
+
+</div>
+
+</div>
+
+<div class="chapter" title="4 EPUB Open Container Format (OCF)" id="sec-ocf">
+
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-ocf">&gt;</a>&nbsp;</span>4 EPUB Open Container Format (OCF)</h2>
+
+<div class="section" title="4.1 Terminology" id="sec-ocf-terminology">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-ocf-terminology">&gt;</a>&nbsp;</span>4.1 用語</h3>
+
+<p>OCF Container のコンテンツの性質が、明記されており、EPUB 出版物は、現在、Container で表現される単一の作品として定義され、そのコンテンツ（たとえ Rendition のすべてが関連付けられていたとしても、以前は、各 Rendition が、EPUB 出版物として定義されていた）のひとつ以上の Rendition によって表現される。</p>
+
+<p>異なる EPUB 出版物の Rendition を一緒に束ねることはもはや有効ではないが、これは以前から推奨されていない。</p>
+
+
+
+</div>
+
+<div class="section" title="4.2 Obfuscation algorithm" id="sec-ocf-comp-order">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-ocf-comp-order">&gt;</a>&nbsp;</span>4.2 難読化アルゴリズム</h3>
+
+<p>リソースの難読化と圧縮の順は、難読化は圧縮する前に行う必要があると、<span class="phrase"><a class="link" href="epub301-ocf.xhtml#obfus-algorithm">難読化アルゴリズム</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr>OCF30</abbr>]</a></span> に明記されている。リーディングシステムの開発者は、逆の順番が以前の明確さが不足していたために遭遇する可能性があることを考慮しておくことを勧める（より詳細な情報はセクション最後の note を参照されたい）。</p>
+
+
+
+</div>
+</div>
+
+
+<div class="chapter" title="5 EPUB Media Overlays" id="sec-mediaoverlays">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-mediaoverlays">&gt;</a>&nbsp;</span>5 EPUB Media Overlays</h2>
+
+<div class="section" title="5.1 The playback-active-class property" id="sec-mo-playback-active-class">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-mo-playback-active-class">&gt;</a>&nbsp;</span>5.1 <span class="property">playback-active-class</span> プロパティ</h3>
+
+<p><span class="property">playback-active-class</span>プロパティの追加は、製作者に、現在読み上げていない箇所のテキストの外観を制御を許可する。このプロパティは、Content Document のドキュメント要素（例えば、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <code class="markup">html</code> 要素）に適用される。プロパティは、再生がアクティブなとき、全てのテキストをグレイアウトするように使用し、例えば、現在読み上げているテキストに読者の注意をより集中させることができる。</p>
+</div>
+</div>
+
+<div class="chapter" title="6 Structural Semantics Vocabulary" id="sec-structurevocab">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-structurevocab">&gt;</a>&nbsp;</span>6 Structural Semantics Vocabulary</h2>
+
+<p><a class="link" href="epub301-vocab-structure.xhtml#">EPUB Structural Semantics Vocabulary</a> は更新され、EPUB 仕様の改訂サイクルから開放された。EPUB Working Group は、新しいプロパティの要求を綿密に調べ、継続的に追加することができる。</p>
+
+<p>多くの新しい追加は、<a class="link" href="epub301-vocab-structure.xhtml#h_educational">教育用のプロパティ</a>専用の最も注目すべき新しいセクションに語彙が作られた。変更点の完全なリストは、<a class="link" href="https://code.google.com/p/epub-revision/wiki/R301StructureVocab">EPUB wiki</a> を参照されたい。</p>
+</div>
+
+
+
+<div class="acknowledgements" title="Appendix A. Acknowledgements and Contributors" id="app-contributors">
+
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#app-contributors">&gt;</a>&nbsp;</span>付録 A. 謝辞と貢献者</h2>
+</div>
+</div>
+</div>
+
+<p class="informative">この付録は参考である</p>
+<p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
+<p>EPUB3 仕様は下に述べるリーダーシップにより2010年5月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した：</p>
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span> <span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span> <span class="wg-role">Vice-chair, Subgroup Lead</span></li>
+<li class="person"><span class="name"><span class="surname">McCoy</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> <span class="wg-role">Secretary</span></li>
+<li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span> <span class="wg-role">Subgroup Lead</span></li>
+<li class="person"><span class="name"><span class="surname">MURATA</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(JEPA EPUB Study Group)</span> <span class="wg-role">Subgroup Lead</span></li>
+<li class="person"><span class="name"><span class="surname">Sorotokin</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Adobe)</span> <span class="wg-role">Subgroup Lead</span></li>
+</ul>
+<p>ワーキンググループのアクティブメンバー：</p>
+<p class="bridgehead" title="A. IDPF Members"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#">&gt;</a>&nbsp;</span>IDPF Members</p>
+<ul class="personlist"><li class="person"><span class="name"><span class="surname">Abrams</span>, <span class="givenname">Willie</span></span> <span class="affiliation">(Ingram Digital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Acton</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Allesi</span>, <span class="givenname">Ana Maria</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Amos</span>, <span class="givenname">Dan</span></span> <span class="affiliation">(DNAML (DNL eBooks))</span> </li>
+<li class="person"><span class="name"><span class="surname">Arany</span>, <span class="givenname">Steve</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span> </li>
+<li class="person"><span class="name"><span class="surname">Artin</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Badger</span>, <span class="givenname">Brandon</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ballard</span>, <span class="givenname">Kevin</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Beard</span>, <span class="givenname">Elliot</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Belfanti</span>, <span class="givenname">Paul</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bell</span>, <span class="givenname">Graham</span></span> <span class="affiliation">(EDItEUR)</span> </li>
+
+<li class="person"><span class="name"><span class="surname">Bell</span>, <span class="givenname">Jeff</span></span><span class="affiliation">(Microsoft)</span></li>
+
+<li class="person"><span class="name"><span class="surname">Bide</span>, <span class="givenname">Mark</span></span> <span class="affiliation">(EDItEUR)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bogaty</span>, <span class="givenname">Nick</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bowers</span>, <span class="givenname">Micah</span></span> <span class="affiliation">(Bluefire Productions)</span> </li>
+<li class="person"><span class="name"><span class="surname">Brantley</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Internet Archive)</span> </li>
+<li class="person"><span class="name"><span class="surname">Breglio</span>, <span class="givenname">Melissa</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Broome</span>, <span class="givenname">Karen</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">Brugge</span>, <span class="givenname">John</span></span> <span class="affiliation">(Benetech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Carbonell</span>, <span class="givenname">Oliver</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chang</span>, <span class="givenname">Phobos</span></span> <span class="affiliation">(Chinese Foundation for Digitization Technology)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chen</span>, <span class="givenname">Mei-Li</span></span> <span class="affiliation">(Institute for Information Industry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chen</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(ITRI)</span> </li>
+<li class="person"><span class="name"><span class="surname">Choi</span>, <span class="givenname">Soo</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Chow</span>, <span class="givenname">King-Wai</span></span> <span class="affiliation">(ASTRI (Hong Kong Applied Science &amp; Technology Research Institute))</span> </li>
+<li class="person"><span class="name"><span class="surname">Clutter</span>, <span class="givenname">Mat</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cramer</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(Hachette Book Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cronin</span>, <span class="givenname">Margot</span></span> <span class="affiliation">(Bowker)</span> </li>
+<li class="person"><span class="name"><span class="surname">Daly</span>, <span class="givenname">Liza</span></span> <span class="affiliation">(Threepress)</span> </li>
+<li class="person"><span class="name"><span class="surname">De Meulemeester</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Jouve/Publishing Dimensions)</span> </li>
+<li class="person"><span class="name"><span class="surname">DeMeglio</span>, <span class="givenname">Marisa</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Deltour</span>, <span class="givenname">Romain</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Dougherty</span>, <span class="givenname">Casey</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Drake</span>, <span class="givenname">Jama</span></span> <span class="affiliation">(Impelsys)</span> </li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Elliott</span>, <span class="givenname">Ray</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Fahlgren</span>, <span class="givenname">Keith</span></span> <span class="affiliation">(Threepress)</span> </li>
+<li class="person"><span class="name"><span class="surname">Fain</span>, <span class="givenname">Guy</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Freese</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Aptara)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gardeur</span>, <span class="givenname">Hadrien</span></span> <span class="affiliation">(Feedbooks)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gold</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Digital Divide Data)</span> </li>
+<li class="person"><span class="name"><span class="surname">Goodwin</span>, <span class="givenname">Jonathan</span></span> <span class="affiliation">(Appfoundry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gopinath</span>, <span class="givenname">Anith</span></span> <span class="affiliation">(Impelsys)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gosling</span>, <span class="givenname">Andreas</span></span> <span class="affiliation">(Penguin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Grazioli</span>, <span class="givenname">Frank</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gunn</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(RNIB)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> </li>
+<li class="person"><span class="name"><span class="surname">Haas</span>, <span class="givenname">Matt</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hadfield</span>, <span class="givenname">Tom</span></span> <span class="affiliation">(CourseSmart)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hagino</span>, <span class="givenname">Masaaki</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hawkins</span>, <span class="givenname">Kevin</span></span> <span class="affiliation">(University of Michigan Library)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hayashi</span>, <span class="givenname">Junichi</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Heiberger</span>, <span class="givenname">Richard</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hepp</span>, <span class="givenname">Mike</span></span> <span class="affiliation">(Dartmouth Journal Services)</span> </li>
+<li class="person"><span class="name"><span class="surname">Herren</span>, <span class="givenname">Matthew</span></span> <span class="affiliation">(BlankPage)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hisashi</span>, <span class="givenname">Saiga</span></span> <span class="affiliation">(Sharp)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hoda</span>, <span class="givenname">Hisashi</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Howard</span>, <span class="givenname">William</span></span> <span class="affiliation">(Easypress)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hughes</span>, <span class="givenname">Dan</span></span> <span class="affiliation">(Liguori Publications)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hulse</span>, <span class="givenname">Leslie</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Imsieke</span>, <span class="givenname">Gerrit</span></span> <span class="affiliation">(le-tex)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jain</span>, <span class="givenname">Anupam</span></span> <span class="affiliation">(Innodata Isogen)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jie</span>, <span class="givenname">Fan</span></span> <span class="affiliation">(Gansu DUZHE Digital Sci&amp;Tech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Johnson</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(Ingram Digital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jung</span>, <span class="givenname">Kanghee</span></span> <span class="affiliation">(Incube Technologies)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kakar</span>, <span class="givenname">Samir</span></span> <span class="affiliation">(Aptara)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kanai</span>, <span class="givenname">Takeshi</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kasher</span>, <span class="givenname">Bob</span></span> <span class="affiliation">(BookMasters and Newgen Imaging)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kato</span>, <span class="givenname">Kazuyuki</span></span> <span class="affiliation">(East Co.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Keating</span>, <span class="givenname">Patrick</span></span> <span class="affiliation">(Bluefire Productions)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kerscher</span>, <span class="givenname">George</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kida</span>, <span class="givenname">Yasuo</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kim</span>, <span class="givenname">Jean</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kim</span>, <span class="givenname">HyunYoung</span></span> <span class="affiliation">(Incube Technologies)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kim</span>, <span class="givenname">Terry</span></span> <span class="affiliation">(INKA Entworks)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kitagawa</span>, <span class="givenname">Masahiro</span></span> <span class="affiliation">(Impress Holdings)</span> </li>
+<li class="person"><span class="name"><span class="surname">Koike</span>, <span class="givenname">Toshiaki</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kok</span>, <span class="givenname">Dan</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kotrch</span>, <span class="givenname">Steve</span></span> <span class="affiliation">(Simon &amp; Schuster)</span> </li>
+<li class="person"><span class="name"><span class="surname">Larroque</span>, <span class="givenname">Benoit</span></span> <span class="affiliation">(Feedbooks)</span> </li>
+<li class="person"><span class="name"><span class="surname">Levantovsky</span>, <span class="givenname">Vladimir</span></span> <span class="affiliation">(Monotype Imaging)</span> </li>
+<li class="person"><span class="name"><span class="surname">Lu</span>, <span class="givenname">Cho-Chin</span></span> <span class="affiliation">(Institute for Information Industry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Lynch</span>, <span class="givenname">Ryan</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">MacFarlane</span>, <span class="givenname">James</span></span> <span class="affiliation">(Easypress)</span> </li>
+<li class="person"><span class="name"><span class="surname">Makower</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mandelbaum</span>, <span class="givenname">David</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Manis</span>, <span class="givenname">Will</span></span> <span class="affiliation">(Metaplates)</span> </li>
+<li class="person"><span class="name"><span class="surname">McCloy-Kelley</span>, <span class="givenname">Liisa</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">McCoy</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(IDPF)</span> </li>
+<li class="person"><span class="name"><span class="surname">Menzies</span>, <span class="givenname">Tracey</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mitchell</span>, <span class="givenname">Chris</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Moore</span>, <span class="givenname">Helen</span></span> <span class="affiliation">(HarperCollins)</span> </li>
+<li class="person"><span class="name"><span class="surname">Muller</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Murata</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(JEPA EPUB Study Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mussinelli</span>, <span class="givenname">Christina</span></span> <span class="affiliation">(Associazione Italiana Editori)</span> </li>
+<li class="person"><span class="name"><span class="surname">Nagai</span>, <span class="givenname">Yoshinori</span></span> <span class="affiliation">(Sharp)</span> </li>
+<li class="person"><span class="name"><span class="surname">Novelli</span>, <span class="givenname">Joe</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">O'Connor</span>, <span class="givenname">Edward</span></span> <span class="affiliation">(Apple Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ohmura</span>, <span class="givenname">Yoshinori</span></span> <span class="affiliation">(Impress Holdings)</span> </li>
+<li class="person"><span class="name"><span class="surname">Olenick</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(Bowker)</span> </li>
+<li class="person"><span class="name"><span class="surname">Oshiyama</span>, <span class="givenname">Taka</span></span> <span class="affiliation">(East Co.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Pagano</span>, <span class="givenname">Pat</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Picco</span>, <span class="givenname">Marty</span></span> <span class="affiliation">(AppFoundry)</span> </li>
+<li class="person"><span class="name"><span class="surname">Prabhu</span>, <span class="givenname">John</span></span> <span class="affiliation">(HOV Services)</span> </li>
+<li class="person"><span class="name"><span class="surname">Pritchett</span>, <span class="givenname">James</span></span> <span class="affiliation">(Learning Ally (formerly RFB&amp;D))</span> </li>
+<li class="person"><span class="name"><span class="surname">Rao</span>, <span class="givenname">Vishnu</span></span> <span class="affiliation">(Sharp Laboratories)</span> </li>
+<li class="person"><span class="name"><span class="surname">Rivlin</span>, <span class="givenname">John</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Rubino</span>, <span class="givenname">Frank</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ruffino</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(Penguin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Rui Hua</span>, <span class="givenname">Wang</span></span> <span class="affiliation">(Gansu DUZHE Digital Sci&amp;Tech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Ruse</span>, <span class="givenname">Tyler</span></span> <span class="affiliation">(LibreDigital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Sanicola</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(Penguin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Schirmer</span>, <span class="givenname">Lorenz</span></span> <span class="affiliation">(Monotype Imaging)</span> </li>
+<li class="person"><span class="name"><span class="surname">Severdia</span>, <span class="givenname">Ron</span></span> <span class="affiliation">(Metrodigi, Inc.)</span></li>
+<li class="person"><span class="name"><span class="surname">Shiohama</span>, <span class="givenname">Daihei</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Shrivastava</span>, <span class="givenname">Abhishek</span></span> <span class="affiliation">(CourseSmart)</span> </li>
+
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span><span class="affiliation">(John Wiley &amp; Sons)</span></li>
+
+<li class="person"><span class="name"><span class="surname">Slavin</span>, <span class="givenname">Wayne</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Slye</span>, <span class="givenname">Christopher</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Smith</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(IDPF)</span> </li>
+<li class="person"><span class="name"><span class="surname">Soiffer</span>, <span class="givenname">Neil</span></span> <span class="affiliation">(Design Science)</span> </li>
+<li class="person"><span class="name"><span class="surname">Sorotokin</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Stevenson</span>, <span class="givenname">Tobias</span></span> <span class="affiliation">(eBookArchitects)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tahara</span>, <span class="givenname">Kyoji</span></span> <span class="affiliation">(Toppan Printing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Takase</span>, <span class="givenname">Hiroshi</span></span> <span class="affiliation">(East Co.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tallent</span>, <span class="givenname">Joshua</span></span> <span class="affiliation">(eBookArchitects)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tanabe</span>, <span class="givenname">Shu</span></span> <span class="affiliation">(Toppan Printing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Thomas</span>, <span class="givenname">Vinu</span></span> <span class="affiliation">(Impelsys)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tsumagari</span>, <span class="givenname">Koichiro</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Valentine</span>, <span class="givenname">Chelsea</span></span> <span class="affiliation">(LibreDigital)</span> </li>
+<li class="person"><span class="name"><span class="surname">Vangage</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Harlequin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Vido</span>, <span class="givenname">Ariel</span></span> <span class="affiliation">(Geografica Editora)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wait</span>, <span class="givenname">John</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Walkley</span>, <span class="givenname">George</span></span> <span class="affiliation">(Hachette Book Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Watters</span>, <span class="givenname">Kevin</span></span> <span class="affiliation">(Harlequin)</span> </li>
+<li class="person"><span class="name"><span class="surname">Webster</span>, <span class="givenname">Roger</span></span> <span class="affiliation">(Barnes &amp; Noble)</span> </li>
+<li class="person"><span class="name"><span class="surname">Weck</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wei</span>, <span class="givenname">Selena</span></span> <span class="affiliation">(Chinese Foundation for Digitization Technology)</span> </li>
+<li class="person"><span class="name"><span class="surname">White</span>, <span class="givenname">Russell</span></span> <span class="affiliation">(Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wiles</span>, <span class="givenname">Alexis</span></span> <span class="affiliation">(Overdrive, Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Witwer</span>, <span class="givenname">Adam</span></span> <span class="affiliation">(O'Reilly)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wright</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(Adobe)</span> </li>
+<li class="person"><span class="name"><span class="surname">Young</span>, <span class="givenname">Liz</span></span> <span class="affiliation">(Crossway)</span> </li>
+<li class="person"><span class="name"><span class="surname">Zu</span>, <span class="givenname">Alex</span></span> <span class="affiliation">(ASTRI (Hong Kong Applied Science &amp; Technology Research Institute))</span></li>
+</ul>
+<p class="bridgehead" title="A. Invited Experts/Observers"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#">&gt;</a>&nbsp;</span>Invited Experts/Observers</p>
+<ul class="personlist">
+<li class="person"><span class="name"><span class="surname">Bowes</span>, <span class="givenname">Rick</span></span></li>
+<li class="person"><span class="name"><span class="surname">Cazenove</span>, <span class="givenname">Rhys</span></span></li>
+<li class="person"><span class="name"><span class="surname">Collingridge</span>, <span class="givenname">Peter</span></span></li>
+<li class="person"><span class="name"><span class="surname">Cook</span>, <span class="givenname">Mike</span></span></li>
+<li class="person"><span class="name"><span class="surname">Etemad</span>, <span class="givenname">Elika J.</span></span> <span class="wg-role">W3C CSS WG Liason</span></li>
+<li class="person"><span class="name"><span class="surname">Forster</span>, <span class="givenname">Karen</span></span></li>
+<li class="person"><span class="name"><span class="surname">Freed</span>, <span class="givenname">Geoff</span></span></li>
+<li class="person"><span class="name"><span class="surname">Fujisawa</span>, <span class="givenname">Jun</span></span></li>
+<li class="person"><span class="name"><span class="surname">Garrish</span>, <span class="givenname">Matt</span></span></li>
+<li class="person"><span class="name"><span class="surname">Gould</span>, <span class="givenname">Bryan</span></span></li>
+<li class="person"><span class="name"><span class="surname">Gorner</span>, <span class="givenname">Martin</span></span></li>
+<li class="person"><span class="name"><span class="surname">Hsieh</span>, <span class="givenname">Michael</span></span></li>
+<li class="person"><span class="name"><span class="surname">Ishii</span>, <span class="givenname">Koji</span></span></li>
+<li class="person"><span class="name"><span class="surname">Johar</span>, <span class="givenname">Kenny</span></span></li>
+<li class="person"><span class="name"><span class="surname">Karlsson</span>, <span class="givenname">Mattias</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kennedy</span>, <span class="givenname">Dianne</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kilborn</span>, <span class="givenname">Peter</span></span></li>
+<li class="person"><span class="name"><span class="surname">Koppel</span>, <span class="givenname">Josh</span></span></li>
+<li class="person"><span class="name"><span class="surname">Lee</span>, <span class="givenname">Tommy</span></span></li>
+<li class="person"><span class="name"><span class="surname">Lu</span>, <span class="givenname">Kenny</span></span></li>
+<li class="person"><span class="name"><span class="surname">Lubeck</span>, <span class="givenname">Scott</span></span></li>
+<li class="person"><span class="name"><span class="surname">Masanori</span>, <span class="givenname">Kusunoki</span></span></li>
+<li class="person"><span class="name"><span class="surname">McKinney</span>, <span class="givenname">Steven</span></span></li>
+<li class="person"><span class="name"><span class="surname">Murakami</span>, <span class="givenname">Shinyu</span></span></li>
+<li class="person"><span class="name"><span class="surname">Ning</span>, <span class="givenname">Elliott</span></span></li>
+<li class="person"><span class="name"><span class="surname">Noring</span>, <span class="givenname">Jon</span></span></li>
+<li class="person"><span class="name"><span class="surname">Norton</span>, <span class="givenname">Paul</span></span></li>
+<li class="person"><span class="name"><span class="surname">Oishi</span>, <span class="givenname">Yasuharu</span></span></li>
+<li class="person"><span class="name"><span class="surname">Passey</span>, <span class="givenname">Lee</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rosmaita</span>, <span class="givenname">Gregory</span></span></li>
+<li class="person"><span class="name"><span class="surname">Seaman</span>, <span class="givenname">David</span></span></li>
+<li class="person"><span class="name"><span class="surname">Shan</span>, <span class="givenname">Walter</span></span></li>
+<li class="person"><span class="name"><span class="surname">Smith(tm)</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(W3C)</span> <span class="wg-role">W3C Liason</span></li>
+<li class="person"><span class="name"><span class="surname">Sperberg</span>, <span class="givenname">Roger</span></span></li>
+<li class="person"><span class="name"><span class="surname">Walsh</span>, <span class="givenname">Norman</span></span></li>
+<li class="person"><span class="name"><span class="surname">Zergaoui</span>, <span class="givenname">Mohamed</span></span></li>
+</ul>
+<p>より詳細な承認と EPUB の各バージョンへの貢献者については<span class="phrase"><a class="link" href="epub301-overview.xhtml#acknowledgements">謝辞と貢献者</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3 Overview">[<abbr>EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
+</div>
+
+<div class="bibliography" title="References" id="references">
+
+<div class="titlepage">
+
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#references">&gt;</a>&nbsp;</span>参照・参考</h2>
+</div>
+</div>
+
+</div>
+
+<div class="bibliodiv" title="Normative References">
+<h3 class="title">参照文献</h3>
+<div class="biblioentry" title="EPUB Content Documents 3.0" id="refContentDocs30"><p>[<abbr>ContentDocs30</abbr>] <span class="title"><em><a class="link" href="../../30/spec/epub30-contentdocs.html">EPUB Content Documents 3.0</a></em>.</span></p></div>
+
+<div class="biblioentry" title="EPUB Content Documents 3.0.1" id="refContentDocs3"><p>[<abbr>ContentDocs301</abbr>] <span class="title"><em><a class="link" href="epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a> </em>. </span></p></div>
+
+
+
+<div class="biblioentry" title="HTML5: A vocabulary and associated APIs for HTML and XHTML" id="refHTML5"><p>[<abbr>HTML5</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/html5/">HTML5: A vocabulary and associated APIs for HTML and XHTML</a></em>. </span></p></div>
+
+<div class="biblioentry" title="EPUB Media Overlays 3.0" id="refOverlays30">
+<p>[<abbr>MediaOverlays30</abbr>] <span class="title"><em><a class="link" href="epub30-mediaoverlays.xhtml">EPUB Media Overlays 3.0</a></em>. </span></p></div>
+
+<div class="biblioentry" title="EPUB Media Overlays 3.0.1" id="refOverlays3">
+<p>[<abbr>MediaOverlays301</abbr>] <span class="title"><em> <a class="link" href="epub301-mediaoverlays.xhtml">EPUB Media Overlays 3.0.1</a> </em>. </span></p>
+</div>
+
+<div class="biblioentry" title="HTML Microdata (20121025)" id="refMicrodata"><p>[<abbr>Microdata</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/2012/WD-microdata-20121025/">HTML Microdata (20121025)</a></em>. </span> <span class="author">Ian Hickson. </span> <span class="date">25 October 2012. </span></p></div>
+
+<div class="biblioentry" title="Open Container Format 2.0.1" id="refOCF2">
+<p>[<abbr>OCF2</abbr>] <span class="title"><em> <a class="link" href="http://www.idpf.org/doc_library/epub/OCF_2.0.1_draft.doc">Open Container Format 2.0.1</a> </em>. </span></p>
+</div>
+
+<div class="biblioentry" title="Open Container Format 3.0" id="refOCF30"><p>[<abbr>OCF30</abbr>] <span class="title"><em><a class="link" href="epub30-ocf.xhtml">Open Container Format 3.0</a></em>.</span></p></div>
+
+<div class="biblioentry" title="Open Container Format 3.0.1" id="refOCF30">
+<p>[<abbr>OCF301</abbr>] <span class="title"><em> <a class="link" href="epub301-ocf.xhtml">Open Container Format 3.0.1</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="Open Packaging Format 2.0.1" id="refOPF2">
+<p>[<abbr>OPF2</abbr>] <span class="title"><em> <a class="link" href="http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm">Open Packaging Format 2.0.1</a> </em>. </span></p>
+</div>
+<div class="biblioentry" title="Open Publication Structure 2.0.1" id="refOPS2">
+<p>[<abbr>OPS2</abbr>] <span class="title"><em> <a class="link" href="http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm">Open Publication Structure 2.0.1</a> </em>. </span></p>
+</div>
+
+<div class="biblioentry" title="EPUB Publications 3.0" id="refPublications30"><p>[<abbr>Publications301</abbr>] <span class="title"><em><a class="link" href="epub30-publications.xhtml">EPUB Publications 3.0</a></em>. </span></p></div>
+
+<div class="biblioentry" title="EPUB Publications 3.0.1" id="refPublications3">
+<p>[<abbr>Publications301</abbr>] <span class="title"><em> <a class="link" href="epub301-publications.xhtml">EPUB Publications 3.0.1</a> </em>. </span></p>
+</div>
+
+<div class="biblioentry" title="RDFa Core 1.1 - Second Edition" id="refRDFa"><p>[<abbr>RDFa11</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/2013/REC-rdfa-core-20130822/">RDFa Core 1.1 - Second Edition</a> </em>. </span> <span class="subtitle">Syntax and processing rules for embedding RDF through attributes. </span> <span class="author">Ben Adida, et al. </span> <span class="date">22 August 2013. </span> </p></div>
+
+
+<div class="biblioentry" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)" id="refSVG">
+<p>[<abbr>SVG</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/SVG11/">Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a></em>. </span> <span class="author">Erik Dahlstrom, et al. </span> <span class="date">09 June 2011. </span></p></div>
+
+
+<div class="biblioentry" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1" id="refARIA11">
+<p>[<abbr>WAI-ARIA-1.1</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a></em>. </span> <span class="author">James Craig, et al. </span> </p>
+</div>
+<div class="biblioentry" title="XML Events" id="refEVENTS">
+<p>[<abbr>XML Events</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/2003/REC-xml-events-20031014/">XML Events</a></em>.</span> <span class="author">Shane McCarron, et al. </span> <span class="date">14 October 2003. </span></p>
+</div>
+
+</div>
+<div class="bibliodiv" title="Informative References">
+<h3 class="title">参考文献</h3>
+<div class="biblioentry" title="EPUB 3 Overview" id="refEPUB3Overview">
+<p>[<abbr>EPUB3Overview</abbr>] <span class="title"><em> <a class="link" href="epub301-overview.xhtml">EPUB 3 Overview</a> </em>. </span><span class="author">Garth Conboy, et al. </span></p>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
