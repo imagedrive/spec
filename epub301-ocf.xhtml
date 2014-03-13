@@ -24,7 +24,9 @@
 <dl>
 
 <dt>公開日:</dt>
-<dd>2013-11-12</dd>
+<dd>2013-11-08</dd>
+<dt>改定日:</dt>
+<dd>2014-03-12</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -34,16 +36,16 @@
 
 <div class="book" title="EPUB Open Container Format (OCF) 3.0.1">
 <h1 class="title">EPUB Open Container Format (OCF) 3.0.1</h1>
-<p class="identity"><span class="pubdate">2013年11月8日</span> <span class="releaseinfo">Draft Specification</span></p>
+<p class="identity"><span class="pubdate">2014年2月28日</span> <span class="releaseinfo">Proposed Specification</span></p>
 <dl class="printhistory"><dt>この版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/30/spec/epub30-ocf-20131108.html">http://www.idpf.org/epub/30/spec/epub30-ocf-20131108.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/301/spec/epub-ocf-20140228.html">http://www.idpf.org/epub/301/spec/epub-ocf-20140228.html</a></dd>
 <dt>最新版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub3/latest/ocf">http://www.idpf.org/epub3/latest/ocf</a></dd>
 <dt>前の版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/30/spec/epub30-ocf-20111011.html">http://www.idpf.org/epub/30/spec/epub30-ocf-20111011.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/301/spec/epub-ocf-20140227.html">http://www.idpf.org/epub/301/spec/epub-ocf-20140227.html</a></dd>
 </dl>
 
-<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4848&amp;old=4469&amp;r=4848&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub30-ocf.xml">変更点の差分</a>は、入手可能である。</p>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4905&amp;old=4903&amp;r=4905&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub-ocf.xml">変更点の差分</a>は、入手可能である。</p>
 
 <p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="http://idpf.org/epub/30/spec/epub30-ocf-errata/">正誤表</a>を参照されたい。</p>
 
@@ -438,10 +440,10 @@
 
 <div class="conformance-list">
 <ul class="conformance-list">
-<li class="listitem"><p id="ocf-fn-encoding"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-encoding">&gt;</a>&nbsp;</span>ファイル名は、 UTF-8 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)">[<abbr>Unicode</abbr>]</a> でエンコードされていなければ<span class="rfc2119">ならない（must）</span>。</p></li>
+<li class="listitem"><p id="ocf-fn-encoding"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-encoding">&gt;</a>&nbsp;</span>ファイル名は、 UTF-8 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr>Unicode</abbr>]</a> でエンコードされていなければ<span class="rfc2119">ならない（must）</span>。</p></li>
 <li class="listitem"><p id="ocf-fn-length"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-length">&gt;</a>&nbsp;</span>ファイル名は、255バイトを超えては<span class="rfc2119">ならない（must not）</span>。</p></li>
 <li class="listitem"><p id="ocf-pn-length"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-pn-length">&gt;</a>&nbsp;</span>抽象コンテナ内の任意のディレクトリまたはファイルのパス名は、65535バイトを超えては<span class="rfc2119">ならない（must not）</span>。</p></li>
-<li class="listitem"><p id="ocf-fn-chars"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-chars">&gt;</a>&nbsp;</span>ファイル名は、これらの文字は、一般的に使用されるオペレーティング・システムの間で一貫してサポートされない場合があり、以下の <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)">[<abbr>Unicode</abbr>]</a> は使用しては<span class="rfc2119">ならない（must not）</span>：</p>
+<li class="listitem"><p id="ocf-fn-chars"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-chars">&gt;</a>&nbsp;</span>ファイル名は、これらの文字は、一般的に使用されるオペレーティング・システムの間で一貫してサポートされない場合があり、以下の <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr>Unicode</abbr>]</a> は使用しては<span class="rfc2119">ならない（must not）</span>：</p>
 <div class="itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem"><p>スラッシュ: <code class="literal">/</code> (<code class="codepoint">U+002F</code> )</p></li>
@@ -466,7 +468,7 @@
 </div>
 </li>
 <li class="listitem"><p id="ocf-fn-cs"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-cs">&gt;</a>&nbsp;</span>ファイル名は、大文字と小文字が区別される。</p></li>
-<li class="listitem"><p id="ocf-fn-cn"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-cn">&gt;</a>&nbsp;</span>同じディレクトリ内にあるすべてのファイル名は、<a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)">[<abbr>Unicode</abbr>]</a> のセクション 3.13 で定義されているような正規化のケースに従い一意でなければ<span class="rfc2119">ならない（must）</span>。</p></li>
+<li class="listitem"><p id="ocf-fn-cn"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-cn">&gt;</a>&nbsp;</span>同じディレクトリ内にあるすべてのファイル名は、<a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr>Unicode</abbr>]</a> のセクション 3.13 で定義されているような正規化のケースに従い一意でなければ<span class="rfc2119">ならない（must）</span>。</p></li>
 <li class="listitem"><p id="ocf-fn-an"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#ocf-fn-an">&gt;</a>&nbsp;</span>同じディレクトリ内にあるすべてのファイル名は、NFC または NFD の正規化 <a class="biblioref" href="#refTR15" title="Unicode Normalization Forms">[<abbr>TR15</abbr>]</a> に従い一意である<span class="rfc2119">べきである（should）</span>。</p></li>
 </ul>
 </div>
@@ -799,7 +801,7 @@ ZIP アーカイブ内の任意の追加のファイルは、（すなわち、<
 <p id="confreq-zip-preserve"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-zip-preserve">&gt;</a>&nbsp;</span>OCF Processor は、OCF 抽象コンテナで定義されていない読み込みと保存の操作を通じて OCF ZIP コンテナからの情報を保つことを要求しない。具体的には、OCF Processor は、特定のオペレーティングシステム（例えば、<em class="firstterm">External file attributes</em> と <em class="firstterm">Extra field</em> など）に対応するファイルシステム情報を保持する CRC 値、コメントフィールド、フィールドを保存しない。</p>
 </li>
 <li class="listitem">
-<p id="confreq-zip-utf8"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-zip-utf8">&gt;</a>&nbsp;</span>OCF ZIP コンテナは、UTF-8 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)">[<abbr>Unicode</abbr>]</a> を使用してファイルシステム名をエンコードしなければ<span class="rfc2119">ならない（must）</span>。</p>
+<p id="confreq-zip-utf8"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-zip-utf8">&gt;</a>&nbsp;</span>OCF ZIP コンテナは、UTF-8 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr>Unicode</abbr>]</a> を使用してファイルシステム名をエンコードしなければ<span class="rfc2119">ならない（must）</span>。</p>
 </li>
 </ul>
 
@@ -1677,14 +1679,14 @@ EPUB/images/cover.png</pre>
 <div class="biblioentry" title="Federal Information Processing Standards Publication 180-3: Secure Hash Standard (SHS)" id="refSHA1"><p>[<abbr>SHA-1</abbr>] <span class="title"><em> <a class="link" href="http://csrc.nist.gov/publications/fips/fips180-3/fips180-3_final.pdf">Federal Information Processing Standards Publication 180-3: Secure Hash Standard (SHS)</a> </em>. </span><span class="date">October 2008. </span></p>
 </div>
 
-<div class="biblioentry" title="Unicode Normalization Forms" id="refTR15"><p>[<abbr>TR15</abbr>] <span class="title"><em> <a class="link" href="http://www.unicode.org/reports/tr15/tr15-33.html">Unicode Normalization Forms</a> </em>. </span><span class="author">Mark Davis, et al. </span><span class="date">17 September 2010. </span></p>
+<div class="biblioentry" title="Unicode Normalization Forms" id="refTR15"><p>[<abbr>TR15</abbr>] <span class="title"><em> <a class="link" href="http://www.unicode.org/reports/tr15/">Unicode Normalization Forms</a> </em>. </span></p>
 </div>
 
 <div class="biblioentry" title="&#34;Coded Character Set - 7-bit American Standard Code for Information Interchange&#34;, ANSI X3.4, 1986." id="refUSASCII">
 <p>[<abbr>US-ASCII</abbr>] <span class="title"><em>"Coded Character Set - 7-bit American Standard Code for Information Interchange", ANSI X3.4, 1986.</em>. </span></p>
 </div>
 
-<div class="biblioentry" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)" id="refUnicode5"><p>[<abbr>Unicode</abbr>] <span class="title"><em>The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)</em>. </span></p>
+<div class="biblioentry" title="The Unicode Consortium. The Unicode Standard." id="refUnicode5"><p>[<abbr>Unicode</abbr>] <span class="title"><em> The Unicode Consortium. <a class="link" href="http://www.unicode.org/versions/latest/">The Unicode Standard.</a></em>.</span></p>
 </div>
 
 <div class="biblioentry" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)" id="refXML"><p>[<abbr>XML</abbr>] <span class="title"><em> <a class="link" href="http://www.w3.org/TR/2008/REC-xml-20081126/">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a> </em>. </span><span class="author">T. Bray, et al. </span><span class="date">26 November 2008. </span></p>
