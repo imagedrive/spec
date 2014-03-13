@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EPUB Link Relationships Vocabulary</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="dcterms:creator" content="mgylling" />
+<meta name="dcterms:creator" content="mgarrish" />
+<meta name="dcterms:issued" content="2013-11-08" />
+<meta name="dcterms:publisher" content="International Digital Publishing Forum (IDPF)" />
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<style type="text/css">
+p.identity{
+margin-top:-3em;
+font-size:75%;
+}
+span.pubdate{
+color:rgb(0, 0, 0);
+}</style>
+</head>
+<body>
+<h1>EPUB Link Relationships Vocabulary</h1>
+
+<p class="identity">
+<span class="pubdate">2013年11月8日</span>
+</p>
+
+<div class="printhistory">
+<dl class="printhistory">
+<dt>この版</dt>
+<dd>
+<a class="link" href="http://www.idpf.org/epub/vocab/package/link/rel-vocab-20131108.html">http://www.idpf.org/epub/vocab/package/link/rel-vocab-20131108.html</a>
+</dd>
+<dt>最新版</dt>
+<dd>
+<a class="link" href="http://www.idpf.org/epub/vocab/package/link" >http://www.idpf.org/epub/vocab/package/link</a>
+</dd>
+<dt>前の版</dt>
+<dd>N/A</dd>
+</dl>
+<!-- <p class="diff"> A <a class="link"
+	href="http://code.google.com/p/epub-revision/source/diff?spec=svn4858&amp;old=3218&amp;r=4858&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Frel-package.html">diff of changes</a> from the previous version is also available. </p>-->
+</div>
+
+<h2>要約</h2>
+
+<p>このドキュメントは EPUB&reg; Package Document の <code class="markup"><a class="codelink" href="epub301-publications.xhtml#sec-link-elem" title="3.4.9 The link Element">link</a></code> 要素 <code class="markup"><a class="xref" href="epub301-publications.xhtml#attrdef-link-rel">rel</a></code> 属性を利用するとき、リーディングシステムが認識するのに必要な関連する値のセットを定義する。</p>
+
+<p>Package Document 内での宣言とそれらを使用する方法を包含する、接頭辞についてより詳細な情報については、<a href="epub301-publications.xhtml#sec-metadata-assoc">Publication 仕様内の語彙の関連付けメカニズム</a>を参照されたい。</p>
+
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-conformance">&gt;</a>&#160;</span>適合性宣言</h2>
+
+<p>この文書内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">may</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr>RFC2119</abbr>]</a> の記述に従って解釈される。</p>
+
+<p>この仕様のすべての例は有益な参考情報である。</p>
+
+<h2>改訂方針</h2>
+
+<p>このドキュメントは、常に変更されることがある。ここで定義された用語は、削除されることはないが、廃止になるかもしれない。</p>
+<p>追加や変更、説明の要求は、<a href="https://code.google.com/p/epub-revision/issues/list">EPUB 3 Revision Tracker</a> を介して行わなければならない。</p>
+
+<h2>プロパティ</h2>
+
+<div class="section" id="sec-link-rel-values">
+<div class="informaltable" id="rdfa-vocab-metarec">
+<!-- Add with AHL
+<table border="1" id="acquire">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">acquire</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要：</td>
+<td class="rdfa-property-desc"><span class="property">acquire</span> プロパティは、出版物のフルバージョンを入手できる場所を識別するためにプレビューするのに使用する。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数：</td>
+<td class="rdfa-cardinality"><code class="option">0 以上</code></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">拡張できる対象：</td>
+<td class="entry">単一の出版物に適用される。<code class="markup"><a class="codelink" href="epub301-publications.xhtml#attrdef-link-refines">refines</a></code> 属性が存在する場合に使用しては<span class="rfc2119">ならない（must not）</span>。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例：</td>
+<td class="entry"><code class="prop-example">&lt;link rel="acquire" href="http://example.org/book/9781448103706" media-type="text/html"/&gt;</code></td>
+</tr>
+</tbody>
+
+</table> -->
+<table border="1" id="marc21xml-record">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">marc21xml-record</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要：</td>
+<td class="rdfa-property-desc"><span class="property">marc21xml-record</span> プロパティが参照されるリソースは、MARCXML レコード <a class="biblioref" href="http://www.loc.gov/standards/marcxml/" title="MARC 21 XML Schema">[<abbr>MARC21XML</abbr>]</a> であることを示している。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数：</td>
+<td class="rdfa-cardinality">
+<code class="option">0 または 1 つ</code>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">拡張できる対象：</td>
+<td class="entry">単一の出版物に適用される。<code class="markup"><a class="codelink" href="epub301-publications.xhtml#attrdef-link-refines">refines</a></code> 属性が存在する場合に使用しては<span class="rfc2119">ならない（must not）</span>。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;link rel="marc21xml-record" href="pub/meta/nor-wood-marc21.xml"/&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" id="mods-record">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">mods-record</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要：</td>
+<td class="rdfa-property-desc"><span class="property">mods-record</span> プロパティが参照されるリソースは MODS レコード <a class="biblioref" href="http://www.loc.gov/standards/mods/" title="Metadata Object Description Schema (MODS)">[<abbr>MODS</abbr>]</a> であることを示している。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数：</td>
+<td class="rdfa-cardinality">
+<code class="option">0 または 1 つ</code>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">拡張できる対象：</td>
+<td class="entry">単一の出版物に適用される。<code class="markup"><a class="codelink" href="epub301-publications.xhtml#attrdef-link-refines">refines</a></code> 属性が存在する場合に使用しては<span class="rfc2119">ならない（must not）</span>。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;link rel="mods-record" href="pub/meta/nor-wood-mods.xml"/&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" id="onix-record">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">onix-record</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要：</td>
+<td class="rdfa-property-desc"><span class="property">onix-record</span> プロパティが参照されるリソースは ONIX レコード <a class="biblioref" href="http://www.editeur.org/" title="ONIX for Books">[<abbr>ONIX</abbr>]</a> であることを示している。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数：</td>
+<td class="rdfa-cardinality">
+<code class="option">0 または 1 つ</code>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">拡張できる対象：</td>
+<td class="entry">単一の出版物に適用される。<code class="markup"><a class="codelink" href="epub301-publications.xhtml#attrdef-link-refines">refines</a></code> 属性が存在する場合に使用しては<span class="rfc2119">ならない（must not）</span>。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;link rel="onix-record" href="pub/meta/nor-wood-onix.xml"/&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" id="record">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">record</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要：</td>
+<td class="rdfa-property-desc">
+<p>参照したリソースはメタデータのレコードであることを示す。</p>
+<p>参照されたレコードの型は、<code class="markup">link</code> 要素の <a class="xref" href="epub301-publications.xhtml#attrdef-link-media-type"><code class="markup">media-type</code> 属性</a>から識別できなければ<span class="rfc2119">ならない（must）</span>。</p>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数：</td>
+<td class="rdfa-cardinality">
+<code class="option">0 以上</code>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">拡張できる対象：</td>
+<td class="entry">単一の出版物に適用される。<code class="markup"><a class="codelink" href="epub301-publications.xhtml#attrdef-link-refines">refines</a></code> 属性が存在する場合に使用しては<span class="rfc2119">ならない（must not）</span>。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例：</td>
+<td class="entry"> 
+<code class="prop-example">&lt;link rel="record" href="book/52.atom" media-type="application/atom+xml;type=entry;profile=opds-catalog"/&gt;</code> 
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" id="xml-signature">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">xml-signature</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header multi-para">概要：</td>
+<td class="rdfa-property-desc"> 
+<p><span class="property">xml-signature</span> プロパティが参照されるリソースは、出版や、関連するプロパティの XML シグネチャ <a class="biblioref" href="http://www.w3.org/TR/xmldsig-core1/" title="XML-Signature Syntax and Processing Version 1.1">[<abbr>XML DSIG Core</abbr>]</a> が含まれていることを示している。</p>
+<p><code class="markup">link</code> 要素の <code class="markup">href</code> 属性は、通常、フラグメント識別子を経由して Signatures.xml ファイル <a class="biblioref" href="epub301-ocf.xhtml" title="Open Container Format 3.0">[<abbr>OCF3</abbr>]</a> 内の特定の <code class="markup">signature</code> 要素を参照している。</p>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数：</td>
+<td class="rdfa-cardinality">
+<code class="option">0 以上</code>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">拡張できる対象：</td>
+<td class="entry">すべてのプロパティ</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;link refines="#meta-authority-01" rel="xml-signature" href="../META-INF/signatures.xml#MAI-Signature"/&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" id="xmp-record">
+<colgroup>
+<col class="c1"/>
+<col class="c2"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="rdfa-property" colspan="2"><span class="property">xmp-record</span></td>
+</tr>
+<tr>
+<td class="rdfa-property-header">概要：</td>
+<td class="rdfa-property-desc"><span class="property">xmp-record</span> プロパティが参照されるリソースは XMP レコード <a class="biblioref" href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=57421" title="Extensible Metadata Platform">[<abbr>XMP</abbr>]</a> であることを示している。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">個数：</td>
+<td class="rdfa-cardinality">
+<code class="option">0 または 1 つ</code>
+</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">拡張できる対象：</td>
+<td class="entry">単一の出版物に適用される。<code class="markup"><a class="codelink" href="epub301-publications.xhtml#attrdef-link-refines">refines</a></code> 属性が存在する場合に使用しては<span class="rfc2119">ならない（must not）</span>。</td>
+</tr>
+<tr>
+<td class="rdfa-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;link rel="xmp-record" href="pub/meta/nor-wood-xmp.xml"/&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
+
