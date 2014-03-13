@@ -8,7 +8,7 @@
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  xml:lang="ja"
  version="XHTML+RDFa 1.0">
-<head>
+<head xmlns:epub="http://www.idpf.org/epub/vocab#">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <meta property="dcterms:creator" content="Wataru Yoshimura"/>
 <meta property="dcterms:issued" content="2011-10-11"/>
@@ -18,31 +18,61 @@
 <title>EPUB 3 Structural Semantics Vocabulary（日本語訳版）</title>
 <link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
 <link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<style type="text/css">
+p.identity {
+margin-top: -3em;
+font-size: 75%;
+}
+span.pubdate {
+color: rgb(0,0,0);
+}
+</style>
 </head>
-<body>
+<body xmlns:epub="http://www.idpf.org/epub/vocab#">
 <div class="attention">
 
-<p>EPUB 3.0.1 へ改訂中の EPUB 3.0 仕様書の日本語訳です。この翻訳は参考です。公式な文書ではありません。翻訳・解釈の正確性を保証しておりません。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/vocab/structure">EPUB 3 Structural Semantics Vocabulary</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/structure">http://www.idpf.org/epub/vocab/structure</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/vocab/structure">http://www.idpf.org/epub/vocab/structure</a> を参照されたい。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。<br/>また本文内の訳注は翻訳者の主観による補足である。</p>
+
 <dl>
 
 <dt>公開日:</dt>
-<dd>2013-10-01</dd>
+<dd>2013-11-08</dd>
+<dt>改定日:</dt>
+<dd>2014-03-12</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
+
 </dl>
 
 </div>
 
-
 <h1 property="dcterms:title">EPUB 3 Structural Semantics Vocabulary</h1>
+
+<div class="printhistory">
+<p class="identity"><span class="pubdate">2014年2月28日</span></p>
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20140228.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20140228.html</a></dd>
+<dt>最新版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure">http://www.idpf.org/epub/vocab/structure</a></dd>
+<dt>前の版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20131108.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20131108.html</a></dd>
+</dl>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4907&amp;old=4858&amp;r=4907&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fstructure.n3">変更点の差</a>分は、入手可能である。</p>
+</div>
+
 <h2 id="tocxsl">目次</h2>
 <ul>
+<li class="first"><a href="#h_statusofthisdocument">この文書のステータス</a></li>
 <li class="first"><a href="#h_aboutthisvocabulary">語彙について</a></li>
 <li class="first"><a href="#h_revisionpolicy">改訂方針</a></li>
 <li class="first"><a href="#h_partitions">文書のパーティション</a></li>
 <li class="first"><a href="#h_divisions">文書（内）のディビジョン</a></li>
 <li class="first"><a href="#h_sections">文書のセクションとコンポーネント</a></li>
-<li class="first"><a href="#h_references">文書の参照セクション</a><ul>
+<li class="first"><a href="#h_references">文書の参照セクション</a>
+<ul>
+<li><a href="#h_indexes">Indexes</a></li>
 <li><a href="#h_glossaries">用語集</a></li>
 <li><a href="#h_bibliographies">参考文献</a></li>
 </ul>
@@ -63,6 +93,29 @@
 <li class="first"><a href="#h_lists">リスト</a></li>
 <li class="first"><a href="#h_figures">図表</a></li>
 </ul>
+
+<div>
+<h2 id="h_statusofthisdocument">この文書のステータス</h2>
+<p>この文書は、進行中の <a href="http://www.idpf.org/epub/301">EPUB 3.0.1 revision</a> 際に導入された以下の用語を含んでいる：</p>
+<ul>
+<li>assessment</li>
+<li>figure</li>
+<li>heading-label</li>
+<li>heading-number</li>
+<li>learning-objective</li>
+<li>learning-resource</li>
+<li>loa</li>
+<li>lov</li>
+<li>outcome</li>
+<li>qna</li>
+<li>revision-history</li>
+<li>standard</li>
+</ul>
+<p><code>index</code> の用語を除外した <a href="#h_indexes">Indexes</a> セクションのすべての用語は、現在、Proposed Specification である <a href="http://www.idpf.org/epub/idx">EPUB Indexes specification</a> の新しい機能である。</p>
+<p>これらの仕様は、最終の Recommended Specification の状態に達するまで、関連する用語の使用はどれも、実験的と考えるべきである。</p>
+<p>この文書のすべての他の用語は、安定版である。</p>
+</div>
+
 <div>
 <h2 id="h_aboutthisvocabulary">語彙について</h2>
 <div property="dcterms:description">
@@ -165,77 +218,77 @@
 <p>作品の前の導入部分。一般的に作品の著者によって書かれない。<span class="note">訳注：前書き</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="preface" about="#preface" typeof="rdf:Property">preface</dt>
 <dd about="#preface" property="rdfs:comment" datatype="xsd:string">
 <p>作品の前の導入部分。一般的に作品の作者によって書かれる。<span class="note">訳注：序</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="prologue" about="#prologue" typeof="rdf:Property">prologue</dt>
 <dd about="#prologue" property="rdfs:comment" datatype="xsd:string">
 <p>物語の背景を設定する導入部分。一般的に物語そのもの。<span class="note">訳注：序章</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="introduction" about="#introduction" typeof="rdf:Property">introduction</dt>
 <dd about="#introduction" property="rdfs:comment" datatype="xsd:string">
 <p>作品のはじまりのセクション。一般的に読者へ作品の内容の範囲または性質を紹介する。<span class="note">訳注：前書き</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="preamble" about="#preamble" typeof="rdf:Property">preamble</dt>
 <dd about="#preamble" property="rdfs:comment" datatype="xsd:string">
 <p>作品の始まりのセクション。一般的に作品の内容の範囲または性質に関して紹介のおよび／または説明的な散文を含む。<span class="note">訳注：前文</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="conclusion" about="#conclusion" typeof="rdf:Property">conclusion</dt>
 <dd about="#conclusion" property="rdfs:comment" datatype="xsd:string">
 <p>一般的に作品を締めくくる結びのセクション。<span class="note">訳注：結び</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="epilogue" about="#epilogue" typeof="rdf:Property">epilogue</dt>
 <dd about="#epilogue" property="rdfs:comment" datatype="xsd:string">
 <p>一般的に、物語の一部であるが、本筋より後のことを書かれている結びのセクション。<span class="note">訳注：終章</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="afterword" about="#afterword" typeof="rdf:Property">afterword</dt>
 <dd about="#afterword" property="rdfs:comment" datatype="xsd:string">
 <p>著者または物語において重要な人物による締めくくりの言葉で、一般的に、物語が書かれたことについての洞察や、そのタイムラインから発生した重要または関連するイベントを提供する。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="epigraph" about="#epigraph" typeof="rdf:Property">epigraph</dt>
 <dd about="#epigraph" property="rdfs:comment" datatype="xsd:string">
 <p>関連はあるが、テキストに不可欠ではない引用。<span class="note">訳注：題辞　<a href="http://ja.wikipedia.org/wiki/%E9%A1%8C%E8%BE%9E">エピグラフ - Wikipedia</a></span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="notice" about="#notice" typeof="rdf:Property">notice</dt>
 <dd about="#notice" property="rdfs:comment" datatype="xsd:string">
 <p>通知。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="warning" about="#warning" typeof="rdf:Property">warning</dt>
 <dd about="#warning" property="rdfs:comment" datatype="xsd:string">
 <p>注意。<span class="note">訳注：注意事項や警告など</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 </dl>
 </div>
@@ -247,7 +300,7 @@
 <p>一般的に目次は、作品の frontmatter またはセクションの先頭に見られる。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 
 <dt id="loa" about="#loa" typeof="rdf:Property">loa</dt>
@@ -255,7 +308,7 @@
 <p>作品に含まれているオーディオクリップの一覧。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 
 <dt id="loi" about="#loi" typeof="rdf:Property">loi</dt>
@@ -263,14 +316,14 @@
 <p>作品に含まれているイラストの一覧。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="lot" about="#lot" typeof="rdf:Property">lot</dt>
 <dd about="#lot" property="rdfs:comment" datatype="xsd:string">
 <p>作品に含まれている見出しの一覧。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 
 <dt id="lov" about="#lov" typeof="rdf:Property">lov</dt>
@@ -278,7 +331,7 @@
 <p>作品に含まれているビデオクリップの一覧。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 
 <dt id="appendix" about="#appendix" typeof="rdf:Property">appendix</dt>
@@ -286,30 +339,247 @@
 <p>補足情報。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
-</dd>
-<dt id="index" about="#index" typeof="rdf:Property">index</dt>
-<dd about="#index" property="rdfs:comment" datatype="xsd:string">
-<p>出版物内の詳細な情報の（通常はアルファベット順に整えられる）詳細なリスト</p>
-</dd>
-<dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="colophon" about="#colophon" typeof="rdf:Property">colophon</dt>
 <dd about="#colophon" property="rdfs:comment" datatype="xsd:string">
 <p>概要は普通、出版物の最後に置かれ、（出版物の）版に関連のあるプロダクションノートを説明する。<span class="note">訳注：奥付</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a>, <a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a>, <a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="landmarks" about="#landmarks" typeof="rdf:Property">landmarks</dt>
 <dd about="#landmarks" property="rdfs:comment" datatype="xsd:string">
 <p>出版物に含まれる周知の/繰り返される要素を参照するコレクション。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 </dl>
+
+<div id="indexes" about="#indexes" typeof="rdf:Bag">
+<h3 id="h_indexes" about="#indexes" rev="dcterms:title">Indexes</h3>
+<dl about="#indexes" rev="rdfs:member">
+<dt id="index" about="#index" typeof="rdf:Property">index</dt>
+<dd about="#index" property="rdfs:comment" datatype="xsd:string">
+<p>出版物内の特定の情報の、通常はアルファベット順に並べられた、詳細なリスト。</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a>、<a href="http://www.w3.org/TR/html5/sections.html#the-body-element-0">body</a>
+</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-index">EPUB Indexes – index プロパティ</a>
+</p>
+</dd>
+<dt id="index-headnotes" about="#index-headnotes" typeof="rdf:Property">index-headnotes</dt>
+<dd about="#index-headnotes" property="rdfs:comment" datatype="xsd:string">
+<p>index を使用して、ユーザーを支援する物語や他のコンテンツ。</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">必須の親コンテクスト：</span>
+<span class="subpropref" about="#index-headnotes" rel="role:scope" resource="#index">
+<a href="#index">index</a>
+</span>
+</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a>、<a href="http://www.w3.org/TR/html5/sections.html#the-header-element">header</a>
+</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-headnotes">EPUB Indexes – index-headnotes プロパティ</a>
+</p>
+</dd>
+<dt id="index-legend" about="#index-legend" typeof="rdf:Property">index-legend</dt>
+<dd about="#index-legend" property="rdfs:comment" datatype="xsd:string">
+<p>記号、略語または index で使用される特殊な書式とその意味の一覧。</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">必須の親コンテクスト：</span> <span class="subpropref" about="#index-legend" rel="role:scope" resource="#index-headnotes"> <a href="#index-headnotes">index-headnotes</a></span>
+</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">HTML で使用するコンテクスト：</span>
+<a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#the-dl-element">dl</a>
+</p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-legend">EPUB Indexes – index-legend プロパティ</a></p>
+</dd>
+<dt id="index-group" about="#index-group" typeof="rdf:Property">index-group</dt>
+<dd about="#index-group" property="rdfs:comment" datatype="xsd:string">
+<p>例えば、メインエントリの先頭文字（starting letter）など、共通の特徴を共有する連続したメインエントリのコレクション。</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">必須の親コンテクスト：</span> <span class="subpropref" about="#index-group" rel="role:scope" resource="#index"> <a href="#index">index</a></span>
+</p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-group">EPUB Indexes – index-group プロパティ</a></p>
+</dd>
+<dt id="index-entry-list" about="#index-entry-list" typeof="rdf:Property">index-entry-list</dt>
+<dd about="#index-entry-list" property="rdfs:comment" datatype="xsd:string">
+<p>連続したメインエントリまたはサブエントリのコレクション。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-entry-list" rel="role:scope" resource="#index-entry"> <a href="#index-entry">index-entry</a></span>、<span class="subpropref" about="#index-entry-list" rel="role:scope" resource="#index-group"> <a href="#index-group">index-group</a> </span> と <span class="subpropref" about="#index-entry-list" rel="role:scope" resource="#index"> <a href="#index">index</a></span></p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/grouping-content.html#the-ul-element">ul</a>；このプロパティは、index-headnotes 内を除いて、ul が index の先祖を持つ場合、暗黙的に指定される</p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-entry-list">EPUB Indexes – index-entry-list プロパティ</a></p>
+</dd>
+<dt id="index-entry" about="#index-entry" typeof="rdf:Property">index-entry</dt>
+<dd about="#index-entry" property="rdfs:comment" datatype="xsd:string">
+<p>任意の付帯するサブエントリ、ロケータ、相互参照と/または編集者注を持つある用語。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-entry" rel="role:scope" resource="#index-entry-list"><a href="#index-entry-list">index-entry-list</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/grouping-content.html#the-li-element">li</a>；このプロパティは、親 ul が型 index-entry-list（暗黙的または明示的）の場合、暗黙的に指定される</p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-entry">EPUB Indexes – index-entry プロパティ</a></p>
+</dd>
+<dt id="index-term" about="#index-term" typeof="rdf:Property">index-term</dt>
+<dd about="#index-term" property="rdfs:comment" datatype="xsd:string">
+<p>単語、語句、文字列、グリフまたはインデックス可能なコンテンツを表す画像。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-term" rel="role:scope" resource="#index-xref-related"><a href="#index-xref-related">index-xref-related</a></span>、<span class="subpropref" about="#index-term" rel="role:scope" resource="#index-entry"> <a href="#index-entry">index-entry</a></span> と <span class="subpropref" about="#index-term" rel="role:scope" resource="#index-xref-preferred"><a href="#index-xref-preferred">index-xref-preferred</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a>；典型的に <a href="http://www.w3.org/TR/html5/text-level-semantics.html#the-span-element">span</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-term">EPUB Indexes – index-term プロパティ</a></p>
+</dd>
+<dt id="index-editor-note" about="#index-editor-note" typeof="rdf:Property">index-editor-note</dt>
+<dd about="#index-editor-note" property="rdfs:comment" datatype="xsd:string">
+<p>単一のエントリに関連する編集者注。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span> <span class="subpropref" about="#index-editor-note" rel="role:scope" resource="#index-entry"> <a href="#index-entry">index-entry</a> </span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フローコンテンツ</a></p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-editor-note">EPUB Indexes – index-editor-note プロパティ</a>
+</p>
+</dd>
+<dt id="index-locator" about="#index-locator" typeof="rdf:Property">index-locator</dt>
+<dd about="#index-locator" property="rdfs:comment" datatype="xsd:string">
+<p>出版物内のインデックス化されたコンテンツの存在を参照。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-locator" rel="role:scope" resource="#index-entry"><a href="#index-entry">index-entry</a></span>、<span class="subpropref" about="#index-locator" rel="role:scope" resource="#index-locator-list"><a href="#index-locator-list">index-locator-list</a></span> と <span class="subpropref" about="#index-locator" rel="role:scope" resource="#index-locator-range"><a href="#index-locator-range">index-locator-range</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element">a</a>；このプロパティは、親コンテクストが、index-locator-list または index-locator-range の場合、暗黙的に指定される</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-locator">EPUB Indexes – index-locator プロパティ</a>
+</p>
+</dd>
+<dt id="index-locator-list" about="#index-locator-list" typeof="rdf:Property">index-locator-list</dt>
+<dd about="#index-locator-list" property="rdfs:comment" datatype="xsd:string">
+<p>連続ロケータまたはロケータの範囲のコレクション。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-locator-list" rel="role:scope" resource="#index-entry"><a href="#index-entry">index-entry</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/grouping-content.html#the-ul-element">ul</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-locator-list">EPUB Indexes – index-locator-list プロパティ</a></p>
+</dd>
+<dt id="index-locator-range" about="#index-locator-range" typeof="rdf:Property">index-locator-range</dt>
+<dd about="#index-locator-range" property="rdfs:comment" datatype="xsd:string">
+<p>単一のポイントよりはむしろコンテンツの範囲に用語に接続するロケータの組み合わせ。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-locator-range" rel="role:scope" resource="#index-locator-list"><a href="#index-locator-list">index-locator-list</a></span> と <span class="subpropref" about="#index-locator-range" rel="role:scope" resource="#index-entry"><a href="#index-entry">index-entry</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フローコンテンツ</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-locator-range">EPUB Indexes – index-locator-range プロパティ</a></p>
+</dd>
+<dt id="index-xref-preferred" about="#index-xref-preferred" typeof="rdf:Property">index-xref-preferred</dt>
+<dd about="#index-xref-preferred" property="rdfs:comment" datatype="xsd:string">
+<p>インデックス内のひとつの用語からひとつ以上の推奨する用語または用語カテゴリの参照（“XXXを見よ”に類似）。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-xref-preferred" rel="role:scope" resource="#index-entry"><a href="#index-entry">index-entry</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フローコンテンツ</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-xref-preferred">EPUB Indexes – index-xref-preferred プロパティ</a></p>
+</dd>
+<dt id="index-xref-related" about="#index-xref-related" typeof="rdf:Property">index-xref-related</dt>
+<dd about="#index-xref-related" property="rdfs:comment" datatype="xsd:string">
+<p>インデックス内のひとつの用語からひとつ以上の関連する用語または用語カテゴリの参照（“XXXも見よ”に類似）。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-xref-related" rel="role:scope" resource="#index-entry"><a href="#index-entry">index-entry</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フローコンテンツ</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-xref-related">EPUB Indexes – index-xref-related プロパティ</a></p>
+</dd>
+<dt id="index-term-category" about="#index-term-category" typeof="rdf:Property">index-term-category</dt>
+<dd about="#index-term-category" property="rdfs:comment" datatype="xsd:string">
+<p>単語、語句、文字列、グリフまたはインデックス内の用語のカテゴリを表す画像。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-term-category" rel="role:scope" resource="#index-xref-related"><a href="#index-xref-related">index-xref-related</a></span> と <span class="subpropref" about="#index-term-category" rel="role:scope" resource="#index-xref-preferred"><a href="#index-xref-preferred">index-xref-preferred</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element">a</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-term-category">EPUB Indexes – index-term-category プロパティ</a></p>
+</dd>
+<dt id="index-term-categories" about="#index-term-categories" typeof="rdf:Property">index-term-categories</dt>
+<dd about="#index-term-categories" property="rdfs:comment" datatype="xsd:string">
+<p>インデックスに関連している用語カテゴリのリストのためのラッパー。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-term-categories" rel="role:scope" resource="#index-xref-related"><a href="#index-xref-related">index-xref-related</a></span> と <span class="subpropref" about="#index-term-categories" rel="role:scope" resource="#index-xref-preferred"><a href="#index-xref-preferred">index-xref-preferred</a></span></p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element">a</a></p>
+</dd>
+<dd>
+<p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-term-categories">EPUB Indexes – index-term-categories プロパティ</a></p>
+</dd>
+</dl>
+</div>
+
 <div id="glossaries" about="#glossaries" typeof="rdf:Bag">
 <h3 id="h_glossaries" about="#glossaries" rev="dcterms:title">用語集</h3>
 <dl about="#glossaries" rev="rdfs:member">
@@ -318,7 +588,7 @@
 <p>それらの語彙に関して定義を持つある知識の特定領域内の語彙のアルファベット順リスト。<span class="note">訳注：用語集</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/grouping-content.html#the-dl-element">dl 要素</a>、<a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/grouping-content.html#the-dl-element">dl 要素</a>、<a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="glossterm" about="#glossterm" typeof="rdf:Property">glossterm</dt>
 <dd about="#glossterm" property="rdfs:comment" datatype="xsd:string">
@@ -351,7 +621,7 @@
 <p>引用した作品の一覧。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="biblioentry" about="#biblioentry" typeof="rdf:Property">biblioentry</dt>
 <dd about="#biblioentry" property="rdfs:comment" datatype="xsd:string">
@@ -363,7 +633,7 @@
 <a href="#bibliography">bibliography</a></span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 </dl>
 </div>
@@ -380,7 +650,7 @@
 <p class="note">日本の本では扉に相当するが、洋書のタイトルページは書誌データを含んでいるので機能は奥付に相当している。訳注：引用・参考　<a href="http://ja.wikipedia.org/wiki/%E6%A8%99%E9%A1%8C%E7%B4%99">標題紙 - Wikipedia</a></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="halftitle-page" about="#halftitle-page" typeof="rdf:Property">halftitlepage</dt>
 <dd about="#halftitle-page" property="rdfs:comment" datatype="xsd:string">
@@ -388,63 +658,63 @@
 <p class="note">略標題。Wikipedia の <a href="http://en.wikipedia.org/wiki/Half_title">Half title</a> によると“サブタイトル、著者、出版社や類するデータをリスト化したタイトルページとは対照的に、本のタイトルのみをもたらすページ”とある。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="copyright-page" about="#copyright-page" typeof="rdf:Property">copyright-page</dt>
 <dd about="#copyright-page" property="rdfs:comment" datatype="xsd:string">
 <p>作品の著作権のページ。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="acknowledgments" about="#acknowledgments" typeof="rdf:Property">acknowledgments</dt>
 <dd about="#acknowledgments" property="rdfs:comment" datatype="xsd:string">
 <p>作品の実現に関係した実在者の謝辞を含んでいる一節。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="imprint" about="#imprint" typeof="rdf:Property">imprint</dt>
 <dd about="#imprint" property="rdfs:comment" datatype="xsd:string">
 <p>作品の出版や販売に関連する情報。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="imprimatur" about="#imprimatur" typeof="rdf:Property">imprimatur</dt>
 <dd about="#imprimatur" property="rdfs:comment" datatype="xsd:string">
 <p>作品の発行を承認している正式な声明。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="contributors" about="#contributors" typeof="rdf:Property">contributors</dt>
 <dd about="#contributors" property="rdfs:comment" datatype="xsd:string">
 <p>作品の貢献者の一覧。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="other-credits" about="#other-credits" typeof="rdf:Property">other-credits</dt>
 <dd about="#other-credits" property="rdfs:comment" datatype="xsd:string">
 <p>以前に出版された作品の一部、イラストのクレジットと著作権のある資料からの引用の許可への謝辞。<span class="note">訳注：謝辞</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="errata" about="#errata" typeof="rdf:Property">errata</dt>
 <dd about="#errata" property="rdfs:comment" datatype="xsd:string">
 <p>出版物の正誤表は、一般的に印刷された作品では、単独の用紙が挿入されている。製本されることもある。<span class="note">訳注：正誤表</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="dedication" about="#dedication" typeof="rdf:Property">dedication</dt>
 <dd about="#dedication" property="rdfs:comment" datatype="xsd:string">
 <p>ひとりあるいは複数の特定の人に宛てられる献辞。<span class="note">訳注：献辞</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 
 <dt id="revision-history" about="#revision-history" typeof="rdf:Property">revision-history</dt>
@@ -452,7 +722,7 @@
 <p>作品に加えられた変更の記録。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 
 </dl>
@@ -468,7 +738,7 @@
 <p><span class="subpropref" about="#help" rel="rdfs:subPropertyOf" resource="http://www.w3.org/1999/xhtml/vocab/#complementary"><a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a></span> <span class="subproplabel">から継承</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a></p>
 </dd>
 <dt id="marginalia" about="#marginalia" typeof="rdf:Property">marginalia</dt>
 <dd about="#marginalia" property="rdfs:comment" datatype="xsd:string">
@@ -478,7 +748,7 @@
 <p><span class="subpropref" about="#marginalia" rel="rdfs:subPropertyOf" resource="http://www.w3.org/1999/xhtml/vocab/#complementary"><a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a></span> <span class="subproplabel">から継承</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a></p>
 </dd>
 <dt id="sidebar" about="#sidebar" typeof="rdf:Property">sidebar</dt>
 <dd about="#sidebar" property="rdfs:comment" datatype="xsd:string">
@@ -515,7 +785,7 @@
 <p><span class="subpropref" about="#halftitle" rel="rdfs:subPropertyOf" resource="#title"><a href="#title">title</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>。このプロパティは、ドキュメントのスコープ内に一度だけ出現されるべきである。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>。このプロパティは、ドキュメントのスコープ内に一度だけ出現されるべきである。</p>
 </dd>
 <dt id="fulltitle" about="#fulltitle" typeof="rdf:Property">fulltitle</dt>
 <dd about="#fulltitle" property="rdfs:comment" datatype="xsd:string">
@@ -528,7 +798,7 @@
 <p><span class="subpropref" about="#fulltitle" rel="owl:sameAs" resource="http://purl.org/dc/terms/title"><a href="http://purl.org/dc/terms/title">http://purl.org/dc/terms/title</a></span> <span class="subproplabel">と同様である。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>。このプロパティは、ドキュメントのスコープ内に一度だけ出現されるべきである。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>。このプロパティは、ドキュメントのスコープ内に一度だけ出現されるべきである。</p>
 </dd>
 <dt id="covertitle" about="#covertitle" typeof="rdf:Property">covertitle</dt>
 <dd about="#covertitle" property="rdfs:comment" datatype="xsd:string">
@@ -538,14 +808,14 @@
 <p><span class="subpropref" about="#covertitle" rel="rdfs:subPropertyOf" resource="#title"><a href="#title">title</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>。このプロパティは、ドキュメントのスコープ内に一度だけ出現されるべきである。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>。このプロパティは、ドキュメントのスコープ内に一度だけ出現されるべきである。</p>
 </dd>
 <dt id="title" about="#title" typeof="rdf:Property">title</dt>
 <dd about="#title" property="rdfs:comment" datatype="xsd:string">
 <p>作品の主要な名前、または、<a href="#fulltitle">fulltitle</a> のコンテクストで使われるとき、完全なタイトルの主要な部分。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>、<a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content-0">フレージング・コンテンツ</a>。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>、<a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content-0">フレージングコンテンツ</a>。</p>
 </dd>
 <dt id="subtitle" about="#subtitle" typeof="rdf:Property">subtitle</dt>
 <dd about="#subtitle" property="rdfs:comment" datatype="xsd:string">
@@ -555,7 +825,7 @@
 <p><span class="subpropref" about="#subtitle" rel="rdfs:subPropertyOf" resource="#title"><a href="#title">title</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>。<a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#the-p-element">p 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#the-div-element">div 要素</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content-0">フレージング・コンテンツ</a>。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>。<a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#the-p-element">p 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#the-div-element">div 要素</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content-0">フレージングコンテンツ</a>。</p>
 </dd>
 
 <dt id="heading-label" about="#heading-label" typeof="rdf:Property">heading-label</dt>
@@ -566,7 +836,7 @@
 <p><span class="subpropref" about="#heading-label" rel="rdfs:subPropertyOf" resource="#title"><a href="#title">title</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content-0">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content-0">フレージングコンテンツ</a></p>
 </dd>
 <dt id="heading-number" about="#heading-number" typeof="rdf:Property">heading-number</dt>
 <dd about="#heading-number" property="rdfs:comment" datatype="xsd:string">
@@ -576,7 +846,7 @@
 <p><span class="subpropref" about="#heading-number" rel="rdfs:subPropertyOf" resource="#title"><a href="#title">title</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディング・コンテンツ</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content-0">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘディングコンテンツ</a>の子孫にあたる<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content-0">フレージングコンテンツ</a></p>
 </dd>
 
 </dl>
@@ -591,28 +861,28 @@
 <p>教えられている学生の理解度を測定するのに役立つテストやクイズ、他のアクティビティ。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="learning-objective" about="#learning-objective" typeof="rdf:Property">learning-objective</dt>
 <dd about="#learning-objective" property="rdfs:comment" datatype="xsd:string">
 <p>学習目的または明示的な学習目的への参照を明示的に指定または説明する。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フロー・コンテンツ</a>, <a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フローコンテンツ</a>, <a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a></p>
 </dd>
 <dt id="learning-resource" about="#learning-resource" typeof="rdf:Property">learning-resource</dt>
 <dd about="#learning-resource" property="rdfs:comment" datatype="xsd:string">
 <p>学習を強化するために提供されるリソース、またはそのようなリソースへの参照。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フロー・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フローコンテンツ</a></p>
 </dd>
 <dt id="outcome" about="#outcome" typeof="rdf:Property">outcome</dt>
 <dd about="#outcome" property="rdfs:comment" datatype="xsd:string">
 <p>レッスンやアクティビティの結果から期待される学生の理解度や能力。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フロー・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フローコンテンツ</a></p>
 </dd>
 <dt id="practice" about="#practice" typeof="rdf:Property">practice</dt>
 <dd about="#practice" property="rdfs:comment" datatype="xsd:string">
@@ -622,28 +892,28 @@
 <p><span class="subpropref" about="#practice" rel="rdfs:seeAlso" resource="#practices"><a href="#practices">practices</a></span> <span class="subproplabel">も参照されたい</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピングコンテンツ</a></p>
 </dd>
 <dt id="practices" about="#practices" typeof="rdf:Property">practices</dt>
 <dd about="#practices" property="rdfs:comment" datatype="xsd:string">
 <p><a href="#practice">practice</a> のコレクション。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="qna" about="#qna" typeof="rdf:Property">qna</dt>
 <dd about="#qna" property="rdfs:comment" datatype="xsd:string">
 <p>質疑応答のセクション。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span>リストまたは<a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span>リストまたは<a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="standard" about="#standard" typeof="rdf:Property">standard</dt>
 <dd about="#standard" property="rdfs:comment" datatype="xsd:string">
 <p>教育では、期待や要件の公式なセットは、一般的に政府や標準化団体によって公表される。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a></p>
 </dd>
 </dl>
 
@@ -660,7 +930,7 @@
 <p><span class="subpropref" about="#annotation" rel="rdfs:subPropertyOf" resource="http://www.w3.org/1999/xhtml/vocab/#complementary"><a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a></span> <span class="subproplabel">から継承</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a></p>
 </dd>
 <dt id="note" about="#note" typeof="rdf:Property">note</dt>
 <dd about="#note" property="rdfs:comment" datatype="xsd:string">
@@ -670,7 +940,7 @@
 </p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span>ひとつの note を識別する <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside</a> 要素、または（<a href="#footnotes">footnotes</a> と <a href="#rearnotes">rearnotes</a> を参照する）グループ内の個々の note を識別するセクショニング・コンテンツの子孫要素。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span>ひとつの note を識別する <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside</a> 要素、または（<a href="#footnotes">footnotes</a> と <a href="#rearnotes">rearnotes</a> を参照する）グループ内の個々の note を識別するセクショニングコンテンツの子孫要素。</p>
 </dd>
 <dt id="footnote" about="#footnote" typeof="rdf:Property">footnote</dt>
 <dd about="#footnote" property="rdfs:comment" datatype="xsd:string">
@@ -683,7 +953,7 @@
 <p><span class="subpropref" about="#footnote" rel="rdfs:seeAlso" resource="#footnotes"><a href="#footnotes">footnotes</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span>一つの footnote を識別する <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、または（<a href="#footnotes">footnotes</a> と <a href="#rearnotes">rearnotes</a> を参照する）グループ内の個々の footnote を識別するセクショニング・コンテンツの子孫要素。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span>一つの footnote を識別する <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、または（<a href="#footnotes">footnotes</a> と <a href="#rearnotes">rearnotes</a> を参照する）グループ内の個々の footnote を識別するセクショニングコンテンツの子孫要素。</p>
 </dd>
 <dt id="rearnote" about="#rearnote" typeof="rdf:Property">rearnote</dt>
 <dd about="#rearnote" property="rdfs:comment" datatype="xsd:string">
@@ -696,7 +966,7 @@
 <p><span class="subpropref" about="#rearnote" rel="rdfs:seeAlso" resource="#rearnotes"><a href="#rearnotes">rearnotes</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span>一つの rearnote を識別する <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、または（<a href="#footnotes">footnotes</a> と <a href="#rearnotes">rearnotes</a> を参照する）グループ内の個々の rearnote を識別するセクショニング・コンテンツの子孫要素。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span>一つの rearnote を識別する <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、または（<a href="#footnotes">footnotes</a> と <a href="#rearnotes">rearnotes</a> を参照する）グループ内の個々の rearnote を識別するセクショニングコンテンツの子孫要素。</p>
 </dd>
 <dt id="footnotes" about="#footnotes" typeof="rdf:Property">footnotes</dt>
 <dd about="#footnotes" property="rdfs:comment" datatype="xsd:string">
@@ -706,7 +976,7 @@
 <p><span class="subpropref" about="#footnotes" rel="rdfs:seeAlso" resource="#footnote"><a href="#footnote">footnote</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 <dt id="rearnotes" about="#rearnotes" typeof="rdf:Property">rearnotes</dt>
 <dd about="#rearnotes" property="rdfs:comment" datatype="xsd:string">
@@ -716,7 +986,7 @@
 <p><span class="subpropref" about="#rearnotes" rel="rdfs:seeAlso" resource="#rearnote"><a href="#rearnote">rearnote</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 </dl>
 </div>
@@ -765,21 +1035,21 @@
 <p>キーワードまたはフレーズ。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content-0">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#phrasing-content-0">フレージングコンテンツ</a></p>
 </dd>
 <dt id="topic-sentence" about="#topic-sentence" typeof="rdf:Property">topic-sentence</dt>
 <dd about="#topic-sentence" property="rdfs:comment" datatype="xsd:string">
 <p>フレーズまたはセンテンスは段落を含むまえおきの要約として用いられる。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content-0">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#phrasing-content-0">フレージングコンテンツ</a></p>
 </dd>
 <dt id="concluding-sentence" about="#concluding-sentence" typeof="rdf:Property">concluding-sentence</dt>
 <dd about="#concluding-sentence" property="rdfs:comment" datatype="xsd:string">
 <p>フレーズまたはセンテンスは段落を含む結びの要約として用いられる。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content-0">フレージング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#phrasing-content-0">フレージングコンテンツ</a></p>
 </dd>
 </dl>
 </div>
@@ -791,14 +1061,14 @@
 <p>静的にページ分割されたメディアに生じる二つの連続したページ間の分かれ目の直前の位置を意味する（たまに意味のある）区切り文字。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#phrasing-content">フレージング</a>と<a href="http://www.w3.org/TR/html5/content-models.html#flow-content">フロー</a>・コンテンツ。もたらす要素の title 属性の値は、pagebreak の値を表す目的のために要素の内容より優先される。</p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング</a>と<a href="http://www.w3.org/TR/html5/dom.html#flow-content">フロー</a>コンテンツ。もたらす要素の title 属性の値は、pagebreak の値を表す目的のために要素の内容より優先される。</p>
 </dd>
 <dt id="page-list" about="#page-list" typeof="rdf:Property">page-list</dt>
 <dd about="#page-list" property="rdfs:comment" datatype="xsd:string">
 <p>静的にページ分割されたメディアへの <a href="#pagebreak">pagebreak</a> の参照リスト。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/content-models.html#sectioning-content-0">セクショニング・コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニングコンテンツ</a></p>
 </dd>
 </dl>
 </div>
