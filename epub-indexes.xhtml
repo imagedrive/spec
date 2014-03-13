@@ -7,27 +7,44 @@
 ]>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>EPUB Indexes 1.0（日本語訳版）</title>
+<title>EPUB Indexes 1.0</title>
 <link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
 <meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
 <link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
-<meta name="description" content="EPUB Indexes 1.0 の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを実現する方法と仕様に準拠している EPUB リーディングシステムで最適に処理されるように、EPUB 出版物のインデックスの構造とコンテンツをエンコードする一貫性のある方法を定義することである。"/>
 </head>
 <body>
+<div class="attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub/idx/epub-indexes.html">EPUB Indexes 1.0</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/idx/epub-indexes.html">http://www.idpf.org/epub/idx/epub-indexes.html</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/idx/epub-indexes.html">http://www.idpf.org/epub/idx/epub-indexes.html</a> を参照されたい。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。<br/>また本文内の訳注は翻訳者の主観による補足である。</p>
+
+<dl>
+
+<dt>公開日:</dt>
+<dd>2014-02-17</dd>
+<dt>改定日:</dt>
+<dd>2014-02-28</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+
+</dl>
+
+</div>
+
 <div class="book" title="EPUB Indexes 1.0">
 <h1 class="title">EPUB Indexes 1.0</h1>
-<p class="identity"><span class="pubdate">2014年1月14日</span><span class="releaseinfo">Draft Specification</span></p>
+<p class="identity"><span class="pubdate">2014年2月28日</span><span class="releaseinfo">Proposed Specification</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20140114.html">http://www.idpf.org/epub/idx/epub-indexes-20140114.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20140228.html">http://www.idpf.org/epub/idx/epub-indexes-20140228.html</a></dd>
 <dt>最新版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes.html">http://www.idpf.org/epub/idx/epub-indexes.html</a></dd>
 <dt>前の版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20131104.html">http://www.idpf.org/epub/idx/epub-indexes-20131104.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20140114.html">http://www.idpf.org/epub/idx/epub-indexes-20140114.html</a></dd>
 </dl>
-<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4884&amp;old=4848&amp;r=4884&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub-indexes.xml">変更点の差分</a>は、入手可能である。</p>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4905&amp;old=4884&amp;r=4905&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub-indexes.xml">変更点の差分</a>は、入手可能である。</p>
 <p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="./epub-indexes-errata/">正誤表（英語）</a>を参照されたい。</p>
 <div class="legal">
 <p class="copyright">Copyright &copy; 2010-2013 International Digital Publishing Forum&trade;</p>
@@ -157,7 +174,7 @@
 
 <p class="informative">このセクションは有益な情報である。</p>
 
-<p>この仕様の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを実現する方法と仕様に準拠している EPUB リーディングシステムで最適に処理されるように、EPUB 出版物の<a class="glossterm" href="#s1.2_j" title="index">インデックス</a>の構造とコンテンツをエンコードする一貫性のある方法を定義することである。リーディングシステムは、印刷物の索引の利点だけでなくインタラクティブな機能や印刷書籍では不可能な機能を提供するために、このエンコーディングを生かすことができる。</p>
+<p>この仕様の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを可能にする方法で、EPUB 出版物の<a class="glossterm" href="#s1.2_j" title="index">インデックス</a>の構造とコンテンツをエンコードの一貫性のある方法を定義し、仕様に準拠している EPUB リーディングシステム上で最適な方法で取り扱うことである。リーディングシステムは、印刷物の索引の利点だけでなくインタラクティブな機能や印刷書籍では不可能な機能を提供するために、このエンコーディングを生かすことができる。</p>
 
 <p>出版されたコンテンツ内の情報を発見する四つの方法には、目次の使用、（順次読み込みを含む）閲覧、検索、インデックスの使用がある。これらの四つの手法は、異なる特徴を持ち、異なる目的を果たす。目次は、コンテンツ自身と同じ順序と同じ言葉を掲載し、出版物で取り上げられているコンテンツの構造の概要を提供する。閲覧は、ユーザーが出版物全体の流し読みと、興味ある部分の拾い読みを可能にする。検索は、ユーザーが検索文字列に一致（またはほぼ一致）する単語が出版物内のどの場所にあるのかを発見することを可能にするが、多くの場合、重要性や独自性を考査していないものを提供するか、あまりにも多くの結果を返すか、ほぼ同義語または階層的に異なる用語のいずれかを採用することで対象を間違えるなどする（例えば、“戦争”を検索すると“紛争”や“戦闘”が見つからなかったり、“犬”を検索すると“スパニエル”や“レトリバー”、“ダックスフント”が見つからなかったり）。</p>
 
@@ -1873,7 +1890,7 @@
 </div>
 <p><a class="link" href="epub-indexes-index.html">この仕様書へのインデックス</a>は作成済みで、Web でシミュレーションされた用語カテゴリを含んでいる。</p>
 
-<p>同じインデックスのコンテンツは、この仕様に従って、<a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-index-xhtml.txt">EPUB3 出版物のためにタグ付けされた</a>ものも利用可能で、他の例の代わりとしてもよい（may）。インデックスに関連する<a class="link" href="http://www.idpf.org/epub/idx/nav-insertions-xhtml.txt">ナビゲーションドキュメント</a>と<a class="link" href="http://www.idpf.org/epub/idx/package-insertions-xhtml.txt">パッケージドキュメント</a>から関連した構造もまた利用可能である。</p>
+<p>同じインデックスのコンテンツは、この仕様に従って、<a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-index-xhtml.txt">EPUB3出版物のためにタグ付けされた</a>ものも利用可能で、他の例の代わりとしてもよい（may）。インデックスに関連する<a class="link" href="http://www.idpf.org/epub/idx/nav-insertions-xhtml.txt">ナビゲーションドキュメント</a>と<a class="link" href="http://www.idpf.org/epub/idx/package-insertions-xhtml.txt">パッケージドキュメント</a>から関連した構造もまた利用可能である。</p>
 </div>
 <div class="acknowledgements" title="Appendix F. Acknowledgements and Contributors" id="acknowledgements">
 <div class="titlepage">
