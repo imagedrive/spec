@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <meta charset="UTF-8" />
@@ -33,6 +38,9 @@
 <style>
 body{padding:3em;}
 header.pagetitle {margin-bottom:3em;}
+nav {margin-bottom:2em;}
+nav ol {margin:0 0 0 1.5em;padding:0;}
+nav li {margin-bottom:0.5em;}
 article.item {margin:3em 0;line-height:1.6;}
 article.item:first-child {margin-top:0em;}
 h1 {font-size:160%;font-weight:normal;}
@@ -50,7 +58,17 @@ h3 {font-size:120%;font-weight:bold;}
 
 </header>
 
-<section title="EPUB 3.0.1 仕様書・関連文書日本語訳一覧">
+<nav>
+<p>目次</p>
+<ol>
+<li><a href="#itemSpecEPUB301">EPUB 3.0.1 仕様書・関連文書</a></li>
+<li><a href="#itemSpecEPUB3">EPUB 3 仕様書・関連文書</a></li>
+<li><a href="#itemSpecEpubRelated">EPUB 関連文書</a></li>
+<li><a href="#itemSpecWeb">W3C 仕様書 日本語訳</a></li>
+</ol>
+</nav>
+
+<section id="itemSpecEPUB301" title="EPUB 3.0.1 仕様書・関連文書日本語訳一覧">
 
 <header class="itemtitle">
 
@@ -63,56 +81,68 @@ h3 {font-size:120%;font-weight:bold;}
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-overview.xhtml">EPUB 3 Overview</a></h3>
 <p>EPUB 3 Overview は、他の EPUB 3 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3 の全体の導入として役立ちます。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-overview.html">EPUB 3 Overview</a>” (IDPF Proposed Specification 28 February 2014)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-overview-20140228.html">EPUB 3 Overview</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-publications.xhtml">EPUB Publications 3.0.1</a></h3>
 <p>EPUB Publications 3.0.1 は、出版物のメタデータ、出版物に含まれるリソース、表示されるリソースの順番を Package Document に定義する仕様です。主に .opf ファイル内の metadata、manifest、spine 要素に含まれるそれぞれ dc:、item、itemref 要素を扱います。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-publications.html">EPUB Publications 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-publications-20140228.html">EPUB Publications 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a></h3>
 <p>EPUB Content Documents 3.0.1 は、EPUBR Publications のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義します。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html">EPUB Content Documents 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-contentdocs-20140228.html">EPUB Content Documents 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-ocf.xhtml">EPUB Open Container Format (OCF) 3.0.1</a></h3>
 <p>EPUB Open Container Format (OCF) 3.0.1 は、単一ファイルのコンテナに1つ以上の EPUBR Publication を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義しています。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-ocf.html">EPUB Open Container Format (OCF) 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-ocf-20140228.html">EPUB Open Container Format (OCF) 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-mediaoverlays.xhtml">EPUB Media Overlays 3.0.1</a></h3>
 <p>EPUB Media Overlays 3.0.1 は、EPUB Content Document と同期する音声表現用に、SMIL（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義しています。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-mediaoverlays.html">EPUB Media Overlays 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-mediaoverlays-20140228.html">EPUB Media Overlays 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-epubcfi.xhtml">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></h3>
 <p>EPUB Canonical Fragment Identifier (epubcfi) は、フラグメント識別子を使って EPUB Publication の任意のコンテンツを参照する標準方式を定めています。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a>” (IDPF Proposed Specification 28 February 2014)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20140228.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-changes.xhtml">EPUB 3.0.1 Changes from EPUB 3.0</a></h3>
 <p>EPUB 3.0.1 Changes from EPUB 3 は、重要な変更と追加を強調し、EPUB  3.0 仕様の最初の小改訂で行った変更を説明する。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-changes.html">EPUB 3.0.1 Changes from EPUB 3.0</a>” (IDPF Proposed Specification 28 February 2014)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-changes-20140228.html">EPUB 3.0.1 Changes from EPUB 3.0</a>” (IDPF Proposed Specification 28 February 2014)</p>
+</article>
+
+<article class="item">
+<h3><a href="http://imagedrive.github.io/spec/epub301-altss-tags.xhtml">Alternate Style Tags</a></h3>
+<p>このモジュールは、microformat を使用して代替スタイルシートのタグ付するためのパターンを定義している。</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/altss-tags/altss-tags-20140228.html">Alternate Style Tags</a>” (IDPF Proposed Specification 28 February 2014)</p>
+</article>
+
+<article class="item">
+<h3><a href="http://imagedrive.github.io/spec/epub-indexes.xhtml">EPUB Indexes 1.0</a></h3>
+<p>EPUB Indexes 1.0 の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを可能にする方法で、EPUB 出版物のインデックスの構造とコンテンツをエンコードの一貫性のある方法を定義し、仕様に準拠している EPUB リーディングシステム上で最適な方法で取り扱うことである。</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/idx/epub-indexes-20140228.html">EPUB Indexes 1.0</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub301-vocab-structure.xhtml">EPUB 3 Structural Semantics Vocabulary</a></h3>
 <p>EPUB 3 Structural Semantics Vocabulary は、出版物のコンテンツ内にセマンティック性を付与する epub:type 属性の値について定義しています。</p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/">EPUB 3 Structural Semantics Vocabulary</a>” (IDPF)</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20140228.html">EPUB 3 Structural Semantics Vocabulary</a>” (IDPF)</p>
 </article>
 
 </article>
 
 </section>
 
-<section title="EPUB 3 仕様書・関連文書日本語訳一覧">
+<section id="itemSpecEPUB3" title="EPUB 3 仕様書・関連文書日本語訳一覧">
 
 <header class="itemtitle">
 
@@ -178,10 +208,53 @@ h3 {font-size:120%;font-weight:bold;}
 
 </article>
 
+</section>
+
+<section id="itemSpecEpubRelated" title="EPUB 関連文書日本語訳一覧">
+
+<header class="itemtitle">
+
+<h2><span>EPUB 関連文書</span></h2>
+
+</header>
+
+<article role="main" class="itemlist">
+
+<article class="item">
+<h3><a href="http://imagedrive.github.io/spec/vocab-package-link-rel-vocab.xhtml">EPUB Link Relationships Vocabulary</a></h3>
+<p>EPUB Link Relationships Vocabulary は、EPUB&reg; Package Document の link 要素 rel 属性を利用するとき、リーディングシステムが認識するのに必要な関連する値のセットを定義する。</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/link/rel-vocab-20131108.html">EPUB Link Relationships Vocabulary</a>” (IDPF)</p>
+</article>
+
+<article class="item">
+<h3><a href="http://imagedrive.github.io/spec/vocab-package-pfx-reserved.xhtml">EPUB Publications Reserved Prefixes</a></h3>
+<p>EPUB Publications Reserved Prefixes は、EPUB&reg; Package Document のメタデータを使用するときに、リーディングシステムが認識するために必要な接頭辞のセットを定義する。</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/pfx/reserved-20131108.html">EPUB Publications Reserved Prefixes</a>” (IDPF)</p>
+</article>
+
+<article class="item">
+<h3><a href="http://imagedrive.github.io/spec/vocab-package-roles-registry.xhtml">EPUB Registry of Collection Roles</a></h3>
+<p>EPUB Registry of Collection Roles は、Package Document の collection 要素で使用するために IDPF が定義したすべての役割を掲載している。</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/roles/registry-20131108.html">EPUB Registry of Collection Roles</a>” (IDPF)</p>
+</article>
+
+<article class="item">
+<h3><a href="http://imagedrive.github.io/spec/vocab-package-types-registry.xhtml">EPUB Registry of Publication Types</a></h3>
+<p>EPUB Registry of Publication Types は、Package Document メタデータ内の dc:type 要素で使用するために IDPF で認められた型のセットを定義する。</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/types/registry-20131108.html">EPUB Registry of Publication Types</a>” (IDPF)</p>
+</article>
+
+<article class="item">
+<h3><a href="http://imagedrive.github.io/spec/vocab-structure-pfx-reserved.xhtml">EPUB Content Documents Reserved Prefixes</a></h3>
+<p>EPUB Content Documents Reserved Prefixes は、Content Document の EPUB&reg; epub:type 属性を使用するときに、リーディングシステムが認識するために必要な接頭辞のセットを定義する。</p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/pfx/reserved-20131108.html">EPUB Content Documents Reserved Prefixes</a>” (IDPF)</p>
+</article>
+
+</article>
 
 </section>
 
-<section title="W3C 仕様書 日本語訳一覧">
+<section id="itemSpecWeb" title="W3C 仕様書 日本語訳一覧">
 
 <header class="itemtitle">
 
