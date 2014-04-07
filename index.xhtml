@@ -5,7 +5,10 @@
 <!ENTITY trade "&#8482;">
 <!ENTITY reg "&#174;">
 ]>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ lang="ja"
+>
 <head itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <meta charset="UTF-8" />
 <title>仕様書・関連文書日本語訳一覧</title>
@@ -54,7 +57,7 @@ h3 {font-size:120%;font-weight:bold;}
 
 <header role="banner" class="pagetitle">
 
-<h1><span>仕様書 日本語訳一覧</span></h1>
+<h1 property="dcterms:title">仕様書 日本語訳一覧</h1>
 
 </header>
 
@@ -68,73 +71,103 @@ h3 {font-size:120%;font-weight:bold;}
 </ol>
 </nav>
 
-<section id="itemSpecEPUB301" title="EPUB 3.0.1 仕様書・関連文書日本語訳一覧">
+<section typeof="bibo:Chapter" id="itemSpecEPUB301" title="EPUB 3.0.1 仕様書・関連文書日本語訳一覧">
 
 <header class="itemtitle">
 
-<h2><span>EPUB 3.0.1 仕様書・関連文書</span></h2>
+<h2 rev="dcterms:title">EPUB 3.0.1 仕様書・関連文書</h2>
 
 </header>
 
 <article role="main" class="itemlist">
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-overview.xhtml">EPUB 3 Overview</a></h3>
+<article id="epub301-overview" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-overview.xhtml">EPUB 3 Overview</a></h3>
 <p>EPUB 3 Overview は、他の EPUB 3 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3 の全体の導入として役立ちます。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-overview-20140228.html">EPUB 3 Overview</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-publications.xhtml">EPUB Publications 3.0.1</a></h3>
+<article id="epub301-publications" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-publications.xhtml">EPUB Publications 3.0.1</a></h3>
 <p>EPUB Publications 3.0.1 は、出版物のメタデータ、出版物に含まれるリソース、表示されるリソースの順番を Package Document に定義する仕様です。主に .opf ファイル内の metadata、manifest、spine 要素に含まれるそれぞれ dc:、item、itemref 要素を扱います。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-publications-20140228.html">EPUB Publications 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a></h3>
+<article id="epub301-contentdocs" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a></h3>
 <p>EPUB Content Documents 3.0.1 は、EPUBR Publications のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義します。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-contentdocs-20140228.html">EPUB Content Documents 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-ocf.xhtml">EPUB Open Container Format (OCF) 3.0.1</a></h3>
+<article id="epub301-ocf" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-ocf.xhtml">EPUB Open Container Format (OCF) 3.0.1</a></h3>
 <p>EPUB Open Container Format (OCF) 3.0.1 は、単一ファイルのコンテナに1つ以上の EPUBR Publication を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義しています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-ocf-20140228.html">EPUB Open Container Format (OCF) 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-mediaoverlays.xhtml">EPUB Media Overlays 3.0.1</a></h3>
+<article id="epub301-mediaoverlays" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-mediaoverlays.xhtml">EPUB Media Overlays 3.0.1</a></h3>
 <p>EPUB Media Overlays 3.0.1 は、EPUB Content Document と同期する音声表現用に、SMIL（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義しています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-mediaoverlays-20140228.html">EPUB Media Overlays 3.0.1</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-epubcfi.xhtml">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></h3>
+<article id="epub301-epubcfi" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-epubcfi.xhtml">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></h3>
 <p>EPUB Canonical Fragment Identifier (epubcfi) は、フラグメント識別子を使って EPUB Publication の任意のコンテンツを参照する標準方式を定めています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20140228.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-changes.xhtml">EPUB 3.0.1 Changes from EPUB 3.0</a></h3>
+<article id="epub301-changes" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-changes.xhtml">EPUB 3.0.1 Changes from EPUB 3.0</a></h3>
 <p>EPUB 3.0.1 Changes from EPUB 3 は、重要な変更と追加を強調し、EPUB  3.0 仕様の最初の小改訂で行った変更を説明する。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-changes-20140228.html">EPUB 3.0.1 Changes from EPUB 3.0</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-altss-tags.xhtml">Alternate Style Tags</a></h3>
+<article id="epub301-altss-tags" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-altss-tags.xhtml">Alternate Style Tags</a></h3>
 <p>このモジュールは、microformat を使用して代替スタイルシートのタグ付するためのパターンを定義している。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/altss-tags/altss-tags-20140228.html">Alternate Style Tags</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub-indexes.xhtml">EPUB Indexes 1.0</a></h3>
+<article id="epub-indexes" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub-indexes.xhtml">EPUB Indexes 1.0</a></h3>
 <p>EPUB Indexes 1.0 の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを可能にする方法で、EPUB 出版物のインデックスの構造とコンテンツをエンコードの一貫性のある方法を定義し、仕様に準拠している EPUB リーディングシステム上で最適な方法で取り扱うことである。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-02-28T00:00:00.000Z"><time datetime="2014-02-28">2014年2月28日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2014-02-17T00:00:00.000Z"><time datetime="2014-02-17">2014年2月17日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/idx/epub-indexes-20140228.html">EPUB Indexes 1.0</a>” (IDPF Proposed Specification 28 February 2014)</p>
 </article>
 
-<article class="item">
-<h3><a href="http://imagedrive.github.io/spec/epub301-vocab-structure.xhtml">EPUB 3 Structural Semantics Vocabulary</a></h3>
+<article id="epub301-vocab-structure" class="item">
+<h3 rev="dcterms:title"><a href="http://imagedrive.github.io/spec/epub301-vocab-structure.xhtml">EPUB 3 Structural Semantics Vocabulary</a></h3>
 <p>EPUB 3 Structural Semantics Vocabulary は、出版物のコンテンツ内にセマンティック性を付与する epub:type 属性の値について定義しています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-12T00:00:00.000Z"><time datetime="2014-03-12">2014年3月12日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-11-08T00:00:00.000Z"><time datetime="2013-11-08">2013年11月8日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20140228.html">EPUB 3 Structural Semantics Vocabulary</a>” (IDPF)</p>
 </article>
 
@@ -142,11 +175,11 @@ h3 {font-size:120%;font-weight:bold;}
 
 </section>
 
-<section id="itemSpecEPUB3" title="EPUB 3 仕様書・関連文書日本語訳一覧">
+<section typeof="bibo:Chapter" id="itemSpecEPUB3" title="EPUB 3 仕様書・関連文書日本語訳一覧">
 
 <header class="itemtitle">
 
-<h2><span>EPUB 3 仕様書・関連文書</span></h2>
+<h2 rev="dcterms:title">EPUB 3 仕様書・関連文書</h2>
 
 </header>
 
@@ -155,54 +188,79 @@ h3 {font-size:120%;font-weight:bold;}
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-overview.xhtml">EPUB 3 Overview</a></h3>
 <p>EPUB 3 Overview は、他の EPUB 3 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3 の全体の導入として役立ちます。</p>
+<p>
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-overview-20111011.html">EPUB 3 Overview</a>” (IDPF Recommended Specification 11 October 2011)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-publications.xhtml">EPUB Publications 3.0</a></h3>
 <p>EPUB Publications 3.0 は、出版物のメタデータ、出版物に含まれるリソース、表示されるリソースの順番を Package Document に定義する仕様です。主に .opf ファイル内の metadata、manifest、spine 要素に含まれるそれぞれ dc:、item、itemref 要素を扱います。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2012-02-25T00:00:00.000Z"><time datetime="2012-02-25">2012年2月25日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-publications-20111011.html">EPUB Publications 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-contentdocs.xhtml">EPUB Content Documents 3.0</a></h3>
 <p>EPUB Content Documents 3.0 は、EPUBR Publications のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義します。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2012-10-15T00:00:00.000Z"><time datetime="2012-10-15">2012年10月15日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-contentdocs-20111011.html">EPUB Content Documents 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-ocf.xhtml">EPUB Open Container Format (OCF) 3.0</a></h3>
 <p>EPUB Open Container Format (OCF) 3.0 は、単一ファイルのコンテナに1つ以上の EPUBR Publication を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義しています。</p>
+<p>
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-ocf-20111011.html">EPUB Open Container Format (OCF) 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-mediaoverlays.xhtml">EPUB Media Overlays 3.0</a></h3>
 <p>EPUB Media Overlays 3.0 は、EPUB Content Document と同期する音声表現用に、SMIL（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義しています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2012-07-07T00:00:00.000Z"><time datetime="2012-07-07">2012年7月7日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html">EPUB Media Overlays 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-epubcfi.xhtml">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></h3>
 <p>EPUB Canonical Fragment Identifier (epubcfi) は、フラグメント識別子を使って EPUB Publication の任意のコンテンツを参照する標準方式を定めています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2012-07-12T00:00:00.000Z"><time datetime="2012-07-12">2012年7月12日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20111011.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a>” (IDPF Recommended Specification 11 October 2011)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-changes.xhtml">EPUB 3 Changes from EPUB 2.0.1</a></h3>
 <p>EPUB 3 Changes from EPUB 2.0.1、EPUB 3 は、XML と Web 標準に基いて、デジタル出版物の交換と配信形式である EPUB の第三の主要な版を定義している。本仕様書は、以前にリリースされた EPUB 2.0.1 から EPUB 3 での変更点について有益な方法で説明する。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2012-12-10T00:00:00.000Z"><time datetime="2012-12-10">2012年12月10日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-changes-20111011.html">EPUB 3 Changes from EPUB 2.0.1</a>” (IDPF Recommended Specification 11 October 2011)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-fixed-layout-documents.xhtml">EPUB 3 Fixed-Layout Documents</a></h3>
 <p>EPUB 3 Fixed-Layout Documents は、EPUB 3 固定レイアウトを表現するためのメタデータ要素を定義する仕様です。また固定レイアウトの時の XHTML、SVG、画像のレンダリング寸法を表現する方法も定義しています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2012-04-20T00:00:00.000Z"><time datetime="2012-04-20">2012年4月20日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/fxl/epub-fxl-20120313.html">EPUB 3 Fixed-Layout Documents</a>” (IDPF Informational Document)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/epub30-structuralsemanticsvocabulary.xhtml">EPUB 3 Structural Semantics Vocabulary</a></h3>
 <p>EPUB 3 Structural Semantics Vocabulary は、出版物のコンテンツ内にセマンティック性を付与する epub:type 属性の値について定義しています。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2013-04-05T00:00:00.000Z"><time datetime="2013-04-05">2013年4月5日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2012-02-02T00:00:00.000Z"><time datetime="2012-02-02">2012年2月2日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/epub30-vocab-structure-20111011.html">EPUB 3 Structural Semantics Vocabulary</a>” (IDPF)</p>
 </article>
 
@@ -210,11 +268,11 @@ h3 {font-size:120%;font-weight:bold;}
 
 </section>
 
-<section id="itemSpecEpubRelated" title="EPUB 関連文書日本語訳一覧">
+<section typeof="bibo:Chapter" id="itemSpecEpubRelated" title="EPUB 関連文書日本語訳一覧">
 
 <header class="itemtitle">
 
-<h2><span>EPUB 関連文書</span></h2>
+<h2 rev="dcterms:title">EPUB 関連文書</h2>
 
 </header>
 
@@ -223,30 +281,41 @@ h3 {font-size:120%;font-weight:bold;}
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/vocab-package-link-rel-vocab.xhtml">EPUB Link Relationships Vocabulary</a></h3>
 <p>EPUB Link Relationships Vocabulary は、EPUB&reg; Package Document の link 要素 rel 属性を利用するとき、リーディングシステムが認識するのに必要な関連する値のセットを定義する。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-03-31T00:00:00.000Z"><time datetime="2014-03-31">2014年3月31日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2014-03-13T00:00:00.000Z"><time datetime="2012-03-13">2012年3月13日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/link/rel-vocab-20131108.html">EPUB Link Relationships Vocabulary</a>” (IDPF)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/vocab-package-pfx-reserved.xhtml">EPUB Publications Reserved Prefixes</a></h3>
 <p>EPUB Publications Reserved Prefixes は、EPUB&reg; Package Document のメタデータを使用するときに、リーディングシステムが認識するために必要な接頭辞のセットを定義する。</p>
+<p>公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2014-03-13T00:00:00.000Z"><time datetime="2012-03-13">2012年3月13日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/pfx/reserved-20131108.html">EPUB Publications Reserved Prefixes</a>” (IDPF)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/vocab-package-roles-registry.xhtml">EPUB Registry of Collection Roles</a></h3>
 <p>EPUB Registry of Collection Roles は、Package Document の collection 要素で使用するために IDPF が定義したすべての役割を掲載している。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-04-07T00:00:00.000Z"><time datetime="2014-04-07">2014年4月7日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2014-03-13T00:00:00.000Z"><time datetime="2012-03-13">2012年3月13日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/roles/registry-20131108.html">EPUB Registry of Collection Roles</a>” (IDPF)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/vocab-package-types-registry.xhtml">EPUB Registry of Publication Types</a></h3>
 <p>EPUB Registry of Publication Types は、Package Document メタデータ内の dc:type 要素で使用するために IDPF で認められた型のセットを定義する。</p>
+<p>
+改定日：<span property="dcterms:modified" datatype="xsd:dateTime" content="2014-04-07T00:00:00.000Z"><time datetime="2014-04-07">2014年4月7日</time></span>　
+公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2014-03-13T00:00:00.000Z"><time datetime="2012-03-13">2012年3月13日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/types/registry-20131108.html">EPUB Registry of Publication Types</a>” (IDPF)</p>
 </article>
 
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/vocab-structure-pfx-reserved.xhtml">EPUB Content Documents Reserved Prefixes</a></h3>
 <p>EPUB Content Documents Reserved Prefixes は、Content Document の EPUB&reg; epub:type 属性を使用するときに、リーディングシステムが認識するために必要な接頭辞のセットを定義する。</p>
+<p>公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2014-03-13T00:00:00.000Z"><time datetime="2012-03-13">2012年3月13日</time></span></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/pfx/reserved-20131108.html">EPUB Content Documents Reserved Prefixes</a>” (IDPF)</p>
 </article>
 
@@ -267,6 +336,7 @@ h3 {font-size:120%;font-weight:bold;}
 <article class="item">
 <h3><a href="http://imagedrive.github.io/spec/css-device-adaptation.xhtml">CSS Device Adaptation</a></h3>
 <p>この仕様は初期包含ブロック（initial containing block）に基いて使用されるビューポートのサイズや拡大率、向きを CSS で指定する製作者ための方法を提供する。</p>
+<p>公開日：<span property="dcterms:created" datatype="xsd:dateTime" content="2013-05-27T00:00:00.000Z"><time datetime="2013-05-27">2013年5月27日</time></span></p>
 <p>翻訳底本：“<a href="http://www.w3.org/TR/css-device-adapt/">CSS Device Adaptation</a>” (W3C Working Draft 15 September 2011)</p>
 </article>
 
