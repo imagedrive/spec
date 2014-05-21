@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
 </head>
 <body>
-<div class="attention">
+<div class="translation-attention">
 
 <p>この文書は「<a href="http://www.idpf.org/epub3/latest/changes">EPUB 3.0.1 Changes from EPUB 3.0</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub3/latest/changes">EPUB 3.0.1 Changes from EPUB 3.0</a> を参照されたい。</p>
 
@@ -180,7 +180,7 @@
 
 <div class="section" title="2.1 The spine element" id="sec-pub-spine">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-spine">&gt;</a>&nbsp;</span>2.1 <code class="markup">spine</code> 要素</h3>
-<p><span class="phrase"><a class="link" href="epub30-publications.html#sec-spine-elem">spine</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の Content Document から参照されている全ての Content Document は、それが自身が、<code class="markup">spine</code> に記載されなければならない。</p>
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-spine-elem">spine</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の Content Document から参照されている全ての Content Document は、それが自身が、<code class="markup">spine</code> に記載されなければならない。</p>
 </div>
 
 <div class="section" title="2.2 The dc:source element" id="sec-pub-source">
@@ -188,8 +188,8 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-source">&gt;</a>&nbsp;</span>2.2 <code class="markup">dc:source</code> 要素</h3>
 
 
-<p><span class="phrase"><a class="link" href="epub30-publications.html#sec-opf-dcsource">dc:source 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> </span>は、ひとつのみという規制は削除された。</p>
-<p>ページネーションのための印刷物ソースの識別は、新しい <span class="phrase"><a class="link" href="epub30-publications.html#source-of">source-of プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を持つ <code class="markup">dc:source</code> 要素を改良することで行われる。</p>
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-opf-dcsource">dc:source 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> </span>は、ひとつのみという規制は削除された。</p>
+<p>ページネーションのための印刷物ソースの識別は、新しい <span class="phrase"><a class="link" href="epub301-publications.xhtml#source-of">source-of プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を持つ <code class="markup">dc:source</code> 要素を改良することで行われる。</p>
 
 
 </div>
@@ -199,14 +199,14 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-type">&gt;</a>&nbsp;</span>2.3 <code class="markup">dc:type</code> 要素</h3>
 
 
-<p><span class="phrase"><a class="link" href="epub30-publications.html#sec-opf-dctype">dc:type 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、ひとつのみという規制は削除された。</p>
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-opf-dctype">dc:type 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、ひとつのみという規制は削除された。</p>
 <p>この要素で使用することのできる IDPF で認められた型の一覧については、<a class="link" href="vocab-package-types.xhtml">EPUB Registry of Publication Types</a> を参照されたい。</p>
 
 
 <div class="section" title="2.4 The collection element" id="sec-pub-collection">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-collection">&gt;</a>&nbsp;</span>2.4 <code class="markup">collection</code> 要素</h3>
 
-<p>新しい <span class="phrase"><a class="link" href="epub30-publications.html#sec-collection-elem">collection 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、EPUB 3 の特殊な挙動とレンダリングを開発するためのフレームワークを提供する。これは、著者による出版物仕様で定義されている使用を意図していないが、上で構築される機能のための拡張ポイントを提供する。例えば、複数の XHTML Content Documents を横断する分割したインデックスの識別と再結合（例えば、機械処理や表示）を可能するために、<a class="link" href="http://www.idpf.org/epub/idx">EPUB Indexes specification</a> が使用される。</p>
+<p>新しい <span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-collection-elem">collection 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、EPUB 3 の特殊な挙動とレンダリングを開発するためのフレームワークを提供する。これは、著者による出版物仕様で定義されている使用を意図していないが、上で構築される機能のための拡張ポイントを提供する。例えば、複数の XHTML Content Documents を横断する分割したインデックスの識別と再結合（例えば、機械処理や表示）を可能するために、<a class="link" href="http://www.idpf.org/epub/idx">EPUB Indexes specification</a> が使用される。</p>
 </div>
 
 <div class="section" title="2.5 Reserved prefixes" id="sec-pub-reserved-prefixes">
@@ -220,13 +220,13 @@
 <div class="section" title="2.6 Collections metadata" id="sec-pub-collection-metadata">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-collection-metadata">&gt;</a>&nbsp;</span>2.6 Collections metadata</h3>
 
-<p><code class="markup">meta</code> 要素のメタデータプロパティは、EPUB 出版物が属しているコレクションの識別を可能にするために拡張された。<span class="phrase"><a class="link" href="epub30-publications.html#belongs-to-collection">belongs-to-collection プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、コレクションのタイトルと <span class="phrase"><a class="link" href="epub30-publications.html#collection-type">collection-type</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span>、コレクションの性質（シリーズとセットは、定義済みの値）を識別する。</p>
+<p><code class="markup">meta</code> 要素のメタデータプロパティは、EPUB 出版物が属しているコレクションの識別を可能にするために拡張された。<span class="phrase"><a class="link" href="epub301-publications.xhtml#belongs-to-collection">belongs-to-collection プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、コレクションのタイトルと <span class="phrase"><a class="link" href="epub301-publications.xhtml#collection-type">collection-type</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span>、コレクションの性質（シリーズとセットは、定義済みの値）を識別する。</p>
 </div>
 
 <div class="section" title="2.7 Link relationships" id="sec-pub-link-rel">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-link-rel">&gt;</a>&nbsp;</span>2.7 Link relationships</h3>
 
-<p><span class="phrase"><a class="link" href="epub30-publications.html#elemdef-opf-link">link 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> <code class="markup">rel</code> 属性で使用できるプロパティの語彙は、リビジョン間の新しい関連性を追加できるように <a class="link" href="vocab-package-link.xhtml">EPUB Link Relationships Vocabulary</a> で定義されている。</p>
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#elemdef-opf-link">link 要素</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> <code class="markup">rel</code> 属性で使用できるプロパティの語彙は、リビジョン間の新しい関連性を追加できるように <a class="link" href="vocab-package-link.xhtml">EPUB Link Relationships Vocabulary</a> で定義されている。</p>
 </div>
 
 <div class="section" title="2.8 The record property" id="sec-pub-record">
@@ -238,19 +238,19 @@
 <div class="section" title="2.9 Fixed layout-metadata" id="sec-pub-fxl">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-fxl">&gt;</a>&nbsp;</span>2.9 Fixed-layout メタデータ</h3>
 
-<p>以前は <a class="link" href="http://www.idpf.org/epub/fxl/epub-fxl-20120313.html">EPUB 3 Fixed-Layout Documents</a> に定義されていた Fixed-Layout メタデータは、<a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> と <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> 仕様に結合された。<span class="phrase"><a class="link" href="epub30-publications.html#sec-package-metadata-fxl">fixed-layout メタデータプロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の全ては出版物に定義されており、これらのプロパティのサポートは、リーディングシステムに要求される。</p>
+<p>以前は <a class="link" href="http://www.idpf.org/epub/fxl/epub-fxl-20120313.html">EPUB 3 Fixed-Layout Documents</a> に定義されていた Fixed-Layout メタデータは、<a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a> と <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> 仕様に結合された。<span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-package-metadata-fxl">fixed-layout メタデータプロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> の全ては出版物に定義されており、これらのプロパティのサポートは、リーディングシステムに要求される。</p>
 </div>
 
 <div class="section" title="2.10 The rendition:flow property" id="sec-pub-rendition-flow">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-rendition-flow">&gt;</a>&nbsp;</span>2.10 <span class="property">rendition:flow</span> プロパティ</h3>
 
-<p><span class="phrase"><a class="link" href="epub30-publications.html#layout-property-flow">rendition:flow プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span>は、Content Document の流れ（例えば、連続した流れの生成）を、望む方法で指示することを製作者に許可するために追加された。</p>
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#layout-property-flow">rendition:flow プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span>は、Content Document の流れ（例えば、連続した流れの生成）を、望む方法で指示することを製作者に許可するために追加された。</p>
 </div>
 
 <div class="section" title="2.11 The rendition:align-x-center property" id="sec-pub-align-x-center">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-pub-align-x-center">&gt;</a>&nbsp;</span>2.11 <span class="property">rendition:align-x-center</span> プロパティ</h3>
 
-<p><span class="phrase"><a class="link" href="epub30-publications.html#layout-property-align-x-center">rendition:align-x-center プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、Content Document を水平方向にセンタリングされる指定を製作者ができるようにするために追加された。このプロパティは、主に、中扉（Naka-Tobira）の問題を処理するために追加された。</p>
+<p><span class="phrase"><a class="link" href="epub301-publications.xhtml#layout-property-align-x-center">rendition:align-x-center プロパティ</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> は、Content Document を水平方向にセンタリングされる指定を製作者ができるようにするために追加された。このプロパティは、主に、中扉（Naka-Tobira）の問題を処理するために追加された。</p>
 </div>
 
 
@@ -288,7 +288,7 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-trigger-events">&gt;</a>&nbsp;</span>3.3 <code class="markup">trigger</code> 要素</h3>
 
 
-<p>次の <a class="biblioref" href="#refEVENTS" title="XML Events">[<abbr>XML Events</abbr>]</a> は、標準の挙動を上書きし、イベント：<code class="markup">phase</code>、<code class="markup">defaultAction</code>、<code class="markup">propagate</code> の伝播を防ぐために、<span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-xhtml-epub-trigger">trigger 要素</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> </span> に追加された。</p>
+<p>次の <a class="biblioref" href="#refEVENTS" title="XML Events">[<abbr>XML Events</abbr>]</a> は、標準の挙動を上書きし、イベント：<code class="markup">phase</code>、<code class="markup">defaultAction</code>、<code class="markup">propagate</code> の伝播を防ぐために、<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-epub-trigger">trigger 要素</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a> </span> に追加された。</p>
 
 </div>
 
@@ -297,7 +297,7 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-custom-attr">&gt;</a>&nbsp;</span>3.4 カスタム属性</h3>
 
 
-<p><span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-xhtml-custom-attributes">カスタム属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は、現在、XHTML Content Document に許可されている。</p>
+<p><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-custom-attributes">カスタム属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は、現在、XHTML Content Document に許可されている。</p>
 <p>相互運用性を向上させるために、IDPF は、<a class="link" href="http://www.idpf.org/extensions/attributes/index.html">registry of custom attributes</a> をメンテナンスしている。</p>
 <p>（カスタム属性は常にその仕様で概説されている要件を満たす提供を SVG に許可されていることを注意されたい。）</p>
 
@@ -309,7 +309,7 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-aria-describedat">&gt;</a>&nbsp;</span>3.5 <code class="markup">aria-describedat</code> 属性</h3>
 
 
-<p>新しい <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr>WAI-ARIA-1.1</abbr>]</a> <span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-xhtml-aria-describedat">aria-describedat 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> が追加され、任意の要素に追加できるアウトオブバンド記述が許可される。この属性から参照された記述は、EPUB Container の内部または外部に設置することができる。</p>
+<p>新しい <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr>WAI-ARIA-1.1</abbr>]</a> <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-aria-describedat">aria-describedat 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> が追加され、任意の要素に追加できるアウトオブバンド記述が許可される。この属性から参照された記述は、EPUB Container の内部または外部に設置することができる。</p>
 
 
 
@@ -341,7 +341,7 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-writing-modes">&gt;</a>&nbsp;</span>3.7 CSS Writing Modes</h3>
 
 
-<p>CSS Writing Mode プロパティの構文と値は変更されている。詳細は、<span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-css-writing-modes">CSS Writing Modes</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> を参照されたい。</p>
+<p>CSS Writing Mode プロパティの構文と値は変更されている。詳細は、<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-css-writing-modes">CSS Writing Modes</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> を参照されたい。</p>
 
 
 
@@ -352,7 +352,7 @@
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-cd-header-footers">&gt;</a>&nbsp;</span>3.8 <span class="property">oeb-page-head</span> と <span class="property">oeb-page-foot</span> プロパティ</h3>
 
 
-<p><span class="phrase"><a class="link" href="epub30-contentdocs.html#sec-css-oeb-head-foot">oeb-page-head と oeb-page-foot プロパティ</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> の使用は、これらのプロパティは将来の版で削除もしくは置き換えられると予想されているので、現在では推奨されていない。</p>
+<p><span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-css-oeb-head-foot">oeb-page-head と oeb-page-foot プロパティ</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> の使用は、これらのプロパティは将来の版で削除もしくは置き換えられると予想されているので、現在では推奨されていない。</p>
 
 </div>
 
@@ -647,7 +647,7 @@
 
 <div class="bibliodiv" title="Normative References">
 <h3 class="title">参照文献</h3>
-<div class="biblioentry" title="EPUB Content Documents 3.0" id="refContentDocs30"><p>[<abbr>ContentDocs30</abbr>] <span class="title"><em><a class="link" href="../../30/spec/epub30-contentdocs.html">EPUB Content Documents 3.0</a></em>.</span></p></div>
+<div class="biblioentry" title="EPUB Content Documents 3.0" id="refContentDocs30"><p>[<abbr>ContentDocs30</abbr>] <span class="title"><em><a class="link" href="epub30-contentdocs.xhtml">EPUB Content Documents 3.0</a></em>.</span></p></div>
 
 <div class="biblioentry" title="EPUB Content Documents 3.0.1" id="refContentDocs3"><p>[<abbr>ContentDocs301</abbr>] <span class="title"><em><a class="link" href="epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a> </em>. </span></p></div>
 
