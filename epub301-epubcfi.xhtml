@@ -16,42 +16,36 @@
 <meta name="description" content="EPUB Canonical Fragment Identifier (epubcfi) Specification。EPUB Canonical Fragment Identifier (epubcfi) は、フラグメント識別子を使って EPUB Publication の任意のコンテンツを参照する標準方式を定める。"/>
 </head>
 <body>
-<!--
 <div class="attention">
 
-<p>この文書は「<a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">EPUB Canonical Fragment Identifier （epubcfi） Specification</a>」を日本語訳したものです。最新の文書は <a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">http://idpf.org/epub/linking/cfi/epub-cfi.html</a> です。原文もしくは最新の情報を参照したい場合は、 <a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">EPUB Canonical Fragment Identifier （epubcfi） Specification</a> を参照ください。</p>
+<p>この文書は「<a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">EPUB Canonical Fragment Identifier （epubcfi） Specification</a>」の日本語訳である。最新の文書は <a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">http://idpf.org/epub/linking/cfi/epub-cfi.html</a> である。原文もしくは完全な情報は、<a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">EPUB Canonical Fragment Identifier （epubcfi） Specification</a> を参照されたい。</p>
 
-<p>この日本語訳は参考です。公式な文書ではありません。翻訳・解釈の正確性を保証しておりません。<br/>また本文内の訳注は翻訳者の主観による補足です。</p>
-<p><a href="#sec-terminology">1.3. 用語</a>と <a href="epub301-publications.html#sec-terminology">EPUB Publications 3.0 - 1.2. 用語</a>に定義されている用語は本文中でも基本的に原文のままとした。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。<br/>また本文内の訳注は翻訳者の主観による補足である。</p>
+<p><a href="#sec-terminology">1.2. 用語</a>と <a href="epub301-publications.html#sec-terminology">EPUB Publications 3.0.1 - 1.2. 用語</a>に定義されている用語は本文中でも基本的に原文のままとした。</p>
 <dl>
 
 <dt>公開日:</dt>
-<dd>2012-07-12</dd>
-<dt>改訂日:</dt>
-<dd>2013-04-05</dd>
-<dt>協力:</dt>
-<dd>イースト株式会社</dd>
-<dt>翻訳:</dt>
-<dd>Hiroshi Takase</dd>
-<dt>編集:</dt>
+<dd>2013-11-08</dd>
+<dt>改定日:</dt>
+<dd>2014-03-12</dd>
+<dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
 
 </div>
--->
 
 <div class="book" title="EPUB Publications 3.0">
 <h1 class="title">EPUB Canonical Fragment Identifier (epubcfi) Specification</h1>
-<p class="identity"><span class="pubdate">2013年11月00日</span> <span class="releaseinfo">草案</span></p>
+<p class="identity"><span class="pubdate">2014年2月28日</span> <span class="releaseinfo">Proposed Specification</span></p>
 
 <dl class="printhistory"><dt>この版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20131100.html">http://www.idpf.org/epub/linking/cfi/epub-cfi-20131100.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20140228.html">http://www.idpf.org/epub/linking/cfi/epub-cfi-20140228.html</a></dd>
 <dt>最新版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/linking/cfi/epub-cfi.html">http://www.idpf.org/epub/linking/cfi/epub-cfi.html</a></dd>
 <dt>前の版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20111011.html">http://www.idpf.org/epub/linking/cfi/epub-cfi-20111011.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20140227.html">http://www.idpf.org/epub/linking/cfi/epub-cfi-20140227.html</a></dd>
 </dl>
-<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4819&amp;old=3218&amp;r=4819&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub-cfi.xml">変更点の差分</a>は、入手可能である。</p>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4905&amp;old=4902&amp;r=4905&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub-cfi.xml">変更点の差分</a>は、入手可能である。</p>
 
 <p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="http://idpf.org/epub/linking/cfi/epub-cfi-errata/">正誤表</a>を参照されたい。</p>
 
@@ -472,7 +466,7 @@
 
 <pre class="programlisting">#x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF]</pre>
 
-<p>ドキュメントの著者は、<a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)">[<abbr>Unicode</abbr>]</a> のセクション 2.3 で定義される「互換文字」を避けることを推奨する。次の範囲で定義される文字も使用しないことを推奨する。これらは、制御文字または恒久的に未定義な Unicode 文字である：</p>
+<p>ドキュメントの著者は、<a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr>Unicode</abbr>]</a> のセクション 2.3 で定義される「互換文字」を避けることを推奨する。次の範囲で定義される文字も使用しないことを推奨する。これらは、制御文字または恒久的に未定義な Unicode 文字である：</p>
 <pre class="programlisting">[#x7F-#x84], [#x86-#x9F], [#xFDD0-#xFDEF],
 [#x1FFFE-#x1FFFF], [#x2FFFE-#x2FFFF], [#x3FFFE-#x3FFFF],
 [#x4FFFE-#x4FFFF], [#x5FFFE-#x5FFFF], [#x6FFFE-#x6FFFF],
@@ -902,8 +896,8 @@ parent パスは、開始と終了パス（言い換えれば、開始と終了�
 <p>[<abbr>SVG</abbr>] <span class="title"><em><a class="link" href="http://www.w3.org/TR/SVG11/">Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a></em>. </span><span class="author">Erik Dahlstrom, et al. </span><span class="date">09 June 2011. </span></p>
 </div>
 
-<div class="biblioentry" title="The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)" id="refUnicode5">
-<p>[<abbr>Unicode</abbr>] <span class="title"><em>The Unicode Consortium. The Unicode Standard, Version 5.0.0, defined by: The Unicode Standard, Version 5.0 (Boston, MA, Addison-Wesley, 2007. ISBN 0-321-48091-0)</em>. </span></p>
+<div class="biblioentry" title="The Unicode Consortium. The Unicode Standard." id="refUnicode5">
+<p>[<abbr>Unicode</abbr>] <span class="title"><em> The Unicode Consortium. <a class="link" href="http://www.unicode.org/versions/latest/">The Unicode Standard.</a></em>. </span></p>
 </div>
 
 <div class="biblioentry" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)" id="refXML">

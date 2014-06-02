@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>出版物タイプの EPUB レジストリ（日本語訳版）</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="dcterms:creator" content="mgylling" />
+<meta name="dcterms:creator" content="mgarrish" />
+<meta name="dcterms:issued" content="2013-11-08" />
+<meta name="dcterms:publisher" content="International Digital Publishing Forum (IDPF)" />
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<style type="text/css">
+span.draft{
+color:rgb(190, 0, 0);
+}
+dt{
+margin-top:1em;
+}
+p.identity{
+margin-top:-3em;
+font-size:75%;
+}
+span.pubdate{
+color:rgb(0, 0, 0);
+}</style>
+</head>
+<body>
+<div class="attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub/vocab/package/types">EPUB Registry of Publication Types</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/package/types">EPUB Registry of Publication Types</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub/vocab/package/types">EPUB Registry of Publication Types</a> を参照されたい。</p>
+
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+<dt>公開日:</dt>
+<dd>2014-03-13</dd>
+<dt>改定日:</dt>
+<dd>2014-05-19</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+<h1>出版物タイプの EPUB レジストリ</h1>
+
+<p class="identity"><span class="pubdate">2014年5月16日</span></p>
+
+<div class="printhistory">
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types/registry-20140516.html">http://www.idpf.org/epub/vocab/package/types/registry-20140516.html</a></dd>
+<dt>最新版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types">http://www.idpf.org/epub/vocab/package/types</a></dd>
+<dt>前の版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types/registry-20140405.html">http://www.idpf.org/epub/vocab/package/types/registry-20140405.html</a></dd>
+</dl>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4916&amp;old=4912&amp;r=4916&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fdc-types.html">変更点の差分</a>は、入手可能である。</p>
+</div>
+
+<h2>要約</h2>
+<p>このドキュメントは、Package Document メタデータ内の <code>dc:type</code> 要素で使用するために IDPF で認められた型のセットを定義する。</p>
+<p>このドキュメントは有益であり、EPUB&reg; 仕様の主要なバージョンと紐付かない。</p>
+<h2>改訂方針</h2>
+<p>このドキュメントは、新しい識別子が EPUB コミュニティによって認められたとき常に変更されることがある。ここで定義された型は、削除されることはないが、廃止になるかもしれない。</p>
+<p>追加の要求は、<a href="https://code.google.com/p/epub-revision/issues/list">EPUB 3 Revision Tracker</a> を介して行わなければならない。</p>
+<h2>出版物の型</h2>
+<dl>
+<dt id="dictionary">dictionary</dt>
+<dd>EPUB 出版物が、辞書を表現していることをを識別する。より詳細な情報は <a href="http://www.idpf.org/epub/dict/">EPUB Dictionaries and Glossaries specification</a> を参照されたい。</dd>
+<dt id="distributable-object">distributable-object <span class="draft">[draft]</span></dt>
+<dd>EPUB 出版物が、配布可能なオブジェクトを含んでいることを識別する。より詳細な情報は <a href="https://docs.google.com/document/d/1UhanBKYZCW1-WxZ67NIfQo4H1kCYf8Z8vRJKPfPaxs8">EPUB Distributable Objects specification</a> を参照されたい。</dd>
+<dt id="edupub">edupub <span class="draft">[draft]</span></dt>
+<dd>EPUB 出版物が、<a href="http://www.idpf.org/epub/profiles/edu/10/">EDUPUB Profile</a> と一致していることを識別する。</dd>
+<dt>index</dt>
+<dd>EPUB 出版物がインデックスを表現することを識別する。より詳細な情報は <a href="http://www.idpf.org/epub/idx/">EPUB Indexes specification</a> を参照されたい。</dd>
+<dt>preview <span class="draft">[draft]</span></dt>
+<dd>EPUB 出版物は作品のプレビューであることを識別する。より詳細な情報は <a href="http://www.idpf.org/epub/previews/">EPUB Previews</a> 仕様を参照されたい。</dd>
+<dt id="widget">widget <span class="draft">[draft]</span></dt>
+<dd>EPUB 出版物がウィジェットであることを識別する。より詳細な情報は <a href="https://docs.google.com/document/d/183O0uUMmILXUrv6NeUQssUT5tn9haY65lKyTdiZ9gDg/edit#">EPUB Widget Packaging and Integration</a> を参照されたい。</dd>
+</dl>
+</body>
+</html>

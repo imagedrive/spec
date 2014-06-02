@@ -15,7 +15,8 @@ line-height:1.5;}
 width:4em;
 float:left;
 clear:left;
-font-weight:normal; }
+margin-top:0;
+font-weight:normal;}
 
 .attention dd {
 display:block;}
@@ -42,14 +43,14 @@ line-height:1.7;
 }
 */
 
-/* 検証用 */
+/* 讀懆ｨｼ逕ｨ */
 /*
 * {
-font-family:"IPAexゴシック";
+font-family:"IPAex繧ｴ繧ｷ繝�繧ｯ";
 }
 */
 
-/* 編集 */
+/* 邱ｨ髮� */
 
 .legalnotice p,
 .section p {
