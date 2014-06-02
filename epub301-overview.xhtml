@@ -14,7 +14,7 @@
 <meta name="description" content="EPUB 3 Overview、EPUB 3 は、XML や Web 標準に基づいたデジタル出版物の交換と配信形式の第 3 版である。EPUB 3 は、この文書を含む仕様書のセットによって定義される。この文書は、他の EPUB 3 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3 の全体の導入として役立つ。"/>
 </head>
 <body>
-<div class="attention">
+<div class="translation-attention">
 
 <p>この文書は「<a href="http://www.idpf.org/epub3/latest/overview">EPUB 3 Overview</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/overview">http://www.idpf.org/epub3/latest/overview</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub3/latest/overview">EPUB 3 Overview</a> を参照されたい。</p>
 
@@ -491,9 +491,9 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-access-semantic-markup">&gt;</a>&nbsp;</span>4.2 Semantic Markup</h3>
 
-<p>HTML5 は、より意味論的に意義のある（例えば、<code class="markup">section</code> と <code class="markup">nav</code>、<code class="markup">aside</code>）マークアップをするために意図された新しい要素といくつかの HTML4 要素のために明確に定義されたセマンティクスの導入をサポートしている。これらの要素の使用は、しっかりと構造化された Web コンテンツのオーサリングのためのベストプラクティスと併せて、EPUB XHTML Content Document を作るときに用いる。この追加は、コンテンツをより良く分類し、文書構造の表現のために、そしてこれらの論理的なナビゲーションを容易にするための定義をすることができる。XHTML Content Document はまた、ARIA の role と state 属性、コンテンツ相互作用する支援技術の能力を高めるイベントの包含をネイティブにサポートする。</p>
+<p>HTML5 は、より意味論的に意義のある（例えば、<code class="markup">section</code> と <code class="markup">nav</code>、<code class="markup">aside</code>）マークアップをするために意図された新しい要素といくつかの HTML4 要素のために明確に定義されたセマンティクスの導入をサポートしている。これらの要素の使用は、しっかりと構造化された Web コンテンツのオーサリングのためのベストプラクティスと併せて、EPUB XHTML Content Document を作るときに用いる。この追加は、コンテンツをより良く分類し、文書構造の表現のために、そしてこれらの論理的なナビゲーションを容易にするための定義をすることができる。XHTML Content Document はまた、ARIA の ロール（role）とステート（state）、プロパティ（property）、コンテンツ相互作用する支援技術の能力を高めるイベントの包含をネイティブにサポートする。</p>
 
-<p>EPUB 3 は、さらに、W3C Role 属性 <a class="biblioref" href="#refPFRoleAttribute" title="Role Attribute">[<abbr>Role</abbr>]</a> に機能的に同等であることを意味された <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#attrdef-epub-type">epub:type</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> 属性を導入する。この属性は、XHTML Content Document 内の任意の要素に、統制された語彙と用語を使用して、作品内にその目的と意味に関する追加の情報を包含することができる。詳細な情報は、<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-semantic-inflection">XHTML 意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> を参照されたい。</p>
+<p>EPUB 3 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPFRoleAttribute" title="Role Attribute">[<abbr>Role</abbr>]</a> に機能的に同等であることを意味する <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#attrdef-epub-type">epub:type</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> 属性を導入する。この属性は、XHTML Content Document 内の任意の要素に、統制された語彙と用語を使用して、作品内にその目的と意味に関する追加の情報を包含することができる。詳細な情報は、<span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-semantic-inflection">XHTML 意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> を参照されたい。</p>
 
 </div>
 
@@ -501,7 +501,7 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-access-layout">&gt;</a>&nbsp;</span>4.3 動的レイアウト</h3>
 
-<p>EPUB の設計の中心は、動的なレイアウトであり、コンテンツは一般的に、前もってページ区切りの方法（すなわち、特定の寸法の"ページ"を期待する）よりはむしろ、その場で体裁を整えられることを意図している。このコア機能は、例えば、異なるサイズのデバイスの画面やウィンドウサイズのレンダリングを最適化するために有用であり、コンテンツのアクセシビリティを容易かつ簡素化する。</p>
+<p>EPUB の設計の中心は、動的なレイアウトであり、コンテンツは一般的に、前もってページ区切りの方法（すなわち、特定の寸法の"ページ"を期待する）よりはむしろ、その場で体裁を整えられることを意図している。この中核の機能は、例えば、異なるサイズのデバイスの画面やウィンドウサイズのレンダリングを最適化するために有用であり、コンテンツのアクセシビリティを容易かつ簡素化する。</p>
 
 <p>（たとえば、ビットマップ画像や SVG グラフィック、または特定の視覚的なレイアウトを実現する CSS の明示的なポジショニングおよび/または表組要素の使用を介して）EPUB に完璧にフォーマット化されたコンテンツを組み込むことが可能とはいえ、製作者は、そのような技術を利用することは強く推奨されない。多くのリーディングシステムは、単一スクロールの <a class="glossterm" href="#gloss-viewport" title="Viewport">Viewport</a> を作成するよりむしろ、ページ区切りされた寸法でコンテンツをレンダリングしたり、それぞれのリーディングシステムは、独自のページ付けのアルゴリズムを定義しているかもしれないので、これらの技術は EPUB では信頼できない。これらの技術が、出版物のコンテンツを伝えるために必要なとき、<span class="phrase"><a class="link" href="epub301-publications.xhtml#sec-fallback-processing-flow">フォールバック</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を包含することを考慮されたい（たとえば、グラフィック・ノベルのために）。</p>
 

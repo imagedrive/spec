@@ -1,0 +1,171 @@
+td, th {
+	vertical-align: top;
+	text-align: left;
+}
+caption {
+	text-align: left;
+	font-style: italic;
+}
+.role {
+	margin-left: 2em;
+	margin-bottom: 4ex;
+}
+.role-name {
+	margin-left: -2em;
+	font-size: 100%;
+	font-weight: bold;
+	font-style: normal;
+	font-variant:normal;
+}
+.role-parent ul, .role-children ul, .role-related ul, .role-scope ul, .role-mustcontain ul, .role-properties ul, .role-inherited ul, .role-namefrom ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.role-abstract-head, .role-parent-head, .role-children-head, .role-related-head, .role-scope-head, .role-mustcontain-head, .role-properties-head, .role-inherited-head, .role-namefrom-head, .role-child-presentational-head, .role-presentational-inherited-head {
+	width: 20em;
+}
+table.role-features, table.role-features tbody tr td, table.role-features tbody tr th {
+	border: 1px solid #000000;
+}
+table.role-properties tbody tr th {
+	padding-right: 1em;
+}
+.state-name {
+	margin-left: -2em;
+	font-size: 100%;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+}
+.state, .property {
+	margin-left: 2em;
+	margin-bottom: 4ex;
+}
+.state-value ul, .state-related ul, .state-applicability ul, .state-descendants ul, .property-value ul, .property-related ul, .property-applicability ul, .property-descendants ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.state-value-head, .state-related-head, .state-applicability-head, .property-value-head, .property-related-head, .property-applicability-head {
+	width: 12em;
+}
+table.state-features, table.state-features tbody tr td, table.state-features tbody tr th, table.property-features, table.property-features tbody tr td, table.property-features tbody tr th {
+	border: 1px solid #000000;
+}
+table.state-properties tbody tr th, table.property-properties tbody tr th {
+	padding-right: 1em;
+}
+table.value-descriptions caption {
+	margin-top: 2ex;
+}
+.widget {
+	margin-left: 2em;
+	margin-bottom: 4ex;
+}
+.widget-name {
+	margin-left: -2em;
+	font-size: 100%;
+	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+}
+table.widget-features, table.widget-features tbody tr td, table.widget-features tbody tr th {
+	border: 1px solid #000000;
+}
+.widget-description-head, .widget-keyboard-head, .widget-mouse-head, .widget-styling-head, .widget-aria-head, .widget-example-head {
+	width: 12em;
+}
+.widget-description ul, .widget-keyboard ul, .widget-mouse ul, .widget-styling ul, .widget-aria ul, .widget-example ul {
+/*
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+*/
+}
+.empty {
+	display: none;
+}
+.tocnum {}
+.section {}
+.role-reference, .role-reference:link, .role-reference:visited {
+	background-color: #EEEEEE;
+	font-family: monospace;
+}
+.state-reference, .state-reference:link, .state-reference:visited {
+	background-color: #FFFFCC;
+	font-family: monospace;
+}
+.property-reference, .property-reference:link, .property-reference:visited {
+	background-color: #CCCCFF;
+	font-family: monospace;
+}
+.widget-reference, .widget-reference:link, .widget-reference:visited {
+	background-color: #99FF66;
+	font-family: monospace;
+}
+
+pre.example {
+	border: thin solid #000000;
+	background-color: #DDDDDD;
+	margin: 1em;
+	padding: .5em;
+}
+.note {
+	margin-left: 2em;
+	margin-right: 2em;
+}
+.ednote {
+	border: medium solid #000099;
+	background-color: #FFFFDD;
+	margin-left: 1em;
+	margin-right: 1em;
+	padding: .5em;
+}
+.role-screenshot {
+	float: right;
+	margin-left: 1em;
+	margin-bottom: 1ex;
+}
+.role-screenshot p {
+	text-align: center;
+	font-size: smaller;
+}
+.ednote {
+	border: medium solid #000099;
+	background-color: #FFFFDD;
+	margin-left: 1em;
+	margin-right: 1em;
+	padding: .5em;
+}
+.termref {
+	color: #006400;
+	background: white;
+}
+a.termref:link {
+	color: #006400;
+	background: transparent;
+}
+a.termref:hover, a.termref:focus {
+	background-color: #fafad2;
+	color: #006400;
+}
+.image {
+	text-align: center;
+}
+.img {
+	margin-left: auto;
+	margin-right: auto;
+}
+.img p {
+	text-align: center;
+	font-weight: bold;
+	font-size: smaller;
+}
+.img {}
+.img-caption {
+	font-weight: bold;
+}
+.todo {
+	background-color:#FF9999;
+}

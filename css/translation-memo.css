@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.attention {
+.translation-attention {
 margin:2em 0;
 padding:0.5em 1.5em;
 border:1px solid #b35454;
@@ -8,21 +8,21 @@ color:#800;
 background-color:#fce9e9;
 font-size:80%; }
 
-.attention dl {
+.translation-attention dl {
 line-height:1.5;}
 
-.attention dt {
+.translation-attention dt {
 width:4em;
 float:left;
 clear:left;
 margin-top:0;
 font-weight:normal;}
 
-.attention dd {
+.translation-attention dd {
 display:block;}
 
 
-.note {
+.translation-note {
 margin:1em 0;
 padding:0.5em 1.5em;
 border:1px solid #b35454;
@@ -30,7 +30,7 @@ color:#800;
 background-color:#fce9e9;
 font-size:80%; }
 
-span.note {
+span.translation-note {
 margin:0;
 padding:0.2em; }
 /*
@@ -43,14 +43,14 @@ line-height:1.7;
 }
 */
 
-/* 讀懆ｨｼ逕ｨ */
+/* 検証用 */
 /*
 * {
-font-family:"IPAex繧ｴ繧ｷ繝�繧ｯ";
+font-family:"IPAexゴシック";
 }
 */
 
-/* 邱ｨ髮� */
+/* 編集 */
 
 .legalnotice p,
 .section p {
