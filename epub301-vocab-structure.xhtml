@@ -58,7 +58,7 @@ margin-left: 0.3em;
 <dt>公開日:</dt>
 <dd>2013-11-08</dd>
 <dt>改定日:</dt>
-<dd>2014-06-02</dd>
+<dd>2014-06-03</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -77,7 +77,7 @@ margin-left: 0.3em;
 <dt>前の版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20140228.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20140228.html</a></dd>
 </dl>
-<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4917&amp;old=4907&amp;r=4917&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fstructure.n3">変更点の差分</a>は、入手可能である。</p>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4918&amp;old=4907&amp;r=4918&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fstructure.n3">変更点の差分</a>は、入手可能である。</p>
 </div>
 
 <h2 id="tocxsl">目次</h2>
@@ -754,7 +754,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング コンテンツ</a></p>
 </dd>
-<dt id="marginalia" about="#marginalia" typeof="rdf:Property">marginalia <span class="status">[deprecated]</span></dt>
+<dt id="marginalia" about="#marginalia" typeof="rdf:Property">marginalia <span class="status" property="owl:deprecated" content="true">[deprecated]</span></dt>
 <dd about="#marginalia" property="rdfs:comment" datatype="xsd:string">
 <p>余白にオフセットされている、テキストと画像のコンテンツ。</p>
 </dd>
@@ -763,6 +763,11 @@ margin-left: 0.3em;
 </dd>
 <dd>
 <p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング コンテンツ</a></p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">置き換え：</span><span class="subpropref" about="#marginalia" rel="dcterms:isReplacedBy"><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a></span>
+</p>
 </dd>
 <dt id="notice" about="#notice" typeof="rdf:Property">notice</dt>
 <dd about="#notice" property="rdfs:comment" datatype="xsd:string">
@@ -784,7 +789,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">HTML で使用するコンテクスト：</span> <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a></p>
 </dd>
-<dt id="sidebar" about="#sidebar" typeof="rdf:Property">sidebar <span class="status">[deprecated]</span>
+<dt id="sidebar" about="#sidebar" typeof="rdf:Property">sidebar <span class="status" property="owl:deprecated" content="true">[deprecated]</span>
 </dt>
 <dd about="#sidebar" property="rdfs:comment" datatype="xsd:string">
 <p>二次的または補足的なコンテンツ。一般的にインサートまたはボックスとしてフォーマット化される。</p>
@@ -795,13 +800,23 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a></p>
 </dd>
-<dt id="warning" about="#warning" typeof="rdf:Property">warning <span class="status">[deprecated]</span></dt>
+<dd>
+<p>
+<span class="subproplabel">置き換え：</span><span class="subpropref" about="#sidebar" rel="dcterms:isReplacedBy"><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a></span>
+</p>
+</dd>
+<dt id="warning" about="#warning" typeof="rdf:Property">warning <span class="status" property="owl:deprecated" content="true">[deprecated]</span></dt>
 <dd about="#warning" property="rdfs:comment" datatype="xsd:string">
-<p>警報。（<a href="#notice">notice</a> によって取って代わられる）</p>
+<p>警報。</p>
 </dd>
 <dd>
 <p>
 <span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-section-element">section 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング コンテンツ</a>
+</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">置き換え：</span><span class="subpropref" about="#warning" rel="dcterms:isReplacedBy"><a href="#notice">notice</a></span>
 </p>
 </dd>
 </dl>
@@ -1106,7 +1121,7 @@ margin-left: 0.3em;
 <div id="notes" about="#notes" typeof="rdf:Bag">
 <h2 id="h_notes" about="#notes" rev="dcterms:title">注記と注釈</h2>
 <dl about="#notes" rev="rdfs:member">
-<dt id="annotation" about="#annotation" typeof="rdf:Property">annotation <span class="status">[deprecated]</span></dt>
+<dt id="annotation" about="#annotation" typeof="rdf:Property">annotation <span class="status" property="owl:deprecated" content="true">[deprecated]</span></dt>
 <dd about="#annotation" property="rdfs:comment" datatype="xsd:string">
 <p>作品の一節について、説明的な情報。</p>
 </dd>
@@ -1116,7 +1131,12 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング コンテンツ</a></p>
 </dd>
-<dt id="note" about="#note" typeof="rdf:Property">note <span class="status">[deprecated]</span></dt>
+<dd>
+<p>
+<span class="subproplabel">置き換え：</span><span class="subpropref" about="#annotation" rel="dcterms:isReplacedBy"><a href="http://www.idpf.org/epub/oa">Open Annotation in EPUB</a></span>
+</p>
+</dd>
+<dt id="note" about="#note" typeof="rdf:Property">note <span class="status" property="owl:deprecated" content="true">[deprecated]</span></dt>
 <dd about="#note" property="rdfs:comment" datatype="xsd:string">
 <p>
 
@@ -1125,6 +1145,11 @@ margin-left: 0.3em;
 </dd>
 <dd>
 <p><span class="subproplabel">HTML で使用するコンテクスト：</span>ひとつの note を識別する <a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside</a> 要素、または（<a href="#footnotes">footnotes</a> と <a href="#rearnotes">rearnotes</a> を参照する）グループ内の個々の note を識別するセクショニング コンテンツの子孫要素。</p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">置き換え：</span><span class="subpropref" about="#note" rel="dcterms:isReplacedBy"><a href="#footnote">footnote</a>、<a href="#rearnote">rearnote</a></span>
+</p>
 </dd>
 <dt id="footnote" about="#footnote" typeof="rdf:Property">footnote</dt>
 <dd about="#footnote" property="rdfs:comment" datatype="xsd:string">
@@ -1178,7 +1203,7 @@ margin-left: 0.3em;
 <div id="links" about="#links" typeof="rdf:Bag">
 <h2 id="h_links" about="#links" rev="dcterms:title">参照文献</h2>
 <dl about="#links" rev="rdfs:member">
-<dt id="annoref" about="#annoref" typeof="rdf:Property">annoref <span class="status">[deprecated]</span></dt>
+<dt id="annoref" about="#annoref" typeof="rdf:Property">annoref <span class="status" property="owl:deprecated" content="true">[deprecated]</span></dt>
 <dd about="#annoref" property="rdfs:comment" datatype="xsd:string">
 <p>注釈への参照。</p>
 </dd>
@@ -1190,6 +1215,11 @@ margin-left: 0.3em;
 </dd>
 <dd>
 <p><span class="subproplabel">HTML で使用するコンテクスト：</span><a href="http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element">a 要素</a></p>
+</dd>
+<dd>
+<p>
+<span class="subproplabel">置き換え：</span><span class="subpropref" about="#annoref" rel="dcterms:isReplacedBy"><a href="http://www.idpf.org/epub/oa">Open Annotation in EPUB</a></span>
+</p>
 </dd>
 <dt id="biblioref" about="#biblioref" typeof="rdf:Property">biblioref <span class="status">[draft]</span></dt>
 <dd about="#biblioref" property="rdfs:comment" datatype="xsd:string">
