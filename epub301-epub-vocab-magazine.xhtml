@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:role="http://www.w3.org/1999/xhtml/vocab#"
+      xmlns:htu="http://www.daisy.org/ns/rdf/usage/html/#"
+      xmlns:dcterms="http://purl.org/dc/terms/"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xml:lang="en-US"
+      version="XHTML+RDFa 1.0">
+<head xmlns:epub="http://www.idpf.org/epub/vocab#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta property="dcterms:creator" content="dichikawa"/>
+<meta property="dcterms:creator" content="bkasdorf"/>
+<meta property="dcterms:issued" content="2014-11-19"/>
+<meta property="dcterms:publisher"
+            content="International Digital Publishing Forum (IDPF)"/>
+<title>EPUB 3 Magazine Navigation Vocabulary（日本語訳版）</title>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<style type="text/css">
+p.identity {
+        margin-top: -3em;
+        font-size: 75%;
+}
+p.noindent {
+        margin-left: -2.4em;
+}
+span.pubdate { 
+        color: rgb(0,0,0);
+}
+span.status {
+        color: rgb(190,0,0);
+        font-size: 80%;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 0.3em;
+}
+</style>
+</head>
+<body xmlns:epub="http://www.idpf.org/epub/vocab#">
+<div class="translation-attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20141119.html">EPUB 3 Magazine Navigation Vocabulary</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20141119.html">http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20141119.html</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20141119.html">http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20141119.html</a> を参照されたい。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+
+<dl>
+<dt>公開日:</dt>
+<dd>2014-11-25</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+
+<h1 property="dcterms:title">EPUB 3 Magazine Navigation Vocabulary</h1>
+<div class="printhistory">
+<p class="identity">
+<span class="pubdate">2014年11月19日</span>
+</p>
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20141119.html">http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20141119.html</a></dd>
+<dt>最新版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/magazine">http://www.idpf.org/epub/vocab/structure/magazine</a></dd>
+<dt>前の版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20131209.html">http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20131209.html</a></dd>
+</dl>
+</div>
+<h2 id="tocxsl">目次</h2>
+<ul>
+<li class="first">
+<a href="#h_statusofthisdocument">このドキュメントのステータス</a>
+</li>
+<li class="first">
+<a href="#h_aboutthisvocabulary">語彙について</a>
+</li>
+<li class="first">
+<a href="#h_revisionpolicy">改訂方針</a>
+</li>
+<li class="first">
+<a href="#h_prismcontrolledvocabularies">PRISM 統制語彙</a>
+</li>
+<li class="first">
+<a href="#h_regions">追加の領域</a>
+</li>
+</ul>
+
+<div>
+<h2 id="h_statusofthisdocument">このドキュメントのステータス</h2>
+<p>このドキュメントは、<a href="http://www.idpf.org/epub/renditions/region-nav/">EPUB Region-Based Navigation</a> 仕様書で使用するための用語を含んでいる。</p>
+<p><span class="status">[draft]</span> マークの用語の使用はいずれも、それぞれの仕様が最終的に勧告仕様のステータスに達するまで、実験的であると考慮するべきである。</p>
+<p>廃止予定の用語は、<span class="status">[deprecated]</span> によって識別できる。これらの用語は、もはや使用することは推奨されない。</p>
+<p>ラベルのないすべての用語は、安定していると考えられる。</p>
+</div>
+<div>
+<h2 id="h_aboutthisvocabulary">語彙について</h2>
+<div property="dcterms:description">
+<p>このドキュメントは、雑誌特有の構造的な語彙を表現している。これらの用語の意図は、ナビゲーションを支援するためにあるので、それぞれが特定の表現のために、そのページ上の他の表現に関連して再配置されるかもしれない雑誌ページを意味的に明確な部分を識別する（例えば、異なるアスペクト比あるいはビューポートの寸法に適合するために、それらの間で適切なナビゲーションを可能にしながら、再配置されるか否か）。</p>
+</div>
+<h2 id="h_revisionpolicy">改訂方針</h2>
+<p>このドキュメントは、常に変更されることがある。この語彙で定義されている用語は、削除されることはないが、廃止になるかもしれない。</p>
+<p>追加や変更、説明の要求は、<a href="https://code.google.com/p/epub-revision/issues/list">EPUB 3 Revision Tracker</a> を介して行わなければならない。</p>
+</div>
+<h2 id="h_prismcontrolledvocabularies">PRISM 統制語彙</h2>
+<p><a href="http://www.idealliance.org/specifications/prism-metadata-initiative/prism/specifications/controlled-vocabularies">PRISM 統制語彙</a>は、領域ベースのナビゲーションを支援する業界標準の雑誌のセマンティクスを提供するために使用されるべきである。</p>
+<p>特に、<a href="http://www.prismstandard.org/specifications/3.0/PRISM_CV_Spec_3.0.htm#_Toc337191589">PAM Content Class Vocabulary</a> が提供している以下の用語のサブセットは、雑誌のナビゲーションでの使用が推奨される：</p>
+<ul>
+<li>title</li>
+<li>deck</li>
+<li>subtitle</li>
+<li>byline</li>
+<li>contributors</li>
+<li>caption</li>
+<li>credit</li>
+<li>box</li>
+<li>advertisement</li>
+<li>pullQuote</li>
+</ul>
+<p>EPUB 領域ベースのナビゲーションでこれらの用語を使用する場合、予約済みの接頭辞「<code>prism:</code>」が必須である</p>
+
+<div id="vocab" class="vocabulary">
+
+<div id="regions" about="#regions" typeof="rdf:Bag">
+<h2 id="h_regions" about="#regions" rev="dcterms:title">追加の領域</h2>
+<dl about="#regions" rev="rdfs:member">
+<dt id="article-region" about="#article-region" typeof="rdf:Property">article-region<span class="status"> [draft]</span></dt>
+<dd about="#article-region" property="rdfs:comment" datatype="xsd:string">
+<p>完全な記事（article）を含んでいる領域、または複数ページの記事の一部。このプロパティの存在は、セマンティクスの整合性を暗示しないことに注意されたい。記事領域の境界は、必ずしも記事のセマンティクスコンポーネントと連携させられないので任意である。</p>
+</dd>
+<dt id="article-text" about="#article-text" typeof="rdf:Property">article-text<span class="status"> [draft]</span></dt>
+<dd about="#article-text" property="rdfs:comment" datatype="xsd:string">
+<p>記事のテキストを含む領域。</p>
+</dd>
+<dt id="media" about="#media" typeof="rdf:Property">media<span class="status"> [draft]</span></dt>
+<dd about="#media" property="rdfs:comment" datatype="xsd:string">
+<p>画像またはイラストを含む領域、または、より一般的にフォーマットによって許可されたメディアの一片。領域は、ビデオまたはスライドショー、ページに挿入された HTML アニメーション、類似のマルチメディアコンポーネントを含んでいるかもしれない。</p>
+</dd>
+</dl>
+</div>
+</div>
+</body>
+</html>
