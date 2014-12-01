@@ -77,7 +77,7 @@ margin-left: 0.3em;
 <dt>前の版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20141125.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20141125.html</a></dd>
 </dl>
-<p class="diff">以前のドラフトからの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4945&amp;old=4943&amp;r=4945&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fstructure.n3">変更点の差分</a>もまた利用可能である。</p>
+<p class="diff">以前のドラフトからの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4947&amp;old=4943&amp;r=4947&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fstructure.n3">変更点の差分</a>もまた利用可能である。</p>
 </div>
 
 <h2 id="tocxsl">目次</h2>
@@ -745,7 +745,7 @@ margin-left: 0.3em;
 <div id="asides" about="#asides" typeof="rdf:Bag">
 <h2 id="h_asides" about="#asides" rev="dcterms:title">補完的なコンテンツ</h2>
 <dl about="#asides" rev="rdfs:member">
-<dt id="case-study" about="#case-study" typeof="rdf:Property">case-study</dt>
+<dt id="case-study" about="#case-study" typeof="rdf:Property">case-study<span class="status"> [draft]</span></dt>
 <dd about="#case-study" property="rdfs:comment" datatype="xsd:string">
 <p>特定のトピックの詳細な分析。</p>
 </dd>
@@ -1228,9 +1228,6 @@ margin-left: 0.3em;
 <p>ページの一番下に表示されているメモ。</p>
 </dd>
 <dd>
-<p><span class="subpropref" about="#footnote" rel="rdfs:subPropertyOf" resource="#note"><a href="#note">note</a></span> <span class="subproplabel">から継承</span></p>
-</dd>
-<dd>
 <p><span class="subpropref" about="#footnote" rel="rdfs:seeAlso" resource="#footnotes"><a href="#footnotes">footnotes</a></span> <span class="subproplabel">も参照されたい。</span></p>
 </dd>
 <dd>
@@ -1239,9 +1236,6 @@ margin-left: 0.3em;
 <dt id="rearnote" about="#rearnote" typeof="rdf:Property">rearnote</dt>
 <dd about="#rearnote" property="rdfs:comment" datatype="xsd:string">
 <p>作品の後部（backmatter）またはセクションの終わりに表示されるメモ。</p>
-</dd>
-<dd>
-<p><span class="subpropref" about="#rearnote" rel="rdfs:subPropertyOf" resource="#note"><a href="#note">note</a></span> <span class="subproplabel">から継承</span></p>
 </dd>
 <dd>
 <p><span class="subpropref" about="#rearnote" rel="rdfs:seeAlso" resource="#rearnotes"><a href="#rearnotes">rearnotes</a></span> <span class="subproplabel">も参照されたい。</span></p>
