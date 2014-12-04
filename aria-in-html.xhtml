@@ -228,7 +228,7 @@ p, li, dt, dd {line-height:1.6;}
 <dt>公開日:</dt>
 <dd>2014-04-09</dd>
 <dt>改定日:</dt>
-<dd>2014-04-17</dd>
+<dd>2014-12-04</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -238,7 +238,7 @@ p, li, dt, dd {line-height:1.6;}
 <div id="respecHeader" role="contentinfo" class="head">
 
 <p><a href="http://www.w3.org/"><img src="https://www.w3.org/Icons/w3c_home" alt="W3C" width="72" height="48"/></a></p>
-<h1 class="title p-name" id="title" property="dcterms:title">HTML で <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使う（Using <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> in HTML）</h1>
+<h1 class="title p-name" id="title" property="dcterms:title">Using <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> in HTML</h1>
 <h2 id="w3c-working-draft-03-october-2013" property="dcterms:issued" datatype="xsd:dateTime" content="2013-10-02T22:00:00.000Z"><abbr title="World Wide Web Consortium">W3C</abbr> Working Draft <time class="dt-published" datetime="2013-10-03">2013年8月3日</time></h2>
 <dl>
 <dt>このバージョン：</dt>
@@ -264,7 +264,7 @@ p, li, dt, dd {line-height:1.6;}
 </div>
 <section rel="bibo:chapter" resource="#abstract" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract">
 <h2 id="h2_abstract" role="heading" aria-level="1">要約</h2>
-<p role="contentinfo">このドキュメントは、障害を持つ人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a href="#bib-WAI-ARIA" class="bibref">WAI-ARIA</a></cite>] を用いて HTML 要素にアクセシビリティ情報を追加する方法を開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajax、HTML、Javascript と関連した技術により開発された高度なユーザーインターフェースを特に助け、[<cite><a href="#bib-HTML5" class="bibref">HTML5</a></cite>] で <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
+<p role="contentinfo">このドキュメントは、障碍を持つ人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a href="#bib-WAI-ARIA" class="bibref">WAI-ARIA</a></cite>] を用いて HTML 要素にアクセシビリティ情報を追加する方法を開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajax、HTML、JavaScript と関連した技術により開発された高度なユーザーインターフェースを特に助け、[<cite><a href="#bib-HTML5" class="bibref">HTML5</a></cite>] で <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
 </section>
 <section rel="bibo:chapter" resource="#sotd" typeof="bibo:Chapter" id="sotd" class="introductory">
 <h2 id="h2_sotd" role="heading" aria-level="1">このドキュメントのステータス</h2>
@@ -319,7 +319,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <section rel="bibo:chapter" resource="#intro" typeof="bibo:Chapter" tabindex="-1" id="intro">
 <!--OddPage--><h2 id="h2_intro" role="heading" aria-level="1"><span class="secno">1. </span>はじめに</h2>
-<p>このドキュメントは、障害を持つ人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a href="#bib-WAI-ARIA" class="bibref">WAI-ARIA</a></cite>] を用いて HTML 要素にアクセシビリティ情報を追加する方法を開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajax、HTML、Javascript や関連した技術により開発された高度なユーザーインターフェースを特に助け、[HTML5] で <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
+<p>このドキュメントは、障碍を持つ人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a href="#bib-WAI-ARIA" class="bibref">WAI-ARIA</a></cite>] を用いて HTML 要素にアクセシビリティ情報を追加する方法を開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajax、HTML、Javascript や関連した技術により開発された高度なユーザーインターフェースを特に助け、[HTML5] で <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
 
 <p>このドキュメントは、[<cite><a href="#bib-HTML5" class="bibref">HTML5</a></cite>] の各要素で使用されるのが適切である <abbr title="Accessible Rich Internet Applications">ARIA</abbr> 属性を提案しています。</p>
 
@@ -345,9 +345,9 @@ p, li, dt, dd {line-height:1.6;}
 
 <h3 role="heading" aria-level="2" tabindex="-1" id="rule1"><span class="secno">2.1 </span><abbr title="Accessible Rich Internet Applications">ARIA</abbr> を使用する一つ目のルール</h3>
 
-<p>要素を再利用して、アクセシブルにするために <abbr title="Accessible Rich Internet Applications">ARIA</abbr> ロール（role）、ステート（state）またはプロパティ（property）追加する代わりに、必要とされ<strong>組み込み済み</strong>であるセマンティクスや振る舞いを持つネイティブの HTML 要素 [<cite><a href="#bib-HTML5" class="bibref">HTML5</a></cite>] または属性を使用することが<em>できる</em>ならば、<strong>そうしてください</strong>。</p>
+<p>要素を再利用して、アクセシブルにするために <abbr title="Accessible Rich Internet Applications">ARIA</abbr> ロール（role）、ステート（state）またはプロパティ（property）を追加する代わりに、すでに<strong>組み込み済み</strong>であるセマンティクスや振る舞いを持つネイティブの HTML 要素 [<cite><a href="#bib-HTML5" class="bibref">HTML5</a></cite>] または属性を使用することが<em>できる</em>ならば、<strong>そうしてください</strong>。</p>
 
-<h3 id="not-possible">どのような状況下ではこれが利用できない場合があるか？</h3>
+<h3 id="not-possible">どのような状況下で利用できない場合がありますか</h3>
 
 <ul>
 <li>要素が必要に応じてスタイルできないため、ビジュアルデザインの制約が特定のネイティブ要素の使用を無視する場合。</li>
@@ -406,7 +406,7 @@ p, li, dt, dd {line-height:1.6;}
 <p>例えば、この HTML ツリーのコードは、</p>
 
 <code class="block">&lt;h1 role=button&gt;text&lt;/h1&gt;</code>
-<p><a href="http://www.w3.org/WAI/PF/aria-implementation/#def_accessibility_tree">アクセシビリティツリー（accessibility tree）</a>ではこうなります。</p>
+<p><a href="http://www.w3.org/WAI/PF/aria-implementation/#def_accessibility_tree">アクセシビリティ ツリー（accessibility tree）</a>ではこうなります。</p>
 
 <code class="blockat">&lt;button&gt;text&lt;/button&gt;</code>
 
@@ -418,7 +418,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <code class="block">&lt;button <mark>role="heading"</mark> <mark>aria-level="1"</mark>&gt;text&lt;/button&gt;</code>
 
-<p>アクセシビリティツリーではこうなります。</p>
+<p>アクセシビリティ ツリーではこうなります。</p>
 
 <code class="blockat">&lt;<mark>h1</mark>&gt;text&lt;/<mark>h1</mark>&gt;</code>
 
@@ -457,7 +457,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <code class="block">&lt;h1 <mark>role="presentation"</mark>&gt;text&lt;/h1&gt;</code>
 
-<p>アクセシビリティツリーではこうなります。</p>
+<p>アクセシビリティ ツリーではこうなります。</p>
 
 <code class="blockat">&lt;&gt;text&lt;/&gt;</code>
 
@@ -467,7 +467,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <code class="block">&lt;h1 <mark>role="presentation"</mark>&gt;&lt;abbr&gt;API&lt;/abbr&gt;&lt;/h1&gt;</code>
 
-<p>アクセシビリティツリーではこうなります。</p>
+<p>アクセシビリティ ツリーではこうなります。</p>
 
 <code class="blockat">&lt;&gt;&lt;abbr&gt;API&lt;/abbr&gt;&lt;/&gt;</code>
 
@@ -479,7 +479,7 @@ p, li, dt, dd {line-height:1.6;}
   &lt;tr&gt;&lt;td&gt;&lt;abbr&gt;API&lt;/abbr&gt;&lt;/td&gt;&lt;tr&gt;<br/>
   &lt;/table&gt;</code>
 
-<p>アクセシビリティツリーではこうなります。</p>
+<p>アクセシビリティ ツリーではこうなります。</p>
 
 <code class="blockat">&lt;&gt;<br/>
    &lt;&gt;&lt;&gt;&lt;abbr&gt;API&lt;/abbr&gt;&lt;/&gt;&lt;/&gt;<br/>
@@ -497,7 +497,7 @@ p, li, dt, dd {line-height:1.6;}
   &lt;/td&gt;&lt;tr&gt;<br/>
   &lt;/table&gt;</code>
 
-<p>アクセシビリティツリーではこうなります。</p>
+<p>アクセシビリティ ツリーではこうなります。</p>
 
 <code class="blockat">&lt;&gt;<br/>
   &lt;&gt;&lt;&gt;<br/>
@@ -540,7 +540,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <h3 role="heading" aria-level="2" id="application" tabindex="-1"><span class="secno">2.9 </span><abbr title="Accessible Rich Internet Applications">ARIA</abbr> role=application の使用</h3>
 
-<h3 id="not">それで、わたしはいつそれを使うべきで、いつそうしないべきか</h3>
+<h3 id="not">いつそれを使うべきで、いつそうしないべきか</h3>
 
 <p>コントロールのセットは、標準の HTML の一部なので、これらのウィジェットが含まれている場合、<code>role="application"</code> を使用<strong>しないでください</strong>。それらをマークアップし、<abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> ロール（role）の代わりに、標準的な HTML ウィジェットを使用してインタラクションモデルを作成する場合にも適用されます。</p>
 
@@ -580,7 +580,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <p>要するに、あなたが実際に <code>role=application</code> を使用する<strong>であろう</strong>機会は、恐らく<strong>とても稀な</strong>ケースです！</p>
 
-<h3 id="where">それで、わたしは稀なケースである <code>role=application</code> をどこに加えれば訳に立ちますか？</h3>
+<h3 id="where">稀なケースである <code>role=application</code> をどこに加えれば訳に立ちますか？</h3>
 
 <p>ウィジェットの要素を含んでいる最も身近な、例えば、外側の最も大きなウィジェット要素である要素の親 <code>div</code> に加えてください。外側の <code>div</code> が、アプリケーションのインタラクションモデルを必要とするウィジェットのみをラップする場合、これはフォーカスモードが、このウィジェットの外にあるユーザーのタブを一旦オフに切り替えていることを確認するでしょう。</p>
 
