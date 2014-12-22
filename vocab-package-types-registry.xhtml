@@ -7,7 +7,7 @@
 ]>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>出版物タイプの EPUB レジストリ（日本語訳版）</title>
+<title>EPUB Registry of Publication Types（日本語訳版）</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="dcterms:creator" content="mgylling" />
 <meta name="dcterms:creator" content="mgarrish" />
@@ -33,33 +33,33 @@ color:rgb(0, 0, 0);
 <body>
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/vocab/package/types">EPUB Registry of Publication Types</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/package/types">EPUB Registry of Publication Types</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub/vocab/package/types">EPUB Registry of Publication Types</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/vocab/package/types/registry-20141219.html">EPUB Registry of Publication Types</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/package/types/registry-20141219.html">EPUB Registry of Publication Types</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub/vocab/package/types/registry-20141219.html">EPUB Registry of Publication Types</a> を参照されたい。</p>
 
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
 <dt>公開日:</dt>
 <dd>2014-03-13</dd>
 <dt>改定日:</dt>
-<dd>2014-08-25</dd>
+<dd>2014-12-22</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
 
 </div>
-<h1>出版物タイプの EPUB レジストリ</h1>
+<h1>EPUB Registry of Publication Types</h1>
 
-<p class="identity"><span class="pubdate">2014年8月22日</span></p>
+<p class="identity"><span class="pubdate">2014年12月19日</span></p>
 
 <div class="printhistory">
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types/registry-20140822.html">http://www.idpf.org/epub/vocab/package/types/registry-20140822.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types/registry-20141219.html">http://www.idpf.org/epub/vocab/package/types/registry-20141219.html</a></dd>
 <dt>最新版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types">http://www.idpf.org/epub/vocab/package/types</a></dd>
 <dt>前の版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types/registry-20140516.html">http://www.idpf.org/epub/vocab/package/types/registry-20140516.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/package/types/registry-20140822.html">http://www.idpf.org/epub/vocab/package/types/registry-20140822.html</a></dd>
 </dl>
-<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4923&amp;old=4916&amp;r=4923&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fdc-types.html">変更点の差分</a>は、入手可能である。</p>
+<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4966&amp;old=4923&amp;r=4966&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fvocab%2Fdc-types.html">変更点の差分</a>は、入手可能である。</p>
 </div>
 
 <h2>要約</h2>
@@ -80,12 +80,12 @@ color:rgb(0, 0, 0);
 <dd>EPUB 出版物がインデックスを表現することを識別する。より詳細な情報は <a href="http://www.idpf.org/epub/idx/">EPUB Indexes specification</a> を参照されたい。</dd>
 <dt>preview <span class="draft">[draft]</span></dt>
 <dd>EPUB 出版物は作品のプレビューであることを識別する。より詳細な情報は <a href="http://www.idpf.org/epub/previews/">EPUB Previews</a> 仕様を参照されたい。</dd>
+<dt id="scriptable-component">scriptable-component <span class="draft">[draft]</span></dt>
+<dd>EPUB 出版物が Scriptable Component であることを識別する。より詳細な情報は <a href="http://www.idpf.org/epub/sc/packaging/">EPUB Scriptable Components Packaging and Integration</a> を参照されたい。</dd>
 <dt id="teacher-edition">teacher-edition <span class="draft">[draft]</span></dt>
 <dd>EPUB 出版物に作品の指導者（教師）用の版を含んでいることを識別する。指導者用の版は、学習者（学生）用の版のテキストを含み、注釈をつけている点で、<a href="#teacher-guide">teacher's guide</a> とは異なる。より詳細な情報は <a href="http://www.idpf.org/epub/profiles/edu/spec/">EPUB EDUPUB Profile</a> 仕様を参照されたい。</dd>
 <dt id="teacher-guide">teacher-guide <span class="draft">[draft]</span></dt>
 <dd>EPUB 出版物に指導者（教師）用ガイドを含んでいることを識別する。指導者用ガイドは、それはカリキュラムのいくつかの状況で指導者に独立したガイダンスを提供し、該当する学習者用の版が存在しない点で、<a href="#teacher-edition">teacher's edition</a> とは異なる。より詳細な情報は <a href="http://www.idpf.org/epub/profiles/edu/spec/">EPUB EDUPUB Profile</a> 仕様を参照されたい。</dd>
-<dt id="widget">widget <span class="draft">[draft]</span></dt>
-<dd>EPUB 出版物がウィジェットであることを識別する。より詳細な情報は <a href="https://docs.google.com/document/d/183O0uUMmILXUrv6NeUQssUT5tn9haY65lKyTdiZ9gDg/edit#">EPUB Widget Packaging and Integration</a> を参照されたい。</dd>
 </dl>
 </body>
 </html>
