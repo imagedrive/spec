@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EPUB Collection Element Role Extensions（日本語訳版）</title>
+<meta name="description" content="このドキュメントは、EPUB Package Document の collection 要素のために定義されたカスタムロールを識別する。"/>
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<style>
+dt { margin: 0.5em 0 0.25em 0; }
+span.draft{
+	color:rgb(190, 0, 0);
+}
+dt{
+	margin-top:1em;
+}
+p.identity{
+	margin-top:-3em;
+	font-size:75%;
+}
+span.pubdate{
+	color:rgb(0, 0, 0);
+}</style>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+</head>
+<body>
+<div class="translation-attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub/extensions/roles/registry-20150127.html">EPUB Collection Element Role Extensions</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/extensions/roles">http://www.idpf.org/epub/extensions/roles</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub/extensions/roles">EPUB Collection Element Role Extensions</a> を参照されたい。</p>
+
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+
+<dt>公開日:</dt>
+<dd>2015-1-30</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+
+<h1>EPUB Collection Element Role Extensions</h1>
+
+<p class="identity"><span class="pubdate">2015年1月27日</span></p>
+
+<div class="printhistory">
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/extensions/roles/registry-20150127.html" >http://www.idpf.org/epub/extensions/roles/registry-20150127.html</a></dd>
+<dt>最新版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/extensions/roles">http://www.idpf.org/epub/extensions/roles</a></dd>
+<dt>前の版</dt>
+<dd><a class="link" href="http://www.idpf.org/epub/extensions/roles/registry-20131104.html">http://www.idpf.org/epub/extensions/roles/registry-20131104.html</a></dd>
+</dl>
+<p class="diff">以前のドラフトからの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4971&amp;old=4840&amp;r=4971&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fextensions%2Froles.html">変更点の差分</a>もまた利用できる。</p>
+</div>
+
+<h2 id="overview_h">要約</h2>
+
+<p>このドキュメントは、EPUB Package Document の <code>collection</code> 要素のために定義されたカスタムロールを識別する。</p>
+
+<p>このページで定義されたロールは、EPUB Working Group によって採用されておらず、それらの使用は IDPF によって承認されていない。情報提供のみを目的としてここに提示され、実験的なものとして扱われるべきである。</p>
+
+<p>IDPF で承認されたロールの一覧は、<a href="vocab-package-roles.xhtml">EPUB Registry of Collection Roles</a> を参照されたい。</p>
+
+<p>このドキュメントは有益であり、EPUB 仕様の主要な主要なバージョンと紐付かない。</p>
+
+<h2 id="rev_h">改訂方針</h2>
+
+<p>このドキュメントは、新しいロールが IDPF コミュニティによって定義されるとき常に変更されることがある。ロールは、もはやサポートされていない場合、このドキュメントから削除してもよい。</p>
+
+<p>このページにカスタムロールの定義を包含するためには、<a href="https://code.google.com/p/epub-revision/issues/list">EPUB 3 Revision Tracker</a> でチケットを切ってください。</p>
+
+<h2 id="roles_h">ロール</h2>
+
+<h3 id="conets">CoNETS</h3>
+<p>以下のロールは <a href="http://www.conets.jp/">CoNETS</a>、日本の教科書の出版社団体によって登録されている。</p>
+<p>
+これらのロールに関する詳細な情報は、"<a href="http://conets.jp/spec/epub/odp/role/collection-role.html">CoNETS roles of the package document's collection element</a>"を参照されたい。
+</p>
+<dl>
+<dt id="conets-units">http://conets.jp/spec/epub/odp/role/units</dt>
+<dd>学習コンテンツの単位を表すコレクション。</dd>
+<dt id="conets-pageset">http://conets.jp/spec/epub/odp/role/pageset</dt>
+<dd>同じ表示形態の隣接ページを表すコレクション。</dd>
+<dt id="conets-page">http://conets.jp/spec/epub/odp/role/page</dt>
+<dd>固定レイアウトのページを表すコレクション。</dd>
+</dl>
+
+</body>
+</html>
