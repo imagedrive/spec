@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;">
+<!ENTITY copy "&#169;">
+<!ENTITY trade "&#8482;">
+<!ENTITY reg "&#174;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EPUB Manifest Role（日本語訳版）</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+</head>
+<body>
+<div class="translation-attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub/vocab/package/roles/manifest/manifest-20140423.html">EPUB Manifest Role</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/package/roles/manifest/">http://www.idpf.org/epub/vocab/package/roles/manifest/</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub/vocab/package/roles/manifest/">EPUB Manifest Role</a> を参照されたい。</p>
+
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+<dt>公開日:</dt>
+<dd>2011-01-30</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+
+<div class="book" title="EPUB Manifest Role">
+<h1 class="title">EPUB Manifest Role</h1>
+<p class="identity"><span class="pubdate">2014年4月23日</span> <span class="releaseinfo">Initial Editor's Draft</span></p>
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fpackage%2Froles%2Fmanifest%2Fmanifest-20140423.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFMW7nEfE3eMaYd3mthBPLHa8D_Vg">http://www.idpf.org/epub/vocab/package/roles/manifest/manifest-20140423.html</a></dd>
+<dt>最新版</dt>
+<dd><a href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fvocab%2Fpackage%2Froles%2Fmanifest%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFG10ZSw2UDSy6lN9KJDDFLRyb1_w">http://www.idpf.org/epub/vocab/package/roles/manifest/</a></dd>
+<dt>前の版</dt>
+<dd>N/A</dd>
+</dl>
+<div class="legal">
+<p class="copyright">Copyright &copy; 2014 International Digital Publishing Forum<sup>&trade;</sup></p>
+<div class="legalnotice" title="Legal Notice" id="legalnotice">
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFmwkQcfXm0mYL9R_7T0FShJ3KlQA" >International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+<p>EPUB は International Digital Publishing Forum の登録商標である。</p>
+</div>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Editors</p>
+<p class="editor">Hadrien Gardeur (Feedbooks), Markus Gylling (IDPF), Matt Garrish (Invited Expert)</p>
+</div>
+
+<div>
+<h2 id="h_statusofthisdocument">この文書のステータス</h2>
+<p>このドキュメントは、IDPF EPUB 3 Working Group によって作られた初期の Editor's Draft である。進行中の作業で変更されることがある。</p>
+</div>
+
+<div class="toc">
+<p><strong>目次</strong></p>
+<dl>
+<dt><span class="chapter"><a href="#sec-overview">1. 要約</a></span></dt>
+<dd>
+<dt><span class="section"><a href="#sec-overview-purpose-and-scope">1.1 目的とスコープ</a></span></dt>
+<dt><span class="section"><a href="#sec-terminology">1.2 用語</a></span></dt>
+<dt><span class="section"><a href="#sec-conformance">1.3 適合性宣言</a></span></dt>
+</dd>
+<dt><span class="chapter"><a href="#sec-manifest-collection">2. Manifest Collection</a></span></dt>
+<dd>
+<dt><span class="section"><a href="#sec-manifest-introduction">2.1 前置き</a></span></dt>
+<dt><span class="section"><a href="#sec-manifest-format">2.2 書式</a></span></dt>
+<dt><span class="bibliography"><a href="#references">参照・参考</a></span></dt>
+<dt><span class="bibliography"><a href="#normative-references">参照文献</a></span></dt>
+</dd>
+</dl>
+</div>
+
+<div class="chapter" title="1. Overview" id="sec-overview">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overview">&gt;</a>&nbsp;</span>1. 要約</h2>
+<div class="section" title="1.1 Purpose and Scope" id="sec-overview-purpose-and-scope">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-overview-purpose-and-scope">&gt;</a>&nbsp;</span>1.1 目的とスコープ</h3>
+
+<p class="informative">このセクションは有益な情報である。</p>
+
+<p>この仕様、EPUB Manifest Role は、EPUB &reg; 出版物の collection <a class="biblioref" href="#refPublications3">[Publications301]</a> の処理とレンダリングに必要なリソースのマニフェストを包含するための必要要件を定義する。</p>
+
+</div>
+
+<div class="section" title="1.2 Terminology" id="sec-terminology">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-terminology">&gt;</a>&nbsp;</span>1.2 用語</h3>
+
+<p>このドキュメントで使用されている EPUB 仕様の用語の定義については <span class="c5"><a class="c9" href="http://www.google.com/url?q=http%3A%2F%2Fidpf.org%2Fepub%2F301%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNEhU8xfHg3-SLpkEqzn9PjXUppmig" >EPUB 仕様書</a></span>を参照されたい。</p>
+</div>
+
+<div class="section" title="1.3 Conformance Statements" id="sec-conformance">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-conformance">&gt;</a>&#160;</span>1.3 適合性宣言</h3>
+
+<p>この文書内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">may</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr>RFC2119</abbr>]</a> の記述に従って解釈される。</p>
+
+
+<p>この仕様のすべてのセクションは規定ある。但し"このセクションは有益な情報である"という参考情報状態ラベルで識別される箇所を除く。セクションと付録への参考情報状態の適用は、含まれる可能性のあるすべての子コンテンツおよびサブセクションに適用される。</p>
+
+<p>この仕様のすべての例は有益な参考情報である。</p>
+
+</div>
+
+</div>
+
+<div class="chapter" title="2. Manifest Collection" id="sec-manifest-collection">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-manifest-collection">&gt;</a>&nbsp;</span>2. Manifest Collection</h2>
+<div class="section" title="2.1 Introduction" id="sec-manifest-introduction">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-manifest-introduction">&gt;</a>&nbsp;</span>2.1 前置き</h3>
+
+<p><code class="markup">manifest</code> <code class="markup">collection</code> は、Package Document <span class="phrase"><a class="link" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2F301%2Fspec%2Fepub-publications.html%23sec-manifest-elem&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHT4rnWfs4f7XDhDhXczakcexFGkw" >manifest</a> <a class="biblioref" href="#kix.a8d9iw8hpddj">[Publications301]</a></span> と性質は似ているが、典型的に EPUB 出版物の特定の機能のレンダリングに必要な Publication Resource のサブセットを識別する。</p>
+
+<p>例えば、<code class="markup">preview</code> <code class="markup">collection</code> <a class="biblioref" href="#refEPUBPreviews">[Previews]</a> の主な目的は、EPUB Content Document に含まれているサンプルコンテンツを識別することであるが、リーディングシステムが、表示を効率的にするプレビューを抽出するためにレンダリングに使用するスタイルシートと画像、他のリソースを知るためにもまた必要とする。<code class="markup">manifest</code> <code class="markup">collection</code> は、これらの追加のリソースが容易に特定されることを許可する。</p>
+
+</div>
+
+<div class="section" title="2.1 Introduction" id="sec-manifest-format">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-manifest-format">&gt;</a>&nbsp;</span>2.2 書式</h3>
+
+<p><code class="markup">collection</code> 要素の <code class="markup">role</code> 属性は、マニフェストが含まれていることを示すために、"<code class="value">manifest</code>" 値をセットしなければ<span class="rfc2119">ならない（must）</span>。</p>
+<p>各 <code class="markup">manifest</code> <code class="markup">collection</code> は、ひとつ以上の <code class="markup">link</code> 要素のみ含めなければ<span class="rfc2119">ならず（must）</span>、そうして各 <code class="markup">link</code> 要素の <code class="markup">href</code> 属性に含まれている IRI は、必要なリソースの位置を参照しなければ<span class="rfc2119">ならない（must）</span>。<code class="markup">manifest</code> <code class="markup">collection</code> の特定の実装は、参照可能なリソースのタイプに制約を設定し<span class="rfc2119">てもよい（may）</span>。</p>
+<div class="informalexample">
+<p>次の例は、EPUB 出版物のひとつの章のために可能な <code class="markup">manifest</code> <code class="markup">collection</code> を示している。</p>
+
+<pre class="synopsis">&lt;collection role=&quot;manifest&quot;&gt;
+	&lt;link href=&quot;chap01.html&quot; type=&quot;application/xhtml+xml&quot;/&gt;
+	&lt;link href=&quot;main.css&quot; type=&quot;text/css&quot;/&gt;
+	&lt;link href=&quot;interface.css&quot; type=&quot;text/css&quot;/&gt;
+	&lt;link href=&quot;c01img01.jpg&quot; type=&quot;image/jpeg&quot;/&gt;
+	&lt;link href=&quot;c01img02.jpg&quot; type=&quot;image/jpeg&quot;/&gt;
+	&lt;link href=&quot;c01vid01.mp4&quot; type=&quot;video/mp4&quot;/&gt;
+&lt;/collection&gt;</pre>
+</div>
+
+<p><code class="markup">link</code> 要素の子は、親 <code class="markup">collection</code> を処理するために必要な Publication Resource のセットを表している。<code class="markup">manifest</code> <code class="markup">collection</code> は、親に記載されている全ての Content Document を包含するリソースの完全なセットを包含するべきであるが（<span class="c4 c2">should</span>）、<code class="markup">collection</code> の特定の実装は、違う方法<span class="rfc2119">でもよい（may）</span>。</p>
+<p class="c0 c20">
+
+<code class="markup">manifest</code> <code class="markup">collection</code> は、他の <code class="markup">collection</code> の子でなければ<span class="rfc2119">ならず（must）</span>、各 <code class="markup">collection</code> は、ひとつの <code class="markup">manifest</code> <code class="markup">collection</code> の最大値のみ包含する<span class="rfc2119">べきである（should）</span>。
+
+</p>
+
+</div>
+
+</div>
+
+<div class="bibliography" title="References" id="references">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#references">&gt;</a>&nbsp;</span>参照・参考</h2>
+</div>
+</div>
+</div>
+
+<div class="bibliodiv" title="Normative References">
+
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#normative-references">&gt;</a>&nbsp;</span>参照文献</h3>
+
+<div class="biblioentry" title="EPUB Previews" id="refEPUBPreviews">
+<p>[<abbr>Previews</abbr>] <span class="title"><em><a class="link" href="http://www.google.com/url?q=http%3A%2F%2Fwww.idpf.org%2Fepub%2Fpreviews%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGwmcEEOBKHy9jNYbLzAfZQKLappA" >EPUB Previews</a></em>.</span></p>
+</div>
+
+<div class="biblioentry" title="EPUB Publications 3.0.1" id="refPublications3">
+<p>[<abbr>Publications301</abbr>] <span class="title"><em> <a class="link" href="epub301-publications.xhtml">EPUB Publications 3.0.1</a> </em>. </span></p>
+</div>
+
+<div class="biblioentry" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)" id="refRFC2119">
+<p>[<abbr>RFC2119</abbr>] <span class="title"><em> <a class="link" href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a> (RFC 2119) </em>. </span><span class="date">March 1997. </span></p>
+</div>
+
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
