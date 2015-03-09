@@ -239,7 +239,7 @@ p, li, dt, dd {line-height:1.6;}
 <dt>公開日:</dt>
 <dd>2014-04-09</dd>
 <dt>改定日:</dt>
-<dd>2014-12-05</dd>
+<dd>2015-03-09</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -277,7 +277,7 @@ p, li, dt, dd {line-height:1.6;}
 </div>
 <section id="abstract" class="introductory" property="dcterms:abstract" datatype="" typeof="bibo:Chapter" resource="#abstract" rel="bibo:Chapter">
 <h2 aria-level="1" role="heading" id="h2_abstract">要約</h2>
-<p role="contentinfo">このドキュメントは、障碍を持つ人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a class="bibref" href="#bib-WAI-ARIA">WAI-ARIA</a></cite>] を用いて HTML 要素にアクセシビリティ情報を追加する方法を開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajaxa や HTML、Javascript、関連した技術により開発された高度なユーザーインターフェースを特に支援する [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] に <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
+<p role="contentinfo">このドキュメントは、障碍に接している人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a class="bibref" href="#bib-WAI-ARIA">WAI-ARIA</a></cite>] を用いて、HTML の要素にアクセシビリティ情報を追加する方法を、開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajaxa や HTML、JavaScript、関連した技術により開発された高度なユーザーインターフェースを特に支援する [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] に <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
 </section>
 <section id="sotd" class="introductory" typeof="bibo:Chapter" resource="#sotd" rel="bibo:Chapter">
 <h2 aria-level="1" role="heading" id="h2_sotd">このドキュメントのステータス</h2>
@@ -336,7 +336,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <section tabindex="-1" id="intro" typeof="bibo:Chapter" resource="#intro" rel="bibo:Chapter">
 <!--OddPage--><h2 aria-level="1" role="heading" id="h2_intro"><span class="secno">1. </span>はじめに</h2>
-<p>このドキュメントは、障碍を持つ人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a class="bibref" href="#bib-WAI-ARIA">WAI-ARIA</a></cite>] を用いて HTML 要素にアクセシビリティ情報を追加する方法を開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajax、HTML、Javascript や関連した技術により開発された高度なユーザーインターフェースを特に助け、[HTML5] で <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
+<p>このドキュメントは、障碍に接している人々にとって Web コンテンツと Web アプリケーションがよりアクセシブルになる方法を定義した Accessible Rich Internet Applications 仕様 [<cite><a class="bibref" href="#bib-WAI-ARIA">WAI-ARIA</a></cite>] を用いて、HTML の要素にアクセシビリティ情報を追加する方法を、開発者に向けた実装ガイドです。このドキュメントは、動的コンテンツや Ajax、HTML、JavaScript や関連した技術により開発された高度なユーザーインターフェースを特に助け、[HTML5] で <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> を使用する方法を明示します。</p>
 
 <p>このドキュメントは、どの <abbr title="Accessible Rich Internet Applications">ARIA</abbr> 属性を [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] の各要素に使用するのが適切であるかを提案しています。</p>
 
@@ -364,7 +364,7 @@ p, li, dt, dd {line-height:1.6;}
 
 <p>要素を再利用したり、アクセシブルにするために <abbr title="Accessible Rich Internet Applications">ARIA</abbr> ロール（role）やステート（state）、プロパティ（property）を追加する代わりに、セマンティクスや<strong>組み込み</strong>済みであるあなたが必要とする挙動を持つネイティブの HTML 要素または属性 [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] を使用することが<em>できる</em>なら、<strong>そうしてください</strong>。</p>
 
-<h3 id="not-possible">これはどのような状況下では利用できないかもしれないのか</h3>
+<h3 id="not-possible">これはどのような状況下では、利用できないかもしれないのか</h3>
 
 <ul>
 <li>機能が HTML [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] として利用可能だが、実装されていないか、実装されているが、<a href="http://www.html5accessibility.com">アクセシビリティのサポート</a>をしていない場合。</li>
@@ -408,9 +408,9 @@ p, li, dt, dd {line-height:1.6;}
 
 <p>すべてのインタラクティブなウィジェットは、適切に標準的なキーストロークやキーストロークの組み合わせに反応するために準備されなければなりません。</p>
 
-<p>例えば、<code>role=button</code> を使用する要素が、適切にフォーカスできなければならず、ユーザーが、<kbd>エンター</kbd>キー（Win OS）または<kbd>リターン</kbd>キー（Mac OS）と <code>space</code> キーの<strong>両方</strong>を使用する要素に関連したアクションをアクティブにできなければなりません。</p>
+<p>例えば、<code>role=button</code> を使用する要素が、適切にフォーカスできなければならず、ユーザーが、<kbd>enter</kbd> キー（Win OS）または <kbd>return</kbd> キー（Mac OS）と <code>space</code> キーの<strong>両方</strong>を使用する要素に関連したアクションをアクティブにできなければなりません。</p>
 
-<p><a href="http://www.w3.org/WAI/PF/aria-practices/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.0 オーサリングプラクティス（<abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.0 Authoring Practices）</a>のセクションの<a href="http://www.w3.org/WAI/PF/aria-practices/#keyboard">キーボードと構造化ナビゲーション（keyboard and structural navigation）</a>と<a href="http://www.w3.org/WAI/PF/aria-practices/#aria_ex">デザインパターン（design patterns）</a>を参照してください。</p>
+<p><a href="http://www.w3.org/WAI/PF/aria-practices/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.0 オーサリングプラクティス（<abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> 1.0 Authoring Practices）</a>の<a href="http://www.w3.org/WAI/PF/aria-practices/#keyboard">キーボードと構造化ナビゲーション（keyboard and structural navigation）</a>と<a href="http://www.w3.org/WAI/PF/aria-practices/#aria_ex">デザインパターン（design patterns）</a>のセクションを参照してください。</p>
 
 </section>
 
@@ -446,7 +446,7 @@ it is supposed to label --&gt;
 </code></pre>
 <p>操作している <a href="http://en.wikipedia.org/wiki/Microsoft_Active_Accessibility">MSAA</a> の <code>accName</code> プロパティは空です：</p>
 <p><img src="noname.png" width="277" height="143" alt="example control with MSAA name and role information displayed. The accName property has no value, the accRole property is 'editable text'."/></p>
-<p>比較すると、下のコード例 <code>input type=text</code> は、目に見えるラベル「user name」と accessible name を持っています。この例で、<code>input</code> 要素は <a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#category-label">labelable な要素</a>であり、<a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-label-element"><code>label</code></a> 要素は正確に入力に対してラベルテキストを関連付けするために使用されるから、accessible name を持っています。</p>
+<p>比較すると、下のコード例 <code>input type=text</code> は、目に見えるラベル「user name」と accessible name を持っています。この例で、<code>input</code> 要素は<a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#category-label">ラベル（label）付け可能な要素</a>であり、<a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#the-label-element"><code>label</code></a> 要素は正確に入力に対してラベルテキストを関連付けするために使用されるから、accessible name を持っています。</p>
 <pre><code class="block">
 &lt;!-- <strong>Note:</strong> use of for/id or wrapping label around text 
 and control methods will result in an accessible name --&gt;
