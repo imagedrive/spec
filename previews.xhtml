@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>EPUB Previews 1.0（日本語訳版）</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="css/epub-spec.css" />
+<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+</head>
+<body>
+<div class="translation-attention">
+
+<p>この文書は「<a href="http://www.idpf.org/epub/previews/epub-previews-20150708.html">EPUB Previews 1.0</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/previews/epub-previews-20150708.html">http://www.idpf.org/epub/previews/epub-previews-20150708.html</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/previews/epub-previews-20150708.html">EPUB Previews 1.0</a> を参照されたい。</p>
+
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+
+<p>なお、原文にある“preview”は、日本国内の慣習を踏まえて「立ち読み」または「立ち読み用」、もしくは「立ち読み型」と訳した。</p>
+
+<dl>
+
+<dt>公開日:</dt>
+<dd>2015-9-8</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+
+<h1 class="title">EPUB Previews 1.0</h1>
+<p class="identity">
+<span class="pubdate">2015年7月8日</span>
+<span class="releaseinfo">勧告案</span>
+</p>
+<p>レビュー期間中にあげられた問題に対処するために更新された。</p>
+<dl class="printhistory">
+<dt>この版</dt>
+<dd>
+<a class="link" href="http://www.idpf.org/epub/previews/epub-previews-20150708.html">http://www.idpf.org/epub/previews/epub-previews-20150708.html</a>
+</dd>
+<dt>最新版</dt>
+<dd>
+<a class="link" href="http://www.idpf.org/epub/previews/">http://www.idpf.org/epub/previews/</a>
+</dd>
+<dt>前の版</dt>
+<dd>
+<a class="link" href="http://www.idpf.org/epub/previews/epub-previews-20141202.html">http://www.idpf.org/epub/previews/epub-previews-20141202.html</a>
+</dd>
+</dl>
+<p class="errata">いくつかの規範的な訂正の包含については、このドキュメントの<a href="http://www.idpf.org/epub/previews/errata/">正誤表</a>を参照されたい。</p>
+<div class="legal">
+<p class="copyright">Copyright © 2012-2015 International Digital Publishing Forum™</p>
+<div class="legalnotice" title="Legal Notice" id="legalnotice">
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a class="link" href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+<p>EPUB は International Digital Publishing Forum の登録商標である。</p>
+</div>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Editors</p>
+<p class="editor">Hadrien Gardeur, Feedbooks</p>
+<p class="editor">Matt Garrish, Invited Expert</p>
+<p class="editor">Yasuki Ikeuchi, ACCESS</p>
+</div>
+<h2>このドキュメントのステータス</h2>
+<p>このドキュメントは、勧告案の状態であり、最終的な IDPF メンバーシップのレビュー用として利用可能である。</p>
+<div class="toc">
+<h2>目次</h2>
+<ol>
+<li>
+<a href="#sec-1">1. 概要</a>
+<ol>
+<li>
+<a href="#sec-1.1">1.1 目的とスコープ</a>
+</li>
+<li>
+<a href="#sec-1.2">1.2 用語</a>
+</li>
+<li>
+<a href="#sec-1.3">1.3 適合性宣言</a>
+</li>
+</ol>
+</li>
+<li>
+<a href="#sec-2">2. 立ち読み用出版物</a>
+<ol>
+<li>
+<a href="#sec-2.1">2.1 概要</a>
+</li>
+<li>
+<a href="#sec-2.2">2.2 コンテンツの適合性</a>
+</li>
+<li>
+<a href="#sec-2.3">2.3 リーディングシステムの適合性</a>
+</li>
+<li>
+<a href="#sec-2.4">2.4 立ち読み用の識別子</a>
+</li>
+<li>
+<a href="#sec-2.5">2.5 識別子</a>
+</li>
+<li>
+<a href="#sec-2.6">2.6 例</a>
+</li>
+</ol>
+</li>
+<li>
+<a href="#sec-3">3. 組み込み型の立ち読み</a>
+<ol>
+<li>
+<a href="#sec-3.1">3.1 概要</a>
+</li>
+<li>
+<a href="#sec-3.2">3.2 コンテンツの適合性</a>
+</li>
+<li>
+<a href="#sec-3.3">3.3 リーディングシステムの適合性</a>
+</li>
+<li>
+<a href="#sec-3.4">3.4 立ち読みコレクション</a>
+</li>
+<li>
+<a href="#sec-3.5">3.5 立ち読みコレクションのフラグメント識別子</a>
+</li>
+<li>
+<a href="#sec-3.6">3.6 組み込み型の立ち読みから、立ち読み用出版物の生成</a>
+</li>
+</ol>
+</li>
+<li>
+<a href="#sec-4">4. 出版物の取得</a>
+</li>
+<li>
+<a href="#app-a">付録 A. 謝辞と貢献者</a>
+</li>
+<li>
+<a href="#refs">参照・参考</a>
+<ol>
+<li>
+<a href="#refs-norm">参照文献</a>
+</li>
+<li>
+<a href="#refs-info">参考文献</a>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<h2 class="chapter" id="sec-1">1. 概要</h2>
+<h3 class="title" id="sec-1.1">1.1 目的とスコープ</h3>
+<p class="informative">このセクションは参考である</p>
+<p>この仕様、EPUB Previews は、立ち読みコンテンツを、EPUB® 出版物に包含することができる方法について説明している。このドキュメントは、そのようなコンテンツを定義するために、二つの重要なモデルの概要を示している。</p>
+<ol>
+<li>出版物自体が、立ち読みを表す（つまり、完全な出版物は、別の出版物として利用可能である）のと、</li>
+<li>出版物は、EPUB コンテンツ ドキュメントのサブセットと立ち読みを構成する出版物リソースを識別する。</li>
+</ol>
+<p>メタデータと（例えば、完全な出版物を入手するための）プレビューを結びつけるリンクのベストプラクティスもまた対象としている。</p>
+<h3 class="title" id="sec-1.2">1.2 用語</h3>
+<p class="italic">このドキュメントで使用されている EPUB 固有の用語の定義については、<a href="http://idpf.org/epub/301/">EPUB 仕様</a>を参照されたい。</p>
+<div class="glosslist">
+<dl>
+<dt class="glossentry" id="id.buhlmwjemqi7">Embedded Preview（組み込み型の立ち読み）</dt>
+<dd>
+<p>立ち読みは、EPUB 出版物が含んでいるリソースのサブセットから生じる。</p>
+</dd>
+<dt class="glossentry" id="kix.mlieuukfuo3v">Preview Publication（立ち読み用出版物）</dt>
+<dd>
+<p>他の出版物の立ち読みを表すコンテンツである EPUB 出版物。</p>
+</dd>
+</dl>
+</div>
+<h3 class="title" id="sec-1.3">1.3 コンテンツの適合性</h3>
+<p>この文書内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">required</span>、<span class="rfc2119">shall</span>、<span class="rfc2119">shall not</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">recommended</span>、<span class="rfc2119">may</span>、<span class="rfc2119">optional</span> は、<a href="#id.4v706jdntcjd">[RFC2119]</a> の記述に従って解釈される。</p>
+<p>この仕様のすべてのセクションは規定ある。但し"このセクションは有益な情報である"という参考情報状態ラベルで識別される箇所を除く。セクションと付録への参考情報状態の適用は、含まれる可能性のあるすべての子コンテンツおよびサブセクションに適用される。</p>
+<p>この仕様のすべての例は有益な参考情報である。</p>
+<h2 class="chapter" id="sec-2">2. 立ち読み用出版物</h2>
+<h3 class="title" id="sec-2.1">2.1 概要</h3>
+<p class="informative">このセクションは参考である</p>
+<p>立ち読みを、別々の EPUB ファイルとして配布するのには、完全な原稿が完成する前に本のマーケティングを開始したいとか、DRM 方式を使用していないときに利用可能なコンテンツの制限したいとか、メディアがリッチな作品のダウンロードサイズを最小にしたいなど、いくつか理由がある。</p>
+<p>そのような立ち読みを配布するとき、それらが完全な出版物でないことを読者が識別し、また、読者がその作品を得るための方法を提供する両方が必要である。</p>
+<p>このセクションでは、パッケージ ドキュメントのメタデータに必要となるラベルを包含する、スタンドアローンの立ち読み出版物を作成する方法と立ち読み用の識別子を作成する方法、その親の作品に立ち読みからリンクする方法を記述する（親の作品を取得する方法は、<a href="#sec-4">4. 出版物の取得</a>で概要を説明している）。</p>
+<h3 class="title" id="sec-2.2">2.2 コンテンツの適合性</h3>
+<p>妥当な EPUB 出版物であることに加えて、立ち読み用出版物は、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。
+</p>
+<ul class="nomark">
+<li id="confreq-identifier"><a class="hidden-reveal" title="Link here" href="#confreq-identifier">›</a> それは、<a href="#sec-2.4">2.4 プレビュー識別子</a>で定義されているように、立ち読みとして識別されなければならない（<span class="rfc2119">must</span>）。</li>
+</ul>
+<h3 class="title" id="sec-2.3">2.3 リーディングシステムの適合性</h3>
+<p>それに適合する EPUB 仕様のバージョンに準じて立ち読み用出版物を処理することに加えて、リーディングシステムは、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<ul class="nomark">
+<li id="confreq-acquire"><a class="hidden-reveal" title="Link here" href="#confreq-acquire">›</a> それは、<a href="#sec-4">4. 出版物の取得</a>で定義されているように、立ち読みから誘導される出版物にアクセスするための手段を提供するべきである（<span class="rfc2119">should</span>）。</li>
+</ul>
+<h3 class="title" id="sec-2.4">2.4 立ち読み用の識別子</h3>
+<p>出版物が立ち読み用を表すことを示すために、パッケージ ドキュメントの<a href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-metadata-elem">メタデータ セクション</a> [<a href="#kix.icdctkaybov">Publications301</a>] は、"<code class="markup">preview</code>" 値を持つ <code class="markup">dc:type</code> 要素を包含しなければならない（<span class="rfc2119">must</span>）。</p>
+<div class="informalexample">
+<p>次の例は、立ち読み用出版物が、パッケージ ドキュメントのメタデータで定義される方法を示している。</p>
+<pre class="synopsis">&lt;package …&gt;
+    &lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+        &lt;dc:type&gt;preview&lt;/dc:type&gt;
+        …
+    &lt;/metadata&gt;
+&lt;/package&gt;</pre>
+</div>
+<h3 class="title" id="sec-2.5">2.5 識別子</h3>
+<p>立ち読み用出版物は、ソース出版物と同じパッケージ識別子を使用してはならない（<span class="rfc2119">must not</span>）。</p>
+<p>立ち読み用出版物は、ほぼ製品とはいえないので、この仕様は、パッケージ識別子として ISBN 以外の何かを使用することを推奨する。</p>
+<p>立ち読み用出版物は、ソースとなる出版物のパッケージ識別子の値を <code class="markup">dc:source</code> 要素に使用して、そのソースとなる出版物にリンクするべきである（<span class="rfc2119">should</span>）。</p>
+<div class="informalexample">
+<p>次の例は、立ち読み用出版物が、ソースとなる出版物にリンクする方法を示している。</p>
+<pre class="synopsis">&lt;package … unique-identifier="pub-id"&gt;
+  &lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+    &lt;dc:type&gt;preview&lt;/dc:type&gt;
+    &lt;dc:identifier id="pub-id"&gt;urn:uuid:13b92c40-3f6b-11e3-aa6e-0800200c9a66&lt;/dc:identifier&gt;
+    &lt;meta property="dcterms:modified"&gt;2013-08-01T12:00:00Z&lt;/meta&gt;
+    &lt;dc:source&gt;urn:isbn:9782367932095&lt;/dc:source&gt;
+    …
+  &lt;/metadata&gt;
+&lt;/package&gt;</pre>
+</div>
+<h3 class="title" id="sec-2.6">2.6 例</h3>
+<p>次の例は、出版物が立ち読みとして識別され、ソースとなる出版物へのリンクと、それを取得するためのリンクを包含するメタデータの最小限の完全なメタデータ セクションを示している。</p>
+<pre class="synopsis">&lt;package … unique-identifier="pub-id"&gt;
+   …
+   &lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+       &lt;dc:title&gt;Norwegian Wood&lt;/dc:title&gt;
+       &lt;dc:language&gt;en&lt;/dc:language&gt;
+       &lt;dc:type&gt;preview&lt;/dc:type&gt;
+       
+       &lt;dc:identifier id="pub-id"&gt;urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809&lt;/dc:identifier&gt;
+       &lt;meta property="dcterms:modified"&gt;2011-01-01T12:00:00Z&lt;/meta&gt;
+       &lt;dc:source&gt;urn:isbn:9781448103706&lt;/dc:source&gt;
+        
+       &lt;link href="http://example.org/book/9781448103706" 
+              rel="acquire" 
+              media-type="text/html" /&gt;
+       &lt;link href="http://example.org/book/9781448103706.atom"
+              rel="acquire"
+              media-type="application/atom+xml;type=entry;profile=opds-catalog" /&gt;
+   &lt;/metadata&gt;
+   …
+&lt;/package&gt;</pre>
+<h2 class="chapter" id="sec-3">3. 組み込み型の立ち読み</h2>
+<h3 class="title" id="sec-3.1">3.1 概要</h3>
+<p class="informative">このセクションは参考である</p>
+<p>立ち読みのコンテンツは、別の出版物としてパッケージを持つ必要はない。多くの場合、立ち読みを構成するリソースのサブセットは、完全な出版物のコンテクスト内で識別し、読者のために立ち読みを提示するため、ダイレクトに抽出することができる。</p>
+<p>これらの組み込み型の立ち読みは、出版物の一部を選択して抜き出すサードパーティベンダーの代わりに、ソースとなる出版物から立ち読みコンテンツを生成する方法のコントロールを著者に提供する。組み込み型の立ち読みは、読者が完全版（単純にロックされていない完全なコンテンツ） を購入したとき、新しい出版物をダウンロードせずに立ち読み用出版物を置き換える、立ち読み用出版物に対する優位性もまた提供する。</p>
+<p>このセクションは、このような立ち読みを生成するためにパッケージ ドキュメントの <code class="markup">collection</code> 要素を使用する方法を説明し、コンテンツ ドキュメント（の一部）を見ることができるだけでなく、リソースのマニフェストのために要求される必要な役割を定義する。</p>
+<h3 class="title" id="sec-3.2">3.2 コンテンツの適合性</h3>
+<p>組み込み型の立ち読みは、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<ul class="nomark">
+<li id="confreq-preview-collection"><a class="hidden-reveal" title="Link here" href="#confreq-preview-collection">›</a> それは、<a href="#sec-3.4">3.4 立ち読みコレクション</a>で定義された要件に適合しなければならない（<span class="rfc2119">must</span>）。</li>
+</ul>
+<h3 class="title" id="sec-3.3">3.3 リーディングシステムの適合性</h3>
+<p>EPUB リーディングシステムは、組み込み型の立ち読みを処理するために、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<ul class="nomark">
+<li id="confreq-rs-access"><a class="hidden-reveal" title="Link here" href="#confreq-rs-access">›</a> それは、<a href="#sec-3.4">立ち読みコレクション</a>で識別された立ち読みコンテンツへのアクセスを提供しなければならない（<span class="rfc2119">must</span>）。
+</li>
+<li id="confreq-rs-acquire"><a class="hidden-reveal" title="Link here" href="#confreq-rs-acquire">›</a> それは、<a href="#sec-4">4. 出版物の取得</a>で定義されているように、立ち読みから誘導されている出版物を取得する手段を提供してもよい（<span class="rfc2119">may</span>）。</li>
+</ul>
+<h3 class="title" id="sec-3.4">3.4 立ち読みコレクション</h3>
+<p>組み込み型の立ち読みは、<code class="markup">role</code> 属性に "<code class="markup">preview</code>" 値を持つパッケージ ドキュメントの <a href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-collection-elem"><code class="markup">collection</code> 要素</a> <a href="#kix.icdctkaybov">[Publications301]</a> で定義される。</p>
+<p><code class="markup">preview</code> コレクションは、立ち読みの EPUB コンテンツ ドキュメントの全てを特定する、子 <code class="markup">manifest</code> コレクション <a href="#id.kp4ezv6kup7h">[ManifestRole]</a> だけでなく、それらをレンダリングするために必要な関連するリソースを包含しなければならない（<span class="rfc2119">must</span>）。</p>
+<p>各 <code class="markup">link</code> 要素の <code class="markup">href</code> 属性は、EPUB コンテンツ ドキュメントを指し示さなければならない（<span class="rfc2119">must</span>）。<code class="markup">href</code> 属性で伝達される IRI は、フラグメント識別子を包含してもよい（<span class="rfc2119">may</span>）が、EPUB canonical fragment identifiers <a href="#kix.895vyped3cm">[EPUBCFI]</a> を包含してはならない（<span class="rfc2119">must not</span>）。</p>
+<p><code class="markup">preview</code> コレクション内の子 <code class="markup">link</code> 要素の順番は、ドキュメントがレンダリングされる順番を表している。</p>
+<div class="informalexample">
+<p>次の例は、出版物が EPUB コンテンツ ドキュメントに包含されている立ち読みを指し示すコレクションだけでなく、この立ち読みに必要なリソースのマニフェストを提供する方法を示している。</p>
+<pre class="synopsis">&lt;collection role="preview"&gt;
+    &lt;collection role="manifest"&gt;
+        &lt;link href="chapter1.xhtml"         
+              media-type="application/xhtml+xml" /&gt;
+        &lt;link href="chapter2.xhtml"         
+              media-type="application/xhtml+xml" /&gt;
+        &lt;link href="chapter3.xhtml"         
+              media-type="application/xhtml+xml" /&gt;
+        &lt;link href="stylesheet.css"         
+              media-type="text/css" /&gt;
+        &lt;link href="image1.jpg"         
+              media-type="image/jpeg" /&gt;
+    &lt;/collection&gt;
+    &lt;link href="chapter1.xhtml"/&gt;
+    &lt;link href="chapter2.xhtml"/&gt;
+    &lt;link href="chapter3.xhtml#preview"/&gt;
+&lt;/collection&gt;</pre>
+</div>
+<h3 class="title" id="sec-3.5">3.5 立ち読みコレクションのフラグメント識別子</h3>
+<p>フラグメント識別子は、一般的に、ドキュメント内の特定の位置を参照しながら、立ち読みコレクションのコンテクストにおいて、そのようなフラグメント識別子は、実際には、範囲を参照する。</p>
+<ul>
+<li>開始位置は、常に、ドキュメントの開始（body）である。</li>
+<li>終了位置は、フラグメント識別子で参照された要素を除いて、その要素の直前の位置を指し示している。</li>
+</ul>
+<h3 class="title" id="sec-3.6">3.6 組み込み型の立ち読みから、立ち読み用出版物の生成</h3>
+<p>別々の立ち読み用出版物を生成する代わりに、組み込み型の立ち読みを含む EPUB 出版物は、自動的に立ち読み用出版物を生成するために使用することができる。</p>
+<p>組み込み型の立ち読みから立ち読み用出版物を生成するソフトウェアは、次の処理規則に配慮しなければならない（<span class="rfc2119">must</span>）。</p>
+<ul class="nomark">
+<li id="confreq-gen-generate"><a class="hidden-reveal" title="Link here" href="#confreq-gen-generate">›</a> それは、妥当な EPUB 出版物を生成しなければならない（<span class="rfc2119">must</span>）。</li>
+<li id="confreq-gen-complies"><a class="hidden-reveal" title="Link here" href="#confreq-gen-complies">›</a> それは、<a href="#sec-2">2. 立ち読み用出版物</a>に適合する立ち読み用出版物を生成しなければならない（<span class="rfc2119">must</span>）。</li>
+<li id="confreq-gen-metadata"><a class="hidden-reveal" title="Link here" href="#confreq-gen-metadata">›</a> それは、再生成をしなければならない（<span class="rfc2119">must</span>）一意の識別子（<a href="#sec-2.5">2.5 識別子</a>を見よ）を除き、立ち読み用出版物のためにパッケージ ドキュメントのメタデータを再利用しなければならない（<span class="rfc2119">must</span>）。</li>
+<li id="confreq-gen-spine"><a class="hidden-reveal" title="Link here" href="#confreq-gen-spine">›</a> それは、組み込み型の立ち読みに記載されているのと同じ順番でリソースを使用し、立ち読み用出版物の spine を生成しなければならない（<span class="rfc2119">must</span>）。</li>
+<li id="confreq-gen-uri"><a class="hidden-reveal" title="Link here" href="#confreq-gen-uri">›</a> それは、<a href="#sec-3.5">3.5 立ち読みコレクションのフラグメント識別子</a>で定義されている URI フラグメントの処理規則に従い、立ち読み用出版物リソースのフラグメントのみを包含しなければならない（<span class="rfc2119">must</span>）。</li>
+<li id="confreq-gen-resources"><a class="hidden-reveal" title="Link here" href="#confreq-gen-resources">›</a> <span id="id.rfe329gtzyhz"></span>それは、ナビゲーション ドキュメントに併せて、組み込み型の立ち読みに記載されている元の出版物からのリソースのみを含まなければならない（<span class="rfc2119">must</span>）。</li>
+<li id="confreq-gen-nav"><a class="hidden-reveal" title="Link here" href="#confreq-gen-nav">›</a> <span id="kix.81snjgmk0p0o"></span>それは、立ち読み用出版物に包含されたリソースを正確に参照するため、ナビゲーション ドキュメントに適合するべきである（<span class="rfc2119">should</span>）。</li>
+<li id="confreq-gen-adapt"><a class="hidden-reveal" title="Link here" href="#confreq-gen-adapt">›</a> <span id="kix.uu3qtepwor4g"></span>それは、組み込み型の立ち読みに含まれていない他のリソースのために、立ち読み用のコンテンツ内の参照を適合するか除外するべきである（<span class="rfc2119">should</span>）。</li>
+</ul>
+<div class="note">
+<h4 class="title">note</h4>
+<p>この仕様は、立ち読みをレンダリングするためのコンテンツを適合させる方法を義務付けない。リーディングシステムは、立ち読みが利用することができないコンテンツであることを示す一般的なプレース ホルダーのページに、立ち読みコンテンツの外側へ直接リンクするかもしれず、それらの <code class="markup">href</code> 属性を除去することによって、このようなリンクが非アクティブにするかもしれず、非立ち読みコンテンツへの参照を処理するために他のメカニズムを採用するかもしれない。</p>
+<p>しかしながら、完全な EPUB 出版物で利用可能なコンテンツの全体像を伝えるために - 目次を含むかたちで - 立ち読みを適合させる場合は、全てのリンクラベルを保持することが強く推奨される。</p>
+</div>
+<div class="note">
+<h4 class="title">note</h4>
+<p>パッケージ化された EPUB 出版物をコレクションに変換する方法の追加のガイドラインとして、<a href="#kix.kjzvx2kjqjv">[DistributableObjects]</a> も参照されたい。立ち読みの変換手順は全く同じではない（例えば、メタデータはパッケージから引き継いだコレクションではない）が、妥当な EPUB 出版物を制作するための要件の多くは同じである。</p>
+</div>
+<h2 class="chapter" id="sec-4">4. 出版物の取得</h2>
+<p>立ち読み用出版物と組み込み型の立ち読みを含んでいる出版物は、読者が完全なソースの出版物を取得することができるようにするためのリンクを提供してもよい（<span class="rfc2119">may</span>）。そのためには、ひとつ以上の <a href="http://www.idpf.org/epub/vocab/package/link/#acquire">acquire <code class="markup">link</code> 要素</a> <a href="#kix.icdctkaybov">[Publications301]</a> を、パッケージ ドキュメントのメタデータ セクションに包含されるべきである（<span class="rfc2119">should</span>）。</p>
+<div class="informalexample">
+<p>次の例は、完全な出版物を取得するために、HTML のベンダーページと OPDS カタログエントリへのリンクを示してる。</p>
+<pre class="synopsis">&lt;package …&gt;
+   …
+   &lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+       &lt;dc:type&gt;preview&lt;/dc:type&gt;
+       …
+       &lt;link href="http://example.org/book/9781448103706" 
+              rel="acquire" 
+              media-type="text/html" /&gt;
+        &lt;link href="http://example.org/book/9781448103706.atom"
+              rel="acquire"
+              media-type="application/atom+xml;type=entry;profile=opds-catalog" /&gt;
+   &lt;/metadata&gt;
+   …
+&lt;/package&gt;</pre>
+</div>
+<p>この仕様は、リーディングシステムとベンダーが、取得された出版物へのアクセスにどう折り合いをつけるかは定義しない。</p>
+<p>この関連性の値は、任意の見込みのあるメディア タイプを使用してもよい（may）が、この仕様は、ブラウザで取得することができる出版物には "<code class="markup">text/html</code>" を、<a href="#id.mmglheqje766">[OPDS]</a> エントリには "<code class="markup">application/atom+xml;type=entry;profile=opds-catalog</code>" のいずれかを推奨する。</p>
+<h2 class="chapter" id="app-a">付録 A. 謝辞と貢献者</h2>
+<p class="informative">この付録は参考である</p>
+<p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
+<p>EPUB Previews 1.0 仕様は、下に述べるリーダーシップによって、2012年11月のメンバーシップによって承認された<a href="http://www.idpf.org/charters/2012/layout/ahl.html">憲章</a>の下で活動し、国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の Advanced/Hybrid Layouts working group によって調整した：</p>
+<ul class="nomark">
+<li>Kopp, Matthieu (Aquafadas) <span class="italic">Co-Chair</span></li>
+<li>MURATA, Makoto (JEPA) <span class="italic">Co-Chair</span></li>
+</ul>
+<p>ワーキンググループのアクティブメンバー：</p>
+<p class="bridgehead">IDPF Members</p>
+<ul class="nomark">
+<li>Anaya, Cyril (izneo)</li>
+<li>Audrain, Luc (Hachette Livre)</li>
+<li>Bell, Jeff (Microsoft)</li>
+<li>Berthe, Eric (izneo)</li>
+<li>Chow, King-Wai (ASTRI)</li>
+<li>Conboy, Garth (Google)</li>
+<li>Cramer, Dave (Hachette Book Group)</li>
+<li>Dougherty, Casey (Apple)</li>
+<li>Dovey, Jim (Kobo)</li>
+<li>Duga, Brady (Google)</li>
+<li>Gardeur, Hadrien (Feedbooks)</li>
+<li>Gros, Vincent (Hachette Livre)</li>
+<li>Gylling, Markus (IDPF)</li>
+<li>Heki, Tatsuo (Fujifilm)</li>
+<li>Ikeuchi, Yasuki (ACCESS)</li>
+<li>Ishii, Koji (Rakuten)</li>
+<li>Kanai, Takeshi (Sony)</li>
+<li>Kasdorf, Bill (Apex Covantage)</li>
+<li>Kopp, Matthieu (Aquafadas)</li>
+<li>Kroupa, Brady (B&amp;N)</li>
+<li>Leo, Arthic A E (Amnet Systems Private Ltd)</li>
+<li>Lester, Jim (B&amp;N)</li>
+<li>MURATA, Makoto (JEPA)</li>
+<li>Murata, Masao (Fujifilm)</li>
+<li>Nagai, Seiji (ACCESS)</li>
+<li>Nonaka, Shunichiro (Fujifilm)</li>
+<li>O'Connor, Edward (Apple)</li>
+<li>O'Neill, Paul (Sourcebooks)</li>
+<li>Petit, Samuel (Actialuna)</li>
+<li>Seigel-Laddy, Seth (Scholastic Media)</li>
+<li>Severdia, Ron (Metrodigi)</li>
+<li>So, Youngwan (Samsung)</li>
+<li>Tufis, Mihnea (LIP6)</li>
+<li>White, Clay (OverDrive)</li>
+<li>Wright, Ric (Readium)</li>
+</ul>
+<p class="bridgehead">Invited Experts/Observers</p>
+<ul class="nomark">
+<li>Bell, Graham</li>
+<li>Bonelli, Giuseppe</li>
+<li>Garrish, Matt</li>
+</ul>
+<h2 class="chapter" id="refs">参照・参考</h2>
+<h3 class="title" id="refs-norm">参照文献</h3>
+<ul class="nomark ref">
+<li id="kix.895vyped3cm">[EPUBCFI] <span class="italic"><a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></span>.</li>
+<li id="id.kp4ezv6kup7h">[ManifestRole] <span class="italic"><a href="http://www.idpf.org/epub/vocab/package/roles/manifest/">EPUB Manifest Role</a></span>.</li>
+<li id="id.mmglheqje766">[OPDS] <a href="http://opds-spec.org/specs/opds-catalog-1-1-20110627/">Open Publication Distribution System 1.1</a>.</li>
+<li id="kix.icdctkaybov">[Publications301] <span class="italic"><a href="http://www.idpf.org/epub/301/spec/epub-publications-20131108.html">EPUB Publications 3.0.1</a></span>.</li>
+<li id="kix.tn6v71g48gdz">[RFC2119] <span class="italic"><a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a></span><span class="italic"> (RFC 2119) </span>. March 1997.</li>
+</ul>
+<h3 class="title" id="refs-info">参考文献</h3>
+<ul class="nomark ref">
+<li id="kix.kjzvx2kjqjv">[DistributableObjects] <span class="italic"><a href="http://www.idpf.org/epub/do/">Distributable Objects 1.0</a></span>.</li>
+</ul>
+</body>
+</html>
