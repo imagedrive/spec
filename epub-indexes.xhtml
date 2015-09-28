@@ -8,11 +8,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>EPUB Indexes 1.0</title>
-<link rel="stylesheet" type="text/css" href="css/epub-spec.css"/>
+<link rel="stylesheet" type="text/css" href="../css/epub-spec.css"/>
 <meta name="generator" content="DocBook XSL-NS Stylesheets V1.76.1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
-<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<link rel="stylesheet" href="../css/epub-print.css" type="text/css" media="print"/>
+<link rel="stylesheet" type="text/css" href="../css/translation-memo.css"/>
 </head>
 <body>
 <div class="translation-attention">
@@ -25,7 +25,7 @@
 <dt>公開日:</dt>
 <dd>2014-02-17</dd>
 <dt>改定日:</dt>
-<dd>2014-02-28</dd>
+<dd>2015-09-28</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -35,19 +35,19 @@
 
 <div class="book" title="EPUB Indexes 1.0">
 <h1 class="title">EPUB Indexes 1.0</h1>
-<p class="identity"><span class="pubdate">2014年2月28日</span><span class="releaseinfo">Proposed Specification</span></p>
+<p class="identity"><span class="pubdate">2015年8月26日</span> <span class="releaseinfo">勧告仕様</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20140228.html">http://www.idpf.org/epub/idx/epub-indexes-20140228.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20150826.html">http://www.idpf.org/epub/idx/epub-indexes-20150826.html</a></dd>
 <dt>最新版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes.html">http://www.idpf.org/epub/idx/epub-indexes.html</a></dd>
 <dt>前の版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20140114.html">http://www.idpf.org/epub/idx/epub-indexes-20140114.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/idx/epub-indexes-20140228.html">http://www.idpf.org/epub/idx/epub-indexes-20140228.html</a></dd>
 </dl>
-<p class="diff">前回の版からの<a class="link" href="http://code.google.com/p/epub-revision/source/diff?spec=svn4905&amp;old=4884&amp;r=4905&amp;format=side&amp;path=%2Ftrunk%2Fsrc%2Fspec%2Fepub-indexes.xml">変更点の差分</a>は、入手可能である。</p>
+<p class="diff">このドキュメントの<a class="link" href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-indexes.xml">改訂履歴</a>は、レビュー用として利用できる。</p>
 <p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="./epub-indexes-errata/">正誤表（英語）</a>を参照されたい。</p>
 <div class="legal">
-<p class="copyright">Copyright &copy; 2010-2013 International Digital Publishing Forum&trade;</p>
+<p class="copyright">Copyright &copy; 2010-2015 International Digital Publishing Forum&trade;</p>
 <div class="legalnotice" title="Legal Notice" id="legalnotice">
 <p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a class="link" href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
 <p>EPUB は International Digital Publishing Forum の登録商標である。</p>
@@ -72,9 +72,17 @@
 <p class="author">Scott Prentice, Invited expert </p>
 <p class="author">David K. Ream, Leverage Technologies; American Society for Indexing (ASI) </p>
 </div>
+<div id="sotd">
+<h2>このドキュメントのステータス</h2>
+<p>このセクションは、公開時におけるこのドキュメントのステータスを説明している。他のドキュメンには、このドキュメントを置き換えるかもしれない。</p>
+<p>このドキュメントは、IDPF メンバーによってレビューされており、勧告仕様として IDPF Board よって承認されている。このドキュメントは、安定しているとみなされ、他の仕様やドキュメントから参照されてもよい。</p>
+<p>このドキュメントへのフィードバックは、EPUB ワーキンググループの<a class="link" href="mailto:epub-working-group@googlegroups.com">メーリングリスト</a>か<a class="link" href="https://github.com/IDPF/epub-revision">課題管理</a>で提供することができる。</p>
+<p>このドキュメントは、<a class="link" href="http://idpf.org/about_us/corp_docs/policies_and_procedures">IDPF Policies and Procedures</a> によって管理されている。</p>
+</div>
 <div class="toc">
 <p><strong>目次</strong></p>
 <dl>
+<dt><span class="preface"><a href="#d46924e167"/></span></dt>
 <dt><span class="chapter"><a href="#s1">1.概要（Overview）</a></span></dt>
 <dd>
 <dl>
@@ -399,7 +407,7 @@
 
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.1">&gt;</a>&nbsp;</span>2.2.1 インデックス、インデックスヘッドノート</h4>
 
-<p>EPUB 出版物は、ひとつ以上のインデックスを含んで<span class="rfc2119">もよい（may）</span>。インデックスは、ひとつ以上の<a class="glossterm" href="#s1.2_b" title="content document">コンテンツドキュメント</a>から成り立って<span class="rfc2119">もよく（may）</span>、またそれは他のインデックスや他のコンテンツの型式（例えば、章）を含むコンテンツドキュメント内に埋め込まれて<span class="rfc2119">もよい（may）</span>。どこで発生しても、インデックスは、<code class="markup">index</code> 値を持つ <code class="markup">epub:type</code> 属性の要素内に包まれなければ<span class="rfc2119">ならない（must）</span>。インデックスが、ひとつ以上の完全なコンテンツドキュメントでマークアップされている場合、<code class="markup">body</code> 要素（<code>&lt;body epub:type="index"&gt;</code>）が使用されなければ<span class="rfc2119">ならない（must）</span>。インデックスまたはインデックスの一部が、コンテンツの他の型式を含むようなコンテンツドキュメントに埋め込まれている場合、任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素は、それを包む（例として、<code>&lt;section epub:type="index"&gt;</code>）のに使用されて<span class="rfc2119">もよい（may）</span>。</p>
+<p>EPUB 出版物は、ひとつ以上のインデックスを含んで<span class="rfc2119">もよい（may）</span>。インデックスは、ひとつ以上の<a class="glossterm" href="#s1.2_b" title="content document">コンテンツドキュメント</a>から成り立って<span class="rfc2119">もよく（may）</span>、またそれは他のインデックスや他のコンテンツの型式（例えば、章）を含むコンテンツドキュメント内に埋め込まれて<span class="rfc2119">もよい（may）</span>。どこで発生しても、インデックスは、<code class="markup">index</code> 値を持つ <code class="markup">epub:type</code> 属性の要素内に包まれなければ<span class="rfc2119">ならない（must）</span>。インデックスが、ひとつ以上の完全なコンテンツドキュメントでマークアップされている場合、<code class="markup">body</code> 要素（<code>&lt;body epub:type="index"&gt;</code>）が使用されなければ<span class="rfc2119">ならない（must）</span>。インデックスまたはインデックスの一部が、コンテンツの他の型式を含むようなコンテンツドキュメントに埋め込まれている場合、任意の <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>要素は、それを包む（例として、<code>&lt;section epub:type="index"&gt;</code>）に使用されて<span class="rfc2119">もよい（may）</span>。</p>
 
 <div class="elem-synopsis" id="bb-index">
 <dl>
@@ -1267,7 +1275,7 @@
 <div class="section" title="2.2.8.2 Navigating to Term Categories" id="s2.2.8.2">
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#s2.2.8.2">&gt;</a>&nbsp;</span>2.2.8.2 用語カテゴリへのナビゲーション</h5>
 
-<p>これを実現するために、(1) <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は <code class="markup">index-term-categories</code> の <code class="markup">epub:type</code> 属性値を持ち、関連性のあるインデックス用語の完全な一覧を含む <code class="markup">nav</code> 要素を包含しなければ<span class="rfc2119">ならず（must）</span>、(2) インデックス内の<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>は、<code class="markup">epub:type</code> 属性値 <code class="markup">index-term-category</code> とその一覧を示している <code class="markup">href</code> 属性値持たなければ<span class="rfc2119">ならない（must）</span>。ナビゲーションドキュメントの要件は <a class="link" href="#s2.4.2" title="2.4.2 Term Categories Support">2.4.2. 用語カテゴリのサポート</a>に概説されている。インデックスドキュメントの要件は、以下に示されている。</p>
+<p>これを実現するために、(1) <span class="phrase"><a class="link" href="epub301-contentdocs.xhtml#sec-xhtml-nav">ナビゲーションドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.0.1">[<abbr>ContentDocs301</abbr>]</a></span> は <code class="markup">index-term-categories</code> の <code class="markup">epub:type</code> 属性値を持ち、関連性のあるインデックス用語の完全な一覧を含む <code class="markup">nav</code> 要素を包含しなければ<span class="rfc2119">ならず（must）</span>、(2) インデックス内の<a class="glossterm" href="#s1.2_c" title="cross-reference (2.2.7)">相互参照</a>は、<code class="markup">epub:type</code> 属性値 <code class="markup">index-term-category</code> とその一覧を示している <code class="markup">href</code> 属性値持たなければ<span class="rfc2119">ならない（must）</span>。ナビゲーションドキュメントの要件は、<a class="link" href="#s2.4.2" title="2.4.2 Term Categories Support">2.4.2. 用語カテゴリのサポート</a>に概説されている。インデックスドキュメントの要件は、以下に示されている。</p>
 
 <div class="informalexample" id="ex33">
 <p>例 33、用語カテゴリのためにコード化したインデックスドキュメント：</p>
