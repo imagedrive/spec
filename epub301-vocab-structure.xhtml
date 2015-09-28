@@ -46,7 +46,7 @@ margin-left: 0.3em;
 <body xmlns:epub="http://www.idpf.org/epub/vocab#">
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html">EPUB 3 Structural Semantics Vocabulary</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150826.html">EPUB 3 Structural Semantics Vocabulary</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150826.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150826.html</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150826.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150826.html</a> を参照されたい。</p>
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <p>本の装幀に関する用語は、洋書が前提になっている。そのため、奥付が前方に置かれるなど、日本の本とは異なる構造になっているので注意されたい。洋書の構造を理解するあたり、以下のサイトを参考にさせて頂いた。</p>
 <ul>
@@ -58,7 +58,7 @@ margin-left: 0.3em;
 <dt>公開日:</dt>
 <dd>2013-11-08</dd>
 <dt>改定日:</dt>
-<dd>2015-07-22</dd>
+<dd>2015-09-28</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -68,16 +68,16 @@ margin-left: 0.3em;
 <h1 property="dcterms:title">EPUB 3 Structural Semantics Vocabulary</h1>
 
 <div class="printhistory">
-<p class="identity"><span class="pubdate">2015年7月22日</span></p>
+<p class="identity"><span class="pubdate">2015年8月26日</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150826.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150826.html</a></dd>
 <dt>最新版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/vocab/structure">http://www.idpf.org/epub/vocab/structure</a></dd>
 <dt>前の版</dt>
-<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20141127.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20141127.html</a></dd>
+<dd><a class="link" href="http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html">http://www.idpf.org/epub/vocab/structure/epub-vocab-structure-20150717.html</a></dd>
 </dl>
-<p class="diff"><a class="link" href="https://github.com/IDPF/epub-revision/commits/master/src/vocab/structure.n3">変更点の履歴</a>もまた利用可能である。</p>
+<p class="diff">このドキュメントの<a class="link" href="https://github.com/IDPF/epub-revision/commits/master/src/vocab/structure.n3">改訂履歴</a>は、レビュー用として利用できる。</p>
 </div>
 
 <h2 id="tocxsl">目次</h2>
@@ -396,7 +396,7 @@ margin-left: 0.3em;
 <span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-index">EPUB Indexes – index プロパティ</a>
 </p>
 </dd>
-<dt id="index-headnotes" about="#index-headnotes" typeof="rdf:Property">index-headnotes <span class="status">[draft]</span></dt>
+<dt id="index-headnotes" about="#index-headnotes" typeof="rdf:Property">index-headnotes</dt>
 <dd about="#index-headnotes" property="rdfs:comment" datatype="xsd:string">
 <p>index を使用して、ユーザーを支援する物語や他のコンテンツ。</p>
 </dd>
@@ -411,7 +411,7 @@ margin-left: 0.3em;
 <span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-headnotes">EPUB Indexes – index-headnotes プロパティ</a>
 </p>
 </dd>
-<dt id="index-legend" about="#index-legend" typeof="rdf:Property">index-legend <span class="status">[draft]</span></dt>
+<dt id="index-legend" about="#index-legend" typeof="rdf:Property">index-legend</dt>
 <dd about="#index-legend" property="rdfs:comment" datatype="xsd:string">
 <p>記号、略語または index で使用される特殊な書式とその意味の一覧。</p>
 </dd>
@@ -424,7 +424,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtml#bb-legend">EPUB Indexes – index-legend プロパティ</a></p>
 </dd>
-<dt id="index-group" about="#index-group" typeof="rdf:Property">index-group <span class="status">[draft]</span></dt>
+<dt id="index-group" about="#index-group" typeof="rdf:Property">index-group</dt>
 <dd about="#index-group" property="rdfs:comment" datatype="xsd:string">
 <p>例えば、メインエントリの先頭文字（starting letter）など、共通の特徴を共有する連続したメインエントリのコレクション。</p>
 </dd>
@@ -439,7 +439,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtml#bb-group">EPUB Indexes – index-group プロパティ</a></p>
 </dd>
-<dt id="index-entry-list" about="#index-entry-list" typeof="rdf:Property">index-entry-list <span class="status">[draft]</span></dt>
+<dt id="index-entry-list" about="#index-entry-list" typeof="rdf:Property">index-entry-list</dt>
 <dd about="#index-entry-list" property="rdfs:comment" datatype="xsd:string">
 <p>連続したメインエントリまたはサブエントリのコレクション。</p>
 </dd>
@@ -453,7 +453,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtml#bb-entry-list">EPUB Indexes – index-entry-list プロパティ</a></p>
 </dd>
-<dt id="index-entry" about="#index-entry" typeof="rdf:Property">index-entry <span class="status">[draft]</span></dt>
+<dt id="index-entry" about="#index-entry" typeof="rdf:Property">index-entry</dt>
 <dd about="#index-entry" property="rdfs:comment" datatype="xsd:string">
 <p>任意の付帯するサブエントリ、ロケータ、相互参照と/または編集者注を持つある用語。</p>
 </dd>
@@ -466,7 +466,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-entry">EPUB Indexes – index-entry プロパティ</a></p>
 </dd>
-<dt id="index-term" about="#index-term" typeof="rdf:Property">index-term <span class="status">[draft]</span></dt>
+<dt id="index-term" about="#index-term" typeof="rdf:Property">index-term</dt>
 <dd about="#index-term" property="rdfs:comment" datatype="xsd:string">
 <p>単語、語句、文字列、グリフまたはインデックス可能なコンテンツを表す画像。</p>
 </dd>
@@ -479,7 +479,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-term">EPUB Indexes – index-term プロパティ</a></p>
 </dd>
-<dt id="index-editor-note" about="#index-editor-note" typeof="rdf:Property">index-editor-note <span class="status">[draft]</span></dt>
+<dt id="index-editor-note" about="#index-editor-note" typeof="rdf:Property">index-editor-note</dt>
 <dd about="#index-editor-note" property="rdfs:comment" datatype="xsd:string">
 <p>単一のエントリに関連する編集者注。</p>
 </dd>
@@ -494,7 +494,7 @@ margin-left: 0.3em;
 <span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-editor-note">EPUB Indexes – index-editor-note プロパティ</a>
 </p>
 </dd>
-<dt id="index-locator" about="#index-locator" typeof="rdf:Property">index-locator <span class="status">[draft]</span></dt>
+<dt id="index-locator" about="#index-locator" typeof="rdf:Property">index-locator</dt>
 <dd about="#index-locator" property="rdfs:comment" datatype="xsd:string">
 <p>出版物内のインデックス化されたコンテンツの存在を参照。</p>
 </dd>
@@ -509,7 +509,7 @@ margin-left: 0.3em;
 <span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-locator">EPUB Indexes – index-locator プロパティ</a>
 </p>
 </dd>
-<dt id="index-locator-list" about="#index-locator-list" typeof="rdf:Property">index-locator-list <span class="status">[draft]</span></dt>
+<dt id="index-locator-list" about="#index-locator-list" typeof="rdf:Property">index-locator-list</dt>
 <dd about="#index-locator-list" property="rdfs:comment" datatype="xsd:string">
 <p>連続ロケータまたはロケータの範囲のコレクション。</p>
 </dd>
@@ -522,7 +522,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-locator-list">EPUB Indexes – index-locator-list プロパティ</a></p>
 </dd>
-<dt id="index-locator-range" about="#index-locator-range" typeof="rdf:Property">index-locator-range <span class="status">[draft]</span></dt>
+<dt id="index-locator-range" about="#index-locator-range" typeof="rdf:Property">index-locator-range</dt>
 <dd about="#index-locator-range" property="rdfs:comment" datatype="xsd:string">
 <p>単一のポイントよりはむしろコンテンツの範囲に用語に接続するロケータの組み合わせ。</p>
 </dd>
@@ -535,7 +535,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-locator-range">EPUB Indexes – index-locator-range プロパティ</a></p>
 </dd>
-<dt id="index-xref-preferred" about="#index-xref-preferred" typeof="rdf:Property">index-xref-preferred <span class="status">[draft]</span></dt>
+<dt id="index-xref-preferred" about="#index-xref-preferred" typeof="rdf:Property">index-xref-preferred</dt>
 <dd about="#index-xref-preferred" property="rdfs:comment" datatype="xsd:string">
 <p>インデックス内のひとつの用語からひとつ以上の推奨する用語または用語カテゴリの参照（“XXXを見よ”に類似）。</p>
 </dd>
@@ -548,7 +548,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-xref-preferred">EPUB Indexes – index-xref-preferred プロパティ</a></p>
 </dd>
-<dt id="index-xref-related" about="#index-xref-related" typeof="rdf:Property">index-xref-related <span class="status">[draft]</span></dt>
+<dt id="index-xref-related" about="#index-xref-related" typeof="rdf:Property">index-xref-related</dt>
 <dd about="#index-xref-related" property="rdfs:comment" datatype="xsd:string">
 <p>インデックス内のひとつの用語からひとつ以上の関連する用語または用語カテゴリの参照（“XXXも見よ”に類似）。</p>
 </dd>
@@ -561,7 +561,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-xref-related">EPUB Indexes – index-xref-related プロパティ</a></p>
 </dd>
-<dt id="index-term-category" about="#index-term-category" typeof="rdf:Property">index-term-category <span class="status">[draft]</span></dt>
+<dt id="index-term-category" about="#index-term-category" typeof="rdf:Property">index-term-category</dt>
 <dd about="#index-term-category" property="rdfs:comment" datatype="xsd:string">
 <p>単語、語句、文字列、グリフまたはインデックス内の用語のカテゴリを表す画像。</p>
 </dd>
@@ -574,12 +574,12 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">使用方法の詳細：</span><a href="epub-indexes.xhtmlbb-term-category">EPUB Indexes – index-term-category プロパティ</a></p>
 </dd>
-<dt id="index-term-categories" about="#index-term-categories" typeof="rdf:Property">index-term-categories <span class="status">[draft]</span></dt>
+<dt id="index-term-categories" about="#index-term-categories" typeof="rdf:Property">index-term-categories</dt>
 <dd about="#index-term-categories" property="rdfs:comment" datatype="xsd:string">
 <p>インデックスに関連している用語カテゴリのリストのためのラッパー。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-term-categories" rel="role:scope" resource="#index-xref-preferred"><a href="#index-xref-preferred">index-xref-preferred</a></span> and <span class="subpropref" about="#index-term-categories" rel="role:scope" resource="#index-xref-related"><a href="#index-xref-related">index-xref-related</a></span></p>
+<p><span class="subproplabel">必須の親コンテクスト：</span><span class="subpropref" about="#index-term-categories" rel="role:scope" resource="#index-xref-related"><a href="#index-xref-related">index-xref-related</a></span> と <span class="subpropref" about="#index-term-categories" rel="role:scope" resource="#index-xref-preferred"><a href="#index-xref-preferred">index-xref-preferred</a></span></p>
 </dd>
 <dd>
 <p><span class="subproplabel">HTML で使用可能な場所：</span><a href="http://www.w3.org/TR/html5/text-level-semantics.html#the-a-element">a 要素</a></p>
@@ -933,7 +933,7 @@ margin-left: 0.3em;
 <p>学習目的または明示的な学習目的への参照を明示的に指定または説明する。</p>
 </dd>
 <dd>
-<p><span class="subproplabel">HTML で使用可能な場所：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フロー コンテンツ</a>, <a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング コンテンツ</a></p>
+<p><span class="subproplabel">HTML で使用可能な場所：</span><a href="http://www.w3.org/TR/html5/rendering.html#flow-content-0">フロー コンテンツ</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージング コンテンツ</a></p>
 </dd>
 <dt id="learning-objectives" about="#learning-objectives" typeof="rdf:Property">learning-objectives <span class="status">[draft]</span></dt>
 <dd about="#learning-objectives" property="rdfs:comment" datatype="xsd:string">
@@ -1099,6 +1099,13 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">HTML で使用可能な場所：</span><a href="http://www.w3.org/TR/html5/sections.html#the-aside-element">aside 要素</a>、<a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング コンテンツ</a></p>
 </dd>
+<dt id="practices" about="#practices" typeof="rdf:Property">practices <span class="status">[draft]</span></dt>
+<dd about="#practices" property="rdfs:comment" datatype="xsd:string">
+<p><a href="#practice">practice</a> のコレクション。</p>
+</dd>
+<dd>
+<p><span class="subproplabel">HTML で使用可能な場所：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニング コンテンツ</a></p>
+</dd>
 <dt id="question" about="#question" typeof="rdf:Property">question <span class="status">[draft]</span></dt>
 <dd about="#question" property="rdfs:comment" datatype="xsd:string">
 <p>解決すべき質問を識別する自己評価の問題のコンポーネント。</p>
@@ -1108,13 +1115,6 @@ margin-left: 0.3em;
 <span class="subproplabel">HTML で使用可能な場所：</span>
 <a href="http://www.w3.org/TR/html5/grouping-content.html#grouping-content">グルーピング コンテンツ</a>
 </p>
-</dd>
-<dt id="practices" about="#practices" typeof="rdf:Property">practices <span class="status">[draft]</span></dt>
-<dd about="#practices" property="rdfs:comment" datatype="xsd:string">
-<p><a href="#practice">practice</a> のコレクション。</p>
-</dd>
-<dd>
-<p><span class="subproplabel">HTML で使用可能な場所：</span><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content-0">セクショニング コンテンツ</a></p>
 </dd>
 <dt id="true-false-problem" about="#true-false-problem" typeof="rdf:Property">true-false-problem <span class="status">[draft]</span></dt>
 <dd about="#true-false-problem" property="rdfs:comment" datatype="xsd:string">
@@ -1134,7 +1134,7 @@ margin-left: 0.3em;
 <div id="comics" about="#comics" typeof="rdf:Bag">
 <h2 id="h_comics" about="#comics" rev="dcterms:title">漫画</h2>
 <dl about="#comics" rev="rdfs:member">
-<dt id="panel" about="#panel" typeof="rdf:Property">panel<span class="status"> [draft]</span></dt>
+<dt id="panel" about="#panel" typeof="rdf:Property">panel</dt>
 <dd about="#panel" property="rdfs:comment" datatype="xsd:string">
 <p>単一のコマまたは絵。</p>
 </dd>
@@ -1144,7 +1144,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">利用方法の詳細：</span><a href="http://www.idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a></p>
 </dd>
-<dt id="panel-group" about="#panel-group" typeof="rdf:Property">panel-group<span class="status"> [draft]</span></dt>
+<dt id="panel-group" about="#panel-group" typeof="rdf:Property">panel-group</dt>
 <dd about="#panel-group" property="rdfs:comment" datatype="xsd:string">
 <p><a href="#panel">panel</a> のグループ（例えば、帯（strip））</p>
 </dd>
@@ -1154,7 +1154,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">利用方法の詳細：</span><a href="http://www.idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a></p>
 </dd>
-<dt id="balloon" about="#balloon" typeof="rdf:Property">balloon<span class="status"> [draft]</span>
+<dt id="balloon" about="#balloon" typeof="rdf:Property">balloon
 </dt>
 <dd about="#balloon" property="rdfs:comment" datatype="xsd:string">
 <p>登場人物の言葉、口語または思考が含まれている漫画 <a href="#panel">panel</a> の領域。</p>
@@ -1165,8 +1165,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">利用方法の詳細：</span><a href="http://www.idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a></p>
 </dd>
-<dt id="text-area" about="#text-area" typeof="rdf:Property">text-area<span class="status"> [draft]</span>
-</dt>
+<dt id="text-area" about="#text-area" typeof="rdf:Property">text-area</dt>
 <dd about="#text-area" property="rdfs:comment" datatype="xsd:string">
 <p>漫画 <a href="#panel">panel</a> 内のテキスト領域。タイトル、語りのテキスト、登場人物の会話（<a href="#balloon">balloon</a> 内外）や類似のものを表現するために使用。</p>
 </dd>
@@ -1176,8 +1175,7 @@ margin-left: 0.3em;
 <dd>
 <p><span class="subproplabel">利用方法の詳細：</span><a href="http://www.idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a></p>
 </dd>
-<dt id="sound-area" about="#sound-area" typeof="rdf:Property">sound-area<span class="status"> [draft]</span>
-</dt>
+<dt id="sound-area" about="#sound-area" typeof="rdf:Property">sound-area </dt>
 <dd about="#sound-area" property="rdfs:comment" datatype="xsd:string">
 <p>音を表現している漫画 <a href="#panel">panel</a> 内のテキストの領域。</p>
 </dd>
