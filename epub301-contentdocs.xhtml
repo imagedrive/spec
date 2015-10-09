@@ -27,7 +27,7 @@
 <dt>公開日:</dt>
 <dd>2013-11-12</dd>
 <dt>改定日:</dt>
-<dd>2014-06-26</dd>
+<dd>2015-10-09</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -37,6 +37,7 @@
 <div class="book" title="EPUB Content Documents 3.0.1">
 <h1 class="title">EPUB Content Documents 3.0.1</h1>
 <p class="identity"><span class="pubdate">2014年6月26日</span> <span class="releaseinfo">Recommended Specification</span></p>
+<p>仕様書は、<a href="#sec-xhtml-aria-describedat"><code class="markup">aria-describedat</code> 属性</a>のサポートを取り除くため、2015年10月8日に編集された。</p>
 <dl class="printhistory">
 <dt>この版</dt>
 <dd><a class="link" href="http://www.idpf.org/epub/301/spec/epub-contentdocs-20140626.html">http://www.idpf.org/epub/301/spec/epub-contentdocs-20140626.html</a></dd>
@@ -53,7 +54,7 @@
 <p class="errata">この文書（いくらかの規範的な訂正を含むかもしれない）のために、<a class="link" href="http://idpf.org/epub/30/spec/epub30-contentdocs-errata/">正誤表（英語）</a>を参照されたい。</p>
 
 <div class="legal">
-<p class="copyright">Copyright &#169; 2010-2013 International Digital Publishing Forum<sup>&#8482;</sup></p>
+<p class="copyright">Copyright &#169; 2010-2015 International Digital Publishing Forum<sup>&#8482;</sup></p>
 
 <!-- <div class="legalnotice" title="Legal Notice"> -->
 <div class="legalnotice" title="LegalNotice">
@@ -362,7 +363,7 @@
 
 <p>さらに、この仕様は <a class="glossterm" href="#gloss-author" title="製作者">製作者</a>が <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a> に包含してもよい（may）W3C HTML5 文書モデルの<a class="link" href="#sec-xhtml-extensions" title="2.1.3 HTML5 Extensions">拡張セットの定義</a>をする。</p>
 
-<p>この仕様はスクリプトや HTML5 forms もしくは HTML5 DOM のサポートをリーディングシステムに求めない簡易な処理モデルを定義する。この仕様に準拠した <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディングシステム (または リーディングシステム)">EPUBリーディングシステム</a> は、適合した <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> を処理することのみ要求される。<a class="link" href="#sec-scripted-content-rs-reqs" title="2.4.3 リーディングシステムの適合性">スクリプトや HTML5 forms のサポート</a>は任意なリーディングシステムの機能であるように、適合したリーディングシステムは完全に準拠した HTML5 のユーザーエージェントでないかもしれない（例えば、それは完全な HTML5 処理モデルを満たしていないかもしれない）。</p>
+<p>この仕様はスクリプトや HTML5 forms もしくは HTML5 DOM のサポートをリーディングシステムに求めない簡易な処理モデルを定義する。この仕様に準拠した <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディングシステム (または リーディングシステム)">EPUBリーディングシステム</a> は、適合した <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB Content Document</a> を処理することのみ要求される。<a class="link" href="#sec-scripted-content-rs-reqs" title="2.4.3 リーディングシステムの適合性">スクリプトや HTML5 forms のサポート</a>はリーディングシステムの任意コンテキストな機能であるように、適合したリーディングシステムは完全に準拠した HTML5 のユーザーエージェントでないかもしれない（例えば、それは完全な HTML5 処理モデルを満たしていないかもしれない）。</p>
 </div>
 
 <div class="section" title="1.2.2 Relationship to SVG" id="sec-overview-relations-svg">
@@ -1015,49 +1016,49 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 
 <div class="informalexample">
 <p><code class="markup">switch</code> 要素を使用して ChemML マークアップを挿入した例。</p>
-<pre class="synopsis">&lt;epub:switch id="cmlSwitch"&gt;
-
-   &lt;epub:case required-namespace="http://www.xml-cml.org/schema"&gt;
-      &lt;cml xmlns="http://www.xml-cml.org/schema"&gt;
-         &lt;molecule id="sulfuric-acid"&gt;
-            &lt;formula id="f1" concise="H 2 S 1 O 4"/&gt;
-         &lt;/molecule&gt;
-      &lt;/cml&gt;
-   &lt;/epub:case&gt;
-
-   &lt;epub:default&gt;
-      &lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;SO&lt;sub&gt;4&lt;/sub&gt;&lt;/p&gt;
-   &lt;/epub:default&gt;
-
-&lt;/epub:switch&gt;
+<pre class="synopsis">&lt;epub:switch id="cmlSwitch"&gt;&#xD;
+   &#xD;
+   &lt;epub:case required-namespace="http://www.xml-cml.org/schema"&gt;&#xD;
+      &lt;cml xmlns="http://www.xml-cml.org/schema"&gt;&#xD;
+         &lt;molecule id="sulfuric-acid"&gt;&#xD;
+            &lt;formula id="f1" concise="H 2 S 1 O 4"/&gt;&#xD;
+         &lt;/molecule&gt;&#xD;
+      &lt;/cml&gt;&#xD;
+   &lt;/epub:case&gt;&#xD;
+   &#xD;
+   &lt;epub:default&gt;&#xD;
+      &lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;SO&lt;sub&gt;4&lt;/sub&gt;&lt;/p&gt;&#xD;
+   &lt;/epub:default&gt;&#xD;
+   &#xD;
+&lt;/epub:switch&gt;&#xD;
 </pre>
 </div>
 
 <div class="informalexample">
 <p>EPUB 2 リーディングシステムに準拠するために MathML マークアップを追加する例。</p>
-<pre class="synopsis">&lt;epub:switch id="mathmlSwitch"&gt;
-
-   &lt;epub:case required-namespace="http://www.w3.org/1998/Math/MathML"&gt;
-      &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
-         &lt;mrow&gt;
-            &lt;mn&gt;2&lt;/mn&gt;
-            &lt;mo&gt; &amp;#x2061;&lt;!--INVISIBLE TIMES--&gt;&lt;/mo&gt;
-            &lt;mi&gt;x&lt;/mi&gt;
-         &lt;/mrow&gt;
-         &lt;mrow&gt;
-            &lt;mo&gt;+&lt;/mo&gt;
-            &lt;mi&gt;y&lt;/mi&gt;
-            &lt;mo&gt;-&lt;/mo&gt;
-            &lt;mi&gt;z&lt;/mi&gt;
-         &lt;/mrow&gt;
-      &lt;/math&gt;
-   &lt;/epub:case&gt;
-
-   &lt;epub:default&gt;
-      &lt;p&gt;2x + y - z&lt;/p&gt;
-   &lt;/epub:default&gt;
-
-&lt;/epub:switch&gt;
+<pre class="synopsis">&lt;epub:switch id="mathmlSwitch"&gt;&#xD;
+   &#xD;
+   &lt;epub:case required-namespace="http://www.w3.org/1998/Math/MathML"&gt;&#xD;
+      &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;&#xD;
+         &lt;mrow&gt;&#xD;
+            &lt;mn&gt;2&lt;/mn&gt;&#xD;
+            &lt;mo&gt; &amp;#x2061;&lt;!--INVISIBLE TIMES--&gt;&lt;/mo&gt;&#xD;
+            &lt;mi&gt;x&lt;/mi&gt;&#xD;
+         &lt;/mrow&gt;&#xD;
+         &lt;mrow&gt;&#xD;
+            &lt;mo&gt;+&lt;/mo&gt;&#xD;
+            &lt;mi&gt;y&lt;/mi&gt;&#xD;
+            &lt;mo&gt;-&lt;/mo&gt;&#xD;
+            &lt;mi&gt;z&lt;/mi&gt;&#xD;
+         &lt;/mrow&gt;&#xD;
+      &lt;/math&gt;&#xD;
+   &lt;/epub:case&gt;&#xD;
+   &#xD;
+   &lt;epub:default&gt;&#xD;
+      &lt;p&gt;2x + y - z&lt;/p&gt;&#xD;
+   &lt;/epub:default&gt;&#xD;
+   &#xD;
+&lt;/epub:switch&gt;&#xD;
 </pre>
 </div>
 </div>
@@ -1299,30 +1300,29 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 <p>再生とミュートのコントロールするための <code class="markup">trigger</code> 要素を使用するビデオプレーヤのサンプルマークアップ。
 <code class="markup">span</code> 要素に確保された <code class="markup">role</code> と <code class="markup">tabindex</code>、<code class="markup">aria-controls</code> 属性は、キーボードのユーザーにボタンとしてアクセス可能にする。
 </p>
-<pre class="programlisting">&lt;html xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:epub="http://www.idpf.org/2007/ops"
-  xmlns:ev="http://www.w3.org/2001/xml-events"&gt;
-  &lt;head&gt;
-    &lt;epub:trigger ev:observer="pause" ev:event="click" action="pause" ref="test"/&gt;
-    &lt;epub:trigger ev:observer="resume" ev:event="click" action="resume" ref="test"/&gt;
-    &lt;epub:trigger ev:observer="mute" ev:event="click" action="mute" ref="test"/&gt;
-    &lt;epub:trigger ev:observer="mute" ev:event="click" action="show" ref="muted"/&gt;
-    &lt;epub:trigger ev:observer="unmute" ev:event="click" action="unmute" ref="test"/&gt;
-    &lt;epub:trigger ev:observer="unmute" ev:event="click" action="hide" ref="muted"/&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;video id="test" src="birds.mp4" width="320" height="240"/&gt;
-    &lt;p&gt;
-
-      &lt;span id="resume" role="button" tabindex="0" aria-controls="test"&gt;Play/Resume&lt;/span&gt;
-      &lt;span id="pause" role="button" tabindex="0" aria-controls="test"&gt;Pause&lt;/span&gt;
-      &lt;span id="mute" role="button" tabindex="0" aria-controls="test"&gt;Mute&lt;/span&gt;
-      &lt;span id="unmute" role="button" tabindex="0" aria-controls="test"&gt;Unmute&lt;/span&gt;
-      &lt;span id="muted" role="button" tabindex="0" aria-controls="test"&gt;MUTED&lt;/span&gt;
-
-    &lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</pre>
+<pre class="programlisting">&lt;html xmlns="http://www.w3.org/1999/xhtml"&#xD;
+  xmlns:epub="http://www.idpf.org/2007/ops"&#xD;
+  xmlns:ev="http://www.w3.org/2001/xml-events"&gt;&#xD;
+  &lt;head&gt;&#xD;
+    &lt;epub:trigger ev:observer="pause" ev:event="click" action="pause" ref="test"/&gt;&#xD;
+    &lt;epub:trigger ev:observer="resume" ev:event="click" action="resume" ref="test"/&gt;&#xD;
+    &lt;epub:trigger ev:observer="mute" ev:event="click" action="mute" ref="test"/&gt;&#xD;
+    &lt;epub:trigger ev:observer="mute" ev:event="click" action="show" ref="muted"/&gt;&#xD;
+    &lt;epub:trigger ev:observer="unmute" ev:event="click" action="unmute" ref="test"/&gt;&#xD;
+    &lt;epub:trigger ev:observer="unmute" ev:event="click" action="hide" ref="muted"/&gt;&#xD;
+  &lt;/head&gt;&#xD;
+  &lt;body&gt;&#xD;
+    &lt;video id="test" src="birds.mp4" width="320" height="240"/&gt;&#xD;
+    &lt;p&gt;&#xD;
+      &lt;span id="resume" role="button" tabindex="0" aria-controls="test"&gt;Play/Resume&lt;/span&gt;&#xD;
+      &lt;span id="pause" role="button" tabindex="0" aria-controls="test"&gt;Pause&lt;/span&gt;&#xD;
+      &lt;span id="mute" role="button" tabindex="0" aria-controls="test"&gt;Mute&lt;/span&gt;&#xD;
+      &lt;span id="unmute" role="button" tabindex="0" aria-controls="test"&gt;Unmute&lt;/span&gt;&#xD;
+      &lt;span id="muted" role="button" tabindex="0" aria-controls="test"&gt;MUTED&lt;/span&gt;&#xD;
+    &lt;/p&gt;&#xD;
+  &lt;/body&gt;&#xD;
+&lt;/html&gt;&#xD;
+</pre>
 </div>
 </div>
 
@@ -1367,9 +1367,9 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#sec-xhtml-aria-describedat">&gt;</a>&#160;</span>2.1.3.7 <code class="markup">aria-describedat</code> 属性</h5>
 <p><a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr>WAI-ARIA-1.1</abbr>]</a> の <code class="markup">aria-describedat</code> 属性は、仕様で定義された構文とセマンティクスを使用して、<a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML Content Document</a> の全ての要素上に指定して<span class="rfc2119">もよい（may）</span>。この属性は、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> の外部にある概要を参照するのに使用されて<span class="rfc2119">もよい（may）</span>（<span class="phrase"><a class="link" href="epub30-publications.html#sec-resource-locations">Publication Resource の位置</a> <a class="biblioref" href="#refPublications3" title="EPUB Publications 3.0.1">[<abbr>Publications301</abbr>]</a></span> を見よ）。</p>
 <p>この属性のリーディングシステムのサポートは、<span class="rfc2119">省略可能である（optional）</span>。</p>
-<div class="note" title="note">
-<h3 class="title">note</h3>
-<p>この時点では、EPUB 3 は、ARIA 1.1 仕様の全てをサポートしていない。</p>
+<div class="caution" title="caution">
+<h3 class="title">caution</h3>
+<p><code class="markup">aria-describedat</code> 属性は、ARIA 1.1 から永久的に削除された。EPUB 内でこの属性の使用は廃止され、このセクションは、将来の改訂版で削除される。</p>
 </div>
 </div>
 
@@ -1636,7 +1636,7 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 <p id="confreq-nav-a"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a">&gt;</a>&#160;</span>各順序付きリストのリスト項目（<code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#the-li-element">li</a></code> ）は、主要な見出し、構造または EPUB 出版物内の関心のある他の位置を意味し、そして子 <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#the-a-element">a</a></code> 要素かそれとも子 <code class="markup"><a class="markup" href="http://www.w3.org/TR/html5/Overview.html#the-span-element">span</a></code> 要素を含ま<span class="rfc2119">なければならない（must）</span>。<code class="markup">a</code> 要素は、リンクの位置と Content Document 内のターゲットを表現する。<code class="markup">span</code> 要素は、異なるグループ（例えば、イラストの大きなリストは、それぞれの章ためにひとつなど、いくつかのリストに分割できる）の分類リストのための見出しとして機能する。</p>
 </li>
 <li class="listitem">
-<p id="confreq-nav-a-cnt"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-cnt">&gt;</a>&#160;</span>リスト項目のそれぞれの子 <code class="markup">a</code> または <code class="markup">span</code> 要素は、任意の妥当な <a class="link" href="http://www.w3.org/TR/html5/Overview.html#phrasing-content-0">HTML5 のフレージング・コンテンツ</a>を含ん<span class="rfc2119">でもよいが（may）</span>、
+<p id="confreq-nav-a-cnt"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-cnt">&gt;</a>&#160;</span>リスト項目のそれぞれの子 <code class="markup">a</code> または <code class="markup">span</code> 要素は、任意の妥当な <a class="link" href="http://www.w3.org/TR/html5/Overview.html#phrasing-content-0">HTML5 のフレージング コンテンツ</a>を含ん<span class="rfc2119">でもよいが（may）</span>、
 空白化規則の全ての子コンテンツとアプリケーションの連結した後に非ゼロ長のテキストラベルを提供しなければ<span class="rfc2119">ならない（must）</span>。
 
 非テキストの子孫要素は、読者に階層をレンダリングされても<span class="rfc2119">よいが（may）</span>、<code class="markup">title</code> または <code class="markup">alt</code> 属性を含むテキストコンテンツは、この要件への準拠を決定するときに使用されなければ<span class="rfc2119">ならない（must）</span>。
@@ -1653,7 +1653,7 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 <p id="confreq-nav-a-nest"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-a-nest">&gt;</a>&#160;</span><code class="markup">a</code> 要素は、必要に応じて、見出しの以下に補助的なコンテンツレベル（例えば、全ての章の小区分の見出し）を表現する <code class="markup">ol</code> 順番付きリストが続い<span class="rfc2119">てもよい（may）</span>。<code class="markup">span</code> 要素は、<code class="markup">ol</code> 順番付きリストが続か<span class="rfc2119">なければならなず（must）</span>、それは、“葉”の <code class="markup">li</code> 要素に使用することはできない。<code class="markup">a</code> または <code class="markup">span</code> 要素をその前に置くするかどうかにかかわらず、このサブリストは、主要なナビゲーションリスト構成するためや、（各追加の EPUB 出版物の階層のレベルはこの方法で表現される）再帰的のためにこの章で定義されているすべてのコンテンツの必要条件を準拠し<span class="rfc2119">なければならない（must）</span>。</p>
 </li>
 <li class="listitem">
-<p id="confreq-nav-ol-style"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-ol-style">&gt;</a>&#160;</span><code class="markup">ol</code> 要素は順番付きリストを意味する。この仕様のコンテキストでは、リスト項目の標準の表示スタイルは、CSS の <span class="property">list-style: none</span> （CSS をサポートしないリーディングシステムはリスト項目の番号を表示しては<span class="rfc2119">ならない（must not）</span>）と同等で<span class="rfc2119">なければならない（must）</span>。製作者は、CSS を使用して代替のリスト項目のスタイルを指定し<span class="rfc2119">てもよいが（may）</span>、それらは Cascading Style Sheets をサポートしないリーディングシステムによって明確に無視されるだろう。</p>
+<p id="confreq-nav-ol-style"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-nav-ol-style">&gt;</a>&#160;</span><code class="markup">ol</code> 要素は順番付きリストを意味する。この仕様のコンテクストでは、リスト項目の標準の表示スタイルは、CSS の <span class="property">list-style: none</span> （CSS をサポートしないリーディングシステムはリスト項目の番号を表示しては<span class="rfc2119">ならない（must not）</span>）と同等で<span class="rfc2119">なければならない（must）</span>。製作者は、CSS を使用して代替のリスト項目のスタイルを指定し<span class="rfc2119">てもよいが（may）</span>、それらは Cascading Style Sheets をサポートしないリーディングシステムによって明確に無視されるだろう。</p>
 </li>
 </ul>
 </div>
@@ -1662,34 +1662,33 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 
 <div class="informalexample">
 <p>次の例では、<code class="markup">span</code> 要素を、サブリストのグループのためのリンクのない見出しに使用した部分的な <span class="property">lot</span> ("テーブルのリスト") <code class="markup">nav</code> 要素を示している。</p>
-<pre class="synopsis">&lt;nav epub:type="lot"&gt;
-    &lt;h2&gt;List of tables, broken down into individual groups, one per major section of the publication content&lt;/h2&gt;
-    &lt;ol&gt;
-        &lt;li&gt;&lt;span&gt;Tables in Chapter 1&lt;/span&gt;
-            &lt;ol&gt;
-                &lt;li&gt;&lt;a href="chap1.xhtml#table-1.1"&gt;Table 1.1&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a href="chap1.xhtml#table-1.2"&gt;Table 1.2&lt;/a&gt;&lt;/li&gt;
-            &lt;/ol&gt;
-        &lt;/li&gt;
-
-        &lt;li&gt;&lt;span&gt;Tables in Chapter 2&lt;/span&gt;
-            &lt;ol&gt;
-                &lt;li&gt;&lt;a href="chap2.xhtml#table-2.1"&gt;Table 2.1&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a href="chap2.xhtml#table-2.2"&gt;Table 2.2&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="chap2.xhtml#table-2.3"&gt;Table 2.3&lt;/a&gt;&lt;/li&gt;
-            &lt;/ol&gt;
-        &lt;/li&gt;
-        ...
-        &lt;li&gt;&lt;span&gt;Tables in Appendix&lt;/span&gt;
-            &lt;ol&gt;
-                &lt;li&gt;&lt;a href="appendix.xhtml#table-a.1"&gt;Table A.1&lt;/a&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a href="appendix.xhtml#table-a.2"&gt;Table B.2&lt;/a&gt;&lt;/li&gt;
-            &lt;/ol&gt;
-        &lt;/li&gt;
-    &lt;/ol&gt;
+<pre class="synopsis">&lt;nav epub:type="lot"&gt;&#xD;
+    &lt;h2&gt;List of tables, broken down into individual groups, one per major section of the publication content&lt;/h2&gt;&#xD;
+    &lt;ol&gt;&#xD;
+        &lt;li&gt;&lt;span&gt;Tables in Chapter 1&lt;/span&gt;&#xD;
+            &lt;ol&gt;&#xD;
+                &lt;li&gt;&lt;a href="chap1.xhtml#table-1.1"&gt;Table 1.1&lt;/a&gt;&#xD;
+                &lt;/li&gt;&#xD;
+                &lt;li&gt;&lt;a href="chap1.xhtml#table-1.2"&gt;Table 1.2&lt;/a&gt;&lt;/li&gt;&#xD;
+            &lt;/ol&gt;&#xD;
+        &lt;/li&gt;&#xD;
+        &lt;li&gt;&lt;span&gt;Tables in Chapter 2&lt;/span&gt;&#xD;
+            &lt;ol&gt;&#xD;
+                &lt;li&gt;&lt;a href="chap2.xhtml#table-2.1"&gt;Table 2.1&lt;/a&gt;&#xD;
+                &lt;/li&gt;&#xD;
+                &lt;li&gt;&lt;a href="chap2.xhtml#table-2.2"&gt;Table 2.2&lt;/a&gt;&lt;/li&gt;&#xD;
+                &lt;li&gt;&lt;a href="chap2.xhtml#table-2.3"&gt;Table 2.3&lt;/a&gt;&lt;/li&gt;&#xD;
+            &lt;/ol&gt;&#xD;
+        &lt;/li&gt;&#xD;
+    	…&#xD;
+        &lt;li&gt;&lt;span&gt;Tables in Appendix&lt;/span&gt;&#xD;
+            &lt;ol&gt;&#xD;
+                &lt;li&gt;&lt;a href="appendix.xhtml#table-a.1"&gt;Table A.1&lt;/a&gt;&#xD;
+                &lt;/li&gt;&#xD;
+                &lt;li&gt;&lt;a href="appendix.xhtml#table-a.2"&gt;Table B.2&lt;/a&gt;&lt;/li&gt;&#xD;
+            &lt;/ol&gt;&#xD;
+        &lt;/li&gt;&#xD;
+    &lt;/ol&gt;&#xD;
 &lt;/nav&gt;</pre>
 </div>
 </div>
@@ -1747,13 +1746,13 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 
 <div class="informalexample">
 <p>次の例では、<a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">EPUB Structural Semantics Vocabulary</a> から引用された構造上の意味論を持つ <span class="property">landmarks</span> <code class="markup">nav</code> 要素を示している。</p>
-<pre class="synopsis">&lt;nav epub:type="landmarks"&gt;
-    &lt;h2&gt;Guide&lt;/h2&gt;
-    &lt;ol&gt;
-        &lt;li&gt;&lt;a epub:type="toc" href="#toc"&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a epub:type="loi" href="content.html#loi"&gt;List of Illustrations&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a epub:type="bodymatter" href="content.html#bodymatter"&gt;Start of Content&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
+<pre class="synopsis">&lt;nav epub:type="landmarks"&gt;&#xD;
+    &lt;h2&gt;Guide&lt;/h2&gt;&#xD;
+    &lt;ol&gt;&#xD;
+        &lt;li&gt;&lt;a epub:type="toc" href="#toc"&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;&#xD;
+        &lt;li&gt;&lt;a epub:type="loi" href="content.html#loi"&gt;List of Illustrations&lt;/a&gt;&lt;/li&gt;&#xD;
+        &lt;li&gt;&lt;a epub:type="bodymatter" href="content.html#bodymatter"&gt;Start of Content&lt;/a&gt;&lt;/li&gt;&#xD;
+    &lt;/ol&gt;&#xD;
 &lt;/nav&gt;</pre>
 </div>
 
@@ -1781,45 +1780,45 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 
 <div class="informalexample">
 <p>次の例は部分的な <span class="property">page-list</span> <code class="markup">nav</code> 要素を示す。ルート上に <code class="markup">hidden</code> 属性の存在は、全体のリストがコンテンツフローのレンダリングから除外されることを示している。</p>
-<pre class="synopsis">&lt;nav epub:type="page-list" hidden=""&gt;
-    &lt;h2&gt;Pagebreaks of the print version, third edition&lt;/h2&gt;
-    &lt;ol&gt;
-        &lt;li&gt;&lt;a href="frontmatter.xhtml#pi"&gt;I&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="frontmatter.xhtml#pii"&gt;II&lt;/a&gt;&lt;/li&gt; … &lt;li&gt;&lt;a href="chap1.xhtml#p1"&gt;1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="chap1.xhtml#p2"&gt;2&lt;/a&gt;&lt;/li&gt; … &lt;/ol&gt;
-&lt;/nav&gt;
+<pre class="synopsis">&lt;nav epub:type="page-list" hidden=""&gt;&#xD;
+    &lt;h2&gt;Pagebreaks of the print version, third edition&lt;/h2&gt;&#xD;
+    &lt;ol&gt;&#xD;
+        &lt;li&gt;&lt;a href="frontmatter.xhtml#pi"&gt;I&lt;/a&gt;&lt;/li&gt;&#xD;
+        &lt;li&gt;&lt;a href="frontmatter.xhtml#pii"&gt;II&lt;/a&gt;&lt;/li&gt; … &lt;li&gt;&lt;a href="chap1.xhtml#p1"&gt;1&lt;/a&gt;&lt;/li&gt;&#xD;
+        &lt;li&gt;&lt;a href="chap1.xhtml#p2"&gt;2&lt;/a&gt;&lt;/li&gt; … &lt;/ol&gt;&#xD;
+&lt;/nav&gt;&#xD;
 </pre>
 </div>
 
 <div class="informalexample">
 <p>次の例は、<code class="markup">hidden</code> 属性が二つの最上位の階層レベルをレンダリングするコンテンツフローの制限をするために使用される部分的な <span class="property">toc</span> <code class="markup">nav</code> 要素を示している。</p>
-<pre class="synopsis">&lt;nav epub:type="toc" id="toc"&gt;
-  &lt;h1&gt;Table of contents&lt;/h1&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;a href="chap1.xhtml"&gt;Chapter 1&lt;/a&gt;
-      &lt;ol&gt;
-        &lt;li&gt;
-          &lt;a href="chap1.xhtml#sec-1.1"&gt;Chapter 1.1&lt;/a&gt;
-          &lt;ol hidden=""&gt;
-            &lt;li&gt;
-              &lt;a href="chap1.xhtml#sec-1.1.1"&gt;Section 1.1.1&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li&gt;
-              &lt;a href="chap1.xhtml#sec-1.1.2"&gt;Section 1.1.2&lt;/a&gt;
-            &lt;/li&gt;
-          &lt;/ol&gt;
-         &lt;/li&gt;
-         &lt;li&gt;
-           &lt;a href="chap1.xhtml#sec-1.2"&gt;Chapter 1.2&lt;/a&gt;
-         &lt;/li&gt;
-       &lt;/ol&gt;
-     &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href="chap2.xhtml"&gt;Chapter 2&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/nav&gt;
+<pre class="synopsis">&lt;nav epub:type="toc" id="toc"&gt;&#xD;
+  &lt;h1&gt;Table of contents&lt;/h1&gt;&#xD;
+  &lt;ol&gt;&#xD;
+    &lt;li&gt;&#xD;
+      &lt;a href="chap1.xhtml"&gt;Chapter 1&lt;/a&gt;&#xD;
+      &lt;ol&gt;&#xD;
+        &lt;li&gt;&#xD;
+          &lt;a href="chap1.xhtml#sec-1.1"&gt;Chapter 1.1&lt;/a&gt;&#xD;
+          &lt;ol hidden=""&gt;&#xD;
+            &lt;li&gt;&#xD;
+              &lt;a href="chap1.xhtml#sec-1.1.1"&gt;Section 1.1.1&lt;/a&gt;&#xD;
+            &lt;/li&gt;&#xD;
+            &lt;li&gt;&#xD;
+              &lt;a href="chap1.xhtml#sec-1.1.2"&gt;Section 1.1.2&lt;/a&gt;&#xD;
+            &lt;/li&gt;&#xD;
+          &lt;/ol&gt;&#xD;
+         &lt;/li&gt;&#xD;
+         &lt;li&gt;&#xD;
+           &lt;a href="chap1.xhtml#sec-1.2"&gt;Chapter 1.2&lt;/a&gt;&#xD;
+         &lt;/li&gt;&#xD;
+       &lt;/ol&gt;&#xD;
+     &lt;/li&gt;&#xD;
+    &lt;li&gt;&#xD;
+      &lt;a href="chap2.xhtml"&gt;Chapter 2&lt;/a&gt;&#xD;
+    &lt;/li&gt;&#xD;
+  &lt;/ol&gt;&#xD;
+&lt;/nav&gt;&#xD;
 </pre>
 </div>
 </div>
@@ -1834,7 +1833,7 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 
 <p>Scalable Vector Graphics (SVG) 1.1 (第2版) 仕様書 <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">[<abbr>SVG</abbr>]</a> は、最終型のベクターグラフィックとテキストを表現するためのフォーマットを定義する。</p>
 
-<p>EPUB 出版物は、典型的に、<a class="glossterm" href="#gloss-content-document-top-level" title="Top-level Content Document">トップレベル</a>の文書型に <a class="link" href="#sec-xhtml" title="2.1 XHTML Content Documents">XHTML Content Documents</a> を使用するが、<a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG Content Document</a> の使用も許可されている。SVG は、典型的に、最終型のページ画像がコンテンツの唯一な適切な表現である場合など（たとえば、マンガやコミックブックのコンテクスト内では、そうであるかもしれない）、特殊な状況でのみ使用する</p>
+<p>EPUB 出版物は、典型的に、<a class="glossterm" href="#gloss-content-document-top-level" title="Top-level Content Document">トップレベル</a>の文書型に <a class="link" href="#sec-xhtml" title="2.1 XHTML Content Documents">XHTML Content Documents</a> を使用するが、<a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG Content Document</a> の使用も許可されている。SVG は、典型的に、最終型のページ画像がコンテンツの唯一な適切な表現である場合など、（たとえば、マンガやコミックブックのコンテクスト内では、そうであるかもしれない）特殊な状況でのみ使用する</p>
 
 <p>本セクションは、<a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">[<abbr>SVG</abbr>]</a> 文書のプロファイルを定義する。この仕様に準拠した XML 文書のインスタンスは <a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">Core Media Type</a> であり、<a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG Content Document</a> としてこの仕様と<a class="link" href="#sibling-specs">兄弟仕様書</a>を参照している。</p>
 
@@ -1880,8 +1879,8 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 <ul class="conformance-list">
 <li class="listitem"><p id="confreq-svg-anim"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-svg-anim">&gt;</a>&#160;</span><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">[<abbr>SVG</abbr>]</a> <a class="link" href="http://www.w3.org/TR/SVG/animate.html#AnimationElements">Animation 要素</a>と <a class="link" href="http://www.w3.org/TR/SVG/script.html#AnimationEvents">Animation event 属性</a>は発生してはならない<span class="rfc2119">（must not）</span>。</p></li>
 
-<li class="listitem"><p id="confreq-svg-foreignObject"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-svg-foreignObject">&gt;</a>&#160;</span><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">[<abbr>SVG</abbr>]</a> <code class="markup"><a class="markup" href="http://www.w3.org/TR/SVG11/extend.html#ForeignObjectElement">svg:foreignObject</a></code> 要素は、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/single-page.html#flow-content">フロー・コンテンツ</a>かひとつの <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href=""><code class="markup">body</code> 要素</a>のいずれかを含めなければならない<span class="rfc2119">（must）</span>。このコンテンツは、<a class="xref" href="#sec-xhtml-conf-content" title="2.1.1 Content Conformance">XHTML Content Documents - コンテンツの適合性</a>で定義された XHTML Content Document model の妥当なドキュメントフラグメントを示さなければ<span class="rfc2119">ならない（must）</span>。<code class="markup">svg:foreignObject</code> 要素の <code class="markup">requiredExtensions</code> 属性は、もし指定されているなら、<code class="uri">http://www.idpf.org/2007/ops</code> を設定しなければならない<span class="rfc2119">（must）</span>。</p></li>
-<li class="listitem"><p id="confreq-svg-title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-svg-title">&gt;</a>&#160;</span><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">[<abbr>SVG</abbr>]</a> <code class="markup"><a class="markup" href="http://www.w3.org/TR/SVG11/struct.html#TitleElement">svg:title</a></code> 要素は、妥当な XHTML Content Document のフレージング・コンテンツのみを含めなければならない<span class="rfc2119">（must）</span>。</p></li>
+<li class="listitem"><p id="confreq-svg-foreignObject"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-svg-foreignObject">&gt;</a>&#160;</span><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">[<abbr>SVG</abbr>]</a> <code class="markup"><a class="markup" href="http://www.w3.org/TR/SVG11/extend.html#ForeignObjectElement">svg:foreignObject</a></code> 要素は、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href="http://www.w3.org/TR/html5/single-page.html#flow-content">フロー コンテンツ</a>かひとつの <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr>HTML5</abbr>]</a> <a class="link" href=""><code class="markup">body</code> 要素</a>のいずれかを含めなければならない<span class="rfc2119">（must）</span>。このコンテンツは、<a class="xref" href="#sec-xhtml-conf-content" title="2.1.1 Content Conformance">XHTML Content Documents - コンテンツの適合性</a>で定義された XHTML Content Document model の妥当なドキュメントフラグメントを示さなければ<span class="rfc2119">ならない（must）</span>。<code class="markup">svg:foreignObject</code> 要素の <code class="markup">requiredExtensions</code> 属性は、もし指定されているなら、<code class="uri">http://www.idpf.org/2007/ops</code> を設定しなければならない<span class="rfc2119">（must）</span>。</p></li>
+<li class="listitem"><p id="confreq-svg-title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#confreq-svg-title">&gt;</a>&#160;</span><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">[<abbr>SVG</abbr>]</a> <code class="markup"><a class="markup" href="http://www.w3.org/TR/SVG11/struct.html#TitleElement">svg:title</a></code> 要素は、妥当な XHTML Content Document のフレージング コンテンツのみを含めなければならない<span class="rfc2119">（must）</span>。</p></li>
 </ul>
 </div>
 </div>
@@ -1944,61 +1943,64 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 
 <p>次の例は Package Document と見なす：</p>
 
-<div class="informalexample"><pre class="synopsis">&lt;package …&gt;
-    …
-    &lt;manifest&gt;
-        …
-        &lt;item id="chap01"
-            href="scripted01.xhtml"
-            media-type="application/xhtml+xml"
-            properties="scripted"/&gt;
-        &lt;item id="inset01"
-            href="scripted02.xhtml"
-            media-type="application/xhtml+xml"
-            properties="scripted"/&gt;
-        &lt;item id="slideshowjs"
-            href="slideshow.js"
-            media-type="text/javascript"/&gt;
-    &lt;/manifest&gt;
-
-    &lt;spine …&gt;
-        &lt;itemref idref="chap01"/&gt;
-        …
-    &lt;/spine&gt;
-    …
-&lt;/package&gt;
+<div class="informalexample">
+<pre class="synopsis">&lt;package …&gt;&#xD;
+    …&#xD;
+    &lt;manifest&gt;&#xD;
+        …&#xD;
+        &lt;item id="chap01" &#xD;
+            href="scripted01.xhtml" &#xD;
+            media-type="application/xhtml+xml"&#xD;
+            properties="scripted"/&gt;&#xD;
+        &lt;item id="inset01" &#xD;
+            href="scripted02.xhtml" &#xD;
+            media-type="application/xhtml+xml"&#xD;
+            properties="scripted"/&gt;&#xD;
+        &lt;item id="slideshowjs" &#xD;
+            href="slideshow.js" &#xD;
+            media-type="text/javascript"/&gt;&#xD;
+    &lt;/manifest&gt;&#xD;
+    &#xD;
+    &lt;spine …&gt;&#xD;
+        &lt;itemref idref="chap01"/&gt;&#xD;
+        …&#xD;
+    &lt;/spine&gt;&#xD;
+    …&#xD;
+&lt;/package&gt;&#xD;
 </pre>
 </div>
 
 <p>そして付随するファイルである <code class="filename">scripted01.xhtml</code> ：</p>
 
-<div class="informalexample"><pre class="synopsis">&lt;html …&gt;
-    &lt;head&gt;
-        …
-        &lt;script type="text/javascript"&gt;
-            alert("Reading System name: " + navigator.epubReadingSystem.name);
-        &lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        …
-        &lt;iframe src="scripted02.xhtml" … /&gt;
-        …
-    &lt;/body&gt;
-&lt;/html&gt;
+<div class="informalexample">
+<pre class="synopsis">&lt;html …&gt;&#xD;
+    &lt;head&gt;&#xD;
+        …&#xD;
+        &lt;script type="text/javascript"&gt;&#xD;
+            alert("Reading System name: " + navigator.epubReadingSystem.name);&#xD;
+        &lt;/script&gt;&#xD;
+    &lt;/head&gt;&#xD;
+    &lt;body&gt;&#xD;
+        …&#xD;
+        &lt;iframe src="scripted02.xhtml" … /&gt;&#xD;
+        …&#xD;
+    &lt;/body&gt;&#xD;
+&lt;/html&gt;&#xD;
 </pre>
 </div>
 
 <p>そして付随するファイルである <code class="filename">scripted02.xhtml</code> ：</p>
 
-<div class="informalexample"><pre class="synopsis">&lt;html …&gt;
-    &lt;head&gt;
-        …
-        &lt;script type="text/javascript" href="slideshow.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        …
-    &lt;/body&gt;
-&lt;/html&gt;
+<div class="informalexample">
+<pre class="synopsis">&lt;html …&gt;&#xD;
+    &lt;head&gt;&#xD;
+        …&#xD;
+        &lt;script type="text/javascript" href="slideshow.js"&gt;&lt;/script&gt;&#xD;
+    &lt;/head&gt;&#xD;
+    &lt;body&gt;&#xD;
+        …&#xD;
+    &lt;/body&gt;&#xD;
+&lt;/html&gt;&#xD;
 </pre>
 </div>
 
@@ -2193,10 +2195,10 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 <div class="informalexample">
 <p>次の例は、<code class="markup">meta</code> タグの <span class="property">viewport</span> を示している。</p>
 <pre class="synopsis">
-&lt;head&gt;
-   …
-   &lt;meta name="viewport" content="width=1200, height=600"/&gt;
-   …
+&lt;head&gt;&#xD;
+   …&#xD;
+   &lt;meta name="viewport" content="width=1200, height=600"/&gt;&#xD;
+   …&#xD;
 &lt;/head&gt;</pre>
 </div>
 <p>リーディングシステムは、<code class="markup">meta</code> タグの <span class="property">viewport</span> で宣言された ICB 寸法に XHTML コンテンツを切り抜かなけれ<span class="rfc2119">ばならず（must）</span>、初期包含ブロックの外側に位置するコンテンツは見えないであろう。ICB の縦横比がリーディングシステムのコンテンツ表示領域の縦横比と一致していないとき、リーディングシステムはユーザインタフェースに順応するため領域内の ICB を配置し<span class="rfc2119">てもよく（may）</span>、つまり、レターボックスがコンテンツの片側もしくは両側に表示され<span class="rfc2119">てもよい（may）</span>。</p>
@@ -2209,10 +2211,10 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 <div class="informalexample">
 <p>次の例は、<code class="markup">viewBox</code> 属性の宣言を示している。</p>
 <pre class="synopsis">
-&lt;svg xmlns="http://www.w3.org/2000/svg"
-     version="1.1" width="100%" height="100%"
-     viewBox="0 0 844 1200"&gt;
-   …
+&lt;svg xmlns="http://www.w3.org/2000/svg"&#xD;
+     version="1.1" width="100%" height="100%"&#xD;
+     viewBox="0 0 844 1200"&gt;&#xD;
+   …&#xD;
 &lt;/svg&gt;</pre>
 </div>
 </div>
@@ -2588,13 +2590,14 @@ IDPF の意図は、仕様の将来の主要なバージョンで意味の変化
 
 <div class="informalexample">
 <p>次の例は、XHTML Content Document に関連付けられた二つの PLS Documents（中国語とモンゴル語のためのもの）を示している。</p>
-<pre class="synopsis">&lt;html … &gt;
-    &lt;head&gt;
-        …
-        &lt;link rel="pronunciation" type="application/pls+xml" hreflang="zh" href="../speech/zh.pls"/&gt;
-        &lt;link rel="pronunciation" type="application/pls+xml" hreflang="mn" href="../speech/mn.pls"/&gt;
-    &lt;/head&gt;
-    …
+<pre class="synopsis">
+&lt;html … &gt;    &#xD;
+    &lt;head&gt;&#xD;
+        …&#xD;
+        &lt;link rel="pronunciation" type="application/pls+xml" hreflang="zh" href="../speech/zh.pls"/&gt;&#xD;
+        &lt;link rel="pronunciation" type="application/pls+xml" hreflang="mn" href="../speech/mn.pls"/&gt;&#xD;
+    &lt;/head&gt;        &#xD;
+    …&#xD;
 &lt;/html&gt;</pre>
 </div>
 </div>
@@ -3414,7 +3417,8 @@ alert("Feature " + feature + " supported?: " + conformTest);</pre>
 </div>
 
 <div class="bibliography" title="References" id="references">
-<div class="titlepage"><div>
+<div class="titlepage">
+<div>
 <div>
 <h2 class="title"><span class="link-marker"><a class="hidden-reveal" title="Link here" href="#references">&gt;</a>&#160;</span>参照・参考</h2>
 </div>
