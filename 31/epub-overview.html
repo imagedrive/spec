@@ -3,15 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <title>EPUB 3.1 Overview 日本語訳</title>
-<link rel="stylesheet" type="text/css" href="css/epub-spec-2016.css"/>
-<link rel="stylesheet" type="text/css" href="css/translation-memo.css"/>
+<link rel="stylesheet" type="text/css" href="../css/epub-spec-2016.css"/>
+<link rel="stylesheet" type="text/css" href="../css/translation-memo.css"/>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/>
 <meta name="description" content="この文書は、他の EPUB 3.1 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3.1 の全体の導入として役立つ。"/>
 <meta charset="utf-8"/>
-<link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
+<link rel="stylesheet" href="../css/epub-print.css" type="text/css" media="print"/>
 </head>
 <body>
-<header>
 <div class="translation-attention">
 
 <p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-overview-20160130.html">EPUB 3.1 Overview</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/overview">http://www.idpf.org/epub3/latest/overview</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-overview-20160130.html">EPUB 3.1 Overview</a> を参照されたい。</p>
@@ -20,13 +19,14 @@
 <dl>
 
 <dt>公開日:</dt>
-<dd>2016年3月7日</dd>
+<dd>2016年3月8日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
 </dl>
 
 </div>
+<header>
 <!--p><a href="http://www.idpf.org"><img src="../../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
 <h1 class="title">EPUB 3.1 Overview</h1>
 
@@ -77,7 +77,7 @@
 <p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキンググループ憲章</a>の下で EPUB ワーキンググループによって作成されたドラフトである。</p>
 <p>このドキュメントは安定しておらず、いつでも、更新や置き換えや、廃止されるかもしれない。ドラフトとしての発行は、IDPF メンバーシップまたは IDPF 理事会による承認を意味するものではない。ドキュメントは、進行中の作業としてのみ引用されるべきである。</p>
 <p>このドキュメントに関するフィードバックは、EPUB ワーキンググループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
-<p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF Policies and Procedures</a> によって管理される。</p>
+<p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
 </section>
 
 <div class="doc-label">
@@ -413,9 +413,9 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 <p>HTML5 は、より意味論的に意義のある（例えば、<code class="markup">section</code> と <code class="markup">nav</code>、<code class="markup">aside</code>）マークアップをするために意図された新しい要素といくつかの HTML4 要素のために明確に定義されたセマンティクスの導入をサポートしている。これらの要素の使用は、しっかりと構造化された Web コンテンツのオーサリングのためのベストプラクティスと併せて、EPUB HTML Content Document を作るときに用いる。この追加は、コンテンツをより良く分類し、文書構造の表現のために、そしてこれらの論理的なナビゲーションを容易にするための定義をすることができる。HTML Content Document はまた、ARIA の ロール（role）とステート（state）、プロパティ（property）、コンテンツ相互作用する支援技術の能力を高めるイベントの包含をネイティブにサポートする。</p>
 
 <p>
-EPUB 3.1 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPFRoleAttribute" title="Role Attribute">[<abbr class="abbrev">Role</abbr>]</a> に機能的に同等であることを意味する <span class="phrase"><a href="epub301-contentdocs.xhtml#attrdef-epub-type">epub:type</a></span> 属性を包含する。
+EPUB 3.1 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPFRoleAttribute" title="Role Attribute">[<abbr class="abbrev">Role</abbr>]</a> に機能的に同等であることを意味する <span class="phrase"><a href="epub-contentdocs.xhtml#attrdef-epub-type">epub:type</a></span> 属性を包含する。
 
-この属性は、HTML Content Document 内の任意の要素に、統制された語彙と用語を使用して、作品内にその目的と意味に関する追加の情報を包含することができる。詳細な情報は、<span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-html-semantic-inflection" target="_top">HTML 意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
+この属性は、HTML Content Document 内の任意の要素に、統制された語彙と用語を使用して、作品内にその目的と意味に関する追加の情報を包含することができる。詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-html-semantic-inflection" target="_top">HTML 意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
 
 </section>
 
@@ -1098,4 +1098,3 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 </section>
 </body>
 </html>
-
