@@ -67,9 +67,9 @@
 <section id="sotd">
 <h2>このドキュメントのステータス</h2>
 <p>このセクションは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わることができる。</p>
-<p>このドキュメントは、2015年7月8日に承認された<a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top"> EPUB ワーキンググループ憲章</a>の下で EPUB ワーキンググループによって作成されたドラフトである。</p>
+<p>このドキュメントは、2015年7月8日に承認された<a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top"> EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成されたドラフトである。</p>
 <p>このドキュメントは安定しておらず、いつでも、更新や置き換え、廃止されるかもしれない。ドラフトとしての発行は、IDPF メンバーシップまたは IDPF 理事会による承認を意味するものではない。ドキュメントは、進行中の作業としてのみ引用されるべきである。</p>
-<p>このドキュメントに関するフィードバックは、EPUB ワーキンググループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
+<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
 <p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
 </section>
 <nav xmlns:spec="http://www.idpf.org/2016/epub/spec" class="toc" id="toc">
@@ -142,7 +142,7 @@
 </dd>
 <dt class="glossentry" id="gloss-publication-resource-cmt"><span class="glossterm">コア メディア タイプ リソース</span></dt>
 <dd class="glossdef">
-<p><a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>であるため、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>の提供が必要ではない<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>（<a class="glossterm" href="#gloss-publication-resource-foreign" title="Foreign Resource">外部リソース</a>を参照）。</p>
+<p><a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>であるため、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>の提供が必要ではない<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>（<a class="glossterm" href="#gloss-publication-resource-foreign" title="Foreign Resource">管理外リソース</a>を参照）。</p>
 </dd>
 <dt class="glossentry" id="gloss-rendition-default"><span class="glossterm">初期設定のレンディション</span></dt>
 <dd class="glossdef">
@@ -407,7 +407,7 @@
 <p>これらの仕様は、EPUB 3.1 に関連しているように広く認められている正式なリストであり、規格の一部として関連する機能を含んでいるが、新しい機能もまた拡張仕様の開発を通じて定期的に追加される。</p>
 <div class="issue">
 <h6 id="issue-consolidation"> OPEN ISSUE </h6>
-<p>最近完了したモジュールと進行中の作業の数は、コア規格の統合/一体化のために考慮中である。2015年12月15日の電話会議におけるワーキンググループのほぼ一致した意見としては、実績のある実装の不足のせいで、この時点ではこれらのモジュールを考慮しなかった。しかしながら、これらの包含は、将来のドラフトで再検討されるかもしれない。モジュールのリストについては、トラッカーの <a class="ulink" href="https://github.com/IDPF/epub-revision/issues/635" target="_top">issue 635</a> を見よ。</p>
+<p>最近完了したモジュールと進行中の作業の数は、コア規格の統合/一体化のために考慮中である。2015年12月15日の電話会議におけるワーキング グループのほぼ一致した意見としては、実績のある実装の不足のせいで、この時点ではこれらのモジュールを考慮しなかった。しかしながら、これらの包含は、将来のドラフトで再検討されるかもしれない。モジュールのリストについては、トラッカーの <a class="ulink" href="https://github.com/IDPF/epub-revision/issues/635" target="_top">issue 635</a> を見よ。</p>
 </div>
 <p>規格のためにコアのリビジョンの外側で定義されている特徴と機能は、この仕様で正式に認められていないが、とはいえ、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">参照仕様</a>として認識された時点で、製作者と開発者によって使用するために利用可能である。</p>
 <div class="note">
@@ -465,7 +465,7 @@ Content/HelloWorld.xhtml
 </div>
 <div class="issue">
 <h6 id="issue-bff"> OPEN ISSUE </h6>
-<p>ワーキンググループは、現在、標準化された EPUB 出版物の代替としてパッケージされていないマニフェステイションとブラウザベースのリーディング システムによるコンテンツの容易な横断を検討している。このマニフェステイションは、Open Container Format によって置き換えられないだろうし、二つの間を往復することができることを期待される。詳細については、<a class="ulink" href="https://docs.google.com/document/d/1nXd8xMsNOA7sdwudpO2KS_L0Hc-0SxYx1ScrGIhRBBg/edit" target="_top">サーバー/ブラウザの扱いやすそうなマニフェステイションドキュメント</a>を参照されたい。</p>
+<p>ワーキング グループは、現在、標準化された EPUB 出版物の代替としてパッケージされていないマニフェステイションとブラウザベースのリーディング システムによるコンテンツの容易な横断を検討している。このマニフェステイションは、Open Container Format によって置き換えられないだろうし、二つの間を往復することができることを期待される。詳細については、<a class="ulink" href="https://docs.google.com/document/d/1nXd8xMsNOA7sdwudpO2KS_L0Hc-0SxYx1ScrGIhRBBg/edit" target="_top">サーバー/ブラウザの扱いやすそうなマニフェステイションドキュメント</a>を参照されたい。</p>
 </div>
 </section>
 <section class="section" id="sec-epub-rs-conf">
@@ -486,7 +486,7 @@ Content/HelloWorld.xhtml
 <p id="confreq-rs-epub3-vector"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-vector"> </a> </span><span class="conditional">ベクターイメージをレンダリングする機能がある場合</span>、<a class="link" href="#cmt-grp-image">ベクター画像のコア メディア タイプ</a>をサポートしなければならない（<span class="rfc2119">must</span>）。</p>
 <p id="confreq-rs-epub3-mp3-aac"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-mp3-aac"> </a> </span><span class="conditional">録音済みの音声をレンダリングする機能がある場合</span>、<a class="link" href="#cmt-mp3">MP3 音声のコア メディア タイプ</a>をサポートしなければならない（<span class="rfc2119">must</span>）。また <a class="link" href="#cmt-mp4-aac">MP4 音声のコア メディア タイプ</a>とメディア オーバーレイ <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">MediaOverlays31</abbr>]</a> をサポートするべきである（<span class="rfc2119">should</span>）。</p>
 <p id="confreq-rs-epub3-tts"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-tts"> </a> </span>
-<span class="conditional"><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-tts" target="_top">テキストの読み上げ（TTS）</a></span>のレンダリングをサポートしている場合</span>、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-pls" target="_top">発音辞書</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-css" target="_top">EPUB CSS Profile</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> の CSS3 スピーチ機能と <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">HTML コンテンツ ドキュメント</a></span>の <span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-xhtml-ssml-attrib" target="_top">SSML 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> をサポートするべきである（<span class="rfc2119">should</span>）。</p>
+<span class="conditional"><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-tts" target="_top">テキスト読み上げ（TTS）</a></span>のレンダリングをサポートしている場合</span>、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-pls" target="_top">発音辞書</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-css" target="_top">EPUB CSS Profile</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> の CSS3 スピーチ機能と <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">HTML コンテンツ ドキュメント</a></span>の <span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-xhtml-ssml-attrib" target="_top">SSML 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> をサポートするべきである（<span class="rfc2119">should</span>）。</p>
 
 <div class="note" id="note-video-codecs">
 <h3 class="title">note</h3>
@@ -524,8 +524,8 @@ Content/HelloWorld.xhtml
 <section class="section" id="sec-cmt-intro">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-cmt-intro"> </a> </span>4.1.1 まえがき</h3>
 <p>一般的に、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>の各<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>は、多くの<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>から構成されている。それらのリソースは、二つのカテゴリーに分類される。それらは <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>のサポートが必要なもの（<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>）と、そうでないものである（<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>）。</p>
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>は、EPUB 出版物を構成するためのリソースに両方のタイプを使用するのは自由だが、いくつかのリーディング システムは、使用する外部リソースをレンダリングしないかもしれないことを知っておく必要がある。</p>
-<p>EPUB 出版物は、全ての適合したリーディング システムで完全に消費するために設計されており、従って、フォールバックのシステムは、外部リソースの使用が、コンテンツを消費する<a class="glossterm" href="#gloss-user" title="User">読者</a>の能力に影響を与えないことをを担保する必要性がある。このセクションは、消費の要件を満たすために使用することできるリーディング システムを横断してサポートされ、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック メカニズム</a>が識別する<a class="link" href="#sec-cmt-supported" title="4.1.2 Supported Media Types">コア メディア タイプのセット</a>を提示している。</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>は、EPUB 出版物を構成するためのリソースに両方のタイプを使用するのは自由だが、いくつかのリーディング システムは、使用する管理外リソースをレンダリングしないかもしれないことを知っておく必要がある。</p>
+<p>EPUB 出版物は、全ての適合したリーディング システムで完全に消費するために設計されており、従って、フォールバックのシステムは、管理外リソースの使用が、コンテンツを消費する<a class="glossterm" href="#gloss-user" title="User">読者</a>の能力に影響を与えないことをを担保する必要性がある。このセクションは、消費の要件を満たすために使用することできるリーディング システムを横断してサポートされ、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック メカニズム</a>が識別する<a class="link" href="#sec-cmt-supported" title="4.1.2 Supported Media Types">コア メディア タイプのセット</a>を提示している。</p>
 </section>
 <section class="section" id="sec-cmt-supported">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-cmt-supported"> </a> </span>4.1.2 サポートされたメディア タイプ</h3>
@@ -611,7 +611,7 @@ Content/HelloWorld.xhtml
 <tr>
 <td id="cmt-pls"><code class="media-type">application/pls+xml</code></td>
 <td> <a class="biblioref" href="#refPLS" title="Pronunciation Lexicon Specification 1.0 (PLS)">[<abbr class="abbrev">PLS</abbr>]</a> </td>
-<td><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-tts" target="_top">テキストの読み上げ（TTS）</a></span>発音語彙</td>
+<td><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-tts" target="_top">テキスト読み上げ（TTS）</a></span>発音語彙</td>
 </tr>
 <tr>
 <th colspan="3" id="cmt-grp-audio">オーディオタイプ</th> </tr>
@@ -703,7 +703,7 @@ Content/HelloWorld.xhtml
 </ul>
 </div>
 <div class="issue"><h6 id="issue-res-locations"> OPEN ISSUE </h6>
-<p>ワーキンググループは、現在、コンテナ内のリソースを、読者によるダウンロードが可能なようにマークできるだけでなく、例えばフォントやデータのセットなどの他のリソースが、コンテナの外でホスト可能かかどうかを検討している。詳細は、<a class="ulink" href="https://docs.google.com/document/d/1twG3TLzn9tA_r4DjH_Q2f7Hn5qs1sKsIPgGEB9vxKMg/edit" target="_top">外部リソース ドキュメント</a>を参照されたい。</p>
+<p>ワーキング グループは、現在、コンテナ内のリソースを、読者によるダウンロードが可能なようにマークできるだけでなく、例えばフォントやデータのセットなどの他のリソースが、コンテナの外でホスト可能かかどうかを検討している。詳細は、<a class="ulink" href="https://docs.google.com/document/d/1twG3TLzn9tA_r4DjH_Q2f7Hn5qs1sKsIPgGEB9vxKMg/edit" target="_top">管理外リソース ドキュメント</a>を参照されたい。</p>
 </div>
 <p>製作者は接続状態に関わらずプレゼンテーション全体にユーザーのアクセスを許可するため、コンテナ内に音声や動画リソースを配置するのを選択するべきである（<span class="rfc2119">should</span>）。</p>
 <div class="note">
@@ -893,7 +893,7 @@ Content/HelloWorld.xhtml
 <p><span class="phrase"><a class="ulink" href="epub-mediaoverlays.html#sec-embedded-media" target="_top">音声と動画の再生</a></span></p>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-mediaoverlays.html#sec-text-to-speech" target="_top">テキストの読み上げの再生</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-mediaoverlays.html#sec-text-to-speech" target="_top">テキスト読み上げの再生</a></span></p>
 </li>
 </ul>
 </div>
@@ -986,7 +986,7 @@ Content/HelloWorld.xhtml
 <p><span class="phrase"><a class="ulink" href="epub-mediaoverlays.html#sec-docs-semantic-inflection" target="_top">意味の変化</a></span> (epub:type)</p>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-mediaoverlays.html#sec-tts" target="_top">テキストの読み上げの再生</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-mediaoverlays.html#sec-tts" target="_top">テキスト読み上げの再生</a></span></p>
 </li>
 </ul>
 </div>
@@ -1171,7 +1171,7 @@ Content/HelloWorld.xhtml
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: square; ">
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-spec.html#sec-foreign-restrictions" target="_top">外部リソース</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-spec.html#sec-foreign-restrictions" target="_top">管理外リソース</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span></p>
 </li>
 <li class="listitem">
 <p><span class="phrase"><a class="ulink" href="epub-packages.html#sec-foreign-restrictions-manifest" target="_top">マニフェスト フォールバック</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span></p>
@@ -1319,7 +1319,7 @@ Content/HelloWorld.xhtml
 <li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
 <li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
 </ul>
-<p>ワーキンググループのアクティブメンバー：</p>
+<p>ワーキング グループのアクティブメンバー：</p>
 <h2 id="ack-idpf-members">IDPF Members</h2>
 <ul xml:lang="en" class="personlist">
 <li class="person"><span class="name"><span class="surname">Albert</span>, <span class="givenname">Paolo</span></span> <span class="affiliation">(PubCoder)</span> </li>
