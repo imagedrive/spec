@@ -20,6 +20,8 @@
 
 <dt>公開日:</dt>
 <dd>2016年4月11日</dd>
+<dt>修正日:</dt>
+<dd>2016年4月19日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -167,7 +169,7 @@
 </dd>
 <dt class="glossentry" id="gloss-epub-publication"><span class="glossterm">EPUB 出版物</span></dt>
 <dd class="glossdef">
-<p><span class="phrase">この仕様</span>に準拠したひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>のコレクションは、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB Container</a> をパッケージ化している。</p>
+<p><span class="phrase">この仕様</span>に準拠したひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>のコレクションは、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB コンテナ</a>をパッケージ化している。</p>
 <p>EPUB 出版物は典型的に単一の知的・芸術作品を表しているが、この仕様は、コンテンツの性質を制限しない。</p>
 </dd>
 <dt class="glossentry" id="gloss-epub-reading-system"><span class="glossterm">EPUB リーディング システム (またはリーディング システム)</span></dt>
@@ -255,7 +257,7 @@
 </dd>
 <dt class="glossentry" id="gloss-content-document-top-level"><span class="glossterm">トップレベル コンテンツ ドキュメント</span></dt>
 <dd class="glossdef">
-<p>直接か<span class="phrase"><a class="ulink" href="epub-packages.html#sec-foreign-restrictions-manifest" target="_top">フォールバックチェーン</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を介して、<a class="glossterm" href="#gloss-spine" title="Spine">spine</a> から参照される <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
+<p>直接か<span class="phrase"><a class="ulink" href="epub-packages.html#sec-foreign-restrictions-manifest" target="_top">フォールバック チェーン</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を介して、<a class="glossterm" href="#gloss-spine" title="Spine">spine</a> から参照される <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
 </dd>
 <dt class="glossentry" id="gloss-unique-identifier"><span class="glossterm">一意識別子</span></dt>
 <dd class="glossdef">
@@ -532,7 +534,7 @@ Content/HelloWorld.xhtml
 <div class="issue"><h6 id="issue-opus"> OPEN ISSUE </h6>
 <p>ワーキング グループは、現在、コア メディア タイプとして、Opus オーディオ コーデックの追加を検討している。詳細は、<a class="ulink" href="https://github.com/IDPF/epub-revision/issues/645" target="_top">issue #645</a> を見よ。</p>
 </div>
-<p>次の表は EPUB 3.1 <a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>を示している。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>がコア メディア タイプの仕様に準拠している時、それは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>であるとフォールバック（詳細については、<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>を参照）することなく EPUB 出版物に含めることができる。</p>
+<p>次の表は EPUB 3.1 <a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>を示している。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>がコア メディア タイプの仕様に準拠している時、それは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>であり、フォールバックすることなく EPUB 出版物に含めることができる（詳細については、<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>を参照）。</p>
 <p>表の列には、以下の情報を表している：</p>
 <div class="variablelist" id="tbl-cmt-expl">
 <dl class="variablelist">
@@ -591,7 +593,7 @@ Content/HelloWorld.xhtml
 <td id="cmt-xhtml"><code class="media-type">application/xhtml+xml</code></td>
 <td> <span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-html" target="_top">HTML コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> </td>
 <td>
-<a class="ulink" href="http://www.w3.org/TR/html5/the-xhtml-syntax.html#the-xhtml-syntax" target="_top">XHTML syntax</a> <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr class="abbrev">HTML5</abbr>]</a> を使用する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">HTML コンテンツ ドキュメント</a></span></td>
+<a class="ulink" href="http://www.w3.org/TR/html5/the-xhtml-syntax.html#the-xhtml-syntax" target="_top">XHTML 構文</a> <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr class="abbrev">HTML5</abbr>]</a> を使用する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">HTML コンテンツ ドキュメント</a></span></td>
 </tr>
 <tr>
 <td id="cmt-sfnt"><code class="media-type">application/font-sfnt</code></td>
@@ -722,13 +724,13 @@ Content/HelloWorld.xhtml
 
 <div class="conformance-list">
 <ul class="conformance-list" style="list-style-type: disc; ">
-<li class="listitem"><p id="confreq-xml-wellformed"><span class="link-marker"><a class="hidden-reveal" href="#confreq-xml-wellformed"> </a> </span>それは<a class="ulink" href="http://www.w3.org/TR/REC-xml-names/#Conformance" target="_top">ドキュメントの適合性</a> <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr class="abbrev">XMLNS</abbr>]</a> で定義されている XML1.0 に準拠したドキュメントでなければならない（<span class="rfc2119">must</span>）。</p>
+<li class="listitem"><p id="confreq-xml-wellformed"><span class="link-marker"><a class="hidden-reveal" href="#confreq-xml-wellformed"> </a> </span><a class="ulink" href="http://www.w3.org/TR/REC-xml-names/#Conformance" target="_top">ドキュメントの適合性</a> <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr class="abbrev">XMLNS</abbr>]</a> で定義されている XML1.0 に準拠したドキュメントでなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem"><p id="confreq-xml-extmarkupdecl"><span class="link-marker"><a class="hidden-reveal" href="#confreq-xml-extmarkupdecl"> </a> </span><a class="ulink" href="http://www.w3.org/TR/2008/PER-xml-20080205/#NT-ExternalID" target="_top">拡張識別子</a>は文書型宣言 <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> に現れてはならない（<span class="rfc2119">must not</span>）。</p>
 </li>
-<li class="listitem"><p id="confreq-xml-xinc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-xml-xinc"> </a> </span>それは XInclude <a class="biblioref" href="#refXInclude" title="XML Inclusions (XInclude) Version 1.0 (Second Edition)">[<abbr class="abbrev">XInclude</abbr>]</a> を利用してはならない（<span class="rfc2119">must not</span>）。</p>
+<li class="listitem"><p id="confreq-xml-xinc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-xml-xinc"> </a> </span>XInclude <a class="biblioref" href="#refXInclude" title="XML Inclusions (XInclude) Version 1.0 (Second Edition)">[<abbr class="abbrev">XInclude</abbr>]</a> を利用してはならない（<span class="rfc2119">must not</span>）。</p>
 </li>
-<li class="listitem"><p id="confreq-xml-enc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-xml-enc"> </a> </span><span class="phrase">それは UTF-8 または UTF-16 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> でエンコードしなければならない（<span class="rfc2119">must</span>）。</span></p>
+<li class="listitem"><p id="confreq-xml-enc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-xml-enc"> </a> </span><span class="phrase">UTF-8 または UTF-16 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> でエンコードしなければならない（<span class="rfc2119">must</span>）。</span></p>
 </li>
 </ul>
 </div>
