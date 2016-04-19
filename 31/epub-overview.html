@@ -4,9 +4,9 @@
 <head>
 <title>EPUB 3.1 Overview 日本語訳</title>
 <link rel="stylesheet" type="text/css" href="../css/epub-spec-2016.css"/>
-<link rel="stylesheet" type="text/css" href="../css/translation-memo.css"/>
+<link rel="stylesheet" type="text/css" href="../css/translation-memo-2016.css"/>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/>
-<meta name="description" content="この文書は、他の EPUB 3.1 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3.1 の全体の導入として役立つ。"/>
+<meta name="description" content="このドキュメントは、他の EPUB 3.1 ドキュメントに記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3.1 の全体の導入として役立つ。"/>
 <meta charset="utf-8"/>
 <link rel="stylesheet" href="../css/epub-print.css" type="text/css" media="print"/>
 </head>
@@ -21,7 +21,7 @@
 <dt>公開日:</dt>
 <dd>2016年3月8日</dd>
 <dt>修正日:</dt>
-<dd>2016年3月14日</dd>
+<dd>2016年4月19日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -64,7 +64,7 @@
 <p class="editor">MURATA Makoto, JEPA EPUB Study Group</p>
 <p class="editor">Daniel Weck, DAISY Consortium</p>
 </div>
-<p class="formats">完全な EPUB 3.1 仕様は、<a href="http://www.idpf.org/epub/31/epub31.epub">EPUB Publication</a> としてダウンロードしても利用できる。</p>
+<p class="formats">完全な EPUB 3.1 仕様は、<a href="http://www.idpf.org/epub/31/epub31.epub">EPUB 出版物</a>としてダウンロードしても利用できる。</p>
 <div class="legalnotice">
 <p>Copyright © 2010-2016 International Digital Publishing Forum™</p>
 <div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
@@ -76,9 +76,9 @@
 <section id="sotd">
 <h2>このドキュメントのステータス</h2>
 <p>このセクションでは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わることができる。</p>
-<p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキンググループ憲章</a>の下で EPUB ワーキンググループによって作成されたドラフトである。</p>
+<p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成されたドラフトである。</p>
 <p>このドキュメントは安定しておらず、いつでも、更新や置き換えや、廃止されるかもしれない。ドラフトとしての発行は、IDPF メンバーシップまたは IDPF 理事会による承認を意味するものではない。ドキュメントは、進行中の作業としてのみ引用されるべきである。</p>
-<p>このドキュメントに関するフィードバックは、EPUB ワーキンググループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
+<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
 <p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
 </section>
 
@@ -96,16 +96,16 @@
 </li>
 <li><span class="chapter"><a href="#sec-features">2. 特徴</a></span>
 <ol>
-<li><span class="section"><a href="#sec-package-file">2.1. Package Document</a></span></li>
-<li><span class="section"><a href="#sec-nav">2.2. Navigation</a></span>
+<li><span class="section"><a href="#sec-package-file">2.1. パッケージ ドキュメント</a></span></li>
+<li><span class="section"><a href="#sec-nav">2.2. ナビゲーション</a></span>
 <ol>
 <li><span class="section"><a href="#sec-nav-order">2.2.1. 読み上げ順</a></span></li>
-<li><span class="section"><a href="#sec-nav-nav-doc">2.2.2. Navigation Document</a></span></li>
+<li><span class="section"><a href="#sec-nav-nav-doc">2.2.2. ナビゲーション ドキュメント</a></span></li>
 </ol>
 </li>
 <li><span class="section"><a href="#sec-linking">2.3. リンク</a></span></li>
 <li><span class="section"><a href="#sec-metadata">2.4. メタデータ</a></span></li>
-<li><span class="section"><a href="#sec-content-docs">2.5. Content Documents</a></span></li>
+<li><span class="section"><a href="#sec-content-docs">2.5. コンテンツ ドキュメント</a></span></li>
 <li><span class="section"><a href="#sec-fxl">2.6. 固定レイアウト</a></span></li>
 <li><span class="section"><a href="#sec-rendering">2.7. レンダリングと CSS</a></span></li>
 <li><span class="section"><a href="#sec-multimedia">2.8. マルチメディア</a></span></li>
@@ -118,7 +118,7 @@
 <li><span class="chapter"><a href="#sec-gls">3. 多言語サポート</a></span>
 <ol>
 <li><span class="section"><a href="#sec-gls-metadata">3.1. メタデータ</a></span></li>
-<li><span class="section"><a href="#sec-gls-content-docs">3.2. Content Documents</a></span></li>
+<li><span class="section"><a href="#sec-gls-content-docs">3.2. コンテンツ ドキュメント</a></span></li>
 <li><span class="section"><a href="#sec-gls-css">3.3. CSS</a></span></li>
 <li><span class="section"><a href="#sec-gls-fonts">3.4. フォント</a></span></li>
 <li><span class="section"><a href="#sec-gls-tts">3.5. テキスト読み上げ</a></span></li>
@@ -127,11 +127,11 @@
 </li>
 <li><span class="chapter"><a href="#sec-accessibility">4. アクセシビリティ</a></span>
 <ol>
-<li><span class="section"><a href="#sec-access-nav">4.1. Navigation</a></span></li>
-<li><span class="section"><a href="#sec-access-semantic-markup">4.2. Semantic Markup</a></span></li>
+<li><span class="section"><a href="#sec-access-nav">4.1. ナビゲーション</a></span></li>
+<li><span class="section"><a href="#sec-access-semantic-markup">4.2. セマンティック マークアップ</a></span></li>
 <li><span class="section"><a href="#sec-access-layout">4.3. 動的レイアウト</a></span></li>
 <li><span class="section"><a href="#sec-access-aria-describedat">4.4. コンテンツの説明</a></span></li>
-<li><span class="section"><a href="#sec-access-overlays">4.5. 聴覚レンダリングと Media Overlays</a></span></li>
+<li><span class="section"><a href="#sec-access-overlays">4.5. 聴覚レンダリングとメディア オーバーレイ</a></span></li>
 <li><span class="section"><a href="#sec-access-fallbacks">4.6. フォールバック</a></span></li>
 <li><span class="section"><a href="#sec-access-scripting">4.7. スクリプト</a></span></li>
 </ol>
@@ -148,9 +148,9 @@
 
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-intro-overview"> </a> </span>1.1 概要</h2>
 
-<p>この文書は、EPUB® 3.1 仕様書を理解したいと考えているコンテンツの著者やソフトウェア開発者のための導入を提供する。もっぱら EPUB 3.1 で使用可能な機能を述べた規定ではない材料で構成される。</p>
+<p>このドキュメントは、EPUB® 3.1 仕様を理解したいと考えているコンテンツの制作者やソフトウェア開発者のための導入を提供する。もっぱら EPUB 3.1 で使用可能な機能を述べた規定ではない材料で構成される。</p>
 
-<p>他の規定ではない文書、EPUB 3.1 Changes from EPUB 3.0.1 <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.0.1 Differences from EPUB 3.0">[<abbr class="abbrev">EPUB3Changes</abbr>]</a> は、最後のバージョンから EPUB 3.1 の変更を説明する。</p>
+<p>他の規定ではないドキュメント、EPUB 3.1 Changes from EPUB 3.0.1 <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.0.1 Differences from EPUB 3.0">[<abbr class="abbrev">EPUB3Changes</abbr>]</a> は、最後のバージョンから EPUB 3.1 の変更を説明する。</p>
 </section>
 </section>
 
@@ -161,58 +161,54 @@
 <p>このセクションは、全体として  <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>の作成処理に適用される重要な構成要素とトピックを含む、EPUB の主な特徴を取り上げる。</p>
 
 <section class="section" id="sec-package-file">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-file"> </a> </span>2.1 Package Document</h2>
-<p>すべての EPUB 出版物の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">Rendition</a></span> は、Rendition をレンダリングするのに必要な全てのリソースを指定する単一の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">Package Document</a></span> を包含している。Package Document は、直線的な読書のための読み上げ順と、Rendition のためのメタデータとナビゲーション情報を関連付けもまた定義する。</p>
-<p>Package Document は、一般的な Web サイトの大幅な改善を示している。例えば Web サイトは、そのコンテンツ内のリソースへの参照を埋め込むが、一方でリソースを識別する手段が単純で柔軟なので、それをレンダリングするために必要な全てのリソースを列挙するのは困難である。加えて、巨大な出版物のマークアップするときにページの連続性を定義する Web サイトのための標準的な方法はなく、まさにそれは EPUB の <code class="markup"><span class="phrase"><a class="ulink" href="epub-packages.html#sec-spine-elem" target="_top">spine</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span></code> 要素が行うことである（すなわち、これは、文書の集合を通して明示的にナビゲーションを指定する外部宣言の手段を提供する）。最後に、Package Document は、ページのコレクションに全体的に適用されるメタデータを表現する標準的な方法を定義する。</p>
-<p>Package Document は、論理的に関連した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">Publication Resource</a></span> のグルーピングを許可し、<code class="markup"><span class="phrase"><a class="ulink" href="epub-packages.html#sec-collection-elem" target="_top">collection</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span></code> 要素もまた包含する。この要素は、例えば、埋め込まれたプレビューコンテンツの定義やそれらを構成する HTML Content Document から索引や辞書を組み立てる能力などの処理やレンダリングの機能、専門的なコンテンツの識別の開発を可能にするために存在する。</p>
-<p>Package Document と他の Rendition を規定している構成は、<a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a> で指定されている。</p>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-file"> </a> </span>2.1 パッケージ ドキュメント</h2>
+<p>すべての EPUB 出版物の<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>は、レンディションをレンダリングするのに必要な全てのリソースを指定する単一の<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>を包含している。パッケージ ドキュメントは、直線的な読書のための読み上げ順と、レンディションのためのメタデータとナビゲーション情報を関連付けもまた定義する。</p>
+<p>パッケージ ドキュメントは、一般的な Web サイトの大幅な改善を示している。例えば Web サイトは、そのコンテンツ内のリソースへの参照を埋め込むが、一方でリソースを識別する手段が単純で柔軟なので、それをレンダリングするために必要な全てのリソースを列挙するのは困難である。加えて、巨大な出版物のマークアップするときにページの連続性を定義する Web サイトのための標準的な方法はなく、まさにそれは EPUB の <code class="markup"><span class="phrase"><a class="ulink" href="epub-packages.html#sec-spine-elem" target="_top">spine</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span></code> 要素が行うことである（すなわち、これは、ドキュメントの集合を通して明示的にナビゲーションを指定する外部宣言の手段を提供する）。最後に、パッケージ ドキュメントは、ページのコレクションに全体的に適用されるメタデータを表現する標準的な方法を定義する。</p>
+<p>パッケージ ドキュメントは、論理的に関連した<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>のグルーピングを許可し、<code class="markup"><span class="phrase"><a class="ulink" href="epub-packages.html#sec-collection-elem" target="_top">collection</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span></code> 要素もまた包含する。この要素は、例えば、埋め込まれたプレビューコンテンツの定義やそれらを構成する HTML コンテンツ ドキュメントから索引や辞書を組み立てる能力などの処理やレンダリングの機能、専門的なコンテンツの識別の開発を可能にするために存在する。</p>
+<p>パッケージ ドキュメントと他のレンディションを規定している構成は、<a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a> で指定されている。</p>
 </section>
 
 <section class="section" id="sec-nav">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-nav"> </a> </span>2.2 Navigation</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-nav"> </a> </span>2.2 ナビゲーション</h2>
 
 <section class="section" id="sec-nav-order">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-nav-order"> </a> </span>2.2.1 読み上げ順</h3>
 
 <p>EPUB のキーコンセプトは、EPUB 出版物が複数のリソースで構成されており、それらのリソースは<span class="italic">ある特定の順番</span>で完全にナビゲートされたり、人やプログラムによって消費できるということである。</p>
 
-<p>多くの出版物の型は、そのコンテンツを通じて明確な読み上げ順か論理的な進行方向を持っている。小説は（一般的に始まり、中間、終わりを持つ）非常に連続性の高い文書の例であが、全ての出版物が順序付けられているわけではなく、料理の本や写真集は、むしろデータベースのように考えられるかもしれない。しかしながら、データ、トピック、位置、その他のいくつかの条件によるかどうかを問わず、全ての文書の全てのトップレベルコンテンツの項目は、少なくともひとつの論理的な順番を持つ（例えば、料理本は、一般的にレシピの種類によって並べられる）。</p>
+<p>多くの出版物の型は、そのコンテンツを通じて明確な読み上げ順か論理的な進行方向を持っている。小説は（一般的に始まり、中間、終わりを持つ）非常に連続性の高いドキュメントの例であるが、全ての出版物が順序付けられているわけではなく、料理の本や写真集は、むしろデータベースのように考えられるかもしれない。しかしながら、データ、トピック、位置、その他のいくつかの条件によるかどうかを問わず、全てのドキュメントの全てのトップ レベル コンテンツの項目は、少なくともひとつの論理的な順番を持つ（例えば、料理本は、一般的にレシピの種類によって並べられる）。</p>
 
-<p>それぞれの EPUB 出版物の Rendition は、全てのトップレベルコンテンツ（<span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-spine-elem" target="_top">spine</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span>）の少なくともひとつの論理的な順番も宣言的な目次（<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB Navigation Document</a></span> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a>）も定義している。EPUB 出版物は、これらのデータ構造をコンテンツの<span class="italic">外部</span>に機械可読な方法で利用できるようにすることで、これらの発見と利用を単純化する。</p>
+<p>それぞれの EPUB 出版物のレンディションは、全てのトップ レベル コンテンツ（<span class="phrase"><a class="ulink" href="epub-packages.html#sec-spine-elem" target="_top">spine</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span>）の少なくともひとつの論理的な順番も宣言的な目次（<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a>）も定義している。EPUB 出版物は、これらのデータ構造をコンテンツの<span class="italic">外部</span>に機械可読な方法で利用できるようにすることで、これらの発見と利用を単純化する。</p>
 
 <p>EPUB 出版物は、コンテンツの直線的な順序に制限されるものではなく、そしてまた任意の方法によるリンクを排除しないが（Web と同じように、EPUB 出版物はハイパーテキストで構成されている）、基本的な消費とナビゲーションは、HTML ページのセットには当てはまらない方法で確実に遂行できる。</p>
 </section>
 
 <section class="section" id="sec-nav-nav-doc">
-<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-nav-nav-doc"> </a> </span>2.2.2 Navigation Document</h3>
-<p>それぞれの EPUB 出版物の Rendition は、人間と機械が可読可能なナビゲーション情報を定義する HTML5 の <code class="markup">nav</code> 要素を使用した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB Navigation Document</a></span> と呼ばれる特殊な HTML Content Document を含んでいる。</p>
-<p>
-Navigation Document は、EPUB 2 の NCX 文書 <a class="biblioref" href="#refOPS2" title="Open Publication Structure 2.0.1">[<abbr class="abbrev">OPS2</abbr>]</a> に置き換わる。
-
-
-Navigation Document は、最低限のアクセシビリティとナビゲーションのサポートと、NCX の特徴を維持しながら、全てのユーザーのためにナビゲーションを強化する新しい機能性とレンダリング機能を導入する。これらの中で重要なのは、国際化（XHTML5 文書である Navigation Document は、ルビ注釈がネイティブにサポートされた）と埋め込まれた文法（MathML と SVG は、ナビゲショーンリンク内に包含できる）のためのより良いサポートである。</p>
-<p>HTML Content Document として、Navigation Document もまた同様に、アクセシブルなリーディングシステムのために情報へアクセスすることに影響を与えることなく、CSS と <span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-package-nav-def-hidden" target="_top">hidden 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を使用してナビゲーションの表示を調整する柔軟な手段を提供する。</p>
-<p>Navigation Document の構造とセマンティクスは、<span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-package-nav" target="_top">EPUB Navigation Documents</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> で定義されている。</p>
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-nav-nav-doc"> </a> </span>2.2.2 ナビゲーション ドキュメント</h3>
+<p>それぞれの EPUB 出版物のレンディションは、人間と機械が可読可能なナビゲーション情報を定義する HTML5 の <code class="markup">nav</code> 要素を使用した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>と呼ばれる特殊な HTML コンテンツ ドキュメントを含んでいる。</p>
+<p>ナビゲーション ドキュメントは、EPUB 2 の NCX ドキュメント <a class="biblioref" href="#refOPS2" title="Open Publication Structure 2.0.1">[<abbr class="abbrev">OPS2</abbr>]</a> に置き換わる。ナビゲーション ドキュメントは、最低限のアクセシビリティとナビゲーションのサポートと、NCX の特徴を維持しながら、全てのユーザーのためにナビゲーションを強化する新しい機能性とレンダリング機能を導入する。これらの中で重要なのは、国際化（XHTML5 ドキュメントであるナビゲーション ドキュメントは、ルビ注釈がネイティブにサポートされた）と埋め込まれた文法（MathML と SVG は、ナビゲーションリンク内に包含できる）のためのより良いサポートである。</p>
+<p>HTML コンテンツ ドキュメントとして、ナビゲーション ドキュメントもまた同様に、アクセシブルなリーディング システムのために情報へアクセスすることに影響を与えることなく、CSS と <span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-nav-def-hidden" target="_top">hidden 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を使用してナビゲーションの表示を調整する柔軟な手段を提供する。</p>
+<p>ナビゲーション ドキュメントの構造とセマンティクスは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-nav" target="_top">EPUB ナビゲーション ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> で定義されている。</p>
 </section>
 </section>
 
 <section class="section" id="sec-linking">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-linking"> </a> </span>2.3 リンク</h2>
 
-<p>新しい EPUB Canonical Fragment Identifier (epubcfi) Specification <a class="biblioref" href="#refEPUBCFI" title="EPUB Canonical Fragment Identifier (epubcfi) Specification">[<abbr class="abbrev">EPUBCFI</abbr>]</a> は、EPUB 出版物の内部へのリンクのための標準的な方法を定義する。</p>
+<p>新しい EPUB Canonical Fragment Identifier (epubcfi) 仕様 <a class="biblioref" href="#refEPUBCFI" title="EPUB Canonical Fragment Identifier (epubcfi) Specification">[<abbr class="abbrev">EPUBCFI</abbr>]</a> は、EPUB 出版物内部へのリンクのための標準的な方法を定義する。</p>
 
-<p>リーディングシステムでこのスキームのサポートが必須であるということは、例えば、端末を横断したブックマークや読んでいる位置の共有を容易にすることができるといった簡単な相互運用可能なリンクメカニズムを EPUB が持っているということである。</p>
+<p>リーディング システムでこのスキームのサポートが必須であるということは、例えば、端末を横断したブックマークや読んでいる位置の共有を容易にすることができるといった簡単な相互運用可能なリンクメカニズムを EPUB が持っているということである。</p>
 </section>
 
 <section class="section" id="sec-metadata">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-metadata"> </a> </span>2.4 メタデータ</h2>
 
-<p>EPUB 出版物は、メタデータを追加するためにオプションの豊富な配列を提供する。各 Rendition のPackage Document は、タイトル、著者、識別子や容易にアクセスできる EPUB 出版物についての他の情報といった、EPUB 出版物についての一般的な情報ための専用の<span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-metadata-elem">メタデータセクション</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を包含する。また、<span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-link-elem" target="_top">link 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を使用して完全な書誌レコードを添付する手段も提供する。</p>
+<p>EPUB 出版物は、メタデータを追加するためにオプションの豊富な配列を提供する。各レンディションのパッケージ ドキュメントは、タイトル、著者、識別子や容易にアクセスできる EPUB 出版物についての他の情報といった、EPUB 出版物についての一般的な情報ための専用の<span class="phrase"><a class="ulink" href="epub-packages.html#sec-metadata-elem">メタデータ セクション</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を包含する。また、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-link-elem" target="_top">link 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を使用して完全な書誌レコードを添付する手段も提供する。</p>
 
-<p>Package Document はまた、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-unique-identifier" target="_top">一意識別子</a></span>が <span class="phrase"><a class="ulink" href="epub-packages.xhtml#attrdef-package-unique-identifier" target="_top">unique-identifier 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を使用して、EPUB 出版物を確立することを許可している。Package メタデータセクション内に必須な最終更新日は、EPUB 出版物（<span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-package-metadata-identifiers" target="_top">Publication Identifiers</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を参照）の異なるバージョンを区別する手段を提供し、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-release-identifier" target="_top">Release Identifier</a></span> を定義するこの識別子に紐付けることができる。Package Identifier は、新しいバージョンとしてを識別しながら、その Unique Identifier を変更せずに EPUB 出版物をリリースする方法の問題を解決する。</p>
-<p>HTML Content Documents はまた、処理とアクセシビリティの目的の両方に、より意味を持たせ便利である (<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-html-semantic-inflection" target="_top">HTML の意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>)、豊富なメタデータで注釈をマークアップする手段を包含する。
+<p>パッケージ ドキュメントはまた、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-unique-identifier" target="_top">一意識別子</a></span>が <span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-package-unique-identifier" target="_top">unique-identifier 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を使用して、EPUB 出版物を確立することを許可している。パッケージ メタデータ セクション内に必須な最終更新日は、EPUB 出版物（<span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-metadata-identifiers" target="_top">出版物識別子</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を参照）の異なるバージョンを区別する手段を提供し、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-release-identifier" target="_top">リリース識別子</a></span>を定義するこの識別子に紐付けることができる。出版物識別子は、新しいバージョンとしてを識別しながら、その一意識別子を変更せずに EPUB 出版物をリリースする方法の問題を解決する。</p>
+<p>HTML コンテンツ ドキュメントはまた、処理とアクセシビリティの目的の両方に、より意味を持たせて便利である (<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-html-semantic-inflection" target="_top">HTML の意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>)、豊富なメタデータで注釈をマークアップする手段を包含する。
 
-RDFa と Microdata の両属性は、コンテンツレベルのメタデータ表現（<span class="phrase"><a class="ulink" href="epub30-contentdocs.html#sec-html-semantic-enrichment" target="_top">HTML 意味の強化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>）を可能にし、HTML Content Document に使用することができる。
+RDFa と Microdata の両属性は、コンテンツレベルのメタデータ表現（<span class="phrase"><a class="ulink" href="epub30-contentdocs.html#sec-html-semantic-enrichment" target="_top">HTML の意味の強化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>）を可能にし、HTML コンテンツ ドキュメントに使用することができる。
 
 </p>
 
@@ -220,11 +216,11 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <section class="section" id="sec-content-docs">
 
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-content-docs"> </a> </span>2.5 Content Documents</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-content-docs"> </a> </span>2.5 コンテンツ ドキュメント</h2>
 
-<p>それぞれの EPUB 出版物の Rendition は、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a> で定義された、ひとつ以上の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB Content Document</a></span> を含む。これらは、読み取り可能なコンテンツと関連するメディアリソース（例えば、画像、音声や動画）の参照を記述する XHTML や SVG 文書である。</p>
+<p>それぞれの EPUB 出版物のレンディションは、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a> で定義された、ひとつ以上の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>を含む。これらは、読み取り可能なコンテンツと関連するメディアリソース（例えば、画像、音声や動画）の参照を記述する XHTML や SVG ドキュメントである。</p>
 
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">XHTML Content Document</a></span> は、HTML5 のプロファイルによって定義されている。</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">XHTML コンテンツ ドキュメント</a></span>は、HTML5 のプロファイルによって定義されている。</p>
 
 </section>
 
@@ -233,7 +229,7 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <p>EPUB の歴史は、リフローコンテンツにできるようにすることに注力しているが、すべての出版物を安易にリフローにして役立つというわけではない。児童書、コミックや漫画、雑誌や他のコンテンツの形式は、意味を持つ形を表現するためにページの正確なレイアウトを作成する機能が必要である。</p>
 
-<p>EPUB 3 は、SVG に固定レイアウトのための既存の機能に加えて、<span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-package-metadata-fxl" target="_top">固定レイアウトの HTML Content Document</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> の作成を可能にするメタデータを包含する。このメタデータは、要素を絶対的に配置することができるキャンバスを作成し、制御するための<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-fxl-html-svg-dimensions" target="_top">ページの寸法</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を可能にする。</p>
+<p>EPUB 3 は、SVG に固定レイアウトのための既存の機能に加えて、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-metadata-fxl" target="_top">固定レイアウトの HTML コンテンツ ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> の作成を可能にするメタデータを包含する。このメタデータは、要素を絶対的に配置することができるキャンバスを作成し、制御するための<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-fxl-html-svg-dimensions" target="_top">ページの寸法</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を可能にする。</p>
 
 <p>メタデータは、コンテンツが固定かリフローかのフラグだけではなく、EPUB 出版物の表現を制御する広い範囲を提供し、<span class="phrase"><a class="ulink" href="epub-packages.html#fxl-property-spread" target="_top">合成された見開きの作成</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span>するとき、望む<span class="phrase"><a class="ulink" href="epub-packages.html#fxl-property-orientation" target="_top">ページの回転</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> の指定や、それらの見開き内に<span class="phrase"><a class="ulink" href="epub-packages.html#fxl-properties-page-spread" target="_top">ページをどのように配置するかの方法</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span>もまた製作者に許可する。</p>
 </section>
@@ -244,13 +240,13 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <p>EPUB のキーコンセプトは、読者がコンテンツの特定の表現に適応するよりもむしろ、読者にそのコンテンツの表現を適応するということである。HTML はもともと構造化されたコンテンツの動的なレンダリングをサポートするように設計されているが、徐々に、Web ブラウザでサポートされる HTML は、Web アプリケーションの需要に焦点が当てられ、現在、最も人気のある Web サイトは、固定フォーマットのレイアウトである。</p>
 
-<p>EPUB 出版物は、また一方で、視覚障害のためにアクセシビリティを最大限に高めるよう設計され、リーディングシステムは、一般的に、表示領域のサイズ、ユーザーの選んだフォントサイズ、他の環境要因に適合し、その場でテキスト行のレイアウトやページ付けを実行する。この機能は、EPUB で保証されておらず、画像、ベクターグラフィック、動画や他の非リフローなコンテンツは、包含されてもよく（may）、いくつかのリーディングシステムは、その場もしくはまったく、ページ付けをしないかもしれない。それでもなお、動的なアダプティブレイアウトとアクセシビリティのサポートは、EPUB 規格の進化の過程において第一の設計要点である。</p>
+<p>EPUB 出版物は、また一方で、視覚障害のためにアクセシビリティを最大限に高めるよう設計され、リーディング システムは、一般的に、表示領域のサイズ、ユーザーの選んだフォントサイズ、他の環境要因に適合し、その場でテキスト行のレイアウトやページ付けを実行する。この機能は、EPUB で保証されておらず、画像、ベクターグラフィック、動画や他の非リフローなコンテンツは、包含されてもよく、いくつかのリーディング システムは、その場もしくはまったく、ページ付けをしないかもしれない。それでもなお、動的なアダプティブ レイアウトとアクセシビリティのサポートは、EPUB 規格の進化の過程において第一の設計要点である。</p>
 
-<p>EPUB Content Document は、製作者が望むレンダリングの性質を定義できるように、CSS Style Sheet を参照できる。EPUB 3.1 は、いくつかの CSS3 Module と EPUB 特有の追加プロパティにより定義された機能と一緒に、この目的のために CSS 2.1 <a class="biblioref" href="#refCSS21" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">[<abbr class="abbrev">CSS2.1</abbr>]</a> を基にした CSS のプロファイルを定義する。</p>
+<p>EPUB コンテンツ ドキュメントは、製作者が望むレンダリングの性質を定義できるように、CSS スタイル シートを参照できる。EPUB 3.1 は、いくつかの CSS3 モジュールと EPUB 特有の追加プロパティにより定義された機能と一緒に、この目的のために CSS 2.1 <a class="biblioref" href="#refCSS21" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">[<abbr class="abbrev">CSS2.1</abbr>]</a> を基にした CSS のプロファイルを定義する。</p>
 
-<p>CSS3 のプロパティは、Web ブラウザがサポートする現在のレベルに基いて選ばれたが、リーディングシステムと User Agent によるサポートは保証されていない（EPUB で定義したプロパティは、同様に無視できる）。</p>
+<p>CSS3 のプロパティは、Web ブラウザがサポートする現在のレベルに基いて選ばれたが、リーディング システムとユーザーエージェントによるサポートは保証されていない（EPUB で定義したプロパティは、同様に無視できる）。</p>
 
-<p>EPUB 3.1 はまた、横組と縦組のレイアウトと左から右、右から左の文書の両方を有効にする CSS スタイルをサポートしているが、リーディングシステムはこれらの機能のすべてサポートしないかもしれない。リーディングシステムはまた、製作者の意図したものと異なる任意のレンダリングをサポートしてもよい（may）。詳細な情報は、多言語サポートの <a class="xref" href="#sec-gls-css" title="3.3 CSS">CSS</a> を参照されたい。</p>
+<p>EPUB 3.1 はまた、横組と縦組のレイアウトと左から右、右から左のドキュメントの両方を有効にする CSS スタイルをサポートしているが、リーディング システムはこれらの機能のすべてサポートしないかもしれない。リーディング システムはまた、製作者の意図したものと異なる任意のレンダリングをサポートしてもよい。詳細な情報は、多言語サポートの <a class="xref" href="#sec-gls-css" title="3.3 CSS">CSS</a> を参照されたい。</p>
 
 <p>EPUB 3.1 はまた、たとえば、昼夜の読書モードを選択したり、テキストのレンダリング方向の変更をユーザーに許可する複数のスタイルシートを包含する機能をサポートする。詳細な情報は、<a class="biblioref" href="#refAlternateStyleTags" title="Alternate Style Tags">[<abbr class="abbrev">AltStyleTags</abbr>]</a></span> を参照されたい。</p>
 </section>
@@ -258,9 +254,9 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 <section class="section" id="sec-multimedia">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-multimedia"> </a> </span>2.8 マルチメディア</h2>
 
-<p>EPUB 3.1 は、それらの要素が提供する全ての機能と特長を継承した、新しい <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr class="abbrev">HTML5</abbr>]</a> の <code class="markup">audio</code> と <code class="markup">video</code> 要素を介して <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">HTML Content Document</a></span> に音声と動画の埋め込みをサポートする。（サポートしている音声フォーマットの情報は、<span class="phrase"><a class="ulink" href="epub-spec.xhtml#sec-core-media-types" target="_top">Core Media Types</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> を参照されたい。埋め込み動画の推奨事項は、<span class="phrase"><a class="ulink" href="epub-spec.xhtml#note-video-codecs" target="_top">リーディングシステムの適合性</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> を参照されたい。）</p>
+<p>EPUB 3.1 は、それらの要素が提供する全ての機能と特長を継承した、新しい <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr class="abbrev">HTML5</abbr>]</a> の <code class="markup">audio</code> と <code class="markup">video</code> 要素を介して <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-html" target="_top">HTML コンテンツ ドキュメント</a></span>に音声と動画の埋め込みをサポートする。（サポートしている音声フォーマットの情報は、<span class="phrase"><a class="ulink" href="epub-spec.html#sec-core-media-types" target="_top">コア メディア タイプ</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> を参照されたい。埋め込み動画の推奨事項は、<span class="phrase"><a class="ulink" href="epub-spec.html#note-video-codecs" target="_top">リーディング システムの適合性</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> を参照されたい。）</p>
 
-<p>EPUB 3.1 のもうひとつの主な新しいマルチメディア機能は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-media-overlay-document" target="_top">Media Overlay Document</a></span>s <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">MediaOverlays31</abbr>]</a> の包含である。EPUB 出版物のRendition のために録音済みナレーションが利用できるとき、Media Overlays は、Content Document のテキストにその音声を同期させる機能を提供する（<a class="xref" href="#sec-access-overlays" title="4.5 Aural Renditions and Media Overlays">聴覚レンダリングと Media Overlays</a> を参照されたい）。</p>
+<p>EPUB 3.1 のもうひとつの主な新しいマルチメディア機能は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-media-overlay-document" target="_top">メディア オーバーレイ ドキュメント</a></span> <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">MediaOverlays31</abbr>]</a> の包含である。EPUB 出版物のレンディション のために録音済みナレーションが利用できるとき、メディア オーバーレイは、コンテンツ ドキュメントのテキストにその音声を同期させる機能を提供する（<a class="xref" href="#sec-access-overlays" title="4.5 Aural Renditions and Media Overlays">聴覚レンダリングとメディア オーバーレイ</a>を参照されたい）。</p>
 
 </section>
 
@@ -276,13 +272,13 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 <section class="section" id="sec-scripting">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-scripting"> </a> </span>2.10 スクリプト</h2>
 
-<p>EPUB は、実行されるプログラムではなく、操作することのできるデータとして、<span class="italic">宣言</span>されたコンテンツの取り扱いに務めるが、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">HTML5</a> や <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">SVG</a> に定義されているようなスクリプトをサポートする（詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-scripted-content" target="_top">Scripting</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい）。</p>
+<p>EPUB は、実行されるプログラムではなく、操作することのできるデータとして、<span class="italic">宣言</span>されたコンテンツの取り扱いに務めるが、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">HTML5</a> や <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG) 1.1 (Second Edition)">SVG</a> に定義されているようなスクリプトをサポートする（詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-scripted-content" target="_top">スクリプト</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい）。</p>
 
-<p>それに注意することは重要であるが、リーディングシステムのスクリプトのサポートは任意であり、セキュリティ上の理由から無効にしてもよい（may）。</p>
+<p>それに注意することは重要であるが、リーディング システムのスクリプトのサポートは任意であり、セキュリティ上の理由から無効にしてもよい。</p>
 
-<p>製作者らはまた、EPUB 出版物のスクリプトは、Web ブラウザのスクリプトとは異なるセキュリティの考慮事項を引き起こすことができることを意識する必要がある。たとえば、一般的に同一生成元ポリシーは、読者のローカルシステムにダウンロードされたコンテンツに適用されない。そのために、スクリプトは、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-scripted-content-content-reqs" target="_top">Scripted Content Documents - コンテンツの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> に記載されているものよりも、制約されたコンテクストのコンテナに制限されることが強く推奨されている。</p>
+<p>製作者らはまた、EPUB 出版物のスクリプトは、Web ブラウザのスクリプトとは異なるセキュリティの考慮事項を引き起こすことができることを意識する必要がある。たとえば、一般的に同一生成元ポリシーは、読者のローカルシステムにダウンロードされたコンテンツに適用されない。そのために、スクリプトは、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-scripted-content-content-reqs" target="_top">スクリプト コンテンツ ドキュメント - コンテンツの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> に記載されているものよりも、制約されたコンテクストのコンテナに制限されることが強く推奨されている。</p>
 
-<p>言い換えれば、コンテンツが全てのリーディングシステム間を横断できず、アクセシビリティとコンテンツの再利用性に障壁を作る可能性が増大するので、それがユーザーエクスペリエンスに不可欠である場合に、スクリプトの制限を考慮されたい。</p>
+<p>言い換えれば、コンテンツが全てのリーディング システム間を横断できず、アクセシビリティとコンテンツの再利用性に障壁を作る可能性が増大するので、それがユーザーエクスペリエンスに不可欠である場合に、スクリプトの制限を考慮されたい。</p>
 </section>
 
 <section class="section" id="sec-tts">
@@ -292,20 +288,20 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <div class="labels">
 <dl class="labels">
-<dt class="varlistentry"><span class="term">Pronunciation Lexicons</span></dt>
+<dt class="varlistentry"><span class="term">発音辞書</span></dt>
 <dd>
-<p>W3C PLS フォーマット <a class="biblioref" href="#refPLS" title="Pronunciation Lexicon Specification 1.0 (PLS)">[<abbr class="abbrev">PLS</abbr>]</a> を使用する一般的な発音語彙を包含することは、製作者らに、全体の EPUB 出版物に適用される発音ルールを提供できるようにする。詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-pls" target="_top">Pronunciation Lexicons</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
+<p>W3C PLS フォーマット <a class="biblioref" href="#refPLS" title="Pronunciation Lexicon Specification 1.0 (PLS)">[<abbr class="abbrev">PLS</abbr>]</a> を使用する一般的な発音語彙を包含することは、製作者らに、全体の EPUB 出版物に適用される発音ルールを提供できるようにする。詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-pls" target="_top">発音辞書</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
 </dd>
-<dt class="varlistentry"><span class="term">Inline SSML Phonemes</span></dt>
+<dt class="varlistentry"><span class="term">インライン SSML 音素</span></dt>
 <dd>
-<p>直接、<span class="phrase"><a class="glossterm" href="epub-spec.xhtml#gloss-content-document-epub" target="_top">EPUB Content Document</a></span> に SSML 音素機能 <a class="biblioref" href="#refSSML" title="Speech Synthesis Markup Language (SSML) Version 1.1">[<abbr class="abbrev">SSML</abbr>]</a> を取り込むことは、標準の発音ルールおよび/または（上で言及されている PLS フォーマットにより提供される）参照した発音語彙の優先し、きめ細かい発音制御を可能にする。詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-xhtml-ssml-attrib" target="_top">SSML 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
+<p>直接、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>に SSML 音素機能 <a class="biblioref" href="#refSSML" title="Speech Synthesis Markup Language (SSML) Version 1.1">[<abbr class="abbrev">SSML</abbr>]</a> を取り込むことは、標準の発音ルールおよび/または（上で言及されている PLS フォーマットにより提供される）参照した発音語彙の優先し、きめ細かい発音制御を可能にする。詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-xhtml-ssml-attrib" target="_top">SSML 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
 </dd>
 </dl>
 </div>
 </section>
 <section class="section" id="sec-container">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-container"> </a> </span>2.12 コンテナ</h2>
-<p>EPUB 出版物は、包含した Rendition を処理するための Package Document、全ての Content Document と他の必要とされるリソースを含んだ単一ファイル（ポータブルドキュメント）として配布、交換される。EPUB のための単一ファイルのコンテナ形式は、広く採用されている ZIP 形式と、アーカイブ内に事前に定義された場所に記載されている ZIP アーカイブ内の各 Rendition の Package Document の場所を識別する XML 文書に基いている。</p>
+<p>EPUB 出版物は、包含したレンディションを処理するためのパッケージ ドキュメント、全てのコンテンツ ドキュメントと他の必要とされるリソースを含んだ単一ファイル（ポータブルドキュメント）として配布、交換される。EPUB のための単一ファイルのコンテナ形式は、広く採用されている ZIP 形式と、アーカイブ内に事前に定義された場所に記載されている ZIP アーカイブ内の各レンディションのパッケージ ドキュメントの場所を識別する XML ドキュメントに基いている。</p>
 <p>このアプローチは、EPUB 出版物の任意の制作者とそのような EPUB 出版物だけではなく、ネットワークトランスポートまたはファイルシステムの詳細から独立している信頼性の高い表現を消費する任意のシステムとの間に明確な契約を提供する。</p>
 <p>コンテナファイルとしての EPUB 出版物の表現は、<a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF31</abbr>]</a> で指定されている。</p>
 </section>
@@ -317,23 +313,23 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 <section class="section" id="sec-gls-metadata">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-gls-metadata"> </a> </span>3.1 メタデータ</h2>
 
-<p>EPUB 3.1 は、EPUB 出版物の世界的な頒布を強化するために、パッケージメタデータセクションの全てのテキストのメタデータ項目の代替表現をサポートする。<span class="property"><a class="property" href="http://www.idpf.org/TODO/" target="_top">alternate-script</a></span> プロパティは、<code class="markup">xml:lang</code> 属性と一緒に用いることで、言語を指定しているメタデータの代替文字のレンダリングを包含し、識別できる。</p>
+<p>EPUB 3.1 は、EPUB 出版物の世界的な頒布を強化するために、パッケージ メタデータ セクションの全てのテキストのメタデータ項目の代替表現をサポートする。<span class="property"><a class="property" href="http://www.idpf.org/TODO/" target="_top">alternate-script</a></span> プロパティは、<code class="markup">xml:lang</code> 属性と一緒に用いることで、言語を指定しているメタデータの代替文字のレンダリングを包含し、識別できる。</p>
 
 <p>このプロパティを使用すると、日本語の EPUB 出版物は、例えば、著者名の代替のローマ字の表現および/またはひとつ以上のロマンス語によるタイトルの表現を含むことができる。詳細な情報は、<span class="property"><a class="property" href="http://www.idpf.org/TODO/" target="_top">alternate-script</a></span> を参照されたい。</p>
 
-<p><code class="markup">page-progression-direction</code> 属性もまた、コンテンツフローの方向が、全体的なレンダリングを容易にするために全ての Content Document に指定することができる（<span class="phrase"><a class="ulink" href="epub-packages.xhtml#attrdef-spine-page-progression-direction" target="_top">page-progression-direction</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を参照されたい）。</p>
+<p><code class="markup">page-progression-direction</code> 属性もまた、コンテンツフローの方向が、全体的なレンダリングを容易にするために全てのコンテンツ ドキュメントに指定することができる（<span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-spine-page-progression-direction" target="_top">page-progression-direction</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> を参照されたい）。</p>
 
 </section>
 
 <section class="section" id="sec-gls-content-docs">
 
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-gls-content-docs"> </a> </span>3.2 Content Documents</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-gls-content-docs"> </a> </span>3.2 コンテンツ ドキュメント</h2>
 
-<p>HTML Content Document は、双方向コンテンツのレンダリングのサポートを向上させる新しい HTML5 の方向性の機能を利用する：<code class="markup">bdi</code> 要素は、双方向テキストのインスタンスを周囲のコンテンツから隔離させることができ、<code class="markup">bdo</code> 要素は、子のコンテンツの方向性を上書き、<code class="markup">dir</code> 属性は、任意の要素の方向性を明示的に設定できる。</p>
+<p>HTML コンテンツ ドキュメントは、双方向コンテンツのレンダリングのサポートを向上させる新しい HTML5 の方向性の機能を利用する：<code class="markup">bdi</code> 要素は、双方向テキストのインスタンスを周囲のコンテンツから隔離させることができ、<code class="markup">bdo</code> 要素は、子のコンテンツの方向性を上書き、<code class="markup">dir</code> 属性は、任意の要素の方向性を明示的に設定できる。</p>
 
-<p>HTML Content Document もまた、発音のサポート（それらは同様に、Navigation Document のリンクをサポートする）のルビ注釈をサポートする。</p>
+<p>HTML コンテンツ ドキュメントもまた、発音のサポート（それらは同様に、ナビゲーション ドキュメントのリンクをサポートする）のルビ注釈をサポートする。</p>
 
-<p>SVG Content Document は、双方向テキストのレンタリングをサポートするが、ルビのサポートは包含されていない。</p>
+<p>SVG コンテンツ ドキュメントは、双方向テキストのレンタリングをサポートするが、ルビのサポートは包含されていない。</p>
 
 </section>
 
@@ -345,7 +341,7 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem"><p>リーディングシステムに、利用者が方向を切り替えることができる機能を提供する縦書きのサポート、</p></li>
+<li class="listitem"><p>リーディング システムに、利用者が方向を切り替えることができる機能を提供する縦書きのサポート、</p></li>
 <li class="listitem"><p>例えば傍点の包含のような強調の優れた制御、</p></li>
 <li class="listitem"><p>新しい単語を区切るためにスペースを使用できない言語の文字レベルに生じる可能性のある改行の優れた制御、と</p></li>
 <li class="listitem"><p>改行を容易にする優れたハイフネーションの制御。</p></li>
@@ -356,7 +352,7 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 <section class="section" id="sec-gls-fonts">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-gls-fonts"> </a> </span>3.4 フォント</h2>
 
-<p>EPUB 3.1 は、リーディングシステムにいかなる特定のセットのシステムフォント搭載も要求しない。Web コンテクストで生じたとして、ある特定ロケールの読者は、他のロケールに必要な文字を省略したフォントをインストールしているかもしれないし（may）、リーディングシステムは固有のフォントや、オペレーションシステムにインストール済みのフォントを利用しないフォントエンジンを利用するかもしれない（may）。結果的に EPUB 出版物のテキストコンテンツは、全てのリーディングシステムで意図した通りにレンダリングされないであろう。</p>
+<p>EPUB 3.1 は、リーディング システムにいかなる特定のセットのシステムフォント搭載も要求しない。Web コンテクストで生じたとして、ある特定ロケールの読者は、他のロケールに必要な文字を省略したフォントをインストールしているかもしれないし、リーディング システムは固有のフォントや、オペレーションシステムにインストール済みのフォントを利用しないフォントエンジンを利用するかもしれない。結果的に EPUB 出版物のテキストコンテンツは、全てのリーディング システムで意図した通りにレンダリングされないであろう。</p>
 
 <p>この問題に対処するために、EPUB 3.1 は、テキストコンテツのレンダリングを容易にするためにフォントの埋め込みをサポートし、この実装はコンテンツが意図したとおりレンダリングされるのを確保するために推奨される。</p>
 
@@ -368,7 +364,7 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-gls-tts"> </a> </span>3.5 テキスト読み上げ</h2>
 
-<p>PLS 文書や SSML 属性の EPUB 3.1 のサポートは、製作者に、テキスト読み上げが可能なリーディングシステム内の任意の自然言語のレンダリングを超える発音制御を向上を与える。これらの機能についての詳細な情報は特長セクションの<a class="xref" href="#sec-tts" title="2.11 Text-to-speech">テキスト読み上げ</a>を参照されたい。</p>
+<p>PLS ドキュメントや SSML 属性の EPUB 3.1 のサポートは、製作者に、テキスト読み上げが可能なリーディング システム内の任意の自然言語のレンダリングを超える発音制御を向上を与える。これらの機能についての詳細な情報は特長セクションの<a class="xref" href="#sec-tts" title="2.11 Text-to-speech">テキスト読み上げ</a>を参照されたい。</p>
 
 <p>CSS Speech とインライン SSML 音素の組み合わせもまた、ルビを細かく制御できる。</p>
 
@@ -390,19 +386,18 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <p>EPUB の主な目標は、コンテンツのアクセシビリティを促進することで、EPUB 3.1 の多様な機能は、この要求をサポートする。このセクションは、該当する EPUB 出版物がアクセシブルであることを確保するためのいくつかの確立されたベストプラクティスを記述し、これらの機能を再検討する。</p>
 
-<p>アクセシビリティの留意を重視することは本当に重要で、アクセシブルなコンテンツは、より価値の高いコンテンツでもあり、アクセシブルな EPUB 出版物は、手動または自動化されたワークフローを介して、全体または一部のより多くのデバイス対応と、再利用が容易になる。EPUB Working Group は、製作者らがアクセシブルなコンテンツを生成をし、担保することを強く推奨する。</p>
+<p>アクセシビリティの留意を重視することは本当に重要で、アクセシブルなコンテンツは、より価値の高いコンテンツでもあり、アクセシブルな EPUB 出版物は、手動または自動化されたワークフローを介して、全体または一部のより多くのデバイス対応と、再利用が容易になる。EPUB ワーキング グループは、製作者らがアクセシブルなコンテンツを生成をし、担保することを強く推奨する。</p>
 
 <section class="section" id="sec-access-nav">
 
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-nav"> </a> </span>4.1 Navigation</h2>
-<p>EPUB 3.1 は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB Navigation Document</a></span> を追加することで NCX 文書を改善する。上記の <a class="xref" href="#sec-nav-nav-doc" title="2.2.2 Navigation Document">Navigation Document</a> で述べたように、新しいナビゲーション機能は、よりユニバーサルで柔軟なナビゲーションを表現する。</p>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-nav"> </a> </span>4.1 ナビゲーション</h2>
+<p>EPUB 3.1 は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>を追加することで NCX ドキュメントを改善する。上記の <a class="xref" href="#sec-nav-nav-doc" title="2.2.2 Navigation Document">ナビゲーション ドキュメント</a>で述べたように、新しいナビゲーション機能は、よりユニバーサルで柔軟なナビゲーションを表現する。</p>
 
-<p>目次によるナビゲーションは、アクセシビリティの問題だけでなく、完全な目次は、全ての読者が EPUB 出版物のコンテンツに容易にまた完全にアクセスできることを保証する。主な <span class="phrase"><a class="ulink" href="epub-packages.xhtml#sec-nav-toc" target="_top">toc nav 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> 要素は、この機能を提供するために EPUB 出版物の構造を完全に反映しなければならず、そうでなければナビゲーションは、一部の読者に障害を与えることになる。</p>
+<p>目次によるナビゲーションは、アクセシビリティの問題だけでなく、完全な目次は、全ての読者が EPUB 出版物のコンテンツに容易にまた完全にアクセスできることを保証する。主な <span class="phrase"><a class="ulink" href="epub-packages.html#sec-nav-toc" target="_top">toc nav 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages31</abbr>]</a></span> 要素は、この機能を提供するために EPUB 出版物の構造を完全に反映しなければならず、そうでなければナビゲーションは、一部の読者に障害を与えることになる。</p>
 
-<p>Navigation Document は、<code class="markup">spine</code> 内に包含することによって、EPUB 出版物の本文内に再利用することもできる。
-本文内で、読者に完全な目次を表示することを望ましくないかもしれない高度に構造化された文書となる状態を回避するためは、表示レベルで、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr class="abbrev">HTML5</abbr>]</a> の <span class="property">hidden</span> 属性を使用して変更することができる。
-この属性は、利用可能な情報を最小限にすることを避けつつ、（例えば、専門的な見解で）<code class="markup">spine</code> の外側にある目次をレンダリングするとき、リーディングシステムによって無視される。
-</p>
+<p>ナビゲーション ドキュメントは、<code class="markup">spine</code> 内に包含することによって、EPUB 出版物の本文内に再利用することもできる。
+本文内で、読者に完全な目次を表示することを望ましくないかもしれない高度に構造化されたドキュメントとなる状態を回避するためは、表示レベルで、<a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr class="abbrev">HTML5</abbr>]</a> の <span class="property">hidden</span> 属性を使用して変更することができる。
+この属性は、利用可能な情報を最小限にすることを避けつつ、（例えば、専門的な見解で）<code class="markup">spine</code> の外側にある目次をレンダリングするとき、リーディング システムによって無視される。</p>
 
 <p>製作者はまた、これらの EPUB 出版物がたとえば図や表などの非構造化された関心のある点を含むとき、コンテンツへのアクセスをより向上させるために、追加の <code class="markup">nav</code> 要素を提供することを推奨している。</p>
 
@@ -410,14 +405,14 @@ RDFa と Microdata の両属性は、コンテンツレベルのメタデータ�
 
 <section class="section" id="sec-access-semantic-markup">
 
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-semantic-markup"> </a> </span>4.2 Semantic Markup</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-semantic-markup"> </a> </span>4.2 セマンティック マークアップ</h2>
 
-<p>HTML5 は、より意味論的に意義のある（例えば、<code class="markup">section</code> と <code class="markup">nav</code>、<code class="markup">aside</code>）マークアップをするために意図された新しい要素といくつかの HTML4 要素のために明確に定義されたセマンティクスの導入をサポートしている。これらの要素の使用は、しっかりと構造化された Web コンテンツのオーサリングのためのベストプラクティスと併せて、EPUB HTML Content Document を作るときに用いる。この追加は、コンテンツをより良く分類し、文書構造の表現のために、そしてこれらの論理的なナビゲーションを容易にするための定義をすることができる。HTML Content Document はまた、ARIA の ロール（role）とステート（state）、プロパティ（property）、コンテンツ相互作用する支援技術の能力を高めるイベントの包含をネイティブにサポートする。</p>
+<p>HTML5 は、より意味論的に意義のある（例えば、<code class="markup">section</code> と <code class="markup">nav</code>、<code class="markup">aside</code>）マークアップをするために意図された新しい要素といくつかの HTML4 要素のために明確に定義されたセマンティクスの導入をサポートしている。これらの要素の使用は、しっかりと構造化された Web コンテンツのオーサリングのためのベストプラクティスと併せて、EPUB HTML コンテンツ ドキュメントを作るときに用いる。この追加は、コンテンツをより良く分類し、文書構造の表現のために、そしてこれらの論理的なナビゲーションを容易にするための定義をすることができる。HTML コンテンツ ドキュメントはまた、ARIA の ロール（role）とステート（state）、プロパティ（property）、コンテンツ相互作用する支援技術の能力を高めるイベントの包含をネイティブにサポートする。</p>
 
 <p>
-EPUB 3.1 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPFRoleAttribute" title="Role Attribute">[<abbr class="abbrev">Role</abbr>]</a> に機能的に同等であることを意味する <span class="phrase"><a href="epub-contentdocs.xhtml#attrdef-epub-type">epub:type</a></span> 属性を包含する。
+EPUB 3.1 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPFRoleAttribute" title="Role Attribute">[<abbr class="abbrev">Role</abbr>]</a> に機能的に同等であることを意味する <span class="phrase"><a href="epub-contentdocs.html#attrdef-epub-type">epub:type</a></span> 属性を包含する。
 
-この属性は、HTML Content Document 内の任意の要素に、統制された語彙と用語を使用して、作品内にその目的と意味に関する追加の情報を包含することができる。詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-html-semantic-inflection" target="_top">HTML 意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
+この属性は、HTML コンテンツ ドキュメント内の任意の要素に、統制された語彙と用語を使用して、作品内にその目的と意味に関する追加の情報を包含することができる。詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-html-semantic-inflection" target="_top">HTML 意味の変化</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span> を参照されたい。</p>
 
 </section>
 
@@ -427,25 +422,25 @@ EPUB 3.1 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPF
 
 <p>EPUB の設計の中心は、動的なレイアウトであり、コンテンツは一般的に、前もってページ区切りの方法（すなわち、特定の寸法の"ページ"を期待する）よりはむしろ、その場で体裁を整えられることを意図している。この中核の機能は、例えば、異なるサイズのデバイスの画面やウィンドウサイズのレンダリングを最適化するために有用であり、コンテンツのアクセシビリティを容易かつ簡素化する。</p>
 
-<p>（たとえば、ビットマップ画像や SVG グラフィック、または特定の視覚的なレイアウトを実現する CSS の明示的なポジショニングおよび/または表組要素の使用を介して）EPUB に完璧にフォーマット化されたコンテンツを組み込むことが可能とはいえ、製作者は、そのような技術を利用することは強く推奨されない。多くのリーディングシステムは、単一スクロールの <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-viewport" target="_top">Viewport</a></span> を作成するよりむしろ、ページ区切りされた寸法でコンテンツをレンダリングしたり、それぞれのリーディングシステムは、独自のページ付けのアルゴリズムを定義しているかもしれないので、これらの技術は EPUB では信頼できない。これらの技術が、出版物のコンテンツを伝えるために必要なとき、<span class="phrase"><a class="ulink" href="epub-spec.xhtml#sec-foreign-restrictions" target="_top">フォールバック</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> を包含することを考慮されたい（たとえば、グラフィック・ノベルのために）。</p>
+<p>（たとえば、ビットマップ画像や SVG グラフィック、または特定の視覚的なレイアウトを実現する CSS の明示的なポジショニングおよび/または表組要素の使用を介して）EPUB に完璧にフォーマット化されたコンテンツを組み込むことが可能とはいえ、製作者は、そのような技術を利用することは強く推奨されない。多くのリーディング システムは、単一スクロールの<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-viewport" target="_top">ビューポート</a></span>を作成するよりむしろ、ページ区切りされた寸法でコンテンツをレンダリングしたり、それぞれのリーディング システムは、独自のページ付けのアルゴリズムを定義しているかもしれないので、これらの技術は EPUB では信頼できない。これらの技術が、出版物のコンテンツを伝えるために必要なとき、<span class="phrase"><a class="ulink" href="epub-spec.html#sec-foreign-restrictions" target="_top">フォールバック</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> を包含することを考慮されたい（たとえば、グラフィック ノベルのために）。</p>
 
-<p>一般に、絶対的なサイジングやポジショニングせずに CSS Style Sheet を使用することで、視覚的な豊かさを実現するのが望ましい。</p>
+<p>一般に、絶対的なサイジングやポジショニングせずに CSS スタイル シートを使用することで、視覚的な豊かさを実現するのが望ましい。</p>
 
 </section>
 
 <section class="section" id="sec-access-aria-describedat">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-aria-describedat"> </a> </span>4.4 コンテンツの説明</h2>
-<p>説明は、一般的に画像ベースのコンテンツに関連付けられているが、文書内のどのように複雑な構造でも記述する能力は、コンテンツをよりアクセシブルにするために必要な要件である。例えば、複雑な表形式のデータを記述することは、全ての読者に有益である。</p>
-<p>EPUB 3.1 は、HTML Content Document の構造に概要を添えるために二つのメカニズムを包含している。<a class="biblioref" href="#refARIA" title="Accessible Rich Internet Applications (WAI-ARIA) 1.0">[<abbr class="abbrev">WAI-ARIA</abbr>]</a> <code class="markup">aria-describedby</code> 属性は、同じページ内に説明にリンクすることを許可し、<a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA-1.1</abbr>]</a> <code class="markup">aria-describedat</code> 属性は、（EPUB コンテナ内外に位置することができる）他のファイル内の説明を参照して使用することができる。</p>
+<p>説明は、一般的に画像ベースのコンテンツに関連付けられているが、ドキュメント内のどのように複雑な構造でも記述する能力は、コンテンツをよりアクセシブルにするために必要な要件である。例えば、複雑な表形式のデータを記述することは、全ての読者に有益である。</p>
+<p>EPUB 3.1 は、HTML コンテンツ ドキュメントの構造に概要を添えるために二つのメカニズムを包含している。<a class="biblioref" href="#refARIA" title="Accessible Rich Internet Applications (WAI-ARIA) 1.0">[<abbr class="abbrev">WAI-ARIA</abbr>]</a> <code class="markup">aria-describedby</code> 属性は、同じページ内に説明にリンクすることを許可し、<a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA-1.1</abbr>]</a> <code class="markup">aria-describedat</code> 属性は、（EPUB コンテナ内外に位置することができる）他のファイル内の説明を参照して使用することができる。</p>
 </section>
 
 <section class="section" id="sec-access-overlays">
 
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-overlays"> </a> </span>4.5 聴覚レンダリングと Media Overlays</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-overlays"> </a> </span>4.5 聴覚レンダリングとメディア オーバーレイ</h2>
 
-<p>コンテンツの聴覚レンダリングは、アクセシビリティのために重要であり、他の多くの読者ための機能としても価値がある。聴覚レンダリングを促進するためのベースラインは、動的なレイアウトのために設計されたセマンティックな HTML の利用である。EPUB XHTML Document に含んでいるネイティブの機能を使用する方法の詳細な情報は、<a class="xref" href="#sec-tts" title="2.11 Text-to-speech">テキスト読み上げ</a>を参照されたい。</p>
+<p>コンテンツの聴覚レンダリングは、アクセシビリティのために重要であり、他の多くの読者ための機能としても価値がある。聴覚レンダリングを促進するためのベースラインは、動的なレイアウトのために設計されたセマンティックな HTML の利用である。EPUB XHTML ドキュメントに含んでいるネイティブの機能を使用する方法の詳細な情報は、<a class="xref" href="#sec-tts" title="2.11 Text-to-speech">テキスト読み上げ</a>を参照されたい。</p>
 
-<p>Media Overlays は、すでに DAISY Digital Talking Books の読者に親しまれている機能である EPUB 出版物のテキストと音声コンテンツを同期する機能を提供する。Overlays は、多くの状況で有益であり、たとえば、読むことを学習するためのツールとして、テキストと音声の同期の実用性はアクセシビリティの範囲を超える。</p>
+<p>メディア オーバーレイは、すでに DAISY Digital Talking Books の読者に親しまれている機能である EPUB 出版物のテキストと音声コンテンツを同期する機能を提供する。オーバーレイは、多くの状況で有益であり、たとえば、読むことを学習するためのツールとして、テキストと音声の同期の実用性はアクセシビリティの範囲を超える。</p>
 
 </section>
 
@@ -455,8 +450,8 @@ EPUB 3.1 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPF
 
 <p>全てのフォーマットは、ネイティブのフォーマットでアクセス可能ではなく、全ての読者が提供されるデフォルトのフォーマットで読みことを好むわけではない。EPUB は、これらの場合に利用できる代替え表現のために、フォールバックを提供するための様々な手段を定義する。</p>
 
-<p>出版物とコンテンツレベルのフォールバックは、<span class="phrase"><a class="ulink" href="epub-spec.xhtml#sec-foreign-restrictions" target="_top">外部リソース</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> で定義されている。これらのフォールバックメカニズムは、EPUB 出版物に Foreign Resource を包含することを可能にし、様々な機能（例えば、複数の動画フォーマットを包含したり、EPUB 2 リーディングシステムのために SVG Content Document に XHTML フォールバックの包含を許可する）を備えたリーディングシステム全体で EPUB 3.1 の互換性の確保をする。</p>
-<p>加えて、完全な作品の複数のインスタンスは、（<span class="phrase"><a class="ulink" href="epub-ocf.xhtml#sec-container-metainf-container.xml" target="_top">コンテナ ファイル</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.1">[<abbr class="abbrev">OCF31</abbr>]</a></span> で定義されている）OCF コンテナファイルの複数の <code class="markup">rootfile</code> 要素を定義することで単一の EPUB 出版物として届けることができる。代替の Rendition フォールバックは、たとえば、SVG ページのシークエンスを介して定義されたフォーマット化されたグラフィック・ノベルは、XHTML を介して定義されたアクセス可能なテキスト・バージョンを添付することができるように使用してもよい（may）。</p>
+<p>出版物とコンテンツレベルのフォールバックは、<span class="phrase"><a class="ulink" href="epub-spec.html#sec-foreign-restrictions" target="_top">管理外リソース</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> で定義されている。これらのフォールバック メカニズムは、EPUB 出版物に管理外リソースを包含することを可能にし、様々な機能（例えば、複数の動画フォーマットを包含したり、EPUB 2 リーディング システムのために SVG コンテンツ ドキュメントに XHTML フォールバックの包含を許可する）を備えたリーディング システム全体で EPUB 3.1 の互換性の確保をする。</p>
+<p>加えて、完全な作品の複数のインスタンスは、（<span class="phrase"><a class="ulink" href="epub-ocf.html#sec-container-metainf-container.xml" target="_top">コンテナ ファイル</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.1">[<abbr class="abbrev">OCF31</abbr>]</a></span> で定義されている）OCF コンテナファイルの複数の <code class="markup">rootfile</code> 要素を定義することで単一の EPUB 出版物として届けることができる。代替のレンディション フォールバックは、たとえば、SVG ページのシークエンスを介して定義されたフォーマット化されたグラフィック ノベルは、XHTML を介して定義されたアクセス可能なテキスト・バージョンを添付することができるように使用してもよい。</p>
 
 </section>
 
@@ -464,8 +459,8 @@ EPUB 3.1 は、さらに、W3C ロール属性 <a class="biblioref" href="#refPF
 
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-scripting"> </a> </span>4.7 スクリプト</h2>
 
-<p>EPUB 3.1 は、スクリプトの実行は、文書の完全性を妨げてはならないため、スクリプトコンテンツのためにプログレッシブ・エンハンスメントを導入する（すなわち、スクリプトが無効なとき、情報の損失を生じてはならない（must not））。それ故に、スクリプトを採用する文書は、これらのコンテンツにより容易にアクセスするため<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-scripted-content" target="_top">フォールバックを提供できるが</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>、文書は、それらなしでアクセス可能にしなければならない。</p>
-<p>あなたが常に Web 文書（例えば <a class="biblioref" href="#refARIA" title="Accessible Rich Internet Applications (WAI-ARIA) 1.0">[<abbr class="abbrev">WAI-ARIA</abbr>]</a> で提供される）でアクセシブルなスクリプトのためのベストプラクティスの実装を確保し、双方向性がユーザーエクスペリエンスのためにきわめて重要な状況でのスクリプトの使用を用意する。</p>
+<p>EPUB 3.1 は、スクリプトの実行は、ドキュメントの完全性を妨げてはならないため、スクリプトコンテンツのためにプログレッシブ・エンハンスメントを導入する（すなわち、スクリプトが無効なとき、情報の損失を生じてはならない）。それ故に、スクリプトを採用するドキュメントは、これらのコンテンツにより容易にアクセスするため<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-scripted-content" target="_top">フォールバックを提供できるが</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">ContentDocs31</abbr>]</a></span>、ドキュメントは、それらなしでアクセス可能にしなければならない。</p>
+<p>あなたが常に Web ドキュメント（例えば <a class="biblioref" href="#refARIA" title="Accessible Rich Internet Applications (WAI-ARIA) 1.0">[<abbr class="abbrev">WAI-ARIA</abbr>]</a> で提供される）でアクセシブルなスクリプトのためのベストプラクティスの実装を確保し、双方向性がユーザーエクスペリエンスのためにきわめて重要な状況でのスクリプトの使用を用意する。</p>
 </section>
 </section>
 <section xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="acknowledgements" id="acknowledgements">
@@ -491,7 +486,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
 </ul>
 <p>
-第 3 版発行時点でのワーキンググループのアクティブメンバー：
+第 3 版発行時点でのワーキング グループのアクティブメンバー：
 </p>
 <h3 id="ack-idpf-members">IDPF Members</h3>
 <ul xml:lang="en" class="personlist">
@@ -601,7 +596,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <li class="person"><span class="name"><span class="surname">Sorotokin</span>, <span class="givenname">Peter</span></span> <span class="affiliation">(Adobe)</span>  <span class="wg-role">Subgroup Lead</span></li>
 </ul>
 <p>
-第 3.0 版発行時点でのワーキンググループのアクティブメンバー：
+第 3.0 版発行時点でのワーキング グループのアクティブメンバー：
 </p>
 <h3 id="ack-idpf-members-30">IDPF Members</h3>
 <ul xml:lang="en" class="personlist">
@@ -799,7 +794,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(eBook Technologies)</span> <span class="wg-role">Working Group Vice-chair</span></li>
 <li class="person"><span class="name"><span class="surname">Kerscher</span>, <span class="givenname">George</span></span> <span class="affiliation">(DAISY Consortium)</span> <span class="wg-role">Working Group Chair</span></li>
 </ul>
-<p>第 2.0.1 版発行時点でのワーキンググループのアクティブメンバー：</p>
+<p>第 2.0.1 版発行時点でのワーキング グループのアクティブメンバー：</p>
 <ul class="personlist">
 <li class="person"><span class="name"><span class="surname">Wiles</span>, <span class="givenname">Alexis</span></span> <span class="affiliation">(OverDrive)</span></li>
 <li class="person"><span class="name"><span class="surname">Wise</span>, <span class="givenname">Alicia</span></span> <span class="affiliation">(Publishers Licensing Society)</span></li>
@@ -894,7 +889,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <li class="person"><span class="name"><span class="surname">Ferraiolo</span>, <span class="givenname">Jon</span></span> <span class="affiliation">(IBM)</span> <span class="wg-role">Working Group Vice-Chair</span></li>
 <li class="person"><span class="name"><span class="surname">Bogaty</span>, <span class="givenname">Nick</span></span> <span class="affiliation">(IDPF)</span> <span class="wg-role">Working Group Secretary</span></li>
 </ul>
-<p>第 1.0 版発行時点でのワーキンググループのアクティブメンバー：</p>
+<p>第 1.0 版発行時点でのワーキング グループのアクティブメンバー：</p>
 <ul class="personlist">
 <li class="person"><span class="name"><span class="surname">Allen</span>, <span class="givenname">Kelley L.</span></span> <span class="affiliation">(Random House)</span></li>
 <li class="person"><span class="name"><span class="surname">Ancin</span>, <span class="givenname">Angel</span></span> <span class="affiliation">(iRex Technologies)</span></li>
