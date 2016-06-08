@@ -15,7 +15,7 @@
 <meta lang="ja" content="EPUB 3 仕様書および関連文書の日本語訳"/>
 <meta itemprop="author" lang="en" content="YOSHIMURA wataru"/>
 <meta itemprop="inLanguage" content="jp"/>
-<meta itemprop="datePublished" content="2016-05-23T00:00:00+09:00"/>
+<meta itemprop="datePublished" content="2016-06-08T00:00:00+09:00"/>
 <meta itemprop="keywords" lang="ja" content="電子書籍,仕様書"/>
 <meta itemprop="description" lang="ja" content="電子書籍の規格である EPUB 3.1、EPUB 3.0.1、EPUB 3 仕様書、EPUB 3 Overview、EPUB Publications、EPUB Content Documents、EPUB Open Container Format (OCF)、EPUB Media Overlays、EPUB Canonical Fragment Identifier (epubcfi) Specification、EPUB 3 Fixed-Layout Documents、EPUB 3 Structural Semantics Vocabulary などの日本語訳を公開しています。"/>
 <meta itemprop="url" content="http://imagedrive.github.io/spec/index.xhtml"/>
@@ -61,9 +61,10 @@ h3 {font-size:120%;font-weight:bold;}
 <section id="itemSpecEPUB31" itemid="#itemSpecEPUB31" itemtype="http://schema.org/hasPart" itemscope="">
 <link itemprop="hasPart" href="#epub31-spec"/>
 <link itemprop="hasPart" href="#epub31-overview"/>
+<link itemprop="hasPart" href="#epub31-changes"/>
 <link itemprop="hasPart" href="#epub31-packages"/>
 <link itemprop="hasPart" href="#epub31-contentdocs"/>
-<link itemprop="hasPart" href="#epub31-changes"/>
+<link itemprop="hasPart" href="#epub31-ocf"/>
 <link itemprop="hasPart" href="#accessibility"/>
 
 <header class="itemtitle">
@@ -92,6 +93,15 @@ h3 {font-size:120%;font-weight:bold;}
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/31/spec/epub-overview-20160426.html">EPUB 3 Overview</a>” (IDPF Editor's Draft 26 April 2016)</p>
 </article>
 
+<article id="epub31-changes" class="item" itemid="#epub31-changes" itemtype="http://schema.org/hasPart" itemscope="">
+<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-changes.html">EPUB 3.1 Changes from EPUB 3.0.1</a></h3>
+<p itemprop="description">EPUB 3.1 Changes from EPUB 3.0.1 は、XML と Web 規格に基づいたデジタル出版物の交換と配信フォーマットである EPUB の三度目の主な改定を定義する。このドキュメントは、以前にリリースした EPUB 3.0.1 から EPUB 3.1 での変更点を説明する。</p>
+<p>
+修正日：<time itemprop="datePublished" datetime="2016-04-19T00:00:00.000Z">2016年5月23日</time>　
+公開日：<time itemprop="datePublished" datetime="2016-04-04T00:00:00.000Z">2016年4月4日</time></p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160426.html">EPUB 3.1 Changes from EPUB 3.0.1</a>” (IDPF Editor's Draft 26 April 2016)</p>
+</article>
+
 <article id="epub31-packages" class="item" itemid="#epub31-packages" itemtype="http://schema.org/hasPart" itemscope="">
 <h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-packages.html">EPUB Packages 3.1</a></h3>
 <p itemprop="description">EPUB Packages 3.1 は、セマンティクスと EPUB® Package の適合必要条件を定める。各パッケージは EPUB 出版物のレンディションを表現し、出版物リソースに関連させる方法の要件のセットとレンディションのコンテンツを説明しているパッケージ ドキュメントによって定義される。</p>
@@ -110,13 +120,12 @@ h3 {font-size:120%;font-weight:bold;}
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/31/spec/epub-contentdocs-20160130.html">EPUB Content Documents 3.1</a>” (IDPF Editor's Draft 30 January 2016)</p>
 </article>
 
-<article id="epub31-changes" class="item" itemid="#epub31-changes" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-changes.html">EPUB 3.1 Changes from EPUB 3.0.1</a></h3>
-<p itemprop="description">EPUB 3.1 Changes from EPUB 3.0.1 は、XML と Web 規格に基づいたデジタル出版物の交換と配信フォーマットである EPUB の三度目の主な改定を定義する。このドキュメントは、以前にリリースした EPUB 3.0.1 から EPUB 3.1 での変更点を説明する。</p>
+<article id="accessibility" class="item" itemid="#epub31-ocf" itemtype="http://schema.org/hasPart" itemscope="">
+<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-ocf.html">EPUB Open Container Format (OCF) 3.1</a></h3>
+<p itemprop="description">EPUB Open Container Format (OCF) 3.1 は、単一ファイルのコンテナにひとつ以上の EPUBR Publication を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義する。</p>
 <p>
-修正日：<time itemprop="datePublished" datetime="2016-04-19T00:00:00.000Z">2016年5月23日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-04-04T00:00:00.000Z">2016年4月4日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160426.html">EPUB 3.1 Changes from EPUB 3.0.1</a>” (IDPF Editor's Draft 26 April 2016)</p>
+公開日：<time itemprop="datePublished" datetime="2016-06-08T00:00:00.000Z">2016年6月8日</time></p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/31/spec/epub-ocf-20160426.html">EPUB Open Container Format (OCF) 3.1</a>” (IDPF Editor's Draft 26 April 2016)</p>
 </article>
 
 <article id="accessibility" class="item" itemid="#accessibility" itemtype="http://schema.org/hasPart" itemscope="">
