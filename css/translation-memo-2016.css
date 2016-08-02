@@ -53,3 +53,8 @@ font-family:"IPAexゴシック";
 section p {
 line-height:1.5;
 }
+
+em {
+font-style:normal;
+font-weight:bold;
+}
