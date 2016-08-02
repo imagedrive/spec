@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>EPUB Accessibility 日本語訳</title>
+<title>EPUB Accessibility 1.0 日本語訳</title>
 <link rel="stylesheet" type="text/css" href="../css/epub-spec-2016.css"/>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/>
+<meta name="description" content="EPUB Accessibility defines discovery and content accessibility requirements for EPUB Publications."/>
 <meta charset="utf-8"/>
 <link rel="stylesheet" href="../css/epub-print.css" type="text/css" media="print"/>
 <link rel="stylesheet" type="text/css" href="../css/translation-memo-2016.css"/>
@@ -11,151 +13,142 @@
 <body>
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/a11y/accessibility-20160711.html">EPUB Accessibility</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/latest/accessibility">http://www.idpf.org/epub/latest/accessibility</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/a11y/accessibility-20160711.html">EPUB Accessibility</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/a11y/accessibility-20160801.html">EPUB Accessibility</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub/latest/accessibility">http://www.idpf.org/epub/latest/accessibility</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/a11y/accessibility-20160801.html">EPUB Accessibility</a> を参照されたい。</p>
 
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
 <dt>公開日:</dt>
 <dd>2016年5月16日</dd>
 <dt>修正日:</dt>
-<dd>2016年7月26日</dd>
+<dd>2016年8月2日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
 
 </div>
 <header>
-<h1 class="title">EPUB Accessibility</h1>
-<p>EPUB 出版物の適合性と発見の要件</p>
-<p class="identity"><span class="pubdate">2016年7月11日</span> <span class="releaseinfo">Editor's Draft</span></p>
+<!--p><a href="http://www.idpf.org"><img src="../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
+<h1 class="title">EPUB Accessibility 1.0</h1>
+<p class="subtitle">EPUB 出版物の適合性と発見の要件</p>
+<p class="identity"><span class="pubdate">2016年8月1日</span> <span class="releaseinfo">Editor's Draft</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a href="http://www.idpf.org/epub/a11y/accessibility-20160711.html">http://www.idpf.org/epub/a11y/accessibility-20160711.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/a11y/accessibility-20160801.html">http://www.idpf.org/epub/a11y/accessibility-20160801.html</a></dd>
 <dt>最新版</dt>
 <dd><a href="http://www.idpf.org/epub/latest/accessibility">http://www.idpf.org/epub/latest/accessibility</a></dd>
 <dt>前の版</dt>
-<dd><a href="http://www.idpf.org/epub/a11y/accessibility-20160426.html">http://www.idpf.org/epub/a11y/accessibility-20160426.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/a11y/accessibility-20160711.html">http://www.idpf.org/epub/a11y/accessibility-20160711.html</a></dd>
+<dt>以前の勧告</dt>
+<dd>N/A</dd>
 </dl>
 <div class="history">
 <span class="history-title">履歴</span>
 <ul>
-<li><a href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-packages.xml">このドキュメントの変更</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-a11y.xml">このドキュメントの変更</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed+label%3ASpec-Accessibility">このリビジョンで対処する課題</a></li>
 <li><a href="https://github.com/IDPF/epub-revision/issues">課題のレポート</a></li>
-<li>正誤表</li>
+<li><a href="./errata/">正誤表</a></li>
 </ul>
 </div>
 <div class="authorgroup">
 <p class="bridgehead">Editors</p>
-<p class="editor">Matt Garrish (Invited Expert)</p>
-<p class="editor">George Kerscher (DAISY Consortium)</p>
-<p class="editor">Charles LaPierre (Benetech)</p>
-<p class="editor">Avneesh Singh (DAISY Consortium)</p>
+<p class="editor">Matt Garrish, Invited Expert</p>
+<p class="editor">George Kersher, DAISY Consortium</p>
+<p class="editor">Charles Lapierre, Benetech</p>
+<p class="editor">Avneesh Singh, DAISY Consortium</p>
+</div>
+<div class="authorgroup">
 <p class="bridgehead">Authors</p>
-<p class="editor">Romain Deltour (DAISY Consortium)</p>
-<p class="editor">Markus Gylling (International Digital Publishing Forum (IDPF))</p>
-<p class="editor">Bernhard Heinser (Access for All)</p>
-<p class="editor">Jean Kaplansky (Invited Expert)</p>
-<p class="editor">Madeleine Rothberg (Invited Expert)</p>
-<p class="editor">Tzviya Siegman (John Wiley &amp; Sons)</p>
-<p class="editor">Jason White (Invited Expert)</p>
+<p class="editor">Romain Deltour, DAISY Consortium</p>
+<p class="editor">Markus Gylling, International Digital Publishing Forum (IDPF)</p>
+<p class="editor">Bernhard Heinser, Access for All</p>
+<p class="editor">Jean Kaplansky, Invited Expert</p>
+<p class="editor">Madeleine Rothberg, Invited Expert</p>
+<p class="editor">Tzviya Siegman, John Wiley &amp; Sons</p>
+<p class="editor">Jason White, Invited Expert</p>
 </div>
 <div class="legalnotice">
-<p><span>Copyright © 2016 International Digital Publishing Forum™</span></p>
+<p>Copyright © 2010-2016 International Digital Publishing Forum™</p>
 <div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
 <p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
 <p>EPUB は International Digital Publishing Forum の登録商標である。</p>
 </div>
 </div>
 </header>
-<section id="sotd">
-<h2>このドキュメントのステータス</h2>
-<p>このセクションは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わることができる。</p>
-<p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成されたドラフトである。</p>
-<p>このドキュメントは安定しておらず、いつでも、更新や置き換え、廃止されるかもしれない。ドラフトとしての発行は、IDPF メンバーシップまたは IDPF 理事会による承認を意味するものではない。ドキュメントは、進行中の作業としてのみ引用されるべきである。</p>
-<p>
-このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>（メンバーのみ）や<a class="ulink" href="https://github.com/IDPF/epub-revision/issues/711" target="_top">課題トラッカー</a>（Github アカウントが必要）を介して提供することができる。
-この仕様を実装する方法に関する質問は、<a href="http://idpf.org/forums/epub-accessibility">IDPF アクセシビリティ フォーラム</a>へ向けられるべきである。
-</p>
-<p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
-</section>
-
 <nav xmlns:spec="http://www.idpf.org/2016/epub/spec" class="toc" id="toc">
 <h2 class="toc-title">目次</h2>
 <ol class="toc">
 <li><span class="chapter"><a href="#sec-overview">1. 概要</a></span>
 <ol>
-<li><span class="section"><a href="#sec-purpose-scope">1.1 目的とスコープ</a></span></li>
-<li><span class="section"><a href="#sec-success-techniques">1.2 達成の実装方法</a></span></li>
-<li><span class="section"><a href="#sec-application-to-older-specifications">1.3 古い仕様への適用</a></span></li>
-<li><span class="section"><a href="#sec-terminology">1.4 用語</a></span></li>
-<li><span class="section"><a href="#sec-typography">1.5 表記上の規則</a></span></li>
-<li><span class="section"><a href="#sec-conformance">1.6 適合性宣言</a></span></li>
+<li><span class="section"><a href="#sec-purpose-scope">1.1. 目的とスコープ</a></span></li>
+<li><span class="section"><a href="#sec-success-techniques">1.2. 達成の実装方法</a></span></li>
+<li><span class="section"><a href="#sec-application">1.3. 古い仕様への適用</a></span></li>
+<li><span class="section"><a href="#sec-terminology">1.4. 用語</a></span></li>
+<li><span class="section"><a href="#sec-typography">1.5. 表記上の規則</a></span></li>
+<li><span class="section"><a href="#sec-conformance">1.6. 適合性宣言</a></span></li>
 </ol>
 </li>
-<li><span class="chapter"><a href="#sec-conformance">2. 適合性</a></span>
+<li><span class="chapter"><a href="#sec-epub-conformance">2. 適合性</a></span>
 <ol>
-<li><span class="section"><a href="#sec-content-conformance">2.1 コンテンツの適合性</a></span>
-<ol>
-<li><span class="section"><a href="#sec-content-conformance-discovery">発見可能な EPUB 出版物</a></span></li>
-<li><span class="section"><a href="#sec-content-conformance-accessibility">アクセシブルな EPUB 出版物</a></span></li>
-<li><span class="section"><a href="#sec-content-conformance-optimizations">最適化された EPUB 出版物</a></span></li>
-</ol>
-</li>
-<li><span class="section"><a href="#sec-reading-system-conformance">2.2 リーディング システムの適合性</a></span></li>
-<li><span class="section"><a href="#sec-authoring-tool-conformance">2.3 オーサリング ツールの適合性</a></span></li>
+<li><span class="section"><a href="#sec-conf-discovery">2.1. 発見可能な EPUB 出版物</a></span></li>
+<li><span class="section"><a href="#sec-conf-epub">2.2. アクセシブルな EPUB 出版物</a></span></li>
+<li><span class="section"><a href="#sec-conf-opt">2.3. 最適化された EPUB 出版物</a></span></li>
 </ol>
 </li>
 <li><span class="chapter"><a href="#sec-discovery">3. 発見</a></span>
 <ol>
-<li><span class="section"><a href="#sec-discovery-introduction">3.1 導入</a></span></li>
-<li><span class="section"><a href="#sec-accessibility-metadata">3.2 アクセシビリティ メタデータ</a></span></li>
-<li><span class="section"><a href="#sec-linked-metadata-records">3.3 リンクされたメタデータ レコード</a></span></li>
+<li><span class="section"><a href="#sec-disc-intro">3.1. 導入</a></span></li>
+<li><span class="section"><a href="#sec-disc-package">3.2. パッケージ メタデータ</a></span></li>
+<li><span class="section"><a href="#sec-disc-linked-rec">3.3. リンクされたメタデータ レコード</a></span></li>
 </ol>
 </li>
-<li><span class="chapter"><a href="#sec-accessibility-guidelines">4. アクセシブルな出版物</a></span></li>
+<li><span class="chapter"><a href="#sec-access-pub">4. アクセシブルな出版物</a></span></li>
 <ol>
-<li><span class="section"><a href="#sec-accessibility-guidelines-introduction">4.1 導入</a></span></li>
-<li><span class="section"><a href="#sec-wcag-conformance">4.2 WCAG 適合性</a></span>
+<li><span class="section"><a href="#sec-access-pub-intro">4.1. 導入</a></span></li>
+<li><span class="section"><a href="#sec-acc-pub-wcag">4.2. WCAG 適合性</a></span>
 <ol>
-<li><span class="section"><a href="#sec-wcag-conformance-requirements">4.2.1 WCAG 適合性要件</a></span></li>
-<li><span class="section"><a href="#sec-evaluating-wcag-conformance">4.2.2 WCAG 適合性の評価</a></span>
+<li><span class="section"><a href="#sec-wcag-conf">4.2.1. WCAG 適合性要件</a></span></li>
+<li><span class="section"><a href="#sec-wcag-eval">4.2.2. WCAG 適合性の評価</a></span>
 <ol>
-<li><span class="section"><a href="#sec-page-and-publication">4.2.2.1 ページと出版物</a></span></li>
-<li><span class="section"><a href="#sec-applying-the-conformance-criteria">4.2.2.2 適合性基準の適用</a></span></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><span class="section"><a href="#sec-epub-requirements">4.3 EPUB 要件</a></span>
-<ol>
-<li><span class="section"><a href="#sec-relationship-to-wcag">4.3.1 WCAG との関連性</a></span></li>
-<li><span class="section"><a href="#sec-structured-audio-playback">4.3.2 構造化された音声再生</a></span>
-<ol>
-<li><span class="section"><a href="#sec-sap-objective">目的</a></span></li>
-<li><span class="section"><a href="#sec-sap-understanding-objective">この目的を理解する</a></span></li>
-<li><span class="section"><a href="#sec-sap-meeting-objective">この目的を満たす</a></span></li>
-</ol>
-</li>
-<li><span class="section"><a href="#sec-page-markers">4.3.3 ページ マーカー</a></span>
-<ol>
-<li><span class="section"><a href="#sec-pm-objective">目的</a></span></li>
-<li><span class="section"><a href="#sec-pm-understanding-objective">この目的を理解する</a></span></li>
-<li><span class="section"><a href="#sec-pm-meeting-objective">この目的を満たす</a></span></li>
+<li><span class="section"><a href="#sec-wcag-eval-page-pub">4.2.2.1. ページと出版物</a></span></li>
+<li><span class="section"><a href="#sec-wcag-application">4.2.2.2. 適合性基準の適用</a></span></li>
 </ol>
 </li>
 </ol>
 </li>
-<li><span class="section"><a href="#sec-conformance-reporting">4.4 適合性をレポートする</a></span></li>
+<li><span class="section"><a href="#sec-epub-req">4.3. EPUB 要件</a></span>
+<ol>
+<li><span class="section"><a href="#sec-rel-wcag">4.3.1. WCAG との関連性</a></span></li>
+<li><span class="section"><a href="#sec-audio-playback">4.3.2. 構造化された音声再生</a></span>
+<ol>
+<li><span class="section"><a href="#sec-audio-playback-obj">4.3.2.1. 目的</a></span></li>
+<li><span class="section"><a href="#sec-audio-playback-understand">4.3.2.2. この目的を理解する</a></span></li>
+<li><span class="section"><a href="#sec-audio-playbac-conf">4.3.2.3. この目的を満たす</a></span></li>
 </ol>
-<li><span class="chapter"><a href="#sec-optimized-publications">5. 最適化された出版物</a></span></li>
+</li>
+<li><span class="section"><a href="#sec-page-markers">4.3.3. ページ マーカー</a></span>
+<ol>
+<li><span class="section"><a href="#sec-page-markers-obj">4.3.3.1. 目的</a></span></li>
+<li><span class="section"><a href="#sec-page-markers-understand">4.3.3.2. この目的を理解する</a></span></li>
+<li><span class="section"><a href="#sec-page-markers-conf">4.3.3.3. この目的を満たす</a></span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-conf-reporting">4.4. 適合性をレポートする</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-opt-pubs">5. 最適化された出版物</a></span></li>
 <li><span class="chapter"><a href="#sec-distribution">6. 配信</a></span></li>
-<li><span class="acknowledgements"><a href="#app-contributors">謝辞と貢献者</a></span></li>
-<li><span class="bibliography"><a href="#references">参照・参考</a></span>
+<li><span class="appendix"><a href="#app-auth-consump">A. オーサリングと消費</a></span>
 <ol>
-<li><span class="section"><a href="#normative-refs">規定の参照</a></span></li>
-<li><span class="section"><a href="#informative-refs">規定ではない参照</a></span></li>
+<li><span class="section"><a href="#app-ac-intro">A.1. 導入</a></span></li>
+<li><span class="section"><a href="#app-ac-auth-conf">A.2. オーサリング ツールの適合性</a></span></li>
+<li><span class="section"><a href="#app-ac-rs-conf">A.3. リーディング システムの適合性</a></span></li>
 </ol>
 </li>
+<li><span class="acknowledgements"><a href="#app-contributors">謝辞と貢献者</a></span></li>
+<li><span class="bibliography"><a href="#references">参照・参考</a></span></li>
 </ol>
 </nav>
 <section class="chapter" id="sec-overview">
@@ -164,140 +157,102 @@
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-purpose-scope"> </a> </span>1.1 目的とスコープ</h2>
 <p class="informative">このセクションは規定ではない。</p>
 <p>この仕様、EPUB Accessibility は、EPUB® エコシステムにおける二つの重要なニーズ、</p>
-<ol>
-<li>アクセシブルな EPUB 出版物の評価と証明、</li>
-<li>EPUB 出版物のアクセシブルな品質の発見</li>
+<div class="orderedlist">
+<ol class="orderedlist" type="1">
+<li class="listitem">
+<p>アクセシブルな EPUB 出版物の評価と証明、</p>
+</li>
+<li class="listitem">
+<p>EPUB 出版物のアクセシブルな品質の発見。</p>
+</li>
 </ol>
 <p>を満たす。</p>
-<p>
-これまでもアクセシビリティの高い EPUB 出版物の制作が可能であったが、この仕様は、アクセシブルなコンテンツの保証を満たすための正式な要件を設定する。
-これらの要件は、製作者に対して、そのコンテンツを評価するガイドラインの明確なセットを提供し、消費者のために品質の保証を可能にする。
-</p>
-<p>
-アクセシビリティ メタデータの包含は、EPUB 出版物のユーザビリティに関する十分な情報を得た上での意思決定を促進する。
-消費者は、広くアクセシブルであることを保証する基準を満たしているかどうかに関わらず、コンテンツの品質を評価し、EPUB 出版物がニーズに対して適切かどうかを決定することができる。
-</p>
+</div>
+<p>これまでもアクセシビリティの高い <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>の制作が可能であったが、この仕様は、アクセシブルなコンテンツの保証を満たすための正式な要件を設定する。これらの要件は、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>に対して、そのコンテンツを評価するガイドラインの明確なセットを提供し、消費者のために品質の保証を可能にする。</p>
+<p>アクセシビリティ メタデータの包含は、EPUB 出版物のユーザビリティに関する十分な情報を得た上での意思決定を促進する。消費者は、広くアクセシブルであることを保証する基準を満たしているかどうかに関わらず、コンテンツの品質を評価し、EPUB 出版物がニーズに対して適切かどうかを決定することができる。</p>
 <p>この仕様は、EPUB 出版物のコンプライアンスの三つのカテゴリを定義する。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem"><p>発見のみ &#8212; EPUB 出版物のこのカテゴリは、この仕様の発見のメタデータ要件を満たすが、アクセシビリティ要件は満たさない。適合性は、<a href="#sec-content-conformance-discovery">発見可能な EPUB 出版物</a>で定義される。</p></li>
-<li class="listitem"><p>アクセシブル &#8212; EPUB 出版物のこのカテゴリは、全ての発見と <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a>、EPUB アクセシビリティ要件を満たしている。適合性は、<a href="#sec-content-conformance-accessibility">アクセシブルな EPUB 出版物</a>で定義される。</p></li>
-<li class="listitem"><p>最適化 &#8212; EPUB 出版物のこのカテゴリは、<a href="#gloss-optimization">最適化</a>のための発見の要件を満たしている。適合性は、<a href="#sec-content-conformance-optimizations">最適化された EPUB 出版物</a>で定義される。</p></li>
+<li class="listitem">
+<p>発見のみ — EPUB 出版物のこのカテゴリは、この仕様の発見のメタデータ要件を満たすが、アクセシビリティ要件は満たさない。適合性は、<a class="xref" href="#sec-conf-discovery" title="2.1 Discovery-Enabled EPUB Publications">発見可能な EPUB 出版物</a>で定義される。</p>
+</li>
+<li class="listitem">
+<p>アクセシブル — EPUB 出版物のこのカテゴリは、全ての発見と <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a>、EPUB アクセシビリティ要件を満たしている。適合性は、<a class="xref" href="#sec-conf-epub" title="2.2 Accessible EPUB Publications">アクセシブルな EPUB 出版物</a>で定義される。</p>
+</li>
+<li class="listitem">
+<p>最適化 — EPUB 出版物のこのカテゴリは、<a class="glossterm" href="#gloss-optimization" title="Optimization">最適化</a>のための発見の要件を満たしている。適合性は、<a class="xref" href="#sec-conf-opt" title="2.3 Optimized EPUB Publications">最適化された EPUB 出版物</a>で定義される。</p>
+</li>
 </ul>
 </div>
-<p>
-この仕様は、EPUB の単一のバージョンを対象としない。
-規格の将来のバージョンを含む、全てのバージョンとプロファイルに適合する EPUB 出版物に適応可能なよう設計されている。
-</p>
-<p>
-理想的には、これらのガイドラインは、この仕様の範囲外ではあるが、このような適用の確保は、オープン Web テクノロジー上に構築された全てのデジタル出版物を評価するのに有益であろう。
-</p>
+<p>この仕様は、EPUB の単一のバージョンを対象としない。規格の将来のバージョンを含む、全てのバージョンとプロファイルに適合する EPUB 出版物に適応可能なよう設計されている。</p>
+<p>理想的には、これらのガイドラインは、この仕様の範囲外ではあるが、このような適用の確保は、オープン Web テクノロジー上に構築された全てのデジタル出版物を評価するのに有益であろう。</p>
 </section>
 <section class="section" id="sec-success-techniques">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-sec-success-techniques"> </a> </span>1.2 達成の実装方法</h2>
-<p>
-この仕様は、EPUB 出版物のアクセシビリティ要件として抽象的なアプローチを採用しており、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> が、それらを達成するための実装方法からアクセシビリティ ガイドラインを分離した方法と似ている。
-このアプローチは、フォーマットが進化するとしても安定した状態を保つガイドラインとなる。
-</p>
-<p>
-このアプローチを容易にするために、手引書の EPUB アクセシビリティ実装方法 <a class="biblioref" href="#refA11YTech" title="A11Y Tech: EPUB Accessibility Techniques">[<abbr class="abbrev">A11Y Tech</abbr>]</a> ドキュメントは、適合性の実装方法を概説する。
-これらの実装方法は、EPUB の異なるバージョンに対して、この仕様の要件を満たす方法を説明する。
-</p>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-success-techniques"> </a> </span>1.2 達成の実装方法</h2>
+<p>この仕様は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のアクセシビリティ要件として抽象的なアプローチを採用しており、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> が、それらを達成するための実装方法からアクセシビリティ ガイドラインを分離した方法と似ている。このアプローチは、フォーマットが進化するとしても安定した状態を保つガイドラインとなる。</p>
+<p>このアプローチを容易にするために、手引書の EPUB アクセシビリティ実装方法 <a class="biblioref" href="#refA11YTech" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a> ドキュメントは、適合性の実装方法を概説する。これらの実装方法は、EPUB の異なるバージョンに対して、この仕様の要件を満たす方法を説明する。</p>
 </section>
-<section class="section" id="sec-application-to-older-specifications">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-application-to-older-specifications"> </a> </span>1.3 古い仕様への適用</h2>
+<section class="section" id="sec-application">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-application"> </a> </span>1.3 古い仕様への適用</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p>
-この仕様は、たとえコンテンツが、このひとつ（すなわち、<a class="biblioref" href="#refEPUB31" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> 以前の仕様）を参照しない古い仕様に適合している場合でも、全ての EPUB 出版物に適用するよう設計されている。
-</p>
-<p>
-このような EPUB 出版物の製作者は、それらが規範的に求められていなくても、この仕様に定義されているアクセシビリティ要件に適合するように、コンテンツの制作をすることが推奨される。
-</p>
+<p>この仕様は、たとえコンテンツが、このひとつ（すなわち、<a class="biblioref" href="#refEPUB31" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> 以前の仕様）を参照しない古い仕様に適合している場合でも、全ての <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に適用するよう設計されている。</p>
+<p>このような EPUB 出版物の<a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、それらが規範的に求められていなくても、この仕様に定義されているアクセシビリティ要件に適合するように、コンテンツの制作をすることが推奨される。</p>
 </section>
 <section class="section" id="sec-terminology">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.4 用語</h2>
-<div xml:lang="en" class="glosslist">
+<div class="glosslist">
 <dl>
-<dt class="glossentry" id="gloss-assistive-technology"><span class="glossterm">支援技術</span></dt>
+<dt class="glossentry" id="gloss-at"><span class="glossterm">支援技術</span></dt>
 <dd class="glossdef">
-<p>
-この仕様は、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> から<a class="ulink" href="https://www.w3.org/TR/WCAG20/#atdef" target="_top">支援技術</a>の意味を導入する。
-</p>
-<p>
-支援技術は、常にリーディング システムとは別のアプリケーションでないことに注意されたい。
-リーディング システムはしばしば、例えばテキスト読み上げ再生など、独立した支援技術の機能を一体化する。
-</p>
+<p>この仕様は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> から<a class="ulink" href="https://www.w3.org/TR/WCAG20/#atdef" target="_top">支援技術</a>の意味を導入する。</p>
+<p>支援技術は、常にリーディング システムとは別のアプリケーションでないことに注意されたい。リーディング システムはしばしば、例えばテキスト読み上げ再生など、独立した支援技術の機能を一体化する。</p>
 </dd>
 <dt class="glossentry" id="gloss-author"><span class="glossterm">製作者</span></dt>
 <dd class="glossdef">
-<p>
-<a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の制作に対して責任がある人または組織。制作者は、コンテンツの制作者である必要はない。
-</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>の制作に対して責任がある人または組織。制作者は、コンテンツの制作者である必要はない。</p>
 </dd>
 <dt class="glossentry" id="gloss-authoring-tool"><span class="glossterm">EPUB オーサリング ツール</span></dt>
 <dd class="glossdef">
-<p>
-この仕様は、<a class="biblioref" href="#refATAG20" title="ATAG20: Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> から<a class="ulink" href="https://www.w3.org/TR/ATAG20/#def-Authoring-Tool" target="_top">オーサリング ツール</a>の意味を導入する。
-EPUB オーサリング ツールは、EPUB 出版物を作成または修正するために使用される点において異なる。
-</p>
+<p>この仕様は、<a class="biblioref" href="#refATAG20" title="Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> から<a class="ulink" href="https://www.w3.org/TR/ATAG20/#def-Authoring-Tool" target="_top">オーサリング ツール</a>の意味を導入する。EPUB オーサリング ツールは、EPUB 出版物を作成または修正するために使用される点において異なる。</p>
 </dd>
-<dt class="glossentry" id="gloss-content-document-epub"><span class="glossterm">EPUB コンテンツ ドキュメント</span></dt>
+<dt class="glossentry" id="gloss-content-doc"><span class="glossterm">EPUB コンテンツ ドキュメント</span></dt>
 <dd class="glossdef">
-<p>
-EPUB コンテンツ ドキュメントの定義のひとつに適合するドキュメント。
-</p>
+<p> EPUB コンテンツ ドキュメントの定義のひとつに適合するドキュメント。</p>
 </dd>
 <dt class="glossentry" id="gloss-epub-publication"><span class="glossterm">EPUB 出版物</span></dt>
 <dd class="glossdef">
-<p>
-単一の知的または芸術的な作品を表現するひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>の集合。
-</p>
+<p>単一の知的または芸術的な作品を表現するひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>の集合。</p>
 </dd>
 <dt class="glossentry" id="gloss-optimization"><span class="glossterm">最適化</span></dt>
 <dd class="glossdef">
-<p>
-（例えば、ディスレクシアなど）特定のニーズや（例えば、聴覚や触覚など）好みの読書モダリティを持つ読者によってアクセシブルが強化されたコンテンツである EPUB 出版物が、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> のアクセシビリティ要件を満たしているとは限らない。
-<a class="xref" href="#sec-optimized-publications" title="5. 最適化した出版物">5. 最適化した出版物</a>を見よ。
-</p>
+<p>（例えば、ディスレクシアなど）特定のニーズや（例えば、聴覚や触覚など）好みの読書モダリティを持つ読者によってアクセシブルが強化されたコンテンツである EPUB 出版物が、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> のアクセシビリティ要件を満たしているとは限らない。<a class="xref" href="#sec-opt-pubs" title="5 Optimized Publications"><em>最適化した出版物</em></a>を見よ。</p>
 </dd>
-<dt class="glossentry" id="gloss-package-document"><span class="glossterm">パッケージ ドキュメント</span></dt>
+<dt class="glossentry" id="gloss-package-doc"><span class="glossterm">パッケージ ドキュメント</span></dt>
 <dd class="glossdef">
-<p>
-<a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>のひとつの<a class="glossterm" href="#gloss-rendition">レンディション</a>を記述するリソース。
-パッケージ ドキュメントは、メタ情報を伝達し、リソースのマニフェストを提供とデフォルトの読み順の定義を行う。
-</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>を記述するリソース。パッケージ ドキュメントは、メタ情報を伝達し、リソースのマニフェストを提供とデフォルトの読み順の定義を行う。</p>
 </dd>
 <dt class="glossentry" id="gloss-reading-system"><span class="glossterm">リーディング システム</span></dt>
 <dd class="glossdef">
-<p>
-<a class="glossterm" href="#gloss-user" title="読者">読者</a>に提示するために <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>を処理するシステム。
-</p>
+<p><a class="glossterm" href="#gloss-user" title="User">読者</a>に提示するために <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を処理するシステム。</p>
 </dd>
 <dt class="glossentry" id="gloss-rendition"><span class="glossterm">レンディション</span></dt>
 <dd class="glossdef">
-<p>
-<a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>のひとつをレンダリングして表現する論理的なドキュメントの実体。
-</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつをレンダリングして表現する論理的なドキュメントの実体。</p>
 </dd>
 <dt class="glossentry" id="gloss-user"><span class="glossterm">読者</span></dt>
 <dd class="glossdef">
-<p>
-<a class="glossterm" href="#gloss-reading-system">リーディング システム</a>を使用して <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>を消費する個人。
-</p>
+<p><a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>を使用して <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を消費する個人。</p>
 </dd>
 </dl>
 </div>
 <div class="note">
 <h3 class="title">note</h3>
-<p>
-いくつかの用語は、EPUB の特定のバージョンのためにより正確な意味を持つ。
-詳細は該当する仕様を参照されたい。
-</p>
+<p>いくつかの用語は、EPUB の特定のバージョンのためにより正確な意味を持つ。詳細は該当する仕様を参照されたい。</p>
 </div>
 </section>
 <section xml:lang="en" class="section" id="sec-typography">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-typography"> </a> </span>1.5 表記上の規則</h2>
-<p>次の表記上の規則は、この仕様に用いられる：</p>
+<p>次の表記上の規則は、この仕様に用いられる。</p>
 <div class="variablelist">
 <dl class="variablelist">
 <dt class="varlistentry"><span class="term"><code class="markup">markup</code></span></dt>
@@ -322,9 +277,19 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 </dd>
 <dt class="varlistentry"><span class="term"><span class="terminology">Term</span></span></dt>
 <dd>
-<p>
-<a class="xref" href="#sec-terminology">用語</a>で定義されている用語は、キャピタルケースで示している。
-</p>
+<p><a class="xref" href="#sec-terminology">用語</a>で定義されている用語は、キャピタルケースで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-def">Term Link</span></span></dt>
+<dd>
+<p>用語の定義へのリンクは、点線の青い下線である。</p>
+</dd>
+</dl>
+</div>
+<div class="elem-synopsis">
+<dl class="elem-synopsis">
+<dt class="varlistentry"><span class="term"/></dt>
+<dd>
+<p>規定の要素と属性、プロパティの定義は、青いボックスにある。</p>
 </dd>
 </dl>
 </div>
@@ -335,476 +300,374 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <h3 class="title">note</h3>
 <p>規定ではない注記は、"Note"の見出しがある緑色のボックス内にある。</p>
 </div>
+<div class="caution">
+<h3 class="title">caution</h3>
+<p>規定ではない警告は、"Caution"の見出しがある赤いボックス内にある。</p>
+</div>
 </section>
 <section xml:lang="en" class="section" id="sec-conformance">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance"> </a> </span>1.6 適合性宣言</h2>
 <p>このドキュメント内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">may</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr class="abbrev">RFC2119</abbr>]</a> の記述に従って解釈される。</p>
-<p>この仕様の全てのセクションは規定である。但し「このセクションは規定ではない情報である」という規定ではない状態のラベルで識別される箇所を除く。セクションと補足への規定ではない状態の適用は、含まれる可能性のあるすべての子コンテンツおよびサブセクションに適用される。</p>
-<p>この仕様のすべての例は規定ではない。</p>
+<p>この仕様の全てのセクションと補足は規定である。但し「このセクションは規定ではない情報である」という規定ではない状態のラベルで識別される箇所を除く。セクションと補足への規定ではない状態の適用は、含まれる全ての子コンテンツおよびサブセクションに適用される。</p>
+<p>この仕様の全ての例は規定ではない。</p>
 </section>
 </section>
-<section class="chapter" id="sec-conformance">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance"> </a> </span>2 適合性</h1>
-<section class="section" id="sec-content-conformance">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-content-conformance"> </a> </span>2.1 コンテンツの適合性</h2>
-<section class="section" id="sec-content-conformance-discovery">
-<h3>発見可能な EPUB 出版物</h3>
-<p>次の要件は、発見可能な EPUB 出版物に適用される。</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
+<section class="chapter" id="sec-epub-conformance">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-conformance"> </a> </span>2 適合性</h1>
+<section class="section" id="sec-conf-discovery">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conf-discovery"> </a> </span>2.1 発見可能な EPUB 出版物</h2>
+<p>次の要件は、発見可能な <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に適用される。</p>
+<div class="conformance-list">
+<ul class="conformance-list" style="list-style-type: disc; ">
 <li class="listitem">
-<p><a href="#sec-discovery">3. 発見</a>で定義されるように、発見のメタデータを包含しなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-disc-meta"><span class="link-marker"><a class="hidden-reveal" href="#confreq-disc-meta"> </a> </span><a class="xref" href="#sec-discovery" title="3 Discovery"><em>発見</em></a>で定義されるように、発見のメタデータを包含しなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
-<p>製作者は、<a href="#sec-distribution">6. 配信</a>で説明されているように、アクセシブルな配信のプラクティスに従わなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-disc-dist"><span class="link-marker"><a class="hidden-reveal" href="#confreq-disc-dist"> </a> </span><a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、<a class="xref" href="#sec-distribution" title="6 Distribution"><em>配信</em></a>で説明されているように、アクセシブルな配信のプラクティスに従わなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 </ul>
 </div>
 </section>
-<section class="section" id="sec-content-conformance-accessibility">
-<h3>アクセシブルな EPUB 出版物</h3>
-<p>
-EPUB 出版物は、この仕様に従ってアクセシブルであるために、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
+<section class="section" id="sec-conf-epub">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conf-epub"> </a> </span>2.2 アクセシブルな EPUB 出版物</h2>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、この仕様に従ってアクセシブルであるために、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<div class="conformance-list">
+<ul class="conformance-list" style="list-style-type: disc; ">
 <li class="listitem">
-<p>
-<a href="#sec-content-conformance-discovery">発見可能な EPUB 出版物</a>の要件を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
+<p id="confreq-epub-disc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-epub-disc"> </a> </span><a class="xref" href="#sec-conf-discovery" title="2.1 Discovery-Enabled EPUB Publications">発見可能な EPUB 出版物</a>の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
-<p>
-<a class="xref" href="#sec-wcag-conformance" title="4.2 WCAG 適合性">4.2 WCAG 適合性</a>で定義されている <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の適合性の要件を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
+<p id="confreq-epub-wcag"><span class="link-marker"><a class="hidden-reveal" href="#confreq-epub-wcag"> </a> </span><a class="xref" href="#sec-wcag-conf" title="4.2.1 WCAG Conformance Requirements">WCAG 適合性要件</a>で定義されている <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の適合性の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
-<p>
-<a class="xref" href="#sec-epub-requirements" title="4.3 EPUB 要件">4.3 EPUB 要件</a>に定義されている EPUB 出版物の追加の要件を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
+<p id="confreq-epub-epub"><span class="link-marker"><a class="hidden-reveal" href="#confreq-epub-epub"> </a> </span><a class="xref" href="#sec-epub-req" title="4.3 EPUB Requirements">EPUB 要件</a>に定義されている EPUB 出版物の追加の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
-<p>
-<a class="xref" href="#sec-conformance-reporting" title="4.4 適合性のレポート">4.4 適合性をレポートする</a>で定義されているように、その適合性を報告しなければならない（<span class="rfc2119">must</span>）。
-</p>
+<p id="confreq-epub-report"><span class="link-marker"><a class="hidden-reveal" href="#confreq-epub-report"> </a> </span><a class="xref" href="#sec-conf-reporting" title="4.4 Conformance Reporting">適合性をレポートする</a>で定義されているように、その適合性を報告しなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 </ul>
 </div>
 </section>
-<section class="section" id="sec-content-conformance-optimizations">
-<h3>最適化された EPUB 出版物</h3>
-<p><a href="#gloss-optimization">最適化</a>された EPUB 出版物は、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
+<section class="section" id="sec-conf-opt">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conf-opt"> </a> </span>2.3 最適化された EPUB 出版物</h2>
+<p><a class="glossterm" href="#gloss-optimization" title="Optimization">最適化</a>された <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<div class="conformance-list">
+<ul class="conformance-list" style="list-style-type: disc; ">
 <li class="listitem">
-<p><a href="#sec-content-conformance-discovery">発見可能な EPUB 出版物</a>の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-opt-disc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-opt-disc"> </a> </span><a class="xref" href="#sec-conf-discovery" title="2.1 Discovery-Enabled EPUB Publications">発見可能な EPUB 出版物</a>の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
-<p>
-<a href="#sec-optimized-publications">5. 最適化された出版物</a>で定義されているように最適化されているとして識別しなければならない（<span class="rfc2119">must</span>）。
-</p>
-</li>
-</ul>
-</div>
-</section>
-</section>
-<section class="section" id="sec-reading-system-conformance">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-reading-system-conformance"> </a> </span>2.2 リーディング システムの適合性</h2>
-<p>
-適合した EPUB リーディング システムは、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem">
-<p>
-全ての <a class="biblioref" href="#refA11yTestSuite" title="A11yTestSuite: EPUB Accessibility Tests">[<abbr class="abbrev">A11Y Test Suite</abbr>]</a> の<a class="ulink" href="http://epubtest.org/testsuite/" target="_top">基本的なアクセシブル リーディング システムのテスト</a>を合格しなければならない（<span class="rfc2119">must</span>）。
-</p>
-</li>
-<li class="listitem">
-<p>
-<a class="biblioref" href="#refUAAG20" title="UAAG20: User Agent Accessibility Guidelines (UAAG) 2.0">[<abbr class="abbrev">UAAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/UAAG20/#intro-conf-levels" target="_top">レベル AA 適合性</a>の要件を満たすべきである（<span class="rfc2119">should</span>）。
-</p>
-</li>
-</ul>
-</div>
-</section>
-<section class="section" id="sec-authoring-tool-conformance">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-authoring-tool-conformance"> </a> </span>2.3 オーサリング ツールの適合性</h2>
-<p>
-適合した EPUB オーサリング ツールは、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem">
-<p>
-パート B のための次の明確化を持つ、<a class="biblioref" href="#refATAG20" title="ATAG20: Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> の<a class="ulink" href="https://www.w3.org/TR/ATAG20/#intro_understand_levels_conformance" target="_top">レベル A 適合性</a>の要件を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
-<ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem">
-<p>
-（それが生成できるコンテンツへ適用するように）アクセシブルな Web コンテンツの生成をする <a class="biblioref" href="#refATAG20" title="ATAG20: Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> を参照する場合には、<a class="xref" href="#sec-epub-requirements" title="4.3 EPUB 要件">4.3 EPUB 要件</a>に定義された EPUB 固有の要件に対するサポートを包含しなければならない（<span class="rfc2119">must</span>）。
-</p>
-</li>
-<li class="listitem">
-<p>
-<a class="xref" href="#sec-accessibility-metadata" title="3.2 アクセシビリティ メタデータ">3.2 パッケージ メタデータ</a>に定義されている発見のメタデータを追加するためのサポートを包含し、EPUB 出版物に関わりがあるように、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> のアクセシビリティ要件をサポートしなければならない（<span class="rfc2119">must</span>）。
-詳細な情報は、<a class="xref" href="#sec-page-and-publication" title="4.2.2.1 ページと出版物">4.2.2.1 ページと出版物</a>を見よ。
-</p>
-</li>
-</ul>
-</li>
-<li class="listitem">
-<p>
-上の基準で定義されたのと同じ明確化を持つ、<a class="biblioref" href="#refATAG20" title="ATAG20: Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/ATAG20/#intro_understand_levels_conformance" target="_top">レベル AA 適合性</a>の要件を満たすべきである（<span class="rfc2119">should</span>）。
-</p>
+<p id="confreq-opt-id"><span class="link-marker"><a class="hidden-reveal" href="#confreq-opt-id"> </a> </span><a class="xref" href="#sec-opt-pubs" title="5 Optimized Publications"><em>最適化された出版物</em></a>で定義されているように最適化されているとして識別しなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 </ul>
 </div>
 </section>
 </section>
 <section class="chapter" id="sec-discovery">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-discovery"> </a> </span>3. 発見</h1>
-<section class="section" id="sec-discovery-introduction">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-discovery-introduction"> </a> </span>3.1 導入</h2>
-<p>
-Web ページとは異なり、EPUB 出版物は、個人消費のために多くのチャンネルを経由して配信するように設計されている。 &#8211; このモデルは、電子書籍と他のデジタル出版物の種類において EPUB を成功したフォーマットにした。
-しかしながら、このモデルの欠点は、出版物のアクセシビリティに関する特定の詳細が、典型的にそれに進まないということである。
-</p>
-<p>
-例えば、発行者と製作者からコンテンツを集めているオンラインの書店は、それぞれの提出物に費やされた生産品質を知らず、メタデータに表されているものを消費者へ中継することのみできる。
-</p>
-<p>
-EPUB 出版物のアクセシブルな特質が全ての利害関係者によって発見できることを保証することは、主な関心事である。
-読者は、（例えば、教育環境を満たすのに十分であるような）EPUB 出版物を購入したり、借りたり、別な方法で入手するとき、EPUB 出版物の積雪性を正確に判断できることを必要としている。
-この仕様のアクセシビリティ要件を満たすコンテンツは、要件を満たすために作られた特定のアフォーダンスが、ユーザビリティを決定するときに知ることも重要であるように、十分な情報とは限らない。
-</p>
-<p>
-同様に、この仕様の要件を満たさないコンテンツは、広くアクセシブルでないにしても、依然として個々の読者のニーズを満たしているかもしれない。
-ただ豊かなメタデータの包含を通してだけ、読者は、それらのコンテンツが彼のニーズに適しているかどうかを決めることができる。
-</p>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-discovery"> </a> </span>3 発見</h1>
+<section class="section" id="sec-disc-intro">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-disc-intro"> </a> </span>3.1 導入</h2>
+<p>Web ページとは異なり、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、個人消費のために多くのチャンネルを経由して配信するように設計されている。 –このモデルは、電子書籍と他のデジタル出版物の種類において EPUB を成功したフォーマットにした。しかしながら、このモデルの欠点は、出版物のアクセシビリティに関する特定の詳細が、典型的にそれに進まないということである。</p>
+<p>例えば、発行者と製作者からコンテンツを集めているオンラインの書店は、それぞれの提出物に費やされた生産品質を知らず、メタデータに表されているものを消費者へ中継することのみできる。</p>
+<p>EPUB 出版物のアクセシブルな特質が全ての利害関係者によって発見できることを保証することは、主な関心事である。<a class="glossterm" href="#gloss-user" title="User">読者</a>は、（例えば、教育環境を満たすのに十分であるような）それを購入したり、借りたり、別な方法で入手するとき、EPUB 出版物の適切性を正確に判断できることを必要としている。この仕様のアクセシビリティ要件を満たすコンテンツは、要件を満たすために作られた特定のアフォーダンスが、ユーザビリティを決定するときに知ることも重要であるように、十分な情報とは限らない。</p>
+<p>同様に、この仕様の要件を満たさないコンテンツは、広くアクセシブルでないにしても、依然として個々の読者のニーズを満たしているかもしれない。ただ豊かなメタデータの包含を通してだけ、読者は、それらのコンテンツが彼のニーズに適しているかどうかを決めることができる。</p>
 </section>
-<section class="section" id="sec-accessibility-metadata">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-accessibility-metadata"> </a> </span>3.2 パッケージ メタデータ</h2>
+<section class="section" id="sec-disc-package">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-disc-package"> </a> </span>3.2 パッケージ メタデータ</h2>
 <div class="issue">
-<h6 id="issue-linear">OPEN ISSUE</h6>
-<p>このセクションで指定された三つのプロパティは、現在、導入に向けて schema.org へ提案中である。この提案は、その状況が確定したときに、更新されるであろう。</p>
+<h6 id="schema-org-properties">OPEN ISSUE 1</h6>
+<p>このセクションで指定された三つのプロパティは、現在、導入に向けて schema.org へ提案中である。この提案は、そのステータスが明確になったとき、更新されるであろう。</p>
 </div>
-<p>
-全ての適合する EPUB 出版物は、次にある <a class="biblioref" href="#refschemaorg" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> アクセシビリティ メタデータを包含しなければならない（<span class="rfc2119">must</span>）。
-</p>
+<p>全ての適合する <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、次にある <a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> アクセシビリティ メタデータを包含しなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-<p><a href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessMode">accessMode</a> [提案中] &#8212; （例えば、テキスト、視覚、聴覚、触覚のように）コンテンツを処理または理解するために必要な感覚や能力</p>
+<p><a class="ulink" href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessMode" target="_top">accessMode</a> [提案中] — （例えば、テキスト、視覚、聴覚、触覚のように）コンテンツを処理または理解するために必要な感覚や能力</p>
 </li>
 <li class="listitem">
-<p><a href="https://schema.org/accessibilityFeature">accessibilityFeature</a> &#8212; （例えば、代替テキスト、拡張した概要、キャプションなど）コンテンツの全体的なアクセシビリティを増大する機能や適合。</p>
+<p><a class="ulink" href="https://schema.org/accessibilityFeature" target="_top">accessibilityFeature</a> — （例えば、代替テキスト、拡張した概要、キャプションなど）コンテンツの全体的なアクセシビリティを増大する機能や適合。</p>
 </li>
 <li class="listitem">
-<p><a href="https://schema.org/accessibilityHazard">accessibilityHazard</a> &#8212; （例えば、発光、動作のシミュレーション、サウンドなど）コンテンツ表現の全ての潜在的な危険性。</p>
+<p><a class="ulink" href="https://schema.org/accessibilityHazard" target="_top">accessibilityHazard</a> — （例えば、発光、動作のシミュレーション、サウンドなど）コンテンツ表現の全ての潜在的な危険性。</p>
 </li>
-<li class="listitem"><p><a href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessibilitySummary">accessibilitySummary</a> [提案中] &#8212; （例えば、拡張された記述の欠如や特定の危険性など）全ての既知な欠陥の説明を包含する、全体的なアクセシビリティの人間が可読可能な要約。</p></li>
-</ul>
-</div>
-<p>次の <a class="biblioref" href="#refschemaorg" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> アクセシビリティ メタデータの包含は、推奨（<span class="rfc2119">recommended</span>）される。</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-<p><a href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessModeSufficient">accessModeSufficient</a> [提案中] &#8212; コンテンツを消費するために十分なアクセス モード（例えば、非視覚読者は、たとえコンテンツが視覚的なアクセス モードが主だとしても、拡張した概要を持つ出版物を読むことができるかもしれない）。</p>
+<p><a class="ulink" href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessibilitySummary" target="_top">accessibilitySummary</a> [提案中] — （例えば、拡張された記述の欠如や特定の危険性など）全ての既知な欠陥の説明を包含する、全体的なアクセシビリティの人間が可読可能な要約。</p>
 </li>
 </ul>
 </div>
-<p>次の <a class="biblioref" href="#refschemaorg" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> メタデータの包含は、省略可能（<span class="rfc2119">optional</span>）である。</p>
+<p>次の <a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> アクセシビリティ メタデータの包含は、推奨（<span class="rfc2119">recommended</span>）される。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem"><p><a href="https://schema.org/accessibilityAPI">accessibilityAPI</a> &#8212; リソースは、（例えば ARIA など）特定の アクセシビリティ API と互換性があることを識別する。</p></li>
-<li class="listitem"><p><a href="https://schema.org/accessibilityControl">accessibilityControl</a> &#8212; （例えば、キードードやマウスなど）コンテンツのアクセスに使用できる入力方法を識別する。</p></li>
+<li class="listitem">
+<p><a class="ulink" href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessModeSufficient" target="_top">accessModeSufficient</a> [提案中] — コンテンツを消費するために十分なアクセス モード（例えば、非視覚読者は、たとえコンテンツの主なアクセス モードが視覚的だとしても、拡張した概要を持つ出版物を読むことができるかもしれない）。</p>
+</li>
+</ul>
+</div>
+<p>次の <a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> メタデータの包含は、省略可能（<span class="rfc2119">optional</span>）である。</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><a class="ulink" href="https://schema.org/accessibilityAPI" target="_top">accessibilityAPI</a> — リソースは、（例えば ARIA など）特定の アクセシビリティ API と互換性があることを識別する。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="https://schema.org/accessibilityControl" target="_top">accessibilityControl</a> — （例えば、キードードやマウスなど）コンテンツのアクセスに使用できる入力方法を識別する。</p>
+</li>
 </ul>
 </div>
 <div class="note">
 <h3 class="title">note</h3>
-<p>これらプロパティと EPUB の異なるバージョンにこれらを包含する方法の詳細な情報は <a href="http://www.idpf.org/epub/a11y/techniques/#h.ekw9syd84fxa">Discovery Metadata Techniques</a> <a class="biblioref" href="#refA11YTech" title="A11Y Tech: EPUB Accessibility Techniques">[<abbr class="abbrev">A11Y Tech</abbr>]</a> を見よ。</p>
+<p>これらプロパティと EPUB の異なるバージョンに、これらを包含する方法の詳細な情報は <span class="phrase"><a class="ulink" href="techniques/techniques.html#sec-discovery" target="_top">発見のメタデータの達成方法</a> <a class="biblioref" href="#refA11YTech" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a></span> を見よ。</p>
+<p>他のフォーマットにアクセシビリティ メタデータを包含する詳細情報は、<span class="phrase"><a class="ulink" href="techniques/techniques.html#sec-dist-002" target="_top">DIST-002: 配信レコードにアクセシビリティ メタデータの包含</a> <a class="biblioref" href="#refA11YTech" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a></span>を見よ。</p>
 </div>
 <div class="note">
 <h3 class="title">note</h3>
-<p>上記の推奨は、発行時点における全ての <a class="biblioref" href="#refschemaorg" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> アクセシビリティ プロパティをカバーする。新しいプロパティが将来的に追加された場合、製作者は、この仕様が更新されるまでに、必要に応じて、それらを包含することを勧める。</p>
+<p>上記の推奨は、発行時点における全ての <a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> アクセシビリティ プロパティをカバーする。新しいプロパティが将来的に追加された場合、製作者は、この仕様が更新されるまでに、必要に応じて、それらを包含することを勧める。</p>
 </div>
 <p>他の語彙からアクセシビリティ メタデータを包含することは、省略可能（<span class="rfc2119">optional</span>）である。</p>
 </section>
-<section class="chapter" id="sec-linked-metadata-records">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-linked-metadata-records"> </a> </span>3.3 リンクされたメタデータ レコード</h2>
-<p>アクセシビリティ メタデータは、<a href="http://www.idpf.org/epub3/latest/packages#sec-link-elem">リンクされたレコード</a> <a href="#id.5olf5bh7bps3">[Packages]</a> に包含することも可能だが、単純に、リンクされたレコードへこのようなメタデータを包含することは、この仕様の発見の要件を満たさない。</p>
-<p>リンクされたレコードに与えられた優先順位は EPUB のバージョンによって異なるように、リーディング システムは読者に対して提示する情報に影響を与えることができるから、製作者は、パッケージ ドキュメントにあるアクセシビリティ メタデータや全てのリンクされたレコードが矛盾したステートメントを含んでいないことの保証に注意する必要がある。</p>
+<section class="section" id="sec-disc-linked-rec">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-disc-linked-rec"> </a> </span>3.3 リンクされたメタデータ レコード</h2>
+<p>アクセシビリティ メタデータは、<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-link-elem" target="_top">リンクされたレコード</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages 3</abbr>]</a> に包含することも可能だが、単純に、リンクされたレコードへこのようなメタデータを包含することは、この仕様の発見の要件を満たさない。</p>
+<p>リンクされたレコードに与えられた優先順位は EPUB のバージョンによって異なるように、リーディング システムは読者に対して提示する情報に影響を与えることができるから、製作者は、<a class="glossterm" href="#gloss-package-doc" title="Package Document">パッケージ ドキュメント</a>にあるアクセシビリティ メタデータや全てのリンクされたレコードが矛盾したステートメントを含んでいないことの保証に注意する必要がある。</p>
 </section>
 </section>
-<section class="chapter" id="sec-accessibility-guidelines">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-accessibility-guidelines"> </a> </span>4 アクセシブルな出版物</h1>
-<section class="section" id="sec-accessibility-guidelines-introduction">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-accessibility-guidelines-introduction"> </a> </span>4.1 導入</h2>
+<section class="chapter" id="sec-access-pub">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-pub"> </a> </span>4 アクセシブルな出版物</h1>
+<section class="section" id="sec-access-pub-intro">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-pub-intro"> </a> </span>4.1 導入</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p>
-EPUB は、コンテンツをオーサリングするために使用されるコア技術である HTML や CSS、JavaScript や SVG といったオープン Web プラットフォーム上に築かれる。
-コンテンツを表現するこれらの技術の使用は、EPUB 出版物が、確立された Web アクセシビリティ技術の正しい適用を介して、容易に高度なアクセシビリティをもって作成するができることを意味する。
-</p>
-<p>
-アクセシブルな Web コンテンツの制作のための一次資料は、W3C の Web Content Accessibility Guidelines (WCAG) 2.0 <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> である。
-この仕様は、アクセシブルなコンテンツの基準を確立するために、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> で成された大規模な作業を活用し、そして、同じ四つのハイレベルのコンテンツの原則（知覚可能、操作可能、理解可能および堅牢性）は、アクセシブルな EPUB 出版物作成の中心となる。
-</p>
-<p>
-このセクションは、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> で定義された適合性基準を適用する方法を定義し、（例えば、改ページのような）EPUB 出版物特有の性質にも取り組む。
-</p>
-<p>
-このセクションの要件に従って制作された EPUB 出版物は、多種多様なニーズと好みを持つ読者のために高いアクセシビリティを備えているであろう。
-</p>
+<p>EPUB は、コンテンツをオーサリングするために使用されるコア技術である HTML や CSS、JavaScript や SVG といったオープン Web プラットフォーム上に築かれる。これらの技術の使用は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>が、確立された Web アクセシビリティ技術の正しい適用を介して、容易に高度なアクセシビリティをもって作成するができることを意味する。</p>
+<p>アクセシブルな Web コンテンツの制作のための一次資料は、W3C の Web Content Accessibility Guidelines (WCAG) 2.0 <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> である。この仕様は、アクセシブルなコンテンツの基準を確立するために、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> で成された大規模な作業を活用し、そして、同じ四つのハイレベルのコンテンツの原則（知覚可能、操作可能、理解可能および堅牢性）は、アクセシブルな EPUB 出版物作成の中心となる。</p>
+<p>このセクションは、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> で定義された適合性基準を適用する方法を定義し、（例えば、改ページのような）EPUB 出版物特有の性質にも取り組む。</p>
+<p>このセクションの要件に従って制作された EPUB 出版物は、多種多様なニーズと好みを持つ<a class="glossterm" href="#gloss-user" title="User">読者</a>のために高いアクセシビリティを備えているであろう。</p>
 </section>
-<section class="section" id="sec-wcag-conformance">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-conformance"> </a> </span>4.2 WCAG 適合性</h2>
-<section class="section" id="sec-wcag-conformance-requirements">
-<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-conformance-requirements"> </a> </span>4.2.1 WCAG 適合性要件</h3>
-<p>
-EPUB 出版物は、この仕様に適合するために <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a href="https://www.w3.org/TR/WCAG20/#conformance-reqs">レベル A</a> を満たさなければならないが（<span class="rfc2119">must</span>）、レベル AA を満たすことを推奨（<span class="rfc2119">recommended</span>）する。
-</p>
-<div class="note">
-<h3 class="title">note</h3>
-<p>地域と国家の法律は、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG20</abbr>]</a> レベル AA 適合性が、しばしば、法的枠組みや政策におけるアクセシビリティのベンチマークとして引用されているように、EPUB 出版物がアクセシブルとみなされるために満たす必要のある適合性のレベルに影響を与えることができる。実際には、全ての EPUB 仕様、さらにベンダーの調達要件は、この仕様の最小要件を超えるコンテンツを要求することができる。製作者は、全ての必要な法的助言を求めるなど、あらゆる権限や配信のコンテキストにおける熟慮されたアクセシブルを満たす必要のあるそれらコンテンツの要件を、彼らが理解していることを確認する必要がある。この仕様における最小の適合性は、そのような要件を優先するものではなく、そして発生する可能性のある全ての法的責任からの保護を提供していない。</p>
-</div>
+<section class="section" id="sec-acc-pub-wcag">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-acc-pub-wcag"> </a> </span>4.2 WCAG 適合性</h2>
+<section class="section" id="sec-wcag-conf">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-conf"> </a> </span>4.2.1 WCAG 適合性要件</h3>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、この仕様に適合するために <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#conformance-reqs" target="_top">レベル A</a> を満たさなければならないが（<span class="rfc2119">must</span>）、レベル AA を満たすことを推奨（<span class="rfc2119">recommended</span>）する。</p>
+<p>しかしながら、地域と国家の法律は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> レベル AA 適合性が、しばしば、法的枠組みや政策におけるアクセシビリティのベンチマークとして引用されているように、EPUB 出版物がアクセシブルとみなされるために満たす必要のある適合性のレベルに影響を与えることができることに注意されたい。実際には、全ての EPUB 仕様、さらにベンダーの調達要件は、この仕様の最小要件を超えるコンテンツを要求することができる。</p>
+<p><a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、全ての必要な法的助言を求めるなど、あらゆる権限や配信のコンテキストにおける熟慮されたアクセシブルを満たす必要のあるそれらコンテンツの要件を、彼らが理解していることを確認する必要がある。この仕様における最小の適合性は、そのような要件を優先するものではなく、そして発生する可能性のある全ての法的責任からの保護を提供していない。</p>
 </section>
-<section class="section" id="sec-evaluating-wcag-conformance">
-<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-evaluating-wcag-conformance"> </a> </span>4.2.2 WCAG 適合性の評価</h3>
-<section class="section" id="sec-page-and-publication">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-and-publication"> </a> </span>4.2.2.1 ページと出版物</h4>
-<p class="c4">
-<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の原則とガイドラインは、個々の <a class="ulink" href="https://www.w3.org/TR/WCAG20/#webpagedef" target="_top">Web ページ</a>の評価にフォーカスしているが、EPUB 出版物は、より密接に <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> が <a class="ulink" href="https://www.w3.org/TR/WCAG20/#set-of-web-pagesdef" target="_top">Web ページのセット</a>として参照するのに似ている。「[a] 共通の目的を共有する Web ページの集合」
-</p>
-<p>
-従って、EPUB 出版物のアクセシビリティを評価するとき、個々のページ（または EPUB の命名法として知られているように、コンテンツ ドキュメント）は、単独で検討することはできない。
-むしろ、大きな作品の一部として全体としてのアクセシビリティを評価する必要がある。
-</p>
-<p>
-例えば、出版物が誤った順番でそれらを表示するならば、論理的な読み上げ順を持つ個々のコンテンツ ドキュメントとして十分ではない。
-同様に、全てのコンテンツ ドキュメントのためにタイトルを包含することは、出版物のタイトルを提供することとしては補完的でする。いずれかが欠落している場合、全体的なアクセシビリティが影響を受ける。
-</p>
-<p>
-従って、<span class="emphasis"><em>知覚可能</em></span>、<span class="emphasis"><em>操作可能</em></span>、<span class="emphasis"><em>理解可能</em></span>および<span class="emphasis"><em>堅牢性</em></span> <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> であるコンテンツのガイドラインは、それぞれのコンテンツ ドキュメントだけでなく、完全な EPUB 出版物に対しての評価でなければならない（<span class="rfc2119">must</span>）。
-</p>
-<p>
-EPUB 出版物にこれらのガイドラインを適用することについての詳細な情報は、<a class="biblioref" href="#refA11YTech" title="A11YTech: EPUB Accessibility Techniques">[<abbr class="abbrev">A11Y Tech</abbr>]</a> で利用できる。
-</p>
+<section class="section" id="sec-wcag-eval">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-eval"> </a> </span>4.2.2 WCAG 適合性の評価</h3>
+<section class="section" id="sec-wcag-eval-page-pub">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-eval-page-pub"> </a> </span>4.2.2.1 ページと出版物</h4>
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の原則とガイドラインは、個々の <a class="ulink" href="https://www.w3.org/TR/WCAG20/#webpagedef" target="_top">Web ページ</a>の評価にフォーカスしているが、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、より密接に <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> が <a class="ulink" href="https://www.w3.org/TR/WCAG20/#set-of-web-pagesdef" target="_top">Web ページのセット</a>として参照するのに似ている。「[a] 共通の目的を共有する Web ページの集合」</p>
+<p>従って、EPUB 出版物のアクセシビリティを評価するとき、個々のページ（または EPUB の命名法として知られているように、<a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">コンテンツ ドキュメント</a>）は、単独で検討することはできない。むしろ、大きな作品の一部として全体としてのアクセシビリティを評価する必要がある。</p>
+<p>例えば、出版物が誤った順番でそれらを表示するならば、論理的な読み上げ順を持つ個々のコンテンツ ドキュメントとして十分ではない。同様に、全てのコンテンツ ドキュメントのためにタイトルを包含することは、出版物のタイトルを提供することとしては補完的でする。いずれかが欠落している場合、全体的なアクセシビリティが影響を受ける。</p>
+<p>従って、<span class="emphasis"><em>知覚可能</em></span>、<span class="emphasis"><em>操作可能</em></span>、<span class="emphasis"><em>理解可能</em></span>および<span class="emphasis"><em>堅牢性</em></span> <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> であるコンテンツのガイドラインは、それぞれのコンテンツ ドキュメントだけでなく、完全な EPUB 出版物に対しての評価でなければならない（<span class="rfc2119">must</span>）。</p>
+<p>EPUB 出版物にこれらのガイドラインを適用することについての詳細な情報は、<a class="biblioref" href="#refA11YTech" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a> で利用できる。</p>
 </section>
-<section class="section" id="sec-applying-the-conformance-criteria">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-applying-the-conformance-criteria"> </a> </span>4.2.2.2 適合性基準の適用</h4>
-<p>
-EPUB 出版物を評価するとき、<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#conformance-reqs" target="_top">適合性基準</a>は、次のように適用される。
-</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
+<section class="section" id="sec-wcag-application">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-application"> </a> </span>4.2.2.2 適合性基準の適用</h4>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を評価するとき、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#conformance-reqs" target="_top">適合性基準</a>は、次のように適用される。</p>
+<div class="conformance-list">
+<ul class="conformance-list" style="list-style-type: disc; ">
 <li class="listitem">
-<p>
-適合性レベルのコンプライアンスを決定するとき、全体としての EPUB 出版物が、表明したレベルの適合性基準を満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
+<p id="confreq-wcag-whole-epub"><span class="link-marker"><a class="hidden-reveal" href="#confreq-wcag-whole-epub"> </a> </span>適合性レベルのコンプライアンスを決定するとき、全体としての EPUB 出版物が、表明したレベルの適合性基準を満たさなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
-<p>
-製作者は、読者がフォールバックにアクセスする信頼できる方法がないので、<a class="ulink" href="https://www.w3.org/TR/WCAG20/#conforming-alternate-versiondef" target="_top">適合している代替版</a> <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> を提供するために EPUB のフォールバック メカニズムを使用してはならない（<span class="rfc2119">must not</span>）。
-フォールバックが使用されている場合、重要なコンテンツとそのフォールバックの両方は、表明されている適合性レベルの要件を満たさなければならない（<span class="rfc2119">must</span>）。
-EPUB 固有のフォールバック メカニズムの例は、マニフェストのフォールバックとバインディング、コンテンツのスイッチを包含する。
-</p>
+<p id="confreq-wcag-fallbacks"><span class="link-marker"><a class="hidden-reveal" href="#confreq-wcag-fallbacks"> </a> </span><a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、<a class="glossterm" href="#gloss-user" title="User">読者</a>がフォールバックにアクセスする信頼できる方法がないので、<a class="ulink" href="https://www.w3.org/TR/WCAG20/#conforming-alternate-versiondef" target="_top">適合している代替版</a> <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> を提供するために EPUB のフォールバック メカニズムを使用してはならない（<span class="rfc2119">must not</span>）。フォールバックが使用されている場合、重要なコンテンツとそのフォールバックの両方は、表明されている適合性レベルの要件を満たさなければならない（<span class="rfc2119">must</span>）。EPUB 固有のフォールバック メカニズムの例は、マニフェストのフォールバックとバインディング、コンテンツのスイッチを包含する。</p>
 </li>
 <li class="listitem">
-<p>
-「ページ全体」の要件（すなわち、ページの一部は、適合性の表明を作る時に、除くことができない）のコンプライアンスを決定するとき、
-各コンテンツ ドキュメントの全体は、適合性レベルを達成しなければなず（<span class="rfc2119">must</span>）、出版物内の全コンテンツ ドキュメントは、規定の適合性レベルを満たさなければならない（<span class="rfc2119">must</span>）。
-</p>
+<p id="confreq-wcag-full-page"><span class="link-marker"><a class="hidden-reveal" href="#confreq-wcag-full-page"> </a> </span>「ページ全体」の要件（すなわち、ページの一部は、適合性の表明を作る時に、除くことができない）のコンプライアンスを決定するとき、各コンテンツ ドキュメントの全体は、適合性レベルを達成しなければなず（<span class="rfc2119">must</span>）、出版物内の全コンテンツ ドキュメントは、規定の適合性レベルを満たさなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 </ul>
-</ul>
-</section>
-</section>
-</section>
-<section class="section" id="sec-epub-requirements">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-requirements"> </a> </span>4.3 EPUB 要件</h2>
-<section class="section" id="sec-relationship-to-wcag">
-<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-relationship-to-wcag"> </a> </span>4.3.1 WCAG との関連性</h3>
-<p>
-このセクションで定義されている要件は、EPUB 出版物固有である。
-その結果、EPUB 出版物は、このセクションに適合することなく <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> に適合することができるが、このセクションの要件を満たしていない EPUB 出版物は、この仕様に適合していない。
-</p>
-<div class="note">
-<h3 class="title">note</h3>
-<p>
-IDPF は、デジタル出版物のために、これらの要件を策定するための W3C と Web アクセシビリティ イニシアティブによる作業を計画している。
-</p>
 </div>
 </section>
-<section class="section" id="sec-structured-audio-playback">
-<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-structured-audio-playback"> </a> </span>4.3.2 構造化された音声再生</h3>
-<section class="section" id="sec-sap-objective">
-<h4>目的</h4>
-<p>
-<a class="biblioref" href="#refSMIL" title="SMIL: SMIL Version 3.0">[<abbr class="abbrev">SMIL</abbr>]</a> ベースの再生内にある構造とセマンティクスの包含物を介してコンテンツのナビゲーションを有効にする。
-</p>
 </section>
-<section class="section" id="sec-sap-understanding-objective">
-<h4>この目的を理解する</h4>
-<p>
-EPUB 出版物に SMIL ベースのテキストと音声同期が含まれている場合、コンテンツの構造とセマンティクスは、聴覚読者に、ナビゲーションと同様の容易さを提供するため、SMIL マークアップと同等である必要がある。
-</p>
-<p>
-例えば、SMIL マークアップが、表全体に対して単一の同期ポイントだけを含んでいる場合、読者は行やセルを移動する機能を持たないまま、シークエンス内の全てのデータを聞かなければならないだろう。
-マークアップに行とセルを模倣するための同等の構造の追加は、彼らや彼女らが望むようにセルや行、表全体からのエスケープなど、読者がコンテンツを効果的に移動することができる。
-</p>
-<p>
-同様に、SMIL マークアップに構造のセマンティクスを包含することは、リーディング システムが、読者に望ましくないコンテンツをスキップする機能の提供することができる。
-セクションを通して読むとき、読者は、自動的に全てのサイドバーや図、他の補助的なコンテンツをスキップし、主要なコンテンツのみを聞くことを好むかもしれない。
-SMIL マークアップにこの情報がなければ、このような拡張された読書体験は不可能である。
-</p>
 </section>
-<section class="section" id="sec-sap-meeting-objective">
-<h4>この目的を満たす</h4>
-<p>
-EPUB 出版物が、同期したテキストと音声の再生機能を提供する場合、それは、コンテンツからスキップとエスケープするための SMIL マークアップに適切な構造とセマンティクスを包含するべきである（<span class="rfc2119">should</span>）
-</p>
-<p>メディア オーバーレイを構成する詳細な情報は、<a href="http://www.idpf.org/epub/a11y/techniques.html#h.gyvryt9817w8">構造化された音声再生</a> <a class="biblioref" href="#refA11YTech" title="A11Y Tech: EPUB Accessibility Techniques">[<abbr class="abbrev">A11Y Tech</abbr>]</a> を見よ。</p>
+<section class="section" id="sec-epub-req">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-req"> </a> </span>4.3 EPUB 要件</h2>
+<section class="section" id="sec-rel-wcag">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-rel-wcag"> </a> </span>4.3.1 WCAG との関連性</h3>
+<p>このセクションで定義されている要件は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>固有である。その結果、EPUB 出版物は、このセクションに適合することなく <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> に適合することができるが、このセクションの要件を満たしていない EPUB 出版物は、この仕様に適合していない。</p>
+<div class="note">
+<h3 class="title">note</h3>
+<p> IDPF は、デジタル出版物のために、これらの要件を策定するための W3C と Web アクセシビリティ イニシアティブによる作業を計画している。</p>
+</div>
+</section>
+<section class="section" id="sec-audio-playback">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-audio-playback"> </a> </span>4.3.2 構造化された音声再生</h3>
+<section class="section" id="sec-audio-playback-obj">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-audio-playback-obj"> </a> </span>4.3.2.1 目的</h4>
+<p><a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr class="abbrev">SMIL</abbr>]</a> ベースの再生内にある構造とセマンティクスの包含物を介してコンテンツのナビゲーションを有効にする。</p>
+</section>
+<section class="section" id="sec-audio-playback-understand">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-audio-playback-understand"> </a> </span>4.3.2.2 この目的を理解する</h4>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に SMIL ベースのテキストと音声同期が含まれている場合、コンテンツの構造とセマンティクスは、聴覚読者に、ナビゲーションと同様の容易さを提供するため、SMIL マークアップと同等である必要がある。</p>
+<p>例えば、SMIL マークアップが、表全体に対して単一の同期ポイントだけを含んでいる場合、<a class="glossterm" href="#gloss-user" title="User">読者</a>は行やセルを移動する機能を持たないまま、シークエンス内の全てのデータを聞かなければならないだろう。マークアップに行とセルを模倣するための同等の構造の追加は、彼らや彼女らが望むようにセルや行、表全体からのエスケープなど、読者がコンテンツを効果的に移動することができる。</p>
+<p>同様に、SMIL マークアップに構造のセマンティクスを包含することは、<a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>が、読者に望ましくないコンテンツをスキップする機能の提供することができる。セクションを通して読むとき、読者は、自動的に全てのサイドバーや図、他の補助的なコンテンツをスキップし、主要なコンテンツのみを聞くことを好むかもしれない。SMIL マークアップにこの情報がなければ、このような拡張された読書体験は不可能である。</p>
+</section>
+<section class="section" id="sec-audio-playbac-conf">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-audio-playbac-conf"> </a> </span>4.3.2.3 この目的を満たす</h4>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>が、同期したテキストと音声の再生機能を提供する場合、それは、コンテンツからスキップとエスケープするための SMIL マークアップに適切な構造とセマンティクスを包含するべきである（<span class="rfc2119">should</span>）</p>
+<p>メディア オーバーレイを構成する詳細な情報は、<span class="phrase"><a class="ulink" href="techniques/techniques.html#sec-epub-audio" target="_top">構造化された音声再生</a> <a class="biblioref" href="#refA11YTech" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a></span> を見よ。</p>
 </section>
 </section>
 <section class="section" id="sec-page-markers">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-markers"> </a> </span>4.3.3 ページ マーカー</h3>
-<section class="section" id="sec-pm-objective">
-<h4>目的</h4>
-<p>
-静的なページ区切りの位置にナビゲーションを提供する。
-</p>
+<section class="section" id="sec-page-markers-obj">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-markers-obj"> </a> </span>4.3.3.1 目的</h4>
+<p>静的なページ区切りの位置にナビゲーションを提供する。</p>
 </section>
-<section class="section" id="sec-pm-understanding-objective">
-<h4>この目的を理解する</h4>
-<p>
-静的にページ付けされたコンテンツは、一般的な読者層と教育環境内の間における両方の本として最も消費され続ける印刷物のように、まだ至る所に存在する。
-印刷物は、静的なページ付けの唯一のソースではなく、静的なページの境界は、固定レイアウトのデジタル出版物にも存在している。
-</p>
-<p>
-結果として、静的にページ付けされたコンテンツが使用されている環境にある非視覚読者は、（例えば、教師が、特定のページをめくるように生徒へ指示するときなど）出版物内の同じ位置を容易に探すことができないことにより、彼や彼女たちに較べて、相対的に不利な状況に置かれている。
-</p>
-<p>
-ページ境界位置を包含することは、リフロー可能なメディアを使用する選択によって不利な状況に置かれないことを保証することにより、この格差を埋めるのを助ける。
-</p>
-<p>
-ページ マーカーを提供することはまた、静的なページ分割と同等のものを持っていないリフロー出版物のナビゲーションを支援する。
-リーディング システムによるこれら出版物のデフォルトのページネーションは、ビューポート サイズや読者のフォント設定に応じて変化するので、静的ではない。
-結果として、同じ EPUB 出版物の読者同士で位置を連動させることは、静的な参照なしでは困難である。
-</p>
+<section class="section" id="sec-page-markers-understand">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-markers-understand"> </a> </span>4.3.3.2 この目的を理解する</h4>
+<p>静的にページ付けされたコンテンツは、一般的な読者層と教育環境内の間における両方の本として最も消費され続ける印刷物のように、まだ至る所に存在する。印刷物は、静的なページ付けの唯一のソースではなく、静的なページの境界は、固定レイアウトのデジタル出版物にも存在している。</p>
+<p>結果として、静的にページ付けされたコンテンツが使用されている環境にある非視覚読者は、（例えば、教師が、特定のページをめくるように生徒へ指示するときなど）出版物内の同じ位置を容易に探すことができないことにより、彼や彼女たちに較べて、相対的に不利な状況に置かれている。</p>
+<p>ページ境界位置を包含することは、リフロー可能なメディアを使用する選択によって不利な状況に置かれないことを保証することにより、この格差を埋めるのを助ける。</p>
+<p>ページ マーカーを提供することはまた、静的なページ分割と同等のものを持っていないリフロー出版物のナビゲーションを支援する。リーディング システムによるこれら出版物のデフォルトのページネーションは、ビューポート サイズや<a class="glossterm" href="#gloss-user" title="User">読者</a>のフォント設定に応じて変化するので、静的ではない。結果として、同じ <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>の読者同士で位置を連動させることは、静的な参照なしでは困難である。</p>
 </section>
-<section class="section" id="sec-pm-meeting-objective">
-<h4>この目的を満たす</h4>
-<p>
-リフロー可能な EPUB 出版物が、静的にページ付けされた形式でのみ配信された作品を表現する場合、それは、改ページの標識とそれらにアクセスする手段を包含するべきである（<span class="rfc2119">should</span>）。
-</p>
-<p>製作者は、静的なページ付けと同等ではないリフロー可能な EPUB に改ページのマーカーを包含してもよいが、包含は、この仕様の要件を満たすために必須ではない。</p>
-<p>EPUB 出版物にページ マーカーの包含についての詳細な情報は、<a href="http://www.idpf.org/epub/a11y/techniques.html#h.3vdu46jdv2m9">ページ マーカー</a> <a class="biblioref" href="#refA11YTech" title="A11Y Tech: EPUB Accessibility Techniques">[<abbr class="abbrev">A11Y Tech</abbr>]</a> を見よ。</p>
+<section class="section" id="sec-page-markers-conf">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-markers-conf"> </a> </span>4.3.3.3 この目的を満たす</h4>
+<p>リフロー可能な <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>が、静的にページ付けされた形式でのみ配信された作品を表現する場合、それは、改ページの標識とそれらにアクセスする手段を包含するべきである（<span class="rfc2119">should</span>）。</p>
+<p><a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、静的なページ付けと同等ではないリフロー可能な EPUB に改ページのマーカーを包含してもよいが、包含は、この仕様の要件を満たすために必要ではない。</p>
+<p>EPUB 出版物にページ マーカーの包含についての詳細な情報は、<span class="phrase"><a class="ulink" href="techniques/techniques.html#sec-epub-page-markers" target="_top">ページ マーカー</a> <a class="biblioref" href="#refA11YTech" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a></span> を見よ。</p>
 </section>
 </section>
 </section>
-<section class="section" id="sec-conformance-reporting">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance-reporting"> </a> </span>4.4 適合性をレポートする</h2>
-<p>
-EPUB 出版物が、この仕様の<a href="#sec-content-conformance-accessibility">アクセシビリティ要件</a>に適合していることを示すために、<span class="property">conformsTo</span> プロパティ <a class="biblioref" href="#refDCTERMS" title="DCTERMS: DCMI Metadata Terms">[<span class="abbrev">DCTERMS</span>]</a> と <span class="property"><a href="http://www.idpf.org/epub/vocab/package/a11y/#certifiedBy">a11y:certifiedBy</a></span> プロパティ <a class="biblioref" href="#refA11YVocab" title="A11Y Vocab: EPUB Accessibility Vocabulary">[<span class="abbrev">A11Y Vocab</span>]</a> を包含しなければならない（<span class="rfc2119">must</span>）。
-</p>
-<p>
-<span class="property">conformsTo</span> プロパティは、EPUB 出版物が適合している、<a class="biblioref" href="#refATAG20" title="WCAG 2.0: Web Content Accessibility Guidelines (WCAG) 2.0">[<span class="abbrev">WCAG 2.0</span>]</a> 適合レベルを達成したことを識別する、次のフラグメント識別子のいずれかが接続するこの仕様の日付バージョンの IRI を指定しなければならない（<span class="rfc2119">must</span>）。
-</p>
-<div class="itemizedlist">
-<ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem">
-<p><code class="markup">wcag-a</code> &#8212; EPUB 出版物は、レベル A 適合性を満たす。</p>
-</li>
-<li class="listitem">
-<p><code class="markup">wcag-aa</code> &#8212; EPUB 出版物は、レベル AA 適合性を満たす。</p>
-</li>
-<li class="listitem">
-<p><code class="markup">wcag-aaa</code> &#8212; EPUB 出版物は、レベル AAA 適合性を満たす。</p>
-</li>
-</ul>
+<section class="section" id="sec-conf-reporting">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conf-reporting"> </a> </span>4.4 適合性をレポートする</h2>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>が、この仕様に適合していることを示すために、<span class="property">conformsTo</span> プロパティ <a class="biblioref" href="#refDCTERMS" title="DCMI Metadata Terms">[<abbr class="abbrev">DCTERMS</abbr>]</a> と <a class="ulink" href="http://www.idpf.org/epub/vocab/package/a11y/#certifiedBy" target="_top"><span class="property">a11y:certifiedBy</span> プロパティ</a> <a class="biblioref" href="#refA11YVocab" title="EPUB Accessibility Vocabulary">[<abbr class="abbrev">Accessibility Vocab</abbr>]</a> を包含しなければならない（<span class="rfc2119">must</span>）。</p>
+<p><span class="property">conformsTo</span> プロパティの値は、次の IRIs のひとつでなければならない（<span class="rfc2119">must</span>）。</p>
+<div class="a11y-conf">
+<dl class="a11y-conf">
+<dt class="varlistentry" id="wcag-a"><span class="term"><code class="markup">http://www.idpf.org/epub/a11y/accessibility-20160801.html#wcag-a</code></span></dt>
+<dd>
+<p>EPUB 出版物は、全ての<a class="link" href="#sec-conf-epub" title="2.2 Accessible EPUB Publications">アクセシビリティ要件</a>を満たし、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> レベル A 適合性を達成している。</p>
+</dd>
+<dt class="varlistentry" id="wcag-aa"><span class="term"><code class="markup">http://www.idpf.org/epub/a11y/accessibility-20160801.html#wcag-aa</code></span></dt>
+<dd>
+<p>EPUB 出版物は、全ての<a class="link" href="#sec-conf-epub" title="2.2 Accessible EPUB Publications">アクセシビリティ要件</a>を満たし、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> レベル AA 適合性を達成している。</p>
+</dd>
+<dt class="varlistentry" id="wcag-aaa"><span class="term"><code class="markup">http://www.idpf.org/epub/a11y/accessibility-20160801.html#wcag-aaa</code></span></dt>
+<dd>
+<p>EPUB 出版物は、全ての<a class="link" href="#sec-conf-epub" title="2.2 Accessible EPUB Publications">アクセシビリティ要件</a>を満たし、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> レベル AAA 適合性を達成している。</p>
+</dd>
+</dl>
+</div>
 <p><span class="property">a11y:certifiedBy</span> プロパティは、コンテンツを認定する関係者の名前を特定する。コンテンツの認証者は、EPUB 出版物を制作した同じ存在である可能性があるが、サード パーティのアクセシビリティ認証である可能性もある。</p>
+<p>コンテンツを認定する関係者が、コンテンツがアクセシブルであることを証明するために、彼らの権威を確立する資格や記章が公表されている場合、その情報は、<span class="property">a11y:certifierCredential</span> プロパティ <a class="biblioref" href="#refA11YVocab" title="EPUB Accessibility Vocabulary">[<abbr class="abbrev">Accessibility Vocab</abbr>]</a> で供給されることができる。</p>
 <div class="note">
 <h3 class="title">note</h3>
 <p>各メタデータ フォーマットは、表現できるものが一意なので、この仕様は、パッケージ ドキュメントの外でメタデータの適合性を表現する方法を強制しない。</p>
 </div>
 <div class="note">
 <h3 class="title">note</h3>
-<p>あらゆる特定のユーザーによるこのようなコンテンツのユーザビリティは、アクセシビリティ メタデータからのみ決定できるように、この仕様は、<a href="#sec-discovery">発見のメタデータ要件</a>のみを満たす、EPUB 出版物の適合性レベルを定義しない。<a href="#sec-optimized-publications">最適化された出版物をレポートする要件</a>は、次のセクションで定義される。</p>
+<p>あらゆる特定のユーザーによるこのようなコンテンツのユーザビリティは、アクセシビリティ メタデータからのみ決定できるように、この仕様は、<a class="link" href="#sec-discovery" title="3 Discovery">発見のメタデータ要件</a>のみを満たす、EPUB 出版物の適合性レベルを定義しない。<a class="link" href="#sec-opt-pubs" title="5 Optimized Publications">最適化された出版物をレポートする要件</a>は、次のセクションで定義される。</p>
 </div>
-<p>
-次の例は、WCAG 2.0 の レベル A に、この仕様の要件を満たす EPUB 3 出版物の完全な適合性宣言を示している。
-</p>
 <div class="informalexample">
-<pre class="synopsis">
-&lt;package &#8230; prefix=&quot;a11y: http://www.idpf.org/2016/accessibility&quot;&gt;
-    &lt;metadata&gt;
-        &#8230;
-        &lt;link rel=&quot;dcterms:conformsTo&quot; href=&quot;http://www.idpf.org/epub/a11y/accessibility-20160426.html#wcag-a&quot;/&gt;
-        &lt;meta property=&quot;a11y:certifiedBy&quot;&gt;Acme Publishing Inc.&lt;/meta&gt;
-        &#8230;
-    &lt;/metadata&gt;
-    &#8230;
-&lt;/package&gt;
-</pre>
+<p>次の例は、WCAG 2.0 の レベル A に、この仕様の要件を満たす EPUB 3 出版物の完全な適合性宣言を示している。</p>
+<pre class="synopsis">&lt;package …&gt;&#xD;
+  &lt;metadata&gt;&#xD;
+    …&#xD;
+    &lt;link rel="dcterms:conformsTo" href="http://www.idpf.org/epub/a11y/accessibility-20160801.html#wcag-a"/&gt;&#xD;
+    &lt;meta property="a11y:certifiedBy"&gt;Acme Publishing Inc.&lt;/meta&gt;&#xD;
+    …&#xD;
+  &lt;/metadata&gt;&#xD;
+  …&#xD;
+&lt;/package&gt;</pre>
 </div>
+<div class="informalexample">
 <p>次の例は、EPUB 2 出版物のために同様の適合性宣言を示している。</p>
-<div class="informalexample">
-<pre class="synopsis">
-&lt;package &#8230; &gt;
-    &lt;metadata&gt;
-        &#8230;
-        &lt;meta name=&quot;dcterms:conformsTo&quot; content=&quot;http://www.idpf.org/epub/a11y/accessibility-20160426.html#wcag-a&quot;/&gt;
-        &lt;meta name=&quot;a11y:certifiedBy&quot; content=&quot;Acme Publishing Inc.&quot;/&gt;
-        &#8230;
-    &lt;/metadata&gt;
-    &#8230;
-&lt;/package&gt;
-</pre>
+<pre class="synopsis">&lt;package …&gt;&#xD;
+  &lt;metadata&gt;&#xD;
+    …&#xD;
+    &lt;meta name="dcterms:conformsTo" content="http://www.idpf.org/epub/a11y/accessibility-20160801.html#wcag-a"/&gt;&#xD;
+    &lt;meta name="a11y:certifiedBy" content="Acme Publishing Inc."/&gt;&#xD;
+    …&#xD;
+  &lt;/metadata&gt;&#xD;
+  …&#xD;
+&lt;/package&gt;</pre>
 </div>
 </section>
-<section class="chapter" id="sec-optimized-publications">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-optimized-publications"> </a> </span>5. 最適化された出版物</h1>
-<p>
-<a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> は、コンテンツを広くアクセシブルにするためのガイドラインの一般的なセットを提供するが、適合するコンテンツが必ずしも特定のユーザー グループにとって最適であるとは限らない。
-逆に、特定のニーズや読書モダリティに最適化されたコンテンツは、幅広い読者のために設計されてないので、多くの場合は <a class="biblioref" href="#refWCAG20" title="WCAG20: Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> に適合しない。
-これらの場合、WCAG の適合レベルを達成することができないことは、意図された読者に全てのアクセシブルでない出版物をもたらさないということである 。
-</p>
-<p>
-この矛盾を説明するために、この仕様は、発見のメタデータの包含を重視する。
-最適化された EPUB 出版物は、たとえこの仕様に従って広くアクセシブルとして識別されていなくとも、豊かなメタデータの包含を介して対象となる読者に発見される。
-</p>
-<p>
-<a class="xref" href="#sec-discovery" title="3. 発見">3. 発見</a>で定義されたメタデータの要件に加えて、最適化された EPUB 出版物は、<a class="biblioref" href="#refDCTERMS" title="DCTERMS: DCMI Metadata Terms">[<abbr class="abbrev">DCTERMS</abbr>]</a> <span class="property">conformsTo</span> プロパティの方針を守るコンテンツの規格またはガイドラインを識別しなければならない（<span class="rfc2119">must</span>）。
-プロパティの値は、次の規格またはガイドラインを参照する IRI <a class="biblioref" href="#refRFC3987" title="RFC3987: Internationalized Resource Identifiers (IRIs)">[<abbr class="abbrev">RFC3987</abbr>]</a> でなければならない（<span class="rfc2119">must</span>）。
-</p>
-<p>次の例は、<a class="biblioref" href="#refDAISYAudio" title="DAISY Audio: Navigable audio-only EPUB3 Guidelines">[<abbr class="abbrev">DAISY Audio</abbr>]</a> ガイドラインに適合した、EPUB 3 出版物のための適合性宣言を示している。</p>
+</section>
+<section class="chapter" id="sec-opt-pubs">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-opt-pubs"> </a> </span>5 最適化された出版物</h1>
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> は、コンテンツを広くアクセシブルにするためのガイドラインの一般的なセットを提供するが、適合するコンテンツが必ずしも特定のユーザー グループにとって最適であるとは限らない。逆に、特定のニーズや読書モダリティに最適化されたコンテンツは、幅広い読者のために設計されてないので、多くの場合は <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> に適合しない。これらの場合、WCAG の適合レベルを達成することができないことは、意図された読者に全てのアクセシブルでない出版物をもたらさないということである 。</p>
+<p>この矛盾を説明するために、この仕様は、発見のメタデータの包含を重視する。<a class="glossterm" href="#gloss-optimization" title="Optimization">最適化</a>された <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、たとえこの仕様に従って広くアクセシブルとして識別されていなくとも、豊かなメタデータの包含を介して対象となる読者に発見される。</p>
+<p><a class="xref" href="#sec-discovery" title="3 Discovery"><em>発見</em></a>で定義されたメタデータの要件に加えて、最適化された EPUB 出版物は、<a class="biblioref" href="#refDCTERMS" title="DCMI Metadata Terms">[<abbr class="abbrev">DCTERMS</abbr>]</a> <span class="property">conformsTo</span> プロパティの方針を守るコンテンツの規格またはガイドラインを識別しなければならない（<span class="rfc2119">must</span>）。プロパティの値は、次の規格またはガイドラインを参照する IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> でなければならない（<span class="rfc2119">must</span>）。</p>
+<p>次の例は、<a class="biblioref" href="#refDAISYAudio" title="Navigable audio-only EPUB 3 Guidelines">[<abbr class="abbrev">DAISY Audio</abbr>]</a> ガイドラインに適合した、EPUB 3 出版物のための適合性宣言を示している。</p>
 <div class="informalexample">
-<pre class="synopsis">
-&lt;package &#8230;&gt;
-    &lt;metadata&gt;
-        &#8230;
-        &lt;link rel=&quot;dcterms:conformsTo&quot;
-        href=&quot;http://www.daisy.org/guidelines/epub/navigable-audio-only-epub3-guidelines&quot;/&gt;
-        &#8230;
-    &lt;/metadata&gt;
-    &#8230;
-&lt;/package&gt;
-</pre>
+<pre class="synopsis">&lt;package …&gt;&#xD;
+   &lt;metadata&gt;&#xD;
+      …&#xD;
+      &lt;link rel="dcterms:conformsTo" href="http://www.daisy.org/guidelines/epub/navigable-audio-only-epub3-guidelines"/&gt;&#xD;
+      …&#xD;
+   &lt;/metadata&gt;&#xD;
+   …&#xD;
+&lt;/package&gt;</pre>
 </div>
-<p>
-IRI が、（例えば、ガイドラインが公開されていないなど）適合性を理解する読者のために十分でない場合、コンテンツを最適化する方法に関する詳細な情報を、<a href="#sec-accessibility-metadata">アクセシビリティの要約</a>として提供するべきである（<span class="rfc2119">should</span>）。
-</p>
-<p>
-この仕様は、最適化されたコンテンツ制作の規格またはガイドラインの定義や推奨をしない。
-</p>
+<p>IRI が、（例えば、ガイドラインが公開されていないなど）適合性を理解する読者のために十分でない場合、コンテンツを最適化する方法に関する詳細な情報を、<a class="link" href="#sec-disc-package" title="3.2 Package Metadata">アクセシビリティの要約</a>として提供するべきである（<span class="rfc2119">should</span>）。</p>
+<div class="note">
+<h3 class="title">note</h3>
+<p>この仕様は、最適化されたコンテンツ制作の規格またはガイドラインの定義や推奨をしない。<a class="ulink" href="http://www.idpf.org/epub/registries/optimizations/" target="_top">最適化規格の規定ではないレジストリ</a>は、この仕様から切り離されてメンテナンスされるが、それらの承認を意味しない。</p>
+</div>
 </section>
 <section class="chapter" id="sec-distribution">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-distribution"> </a> </span>6. 配信</h1>
-<p>アクセシブルな EPUB 出版物の制作は、常に、それに読者が到達するとき、コンテンツが使用可能であることを保証するのには十分ではない。製作者は、コンテンツを配信する方法によって、他の要因が全体的なアクセシビリティに影響を与えるかもしれないこ。</p>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-distribution"> </a> </span>6 配信</h1>
+<p>アクセシブルな <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>の制作は、常に、それに<a class="glossterm" href="#gloss-user" title="User">読者</a>が到達するとき、コンテンツが使用可能であることを保証するのには十分ではない。<a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、コンテンツを配信する方法によって、他の要因が全体的なアクセシビリティに影響を与えるかもしれないこ。</p>
 <p>サードパーティ ベンダーの非アクセシブルな書店や非アクセシブルなリーディング システムのような、これら要因のいくつかは、製作者のコントロール外にあるが、その他は慎重な配信の決定を介して改善することができる。</p>
-<p>例えば、EPUB 出版物を配信するとき、製作者はそのコンテンツに、支援技術によるアクセスを損なうデジタル著作権管理の制約を強要しないことを保証することができる。彼らは、書店の検索エンジン内で使用するためにベンダーが利用できるように、配信記録にアクセシビリティ メタデータを包含することもできる。</p>
-<p>EPUB 出版物が、読者に対してアクセシブルであり続けることを保証するために、製作者は、ディスカバビリティやユーザビリティに負の影響を与えないコンテンツの配信を保証するため、能力の全ての手段を実行しなければならない（<span class="rfc2119">must</span>）。詳細な情報は、<a href="http://www.idpf.org/epub/a11y/techniques/#h.nggr0n569rdw">Distribution Techniques</a> <a class="biblioref" href="#refA11YTech" title="A11Y Tech: EPUB Accessibility Techniques">[<abbr class="abbrev">A11Y Tech</abbr>]</a> を見よ。</p>
+<p>例えば、EPUB 出版物を配信するとき、製作者はそのコンテンツに、<a class="glossterm" href="#gloss-at" title="Assistive Technology">支援技術</a>によるアクセスを損なうデジタル著作権管理の制約を強要しないことを保証することができる。彼らは、書店の検索エンジン内で使用するためにベンダーが利用できるように、配信記録にアクセシビリティ メタデータを包含することもできる。</p>
+<p>EPUB 出版物が、読者に対してアクセシブルであり続けることを保証するために、製作者は、ディスカバビリティやユーザビリティに負の影響を与えないコンテンツの配信を保証するため、能力の全ての手段を実行しなければならない（<span class="rfc2119">must</span>）。詳細な情報は、<a class="ulink" href="techniques/techniques.html#sec-distribution" target="_top">配信の達成方法</a> <a class="biblioref" href="#refA11YTech" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a> を見よ。</p>
+</section>
+<section class="appendix" id="app-auth-consump">
+<div class="titlepage">
+<div>
+<div>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#app-auth-consump"> </a> </span>補足 A. オーサリングと消費</h1>
+</div>
+</div>
+</div>
+<section class="section" id="app-ac-intro">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#app-ac-intro"> </a> </span>A.1 導入</h2>
+<p class="informative">このセクションは規定ではない。</p>
+<p>この仕様は、アクセシブルな <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のコンテンツ要件にフォーカスを当てているが、全ての人に EPUB 出版物を利用できるようするため、誰でも EPUB 出版物の制作を可能にする能力と誰でもコンテンツを消費する能力について、二つの追加検討事項がある。</p>
+<p>これらのニーズは、この仕様の主なフォーカスではないが、この補足は、アクセシブルな<a class="glossterm" href="#gloss-authoring-tool" title="EPUB Authoring Tool">オーサリング ツール</a>と<a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>を作成するための適合性要件を提供する。これらの要件を満たすか上回る開発者は、多種多様な<a class="glossterm" href="#gloss-user" title="User">読者</a>によって使用できるアプリケーションを作れるだろう。</p>
+<div class="note">
+<h3 class="title">note</h3>
+<p>この補足は、将来的に、これらの懸念に特化した仕様に置き換えられることができる。</p>
+</div>
+</section>
+<section class="section" id="app-ac-auth-conf">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#app-ac-auth-conf"> </a> </span>A.2 オーサリング ツールの適合性</h2>
+<p>適合した <a class="glossterm" href="#gloss-authoring-tool" title="EPUB Authoring Tool">EPUB オーサリング ツール</a>は、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<div class="conformance-list">
+<ul class="conformance-list" style="list-style-type: disc; ">
+<li class="listitem">
+<p id="confreq-atag"><span class="link-marker"><a class="hidden-reveal" href="#confreq-atag"> </a> </span>パート B のための次の明確化を持つ、<a class="biblioref" href="#refATAG20" title="Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> の<a class="ulink" href="https://www.w3.org/TR/ATAG20/#intro_understand_levels_conformance" target="_top">レベル A 適合性</a>の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p id="confreq-atag-epub"><span class="link-marker"><a class="hidden-reveal" href="#confreq-atag-epub"> </a> </span>（それが生成できるコンテンツへ適用するように）アクセシブルな Web コンテンツの生成をする <a class="biblioref" href="#refATAG20" title="ATAG20: Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> を参照する場合には、<a class="xref" href="#sec-epub-req" title="4.3 EPUB Requirements">EPUB 要件</a>に定義された EPUB 固有の要件に対するサポートを包含しなければならない（<span class="rfc2119">must</span>）。</p>
+</li>
+<li class="listitem">
+<p id="confreq-atag-wcag"><span class="link-marker"><a class="hidden-reveal" href="#confreq-atag-wcag"> </a> </span><a class="xref" href="#sec-disc-package" title="3.2 Package Metadata">パッケージ メタデータ</a>に定義されている発見のメタデータを追加するためのサポートを包含し、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に関わりがあるように、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> のアクセシビリティ要件をサポートしなければならない（<span class="rfc2119">must</span>）。詳細な情報は、<a class="xref" href="#sec-wcag-eval-page-pub" title="4.2.2.1 Page and Publication">ページと出版物</a>を見よ。</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="listitem">
+<p id="confreq-atag-level"><span class="link-marker"><a class="hidden-reveal" href="#confreq-atag-level"> </a> </span>上の基準で定義されたのと同じ明確化を持つ、<a class="biblioref" href="#refATAG20" title="Authoring Tools Accessibility Guidelines (ATAG) 2.0">[<abbr class="abbrev">ATAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/ATAG20/#intro_understand_levels_conformance" target="_top">レベル AA 適合性</a>の要件を満たすべきである（<span class="rfc2119">should</span>）。</p>
+</li>
+</ul>
+</div>
+</section>
+<section class="section" id="app-ac-rs-conf">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#app-ac-rs-conf"> </a> </span>A.3 リーディング システムの適合性</h2>
+<p>適合した<a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>は、次の要件を満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<div class="conformance-list">
+<ul class="conformance-list" style="list-style-type: disc; ">
+<li class="listitem">
+<p id="confreq-rs-fundamental"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-fundamental"> </a> </span>全ての <a class="biblioref" href="#refA11YTest" title="EPUB Accessibility Tests">[<abbr class="abbrev">A11Y Test Suite</abbr>]</a> の<a class="ulink" href="http://epubtest.org/testsuite/" target="_top">基本的なアクセシブル リーディング システムのテスト</a>を合格しなければならない（<span class="rfc2119">must</span>）。</p>
+</li>
+<li class="listitem">
+<p id="confreq-rs-uaag"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-uaag"> </a> </span><a class="biblioref" href="#refUAAG20" title="User Agent Accessibility Guidelines 2.0">[<abbr class="abbrev">UAAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/UAAG20/#intro-conf-levels" target="_top">レベル AA 適合性</a>の要件を満たすべきである（<span class="rfc2119">should</span>）。</p>
+</li>
+</ul>
+</div>
+</section>
 </section>
 <section xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="acknowledgements" id="app-contributors">
 <div class="titlepage">
@@ -814,78 +677,73 @@ IRI が、（例えば、ガイドラインが公開されていないなど）�
 </div>
 </div>
 </div>
-<p>
-EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF）によって開発されました。
-</p>
-<p>
-EPUB Accessibility 仕様は下に述べるリーダーシップにより2015年7月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した。
-</p>
+<p class="informative">このセクションは規定ではない。</p>
+<p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF）によって開発されました。</p>
+<p>EPUB Accessibility 仕様は下に述べるリーダーシップにより2015年7月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した。</p>
 <ul xml:lang="en" class="personlist">
-<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span><span> </span><span class="wg-role">Chair</span></li>
-<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span><span> </span><span class="wg-role">Chair</span></li>
-<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span><span> </span><span class="wg-role">Vice-chair</span></li>
-<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span><span> </span><span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span>  <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span>  <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
 </ul>
-<p>
-この仕様の作業は、以下が率いるアクセシビリティ サブグループによって行われた。
-</p>
+<p>この仕様の作業は、以下が率いるアクセシビリティ サブグループによって行われた。</p>
 <ul xml:lang="en" class="personlist">
 <li class="person"><span class="name"><span class="surname">LaPierre</span>, <span class="givenname">Charles</span></span> <span class="affiliation">(Benetech)</span></li>
 <li class="person"><span class="name"><span class="surname">Singh</span>, <span class="givenname">Avneesh</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
 </ul>
-<p>
-発行時点でのサブグループのアクティブなメンバー。
-</p>
+<p>発行時点でのサブグループのアクティブなメンバー。</p>
 <h2 id="ack-idpf-members">IDPF Members</h2>
 <ul xml:lang="en" class="personlist">
 <li class="person"><span class="name"><span class="surname">Albert</span>, <span class="givenname">Paolo</span></span> <span class="affiliation">(PubCoder)</span></li>
-<li class="person"><span class="name"><span class="surname">Andrews</span>, <span class="givenname">David</span></span> <span class="affiliation">(Minnesota State Services for the Blind)</span></li>
 <li class="person"><span class="name"><span class="surname">Baker</span>, <span class="givenname">Mike</span></span> <span class="affiliation">(Houghton Mifflin Harcourt)</span></li>
-<li class="person"><span class="name"><span class="surname">Balakrishnan</span>, <span class="givenname">Ramu</span><span class="affiliation"> (MPS Limited)</span></li>
+<li class="person"><span class="name"><span class="surname">Balakrishnan</span>, <span class="givenname">Ramu</span></span> <span class="affiliation">(MPS Limited)</span></li>
 <li class="person"><span class="name"><span class="surname">Cho</span>, <span class="givenname">Yong-Sang</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span></li>
-<li class="person"><span class="name"><span class="surname">Comerford</span>, <span class="givenname">Rachel</span><span class="affiliation"> (Macmillan)</span></li>
+<li class="person"><span class="name"><span class="surname">Comerford</span>, <span class="givenname">Rachel</span></span> <span class="affiliation">(Macmillan)</span></li>
 <li class="person"><span class="name"><span class="surname">Cramer</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(Hachette Book Group)</span></li>
 <li class="person"><span class="name"><span class="surname">Creasy</span>, <span class="givenname">Keith</span></span> <span class="affiliation">(American Printing House for the Blind, Inc.)</span></li>
 <li class="person"><span class="name"><span class="surname">Deltour</span>, <span class="givenname">Romain</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
 <li class="person"><span class="name"><span class="surname">Geffroy</span>, <span class="givenname">Jean-Marie</span></span> <span class="affiliation">(Mantano)</span></li>
-<li class="person"><span class="name"><span class="surname">Gusso</span>, <span class="givenname">Lina</span></span> <span class="affiliation">(Pearson)</span><span> </span></li>
+<li class="person"><span class="name"><span class="surname">Gusso</span>, <span class="givenname">Lina</span></span> <span class="affiliation">(Pearson)</span></li>
 <li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span></li>
-<li class="person"><span class="name"><span class="surname">Hanson</span>, <span class="givenname">Lauren</span></span> <span class="affiliation">(Kaplan)</span></li>
-<li class="person"><span class="name"><span class="surname">Harris</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Ingram Content Group)</span></li>
+<li class="person"><span class="name"><span class="surname">Hanson</span>, <span class="givenname">Lauren</span></span> <span class="affiliation">(Kaplan Publishing)</span></li>
+<li class="person"><span class="name"><span class="surname">Harris</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span></li>
 <li class="person"><span class="name"><span class="surname">Heinser</span>, <span class="givenname">Bernhard</span></span> <span class="affiliation">(Access for All)</span></li>
+<li class="person"><span class="name"><span class="surname">Johnson</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span></li>
 <li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span></li>
+<li class="person"><span class="name"><span class="surname">Keating</span>, <span class="givenname">Patrick</span></span> <span class="affiliation">(Bluefire Productions)</span></li>
+<li class="person"><span class="name"><span class="surname">Kennedy</span>, <span class="givenname">Naomi</span></span> <span class="affiliation">(Penguin Random House)</span></li>
 <li class="person"><span class="name"><span class="surname">Kerscher</span>, <span class="givenname">George</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
-<li class="person"><span class="name"><span class="surname">Keating</span>, <span class="givenname">Patrick</span></span> <span class="affiliation">(Bluefire) </span></li>
 <li class="person"><span class="name"><span class="surname">LaPierre</span>, <span class="givenname">Charles</span></span> <span class="affiliation">(Benetech)</span></li>
-<li class="person"><span class="name"><span class="surname">Leo</span>, <span class="givenname">Arthic</span><span class="affiliation"> (Amnet Systems)</span></li>
-<li class="person"><span class="name"><span class="surname">Mietkiewicz</span>, <span class="givenname">Elie</span></span> <span class="affiliation">(Gutenberg)</span></li>
+<li class="person"><span class="name"><span class="surname">Leo</span>, <span class="givenname">Arthic</span></span> <span class="affiliation">(Amnet Systems)</span></li>
+<li class="person"><span class="name"><span class="surname">Mietkiewicz</span>, <span class="givenname">Elie</span></span> <span class="affiliation">(Gutenberg Technology)</span></li>
 <li class="person"><span class="name"><span class="surname">Murata</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(JEPA EPUB Study Group)</span></li>
-<li class="person"><span class="name"><span class="surname">Mussinelli</span>, <span class="givenname">Cristina</span></span> <span class="affiliation">(LIA)</span></li>
-<li class="person"><span class="name"><span class="surname">Prabhu</span>, <span class="givenname">John</span><span class="affiliation"> (SPi Global)</span></li>
+<li class="person"><span class="name"><span class="surname">Mussinelli</span>, <span class="givenname">Christina</span></span> <span class="affiliation">(Associazione Italiana Editori)</span></li>
+<li class="person"><span class="name"><span class="surname">Prabhu</span>, <span class="givenname">John</span></span> <span class="affiliation">(HOV Services)</span></li>
 <li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span></li>
 <li class="person"><span class="name"><span class="surname">Singh</span>, <span class="givenname">Avneesh</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
 <li class="person"><span class="name"><span class="surname">Soiffer</span>, <span class="givenname">Neil</span></span> <span class="affiliation">(Design Science)</span></li>
 <li class="person"><span class="name"><span class="surname">Thurston</span>, <span class="givenname">Jonathan</span></span> <span class="affiliation">(Pearson)</span></li>
-<li class="person"><span class="name"><span class="surname">Webster</span>, <span class="givenname">Amaya</span><span class="affiliation"> (Benetech)</span></li>
+<li class="person"><span class="name"><span class="surname">Webster</span>, <span class="givenname">Amaya</span></span> <span class="affiliation">(Benetech)</span></li>
 <li class="person"><span class="name"><span class="surname">Weck</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
 </ul>
 <h2 id="ack-experts-observers">Invited Experts/Observers</h2>
 <ul xml:lang="en" class="personlist">
-<li class="person"><span class="name">Bonelli</span>, <span class="givenname">Giuseppe</span></span></li>
-<li class="person"><span class="name">Garrish</span>, <span class="givenname">Matt</span></span></li>
-<li class="person"><span class="name">Kaplansky</span>, <span class="givenname">Jean</span></span></li>
-<li class="person"><span class="name">Kudou</span>, <span class="givenname">Tomoyuki</span></span></li>
-<li class="person"><span class="name">Leva</span>, <span class="givenname">Paolo</span></span></li>
-<li class="person"><span class="name">Marquès Solé</span>, <span class="givenname">Daniel</span></span></li>
-<li class="person"><span class="name">McGlone</span>, <span class="givenname">Jonathan</span></span></li>
-<li class="person"><span class="name">Morris</span>, <span class="givenname">Julie</span></span></li>
-<li class="person"><span class="name">Muchenberger</span>, <span class="givenname">Manfred</span></span></li>
-<li class="person"><span class="name">Rasmussen</span>, <span class="givenname">Lloyd</span></span></li>
-<li class="person"><span class="name">Reddy</span>, <span class="givenname">Ramesh</span></span></li>
-<li class="person"><span class="name">Rothberg</span>, <span class="givenname">Madeleine</span></span></li>
-<li class="person"><span class="name">Sheehan</span>, <span class="givenname">Fr. John</span></span></li>
-<li class="person"><span class="name">White</span>, <span class="givenname">Jason</span></span></li>
+<li class="person"><span class="name"><span class="surname">Andrews</span>, <span class="givenname">David</span></span></li>
+<li class="person"><span class="name"><span class="surname">Bonelli</span>, <span class="givenname">Giuseppe</span></span></li>
+<li class="person"><span class="name"><span class="surname">Garrish</span>, <span class="givenname">Matt</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kudou</span>, <span class="givenname">Tomoyuki</span></span></li>
+<li class="person"><span class="name"><span class="surname">Leva</span>, <span class="givenname">Paolo</span></span></li>
+<li class="person"><span class="name"><span class="surname">Marquès Solé</span>, <span class="givenname">Daniel</span></span></li>
+<li class="person"><span class="name"><span class="surname">McGlone</span>, <span class="givenname">Jonathan</span></span></li>
+<li class="person"><span class="name"><span class="surname">Morris</span>, <span class="givenname">Julie</span></span></li>
+<li class="person"><span class="name"><span class="surname">Munchenburger</span>, <span class="givenname">Manfred</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rasmussen</span>, <span class="givenname">Lloyd</span></span></li>
+<li class="person"><span class="name"><span class="surname">Reddy</span>, <span class="givenname">Ramesh</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rothberg</span>, <span class="givenname">Madeleine</span></span></li>
+<li class="person"><span class="name"><span class="surname">Sheehan</span>, <span class="givenname">John</span></span></li>
+<li class="person"><span class="name"><span class="surname">White</span>, <span class="givenname">Jason</span></span></li>
 </ul>
+<p>より詳細な承認と EPUB の各バージョンへの貢献者については、<span class="phrase"><a class="ulink" href="../31/spec/epub-overview.html#acknowledgements" target="_top">謝辞と貢献者</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a></span> を参照されたい。</p>
 </section>
 <section xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="bibliography" id="references">
 <div class="titlepage">
@@ -897,50 +755,136 @@ EPUB Accessibility 仕様は下に述べるリーダーシップにより2015年
 </div>
 <div class="bibliodiv" id="normative-refs">
 <h3 class="title">規定の参照</h3>
-<div class="biblioentry" id="refA11YVocab">
-<p>[<abbr class="abbrev">A11Y Vocab</abbr>] <span class="title"><em><a href="http://www.idpf.org/epub/vocab/package/a11y/" target="_top">EPUB Accessibility Vocabulary</a></em>.</span></p>
-</div>
-<div class="biblioentry" id="refA11YTech">
-<p>[<abbr class="abbrev">A11Y Tech</abbr>] <span class="title"><em><a class="ulink" href="http://www.idpf.org/epub/a11y/techniques" target="_top">EPUB Accessibility Techniques</a></em>.</span></p>
-</div>
-<div class="biblioentry" id="refA11yTestSuite">
-<p>[<abbr class="abbrev">A11Y Test Suite</abbr>] <span class="title"><em><a class="ulink" href="https://github.com/daisy/epub-accessibility-tests" target="_top">EPUB Accessibility Tests</a></em>.</span></p>
+<div class="biblioentry" id="refA11YTest">
+<p>[<abbr class="abbrev">A11Y Test Suite</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://github.com/daisy/epub-accessibility-tests" target="_top">EPUB Accessibility Tests</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refATAG20">
-<p>[<abbr class="abbrev">ATAG 2.0</abbr>] <span class="title"><em><a class="ulink" href="https://www.w3.org/TR/ATAG20/" target="_top">Authoring Tools Accessibility Guidelines (ATAG) 2.0</a></em>.</span> <span class="author">Jan Richards, et al. W3C Recommendation. 24 September 2015.</span></p>
+<p>[<abbr class="abbrev">ATAG 2.0</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/ATAG20/" target="_top">Authoring Tools Accessibility Guidelines (ATAG) 2.0</a>
+</em>. </span>
+<span class="author">Jan Richards, et al. </span>
+</p>
+</div>
+<div class="biblioentry" id="refA11YVocab">
+<p>[<abbr class="abbrev">Accessibility Vocab</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/vocab/package/a11y" target="_top">EPUB Accessibility Vocabulary</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refDCTERMS">
-<p>[<abbr class="abbrev">DCTERMS</abbr>] <span class="title"><em><a class="ulink" href="http://dublincore.org/documents/dcmi-terms/" target="_top">DCMI Metadata Terms</a></em>.</span></p>
+<p>[<abbr class="abbrev">DCTERMS</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://dublincore.org/documents/dcmi-terms/" target="_top">DCMI Metadata Terms</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refEPUB31">
-<p>[<abbr class="abbrev">EPUB 3.1</abbr>] <span class="title"><em><a href="http://www.idpf.org/epub/31/spec/epub-spec.html">EPUB 3.1</a></em>.</span></p>
+<p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-spec.html" target="_top">EPUB 3.1</a>
+</em>. </span>
+</p>
 </div>
-<div class="biblioentry" id="refEPUBPackages">
-<p>[<abbr class="abbrev">Packages</abbr>] <span class="title"><em><a href="http://www.idpf.org/epub3/latest/packages">EPUB Packages</a></em>.</span></p>
+<div class="biblioentry" id="refPackagesLatest">
+<p>[<abbr class="abbrev">Packages 3</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/packages" target="_top">EPUB Packages 3</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refRFC2119">
-<p>[<abbr class="abbrev">RFC2119</abbr>] <span class="title"><em><a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in RFCs to Indicate Requirement Levels</a></em>.</span> <span>(RFC 2119).</span> <span>March 1997.</span></p>
+<p>[<abbr class="abbrev">RFC2119</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in RFCs to Indicate Requirement Levels</a>
+        (RFC 2119) </em>. </span>
+<span class="date">March 1997. </span>
+</p>
 </div>
 <div class="biblioentry" id="refRFC3987">
-<p>[<abbr class="abbrev">RFC3987</abbr>] <span class="title"><em><a class="ulink" href="http://tools.ietf.org/html/rfc3987" target="_top">Internationalized Resource Identifiers (IRIs)</a></em>.</span> <span>(RFC 3987).</span> <span class="author">M Duerst, et al. January 2005.</span></p>
-</div>
-<div class="biblioentry" id="refschemaorg">
-<p>[<abbr class="abbrev">schema.org</abbr>] <span class="title"><em><a href="https://schema.org/">schema.org</a></em>.</span></p>
+<p>[<abbr class="abbrev">RFC3987</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc3987" target="_top">Internationalized Resource Identifiers (IRIs)</a> (RFC 3987) </em>. </span>
+<span class="author">M Duerst, et al. </span>
+<span class="date">January 2005. </span>
+</p>
 </div>
 <div class="biblioentry" id="refSMIL">
-<p>[<abbr class="abbrev">SMIL</abbr>] <span class="title"><em><a class="ulink" href="http://www.w3.org/TR/SMIL/" target="_top">SMIL Version 3.0</a></em>.</span> <span class="author">D. Bulterman, et al. 01 December 2008.</span></p>
+<p>[<abbr class="abbrev">SMIL</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2008/REC-SMIL3-20081201/" target="_top">SMIL Version 3.0</a>
+</em>. </span>
+<span class="author">D. Bulterman, et al. </span>
+<span class="date">01 December 2008. </span>
+</p>
 </div>
 <div class="biblioentry" id="refUAAG20">
-<p>[<abbr class="abbrev">UAAG 2.0</abbr>] <span class="title"><em><a class="ulink" href="https://www.w3.org/TR/2015/NOTE-UAAG20-20151215/" target="_top">User Agent Accessibility Guidelines (UAAG) 2.0</a></em>.</span> <span class="author">James Allan, et al. W3C Working Group Note. 15 December 2015.</span></p>
+<p>[<abbr class="abbrev">UAAG 2.0</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2015/NOTE-UAAG20-20151215/" target="_top">User Agent Accessibility Guidelines 2.0</a>
+</em>. </span>
+<span class="author">Ian Jacobs, et al. </span>
+<span class="date">17 December 2002. </span>
+</p>
 </div>
 <div class="biblioentry" id="refWCAG20">
-<p>[<abbr class="abbrev">WCAG 2.0</abbr>] <span class="title"><em><a class="ulink" href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/" target="_top">Web Content Accessibility Guidelines (WCAG) 2.0</a></em>.</span> <span class="author">Ben Caldwell, et al. W3C Recommendation. 11 December 2008.</span></p>
+<p>[<abbr class="abbrev">WCAG 2.0</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20/" target="_top">Web Content Accessibility Guidelines (WCAG) 2.0</a>
+</em>. </span>
+<span class="author">Ben Caldwell, et al. </span>
+</p>
+</div>
+<div class="biblioentry" id="refSCHEMA-ORG">
+<p>[<abbr class="abbrev">schema.org</abbr>] 
+      
+<span class="title"><em><a class="ulink" href="https://schema.org" target="_top">schema.org</a></em>. </span>
+</p>
 </div>
 </div>
 <div class="bibliodiv" id="informative-refs">
 <h3 class="title">規定ではない参照</h3>
 <div class="biblioentry" id="refDAISYAudio">
-<p>[<abbr class="abbrev">DAISY Audio</abbr>] <a href="http://www.daisy.org/guidelines/epub/navigable-audio-only-epub3-guidelines">Navigable audio-only EPUB3 Guidelines</a>.</p>
+<p>[<abbr class="abbrev">DAISY Audio</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.daisy.org/guidelines/epub/navigable-audio-only-epub3-guidelines" target="_top">Navigable audio-only
+          EPUB 3 Guidelines</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refA11YTech">
+<p>[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/accessibility" target="_top">EPUB Accessibility</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refEPUB3Overview">
+<p>[<abbr class="abbrev">EPUB3 Overview</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="../31/spec/epub-overview.html" target="_top">EPUB 3.1 Overview</a>
+</em>. </span>
+<span class="author">Garth Conboy, et al. </span>
+</p>
 </div>
 </div>
 </section>
