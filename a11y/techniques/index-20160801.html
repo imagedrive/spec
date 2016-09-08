@@ -1,0 +1,1878 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>EPUB Accessibility Techniques 1.0</title>
+<link rel="stylesheet" type="text/css" href="../../css/epub-spec-2016.css"/>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="../../css/translation-memo-2016.css"/>
+</head>
+<body>
+<header>
+<h1 class="title">EPUB Accessibility Techniques 1.0</h1>
+<p class="identity"><span class="pubdate">2016年8月1日</span> <span class="releaseinfo">Editor's Draft</span></p>
+<dl class="printhistory">
+<dt>この版</dt>
+<dd><a href="http://www.idpf.org/epub/a11y/techniques/techniques-20160801.html">http://www.idpf.org/epub/a11y/techniques/techniques-20160801.html</a></dd>
+<dt>最新版</dt>
+<dd><a href="http://www.idpf.org/epub/latest/accessibility-techniques">http://www.idpf.org/epub/latest/accessibility-techniques</a></dd>
+<dt>前の版</dt>
+<dd><a href="http://www.idpf.org/epub/a11y/techniques/techniques-20160711.html">http://www.idpf.org/epub/a11y/techniques/techniques-20160711.html</a></dd>
+<dt>Previous recommendation</dt>
+<dd>N/A</dd>
+</dl>
+<div class="history"><span class="history-title">履歴</span>
+<ul>
+<li><a href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-a11ytech.xml">Changes to this document</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed+label%3ASpec-AccessibilityTechs">Issues addressed in this revision</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues">Report an issue</a></li>
+</ul>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Editors</p>
+<p class="editor">Matt Garrish, Invited Expert</p>
+<p class="editor">George Kersher, DAISY Consortium</p>
+<p class="editor">Charles Lapierre, Benetech</p>
+<p class="editor">Avneesh Singh, DAISY Consortium</p>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Authors</p>
+<p class="editor">Romain Deltour, DAISY Consortium</p>
+<p class="editor">Markus Gylling, International Digital Publishing Forum (IDPF)</p>
+<p class="editor">Bernhard Heinser, Access for All</p>
+<p class="editor">Madeleine Rothberg, Invited Expert</p>
+<p class="editor">Tzviya Siegman, John Wiley &amp; Sons</p>
+<p class="editor">Jason White, Invited Expert</p>
+</div>
+<div class="legalnotice">
+<p>Copyright © 2016 International Digital Publishing Forum™</p>
+<div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+<p>EPUB は International Digital Publishing Forum の登録商標である。</p>
+</div>
+</div>
+</header>
+<nav xmlns:spec="http://www.idpf.org/2016/epub/spec" class="toc" id="toc">
+<h2 class="toc-title">目次</h2>
+<ol class="toc">
+<li><span class="chapter"><a href="#sec-overview">1. Overview</a></span><ol>
+<li><span class="section"><a href="#sec-purpose-scope">1.1. Purpose and Scope</a></span></li>
+<li><span class="section"><a href="#sec-terminology">1.2. Terminology</a></span></li>
+<li><span class="section"><a href="#sec-typography">1.3. Typographic Conventions</a></span></li>
+<li><span class="section"><a href="#sec-conformance">1.4. Conformance Statements</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-about">2. About the Techniques</a></span></li>
+<li><span class="chapter"><a href="#sec-discovery">3. Discovery Metadata Techniques</a></span><ol>
+<li><span class="section"><a href="#sec-meta-001">META-001: Identify primary access modes</a></span></li>
+<li><span class="section"><a href="#sec-meta-002">META-002: Identify sufficient access modes</a></span></li>
+<li><span class="section"><a href="#sec-meta-003">META-003: Identify accessibility features</a></span></li>
+<li><span class="section"><a href="#sec-meta-004">META-004: Identify accessibility hazards</a></span></li>
+<li><span class="section"><a href="#sec-meta-005">META-005: Include an accessibility summary</a></span></li>
+<li><span class="section"><a href="#sec-meta-006">META-006: Identify Accessibility API Conformance</a></span></li>
+<li><span class="section"><a href="#sec-meta-007">META-007: Identify Input Control Methods</a></span></li>
+<li><span class="section"><a href="#sec-meta-ex">Examples</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-wcag">4. WCAG Techniques</a></span><ol>
+<li><span class="section"><a href="#sec-wcag-general">4.1. General Guidance</a></span><ol>
+<li><span class="section"><a href="#sec-wcag-general-res">Helpful Resources</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-wcag-content-access">4.2. Content Access</a></span><ol>
+<li><span class="section"><a href="#sec-access-001">ACCESS-001: Ensure linear reading order of the publication</a></span></li>
+<li><span class="section"><a href="#sec-access-002">ACCESS-002: Provide multiple ways to access the content</a></span><ol>
+<li><span class="section"><a href="#sec-access-002-toc">1. Note About the Table of Contents</a></span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-wcag-semantics">4.3. Semantics</a></span><ol>
+<li><span class="section"><a href="#sec-sem-001">SEM-001: Include ARIA and EPUB semantics</a></span><ol>
+<li><span class="section"><a href="#sec-sem-001-res">Helpful Resources</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-sem-002">SEM-002: Do not repeat semantics across chunked content</a></span></li>
+<li><span class="section"><a href="#sec-sem-003">SEM-003: Include EPUB landmarks</a></span><ol>
+<li><span class="section"><a href="#sec-sem-003-res">Helpful Resources</a></span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-wcag-titles">4.4. Titles and Headings</a></span><ol>
+<li><span class="section"><a href="#sec-titles-001">TITLES-001: Include publication and document titles</a></span></li>
+<li><span class="section"><a href="#sec-titles-002">TITLES-002: Ensure numbered headings reflect publication hierarchy</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-wcag-descriptions">4.5. Descriptions</a></span><ol>
+<li><span class="section"><a href="#sec-desc-001">DESC-001: Include alternative text descriptions</a></span><ol>
+<li><span class="section"><a href="#sec-desc-001-res">Helpful Resources</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-desc-002">DESC-002: Include descriptions for MathML content</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-wcag-alt">4.6. Accessible Alternatives</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-epub">5. EPUB Techniques</a></span><ol>
+<li><span class="section"><a href="#sec-epub-audio">5.1. Structured Audio Playback</a></span><ol>
+<li><span class="section"><a href="#sec-audio-001">AUDIO-001: Identify skippable and escapable structures</a></span><ol>
+<li><span class="section"><a href="#sec-audio-001-res">Helpful Resources</a></span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-epub-page-markers">5.2. Page Markers</a></span><ol>
+<li><span class="section"><a href="#sec-page-001">PAGE-001: Provide page break markers</a></span></li>
+<li><span class="section"><a href="#sec-page-002">PAGE-002: Provide a page list</a></span></li>
+<li><span class="section"><a href="#sec-page-003">PAGE-003: Identify the source</a></span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-distribution">6. Distribution Techniques</a></span><ol>
+<li><span class="section"><a href="#sec-dist-001">DIST-001: Do not restrict access through digital rights management</a></span></li>
+<li><span class="section"><a href="#sec-dist-002">DIST-002: Include accessibility metadata in distribution records</a></span><ol>
+<li><span class="section"><a href="#sec-dist-002-res">Helpful Resources</a></span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><span class="acknowledgements"><a href="#app-contributors">Acknowledgements and Contributors</a></span></li>
+<li><span class="bibliography"><a href="#references">References</a></span></li>
+</ol>
+</nav>
+<section class="chapter" id="sec-overview">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview"> </a> </span>1 概要</h1>
+<section class="section" id="sec-purpose-scope">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-purpose-scope"> </a> </span>1.1 目的とスコープ</h2>
+<p class="informative"> This section is informative</p>
+<p>
+このドキュメント、EPUB Accessibility Techniques は、EPUB® 出版物のための <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> 発見とアクセシビリティ要件を満たす方法のガイドラインを提供する。
+</p>
+<p>
+
+このドキュメントは、アプリケーションの本質的な違いが存在しない <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> と <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> ですでに取り組まれているテクニックとベスト プラクティスはカバーしない。
+</p>
+</section>
+<section class="section" id="sec-terminology">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.2 用語</h2>
+<div xml:lang="en" class="glosslist">
+<dl>
+<dt class="glossentry" id="gloss-at"><span class="glossterm">支援技術</span></dt>
+<dd class="glossdef">
+<p>
+この仕様は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> から<a class="ulink" href="https://www.w3.org/TR/WCAG20/#atdef" target="_top">支援技術</a>の意味を導入する。
+</p>
+<p>支援技術は、常にリーディング システムとは別のアプリケーションでないことに注意されたい。 リーディング システムはしばしば、例えばテキスト読み上げ再生など、独立した支援技術の機能を一体化する。</p>
+</dd>
+<dt class="glossentry" id="gloss-author"><span class="glossterm">製作者</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>の制作に対して責任がある人または組織。制作者は、コンテンツの制作者である必要はない。</p>
+</dd>
+<dt class="glossentry" id="gloss-default-rendition"><span class="glossterm">初期設定のレンディション</span></dt>
+<dd class="glossdef">
+<p><code class="filename">META-INF/container.xml</code> ファイルにある最初の <code class="markup">rootfile</code> 要素に記載されたレンディション。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-doc"><span class="glossterm">EPUB コンテンツ ドキュメント</span></dt>
+<dd class="glossdef">
+<p>
+EPUB コンテンツ ドキュメントの定義のひとつに適合するドキュメント。
+</p>
+</dd>
+<dt class="glossentry" id="gloss-nav-doc"><span class="glossterm">EPUB ナビゲーション ドキュメント</span></dt>
+<dd class="glossdef">
+<p>人間と機械が読み取り可能であるグローバルなナビゲーション情報を含む特化した XHTML <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">コンテンツ ドキュメント</a>。</p>
+</dd>
+<dt class="glossentry" id="gloss-epub-publication"><span class="glossterm">EPUB 出版物</span></dt>
+<dd class="glossdef">
+<p>
+単一の知的または芸術的な作品を表現するひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>の集合。
+</p>
+</dd>
+<dt class="glossentry" id="gloss-package-doc"><span class="glossterm">パッケージ ドキュメント</span></dt>
+<dd class="glossdef">
+<p>
+パッケージ ドキュメントは、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>を表現する
+これは、メタ情報を伝達し、リソースのマニフェストを提供し、デフォルトの読み取り順序を定義する。
+</p>
+</dd>
+<dt class="glossentry" id="gloss-reading-system"><span class="glossterm">リーディング システム</span></dt>
+<dd class="glossdef">
+<p>
+<a class="glossterm" href="#gloss-user" title="User">読者</a>に提示するために <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を処理するシステム。
+</p>
+</dd>
+<dt class="glossentry" id="gloss-rendition"><span class="glossterm">レンディション</span></dt>
+<dd class="glossdef">
+<p>
+<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつをレンダリングして表現する論理的なドキュメントの実体。
+</p>
+</dd>
+<dt class="glossentry" id="gloss-user"><span class="glossterm">読者</span></dt>
+<dd class="glossdef">
+<p>
+<a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>を使用して <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を消費する個人。
+</p>
+</dd>
+</dl>
+</div>
+<div class="note">
+<h3 class="title">note</h3>
+<p>
+いくつかの用語は、EPUB の特定のバージョンのためにより正確な意味を持つ。
+詳細は該当する仕様を参照されたい。
+</p>
+</div>
+</section>
+<section class="section" id="sec-typography">
+<h2>1.3 表記上の規則</h2>
+<p>次の表記上の規則は、この仕様に用いられる。</p>
+<div class="variablelist">
+<dl class="variablelist">
+<dt class="varlistentry"><span class="term"><code class="markup">markup</code></span></dt>
+<dd>
+<p>すべてのマークアップ（要素、属性、プロパティ）、コード（JavaScript、擬似コード）、機械処理可能な値（文字列、文字、メディアタイプ）とファイル名は、赤色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="code-link">markup link</code></span></dt>
+<dd>
+<p>マークアップとコードの定義へのリンクは、赤色の下線の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="uri">http://www.idpf.org/</code></span></dt>
+<dd>
+<p>URI は紺色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link">hyperlink</span></span></dt>
+<dd>
+<p>ハイパーリンクは、青色と下線で示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-ref">[reference]</span></span></dt>
+<dd>
+<p>規定と規定ではない参考は、角括弧で囲まれている。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="terminology">Term</span></span></dt>
+<dd>
+<p>
+<a class="xref" href="#sec-terminology">用語</a>で定義されている用語は、キャピタルケースで示している。
+</p>
+</dd>
+</dl>
+</div>
+<div class="informalexample">
+<pre class="synopsis">規定ではないマークアップ例は、ライトグレーのボックス内にある。</pre>
+</div>
+<div class="note">
+<h3 class="title">note</h3>
+<p>規定ではない注記は、"Note"の見出しがある緑色のボックス内にある。</p>
+</div>
+</section>
+<section xml:lang="en" class="section" id="sec-conformance">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance"> </a> </span>1.4 適合性宣言</h2>
+<p>このドキュメント内のキーワード、<span class="rfc2119">MUST</span>、<span class="rfc2119">MUST NOT</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">SHOULD</span>、<span class="rfc2119">SHOULD NOT</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">MAY</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr class="abbrev">RFC2119</abbr>]</a> の記述に従って解釈される。</p>
+<p>この仕様の全てのセクションと補足は規定である。但し"このセクションは規定ではない情報である"という規定ではない状態のラベルで識別される箇所を除く。セクションと補足への規定ではない状態の適用は、含まれている全ての子コンテンツおよびサブセクションに適用される。</p>
+<p>この仕様の全ての例は規定ではない。</p>
+</section>
+</section>
+<section class="chapter" id="sec-about-the-techniques">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-about-the-techniques"> </a> </span>2. About the Techniques</h1>
+<p>このドキュメントで説明されているアクセシビリティ テクニックは、本質的に助言である。これらは、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>が <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> の要件に適合する <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を制作する際の手助けを目的としているが、全てのシチュエーションで全て適用できず、その仕様の要件を満たすために他の方法があるかもしれない。結果として、このドキュメントは、規範的な要件を提供するものとして読まれるべきではない。</p>
+<p>これらの達成方法は、一般的に、アクセシブルなソリューションが存在しないデジタル出版における問題にも対処していない。W3C のデジタル出版インタレスト グループは、これら問題 <a class="biblioref" href="#refA11YNote" title="Digital Publishing and Accessibility in W3C Documents">[<abbr class="abbrev">W3C Accessibility Note</abbr>]</a> の多くを概説としてメモを公開している。ソリューションが利用可能になると、それを参照するひとつかふたつかは、適切な文書に組み込まれるであろう。</p>
+<p>製作者がこれらや関連する達成方法でカバーできない問題に遭遇したとき、アクセシビリティ規格を満たす方法の指導を受けるために適切なコミュニティに対してこの問題の報告をすることが推奨される。<a class="ulink" href="https://www.w3.org/WAI/IG/" target="_top">W3C アクセシビリティ インタレスト グループ</a>は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> と <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> の要件を話題にする問題のミーティングである公開メーリング リストを持っている。IDPF は、同様に、EPUB 関連の問題を話題にする<a class="ulink" href="http://idpf.org/forums/epub-accessibility" target="_top">アクセシビリティ フォーラム</a>を持っている。</p>
+</section>
+<section class="chapter" id="sec-discovery">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-discovery"> </a> </span>3. Discovery Metadata Techniques</h1>
+<section class="suppress-numbering" id="sec-meta-001">
+<h2 id="hjcerqdwfseux">META-001: Identify primary access modes</h2>
+<p>アクセス モードは「デジタル リソースのコンテンツをユーザーが処理や知覚を通す人間の感覚知覚システムまたは認知能力」 <a class="biblioref" href="#refISO24751-3" title="ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: &#34;Access for all&#34; digital resource description">[<abbr class="abbrev">ISO24751-3</abbr>]</a> として定義された。例えば、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に画像と動画が含まれている場合、視覚は、作成された通りの完全なかたちでコンテンツを消費するために必要とされる。</p>
+<p>一般的に、EPUB 出版物で指定された4つのアクセス モードがある。</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><span class="bold"><strong>テキスト（textual）</strong></span> — 出版物は、テキスト コンテンツを含んでいる（見出し、章など）</li>
+<li class="listitem"><span class="bold"><strong>視覚（visual）</strong></span> — 出版物は、画像、グラフィック、図形、アニメーション、動画のような、視覚コンテンツを含んでいる。</li>
+<li class="listitem"><span class="bold"><strong>聴覚（auditory）</strong></span> — 出版物は、単体のオーディオ クリップや動画コンテンツの音声トラックのような聴覚コンテンツを含んでいる。</li>
+<li class="listitem"><span class="bold"><strong>触覚（tactile）</strong></span> — 出版物は、埋め込まれた点字や触図のような触覚コンテンツを含んでいる。</li>
+</ul>
+</div>
+<p>EPUB 出版物が自分たちのニーズに適しているかどうかの決定をする<a class="glossterm" href="#gloss-user" title="User">読者</a>のために、コンテンツを消費するために必要なこれらのアクセス モードを知る必要がある。それぞれのプロパティを繰り返し、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <code class="markup">accessMode</code> プロパティにある適用可能な全てのアクセス モードを一覧にする。</p>
+<div class="informalexample">
+<p>次の例は、テキストと視覚のアクセス モードを持つ EPUB 3 出版物のメタデータのエントリを示している。</p>
+<pre class="synopsis">&lt;meta property="schema:accessMode"&gt;textual&lt;/meta&gt;
+&lt;meta property="schema:accessMode"&gt;visual&lt;/meta&gt;</pre>
+</div>
+<p>コンテンツのアクセス モードは、提供された全ての適応が反映されないことに注意されたい。例えば、漫画が各画像の代替テキストもまた包含する場合、それはテキストのアクセス モードを持たない。コンテンツを他のモードで消費することを許可する利用可能な適応を示す方法の<a class="link" href="#sec-meta-002" title="META-002: Identify sufficient access modes">十分なアクセス モード</a>については次のセクションを見よ。</p>
+<p>このプロパティとその値に関する詳細情報は、<a class="ulink" href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessMode" target="_top">accessMode 提案</a>を参照されたい。</p>
+</section>
+
+<section class="suppress-numbering" id="sec-meta-002">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-002"> </a> </span>META-002: Identify sufficient access modes</h2>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を消費するための十分なアクセス モードは、<a class="link" href="#sec-meta-001" title="META-001: Identify primary access modes">基本的なアクセス モード</a>よりも潜在的なユーザビリティの広範な状況を表す。基本的なアクセス モードが、出版物で使用されているメディアのデフォルトの性質を識別する場合には、十分なアクセス モードは、モードが出版物全体を読むために使用することができるかを識別する。十分なアクセス モードは、コンテンツがそのデフォルトの性質にかかわらず利用可能かどうかを判断することをユーザーに許可し、提供された適応も考慮する。</p>
+<p>十分なアクセス モードは、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <code class="markup">accessModeSufficient</code> プロパティで識別される。十分なアクセス モードの各セットのためにプロパティを繰り返す。</p>
+<p>例えば、全ての画像のための説明だけでなく、グラフィックやチャートを含む EPUB 出版物も考慮する。出版物は、テキストと視覚のアクセス モードの両方を持ち、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、これを示すために次のメタデータのエントリを包含するだろう。</p>
+<div class="informalexample">
+<pre class="synopsis">&lt;meta property="schema:accessMode"&gt;textual&lt;/meta&gt;
+&lt;meta property="schema:accessMode"&gt;visual&lt;/meta&gt;</pre>
+</div>
+<p>このメタデータは、テキストのアクセス モードが出版物全体を読むために十分であるか、視覚的だけかをはっきりとさせておらず、それだけで2つのモードがデフォルトとされる。この食い違いは、十分性を知ることが重要な理由である。</p>
+<p>製作者が入力した十分性のメタデータの最初のセットは、テキストと視覚の要件を確立するであろう。</p>
+<div class="informalexample">
+<pre class="synopsis">&lt;meta property="schema:accessModeSufficient"&gt;textual visual&lt;/meta&gt;</pre>
+</div>
+<p>製作者は全ての画像のための説明もまた包含していたので、純粋にテキストのアクセス モードがコンテンツを読むのに十分であることも示すことができる。</p>
+<div class="informalexample">
+<pre class="synopsis">&lt;meta property="schema:accessModeSufficient"&gt;textual&lt;/meta&gt;</pre>
+</div>
+<p>読者は現在、コンテンツの読みやすさのより完全な考え方を持っている。</p>
+<p>この例におけるエントリの完全なセットは、以下のとおりである。</p>
+<div class="informalexample">
+<pre class="synopsis">&lt;meta property="schema:accessMode"&gt;textual&lt;/meta&gt;
+&lt;meta property="schema:accessMode"&gt;visual&lt;/meta&gt;
+&lt;meta property="schema:accessModeSufficient"&gt;textual visual&lt;/meta&gt;
+&lt;meta property="schema:accessModeSufficient"&gt;textual&lt;/meta&gt;
+</pre>
+</div>
+<p>アクセスの十分性は、多くの場合、情報はテキストを理解するために不可欠であるという理解に基づく、著者の主観的な判断であることに注意されたい。例えば、一部の情報損失は、動画を見ることができないことによって発生するが、製作者は、転写物が伝達された概念を理解するために全ての必要な情報を提供する場合、取るに足りないとして視覚的または聴覚的な損失を見なすかもしれない。</p>
+<p>このプロパティと値に関する詳細な情報は、<a class="ulink" href="https://github.com/daisy/epub-revision-a11y/wiki/ePub-3.1-Accessibility--Proposal-To-Schema.org#user-content-accessModeSufficient" target="_top">accessModeSufficient proposal</a> を参照されたい。</p>
+</section>
+<section class="suppress-numbering" id="sec-meta-003">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-003"> </a> </span>META-003: Identify accessibility features</h2>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に包含されている全てのアクセシビリティ機能と適応を識別することは、読者がコンテンツはアクセス モードよりもきめ細かいレベルで使用可能であるかどうかを判断することができる。</p>
+<p>例えば、数学の教科書は、テキストのアクセス モードを持つかもしれないが、それ自身が、MathML のマークアップが利用可能かどうかを示すものではない。ビジュアル作品が代替テキストのみを提供しているのか拡張された説明を包含しているかどうかは、ユーザビリティを正確に判断するときに知るためにも重要である。</p>
+<p>アクセシビリティ機能は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <a class="ulink" href="https://schema.org/accessibilityFeature" target="_top"><code class="markup">accessibilityFeature</code> プロパティ</a>で識別される。機能毎にこのプロパティは繰り返す。</p>
+<div class="informalexample">
+<p>次の例は、MathML と代替テキストを持つ EPUB 3 出版物のメタデータ エントリを示している。</p>
+<pre class="synopsis">&lt;meta property="schema:accessibilityFeature"&gt;MathML&lt;/meta&gt;
+&lt;meta property="schema:accessibilityFeature"&gt;alternativeText&lt;/meta&gt;</pre>
+</div>
+<p>EPUB フォーマットは、（例えば、目次など）いくつかのアクセシビリティ機能が常に存在ことが必要である。<a class="glossterm" href="#gloss-user" title="User">読者</a>は一般的に、フォーマットに組み込まれている機能が何であるか気づいていないので、アクセシビリティ メタデータからそれらの機能を除外しないよう。エントリの包含をしないと、読者が特定の機能で検索をするとき、出版物の発見性は減少するだろう。</p>
+<p>このプロパティとその値に関する詳細情報は、<a class="ulink" href="https://www.w3.org/wiki/WebSchemas/Accessibility" target="_top">schema.org accessibility wiki</a> を参照されたい。</p>
+</section>
+
+<section class="suppress-numbering" id="sec-meta-004">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-004"> </a> </span>META-004: Identify accessibility hazards</h2>
+<p>デジタル コンテンツの読者に影響を与える3つの広く認識された危険性がある。</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>発光 — （例えば、動画やアニメーションなど）リソースが、1秒に3回以上発行する場合、それは発作を引き起こす可能性がある。<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="http://www.w3.org/TR/WCAG20/#seizure" target="_top">ガイドライン 2.3</a> も見よ。</p>
+</li>
+<li class="listitem">
+<p>動作シミュレーション — （例えば、[HTML] <code class="markup"><a class="ulink" href="https://www.w3.org/TR/html5/scripting-1.html#the-canvas-element" target="_top">canvas</a></code> <a class="ulink" href="https://www.w3.org/TR/html5/scripting-1.html#the-canvas-element" target="_top"> 要素</a>に描画されたビデオ ゲームなど）リソースが動作をシミュレーションする場合、読者が吐き気を引き起こす可能性がある。</p>
+</li>
+<li class="listitem">
+<p>音 — ベルの鳴る音やブザーの音など特定の音のパターンは、発作を引き起こす可能性がある。</p>
+</li>
+</ul>
+</div>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、実際に物理的な影響を引き起こすので、<a class="glossterm" href="#gloss-user" title="User">読者</a>にこれら危険性のいずれかを提示するリソースを含んでいるかどうかを報告する必要がある。</p>
+
+<p>危険性は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <code class="markup"><a class="ulink" href="https://schema.org/accessibilityHazard" target="_top">accessibilityHazard</a></code><a class="ulink" href="https://schema.org/accessibilityHazard" target="_top"> プロパティ</a>で識別される。それぞれの危険性に対してこのプロパティを繰り返す。</p>
+
+<p>他のアクセシビリティ プロパティとは異なり、危険性の存在は、正と負の両方を表すことができる。この設計は、読者が最も頻繁に、彼らに影響を与える危険性を取り除いたコンテンツの検索をするために決定されたが、彼らが発見する任意の出版物に存在する危険性が何であるかを知ることも望まれた。</p>
+
+<div class="informalexample">
+<p>次の例は、発光の危険性を持つが、動作シミュレーションまたは音の危険性のない EPUB 3 出版物のメタデータのエントリを示している。</p>
+<pre class="synopsis">&lt;meta property="schema:accessibilityHazard"&gt;flashing&lt;/meta&gt;
+&lt;meta property="schema:accessibilityHazard"&gt;noMotionSimulationHazard&lt;/meta&gt;
+&lt;meta property="schema:accessibilityHazard"&gt;noSoundHazard&lt;/meta&gt;</pre>
+</div>
+
+<p>EPUB 出版物は、リスクが存在する可能性のある任意のコンテンツを含んでいないという理由で、危険性の報告を省略しないよう。メタデータが存在しないと、読者は意味を推測することができない。</p>
+
+<p>EPUB 出版物が危険性を含んでいる場合、<a class="link" href="#sec-meta-005" title="META-005: Include an accessibility summary">アクセシビリティ要約</a>にあるソースと性質に関する追加情報を提供する。</p>
+
+<p>このプロパティに使用することができる値に関する詳細情報は、<a class="ulink" href="https://www.w3.org/wiki/WebSchemas/Accessibility" target="_top">schema.org accessibility wiki</a> を参照されたい。</p>
+</section>
+
+<section class="suppress-numbering" id="sec-meta-005">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-005"> </a> </span>META-005: アクセシビリティ要約の包含</h2>
+<p>アクセシビリティ要約は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>または不足しているアクセシビリティ特性の、簡素で人間が可読可能な説明を提供する。</p>
+
+<p>EPUB 出版物が <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> にあるコンテンツのアクセシビリティ要件を満たしていない場合、その不足の理由を要約に書き留めるべきである。</p>
+
+<p>アクセシビリティ要約は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <code class="markup">accessibilitySummary</code> プロパティを使用して提供される。このプロパティは繰り返さない。</p>
+
+<div class="informalexample">
+<p>次の例は、コンテンツがアクセシビリティ要件を満たしていない EPUB 3 出版物のアクセシビリティ要約を示している。</p>
+<pre class="synopsis">&lt;meta property="schema:accessibilitySummary"&gt;
+   The publication is missing alternative text for complex diagrams.
+   The publication otherwise meets WCAG 2.0 Level A.
+&lt;/meta&gt;</pre>
+</div>
+
+<div class="informalexample">
+<p>次の例は、動作シミュレーションの危険性のある EPUB 3 出版物のアクセシビリティ要約を示している。</p>
+<pre class="synopsis">&lt;meta property="schema:accessibilitySummary"&gt;
+   Chapter four contains a first-person interactive game that could cause
+   motion sickness in certain individuals. The game is only provided for
+   illustrative purposes, so readers unable to interact with it will not
+   be at a disadvantage.
+&lt;/meta&gt;</pre>
+</div>
+</section>
+
+<section class="suppress-numbering" id="sec-meta-006">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-006"> </a> </span>META-006: Identify Accessibility API Conformance</h2>
+<p><a class="glossterm" href="#gloss-at" title="Assistive Technology">支援技術</a>の読者は、（Windows、Mac、iOS、Linux など）彼らが使用する何れかのプラットフォームに組み込まれたアクセシビリティ API を通じて <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>とインタラクトすることができる。これらの API は、必要に応じて、テキストを読んだりインターフェースを操作する<a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>とやりとりすることを支援技術に許可する。</p>
+
+<p>静的なコンテンツの<a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、<a class="glossterm" href="#gloss-user" title="User">読者</a>のリーディング システムは、（アクセシブルに開発されたそれが提供する）アクセシビリティ API に必要な情報を露呈するので、このインタラクションに関して心配をする必要はない。動的コンテンツ — スクリプトやカスタム コントロール、（例えば、Flash 動画など）異質なインタラクティブ コンテンツ — を含む EPUB 出版物を作成する製作者は、支援技術はアクセシブルなインターフェースを提供するために十分な情報を受け取れないかもしれないので、そのようなコンテンツの互換性に注意する必要がある。</p>
+
+<p>スクリプト コンテンツの場合には、支援技術が最初に生成したコンテンツの静止画像は、製作者が <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> のアクセシビリティ プラクティスに従っていないかぎり更新されないであろう。同様に、支援技術は、（例えば、ボタンや入力などの）ネイティブな <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> フォーム要素に関する情報へのアクセスを持つが、製作者はしばしば、（例えば、画像でできたチェックボックスなど）<a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> のロール（role）、ステート（state）、プロパティ（properties）を正しく使用することなく不明瞭なカスタム要素を作成する。</p>
+
+<p>Flash のようなプラグインベースのアプリケーションの使用は、EPUB の最新バージョンにおいては一般的に稀だが、プラグインとして、リーディング システムから離れた場所で動作すると、これらインターフェースのユーザビリティは、システムのアクセシビリティ API とインタラクトする方法に左右される。</p>
+
+<p>互換性のある API は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <code class="markup"><a class="ulink" href="https://schema.org/accessibilityAPI" target="_top">accessibilityAPI</a></code><a class="ulink" href="https://schema.org/accessibilityAPI" target="_top"> プロパティ</a>で識別される。各 API に対してプロパティを繰り返す。</p>
+
+<div class="informalexample">
+<p>次の例は、ARIA と互換性のあるスクリプト コンテツを含む EPUB 出版物を示している。</p>
+<pre class="synopsis">&lt;meta property="schema:accessibilityAPI"&gt;ARIA&lt;/meta&gt;</pre>
+</div>
+
+<div class="informalexample">
+<p>次の例は、Microsoft Active Accessibility API のみと互換性のある Flash ビデオを持つ EPUB 出版物を示している。</p>
+<pre class="synopsis">&lt;meta name="schema:accessibilityAPI" content="MSAA"/&gt;</pre>
+</div>
+
+<p>このプロパティと値に関する詳細情報は、<a class="ulink" href="https://www.w3.org/wiki/WebSchemas/Accessibility" target="_top">schema.org accessibility wiki</a> を参照されたい。</p>
+
+<div class="note">
+<h3 class="title">note</h3>
+<p>プロパティは、<code class="markup">audio</code> や <code class="markup">video</code> 要素によって提供されるような、ネイティブのコントロールを持つ <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> 要素内のコンテンツには適用されない。</p>
+</div>
+</section>
+
+<section class="suppress-numbering" id="sec-meta-007">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-007"> </a> </span>META-007: Identify Input Control Methods</h2>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を読む誰もが、同じ入力のコントロール方法を使用しているわけではない。（例えば、モバイルやデスクトップなど）入力方法に影響のあるデバイスかもしれないし、<a class="glossterm" href="#gloss-user" title="User">読者</a>の物理的な能力かもしれない。読者は、タッチ、マウス、キーボード、音声コントロールが提供している入力方法の全てを使用するかもしれない。</p>
+
+<p>結果として、全ての読者は、コンテンツが操作できるかどうかだけでなくどのデバイス上で影響を与えるかについて、入力コントロールがコンテンツにおいて動作するかを知る必要がある。</p>
+
+<p><a class="link" href="#sec-meta-006" title="META-006: Identify Accessibility API Conformance">accessibility APIs</a> と同様に、EPUB 出版物を読むために使用することができる入力コントロール方法は、<a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>のアクセシビリティによって大きく影響される。<a class="glossterm" href="#gloss-author" title="Author">製作者</a>が、異なる入力コントロール方法に対してアクセシブルであることを担保するための責任を負う動的コンテンツを包含する場合のみである。</p>
+
+<p>互換性のある入力コントロールは、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <code class="markup"><a class="ulink" href="https://schema.org/accessibilityControl" target="_top">accessibilityControl</a></code><a class="ulink" href="https://schema.org/accessibilityControl" target="_top"> プロパティ</a>で識別される。各入力コントロール方法に対してこのプロパティを繰り返す。</p>
+
+<div class="informalexample">
+<p>次の例は、タッチ、マウス、キーボードと互換性のあるコンテンツを含む EPUB 出版物を示している。</p>
+<pre class="synopsis">&lt;meta property="schema:accessibilityControl"&gt;fullTouchControl&lt;/meta&gt;
+&lt;meta property="schema:accessibilityControl"&gt;fullMouseControl&lt;/meta&gt;
+&lt;meta property="schema:accessibilityControl"&gt;fullKeyboardControl&lt;/meta&gt;</pre>
+</div>
+
+<p>このプロパティと値に関する詳細情報は、<a class="ulink" href="https://www.w3.org/wiki/WebSchemas/Accessibility" target="_top">schema.org accessibility wiki</a> を参照されたい。</p>
+
+<div class="note">
+<h3 class="title">note</h3>
+<p>プロパティは、<code class="markup">audio</code> や <code class="markup">video</code> 要素によって提供されるような、ネイティブのコントロールを持つ <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> 要素内のコンテンツには適用されない。</p>
+</div>
+</section>
+
+<section class="suppress-numbering" id="sec-meta-ex">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-ex"> </a> </span>Examples</h2>
+<p>次の例は、テキストと、テキストとして読むために十分である視覚的なアクセス モードを持つ <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に追加されたメタデータを示し、代替テキストと <a class="biblioref" href="#refMathML" title="Mathematical Markup Language (MathML) Version 3.0">[<abbr class="abbrev">MATHML</abbr>]</a> マークアップ、発光のハザードが含まれている。</p>
+
+<h2 id="d6526e1180">EPUB 3</h2>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;package … &gt;
+   &lt;metadata&gt;
+      …
+      &lt;meta property="schema:accessMode"&gt;textual&lt;/meta&gt;
+      &lt;meta property="schema:accessMode"&gt;visual&lt;/meta&gt;
+      &lt;meta property="schema:accessModeSufficient"&gt;textual visual&lt;/meta&gt;
+      &lt;meta property="schema:accessModeSufficient"&gt;textual&lt;/meta&gt;
+      &lt;meta property="schema:accessibilityFeature"&gt;MathML&lt;/meta&gt;
+      &lt;meta property="schema:accessibilityFeature"&gt;alternativeText&lt;/meta&gt;
+      &lt;meta property="schema:accessibilityHazard"&gt;flashing&lt;/meta&gt;
+      &lt;meta property="schema:accessibilityHazard"&gt;noMotionSimulationHazard&lt;/meta&gt;
+      &lt;meta property="schema:accessibilityHazard"&gt;noSoundHazard&lt;/meta&gt;
+      &lt;meta property="schema:accessibilitySummary"&gt;
+         The video in chapter 2 presents a flashing hazard. A transcript is
+         provided that covers all the essential information contained in the
+         video. The publication otherwise meets WCAG 2.0 Level A.
+      &lt;/meta&gt;
+   &lt;/metadata&gt;
+   …
+&lt;/package&gt;</pre>
+</div>
+
+<h2 id="d6526e1189">EPUB 2</h2>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;package … &gt;
+    &lt;metadata&gt;
+       …
+       &lt;meta name="schema:accessMode" content="textual"/&gt;
+       &lt;meta name="schema:accessMode" content="visual"/&gt;
+       &lt;meta name="schema:accessModeSufficient" content="textual visual"/&gt;
+       &lt;meta name="schema:accessModeSufficient" content="textual"/&gt;
+       &lt;meta name="schema:accessibilityFeature" content="MathML"/&gt;
+       &lt;meta name="schema:accessibilityFeature" content="alternativeText"/&gt;
+       &lt;meta name="schema:accessibilityHazard" content="flashing"/&gt;
+       &lt;meta name="schema:accessibilityHazard" content="noMotionSimulationHazard"/&gt;
+       &lt;meta name="schema:accessibilityHazard" content="noSoundHazard"/&gt;
+       &lt;meta name="schema:accessibilitySummary" content="The video in chapter 2 presents a flashing hazard. A transcript is provided that covers all the essential information contained in the video. The publication otherwise meets WCAG 2.0 Level AA."/&gt;
+    &lt;/metadata&gt;
+    …
+&lt;/package&gt;</pre>
+</div>
+</section>
+
+</section>
+
+<section class="chapter" id="sec-wcag">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag"> </a> </span>4 WCAG 達成方法</h1>
+<section class="section" id="sec-wcag-general">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-general"> </a> </span>4.1 General Guidance</h2>
+<p>Web Content Accessibility Guidelines (WCAG) 2.0 <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の要件を満たすための達成方法は、WCAG 2.0 <a class="biblioref" href="#refWCAG20Tech" title="Techniques for WCAG 2.0.">[<abbr class="abbrev">WCAG 2.0 Techs</abbr>]</a> の達成方法で定義される。このドキュメントは、これら達成方法を繰り返さない。</p>
+
+<p>一般的に、Web ページ上の WCAG 達成方法の適用と <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>への適用の違いは最小限だが、次のセクションでは、いくつかの重要な相違について説明する。</p>
+
+<p>WCAG 達成方法は、一般的に <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>で発見される以上の技術とコンテンツ タイプの広大な範囲をカバーするので、多くを適用できないことが注意点である。</p>
+
+<p>次の達成方法のセットは、EPUB コンテンツ ドキュメントへ最大限に適応可能である。</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/general.html" target="_top">General Techniques</a>
+</p>
+</li>
+<li class="listitem">
+<p>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/html.html" target="_top">HTML and XHTML Techniques</a>
+</p>
+</li>
+<li class="listitem">
+<p>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/css.html" target="_top">CSS Techniques</a>
+</p>
+</li>
+<li class="listitem">
+<p>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/client-side-script.html" target="_top">Client-Side Scripting Techniques</a>
+</p>
+</li>
+<li class="listitem">
+<p>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/aria.html" target="_top">ARIA Techniques</a>
+</p>
+</li>
+</ul>
+</div>
+
+<p>他の達成方法は、（例えば、EPUB 2 の <a class="biblioref" href="#refSWF" title="SWF File Format Specification Version 19">[<abbr class="abbrev">SWF</abbr>]</a> ビデオなど）使用されている技術や EPUB 出版物に埋め込まれた（例えば、PDF フォームなど））任意の代替フォーマットに応じて適応されるだろう。</p>
+
+<section class="suppress-numbering" id="sec-wcag-general-res">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-general-res"> </a> </span>Helpful Resources</h3>
+<p><a class="biblioref" href="#refWCAG20Tech" title="Techniques for WCAG 2.0.">[<abbr class="abbrev">WCAG 2.0 Techs</abbr>]</a> に詳しくない<a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、可能なソリューションの広い範囲を提供することを意図したとおり、困難な達成方法の件数に出くわすかもしれない。</p>
+<p><a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>にこれら達成方法を適用する支援は、次のソースから入手可能である。</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/accessibility/guidelines/" target="_top">EPUB 3 Accessibility Guidelines</a> — 適用可能な WCAG 達成方法へのリンクのある、コンテンツ タイプごとのベストプラクティスの概要。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="https://www.bisg.org/publications/bisg-quick-start-guide-accessible-publishing" target="_top">BISG Quickstart Guide to Accessible Publishing</a> — コンテンツをアクセシブルに制作するための最高のプラクティスを包含する。</p>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+<section class="section" id="sec-wcag-content-access">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-content-access"> </a> </span>4.2 Content Access</h2>
+            
+
+<section class="suppress-numbering" id="sec-access-001">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-001"> </a> </span>ACCESS-001: Ensure linear reading order of the publication</h3>
+                
+
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence" target="_top">Success Criterion
+                        1.3.2</a> specifies that each Web page have a meaningful order, but the content of an <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publication</a> typically spans multiple documents. It is consequently essential
+                    not only that each <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB Content Document</a> has a meaningful order, but that the order is
+                    meaningful from document to document.</p>
+
+<p><a class="glossterm" href="#gloss-author" title="Author">Authors</a> need to ensure that all EPUB Content Documents are included
+                    in the <a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">spine</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages 3</abbr>]</a> and put in sequence so that the reading order is preserved.</p>
+
+<div class="informalexample">
+<p>The following example shows the linear progression of chapter references in an EPUB spine.</p>
+<pre class="synopsis">&lt;package …&gt;
+   …
+   &lt;manifest&gt;
+      …
+      &lt;item id="chap01" href="xhtml/chapter01.xhtml" …/&gt;
+      &lt;item id="chap02" href="xhtml/chapter02.xhtml" …/&gt;
+      &lt;item id="chap03" href="xhtml/chapter03.xhtml" …/&gt;
+      …
+   &lt;/manifest&gt;
+   &lt;spine&gt;
+      …
+      &lt;itemref idref="chap01"/&gt;
+      &lt;itemref idref="chap02"/&gt;
+      &lt;itemref idref="chap03"/&gt;
+      …
+   &lt;/spine&gt;
+&lt;/package&gt;</pre>
+</div>
+
+<p>Authors also need to ensure that they identify whether items in the spine contain primary or
+                    supplementary information using the <a class="ulink" href="http://www.idpf.org/epub3/latest/packages#attrdef-itemref-linear" target="_top">linear
+                        attribute</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages 3</abbr>]</a> so that the Reading System can optimally present
+                    such content.</p>
+
+<div class="informalexample">
+<p>The following example shows a non-linear answer key between two chapters.</p>
+<pre class="synopsis">&lt;spine&gt;
+   …
+   &lt;itemref idref="chap01"/&gt;
+   &lt;itemref idref="answers01" linear="no"/&gt;
+   &lt;itemref idref="chap02"/&gt;
+   …
+&lt;/spine&gt;</pre>
+</div>
+</section>
+
+<section class="suppress-numbering" id="sec-access-002">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-002"> </a> </span>ACCESS-002: Provide multiple ways to access the content</h3>
+                
+
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-mult-loc" target="_top">Success Criterion
+                        2.4.5</a> requires there be more than one way to locate a Web page within a set of Web pages. By
+                    default, <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publications</a> meet this WCAG requirement so
+                    long as <a class="glossterm" href="#gloss-author" title="Author">Authors</a> follow the EPUB requirements to <a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">include all EPUB Content
+                        Documents in the spine</a> and <a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-itemref-elem" target="_top">ensure access to all
+                        non-linear documents</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages 3</abbr>]</a>.</p>
+
+<p>The reason an EPUB Publication passes by meeting these requirements has to do with differences in how a
+<a class="glossterm" href="#gloss-user" title="User">User</a> interacts with the set of documents in an EPUB Publication. In
+                    particular, although an EPUB Publication typically consists of many <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">Content Documents</a>, <a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading Systems</a> automatically
+                    provide the ability for the User to move seamlessly from one document to the next, so long as they are
+                    listed in the <a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">spine</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages 3</abbr>]</a>. To the User, an EPUB Publication is a single
+                    document they have complete access to, not a set of disconnected pages that they need links to move
+                    through.</p>
+
+<p>The required table of contents provides a second method to access the major headings of the
+                    publication. The User can jump to any heading and continue to navigate from there, regardless of how the
+                    publication is chunked.</p>
+
+<p>Following these two requirements therefore satisfies the need for multiple ways to access the content.
+                    Reading Systems also typically provide search capabilities, something the Author cannot provide, so Users
+                    also have a third option available in most cases.</p>
+
+<p>Although Authors only need to follow EPUB requirements to meet this criteria, they are still encouraged
+                    to provide additional methods to improve access beyond the minimum. Some suggestions include:</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>adding at least one link to every Content Document in the spine to the table of contents, when
+                            feasible;</p>
+</li>
+<li class="listitem">
+<p>adding an index to locate major topics;</p>
+</li>
+<li class="listitem">
+<p>adding additional navigation aids to the <a class="glossterm" href="#gloss-nav-doc" title="EPUB Navigation Document">EPUB Navigation Document</a> (e.g., lists of
+                            figures and tables).</p>
+</li>
+</ul>
+</div>
+
+<section class="section" id="sec-access-002-toc">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-002-toc"> </a> </span>1 Note About the Table of Contents</h4>
+                    
+
+<p>A common question about the EPUB table of contents is what completeness it needs to have with
+                        respect to the headings of the publication. Although the obvious answer seems like it should be a
+                        simple aggregation of all headings for all sections, practically there are a number of usability
+                        challenges to this approach.</p>
+
+<p>Factors such as device screen sizes can make the table of contents for publications with a deep
+                        hierarchy of headings unreadable, so <a class="glossterm" href="#gloss-author" title="Author">Authors</a> trim headings below
+                        a certain depth to improve the quality. <a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading Systems</a>
+                        also do not always provide structured access to the headings in the table of contents, or shortcuts
+                        to move easily through the headings, leaving <a class="glossterm" href="#gloss-user" title="User">Users</a> that have them
+                        read aloud navigating the links one at a time.</p>
+
+<p>Although it is expected that Reading Systems will improve access to the table of contents as
+                        accessibility support for EPUB evolves — making complete tables of contents usable by everyone —
+                        there are legitimate usability reasons why they are not provided now.</p>
+
+<p>When Authors choose not to provide links to all the headings, however, they should optimize the
+                        linking they do provide for the best overall reading experience. Some considerations on how to
+                        achieve this include:</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>ensuring that there is at least one link to every <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB Content Document</a> —
+                                allowing the User to reach each document simplifies navigation to the minor headings within
+                                them;</p>
+</li>
+<li class="listitem">
+<p>only omitting minor headings from the table of contents — although a subjective decision,
+                                there is often a level of diminishing value for navigation (e.g., fourth level and lower
+                                headings often only delimit short subsections on a topic).</p>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+<section class="section" id="sec-wcag-semantics">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-semantics"> </a> </span>4.3 Semantics</h2>
+            
+
+<section class="suppress-numbering" id="sec-sem-001">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-sem-001"> </a> </span>SEM-001: Include ARIA and EPUB semantics</h3>
+                
+
+<p>The <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> <code class="markup"><a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/#roles" target="_top">role</a></code>
+<a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/#roles" target="_top">attribute</a> is used to provide
+                    additional semantic information about the host markup to <a class="glossterm" href="#gloss-at" title="Assistive Technology">Assistive
+                        Technologies</a> — <a class="glossterm" href="#gloss-author" title="Author">Authors</a> can attach it to any element. The
+                    use of roles allows Assistive Technologies to automatically scan the markup and compile a list of <a class="link" href="#sec-sem-003" title="SEM-003: Include EPUB landmarks">landmarks</a> for <a class="glossterm" href="#gloss-user" title="User">Users</a>, enabling quick
+                    access to key features of the content.</p>
+
+<div class="informalexample">
+<p>The following example shows a generic landmark role. The name to use for this landmark is specified
+                        by the <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a>
+<a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_top"><code class="markup">aria-labelledby</code> attribute</a>.</p>
+<pre class="synopsis">&lt;section role="region" aria-labelledby="puz01"&gt;
+   &lt;h2 id="puz01"&gt;Puzzles and Games&lt;h2&gt;
+   …
+&lt;/section&gt;</pre>
+</div>
+
+<p>The <code class="markup">role</code> attribute is similar in nature to the <a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-contentdocs.html#sec-epub-type-attribute" target="_top"><code class="markup">type</code> attribute</a> <a class="biblioref" href="#refContentDocsLatest" title="EPUB Content Documents 3">[<abbr class="abbrev">Content Docs</abbr>]</a>, which provides
+                    additional semantic information to enable EPUB Reading System behaviors.</p>
+
+<div class="informalexample">
+<p>The following example shows the epub:type attribute used to provide additional semantic
+                        information.</p>
+<pre class="synopsis">&lt;section epub:type="learning-objectives"&gt;
+   &lt;h2&gt;Objectives&lt;h2&gt;
+   …
+&lt;/section&gt;</pre>
+</div>
+
+<p>The key difference between these attributes is that the <code class="markup">role</code> attribute bridges
+                    accessibility while the <code class="markup">type</code> attribute provides hooks to enable Reading System
+                    behaviors. Omitting roles lessens the accessibility for Users of Assistive Technologies, in other words,
+                    while omitting types diminishes certain functionality in <a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading
+                        Systems</a> (e.g., pop-up footnotes or special presentations of the content).</p>
+
+<p>Since each attribute offers different advantages, it is recommended that both be used whenever
+                    applicable to provide the best reading experience for all readers.</p>
+
+<p>It is often the case that the attributes will have have corresponding semantics. In these situations,
+                    it is recommended that both attributes be attached to an element.</p>
+
+<div class="informalexample">
+<p>The following example shows a footnote identified in both the <code class="markup">epub:type</code> and
+<code class="markup">role</code> attributes.</p>
+<pre class="synopsis">&lt;aside epub:type="footnote" role="doc-footnote"&gt;
+   …
+&lt;/aside&gt;</pre>
+</div>
+
+<section class="suppress-numbering" id="sec-sem-001-res">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-sem-001-res"> </a> </span>Helpful Resources</h4>
+                    
+
+<p>The following documents list the semantics that are available for use with each attribute:</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>The Digital Publishing WAI-ARIA Module <a class="biblioref" href="#refDPUBVocab" title="Digital Publishing WAI-ARIA Module 1.0">[<abbr class="abbrev">DPUB Vocab</abbr>]</a> provides a set of
+                                core publishing roles, but any roles from <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> can be used in the
+<code class="markup">role</code> attribute.</p>
+</li>
+<li class="listitem">
+<p>The EPUB Structural Semantics Vocabulary <a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">[<abbr class="abbrev">Structure Vocab</abbr>]</a> provides
+                                the default values that can be used with the <code class="markup">type</code> attribute, but the
+                                attribute is extensible to allow semantics from other vocabularies.</p>
+</li>
+</ul>
+</div>
+
+<p>The following documents explain the application of ARIA roles for Authors already familiar with the
+                        use of the EPUB 3 <code class="markup">type</code> attribute for semantic inflection:</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><a class="ulink" href="https://www.idpf.org/epub/guides/epub-aria-authoring/" target="_top">EPUB Type to ARIA
+                                    Roles Authoring Guide</a> — guide to notable authoring differences between the two
+                                attributes.</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="https://www.idpf.org/epub/guides/aria-mapping/" target="_top">EPUB Structural Semantics
+                                    to ARIA Roles Mapping Guide</a> — mapping table of semantics in the EPUB Structural
+                                Semantics Vocabulary to equivalent ARIA roles in <a class="biblioref" href="#refDPUBVocab" title="Digital Publishing WAI-ARIA Module 1.0">[<abbr class="abbrev">DPUB Vocab</abbr>]</a> and <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a>.</p>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+<section class="suppress-numbering" id="sec-sem-002">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-sem-002"> </a> </span>SEM-002: Do not repeat semantics across chunked content</h3>
+                
+
+<p>Although <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publications</a> appear as single contiguous
+                    documents to <a class="glossterm" href="#gloss-user" title="User">Users</a> when read, they are typically composed of many
+                    individual <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB Content Documents</a>. This practice keeps the
+                    amount of markup that has to be rendered small to reduce the load time when the User cannot interact with
+                    the documents. It is rare, at least for books, that an EPUB Publication contains only one Content
+                    Document with all the content in it.</p>
+
+<p>When content is chunked in this way, it often requires the Author to make decisions about how best to
+                    restructure the information. A part, for example, cannot contain all the chapters that belong to it. The
+                    Author instead has to flatten the structure and separate the part heading from each chapter.</p>
+
+<p>Although visually these restructuring decisions can be hidden from readers, they impact the
+                    functionality of <a class="glossterm" href="#gloss-at" title="Assistive Technology">Assistive Technologies</a>. In the case of <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> roles, the result is that only the subset present in the currently-loaded EPUB
+                    Content Document are exposed to <a class="glossterm" href="#gloss-user" title="User">Users</a>. An Assistive Technology cannot
+                    provide a list of landmarks for the whole publication, as it cannot see outside the current
+                    document.</p>
+
+<p>To counteract this destructuring effect, <a class="glossterm" href="#gloss-author" title="Author">Authors</a> sometimes think to
+                    re-add or re-identify structures in the belief that having this information in every document will be
+                    helpful to Users (e.g., adding an extra <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">section</code> element around
+                    a chapter to indicate it belongs to a part, or putting the part semantic on the
+<code class="markup">body</code> tag). All this practice does, however, is add repetition that is not only
+                    disruptive when reading, but can actually make the structure of the publication harder to follow. Authors
+                    are therefore advised not to attempt to rebuild structures in these ways.</p>
+
+<p>For example, consider a book that has five parts and each part contains five chapters. Structurally,
+                    each chapter belongs to its part (i.e., is grouped with it), as in the following markup:</p>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;section role="doc-part"&gt;
+   &lt;h1&gt;Part 1&lt;/h1&gt;
+   
+   &lt;section role="doc-chapter"&gt;
+      &lt;h2&gt;Chapter 1&lt;/h2&gt;
+      …
+   &lt;/section&gt;
+   …
+&lt;/section&gt;</pre>
+</div>
+
+<p>Since this would lead to a large content file, the part heading is typically split out into its own
+                    Content Document so that it will appear on its own page:</p>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;html … &gt;
+   …
+   &lt;body role="doc-part"&gt;
+      &lt;h1&gt;Part 1&lt;/h1&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+
+<p>Each chapter is then separated into a separate Content Document:</p>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;html … &gt;
+   …
+   &lt;body role="doc-chapter"&gt;
+      &lt;h2&gt;Chapter 1&lt;/h2&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+
+<p>It is not necessary to add a part wrapper to each chapter, as in the following example:</p>
+
+<div class="informalexample">
+<pre class="synopsis">&lt;html … &gt;
+   …
+   &lt;body role="doc-part"&gt;
+      &lt;section role="doc-chapter"&gt;
+         &lt;h2&gt;Chapter 1&lt;/h2&gt;
+         …
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+
+<p>Doing so introduces a new <span class="property">part</span> landmark into each document, which will cause an
+                    Assistive Technology to inform the User that the landmark is available to navigate to.</p>
+</section>
+
+<section class="suppress-numbering" id="sec-sem-003">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-sem-003"> </a> </span>SEM-003: Include EPUB landmarks</h3>
+                
+
+<p><a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/#dfn-landmark" target="_top">landmarks</a> are similar in nature to <a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-nav-landmarks" target="_top">EPUB landmarks</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages 3</abbr>]</a>: both are designed to provide <a class="glossterm" href="#gloss-user" title="User">Users</a>
+                    with quick access to the major structures of a document, such as chapters, glossaries, indexes, etc. ARIA
+                    landmarks are compiled automatically by <a class="glossterm" href="#gloss-at" title="Assistive Technology">Assistive Technologies</a> from the
+<a class="link" href="#sec-sem-001" title="SEM-001: Include ARIA and EPUB semantics">roles</a> that have been applied to the markup, so <a class="glossterm" href="#gloss-author" title="Author">Authors</a> only need to follow the requirement to include roles for the
+                    landmarks to be made available to Users.</p>
+
+<p>Although automatic generation of ARIA landmarks simplifies authoring, it also means that ARIA landmarks
+                    are limited to how the <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publication</a> has been chunked up into <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">Content Documents</a>. An Assistive Technology can only present the
+                    landmarks available in the currently-loaded document; it cannot provide a complete picture of all the
+                    landmarks in a multi-document publication (see the <a class="link" href="#sec-sem-002" title="SEM-002: Do not repeat semantics across chunked content">previous section</a>
+                    for more discussion about content chunking).</p>
+
+<p>EPUB landmarks, on the other hand, are statically compiled by the Author prior to distribution, and are
+                    not directly linked to the use of the <code class="markup"><a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-contentdocs.html#sec-epub-type-attribute" target="_top">type</a></code><a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-contentdocs.html#sec-epub-type-attribute" target="_top"> attribute</a> <a class="biblioref" href="#refContentDocsLatest" title="EPUB Content Documents 3">[<abbr class="abbrev">Content Docs</abbr>]</a> in the content. They are designed to
+                    simplify linking to major sections of the publication in a machine-readable way, as <a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading Systems</a> do not scan the entire publication for
+                    landmarks, either. EPUB landmarks are typically not as numerous as ARIA landmarks, as Reading Systems
+                    only expose so many of these navigation aids.</p>
+
+<p>Given these differences in application, however, it is important to include EPUB landmarks and not rely
+                    only on the presence of ARIA roles to facilitate navigation, and vice versa. Each aids navigation in its
+                    own way.</p>
+
+<p>The EPUB specification does not require that Authors include a specific set of landmarks, but it is
+                    recommended to include a link to the start of the body matter as well as to any major reference sections
+                    (e.g., table of contents, endnotes, bibliography, glossary, index).</p>
+
+<div class="informalexample">
+<p>The following example shows the EPUB 3 landmarks as expressed in the <a class="glossterm" href="#gloss-nav-doc" title="EPUB Navigation Document">EPUB Navigation Document</a>.</p>
+<pre class="synopsis">&lt;nav epub:type="landmarks"&gt;
+   &lt;ol&gt;
+      &lt;li&gt;
+         &lt;a epub:type="toc" href="toc.xhtml"&gt;
+            Table of Contents
+         &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a epub:type="bodymatter" href="chap01.xhtml"&gt;
+            Start reading
+         &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a epub:type="endnotes" href="notes.xhtml"&gt;
+            Notes
+         &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a epub:type="bibliography" href="bibliography.xhtml"&gt;
+            Bibliography
+         &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a epub:type="glossary" href="glossary.xhtml"&gt;
+            Glossary
+         &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+         &lt;a epub:type="index" href="index.xhtml"&gt;
+            Index
+         &lt;/a&gt;
+      &lt;/li&gt;
+   &lt;/ol&gt;
+&lt;/nav&gt;</pre>
+</div>
+
+<div class="informalexample">
+<p>The following example shows the EPUB 2 landmarks as expressed in the <a class="glossterm" href="#gloss-package-doc" title="Package Document">Package Document</a>
+<code class="markup">guide</code> element.</p>
+<pre class="synopsis">&lt;guide&gt;
+   &lt;reference type="toc" href="toc.xhtml" title="Table of Contents"/&gt;
+   &lt;reference type="text" href="chap01.xhtml" title="Start reading"/&gt;
+   &lt;reference type="endnotes" href="notes.xhtml" title="Notes"/&gt;
+   &lt;reference type="bibliogrpahy" href="biblio.xhtml" title="Bibliography"/&gt;
+   &lt;reference type="glossary" href="glossary.xhtml" title="Glossary"/&gt;
+   &lt;reference type="index" href="index.xhtml" title="Index"/&gt;
+&lt;/guide&gt;</pre>
+</div>
+
+<section class="suppress-numbering" id="sec-sem-003-res">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-sem-003-res"> </a> </span>Helpful Resources</h4>
+                    
+
+<p>The following resources explain EPUB and ARIA landmarks in more detail.</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>EPUB 2 <a class="ulink" href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm#Section2.6" target="_top">guide element</a></p>
+</li>
+<li class="listitem">
+<p>EPUB 3 <a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-nav-landmarks" target="_top">landmarks nav</a></p>
+</li>
+<li class="listitem">
+<p>ARIA 1.1 <a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/#landmark_roles" target="_top">landmarks</a></p>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+<section class="section" id="sec-wcag-titles">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-titles"> </a> </span>4.4 Titles and Headings</h2>
+            
+
+<section class="suppress-numbering" id="sec-titles-001">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-titles-001"> </a> </span>TITLES-001: Include publication and document titles</h3>
+                
+
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title" target="_top">Success Criterion
+                    2.4.2</a> requires that each Web page include a title. EPUB has a similar requirement for <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publications</a>: publications require a <a class="biblioref" href="#refDCMES" title="Dublin Core Metadata Element Set, Version 1.1">[<abbr class="abbrev">DCMES</abbr>]</a> <code class="markup">title</code> element in the <a class="glossterm" href="#gloss-package-doc" title="Package Document">Package Document</a>
+                    metadata. The <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> requirement is not satisfied by the EPUB requirement,
+                    however.</p>
+
+<p>When authoring an EPUB Publication each <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB Content Document</a> also requires a descriptive
+                    title that describes its content. If not provided, <a class="glossterm" href="#gloss-at" title="Assistive Technology">Assistive Technologies</a>
+                    often will announce the name of the file to <a class="glossterm" href="#gloss-user" title="User">Users</a>.</p>
+
+<div class="informalexample">
+<p>The following example shows a title for an EPUB Content Document.</p>
+<pre class="synopsis">&lt;html …&gt;
+   &lt;head&gt;
+      &lt;title&gt;Chapter 1&lt;/title&gt;
+      …
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;h1&gt;Chapter 1: Loomings&lt;/h1&gt;
+      …
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+
+<p>If the title includes structural context (e.g., the part heading a chapter belongs to, or the name of
+                    the publication), order the title such that the most precise description of the current document comes
+                    first.</p>
+
+<div class="informalexample">
+<p>The following example shows a structured title.</p>
+<pre class="synopsis">&lt;html …&gt;
+   &lt;head&gt;
+      &lt;title&gt;
+         III. The Night Shadows —
+         Book the First—Recalled to Life — 
+         A Tale of Two Cities
+      &lt;/title&gt;
+      …
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;h1&gt;III. The Night Shadows&lt;/h1&gt;
+      …
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+
+<p>For more information about titles, see <a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/html.html#H25" target="_top">Technique H25</a> <a class="biblioref" href="#refWCAG20Tech" title="Techniques for WCAG 2.0.">[<abbr class="abbrev">WCAG 2.0 Techs</abbr>]</a>.</p>
+</section>
+
+<section class="suppress-numbering" id="sec-titles-002">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-titles-002"> </a> </span>TITLES-002: Ensure numbered headings reflect publication hierarchy</h3>
+                
+
+<p>To a <a class="glossterm" href="#gloss-user" title="User">User</a>, an <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publication</a> appears as a single
+                    document that they read from beginning to end, even though the content is often split across numerous
+<a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB Content Documents</a>. As a result, their natural
+                    expectation is that the headings reflect their position in the overall hierarchy of the publication,
+                    despite the publication not actually being a single document (e.g., if a part heading is expressed in an
+<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">h1</code> element, each chapter that belongs to the part will
+                    have an <code class="markup">h2</code> heading).</p>
+
+<p><a class="biblioref" href="#refWCAG20Tech" title="Techniques for WCAG 2.0.">[<abbr class="abbrev">WCAG 2.0 Techs</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/G141.html" target="_top">G141:
+                        Organizing a page using headings</a> instructs <a class="glossterm" href="#gloss-author" title="Author">Authors</a> on
+                    correctly using numbered headings within a document, but with EPUB Publications the numbered headings
+                    also need to remain consistent across documents. Practically, this means that each EPUB Content Document
+                    does not have to begin with an <code class="markup">h1</code> heading unless the first heading is a top-level
+                    heading — the first heading needs to have a numbered heading element relative to its actual
+                    position.</p>
+
+<p>Authors also to need chunk their content so that the first heading in a document always has the highest
+                    number. For example, if a document starts with an <code class="markup">h3</code> heading, there shouldn't be
+                        an <code class="markup">h2</code> heading later in the document (e.g., do not include the start of a new section
+                    with the trailing subsections of the previous). It is acceptable for their to be subsequent headings at
+                    the same level as the first (e.g., multiple subsections in one document could all have
+<code class="markup">h3</code> headings).</p>
+
+<div class="informalexample">
+<p>The following example shows two consecutive EPUB Content Documents in a textbook. The first
+                        contains a section heading (<code class="markup">h2</code>) and the first two subsections (<code class="markup">h3</code>).
+                        The second contains the final two subsections (<code class="markup">h3</code>).</p>
+<pre class="synopsis">&lt;html …&gt;
+   …
+   &lt;body&gt;
+      &lt;section&gt;
+         &lt;h2&gt;Section 1.1 - Conquest&lt;/h2&gt;
+         
+         &lt;section&gt;
+            &lt;h3&gt;Section 1.1.1 - First Encounter&lt;/h3&gt;
+            …
+         &lt;/section&gt;
+         
+         &lt;section&gt;
+            &lt;h3&gt;Section 1.1.2 - Tensions Rise&lt;/h3&gt;
+            …
+         &lt;/section&gt;
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+<pre class="synopsis">&lt;html …&gt;
+   …
+   &lt;body&gt;
+      &lt;section&gt;
+         &lt;h3&gt;Section 1.1.3 - War&lt;/h3&gt;
+         …
+      &lt;/section&gt;
+      
+      &lt;section&gt;
+         &lt;h3&gt;Section 1.1.4 - Aftermath&lt;/h3&gt;
+         …
+      &lt;/section&gt;
+   &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+</section>
+</section>
+
+<section class="section" id="sec-wcag-descriptions">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-descriptions"> </a> </span>4.5 Descriptions</h2>
+            
+
+<section class="suppress-numbering" id="sec-desc-001">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-desc-001"> </a> </span>DESC-001: Include alternative text descriptions</h3>
+                
+
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#text-equiv-all" target="_top">Success
+                        Criterion 1.1.1</a> requires a text alternative for all non-text content. In the case of image
+                    content, the provision of alternative text (e.g., in an <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">alt</code> attribute) is sufficient for meeting the requirements of the <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> specification.</p>
+
+<p><a class="glossterm" href="#gloss-author" title="Author">Authors</a> are strongly encouraged to include extended descriptions,
+                    but the utility of extended descriptions often depends on the needs of the <a class="glossterm" href="#gloss-user" title="User">User</a>.
+                    Until the publishing ecosystem matures, making it easier for Authors to include extended descriptions and
+                    write them to optimally meet the needs of the greatest number of Users, they are not required.</p>
+
+<p>If extended descriptions are not included, note the omission in the <a class="link" href="#sec-meta-005" title="META-005: Include an accessibility summary">accessibility summary</a>.</p>
+<div class="note">
+<h3 class="title">note</h3>
+<p>The requirement for a text alternative does not apply to decorative images that contribute no
+                        information to the text. These are identified by an empty <code class="markup">alt</code> attribute.</p>
+</div>
+
+<div class="caution">
+<h3 class="title">caution</h3>
+<p>This guidance applies to the evaluation of <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB
+                            Publications</a> strictly for achieving conformance to the <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> specification. If an EPUB Publication is distributed in an environment where extended descriptions
+                        are required, this guidance for conformance will not be sufficient.</p>
+</div>
+
+<div class="note">
+<h3 class="title">note</h3>
+<p>The use of alternative text as a sufficient description for all images may be removed in a future
+                        version of these techniques.</p>
+</div>
+
+<section class="suppress-numbering" id="sec-desc-001-res">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-desc-001-res"> </a> </span>Helpful Resources</h4>
+                    
+
+<p>The following documents provide guidance on including extended descriptions:</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><a class="ulink" href="http://diagramcenter.org/59-image-guidelines-for-epub-3.html" target="_top">DIAGRAM
+                                    Image Guidelines for EPUB 3</a> — recommendations for the inclusion of alternative
+                                text and extended descriptions.</p>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+<section class="suppress-numbering" id="sec-desc-002">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-desc-002"> </a> </span>DESC-002: Include descriptions for MathML content</h3>
+                
+
+<p> Reading Systems typically do not provide self-voicing of <a class="biblioref" href="#refMathML" title="Mathematical Markup Language (MathML) Version 3.0">[<abbr class="abbrev">MATHML</abbr>]</a> markup, even when
+                    the equations can be rendered visually. Although polyfill scripts such as <a class="ulink" href="https://www.mathjax.org/" target="_top">MathJax</a> provide the ability to visually render MathML
+                    equations when scripting is supported, they do not provide an accessible alternative for non-visual
+                    readers. As a result, the inclusion of MathML markup alone is not sufficient to make equations accessible
+                    to non-visual readers.</p>
+
+<p>EPUB 3 recommends the use of the <a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-contentdocs.html#sec-html-mathml-alt" target="_top">altimg
+                        attribute to include a fallback image</a> <a class="biblioref" href="#refContentDocsLatest" title="EPUB Content Documents 3">[<abbr class="abbrev">Content Docs</abbr>]</a> for <a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading Systems</a> that cannot render the equations, but a visual
+                    fallback alone is not sufficient for all readers. </p>
+
+<p>Due to these rendering limitations, inclusion of a description is recommend to complement the markup
+                    and also provide a text-accessible alternative.</p>
+
+<p>A short description can be provided using the <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_top">aria-label attribute</a> on an <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">div</code> or <code class="markup">span</code> element surrounding the MathML
+                    markup. For lengthier descriptions, use the <a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby" target="_top">aria-describedby
+                    attribute</a> attribute.</p>
+
+<div class="note">
+<h3 class="title">note</h3>
+<p>Although the <a class="biblioref" href="#refMathML" title="Mathematical Markup Language (MathML) Version 3.0">[<abbr class="abbrev">MATHML</abbr>]</a> <code class="markup">alttext</code> attribute provides similar
+                        descriptive capabilities, it is not as well supported by <a class="glossterm" href="#gloss-at" title="Assistive Technology">Assistive
+                            Technologies</a> as the ARIA attributes. If support increases in the future, this technique
+                        will be updated to also cite it as an option. <a class="glossterm" href="#gloss-at" title="Assistive Technology">Authors</a> are not
+                        discouraged from also including the attribute, or from using it for other purposes (e.g., storing the
+                        description with its equation in content management systems).</p>
+</div>
+
+<div class="informalexample">
+<p>The following example shows an <code class="markup">aria-label</code> attribute with a brief description of
+                        the math.</p>
+<pre class="synopsis">&lt;div role="math" aria-label="twelve and three-fourths plus two and one-fourth equals fifteen"&gt;
+   &lt;math…&gt;
+      …
+   &lt;/math&gt;
+&lt;/div&gt;</pre>
+</div>
+
+<div class="informalexample">
+<p>The following example shows an <code class="markup">aria-describedby</code> attribute that references an
+                        extended description.</p>
+<pre class="synopsis">&lt;div role="math" aria-describedby="mathdesc"&gt;
+   &lt;math…&gt;
+      …
+   &lt;/math&gt;
+   &lt;p id="mathdesc" class="hidden"&gt;
+      left-parenthesis g of f right-parenthesis
+      left-parenthesis x right-parenthesis
+      Equals
+      g left-parenthesis f left-parenthesis x
+      right-parenthesis right-parenthesis
+   &lt;/p&gt;
+&lt;/div&gt;</pre>
+</div>
+</section>
+</section>
+
+<section class="section" id="sec-wcag-alt">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-alt"> </a> </span>4.6 Accessible Alternatives</h2>
+            
+
+<p>As <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publications</a> can be composed of more than one <a class="glossterm" href="#gloss-rendition" title="Rendition">Rendition</a>, it is possible that different versions of the content will have different
+                levels of accessibility. For example, an image-based version of the content that lacks alternative text or
+                descriptions could be bundled with a WCAG-compliant text-based serialization. This type of accessible
+                bundling is acceptable, as <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> allows non-conforming content provided a <a class="ulink" href="https://www.w3.org/TR/WCAG20/#conforming-alternate-versiondef" target="_top">conforming alternate
+                    version</a> is available.</p>
+
+<p>The <a class="biblioref" href="#refMULTIPLEREND" title="EPUB Multiple-Rendition Publications 1.0">[<abbr class="abbrev">Multiple Renditions</abbr>]</a> specification defines a set of features for creating these types of
+                EPUB Publications. In particular, it specifies a set of attributes that allow a <a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading System</a> to automatically select a preferred Rendition for the <a class="glossterm" href="#gloss-user" title="User">User</a>, or to provide the User the option to manually select between the available
+                options. This functionality technically meets the requirements of <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> in terms of
+                ensuring the User can access the accessible version.</p>
+
+<p>In practice, however, the <a class="biblioref" href="#refMULTIPLEREND" title="EPUB Multiple-Rendition Publications 1.0">[<abbr class="abbrev">Multiple Renditions</abbr>]</a> specification is not broadly supported in
+                Reading Systems at the time of publication. As a result, a User who obtains an EPUB Publication that contains
+                more than one Rendition will only have access to the <a class="glossterm" href="#gloss-default-rendition" title="Default Rendition">Default Rendition</a>. Unless this
+                Rendition is the accessible one, the EPUB Publication might not be readable by them.</p>
+
+<p><a class="glossterm" href="#gloss-author" title="Author">Authors</a> therefore need to use their best discretion when implementing
+                this functionality to meet accessibility requirements. EPUB Publications that contain multiple renditions are
+                conformant to the <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> specification if at least one Rendition meets all the content
+                requirements, but Authors at a minimum need to note that a Reading System that supports multiple renditions
+                is required in their <a class="link" href="#sec-meta-005" title="META-005: Include an accessibility summary">accessibility summary</a>. Any other methods the Author
+                can use to make this dependence known is advisable (e.g., in the <a class="link" href="#sec-dist-002" title="DIST-002: Include accessibility metadata in distribution records">distribution
+                    metadata</a>).</p>
+
+<p>This section will be updated with techniques for using multiple renditions when there is enough support in
+                Reading Systems to broadly recommend their use.</p>
+</section>
+</section>
+
+<section class="chapter" id="sec-epub">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub"> </a> </span>5 EPUB Techniques</h1>
+        
+
+<section class="section" id="sec-epub-audio">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-audio"> </a> </span>5.1 Structured Audio Playback</h2>
+            
+
+<section class="suppress-numbering" id="sec-audio-001">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-audio-001"> </a> </span>AUDIO-001: Identify skippable and escapable structures</h3>
+                
+
+<p>The <a class="biblioref" href="#refSMIL" title="SMIL Version 3.0">[<abbr class="abbrev">SMIL</abbr>]</a> markup that underpins EPUB's <a class="biblioref" href="#refOverlaysLatest" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays</abbr>]</a> playback
+                    functionality lacks the semantic richness of <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> markup. SMIL contains only two
+                    structural elements: <code class="markup">seq</code> for grouping and <code class="markup">par</code> for identifying
+                    synchronization points. As a result, when a <a class="glossterm" href="#gloss-user" title="User">User</a> initiates synchronized playback,
+<a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading Systems</a> have limited information to work unless
+                    more detail is added by the <a class="glossterm" href="#gloss-author" title="Author">Author</a>.</p>
+
+<p>To provide a richer reading experience, Authors need to mimic complex structures in the SMIL markup and
+                    add semantics to identify the structures using the <a class="ulink" href="http://www.idpf.org/epub3/latest/mediaoverlays#sec-docs-semantic-inflection" target="_top">type
+                        attribute</a>
+<a class="biblioref" href="#refOverlaysLatest" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays</abbr>]</a>.</p>
+
+<p>Without this additional semantic information, Reading Systems cannot provide a playback experience that
+                    allows Users escape from complex structures like tables and lists during playback (they will have to move
+                    forward one synchronization point at a time until they determine the structure is finished). Reading
+                    Systems also will have no way to tailor the reading experience so that secondary material, such as
+                    footnotes, can be automatically skipped.</p>
+
+<div class="informalexample">
+<p>The following example shows nested <code class="markup">seq</code> elements used to represent the rows and
+                        cells of a table.</p>
+<pre class="synopsis">&lt;smil … xmlns:epub="http://www.idpf.org/2007/opf"&gt;
+   &lt;seq epub:type="table"&gt;
+      &lt;seq epub:type="table-row"&gt;
+         &lt;par epub:type="table-cell"&gt;
+            …
+         &lt;/par&gt;
+      &lt;/seq&gt;
+   &lt;/seq&gt;
+&lt;/smil&gt;</pre>
+</div>
+
+<div class="informalexample">
+<p>The following example shows a <code class="markup">par</code> element identified as containing a
+                        footnote.</p>
+<pre class="synopsis">&lt;smil … xmlns:epub="http://www.idpf.org/2007/opf"&gt;
+   …
+   &lt;par epub:type="footnote"&gt;
+      &lt;text src="xhtml/chap01.xhtml#fn001&gt;
+      &lt;audio src="audio/chap01.mp3" beginClip="0:29:12.28" endClip="0:31:43.95"&gt;
+   &lt;/par&gt;
+   …
+&lt;/smil&gt;</pre>
+</div>
+
+<section class="suppress-numbering" id="sec-audio-001-res">
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-audio-001-res"> </a> </span>Helpful Resources</h4>
+                    
+<p>See the following sections in the <a class="biblioref" href="#refOverlaysLatest" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays</abbr>]</a> specification for more
+                        information on structuring SMIL markup for accessibility:</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>
+<a class="ulink" href="http://www.idpf.org/epub3/latest/mediaoverlays#sec-docs-assoc-style" target="_top">Associating Style Information</a>
+</p>
+</li>
+<li class="listitem">
+<p>
+<a class="ulink" href="http://www.idpf.org/epub3/latest/mediaoverlays#sec-behaviors-skip-escape" target="_top">Skippability and Escapability</a>
+</p>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+<section class="section" id="sec-epub-page-markers">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-page-markers"> </a> </span>5.2 Page Markers</h2>
+            
+
+<section class="suppress-numbering" id="sec-page-001">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-001"> </a> </span>PAGE-001: Provide page break markers</h3>
+                
+
+<p>Both the EPUB Structural Semantics Vocabulary <a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">[<abbr class="abbrev">Structure Vocab</abbr>]</a> and Digital
+                    Publishing WAI-ARIA 1.0 Module <a class="biblioref" href="#refDPUBVocab" title="Digital Publishing WAI-ARIA Module 1.0">[<abbr class="abbrev">DPUB Vocab</abbr>]</a> include a semantic for static page breaks:
+<a class="ulink" href="http://www.idpf.org/epub/vocab/structure/#pagebreak" target="_top">pagebreak</a> and <a class="ulink" href="https://www.w3.org/TR/dpub-aria-1.0/#doc-pagebreak" target="_top">doc-pagebreak</a>,
+                    respectively.</p>
+
+<p>It is recommended that both semantics be applied to EPUB 3 content to ensure maximum compatibility with
+<a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading Systems</a> and <a class="glossterm" href="#gloss-at" title="Assistive Technology">Assistive
+                        Technologies</a>.</p>
+
+<div class="informalexample">
+<p>The following example shows an HTML5 <code class="markup">span</code> element identified as a
+                        pagebreak.</p>
+<pre class="synopsis">&lt;span id="page001" title="1" epub:type="pagebreak" role="doc-pagebreak"/&gt;</pre>
+</div>
+
+<p>A <code class="markup">title</code> or <code class="markup">aria-label</code> attribute is required on the element, as it
+                    provides the value that is announced to the User.</p>
+
+<p>EPUB 2 does not include markup to identify static page break marks in the content. Page break
+                    destinations can be included to enable hyperlinking, but the <a class="link" href="#sec-page-002" title="PAGE-002: Provide a page list">page
+                        list</a> is the only way a <a class="glossterm" href="#gloss-user" title="User">User</a> can jump to the locations.</p>
+
+<div class="informalexample">
+<p>The following example shows an XHTML 1.1 <code class="markup">span</code> element used as a hyperlink
+                        destination.</p>
+<pre class="synopsis">&lt;span id="page001"/&gt;</pre>
+</div>
+
+<p>Do not use the <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="ulink" href="https://www.w3.org/TR/html5/text-level-semantics.html#the-a-element" target="_top">a</a></code><a class="ulink" href="https://www.w3.org/TR/html5/text-level-semantics.html#the-a-element" target="_top"> element</a> to
+                    identify page break locations in EPUB 3 Publications. Although this element was previously defined as the
+                    anchor for a hyperlink destination, its purpose has been changed in <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> for use
+                    solely as a link.</p>
+</section>
+
+<section class="suppress-numbering" id="sec-page-002">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-002"> </a> </span>PAGE-002: Provide a page list</h3>
+                
+
+<p>Including page numbers without a means of easily accessing the page break locations does not help <a class="glossterm" href="#gloss-user" title="User">Users</a> navigate the content. A page list is a complementary piece to page
+                    numbering that provides a list of hyperlinks to each static page break location. When present, <a class="glossterm" href="#gloss-reading-system" title="Reading System">Reading Systems</a> can provide users direct access to the list or
+                    use it to provide automatic page jump functionality.</p>
+
+<p>The <a class="glossterm" href="#gloss-nav-doc" title="EPUB Navigation Document">EPUB Navigation Document</a> allows the inclusion of a <code class="markup"><a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-nav-page-list" target="_top">page-list
+                        nav</a></code> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages 3</abbr>]</a>, while the EPUB 2 NCX file provides the same
+                    functionality through the <code class="markup"><a class="ulink" href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm#Section2.4.1.2" target="_top">pageList</a></code><a class="ulink" href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm#Section2.4.1.2" target="_top"> element</a> <a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr class="abbrev">OPF2</abbr>]</a>.</p>
+
+<div class="informalexample">
+<p>The following example shows an EPUB 3 <code class="markup">page-list nav</code> element that contains a list
+                        of links to the static page breaks.</p>
+<pre class="synopsis">&lt;nav epub:type="page-list"&gt;
+   &lt;ol&gt;
+      &lt;li&gt;&lt;a href="georgia.xhtml#page001"&gt;1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="georgia.xhtml#page002"&gt;2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="georgia.xhtml#page003"&gt;3&lt;/a&gt;&lt;/li&gt;
+      …
+   &lt;/ol&gt;
+&lt;/nav&gt;</pre>
+</div>
+
+<div class="informalexample">
+<p>The following example shows an EPUB 2 NCX that contains a list of page break locations in its
+<code class="markup">pageList</code>.</p>
+<pre class="synopsis">&lt;ncx xmlns="http://www.daisy.org/z3986/2005/ncx/"
+     version="2005-1"
+     xml:lang="en-US"&gt;
+   …
+   &lt;pageList&gt;
+      &lt;pageTarget id="p1" type="normal" value="1"&gt;
+         &lt;navLabel&gt;&lt;text&gt;1&lt;/text&gt;&lt;/navLabel&gt;
+         &lt;content src="content.html#p001"/&gt;
+      &lt;/pageTarget&gt;
+      &lt;pageTarget id="p2" type="normal" value="2"&gt;
+         &lt;navLabel&gt;&lt;text&gt;2&lt;/text&gt;&lt;/navLabel&gt;
+         &lt;content src="content.html#p002"/&gt;
+      &lt;/pageTarget&gt;
+   &lt;/pageList&gt;
+&lt;/ncx&gt;</pre>
+</div>
+</section>
+
+<section class="suppress-numbering" id="sec-page-003">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-003"> </a> </span>PAGE-003: Identify the source</h3>
+                
+
+<p><a class="glossterm" href="#gloss-user" title="User">Users</a> typically want to know the source of the page break markers
+                    included in an <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publication</a> when they are derived from a static media.
+                    Considerations like which printing, by which publisher or imprint, and whether the pagination comes from
+                    the hard or soft cover edition will affect decisions about its usefulness (e.g., does it exactly match
+                    the pagination of a print book used in a classroom).</p>
+
+<p>To allow Users to determine the suitability of the pagination, identify the ISBN of the source work in
+                    the Package Document metadata.</p>
+
+<div class="informalexample">
+<p>The following example shows a <code class="markup">dc:source</code> element containing the ISBN of the print
+                        source of pagination. This example is valid for both EPUB 2 and 3.</p>
+<pre class="synopsis">&lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+   …
+   &lt;dc:source&gt;urn:isbn:9780375704024&lt;/dc:source&gt;
+   …
+&lt;/metadata&gt;</pre>
+</div>
+
+<p>If an ISBN is not available, include as much information as possible about the source publication
+                    (e.g., the publisher, date, edition, and binding).</p>
+
+<div class="informalexample">
+<p>The following example shows a <code class="markup">dc:source</code> element containing a text description of
+                        the source.</p>
+<pre class="synopsis">&lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
+   …
+   &lt;dc:source&gt;ACME Publishing, 1945, 2nd Edition, Softcover&lt;/dc:source&gt;
+   …
+&lt;/metadata&gt;</pre>
+</div>
+
+<p>If the page break markers are unique to the EPUB Publication, do not identify a print source.</p>
+</section>
+</section>
+</section>
+
+<section class="chapter" id="sec-distribution">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-distribution"> </a> </span>6 Distribution Techniques</h1>
+        
+
+<section class="suppress-numbering" id="sec-dist-001">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-dist-001"> </a> </span>DIST-001: Do not restrict access through digital rights management</h2>
+            
+
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publications</a> typically require preservation of the
+                publisher's and author's intellectual property when distributed (e.g., so that they can be made available for
+                individual sale through online bookstores or distributed through library systems). The most common way to
+                address this need has been through the application of digital rights management (DRM) schemes to the packaged
+                EPUB Publication. DRM enables a variety of security features that aren't native to the EPUB format, such as
+                the ability to limit access to a single User and to limit the length of time the person can access the
+                publication (e.g., library loans).</p>
+
+<p>In general, DRM can be made to work interoperably with <a class="glossterm" href="#gloss-at" title="Assistive Technology">Assistive
+                    Technologies</a>, but problems arise when DRM restrictions remove direct access to an EPUB Publication
+                or restrict access to the content within it. Unless the Reading System implementing the DRM provides API
+                level access to the content, it can prove difficult, or even impossible, to generate text-to-speech playback,
+                or for a refreshable braille display to have access to the underlying text, as well as cause other
+                accessibility issues.</p>
+
+<p>The application of digital rights management therefore must not impair or impede the functionality of
+                Assistive Technologies on EPUB Publications <a class="glossterm" href="#gloss-user" title="User">Users</a> have the right to
+                access.</p>
+</section>
+
+<section class="suppress-numbering" id="sec-dist-002">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-dist-002"> </a> </span>DIST-002: Include accessibility metadata in distribution records</h2>
+            
+
+<p>When an <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB Publication</a> is ingested into a distribution system, such as a
+                bookstore or library, a metadata record is often provided separately to the distributor. In these scenarios,
+                the metadata used to enable discovery of the publication typically comes from the distribution record alone,
+                not from the metadata in the Package Document.</p>
+
+<p>The result is that it is necessary to include as much accessibility metadata in distribution records as
+                their vocabularies allow.</p>
+
+<div class="note">
+<h3 class="title">note</h3>
+<p>The use of distribution records does not remove the requirement to include accessibility metadata in
+                    the Package Document. The metadata in the Package Document ensures accessibility information is always
+                    available with the publication.</p>
+</div>
+
+<div class="informalexample">
+<p>The following example shows an ONIX record with accessibility metadata that states that the EPUB
+                    Publication has no accessibility features disabled (10), a table of contents (11) and a correct reading
+                    order (13).</p>
+<pre class="synopsis">&lt;ONIXMessage release="3.0"&gt;
+   &lt;Header&gt;
+      …
+   &lt;/Header&gt;
+   &lt;Product&gt;
+      …
+      &lt;DescriptiveDetail&gt;
+         &lt;ProductFormFeature&gt;
+            &lt;ProductFormFeatureType&gt;09&lt;/ProductFormFeatureType&gt;
+            &lt;ProductFormFeatureValue&gt;10&lt;/ProductFormFeatureValue&gt;
+         &lt;/ProductFormFeature&gt;
+         &lt;ProductFormFeature&gt;
+            &lt;ProductFormFeatureType&gt;09&lt;/ProductFormFeatureType&gt;
+            &lt;ProductFormFeatureValue&gt;11&lt;/ProductFormFeatureValue&gt;
+         &lt;/ProductFormFeature&gt;
+         &lt;ProductFormFeature&gt;
+            &lt;ProductFormFeatureType&gt;09&lt;/ProductFormFeatureType&gt;
+            &lt;ProductFormFeatureValue&gt;13&lt;/ProductFormFeatureValue&gt;
+         &lt;/ProductFormFeature&gt;
+      &lt;/DescriptiveDetail&gt;
+      …
+      &lt;TitleDetail&gt;
+         &lt;TitleType&gt;01&lt;/TitleType&gt;
+         &lt;TitleElement&gt;
+            &lt;TitleElementLevel&gt;01&lt;/TitleElementLevel&gt;
+            &lt;TitleText&gt;Accessible EPUB 3&lt;/TitleText&gt;
+         &lt;/TitleElement&gt;
+      &lt;/TitleDetail&gt;
+      …
+   &lt;/Product&gt;
+&lt;/ONIXMessage&gt;</pre>
+</div>
+
+<section class="suppress-numbering" id="sec-dist-002-res">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-dist-002-res"> </a> </span>Helpful Resources</h3>
+                
+
+<p>See the following resources for more information about including accessibility metadata in distribution
+                    records:</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>
+<a class="ulink" href="http://www.a11ymetadata.org/the-specification/metadata-crosswalk/" target="_top">Accessibility Metadata Crosswalk</a>
+</p>
+</li>
+<li class="listitem">
+<p>
+<a class="ulink" href="http://www.editeur.org/ONIX/book/codelists/current.html#codelist196" target="_top">ONIX Code
+                                List 196</a>
+</p>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+<!--
+<section xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="acknowledgements" id="app-contributors">
+<div class="titlepage">
+<div>
+<div>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#app-contributors"> </a> </span>Acknowledgements and Contributors</h1>
+</div>
+</div>
+</div><p class="informative"> This section is informative</p>
+    
+
+<p>EPUB has been developed by the International Digital Publishing Forum in a cooperative effort, bringing together
+        publishers, vendors, software developers, and experts in the relevant standards.</p>
+
+<p>The EPUB Accessibility specification and techniques were prepared by the International Digital Publishing Forum’s
+        EPUB Maintenance Working Group, operating under a charter approved by the membership in July 2015, under the
+        leadership of:</p>
+
+<ul xml:lang="en" class="personlist">
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span>  <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span>  <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
+</ul>
+
+<p>Work on these documents was undertaken by an accessibility subgroup led by:</p>
+
+<ul xml:lang="en" class="personlist">
+<li class="person"><span class="name"><span class="surname">LaPierre</span>, <span class="givenname">Charles</span></span> <span class="affiliation">(
+                    Benetech
+                )</span> </li>
+<li class="person"><span class="name"><span class="surname">Singh</span>, <span class="givenname">Avneesh</span></span> <span class="affiliation">(
+                    DAISY Consortium
+                )</span> </li>
+</ul>
+
+<p>Active members of the working group included:</p>
+
+<h2 id="ack-idpf-members">IDPF Members</h2>
+
+<ul xml:lang="en" class="personlist">
+<li class="person"><span class="name"><span class="surname">Albert</span>, <span class="givenname">Paolo</span></span> <span class="affiliation">(PubCoder)</span> </li>
+<li class="person"><span class="name"><span class="surname">Baker</span>, <span class="givenname">Mike</span></span> <span class="affiliation">(Houghton Mifflin Harcourt)</span> </li>
+<li class="person"><span class="name"><span class="surname">Balakrishnan</span>, <span class="givenname">Ramu</span></span> <span class="affiliation">(MPS Limited)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cho</span>, <span class="givenname">Yong-Sang</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span> </li>
+<li class="person"><span class="name"><span class="surname">Comerford</span>, <span class="givenname">Rachel</span></span> <span class="affiliation">(Macmillan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cramer</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(Hachette Book Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Creasy</span>, <span class="givenname">Keith</span></span> <span class="affiliation">(American Printing House for the Blind, Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Deltour</span>, <span class="givenname">Romain</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Geffroy</span>, <span class="givenname">Jean-Marie</span></span> <span class="affiliation">(Mantano)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gusso</span>, <span class="givenname">Lina</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> </li>
+<li class="person"><span class="name"><span class="surname">Hanson</span>, <span class="givenname">Lauren</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Harris</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Heinser</span>, <span class="givenname">Bernhard</span></span> <span class="affiliation">(Access for All)</span> </li>
+<li class="person"><span class="name"><span class="surname">Johnson</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span> </li>
+<li class="person"><span class="name"><span class="surname">Keating</span>, <span class="givenname">Patrick</span></span> <span class="affiliation">(Bluefire Productions)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kennedy</span>, <span class="givenname">Naomi</span></span> <span class="affiliation">(Penguin Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kerscher</span>, <span class="givenname">George</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">LaPierre</span>, <span class="givenname">Charles</span></span> <span class="affiliation">(Benetech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Leo</span>, <span class="givenname">Arthic</span></span> <span class="affiliation">(Amnet Systems)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mietkiewicz</span>, <span class="givenname">Elie</span></span> <span class="affiliation">(Gutenberg Technology)</span> </li>
+<li class="person"><span class="name"><span class="surname">Murata</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(JEPA EPUB Study Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mussinelli</span>, <span class="givenname">Christina</span></span> <span class="affiliation">(Associazione Italiana Editori)</span> </li>
+<li class="person"><span class="name"><span class="surname">Prabhu</span>, <span class="givenname">John</span></span> <span class="affiliation">(HOV Services)</span> </li>
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span> </li>
+<li class="person"><span class="name"><span class="surname">Singh</span>, <span class="givenname">Avneesh</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Soiffer</span>, <span class="givenname">Neil</span></span> <span class="affiliation">(Design Science)</span> </li>
+<li class="person"><span class="name"><span class="surname">Thurston</span>, <span class="givenname">Jonathan</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Webster</span>, <span class="givenname">Amaya</span></span> <span class="affiliation">(Benetech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Weck</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+</ul>
+
+<h2 id="ack-experts-observers">Invited Experts/Observers</h2>
+
+<ul xml:lang="en" class="personlist">
+<li class="person"><span class="name"><span class="surname">Andrews</span>, <span class="givenname">David</span></span></li>
+<li class="person"><span class="name"><span class="surname">Bonelli</span>, <span class="givenname">Giuseppe</span></span></li>
+<li class="person"><span class="name"><span class="surname">Garrish</span>, <span class="givenname">Matt</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kudou</span>, <span class="givenname">Tomoyuki</span></span></li>
+<li class="person"><span class="name"><span class="surname">Leva</span>, <span class="givenname">Paolo</span></span></li>
+<li class="person"><span class="name"><span class="surname">Marquès Solé</span>, <span class="givenname">Daniel</span></span></li>
+<li class="person"><span class="name"><span class="surname">McGlone</span>, <span class="givenname">Jonathan</span></span></li>
+<li class="person"><span class="name"><span class="surname">Morris</span>, <span class="givenname">Julie</span></span></li>
+<li class="person"><span class="name"><span class="surname">Munchenburger</span>, <span class="givenname">Manfred</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rasmussen</span>, <span class="givenname">Lloyd</span></span></li>
+<li class="person"><span class="name"><span class="surname">Reddy</span>, <span class="givenname">Ramesh</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rothberg</span>, <span class="givenname">Madeleine</span></span></li>
+<li class="person"><span class="name"><span class="surname">Sheehan</span>, <span class="givenname">John</span></span></li>
+<li class="person"><span class="name"><span class="surname">White</span>, <span class="givenname">Jason</span></span></li>
+</ul>
+
+<p>For more detailed acknowledgements and information about contributors to each version of EPUB, refer to <span class="phrase"><a class="ulink" href="../../31/spec/epub-overview.html#acknowledgements" target="_top">Acknowledgements and Contributors</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a></span>. </p>
+</section>
+<section xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="bibliography" id="references">
+<div class="titlepage">
+<div>
+<div>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#references"> </a> </span>参照・参考</h1>
+</div>
+</div>
+</div>
+<div class="bibliodiv" id="normative-refs">
+<h3 class="title">規定の参照</h3>
+<div class="biblioentry" id="refContentDocsLatest"><p>[<abbr class="abbrev">Content Docs</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/contentdocs" target="_top">EPUB Content Documents 3</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refDCMES"><p>[<abbr class="abbrev">DCMES</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://dublincore.org/documents/dces/" target="_top">Dublin Core Metadata Element Set, Version 1.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refDPUBVocab"><p>[<abbr class="abbrev">DPUB Vocab</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/dpub-aria-1.0/" target="_top">Digital Publishing WAI-ARIA Module 1.0</a>
+</em>. </span>
+<span class="author">Matt Garrish, et al. </span>
+</p>
+</div>
+<div class="biblioentry" id="refA11Y"><p>[<abbr class="abbrev">EPUB Accessibility</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/accessibility" target="_top">EPUB Accessibility</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refHTML"><p>[<abbr class="abbrev">HTML</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/html/" target="_top">HTML</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refISO24751-3"><p>[<abbr class="abbrev">ISO24751-3</abbr>] 
+      
+<span class="title"><em><a class="ulink" href="http://www.iso.org/iso/catalogue_detail?csnumber=43604" target="_top"> ISO/IEC 24751-3:2008 Information
+          technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3:
+          "Access for all" digital resource description</a></em>. </span>
+<span class="date">2008-10-01. </span>
+</p>
+</div>
+<div class="biblioentry" id="refMathML"><p>[<abbr class="abbrev">MATHML</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2010/REC-MathML3-20101021/" target="_top">Mathematical Markup Language (MathML) Version
+          3.0</a>
+</em>. </span>
+<span class="author">David Carlisle, et al. </span>
+<span class="date">21 October 2010. </span>
+</p>
+</div>
+<div class="biblioentry" id="refOverlaysLatest"><p>[<abbr class="abbrev">Media Overlays</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/mediaoverlays" target="_top">EPUB Media Overlays 3.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refOPF2"><p>[<abbr class="abbrev">OPF2</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm" target="_top">Open Packaging Format 2.0.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refPackagesLatest"><p>[<abbr class="abbrev">Packages 3</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/packages" target="_top">EPUB Packages 3</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC2119"><p>[<abbr class="abbrev">RFC2119</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in RFCs to Indicate Requirement Levels</a>
+        (RFC 2119) </em>. </span>
+<span class="date">March 1997. </span>
+</p>
+</div>
+<div class="biblioentry" id="refSMIL"><p>[<abbr class="abbrev">SMIL</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2008/REC-SMIL3-20081201/" target="_top">SMIL Version 3.0</a>
+</em>. </span>
+<span class="author">D. Bulterman, et al. </span>
+<span class="date">01 December 2008. </span>
+</p>
+</div>
+<div class="biblioentry" id="refEPUBStructureVocab"><p>[<abbr class="abbrev">Structure Vocab</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/vocab/structure/#" target="_top">EPUB 3 Structural Semantics Vocabulary</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refARIA11"><p>[<abbr class="abbrev">WAI-ARIA 1.1</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/wai-aria-1.1/" target="_top">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a>
+</em>. </span>
+<span class="author">Joanmarie Diggs, et al. </span>
+</p>
+</div>
+<div class="biblioentry" id="refWCAG20"><p>[<abbr class="abbrev">WCAG 2.0</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20/" target="_top">Web Content Accessibility Guidelines (WCAG) 2.0</a>
+</em>. </span>
+<span class="author">Ben Caldwell, et al. </span>
+</p>
+</div>
+<div class="biblioentry" id="refWCAG20Tech"><p>[<abbr class="abbrev">WCAG 2.0 Techs</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/" target="_top">Techniques for WCAG 2.0.</a>
+</em>. </span>
+<span class="author">Michael Cooper, et al. </span>
+</p>
+</div>
+<div class="biblioentry" id="refSCHEMA-ORG"><p>[<abbr class="abbrev">schema.org</abbr>] 
+      
+<span class="title"><em><a class="ulink" href="https://schema.org" target="_top">schema.org</a></em>. </span>
+</p>
+</div>
+</div>
+<div class="bibliodiv" id="informative-refs">
+<h3 class="title">規定ではない参照</h3>
+<div class="biblioentry" id="refEPUB3Overview"><p>[<abbr class="abbrev">EPUB3 Overview</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="../../31/spec/epub-overview.html" target="_top">EPUB 3.1 Overview</a>
+</em>. </span>
+<span class="author">Garth Conboy, et al. </span>
+</p>
+</div>
+<div class="biblioentry" id="refMULTIPLEREND"><p>[<abbr class="abbrev">Multiple Renditions</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/renditions/multiple/epub-multiple-renditions-20150826.html" target="_top">EPUB
+          Multiple-Rendition Publications 1.0</a>
+</em>. </span>
+<span class="date">26 August 2015. </span>
+</p>
+</div>
+<div class="biblioentry" id="refSWF"><p>[<abbr class="abbrev">SWF</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://wwwimages.adobe.com/content/dam/Adobe/en/devnet/swf/pdf/swf-file-format-spec.pdf" target="_top">SWF File
+          Format Specification</a> Version 19 </em>. </span>
+<span class="date">2012. </span>
+</p>
+</div>
+<div class="biblioentry" id="refA11YNote"><p>[<abbr class="abbrev">W3C Accessibility Note</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/dpub-accessibility/" target="_top">Digital Publishing and Accessibility in W3C
+          Documents</a>
+</em>. </span>
+<span class="date">03 May 2016. </span>
+</p>
+</div>
+</div>
+</section>
+-->
+</body>
+</html>
