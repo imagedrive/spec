@@ -13,7 +13,7 @@
 <body>
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-spec-20160801.html">EPUB 3.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest">http://www.idpf.org/epub3/latest</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-spec-20160801.html">EPUB 3.1</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-spec-20160906.html">EPUB 3.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest">http://www.idpf.org/epub3/latest</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-spec-20160906.html">EPUB 3.1</a> を参照されたい。</p>
 
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
@@ -21,7 +21,7 @@
 <dt>公開日:</dt>
 <dd>2016年4月11日</dd>
 <dt>修正日:</dt>
-<dd>2016年8月1日</dd>
+<dd>2016年9月9日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -31,14 +31,14 @@
 <header>
 <!--p><a href="http://www.idpf.org"><img src="../../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
 <h1 class="title">EPUB 3.1</h1>
-<p class="identity"><span class="pubdate">2016年8月1日</span> <span class="releaseinfo">Editor's Draft</span></p>
+<p class="identity"><span class="pubdate">2016年9月6日</span> <span class="releaseinfo">Draft Specification</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-spec-20160801.html">http://www.idpf.org/epub/31/spec/epub-spec-20160801.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-spec-20160906.html">http://www.idpf.org/epub/31/spec/epub-spec-20160906.html</a></dd>
 <dt>最新版</dt>
 <dd><a href="http://www.idpf.org/epub3/latest">http://www.idpf.org/epub3/latest</a></dd>
 <dt>前の版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-spec-20160426.html">http://www.idpf.org/epub/31/spec/epub-spec-20160426.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-spec-20160801.html">http://www.idpf.org/epub/31/spec/epub-spec-20160801.html</a></dd>
 <dt>以前の勧告</dt>
 <dd><a href="http://www.idpf.org/epub/301/spec/epub-publications-20140626.html">http://www.idpf.org/epub/301/spec/epub-publications-20140626.html</a></dd>
 </dl>
@@ -47,7 +47,7 @@
 <ul>
 <li><a href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-spec.xml">このドキュメントの変更</a></li>
 <li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed+label%3ASpec-EPUB31">このリビジョンで対処する課題</a></li>
-<li><a href="https://github.com/IDPF/epub-revision/issues">課題のレポート</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues">イシュートラッカー</a></li>
 <li><a href="./epub-spec-errata/">正誤表</a></li>
 </ul>
 </div>
@@ -57,7 +57,7 @@
 <p class="editor">Tzviya Siegman, John Wiley &amp; Sons</p>
 <p class="editor">Matt Garrish, Invited Expert</p>
 </div>
-<p class="formats">完全な EPUB 3.1 仕様は、EPUB <a href="http://www.idpf.org/epub/31/docs/epub31-v30-20160801.epub">3.0</a> と <a href="http://www.idpf.org/epub/31/docs/epub31-v31-20160801.epub">3.1</a> 出版物としてダウンロードしても利用できる。</p>
+<p class="formats">完全な EPUB 3.1 仕様は、EPUB <a href="http://www.idpf.org/epub/31/docs/epub31-v30-20160906.epub">3.0</a> と <a href="http://www.idpf.org/epub/31/docs/epub31-v31-20160906.epub">3.1</a> 出版物としてダウンロードしても利用できる。</p>
 <div class="legalnotice">
 <p>Copyright © 2010-2016 International Digital Publishing Forum™</p>
 <div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
@@ -71,7 +71,7 @@
 <p>このセクションは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わるかもしれない。</p>
 <p>このドキュメントは、2015年7月8日に承認された<a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top"> EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成されたドラフトである。</p>
 <p>このドキュメントは安定しておらず、いつでも、更新や置き換え、非推奨にされるかもしれない。ドラフトとしての発行は、IDPF メンバーシップまたは IDPF 理事会による承認を意味するものではない。このドキュメントを引用するときは、明確に進行中の作業として参照されたい。</p>
-<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
+<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">イシュートラッカー</a>に提供することができる。</p>
 <p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
 </section>
 <nav xmlns:spec="http://www.idpf.org/2016/epub/spec" class="toc" id="toc">
@@ -82,7 +82,7 @@
 <li><span class="section"><a href="#sec-purpose-scope">1.1. 目的とスコープ</a></span></li>
 <li><span class="section"><a href="#sec-terminology">1.2. 用語</a></span></li>
 <li><span class="section"><a href="#sec-typography">1.3. 表記上の規則</a></span></li>
-<li><span class="section"><a href="#sec-conformance">1.4. 適合性宣言</a></span></li>
+<li><span class="section"><a href="#sec-conformance-statements">1.4. 適合性宣言</a></span></li>
 </ol>
 </li>
 <li><span class="chapter"><a href="#sec-epub-org">2. 組織</a></span>
@@ -110,7 +110,7 @@
 <li><span class="section"><a href="#sec-xml-constraints">4.3. XML 適合性</a></span></li>
 </ol>
 </li>
-<li><span class="appendix"><a href="#sec-overview-deprecated">A. 安定していない機能</a></span></li>
+<li><span class="appendix"><a href="#sec-overview-deprecated">A. 非推奨（Obsolete）の機能</a></span></li>
 <li><span class="index"><a href="#index">インデックス</a></span></li>
 <li><span class="acknowledgements"><a href="#app-contributors">謝辞と貢献者</a></span></li>
 <li><span class="bibliography"><a href="#references">参照・参考</a></span></li>
@@ -121,22 +121,20 @@
 <section class="section" id="sec-purpose-scope">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-purpose-scope"> </a> </span>1.1 目的とスコープ</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p>この仕様、EPUB 3.1 は、デジタル出版物やドキュメントのための配信と交換形式の規格を定義する。EPUB® は、単一のファイル形式で配信するために体系化と意味論的に強化された Web コンテンツ（HTML、CSS、SVG や他のリソースを含む）のパッケージングとエンコーディングの手段を定義している。</p>
-<p>EPUB は、デジタルの本（電子書籍）の形式として広く採用され、この仕様は、複雑なレイアウト、リッチメディアと双方向性、グローバルなタイポグラフィの機能を含む、出版物が要求する幅広い範囲をサポートするために、形式の能力を大きく向上させている。EPUB 3.1 の期待は、本、雑誌、学術書、専門書や科学的な出版を含むコンテンツの幅広い範囲のために利用されるということである。</p>
-<p>EPUB 3.1 は、事実上モジュール化されており、コア機能と規格の機能を定義する仕様群で構成されている。この仕様は、規格への主なエントリ ポイントを表すが、<a class="xref" href="#sec-epub-specs" title="2.1 Specifications">仕様</a>に記載されている仕様はすべての規格に属する。これらの仕様を横断して定義された<a class="link" href="#index" title="Index">主な概念と定義へのインデックス</a>は、この仕様の最後で提供される。</p>
-<p>規定ではない <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a> は、規格への一般的な紹介を提供する。規格の以前のバージョンである EPUB 3.0.1 からの技術的な変更点の一覧は、規定ではない <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.1 Differences from EPUB 3.0.1">[<abbr class="abbrev">EPUB3 Changes</abbr>]</a> でも利用できる。</p>
+<p>この仕様、EPUB 3.1 は、デジタル出版物やドキュメントのための配信と交換形式の規格を定義する。EPUB® は、単一コンテナで配信するために体系化と意味論的に強化された Web コンテンツ（HTML、CSS、SVG や他のリソースを含む）のパッケージングとエンコーディングの手段を定義している。</p>
+<p>EPUB は、デジタルの本（電子書籍）の形式として広く採用され、EPUB 3.1 は、複雑なレイアウト、リッチメディアと双方向性、グローバルなタイポグラフィの機能を含む、出版物が要求する幅広い範囲をサポートするために、形式の能力を大きく向上させている。EPUB 3.1 フォーマットの期待は、本、雑誌、学術書、専門書や科学的な出版を含むコンテンツの幅広い範囲のために利用されるということである。</p>
+<p>EPUB 3.1 は、事実上モジュール化されており、コア機能と規格の機能を定義する仕様群で構成されている。この仕様は、規格への主なエントリ ポイントを表すが、<a class="xref" href="#sec-epub-specs" title="2.1 Specifications">仕様</a>に記載されている仕様は EPUB 3.1 の全てである。これらの仕様を横断して定義された<a class="link" href="#index" title="Index">主な概念と定義へのインデックス</a>は、この仕様の最後で提供される。</p>
+<p>規定ではない <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a> は、EPUB 3.1 への一般的な紹介を提供する。規格の以前のバージョンである EPUB 3.0.1 からの技術的な変更点の一覧は、規定ではない <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.1 Differences from EPUB 3.0.1">[<abbr class="abbrev">EPUB3 Changes</abbr>]</a> でも利用できる。</p>
 </section>
 <section class="section" id="sec-terminology">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.2 用語</h2>
+<p>次の用語は、EPUB 3.1 の固有である。どこで使用するにしても、大文字で始める。</p>
+<p>セクションにある用語の最初のインスタンスのみ、定義にリンクされる。</p>
 <div xml:lang="en" class="glosslist">
 <dl>
 <dt class="glossentry" id="gloss-author"><span class="glossterm">製作者</span></dt>
 <dd class="glossdef">
 <p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の制作に対して責任がある人または組織。制作者は、コンテンツの制作者である必要はない。</p>
-</dd>
-<dt class="glossentry" id="gloss-content-provider"><span class="glossterm">コンテンツ提供者</span></dt>
-<dd class="glossdef">
-<p>流通や販売チャンル、または複数の<a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">リーディング システム</a>へ直接的に <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を提供する出版社や著者、個人、他の情報源。</p>
 </dd>
 <dt class="glossentry" id="gloss-core-media-type"><span class="glossterm">コア メディア タイプ</span></dt>
 <dd class="glossdef">
@@ -144,32 +142,32 @@
 </dd>
 <dt class="glossentry" id="gloss-publication-resource-cmt"><span class="glossterm">コア メディア タイプ リソース</span></dt>
 <dd class="glossdef">
-<p><a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>であるため、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>の提供が必要ではない<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>（<a class="glossterm" href="#gloss-publication-resource-foreign" title="Foreign Resource">管理外リソース</a>を参照）。</p>
+<p><a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>の提供が必要ではない、<a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>を持つ<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>（<a class="glossterm" href="#gloss-publication-resource-foreign" title="Foreign Resource">管理外リソース</a>を参照）。</p>
 </dd>
 <dt class="glossentry" id="gloss-rendition-default"><span class="glossterm">初期設定のレンディション</span></dt>
 <dd class="glossdef">
 <p><span class="phrase"><a class="ulink" href="epub30-ocf.html#sec-container-metainf-container.xml" target="_top">container.xml</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a></span> ファイルの最初の <code class="markup">rootfile</code> 要素に記載している<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>。</p>
 </dd>
-<dt class="glossentry" id="gloss-container"><span class="glossterm">EPUB コンテナ（またはコンテナ）</span></dt>
+<dt class="glossentry" id="gloss-container"><span class="glossterm">EPUB コンテナ</span></dt>
 <dd class="glossdef">
 <p><span class="phrase"><a class="ulink" href="epub-ocf.html#sec-container-zip" target="_top">OCF ZIP コンテナ</a> <a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a></span> で定義されている <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>用 ZIP ベースのパッケージングと配布の形式。</p>
 </dd>
 <dt class="glossentry" id="gloss-content-document-epub"><span class="glossterm">EPUB コンテンツ ドキュメント</span></dt>
 <dd class="glossdef">
 <p>EPUB コンテンツ ドキュメントの定義（<a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">HTML</a> または <a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG</a>）のひとつに一致した<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>。</p>
-<p>EPUB コンテンツ ドキュメントは<a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>であるため、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>を提供することなく <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>に含まれていてもよい。</p>
+<p>EPUB コンテンツ ドキュメントは<a class="glossterm" href="#gloss-publication-resource-cmt" title="Core Media Type Resource">コア メディア タイプ リソース</a>であるため、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>を提供することなく <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>に含まれてもよい。</p>
 </dd>
 <dt class="glossentry" id="gloss-content-document-epub-nav"><span class="glossterm">EPUB ナビゲーション ドキュメント</span></dt>
 <dd class="glossdef">
-<p>人間と機械が読み取り可能であるグローバルなナビゲーション情報を含む <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML コンテンツ ドキュメント</a>の特化。EPUB ナビゲーション ドキュメントは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-nav" target="_top">EPUB ナビゲーション ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> で述べられた制約に準じる。</p>
+<p>人間と機械が読み取り可能であるグローバルなナビゲーション情報を含む特化した <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML コンテンツ ドキュメント</a>。EPUB ナビゲーション ドキュメントは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-nav" target="_top">EPUB ナビゲーション ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> で述べられた制約に準じる。</p>
 </dd>
 <dt class="glossentry" id="gloss-epub-package"><span class="glossterm">EPUB パッケージ（またはパッケージ）</span></dt>
 <dd class="glossdef">
-<p><a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>で定義されているように、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>をレンダリングする相互関係にある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a>のセットから構成されている論理的なドキュメントのエンティティ。</p>
+<p><a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>で定義されているような、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>をレンダリングする相互関係にある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a>のセットから構成されている論理的なドキュメントのエンティティ。</p>
 </dd>
 <dt class="glossentry" id="gloss-epub-publication"><span class="glossterm">EPUB 出版物</span></dt>
 <dd class="glossdef">
-<p><span class="phrase">この仕様</span>に準拠したひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>のコレクションは、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB コンテナ</a>をパッケージ化している。</p>
+<p><span class="phrase">この仕様</span>に準拠したひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>のコレクションは、<a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>をパッケージ化している。</p>
 <p>EPUB 出版物は典型的に単一の知的・芸術作品を表しているが、この仕様は、コンテンツの性質を制限しない。</p>
 </dd>
 <dt class="glossentry" id="gloss-epub-reading-system"><span class="glossterm">EPUB リーディング システム (またはリーディング システム)</span></dt>
@@ -183,16 +181,16 @@
 </dd>
 <dt class="glossentry" id="gloss-publication-resource-foreign"><span class="glossterm">管理外リソース</span></dt>
 <dd class="glossdef">
-<p><a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>ではない<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>。管理外リソースは、<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>で定義されているフォールバックの要件に依存する。</p>
+<p><a class="glossterm" href="#gloss-publication-resource-cmt" title="Core Media Type Resource">コア メディア タイプ リソース</a>ではない<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>。管理外リソースは、<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>で定義されているフォールバックの要件に依存する。</p>
 </dd>
-<dt class="glossentry" id="gloss-content-document-epub-xhtml"><span class="glossterm">XHTML コンテンツ ドキュメント</span></dt>
+<dt class="glossentry" id="gloss-local-resource"><span class="glossterm">ローカル リソース</span></dt>
 <dd class="glossdef">
-<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-xhtml" target="_top">XHTML コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> のプロファイルに一致している <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
-<p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> に定義された <a class="ulink" href="https://www.w3.org/TR/html/xhtml.html#xhtml" target="_top">XHTML 構文</a>を使用する XHTML コンテンツ ドキュメント。</p>
+<p><a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>内に配置されたリソース。</p>
+<p>リソースの位置ための特定のルールは、メディア タイプのための<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの位置</a>を参照されたい。</p>
 </dd>
 <dt class="glossentry" id="gloss-manifest"><span class="glossterm">マニフェスト</span></dt>
 <dd class="glossdef">
-<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の指定された<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>を構成するすべての<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>のリスト。</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の指定された<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>を構成する全ての<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>のリスト。</p>
 
 <p>詳細については<span class="phrase"><a class="ulink" href="epub-packages.html#sec-manifest-elem" target="_top">マニフェスト</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span>を参照されたい。</p>
 </dd>
@@ -207,27 +205,22 @@
 <dt class="glossentry" id="gloss-publication-resource-cmt-or-foreign"><span class="glossterm">出版物リソース</span></dt>
 <dd class="glossdef">
 <p>コンテンツまたは <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の少なくともひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>のロジックと表示に関する命令を含んでいるリソース。このリソースがない場合には、EPUB 出版物は<a class="glossterm" href="#gloss-author" title="製作者">製作者</a>の意図したとおりに表示されないことがある。出版物リソースの例としてはレンディションの<a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>、CSS スタイル シート、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
-<p>パッケージ ドキュメント自身を除いて、レンディションをレンダリングするために必要な出版物リソースはレンディションの<span class="phrase"><a class="ulink" href="epub-packages.html#sec-manifest-elem" target="_top">マニフェスト</a></span> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> に記載され、（<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>で特に指定がない限り）<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB コンテナ</a>ファイルにバンドルする。</p>
-<p>
-出版物リソースでないリソースの例としては、パッケージ ドキュメントの <span class="phrase"><a class="link" href="epub-packages.html#sec-link-elem" target="_top">link</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> の外で解決する外部へのハイパーリンクで識別されるものが含まれている。（例えば <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element" target="_top">a</a></code> 要素の <code class="markup">href</code> 属性）</p>
+<p>パッケージ ドキュメント自身を除いて、レンディションをレンダリングするために必要な出版物リソースはレンディションの<span class="phrase"><a class="ulink" href="epub-packages.html#sec-manifest-elem" target="_top">マニフェスト</a></span> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> に記載され、（<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>で特に指定がない限り）<a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>ファイルにバンドルする。</p>
+<p>出版物リソースでないリソースの例としては、パッケージ ドキュメントの <span class="phrase"><a class="ulink" href="epub-packages.html#sec-link-elem" target="_top">link</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> によって識別されるか（例えば <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element" target="_top">a</a></code> 要素の <code class="markup">href</code> 属性など）<a class="glossterm" href="#gloss-remote-resource" title="Remote Resource">リモート リソース</a>を解決する外部へのハイパーリンクで識別されるものが含まれている。</p>
+</dd>
+<dt class="glossentry" id="gloss-release-identifier"><span class="glossterm">公開識別子</span></dt>
+<dd class="glossdef">
+<p>公開識別子は <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の任意のインスタンスが、別のインスタンスに対して、それらが同一であるのか、異なる版なのか、または無関係なのかどうかを判断するために比較できるようにする。</p>
+<p>詳細については<span class="phrase"><a class="ulink" href="epub-packages.html#sec-metadata-elem-identifiers-pid" target="_top">公開識別子</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> を参照されたい。</p>
 </dd>
 <dt class="glossentry" id="gloss-remote-resource"><span class="glossterm">リモート リソース</span></dt>
 <dd class="glossdef">
-<p>一般的に、オンラインである必要はないが、<a class="glossterm" href="#gloss-container" title="EPUB Container (or Container)">EPUB コンテナ</a>の外部に配置するリソース</p>
+<p>一般的に、オンラインである必要はないが、<a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>の外部に配置するリソース</p>
 <p>リソース配置に関するメディア タイプの特定のルールは、<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>を参照されたい。</p>
-</dd>
-<dt class="glossentry" id="gloss-release-identifier"><span class="glossterm">公開リソース</span></dt>
-<dd class="glossdef">
-<p>公開リソースは <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の任意のインスタンスが、別のインスタンスに対して、それらが同一であるのか、異なる版なのか、または無関係なのかどうかを判断するために比較できるようにする。</p>
-<p>詳細については<span class="phrase"><a class="ulink" href="epub-packages.html#sec-metadata-elem-identifiers-pid" target="_top">公開リソース</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> を参照されたい。</p>
 </dd>
 <dt class="glossentry" id="gloss-rendition"><span class="glossterm">レンディション</span></dt>
 <dd class="glossdef">
 <p><a class="glossterm" href="#gloss-epub-package" title="EPUB Package (or Package)">EPUB パッケージ</a>で述べられているように、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>コンテンツのひとつのレンダリング。</p>
-</dd>
-<dt class="glossentry" id="gloss-rendition-default">初期設定のレンディション</dt>
-<dd class="glossdef">
-<p><span class="phrase"><a class="link" href="epub30-ocf.html#sec-container-metainf-container.xml">コンテナ - META-INF/container.xml</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr class="abbrev">OCF3</abbr>]</a></span> ファイルの最初の <code class="markup">rootfile</code> 要素に記載している<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>。</p>
 </dd>
 <dt class="glossentry" id="gloss-content-document-epub-scripted"><span class="glossterm">スクリプト コンテンツ ドキュメント</span></dt>
 <dd class="glossdef">
@@ -242,10 +235,6 @@
 <dt class="glossentry" id="gloss-content-document-epub-svg"><span class="glossterm">SVG コンテンツ ドキュメント</span></dt>
 <dd class="glossdef">
 <p><span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-svg" target="_top">SVG コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で表現された制約に準拠した <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
-</dd>
-<dt class="glossentry" id="gloss-viewport-svg"><span class="glossterm">SVG ビューポート</span></dt>
-<dd class="glossdef">
-<p>SVG 画像を表示できる<a class="glossterm" href="#gloss-viewport" title="Viewport">ビューポート</a>。</p>
 </dd>
 <dt class="glossentry" id="gloss-synthetic-spread"><span class="glossterm">合成見開き</span></dt>
 <dd class="glossdef">
@@ -268,13 +257,14 @@
 <dd class="glossdef">
 <p><a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディング システム (またはリーディング システム)">EPUB リーディング システム</a>を使用して <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>を消費する個人。</p>
 </dd>
-<dt class="glossentry" id="gloss-user-agent"><span class="glossterm">ユーザーエージェント</span></dt>
-<dd class="glossdef">
-<p>一般的な HTML を消費する包括的にクライアントまたはアプリケーション（すなわち、Web ブラウザ、スクリーンリーダー）。</p>
-</dd>
 <dt class="glossentry" id="gloss-viewport"><span class="glossterm">ビューポート</span></dt>
 <dd class="glossdef">
-<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の内容が視覚的に<a class="glossterm" href="#gloss-user" title="読者">読者</a>に与えられる <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディング システム (またはリーディング システム)">EPUB リーディング システム</a>の領域。</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>が視覚的に<a class="glossterm" href="#gloss-user" title="読者">読者</a>に与えられる <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディング システム (またはリーディング システム)">EPUB リーディング システム</a>の領域。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-document-epub-xhtml"><span class="glossterm">XHTML コンテンツ ドキュメント</span></dt>
+<dd class="glossdef">
+<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-xhtml" target="_top">XHTML コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> のプロファイルに一致している <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
+<p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> に定義された <a class="ulink" href="https://www.w3.org/TR/html/xhtml.html#xhtml" target="_top">XHTML 構文</a>を使用する XHTML コンテンツ ドキュメント。</p>
 </dd>
 </dl>
 </div>
@@ -286,7 +276,7 @@
 <dl class="variablelist">
 <dt class="varlistentry"><span class="term"><code class="markup">markup</code></span></dt>
 <dd>
-<p>すべてのマークアップ（要素、属性、プロパティ）、コード（JavaScript、擬似コード）、機械可読な値（文字列、文字、メディアタイプ）とファイル名は、赤色の等幅フォントで示している。</p>
+<p>全てのマークアップ（要素、属性、プロパティ）、コード（JavaScript、擬似コード）、機械可読な値（文字列、文字、メディアタイプ）とファイル名は、赤色の等幅フォントで示している。</p>
 </dd>
 <dt class="varlistentry"><span class="term"><code class="code-link">markup link</code></span></dt>
 <dd>
@@ -335,11 +325,11 @@
 </div>
 </section>
 
-<section xml:lang="en" class="section" id="sec-conformance">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance"> </a> </span>1.4 適合性宣言</h2>
+<section xml:lang="en" class="section" id="sec-conformance-statements">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance-statements"> </a> </span>1.4 適合性宣言</h2>
 <p>このドキュメント内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">may</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr class="abbrev">RFC2119</abbr>]</a> の記述に従って解釈される。</p>
 <p>この仕様の全てのセクションと補足は規定である。但し"このセクションは規定ではない情報である"という規定ではない状態のラベルで識別される箇所を除く。セクションと補足への規定ではない状態の適用は、含まれている全ての子コンテンツおよびサブセクションに適用される。</p>
-<p>この仕様のすべての例は規定ではない。</p>
+<p>この仕様の全ての例は規定ではない。</p>
 </section>
 </section>
 <section class="chapter" id="sec-epub-org">
@@ -347,7 +337,7 @@
 <section class="section" id="sec-epub-specs">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-specs"> </a> </span>2.1 仕様</h2>
 <p>EPUB 3.1 規格は、サブ仕様のファミリーを横断して定義されたコア機能と機能性を持つ性質のモジュールである。</p>
-<p>この仕様は、ファミリーの中で最上位の仕様を表している。これは、規格のプロダクトである <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>と EPUB 出版物を消費し、<a class="glossterm" href="#gloss-user" title="User">読者</a>にその内容を提示するアプリケーションである <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">EPUB リーディング システム</a>のための適合性要件が含まれている（<a class="xref" href="#sec-epub-pub-conf" title="3.1 EPUB Publications">EPUB 出版物の適合性</a>と <a class="xref" href="#sec-epub-rs-conf" title="3.2 EPUB Reading Systems">EPUB リーディング システムの適合性</a>のそれぞれを見よ）。</p>
+<p>この仕様は、ファミリーの中で最上位の仕様を表している。これは、（規格のプロダクトである）<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>と（EPUB 出版物を消費し、<a class="glossterm" href="#gloss-user" title="User">読者</a>にその内容を提示するアプリケーションである）<a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">EPUB リーディング システム</a>のための適合性要件が含まれている。</p>
 <p>完全な EPUB 3.1 の他の仕様は、次の通りである。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
@@ -372,7 +362,7 @@
 </ul>
 </div>
 <p>これらの仕様は、EPUB 3.1 に関連しているように広く認められている正式なリストであり、規格の一部として関連する機能を含んでいるが、新しい機能もまた拡張仕様の開発を通じて定期的に追加される。</p>
-<p>規格のためにコアのリビジョンの外側で定義されている特徴と機能は、この仕様で正式に認められていないが、とはいえ、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">参照仕様</a>として認識された時点で、製作者と開発者によって使用するために利用可能である。</p>
+<p>規格のためにコアのリビジョンの外側で定義されている特徴と機能は、この仕様で正式に認められていないが、とはいえ、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">参照仕様</a>として認識された時点で、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>と開発者によって使用するために利用可能である。</p>
 <div class="note">
 <h3 class="title">note</h3>
 <p>現在および最近完了した活動のリストは、<a class="ulink" href="http://www.idpf.org/ongoing" target="_top">http://www.idpf.org/ongoing</a> でメンテナンスされる。</p>
@@ -382,15 +372,16 @@
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-roadmap"> </a> </span>2.2 ロードマップ</h2>
 <p class="informative">このセクションは規定ではない。</p>
 <p>このセクションでは、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>として定義する中心的な成果物を通じて EPUB 仕様の組織を調べる。</p>
-<p>EPUB 出版物を想像する最も容易な方法は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-user" target="_top">読者</a></span>にデジタルな読書体験を提供するパッケージ化された Web コンテンツのセットである。EPUB 出版物の中心は、オープン Web プラットフォーム上に構築されたコンテンツである。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>と呼ばれる、このコンテンツは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML</a></span> と <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-svg" target="_top">SVG</a></span> の二種類がある。典型的に、これらのドキュメントは、例えば、画像、音声やビデオクリップ、スクリプトやスタイルシートなど、多くの追加リソースを参照する。</p>
-<p>EPUB コンテンツ ドキュメントの製作のための規則と要件に関する詳細情報は、<a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a> で提供されている。</p>
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-media-overlay-document" target="_top">メディア オーバーレイ ドキュメント</a></span>は、音声コンテンツを持つ EPUB コンテンツ ドキュメント内のテキストを同期させるための宣言型マークアップを提供する EPUB コンテンツ ドキュメントを引き立たせる。効果は、ナレーションされているように、テキストがハイライトされる読み上げの体験を作る機能である。メディア オーバーレイ ドキュメントは、<a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> で定義されている。</p>
-<p>コンテンツから上のレイヤーに移動すると、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>という特別なファイルは、EPUB コンテンツ ドキュメントに命令を与えている。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-spine" target="_top">スパイン</a></span>は、ユーザーが出版物を読み進めるとき、あるドキュメントから次への移行をスムーズにし、ドキュメントをレンダリングするシーケンスを記載する。パッケージ ドキュメントはまた、（例えば、本棚に表示するタイトルと著者名、コンテンツが固定レイアウトなのか、あるいはリフローすることが可能かどうかなどのレンダリングのメタデータも同様に）読者に出版物を提示するリーディング システムによって使用される全てのメタデータを包含する。</p>
-<p>パッケージ ドキュメントは、例えば <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>など、主要なリソースを識別し、コンテンツのレンダリングに使用されるリソースの完全なマニフェストもまた含む。EPUB ナビゲーション ドキュメントは、例えば目次など、読者が迅速かつ容易にコンテンツを移動することを可能にする重要なナビゲーション機能を提供する。</p>
-<p>パッケージ ドキュメントと EPUB ナビゲーション ドキュメントは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-doc" target="_top">Package Document</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> に定義されている。</p>
-<p>一般的に、EPUB 出版物のリソースは、ファイル拡張子 <code class="filename">.epub</code> の ZIP ベースのアーカイブとして、配布のためにひとまとめにされる。ZIP アーカイブ準拠なので、EPUB 出版物は多くのソフトウェアプログラムによって解凍でき、生産と消費の両方を単純にすることができる。</p>
-<p>コンテナフォーマットは、zip 圧縮されたコンテンツが EPUB 出版物であることを決定する手段（<code class="filename">mimetype</code> ファイル）だけでなく、有益なリソースの普遍的な名前のディレクトリも提供する（<code class="filename">/META-INF</code>）。これらの間のキーになるのは、パッケージ ドキュメントをリーディング システムに指示する <code class="filename">container.xml</code> である。</p>
-<p>コンテナフォーマットは、<a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> で定義されている。</p>
+<p>EPUB 出版物は、<a class="glossterm" href="#gloss-epub-package" title="EPUB Package (or Package)">EPUB パッケージ</a>と呼ばれるものによって表示されるそれぞれのコンテンツのひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>で構成されている。EPUB パッケージは、コンテンツを読むために必要な全てのリソースで構成されている。これらの間で重要なファイルは、（例えば、本棚に表示するタイトルと著者名、コンテンツが固定レイアウトなのか、あるいはリフローすることが可能かどうかなどのレンダリングのメタデータも同様に）<a class="glossterm" href="#gloss-user" title="User">読者</a>に EPUB 出版物を提示する<a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">リーディング システム</a>によって使用される全てのメタデータを包含する<a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>である。リソースの完全なマニフェストもまた提供し、読者がコンテンツを介して進むにつれてドキュメントをレンダリングするための配列を記載する<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-spine" target="_top">スパイン</a></span>を包含する。</p>
+<p>EPUB パッケージは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>と呼ばれる他の主要なファイルも包含する。このドキュメントは、読者が迅速かつ容易にコンテンツを移動できる、例えば目次のような、重要なナビゲーション機能を提供する。</p>
+<p>EPUB パッケージの要件は、<a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> で定義されている。</p>
+<p>EPUB 出版物のリソースは、ファイル拡張子 <code class="filename">.epub</code> の ZIP ベースのアーカイブ内で配布のためにひとまとめにされる。ZIP アーカイブ準拠なので、EPUB 出版物は多くのソフトウェアプログラムによって解凍でき、生産と消費の両方を単純にすることができる。</p>
+<p>コンテナ フォーマットは、zip 圧縮されたコンテンツが EPUB 出版物であることを決定する手段（<code class="filename">mimetype</code> ファイル）だけでなく、有益なリソースの普遍的な名前のディレクトリも提供する（<code class="filename">/META-INF</code>）。これらリソース間のキーになるのは、利用可能なパッケージ ドキュメントをリーディング システムに指示する <code class="filename">container.xml</code> である。</p>
+<p>コンテナ フォーマットは、<a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> で定義されている。</p>
+<figure><figcaption><p>次の例は、EPUB フォーマットの構造を視覚的に表している。</p></figcaption><img src="../../images/epub.svg" width="350" alt=""/></figure>
+<p>EPUB 出版物の構造と格納容器は、フォーマットの半分で、残りの半分は、読者に表示されるコンテンツである。このコンテンツは、オープン Web フォーマット上に構築され、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML</a></span> と <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-svg" target="_top">SVG</a></span> の二種類を供給されている。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>と呼ばれ、典型的にこれらのドキュメントは、例えば、画像、音声やビデオクリップ、スクリプトやスタイルシートなど、適切なレンダリングのために必要となる多くの追加リソースを参照する。</p>
+<p>EPUB コンテンツ ドキュメントの製作のための規則と要件に関する詳細情報は、<a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a> で提供され、アクセシビリティの要件は、<a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> で定義されている。</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-media-overlay-document" target="_top">メディア オーバーレイ ドキュメント</a></span>は、 EPUB コンテンツ ドキュメントを補完する。これらは、音声コンテンツを持つ EPUB コンテンツ ドキュメント内のテキストを同期させるための宣言型マークアップを提供する。効果は、ナレーションされているように、テキストがハイライトされる読み上げの体験を作る機能である。メディア オーバーレイ ドキュメントは、<a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> で定義されている。</p>
 <p>概念的には単純であるが、EPUB 出版物は、ここで提示されるように、ZIP パッケージ内の HTML ページや依存資産の単純な集積以上のものである。このドキュメントの次のセクションは、読書体験を高めるのに提供する EPUB 出版物の主要な特徴と機能性に関する追加の情報は、参照仕様から入手可能であり、EPUB 3.1 の機能のより一般的な導入は、規定の <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a> で提供される。</p>
 </section>
 </section>
@@ -398,12 +389,12 @@
 <h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-conf"> </a> </span>3 適合性</h1>
 <section class="section" id="sec-epub-pub-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-pub-conf"> </a> </span>3.1 EPUB 出版物</h2>
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>は、次の条件をすべて満たさなければならない（<span class="rfc2119">must</span>）：</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>は、次の条件を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="conformance-list">
 <dl class="conformance-list">
 <dt class="varlistentry" id="sec-epub-package-conformance"><span class="term">パッケージ</span></dt>
 <dd>
-<p id="confreq-renditions"><span class="link-marker"><a class="hidden-reveal" href="#confreq-renditions"> </a> </span><a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> に定義された <a class="glossterm" href="#gloss-epub-package" title="EPUB Package (or Package)">EPUB パッケージ</a>の要件に準拠したコンテンツの<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>を少なくともひとつ包含しなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-renditions"><span class="link-marker"><a class="hidden-reveal" href="#confreq-renditions"> </a> </span>ひとつ以上の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-package" target="_top">EPUB パッケージ</a></span>を包含しなければならなず（<span class="rfc2119">must</span>）、それぞれが <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> に定義された要件に適合しなければならない（<span class="rfc2119">must</span>）。</p>
 </dd>
 <dt class="varlistentry" id="sec-epub-a11y"><span class="term">アクセシビリティ</span></dt>
 <dd>
@@ -412,7 +403,7 @@
 </dd>
 <dt class="varlistentry" id="sec-epub-pub-conformance-all"><span class="term">出版物リソース</span></dt>
 <dd><p id="confreq-manifest"><span class="link-marker"><a class="hidden-reveal" href="#confreq-manifest"> </a> </span>
-そこに含まれるすべての<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、<a class="link" href="#sec-publication-resources" title="4 Publication Resources">コア メディア タイプと管理外リソースの制約</a>に従い、<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>ごとに配置しなければならない（<span class="rfc2119">must</span>）。</p>
+そこに含まれる全ての<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、<a class="link" href="#sec-publication-resources" title="4 Publication Resources">コア メディア タイプと管理外リソースの制約</a>に従い、<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>ごとに配置しなければならない（<span class="rfc2119">must</span>）。</p>
 </dd>
 <dt class="varlistentry" id="sec-epub-pub-conformance-container"><span class="term">コンテナ</span></dt>
 <dd><p id="confreq-ocf"><span class="link-marker"><a class="hidden-reveal" href="#confreq-ocf"> </a> </span><a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> で定義されているように、それは <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-container" target="_top">EPUB コンテナ</a></span>にパッケージ化しなければならない（<span class="rfc2119">must</span>）。</p>
@@ -422,21 +413,19 @@
 </section>
 <section class="section" id="sec-epub-rs-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-rs-conf"> </a> </span>3.2 EPUB リーディング システム</h2>
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は次の条件をすべて満たさなければならない（<span class="rfc2119">must</span>）：</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は次の条件を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="conformance-list">
 <dl class="conformance-list">
 <dt class="varlistentry" id="sec-epub-rs-conf-epub3"><span class="term">EPUB 3.1 の処理</span></dt>
 <dd><p id="confreq-rs-epub3-ocf"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-ocf"> </a> </span><a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> で規定されているように <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-container" target="_top">EPUB コンテナ</a></span>を処理しなければならない（<span class="rfc2119">must</span>）。</p>
 <p id="confreq-rs-epub3-package"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-package"> </a> </span><a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> で定義されているように、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-package" target="_top">EPUB パッケージ</a></span>を処理しなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="confreq-rs-epub3-uid"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-uid"> </a> </span>同じ<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-unique-identifier" target="_top">一意識別子</a></span>を持つ二つの異なる EPUB パッケージを検出した場合、壊滅的に機能しなくなってはならない（<span class="rfc2119">must not</span>）。</p>
-<p id="confreq-rs-epub3-cmt"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-cmt"> </a> </span>すべての<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>をサポートしなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="confreq-rs-foreign"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-foreign"> </a> </span><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>タイプの任意のセットをサポートしてもよい（<span class="rfc2119">may</span>）。そして<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>で定義されているように、サポートされていない管理外リソースのためのフォールバックを処理しなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-rs-epub3-cmt"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-cmt"> </a> </span>全ての<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>をサポートしなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-rs-foreign"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-foreign"> </a> </span><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>タイプの任意のセットをサポートしてもよい（<span class="rfc2119">may</span>）、そして<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>で定義されているように、サポートされていない管理外リソースのためのフォールバックを処理しなければならない（<span class="rfc2119">must</span>）。</p>
 <p id="confreq-rs-epub3-xhtml"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-xhtml"> </a> </span><span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-xhtml-conf-rs" target="_top">XHTML コンテンツ ドキュメント - リーディング システムの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>を処理しなければならない（<span class="rfc2119">must</span>）。</p>
 <p id="confreq-rs-epub3-svg"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-svg"> </a> </span><span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-svg-rs-conf" target="_top">SVG コンテンツ ドキュメント - リーディング システムの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-svg" target="_top">SVG コンテンツ ドキュメント</a></span>を処理しなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="confreq-rs-epub3-css"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-css"> </a> </span><span class="conditional"><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-viewport" target="_top">ビューポート</a></span>がある場合</span>、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-css-rs-conf" target="_top">CSS スタイル シート - リーディング システムの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の視覚的なレンダリングをサポートしなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="confreq-rs-epub3-raster"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-raster"> </a> </span><span class="conditional">ラスターイメージをレンダリングする機能がある場合</span>、<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-image" target="_top">ラスター画像のコア メディア タイプ</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> をサポートしなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="confreq-rs-epub3-vector"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-vector"> </a> </span><span class="conditional">ベクターイメージをレンダリングする機能がある場合</span>、<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-image" target="_top">ベクター画像のコア メディア タイプ</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> をサポートしなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="confreq-rs-epub3-mp3-aac"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-mp3-aac"> </a> </span><span class="conditional">録音済みの音声をレンダリングする機能がある場合</span>、<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-audio" target="_top">音声のコア メディア タイプ</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> をサポートしなければならず（<span class="rfc2119">must</span>）、メディア オーバーレイ <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> をサポートするべきである（<span class="rfc2119">should</span>）。</p>
+<p id="confreq-rs-epub3-css"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-css"> </a> </span><span class="conditional"><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-viewport" target="_top">ビューポート</a></span>を持つ場合</span>、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-css-rs-conf" target="_top">CSS スタイル シート - リーディング システムの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の視覚的なレンダリングをサポートしなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-rs-epub3-images"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-images"> </a> </span><span class="conditional">ビューポートを持つ場合</span>、<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-image" target="_top">画像のコア メディア タイプ</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> をサポートしなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-rs-epub3-mp3-aac"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-mp3-aac"> </a> </span><span class="conditional">録音済みの音声をレンダリングする機能を持つ場合</span>、<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-audio" target="_top">音声のコア メディア タイプ</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> をサポートしなければならず（<span class="rfc2119">must</span>）、メディア オーバーレイ <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> をサポートするべきである（<span class="rfc2119">should</span>）。</p>
 <p id="confreq-rs-epub3-tts"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-epub3-tts"> </a> </span>
 <span class="conditional"><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-tts" target="_top">テキスト読み上げ（TTS）</a></span>のレンダリングをサポートしている場合</span>、<a class="biblioref" href="#refCSS3Speech" title="CSS3 Speech Module">[<abbr class="abbrev">CSS3 Speech</abbr>]</a> と <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の <span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-xhtml-ssml-attrib" target="_top">SSML 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> をサポートするべきである（<span class="rfc2119">should</span>）。</p>
 <div class="note" id="note-video-codecs">
@@ -451,10 +440,10 @@
 </p>
 </dd>
 <dt class="varlistentry" id="sec-epub-rs-conf-backward"><span class="term">下位互換性</span></dt>
-<dd><p id="confreq-rs-backward-epub2"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-backward-epub2"> </a> </span>
-<a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr class="abbrev">OPF2</abbr>]</a>、<a class="biblioref" href="#refOPS2" title="Open Publication Structure 2.0.1">[<abbr class="abbrev">OPS2</abbr>]</a> と <a class="biblioref" href="#refOCF2" title="Open Container Format 2.0.1">[<abbr class="abbrev">OCF2</abbr>]</a> で定義されている EPUB バージョン「<code class="value">2.0</code>」出版物を処理するべきである（<span class="rfc2119">should</span>）。</p>
-<p id="confreq-rs-backward-epub3"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-backward-epub3"> </a> </span><a class="biblioref" href="#refPublications301" title="EPUB Publications 3.0.1">[<abbr class="abbrev">Publications 3.0.1</abbr>]</a> と <a class="biblioref" href="#refContentDocs301" title="EPUB Content Documents 3.0.1">[<abbr class="abbrev">Content Docs 3.0.1</abbr>]</a>、<a class="biblioref" href="#refOCF301" title="Open Container Format 3.0.1">[<abbr class="abbrev">OCF 3.0.1</abbr>]</a> で定義されているように、EPUB バージョン「<code class="value">3.0</code>」出版物を処理するべきである（<span class="rfc2119">should</span>）。</p>
-<p id="confreq-rs-backward-epub"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-backward-epub"> </a> </span>パッケージ ドキュメントの <code class="markup">version</code> 属性がバージョン「<code class="value">3.1</code>」未満を指定されていたり、<code class="markup">version</code> 属性が削除されているどんな EPUB 出版物の指定されたレンディションでも処理しようと試みなければならない（<span class="rfc2119">must</span>）。</p>
+<dd>
+<p id="confreq-rs-backward-epub"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-backward-epub"> </a> </span>バージョンが「<code class="value">3.1</code>」よりも低い EPUB 出版物の処理を試みなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-rs-backward-conf"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-backward-conf"> </a> </span>
+古いバージョン番号の EPUB 出版物は、常に、それぞれの仕様に従って処理をしない限り、意図したような完全にレンダリングをしないだろう。リーディング システムは、この仕様で定義されているような EPUB 出版物をサポートするべきである（<span class="rfc2119">should</span>）。</p>
 </dd>
 <dt class="varlistentry" id="sec-epub-rs-conf-forward"><span class="term">前方互換性</span></dt>
 <dd><p id="confreq-rs-forward-epubn"><span class="link-marker"><a class="hidden-reveal" href="#confreq-rs-forward-epubn"> </a> </span>パッケージ ドキュメントの <code class="markup">version</code> 属性がバージョン「<code class="value">3.1</code>」以上を指定されているどんな EPUB 出版物の指定されたレンディションでも処理しようと試みるべきである（<span class="rfc2119">should</span>）。</p>
@@ -492,43 +481,45 @@
 </section>
 <section class="section" id="sec-foreign-restrictions">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-foreign-restrictions"> </a> </span>4.1.3 管理外リソース</h3>
-<p id="confreq-foreign-no-fallback">管理外リソースは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-itemref-elem" target="_top">スパインの itemref 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> から参照されず、また、（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class=t"ulink" href="https://www.w3.org/TR/html/dom.html#kinds-of-content-embedded-content" target="_top">埋め込みコンテンツ</a>や <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#ImageElement" target="_top">image</a></code> と <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement" target="_top">foreignObject</a></code> 要素を介して）EPUB コンテンツ ドキュメントにネイティブ形式で直接レンダリングされていないとき、フォールバックなしにレンディションに包含されてもよい（<span class="rfc2119">may</span>）。</p>
+<p id="confreq-foreign-no-fallback">管理外リソースは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-itemref-elem" target="_top">スパインの itemref 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> から参照されず、また、（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class=t"ulink" href="https://www.w3.org/TR/html/dom.html#kinds-of-content-embedded-content" target="_top">埋め込みコンテンツ</a>や <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#ImageElement" target="_top">image</a></code> と <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement" target="_top">foreignObject</a></code> 要素を介して）EPUB コンテンツ ドキュメントにネイティブ形式で直接レンダリングされていないとき、フォールバックなしに EPUB 出版物に包含されてもよい（<span class="rfc2119">may</span>）。</p>
 <p id="confreq-cmt"><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>が、スパインに包含されるか、または、EPUB コンテンツ ドキュメントにネイティブ形式で直接レンダリングされるとき、コア メディア タイプのフォールバックは、包含されなければならない（<span class="rfc2119">must</span>）。フォールバックは、次の二つのいずれかの形式を取る。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-<p>固有のフォールバック メカニズムは、（例えば、ひとつ以上のメディア タイプを提供したり、メディア タイプをレンダリングできないときに代替の埋め込まれたメッセージを表示する能力のように）フォーマットに基いて提供される。それらの要素が提供する固有のフォールバック能力については <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> と <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> 仕様を参照されたい。</p>
+<p>固有のフォールバック メカニズムは、（例えば、ひとつ以上のメディア タイプを提供したり、メディア タイプをレンダリングできないときに代替の埋め込まれたメッセージを表示する能力のように）フォーマットに基いて提供される。それらの要素が提供する固有のフォールバック機能については <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> と <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> 仕様を参照されたい。</p>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-packages.html#sec-foreign-restrictions-manifest" target="_top">マニフェスト フォールバック</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> は、コア メディア タイプ リソースへのフォールバック チェインを作る<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>の機能である。それらは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-spine-elem" target="_top">スパイン</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> 内と（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element" target="_top">img</a></code> 要素など）固有のフォールバック能力が利用できないとき、管理外リソースのフォールバックを作るために使用される。</p>
+<p><span class="phrase"><a class="ulink" href="epub-packages.html#sec-foreign-restrictions-manifest" target="_top">マニフェスト フォールバック</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> は、コア メディア タイプ リソースへのフォールバック チェインを作る<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>の機能である。それらは、<span class="phrase"><a class="ulink" href="epub-packages.html#sec-spine-elem" target="_top">スパイン</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> 内と（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element" target="_top">img</a></code> 要素など）固有のフォールバック機能が利用できないとき、管理外リソースのフォールバックを作るために使用される。</p>
 </li>
 </ul>
 </div>
-<p>管理外リソースがスクリプトのためのデータである場合、（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/html/semantics-scripting.html#the-canvas-element" target="_top"><code class="markup">canvas</code> 要素</a>内の描画に使用したり、HTML または SVG DOM 内に入れられるなど）スクリプトは、それがコア メディア タイプとしてデータを提示するべきである（<span class="rfc2119">should</span>）。さもなければ、（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="literal"><a class="literal" href="https://www.w3.org/TR/html/dom.html#kinds-of-content-embedded-content" target="_top">埋め込みコンテンツ要素</a></code>にデータを書き込む場合、固有のフォールバックの代替を包含するなど）スクリプト コンテンツは、コア メディア タイプ フォールバックを包含しなければならない（<span class="rfc2119">must</span>）。</p>
 </section>
 </section>
 <section class="section" id="sec-resource-locations">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations"> </a> </span>4.2 リソース配置</h2>
-<p>すべての<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、次の例外を除いて<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-container" target="_top">EPUB コンテナ</a></span>に配置しなければならない（<span class="rfc2119">must</span>）。</p>
+<p>全ての<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、次の例外を除いて<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-container" target="_top">EPUB コンテナ</a></span>に配置しなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="conformance-list">
 <ul class="conformance-list" style="list-style-type: disc; ">
-<li class="listitem"><p id="sec-resource-locations-audio"><span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations-audio"> </a> </span><a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-audio" target="_top">音声リソース</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> は、リモートに配置されてもよい（<span class="rfc2119">may</span>）。</p>
+<li class="listitem"><p id="sec-resource-locations-audio"><span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations-audio"> </a> </span><a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-audio" target="_top">音声リソース</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> は、EPUB コンテナの外部に配置されてもよい（<span class="rfc2119">may</span>）。</p>
 </li>
-<li class="listitem"><p id="sec-resource-locations-video"><span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations-video"> </a> </span>動画リソースは、リモートに配置されてもよい（<span class="rfc2119">may</span>）。</p>
+<li class="listitem"><p id="sec-resource-locations-video"><span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations-video"> </a> </span>動画リソースは、EPUB コンテナの外部に配置されてもよい（<span class="rfc2119">may</span>）。</p>
 </li>
 <li class="listitem">
 <p id="sec-resource-locations-script">
 <span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations-script"> </a> </span>
-スクリプトによって読み出されるリソースは、リモートに配置されてもよいが（<span class="rfc2119">may</span>）、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> と <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> の <code class="markup">script</code> 要素は、（すなわち、個々に、それらの <code class="markup">src</code> または <code class="markup">href</code> 属性などで）コンテナ外のリソースを参照してはならない（<span class="rfc2119">must not</span>）。
+スクリプトによって読み出されるリソースは、EPUB コンテナの外部に配置されてもよいが（<span class="rfc2119">may</span>）、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> と <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> の <code class="markup">script</code> 要素は、（すなわち、個々に、それらの <code class="markup">src</code> または <code class="markup">href</code> 属性などで）<a class="glossterm" href="#gloss-remote-resource" title="Remote Resource">リモート リソース</a>を参照してはならない（<span class="rfc2119">must not</span>）。
 </p>
 </li>
 <li class="listitem">
 <p id="sec-resource-locations-fonts">
-<span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations-fonts"> </a> </span><a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-font" target="_top">フォント リソース</a>は、コンテナまたはリモートに配置されてもよい（<span class="rfc2119">may</span>）。</p>
+<span class="link-marker"><a class="hidden-reveal" href="#sec-resource-locations-fonts"> </a> </span><a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-font" target="_top">フォント リソース</a>は、EPUB コンテナの外部に配置されてもよい（<span class="rfc2119">may</span>）。</p>
 </li>
 </ul>
 </div>
-<p>製作者は接続状態に関わらずプレゼンテーション全体にユーザーのアクセスを許可するため、コンテナ内に音声や動画、スクリプトのリソースを配置するのを選択するべきである（<span class="rfc2119">should</span>）。</p>
+<div class="note">
+<h3 class="title">note</h3>
+<p>製作者は、接続状態にかかわらずプレゼンテーション全体へ読者がアクセスできるよう可能な限り、EPUB コンテナ内部に音声や動画、スクリプトのリソースを配置することを推奨する。</p>
+</div>
 <div class="note">
 <h3 class="title">note</h3>
 <p>指定されたリソースが<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>または<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>であるかどうか関係なく出版物リソースの配置については、上記のルールが適用される。</p>
@@ -536,7 +527,7 @@
 
 <div class="note">
 <h3 class="title">note</h3>
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>でリモート リソースの取り込みは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-manifest" target="_top">マニフェスト</a></span> <code class="markup"><span class="phrase"><a class="ulink" href="epub-packages.html#sec-item-elem" target="_top">item</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span></code> 要素の <a class="ulink" href="http://www.idpf.org/epub/vocab/package/item/#remote-resources" target="_top"><span class="property">remote-resources</span> プロパティ</a> <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> を介して指示される。</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>で<a class="glossterm" href="#gloss-remote-resource" title="Remote Resource">リモート リソース</a>の取り込みは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-manifest" target="_top">マニフェスト</a></span> <code class="markup"><span class="phrase"><a class="ulink" href="epub-packages.html#sec-item-elem" target="_top">item</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span></code> 要素の <a class="ulink" href="http://www.idpf.org/epub/vocab/package/item/#remote-resources" target="_top"><span class="property">remote-resources</span> プロパティ</a> <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> を介して指示される。</p>
 </div>
 </section>
 <section class="section" id="sec-xml-constraints">
@@ -558,16 +549,16 @@
 <p>特定の出版物リソースが、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>または<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>であるか否かを問わず上記の制約はあてはまる。</p>
 </section>
 </section>
-<section xml:lang="en" class="appendix" id="sec-overview-deprecated">
+<section class="appendix" id="sec-overview-deprecated">
 <div class="titlepage">
 <div>
 <div>
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview-deprecated"> </a> </span>付録 A. 安定していない機能</h1>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview-deprecated"> </a> </span>付録 A. 非推奨（Obsolete）の機能</h1>
 </div>
 </div>
 </div>
-<p>この仕様と兄弟仕様で定義された機能は、それらがもはや必要なくなったり、新しい機能によって置き換えられた場合、折にふれて削除される。削除する前に、廃止予定や置き換え、非推奨としてマークされた機能は、EPUB コミュニティに早期警告される。これらのラベルの意味は、次のように定義されている。</p>
-<p id="deprecated">機能が、<span class="bold"><strong>廃止予定</strong></span>としてマークされた場合、次が当てはまる。</p>
+<p>この仕様と兄弟仕様で定義された機能は、それらがもはや必要なくなったり、新しい機能によって置き換えられた場合、折にふれて削除される。削除する前に、<a class="link" href="#deprecated">廃止予定（deprecated）</a>または<a class="link" href="#superseded">置き換え（superseded）</a>としてマークされた機能は、EPUB コミュニティに早期警告される。廃止予定となった機能は、仕様の現在のバージョンから削除されているものだが、置き換えの機能は、以前のバージョンと互換性のあるコンテンツのオーサリングのためだけに保持するものである。</p>
+<p id="deprecated">機能が、<span class="bold"><strong>廃止予定（deprecated）</strong></span>としてマークされた場合、次が当てはまる。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
@@ -584,7 +575,7 @@
 </li>
 </ul>
 </div>
-<p id="superseded">機能が、<span class="bold"><strong>置き換え</strong></span>としてマークされた場合、次が当てはまる。</p>
+<p id="superseded">機能が、<span class="bold"><strong>置き換え（superseded）</strong></span>としてマークされた場合、次が当てはまる。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
@@ -592,7 +583,7 @@
 </li>
 <li class="listitem">
 <p>
-製作者は、仕様の過去のバージョンとの互換性のために、置き換えの機能を包含してもよいが（<span class="rfc2119">may</span>）、最新の仕様と適合させるために代わりの機能を使用しなければならない（<span class="rfc2119">must</span>）。</p>
+製作者は、仕様の過去のバージョンとの互換性のために、置き換えの機能を包含してもよい（<span class="rfc2119">may</span>）。</p>
 </li>
 <li class="listitem">
 <p>リーディング システムは、仕様の最新バージョンと適合するコンテンツにある置き換えられる機能をサポートしてはならない（<span class="rfc2119">must not</span>）。</p>
@@ -602,16 +593,14 @@
 </li>
 </ul>
 </div>
-<p id="obsolete">
-<span class="bold"><strong>非推奨</strong></span>の機能は、<a class="link" href="#superseded">置き換えられた</a>機能と同じ特性を共有するが、次のような違いがある。
-</p>
+<p id="superseded-removal">置き換え及び除去するためにマークされた機能は、次の方法で<a class="link" href="#superseded">置き換え</a>られる機能とは異なる。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-<p>非推奨の機能は、仕様の将来のバージョンで除去されるかもしれない。</p>
+<p>機能は、仕様の将来のバージョンで除去されるかもしれない。</p>
 </li>
 <li class="listitem">
-<p>検証ツールは、非推奨の機能の存在に関するアラートを製作者にしなければならない（<span class="rfc2119">must</span>）。アラートには、<a class="link" href="#deprecated">廃止予定</a>の機能と同じ重大性を与えることが推奨される（<span class="rfc2119">recommended</span>）。</p>
+<p>検証ツールは、除去するためにマークされた置き換えられる機能の存在に関するアラートを製作者にしなければならない（<span class="rfc2119">must</span>）。アラートには、<a class="link" href="#deprecated">廃止予定</a>の機能と同じ重大性を与えることが推奨される（<span class="rfc2119">recommended</span>）。</p>
 </li>
 </ul>
 </div>
@@ -674,13 +663,13 @@
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: circle; ">
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#confreq-css-rs-support" target="_top">CSS スナップショット サポート</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#confreq-css-rs-support" target="_top">CSS スナップショット サポート</a></span></p>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-css-prefixed" target="_top">プリフィックス付きプロパティ</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-css-prefixed" target="_top">プリフィックス付きプロパティ</a></span></p>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-css-rs-overrides" target="_top">リーディング システムの上書き</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-css-rs-overrides" target="_top">リーディング システムの上書き</a></span></p>
 </li>
 </ul>
 </div>
@@ -753,7 +742,7 @@
 </div>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-fxl-synthetic-spreads" target="_top">ビューポートのレンダリング</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-fxl-viewport" target="_top">ビューポートのレンダリング</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
 </li>
 </ul>
 </div>
@@ -1174,7 +1163,7 @@
 <p><span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-meta-property" target="_top">プロパティの表現</a></span></p>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-meta-refines" target="_top">refines 属性（廃止）</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-meta-refines" target="_top">refines 属性（廃止予定）</a></span></p>
 </li>
 <li class="listitem">
 <p><span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-scheme" target="_top">値のスキーマ</a></span></p>
@@ -1218,7 +1207,7 @@
 </div>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="ulink" href="epub-packages.html#app-obs-ncx" target="_top">NCX（廃止）</a></span></p>
+<p><span class="phrase"><a class="ulink" href="epub-packages.html#app-obs-ncx" target="_top">NCX（置き換え）</a></span></p>
 </li>
 <li class="listitem">
 <p><span class="phrase"><a class="ulink" href="epub-packages.html#sec-package-elem" target="_top">package 要素</a></span></p>
@@ -1556,7 +1545,7 @@
 <li class="person"><span class="name"><span class="surname">Labordrie</span>, <span class="givenname">Cyril</span></span> <span class="affiliation">(EDRLab)</span> </li>
 <li class="person"><span class="name"><span class="surname">LaPierre</span>, <span class="givenname">Charles</span></span> <span class="affiliation">(Benetech)</span> </li>
 <li class="person"><span class="name"><span class="surname">Leo</span>, <span class="givenname">Arthic</span></span> <span class="affiliation">(Amnet Systems)</span> </li>
-<li class="person"><span class="name"><span class="surname">Levantovsky</span>, <span class="givenname">Vladimir</span></span> <span class="affiliation">(Monotype Monotype Imaging)</span> </li>
+<li class="person"><span class="name"><span class="surname">Levantovsky</span>, <span class="givenname">Vladimir</span></span> <span class="affiliation">(Monotype)</span> </li>
 <li class="person"><span class="name"><span class="surname">Levenson</span>, <span class="givenname">Yonah</span></span> <span class="affiliation">(Pearson)</span> </li>
 <li class="person"><span class="name"><span class="surname">Lin</span>, <span class="givenname">Beatrice</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span> </li>
 <li class="person"><span class="name"><span class="surname">Lui</span>, <span class="givenname">Edwina</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
@@ -1615,8 +1604,7 @@
 </div>
 <div class="bibliodiv" id="normative-refs">
 <h3 class="title">規定の参照</h3>
-<div class="biblioentry" id="refAlternateStyleTags">
-<p>[<abbr class="abbrev">Alt Style Tags</abbr>] 
+<div class="biblioentry" id="refAlternateStyleTags"><p>[<abbr class="abbrev">Alt Style Tags</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/altss-tags/" target="_top">Alternate Style Tags</a>
@@ -1624,8 +1612,7 @@
 <span class="author">Elika J. Etemad. </span>
 </p>
 </div>
-<div class="biblioentry" id="refCSS3Speech">
-<p>[<abbr class="abbrev">CSS3 Speech</abbr>] 
+<div class="biblioentry" id="refCSS3Speech"><p>[<abbr class="abbrev">CSS3 Speech</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/css3-speech/" target="_top">CSS3 Speech Module</a>
@@ -1633,126 +1620,68 @@
 <span class="author">Dave Raggett, et al.. </span>
 </p>
 </div>
-<div class="biblioentry" id="refContentDocs301">
-<p>[<abbr class="abbrev">Content Docs 3.0.1</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html" target="_top">EPUB Content Documents 3.0.1</a>
-</em>. </span>
-</p>
-</div>
-<div class="biblioentry" id="refContentDocs3">
-<p>[<abbr class="abbrev">Content Docs 3.1</abbr>] 
+<div class="biblioentry" id="refContentDocs3"><p>[<abbr class="abbrev">Content Docs 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-contentdocs.html" target="_top">EPUB Content Documents 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refCMT">
-<p>[<abbr class="abbrev">Core Media Types</abbr>] 
+<div class="biblioentry" id="refCMT"><p>[<abbr class="abbrev">Core Media Types</abbr>] 
       
 <span class="title"><em><a class="ulink" href="https://www.idpf.org/epub/cmt/v3/" target="_top">EPUB 3 Core Media Types</a></em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refEPUB3">
-<p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
+<div class="biblioentry" id="refEPUB3"><p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-spec.html" target="_top">EPUB 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refA11Y">
-<p>[<abbr class="abbrev">EPUB Accessibility</abbr>] 
+<div class="biblioentry" id="refA11Y"><p>[<abbr class="abbrev">EPUB Accessibility</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/latest/accessibility" target="_top">EPUB Accessibility</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refHTML">
-<p>[<abbr class="abbrev">HTML</abbr>] 
+<div class="biblioentry" id="refHTML"><p>[<abbr class="abbrev">HTML</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/html/" target="_top">HTML</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refManifestVocab">
-<p>[<abbr class="abbrev">Manifest Vocab</abbr>] 
+<div class="biblioentry" id="refManifestVocab"><p>[<abbr class="abbrev">Manifest Vocab</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/vocab/package/item" target="_top">EPUB Manifest Properties Vocabulary</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOverlays3">
-<p>[<abbr class="abbrev">Media Overlays 3.1</abbr>] 
+<div class="biblioentry" id="refOverlays3"><p>[<abbr class="abbrev">Media Overlays 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-mediaoverlays.html" target="_top">EPUB Media Overlays 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOCF301">
-<p>[<abbr class="abbrev">OCF 3.0.1</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-ocf.html" target="_top">Open Container Format 3.0.1</a>
-</em>. </span>
-</p>
-</div>
-<div class="biblioentry" id="refOCF3">
-<p>[<abbr class="abbrev">OCF 3.1</abbr>] 
+<div class="biblioentry" id="refOCF3"><p>[<abbr class="abbrev">OCF 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-ocf.html" target="_top">Open Container Format 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOCF2">
-<p>[<abbr class="abbrev">OCF2</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.idpf.org/doc_library/epub/OCF_2.0.1_draft.doc" target="_top">Open Container Format 2.0.1</a>
-</em>. </span>
-</p>
-</div>
-<div class="biblioentry" id="refOPF2">
-<p>[<abbr class="abbrev">OPF2</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm" target="_top">Open Packaging Format 2.0.1</a>
-</em>. </span>
-</p>
-</div>
-<div class="biblioentry" id="refOPS2">
-<p>[<abbr class="abbrev">OPS2</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm" target="_top">Open Publication Structure 2.0.1</a>
-</em>. </span>
-</p>
-</div>
-<div class="biblioentry" id="refPackages3">
-<p>[<abbr class="abbrev">Packages 3.1</abbr>] 
+<div class="biblioentry" id="refPackages3"><p>[<abbr class="abbrev">Packages 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-packages.html" target="_top">EPUB Packages 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refPublications301">
-<p>[<abbr class="abbrev">Publications 3.0.1</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html" target="_top">EPUB Publications 3.0.1</a>
-</em>. </span>
-</p>
-</div>
-<div class="biblioentry" id="refRFC2046">
-<p>[<abbr class="abbrev">RFC2046</abbr>] 
+<div class="biblioentry" id="refRFC2046"><p>[<abbr class="abbrev">RFC2046</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://tools.ietf.org/html/rfc2046" target="_top">Multipurpose Internet Mail Extensions (MIME) Part Two: Media
@@ -1761,8 +1690,7 @@
 <span class="date">November 1996. </span>
 </p>
 </div>
-<div class="biblioentry" id="refRFC2119">
-<p>[<abbr class="abbrev">RFC2119</abbr>] 
+<div class="biblioentry" id="refRFC2119"><p>[<abbr class="abbrev">RFC2119</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in RFCs to Indicate Requirement Levels</a>
@@ -1770,23 +1698,20 @@
 <span class="date">March 1997. </span>
 </p>
 </div>
-<div class="biblioentry" id="refSVG">
-<p>[<abbr class="abbrev">SVG</abbr>] 
+<div class="biblioentry" id="refSVG"><p>[<abbr class="abbrev">SVG</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/SVG/" target="_top">Scalable Vector Graphics (SVG)</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refUnicode5">
-<p>[<abbr class="abbrev">Unicode</abbr>] 
+<div class="biblioentry" id="refUnicode5"><p>[<abbr class="abbrev">Unicode</abbr>] 
       
 <span class="title"><em> The Unicode Consortium. <a class="ulink" href="http://www.unicode.org/versions/latest/" target="_top">The Unicode
         Standard.</a></em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refXInclude">
-<p>[<abbr class="abbrev">XInclude</abbr>] 
+<div class="biblioentry" id="refXInclude"><p>[<abbr class="abbrev">XInclude</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2006/REC-xinclude-20061115/" target="_top">XML Inclusions (XInclude) Version 1.0 (Second
@@ -1796,8 +1721,7 @@
 <span class="date">15 November 2006. </span>
 </p>
 </div>
-<div class="biblioentry" id="refXML">
-<p>[<abbr class="abbrev">XML</abbr>] 
+<div class="biblioentry" id="refXML"><p>[<abbr class="abbrev">XML</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2008/REC-xml-20081126/" target="_top">Extensible Markup Language (XML) 1.0 (Fifth
@@ -1807,8 +1731,7 @@
 <span class="date">26 November 2008. </span>
 </p>
 </div>
-<div class="biblioentry" id="refXMLBase">
-<p>[<abbr class="abbrev">XML Base</abbr>] 
+<div class="biblioentry" id="refXMLBase"><p>[<abbr class="abbrev">XML Base</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2009/REC-xmlbase-20090128/" target="_top">XML Base (Second Edition)</a>
@@ -1817,8 +1740,7 @@
 <span class="date">28 January 2009. </span>
 </p>
 </div>
-<div class="biblioentry" id="refXMLNamespaces">
-<p>[<abbr class="abbrev">XMLNS</abbr>] 
+<div class="biblioentry" id="refXMLNamespaces"><p>[<abbr class="abbrev">XMLNS</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2009/REC-xml-names-20091208/" target="_top">Namespaces in XML (Third Edition)</a>
@@ -1830,8 +1752,7 @@
 </div>
 <div class="bibliodiv" id="informative-refs">
 <h3 class="title">規定ではない参照</h3>
-<div class="biblioentry" id="refEPUB3Changes">
-<p>[<abbr class="abbrev">EPUB3 Changes</abbr>] 
+<div class="biblioentry" id="refEPUB3Changes"><p>[<abbr class="abbrev">EPUB3 Changes</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-changes.html" target="_top">EPUB 3.1 Differences from EPUB 3.0.1</a>
@@ -1839,8 +1760,7 @@
 <span class="author">Markus Gylling, et al. </span>
 </p>
 </div>
-<div class="biblioentry" id="refEPUB3Overview">
-<p>[<abbr class="abbrev">EPUB3 Overview</abbr>] 
+<div class="biblioentry" id="refEPUB3Overview"><p>[<abbr class="abbrev">EPUB3 Overview</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-overview.html" target="_top">EPUB 3.1 Overview</a>
@@ -1848,8 +1768,7 @@
 <span class="author">Garth Conboy, et al. </span>
 </p>
 </div>
-<div class="biblioentry" id="refH264">
-<p>[<abbr class="abbrev">H.264</abbr>] 
+<div class="biblioentry" id="refH264"><p>[<abbr class="abbrev">H.264</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.itu.int/rec/T-REC-H.264-201602-P/en" target="_top">H.264 : Advanced video coding for generic
@@ -1858,8 +1777,7 @@
 <span class="date">2016-02-13. </span>
 </p>
 </div>
-<div class="biblioentry" id="refVP8">
-<p>[<abbr class="abbrev">VP8</abbr>] 
+<div class="biblioentry" id="refVP8"><p>[<abbr class="abbrev">VP8</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://tools.ietf.org/html/rfc6386" target="_top">VP8 Data Format and Decoding Guide (RFC 6386)</a>
