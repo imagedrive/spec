@@ -13,7 +13,7 @@
 <body>
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160801.html">EPUB 3.1 Changes from EPUB 3.0.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160801.html">EPUB 3.1 Changes from EPUB 3.0.1</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160906.html">EPUB 3.1 Changes from EPUB 3.0.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160906.html">EPUB 3.1 Changes from EPUB 3.0.1</a> を参照されたい。</p>
 
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
@@ -21,7 +21,7 @@
 <dt>公開日:</dt>
 <dd>2016年4月4日</dd>
 <dt>修正日:</dt>
-<dd>2016年8月23日</dd>
+<dd>2016年9月12日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -32,32 +32,21 @@
 <!--p><a href="http://www.idpf.org"><img src="../../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
 <h1 class="title">EPUB 3.1 Changes from EPUB 3.0.1</h1>
 
-<p class="identity"><span class="pubdate">2016年8月1日</span> <span class="releaseinfo">Editor's Draft</span></p>
+<p class="identity"><span class="pubdate">2016年9月6日</span> <span class="releaseinfo">Draft Specification</span></p>
 <div class="note">
 <p>このドキュメントは、<a href="http://www.idpf.org/epub/31/spec/epub-spec.html">EPUB 3.1</a> の最新のドラフトに包含されている変更点を要約したものである。このドラフトは、EPUB ワーキング グループによって、完全な機能であると判断される。新たな追加は、将来のドラフトのために協議に上げるのではなく、新しい要求は、将来のリビジョンのために据え置かれる。ワーキング グループは現在、これらの改訂仕様（バグ、漏れ、タイプミスなど）の内容のインプットを求めている。</p>
 </div>
 <div class="issue">
 <h6 id="issue-1" class="custom-title">前の Editor's Draft からの変更点の概要</h6>
-<ul>
-<li>
-<p><a href="#sec-cdoc-undated">HTML と SVG への日付なしの参照</a>の導入。</p>
-</li>
-<li>
-<p><a href="#sec-epub31-res">フォントとスクリプトのリソース</a>は、リモートでホストできる。</p>
-</li>
-<li>
-<p><a href="#sec-pkg-linked-records">メタデータ レコードを取得するためのプロトコル</a>は取り除かれた。</p>
-</li>
-</ul>
-<p>EPUB ワーキング グループの焦点は、リビジョンのこのサイクル中に<a href="https://github.com/IDPF/epub-revision/issues">トラッカー</a>のイシューを修正していたことに注意されたい。これらの多くは、本質としてはマイナーであり、このドキュメントに記載されていない。終了したイシューへのリンクについては、次の各仕様を参照されたい。</p>
+<p>EPUB ワーキング グループの焦点は、<a href="https://github.com/IDPF/epub-revision/issues">トラッカー</a>にレポートされていた課題を修正していた。これらの変更は、本質としてはマイナーであり、このドキュメントに記載されていない。終了したイシューへのリンクについては、次の各仕様を参照されたい。</p>
 </div>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-changes-20160801.html">http://www.idpf.org/epub/31/spec/epub-changes-20160801.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-changes-20160906.html">http://www.idpf.org/epub/31/spec/epub-changes-20160906.html</a></dd>
 <dt>最新版</dt>
 <dd><a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a></dd>
 <dt>前の版</dt>
-<dd><a href="http://www.idpf.org/epub/301/spec/epub-changes-20160426.html">http://www.idpf.org/epub/301/spec/epub-changes-20160426.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-changes-20160801.html">http://www.idpf.org/epub/31/spec/epub-changes-20160801.html</a></dd>
 </dl>
 <div class="history"><span class="history-title">履歴</span>
 <ul>
@@ -114,13 +103,12 @@
 </li>
 <li><span class="chapter"><a href="#sec-pkg">4. Packages 3.1</a></span>
 <ol>
-<li><span class="section"><a href="#sec-pkg-dc-metadata">4.1. ダブリン コア メタデータ</a></span></li>
-<li><span class="section"><a href="#sec-pkg-refines">4.2. <code class="markup">refines</code> 属性</a></span></li>
-<li><span class="section"><a href="#sec-pkg-linked-records">4.3. リンクされたメタデータ レコード</a></span></li>
-<li><span class="section"><a href="#sec-pkg-opf2-meta">4.4. <code class="markup">meta</code> 要素の除去</a></span></li>
-<li><span class="section"><a href="#sec-pkg-ncx">4.5. NCX は非推奨</a></span></li>
-<li><span class="section"><a href="#sec-pkg-guide">4.6. <code class="markup">guide</code> 要素の廃止</a></span></li>
-<li><span class="section"><a href="#sec-pkg-bindings">4.7. <code class="markup">bindings</code> 要素の廃止</a></span></li>
+<li><span class="section"><a href="#sec-pkg-refines">4.1. <code class="markup">refines</code> 属性</a></span></li>
+<li><span class="section"><a href="#sec-pkg-linked-records">4.2. リンクされたメタデータ レコード</a></span></li>
+<li><span class="section"><a href="#sec-pkg-opf2-meta">4.3. <code class="markup">meta</code> 要素の除去</a></span></li>
+<li><span class="section"><a href="#sec-pkg-ncx">4.4. NCX は非推奨</a></span></li>
+<li><span class="section"><a href="#sec-pkg-guide">4.5. <code class="markup">guide</code> 要素の廃止</a></span></li>
+<li><span class="section"><a href="#sec-pkg-bindings">4.6. <code class="markup">bindings</code> 要素の廃止</a></span></li>
 </ol>
 </li>
 <li><span class="chapter"><a href="#sec-cdoc">5. Content Documents 3.1</a></span>
@@ -211,16 +199,12 @@
 <h3 class="title">note</h3>
 <p>このリビジョンで取り上げられた <a class="ulink" href="https://github.com/IDPF/epub-revision/issues?q=is%3Aissue+milestone%3A%22EPUB+3.1%22+label%3ASpec-Packages+is%3Aclosed" target="_top">EPUB Packages 仕様のイシュー</a>の説明とタイプミス、その他の完全なリストはイシュー トラッカーを参照されたい。</p>
 </div>
-<section class="section" id="sec-pkg-dc-metadata">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-dc-metadata"> </a> </span>4.1 ダブリン コア メタデータ</h2>
-<p>EPUB 3.1 の最初の Editor's Draft は、ダブリン コア メタデータ要素の利用できるセットを大幅に減少させた。不足している要素の使用関する追加のフィードバックを検討した後、元の要素のすべてが復元された。</p>
-</section>
 <section class="section" id="sec-pkg-refines">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-refines"> </a> </span>4.2 <code class="markup">refines</code> 属性</h2>
-<p>メタデータ ステートメント同士を繋ぐために使用されていた <code class="markup">refines</code> 属性は、EPUB 3.1 で置き換えられた。次の属性、<code class="markup">opf:scheme</code>、<code class="markup">opf:role</code>、<code class="markup">opf:alt-script</code>、<code class="markup">opf:file-as</code>、<code class="markup">opf:authority</code>、<code class="markup">opf:term</code> は、リーディングシステムに提供する機能を置き換えるために追加された。</p>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-refines"> </a> </span>4.1 <code class="markup">refines</code> 属性</h2>
+<p><span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-meta-refines" target="_top">refines 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span>の使用は、現在、<span class="phrase"><a class="ulink" href="epub-spec.html#deprecated" target="_top">廃止予定（deprecated）</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span> である。次の属性、<code class="markup">opf:scheme</code>、<code class="markup">opf:role</code>、<code class="markup">opf:alt-rep</code>、<code class="markup">opf:file-as</code>、<code class="markup">opf:authority</code>、<code class="markup">opf:term</code> は、リーディングシステムに提供する機能を置き換えるために追加された。</p>
 </section>
 <section class="section" id="sec-pkg-linked-records">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-linked-records"> </a> </span>4.3 リンクされたメタデータ レコード</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-linked-records"> </a> </span>4.2 リンクされたメタデータ レコード</h2>
 <p>EPUB 3.1 は、パッケージ ドキュメントの <code class="markup">metadata</code> 要素に直接包含されている情報の上に<span class="phrase"><a class="ulink" href="epub-packages.html#sec-link-elem" target="_top">リンクされたレコードに書誌情報に優先し</a></span>、リンクされたレコードの優先順位もまた変更する。</p>
 <div class="note">
 <h3 class="title">note</h3>
@@ -228,21 +212,21 @@
 </div>
 </section>
 <section class="section" id="sec-pkg-opf2-meta">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-opf2-meta"> </a> </span>4.4 OPF2 <code class="markup">meta</code> 要素の除去</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-opf2-meta"> </a> </span>4.3 OPF2 <code class="markup">meta</code> 要素の除去</h2>
 <p>EPUB 3.1 は、<a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr class="abbrev">OPF2</abbr>]</a> <code class="markup">meta</code> 要素を取り除く（EPUB 3.0.1 の <a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-meta-elem" target="_top">OPF2 <code class="markup">meta</code> 要素</a>を参照）。</p>
 </section>
 <section class="section" id="sec-pkg-ncx">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-ncx"> </a> </span>4.5 NCX は非推奨</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-ncx"> </a> </span>4.4 NCX は非推奨</h2>
 <p>ナビゲーションのための EPUB 2 NCX ファイルは、現在、廃止される機能としてマークされた（<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#ncx-superseded" target="_top">EPUB 3.0.1 NCX</a> を参照）。そのサポートは、EPUB の次の大きな改定で取り除かれる。</p>
 </section>
 
 <section class="section" id="sec-pkg-guide">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-guide"> </a> </span>4.6 <code class="markup">guide</code> 要素の廃止</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-guide"> </a> </span>4.5 <code class="markup">guide</code> 要素の廃止</h2>
 <p>EPUB 3.1 は、廃止予定だった <code class="markup">guide</code> 要素（<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-guide-elem" target="_top">EPUB 3.0.1 <code class="markup">guide</code> 要素</a>を参照）を取り除く。</p>
 </section>
 
 <section class="section" id="sec-pkg-bindings">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-bindings"> </a> </span>4.7 <code class="markup">bindings</code> 要素の廃止</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-bindings"> </a> </span>4.6 <code class="markup">bindings</code> 要素の廃止</h2>
 <p>EPUB 3.1 は、object 要素（<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-bindings-elem" target="_top">EPUB 3.0.1 <code class="markup">bindings</code></a> を参照）に埋め込まれた管理外リソースのために代替のスクリプト化したフォールバックを提供するパッケージ ドキュメント内で bindings の使用をサポートしない。</p>
 <p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">object</code> 要素<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-xhtml-fallbacks" target="_top">固有のフォールバック メカニズム</a></span>（埋め込みコンテンツ）は、コア メディア タイプのフォールバックを提供するために残る。</p>
 </section>
@@ -620,6 +604,14 @@
       
 <span class="title"><em>
 <a class="ulink" href="http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm" target="_top">Open Publication Structure 2.0.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refPackages3">
+<p>[<abbr class="abbrev">Packages 3.1</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="epub-packages.html" target="_top">EPUB Packages 3.1</a>
 </em>. </span>
 </p>
 </div>
