@@ -13,7 +13,7 @@
 <body>
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-overview-20160906.html">EPUB 3.1 Overview</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/overview">http://www.idpf.org/epub3/latest/overview</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-overview-20160906.html">EPUB 3.1 Overview</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-overview-20161014.html">EPUB 3.1 Overview</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/overview">http://www.idpf.org/epub3/latest/overview</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-overview-20161014.html">EPUB 3.1 Overview</a> を参照されたい。</p>
 
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
@@ -21,7 +21,7 @@
 <dt>公開日:</dt>
 <dd>2016年3月8日</dd>
 <dt>修正日:</dt>
-<dd>2016年9月13日</dd>
+<dd>2016年10月19日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -32,14 +32,14 @@
 <!--p><a href="http://www.idpf.org"><img src="../../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
 <h1 class="title">EPUB 3.1 Overview</h1>
 
-<p class="identity"><span class="pubdate">2016年9月6日</span> <span class="releaseinfo">Draft Specification</span></p>
+<p class="identity"><span class="pubdate">2016年10月14日</span> <span class="releaseinfo">Proposed Specification</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-overview-20160906.html">http://www.idpf.org/epub/31/spec/epub-overview-20160906.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-overview-20161014.html">http://www.idpf.org/epub/31/spec/epub-overview-20161014.html</a></dd>
 <dt>最新版</dt>
 <dd><a href="http://www.idpf.org/epub3/latest/overview">http://www.idpf.org/epub3/latest/overview</a></dd>
 <dt>前の版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-overview-20160801.html">http://www.idpf.org/epub/31/spec/epub-overview-20160801.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-overview-20160906.html">http://www.idpf.org/epub/31/spec/epub-overview-20160906.html</a></dd>
 <dt>以前の勧告</dt>
 <dd><a href="http://www.idpf.org/epub/301/spec/epub-overview-20140626.html">http://www.idpf.org/epub/301/spec/epub-overview-20140626.html</a></dd>
 </dl>
@@ -59,7 +59,6 @@
 <p class="editor">MURATA Makoto, JEPA EPUB Study Group</p>
 <p class="editor">Daniel Weck, DAISY Consortium</p>
 </div>
-<p class="formats">完全な EPUB 3.1 仕様は、<a href="http://www.idpf.org/epub/31/epub31.epub">EPUB 出版物</a>としてダウンロードしても利用できる。</p>
 <div class="legalnotice">
 <p>Copyright © 2010-2016 International Digital Publishing Forum™</p>
 <div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
@@ -141,7 +140,7 @@
 
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-intro-overview"> </a> </span>1.1 概要</h2>
 
-<p>このドキュメントは、EPUB® 3.1 仕様を理解したいと考えているコンテンツの制作者やソフトウェア開発者のための導入を提供する。もっぱら EPUB 3.1 で使用可能な機能を述べた規定ではない材料で構成される。</p>
+<p>このドキュメントは、EPUB® 3.1 仕様を理解しようと考えているコンテンツの制作者やソフトウェア開発者のための導入を提供する。もっぱら EPUB 3.1 で使用可能な機能を述べた規定ではない材料で構成される。</p>
 
 <p>他の規定ではないドキュメント、EPUB 3.1 Changes from EPUB 3.0.1 <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.1 Differences from EPUB 3.0.1">[<abbr class="abbrev">EPUB3 Changes</abbr>]</a> は、最後のバージョンから EPUB 3.1 の変更を説明する。</p>
 </section>
@@ -211,7 +210,7 @@
 <section class="section" id="sec-rendering">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-rendering"> </a> </span>2.6 レンダリングと CSS</h2>
 
-<p>EPUB のキーコンセプトは、読者がコンテンツの特定の表現に適応するよりもむしろ、読者にそのコンテンツの表現を適応するということである。HTML はもともと構造化されたコンテンツの動的なレンダリングをサポートするように設計されているが、徐々に、Web ブラウザでサポートされる HTML は、Web アプリケーションの需要に焦点が当てられ、現在、最も人気のある Web サイトは、固定フォーマットのレイアウトである。</p>
+<p>EPUB のキーコンセプトは、ユーザーがコンテンツの特定の表現に適応するよりもむしろ、ユーザーにそのコンテンツの表現を適応するということである。HTML はもともと構造化されたコンテンツの動的なレンダリングをサポートするように設計されているが、徐々に、Web ブラウザでサポートされる HTML は、Web アプリケーションの需要に焦点が当てられ、現在、最も人気のある Web サイトは、固定フォーマットのレイアウトである。</p>
 
 <p>EPUB 出版物は、また一方で、視覚障害のためにアクセシビリティを最大限に高めるよう設計され、リーディング システムは、一般的に、表示領域のサイズ、ユーザーの選んだフォントサイズ、他の環境要因に適合し、その場でテキスト行のレイアウトやページ付けを実行する。この機能は、EPUB で保証されておらず、画像、ベクターグラフィック、動画や他の非リフローなコンテンツは、包含されてもよく、いくつかのリーディング システムは、その場もしくはまったく、ページ付けをしないかもしれない。それでもなお、動的なアダプティブ レイアウトとアクセシビリティのサポートは、EPUB 規格の進化の過程において第一の設計要点である。</p>
 
@@ -219,7 +218,7 @@
 
 <p>EPUB 3.1 はまた、横組と縦組のレイアウトと左から右、右から左のドキュメントの両方を有効にする CSS スタイルをサポートする。詳細な情報は、多言語サポートの <a class="xref" href="#sec-gls-css" title="3.3 CSS">CSS</a> を参照されたい。</p>
 
-<p>EPUB 3.1 は、昼間/夜間のレンダリング モードとテキストのレンダリングする方向を読者に選択することを許可をする、複数のスタイル シートを提供する機能もまた包含する。詳細な情報は、<a class="biblioref" href="#refAlternateStyleTags" title="Alternate Style Tags">[<abbr class="abbrev">Alt Style Tags</abbr>]</a> を参照されたい。</p>
+<p>EPUB 3.1 は、昼間/夜間のレンダリング モードとテキストのレンダリングする方向をユーザーに選択することを許可をする、複数のスタイル シートを提供する機能もまた包含する。詳細な情報は、<a class="biblioref" href="#refAlternateStyleTags" title="Alternate Style Tags">[<abbr class="abbrev">Alt Style Tags</abbr>]</a> を参照されたい。</p>
 
 </section>
 
@@ -244,11 +243,11 @@
 <section class="section" id="sec-scripting">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-scripting"> </a> </span>2.9 スクリプト</h2>
 
-<p>EPUB は、実行されるプログラムではなく、操作することのできるデータとして、<span class="italic">宣言</span>されたコンテンツの取り扱いに務めるが、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> や <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">SVG</a> に定義されているようなスクリプトをサポートする（詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-scripted-content" target="_top">スクリプト</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を参照されたい）。</p>
+<p>EPUB は、実行されるプログラムではなく、操作することのできるデータとして、<span class="italic">宣言</span>されたコンテンツの取り扱いに務めるが、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> や <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> に定義されているようなスクリプトをサポートする（詳細な情報は、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-scripted-content" target="_top">スクリプト</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を参照されたい）。</p>
 
 <p>それに注意することは重要であるが、リーディング システムのスクリプトのサポートは任意であり、セキュリティ上の理由から無効にしてもよい。</p>
 
-<p>製作者らはまた、EPUB 出版物のスクリプトは、Web ブラウザのスクリプトとは異なるセキュリティの考慮事項を引き起こすことができることを意識する必要がある。たとえば、一般的に同一生成元ポリシーは、読者のローカルシステムにダウンロードされたコンテンツに適用されない。そのために、スクリプトは、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-scripted-content-content-reqs" target="_top">スクリプト コンテンツ ドキュメント - コンテンツの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> に記載されているものよりも、制約されたコンテクストのコンテナに制限されることが強く推奨されている。</p>
+<p>製作者らはまた、EPUB 出版物のスクリプトは、Web ブラウザのスクリプトとは異なるセキュリティの考慮事項を引き起こすことができることを意識する必要がある。たとえば、一般的に同一生成元ポリシーは、ユーザーのローカルシステムにダウンロードされたコンテンツに適用されない。そのために、スクリプトは、<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-scripted-content-content-reqs" target="_top">スクリプト コンテンツ ドキュメント - コンテンツの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> に記載されているものよりも、制約されたコンテクストのコンテナに制限されることが強く推奨されている。</p>
 
 <p>言い換えれば、コンテンツが全てのリーディング システム間を横断できず、アクセシビリティとコンテンツの再利用性に障壁を作る可能性が増大するので、それがユーザーエクスペリエンスに不可欠である場合に、スクリプトの制限を考慮されたい。</p>
 </section>
@@ -320,7 +319,7 @@
 <section class="section" id="sec-gls-fonts">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-gls-fonts"> </a> </span>3.4 フォント</h2>
 
-<p>EPUB 3.1 は、リーディング システムにいかなる特定のセットのシステムフォント搭載も要求しない。Web コンテクストで生じたとして、ある特定ロケールの読者は、他のロケールに必要な文字を省略したフォントをインストールしているかもしれないし、リーディング システムは固有のフォントや、オペレーションシステムにインストール済みのフォントを利用しないフォントエンジンを利用するかもしれない。結果的に EPUB 出版物のテキストコンテンツは、全てのリーディング システムで意図した通りにレンダリングされないであろう。</p>
+<p>EPUB 3.1 は、リーディング システムにいかなる特定のセットのシステムフォント搭載も要求しない。Web コンテクストで生じたとして、ある特定ロケールのユーザーは、他のロケールに必要な文字を省略したフォントをインストールしているかもしれないし、リーディング システムは固有のフォントや、オペレーションシステムにインストール済みのフォントを利用しないフォントエンジンを利用するかもしれない。結果的に EPUB 出版物のテキストコンテンツは、全てのリーディング システムで意図した通りにレンダリングされないであろう。</p>
 
 <p>この問題に対処するために、EPUB 3.1 は、テキストコンテツのレンダリングを容易にするためにフォントの埋め込みをサポートし、この実装はコンテンツが意図したとおりレンダリングされるのを確保するために推奨される。</p>
 
@@ -353,7 +352,7 @@
 <h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-accessibility"> </a> </span>4 アクセシビリティ</h1>
 
 <p>EPUB の主な目標は、コンテンツのアクセシビリティを促進することであり、EPUB 3.1 の多様な機能は、この要求をサポートする。このセクションは、該当する EPUB 出版物がアクセシブルであることを確保するためのいくつかの確立されたベストプラクティスを記述し、これらの機能を再検討する。</p>
-<p>EPUB 3.1 は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の Web コンテンツをアクセシブルにするための大規模な作業を活用するアクセシビリティ仕様 <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> もまた包含する。仕様は、幅広い読者がアクセスできる EPUB 出版物の製造のための要件を定義する。要件を満たすためのベストプラクティスを説明する達成方法のドキュメントが付属している。</p>
+<p>EPUB 3.1 は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の Web コンテンツをアクセシブルにするための大規模な作業を活用するアクセシビリティ仕様 <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> もまた包含する。仕様は、幅広いユーザーがアクセスできる EPUB 出版物の製造のための要件を定義する。要件を満たすためのベストプラクティスを説明する達成方法のドキュメントが付属している。</p>
 
 <p>アクセシビリティの留意を重視することは本当に重要で、アクセシブルなコンテンツは、より価値の高いコンテンツでもあり、アクセシブルな EPUB 出版物は、手動または自動化されたワークフローを介して、全体または一部のより多くのデバイス対応と、再利用が容易になる。EPUB ワーキング グループは、製作者らがアクセシブルなコンテンツを生成し、担保することを強く推奨する。</p>
 
@@ -364,7 +363,7 @@
 
 
 <p>ナビゲーション ドキュメントは、<code class="markup">spine</code> 内に包含することによって EPUB 出版物の本文内に再利用することもできる。
-本文内で、読者に完全な目次を表示することを望ましくないかもしれない高度に構造化されたドキュメントとなる状態を回避するためは、表示レベルで、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> の <span class="property">hidden</span> 属性を使用して変更することができる。
+本文内で、ユーザーに完全な目次を表示することを望ましくないかもしれない高度に構造化されたドキュメントとなる状態を回避するためは、表示レベルで、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> の <span class="property">hidden</span> 属性を使用して変更することができる。
 この属性は、利用可能な情報を最小限にすることを避けつつ、（例えば、専門的な見解で）<code class="markup">spine</code> の外側にある目次をレンダリングするとき、リーディング システムによって無視される。</p>
 
 <p>製作者はまた、これらの EPUB 出版物がたとえば図や表などの非構造化された関心のある点を含むとき、コンテンツへのアクセスをより向上させるために、追加の <code class="markup">nav</code> 要素を提供することを推奨している。</p>
@@ -398,9 +397,9 @@
 
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-overlays"> </a> </span>4.4 聴覚レンダリングとメディア オーバーレイ</h2>
 
-<p>コンテンツの聴覚レンダリングは、アクセシビリティのために重要であり、他の多くの読者ための機能としても価値がある。聴覚レンダリングを促進するためのベースラインは、動的なレイアウトのために設計されたセマンティックな HTML の利用である。EPUB XHTML ドキュメントに含んでいるネイティブの機能を使用する方法の詳細な情報は、<a class="xref" href="#sec-tts" title="2.10 Text-to-speech">テキスト読み上げ</a>を参照されたい。</p>
+<p>コンテンツの聴覚レンダリングは、アクセシビリティのために重要であり、他の多くのユーザーための機能としても価値がある。聴覚レンダリングを促進するためのベースラインは、動的なレイアウトのために設計されたセマンティックな HTML の利用である。EPUB XHTML ドキュメントに含んでいるネイティブの機能を使用する方法の詳細な情報は、<a class="xref" href="#sec-tts" title="2.10 Text-to-speech">テキスト読み上げ</a>を参照されたい。</p>
 
-<p>メディア オーバーレイは、EPUB 出版物のテキストと音声コンテンツを同期する機能を提供する。この機能はすでに、DAISY Digital Talking Books の読者に親しまれている。オーバーレイは、多くの状況で有益であり、たとえば、読むことを学習するためのツールとして、テキストと音声の同期の実用性はアクセシビリティの範囲を超える。</p>
+<p><a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> は、EPUB 出版物のテキストと音声コンテンツを同期する機能を提供する。この機能はすでに、DAISY Digital Talking Books のユーザーに親しまれている。オーバーレイは、多くの状況で有益であり、たとえば、読むことを学習するためのツールとして、テキストと音声の同期の実用性はアクセシビリティの範囲を超える。</p>
 
 </section>
 
@@ -408,7 +407,7 @@
 
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-fallbacks"> </a> </span>4.5 フォールバック</h2>
 
-<p>全てのフォーマットは、ネイティブのフォーマットでアクセス可能ではなく、全ての読者が提供されるデフォルトのフォーマットで読みことを好むわけではない。EPUB は、これらの場合に利用できる代替え表現のために、フォールバックを提供するための様々な手段を定義する。</p>
+<p>全てのフォーマットは、ネイティブのフォーマットでアクセス可能ではなく、全てのユーザーが提供されるデフォルトのフォーマットで読みことを好むわけではない。EPUB は、これらの場合に利用できる代替え表現のために、フォールバックを提供するための様々な手段を定義する。</p>
 
 <p>出版物とコンテンツレベルのフォールバックは、<span class="phrase"><a class="ulink" href="epub-spec.html#sec-foreign-restrictions" target="_top">管理外リソース</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span> で定義されている。これらのフォールバック メカニズムは、EPUB 出版物に管理外リソースを包含することを可能にし、様々な機能（例えば、複数の動画フォーマットを包含したり、EPUB 2 リーディング システムのために SVG コンテンツ ドキュメントに XHTML フォールバックの包含を許可する）を備えたリーディング システム全体で EPUB 3.1 の互換性の確保をする。</p>
 <p>加えて、完全な作品の複数のインスタンスは、（<span class="phrase"><a class="ulink" href="epub-ocf.html#sec-container-metainf-container.xml" target="_top">コンテナ ファイル（container.xml）</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a></span> で定義されている）OCF コンテナファイルの複数の <code class="markup">rootfile</code> 要素を定義することで単一の EPUB 出版物として届けることができる。代替のレンディション フォールバックは、たとえば、SVG ページのシークエンスを介して定義されたフォーマット化されたグラフィック ノベルは、XHTML を介して定義されたアクセス可能なテキスト版を添付することができるように使用してもよい。</p>
@@ -440,9 +439,9 @@ EPUB は、出版社、ベンダー、ソフトウェア開発者、および関
 EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した：
 </p>
 <ul xml:lang="en" class="personlist">
-<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span>  <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum)</span>  <span class="wg-role">Chair (until August 2016)</span></li>
 <li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span>  <span class="wg-role">Chair</span></li>
-<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair; Chair (beginning August 2016)</span></li>
 <li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
 </ul>
 <p>
@@ -1154,8 +1153,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 </div>
 <div class="bibliodiv" id="normative-refs">
 <h3 class="title">規定の参照</h3>
-<div class="biblioentry" id="refAlternateStyleTags">
-<p>[<abbr class="abbrev">Alt Style Tags</abbr>] 
+<div class="biblioentry" id="refAlternateStyleTags"><p>[<abbr class="abbrev">Alt Style Tags</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/altss-tags/" target="_top">Alternate Style Tags</a>
@@ -1163,78 +1161,68 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <span class="author">Elika J. Etemad. </span>
 </p>
 </div>
-<div class="biblioentry" id="refCSSSNAP">
-<p>[<abbr class="abbrev">CSS Snapshot</abbr>] 
+<div class="biblioentry" id="refCSSSNAP"><p>[<abbr class="abbrev">CSS Snapshot</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/CSS/" target="_top">CSS Snapshot</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refContentDocs3">
-<p>[<abbr class="abbrev">Content Docs 3.1</abbr>] 
+<div class="biblioentry" id="refContentDocs3"><p>[<abbr class="abbrev">Content Docs 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-contentdocs.html" target="_top">EPUB Content Documents 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refCMT">
-<p>[<abbr class="abbrev">Core Media Types</abbr>] 
+<div class="biblioentry" id="refCMT"><p>[<abbr class="abbrev">Core Media Types</abbr>] 
       
 <span class="title"><em><a class="ulink" href="https://www.idpf.org/epub/cmt/v3/" target="_top">EPUB 3 Core Media Types</a></em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refEPUB3">
-<p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
+<div class="biblioentry" id="refEPUB3"><p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-spec.html" target="_top">EPUB 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refA11Y">
-<p>[<abbr class="abbrev">EPUB Accessibility</abbr>] 
+<div class="biblioentry" id="refA11Y"><p>[<abbr class="abbrev">EPUB Accessibility</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/latest/accessibility" target="_top">EPUB Accessibility</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refHTML">
-<p>[<abbr class="abbrev">HTML</abbr>] 
+<div class="biblioentry" id="refHTML"><p>[<abbr class="abbrev">HTML</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/html/" target="_top">HTML</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOverlays3">
-<p>[<abbr class="abbrev">Media Overlays 3.1</abbr>] 
+<div class="biblioentry" id="refOverlays3"><p>[<abbr class="abbrev">Media Overlays 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-mediaoverlays.html" target="_top">EPUB Media Overlays 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOCF3">
-<p>[<abbr class="abbrev">OCF 3.1</abbr>] 
+<div class="biblioentry" id="refOCF3"><p>[<abbr class="abbrev">OCF 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-ocf.html" target="_top">Open Container Format 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOPS2">
-<p>[<abbr class="abbrev">OPS2</abbr>] 
+<div class="biblioentry" id="refOPS2"><p>[<abbr class="abbrev">OPS2</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm" target="_top">Open Publication Structure 2.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOpenType">
-<p>[<abbr class="abbrev">OpenType</abbr>] 
+<div class="biblioentry" id="refOpenType"><p>[<abbr class="abbrev">OpenType</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=52136" target="_top">ISO/IEC 14496-22:2015 - Information
@@ -1243,8 +1231,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <span class="date">2015-10-01. </span>
 </p>
 </div>
-<div class="biblioentry" id="refPLS">
-<p>[<abbr class="abbrev">PLS</abbr>] 
+<div class="biblioentry" id="refPLS"><p>[<abbr class="abbrev">PLS</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/" target="_top">Pronunciation Lexicon Specification
@@ -1254,16 +1241,14 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <span class="date">14 October 2008. </span>
 </p>
 </div>
-<div class="biblioentry" id="refPackages3">
-<p>[<abbr class="abbrev">Packages 3.1</abbr>] 
+<div class="biblioentry" id="refPackages3"><p>[<abbr class="abbrev">Packages 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-packages.html" target="_top">EPUB Packages 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refSSML">
-<p>[<abbr class="abbrev">SSML</abbr>] 
+<div class="biblioentry" id="refSSML"><p>[<abbr class="abbrev">SSML</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2010/REC-speech-synthesis11-20100907/" target="_top">Speech Synthesis Markup Language
@@ -1273,16 +1258,14 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <span class="date">7 September 2010. </span>
 </p>
 </div>
-<div class="biblioentry" id="refSVG">
-<p>[<abbr class="abbrev">SVG</abbr>] 
+<div class="biblioentry" id="refSVG"><p>[<abbr class="abbrev">SVG</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/SVG/" target="_top">Scalable Vector Graphics (SVG)</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refARIA">
-<p>[<abbr class="abbrev">WAI-ARIA</abbr>] 
+<div class="biblioentry" id="refARIA"><p>[<abbr class="abbrev">WAI-ARIA</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2014/REC-wai-aria-20140320/" target="_top">Accessible Rich Internet Applications (WAI-ARIA)
@@ -1292,8 +1275,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <span class="date">20 March 2014. </span>
 </p>
 </div>
-<div class="biblioentry" id="refWCAG20">
-<p>[<abbr class="abbrev">WCAG 2.0</abbr>] 
+<div class="biblioentry" id="refWCAG20"><p>[<abbr class="abbrev">WCAG 2.0</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/WCAG20/" target="_top">Web Content Accessibility Guidelines (WCAG) 2.0</a>
@@ -1301,8 +1283,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <span class="author">Ben Caldwell, et al. </span>
 </p>
 </div>
-<div class="biblioentry" id="refWOFF">
-<p>[<abbr class="abbrev">WOFF</abbr>] 
+<div class="biblioentry" id="refWOFF"><p>[<abbr class="abbrev">WOFF</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2012/REC-WOFF-20121213/" target="_top">WOFF File Format 1.0</a>
@@ -1311,8 +1292,7 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 <span class="date">13 December 2012. </span>
 </p>
 </div>
-<div class="biblioentry" id="refWOFF2">
-<p>[<abbr class="abbrev">WOFF2</abbr>] 
+<div class="biblioentry" id="refWOFF2"><p>[<abbr class="abbrev">WOFF2</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/WOFF2/" target="_top">WOFF File Format 2.0</a>
@@ -1323,17 +1303,14 @@ EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメ
 </div>
 <div class="bibliodiv" id="informative-refs">
 <h3 class="title">規定ではない参照</h3>
-<div class="biblioentry" id="refEPUB3Changes">
-<p>[<abbr class="abbrev">EPUB3 Changes</abbr>] 
+<div class="biblioentry" id="refEPUB3Changes"><p>[<abbr class="abbrev">EPUB3 Changes</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-changes.html" target="_top">EPUB 3.1 Differences from EPUB 3.0.1</a>
 </em>. </span>
-<span class="author">Markus Gylling, et al. </span>
 </p>
 </div>
-<div class="biblioentry" id="refPFRoleAttribute">
-<p>[<abbr class="abbrev">Role</abbr>] 
+<div class="biblioentry" id="refPFRoleAttribute"><p>[<abbr class="abbrev">Role</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/2013/REC-role-attribute-20130328/" target="_top">Role Attribute</a>
