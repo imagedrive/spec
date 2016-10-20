@@ -13,7 +13,7 @@
 <body>
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160906.html">EPUB 3.1 Changes from EPUB 3.0.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-changes-20160906.html">EPUB 3.1 Changes from EPUB 3.0.1</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-changes-20161014.html">EPUB 3.1 Changes from EPUB 3.0.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-changes-20161014.html">EPUB 3.1 Changes from EPUB 3.0.1</a> を参照されたい。</p>
 
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
@@ -21,7 +21,7 @@
 <dt>公開日:</dt>
 <dd>2016年4月4日</dd>
 <dt>修正日:</dt>
-<dd>2016年9月12日</dd>
+<dd>2016年10月20日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -32,21 +32,14 @@
 <!--p><a href="http://www.idpf.org"><img src="../../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
 <h1 class="title">EPUB 3.1 Changes from EPUB 3.0.1</h1>
 
-<p class="identity"><span class="pubdate">2016年9月6日</span> <span class="releaseinfo">Draft Specification</span></p>
-<div class="note">
-<p>このドキュメントは、<a href="http://www.idpf.org/epub/31/spec/epub-spec.html">EPUB 3.1</a> の最新のドラフトに包含されている変更点を要約したものである。このドラフトは、EPUB ワーキング グループによって、完全な機能であると判断される。新たな追加は、将来のドラフトのために協議に上げるのではなく、新しい要求は、将来のリビジョンのために据え置かれる。ワーキング グループは現在、これらの改訂仕様（バグ、漏れ、タイプミスなど）の内容のインプットを求めている。</p>
-</div>
-<div class="issue">
-<h6 id="issue-1" class="custom-title">前の Editor's Draft からの変更点の概要</h6>
-<p>EPUB ワーキング グループの焦点は、<a href="https://github.com/IDPF/epub-revision/issues">トラッカー</a>にレポートされていた課題を修正していた。これらの変更は、本質としてはマイナーであり、このドキュメントに記載されていない。終了したイシューへのリンクについては、次の各仕様を参照されたい。</p>
-</div>
+<p class="identity"><span class="pubdate">2016年10月14日</span> <span class="releaseinfo">Proposed Specification</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-changes-20160906.html">http://www.idpf.org/epub/31/spec/epub-changes-20160906.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-changes-20161014.html">http://www.idpf.org/epub/31/spec/epub-changes-20161014.html</a></dd>
 <dt>最新版</dt>
 <dd><a href="http://www.idpf.org/epub3/latest/changes">http://www.idpf.org/epub3/latest/changes</a></dd>
 <dt>前の版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-changes-20160801.html">http://www.idpf.org/epub/31/spec/epub-changes-20160801.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-changes-20160906.html">http://www.idpf.org/epub/31/spec/epub-changes-20160906.html</a></dd>
 </dl>
 <div class="history"><span class="history-title">履歴</span>
 <ul>
@@ -106,7 +99,7 @@
 <li><span class="section"><a href="#sec-pkg-refines">4.1. <code class="markup">refines</code> 属性</a></span></li>
 <li><span class="section"><a href="#sec-pkg-linked-records">4.2. リンクされたメタデータ レコード</a></span></li>
 <li><span class="section"><a href="#sec-pkg-opf2-meta">4.3. <code class="markup">meta</code> 要素の除去</a></span></li>
-<li><span class="section"><a href="#sec-pkg-ncx">4.4. NCX は非推奨</a></span></li>
+<li><span class="section"><a href="#sec-pkg-ncx">4.4. NCX は削除対象としてマークされた</a></span></li>
 <li><span class="section"><a href="#sec-pkg-guide">4.5. <code class="markup">guide</code> 要素の廃止</a></span></li>
 <li><span class="section"><a href="#sec-pkg-bindings">4.6. <code class="markup">bindings</code> 要素の廃止</a></span></li>
 </ol>
@@ -127,6 +120,12 @@
 <li><span class="section"><a href="#sec-ocf-enc">6.1. 暗号化</a></span></li>
 </ol>
 </li>
+<li><span class="chapter"><a href="#sec-mo">7. Media Overlays</a></span>
+<ol>
+<li><span class="section"><a href="#sec-mo-pkg-meta">7.1. パッケージ メタデータの表現</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-a11y">8. EPUB Accessibility</a></span></li>
 <li><span class="chapter"><a href="#sec-cfi">7. EPUB Canonical Fragment Identifiers</a></span></li>
 <li><span class="chapter"><a href="#sec-altss">8. Alternate Style Tags</a></span></li>
 <li><span class="acknowledgements"><a href="#app-contributors">謝辞と貢献者</a></span></li>
@@ -146,9 +145,9 @@
 
 <p>EPUB は、Open EBook Publication Structure (OEBPS) として知られている交換フォーマットが起源である。OEBPS 1.0 は、後に International Digital Publishing Forum (IDPF) となる組織の Open eBook Forum により1999年に承認された。次の改訂 1.1 と 1.2 は、それぞれ2001年と2002年に IDPF により承認された。</p>
 
-<p>配信・交換として使用できる標準フォーマットの要求が存在することに気が付き、OEPBS のための単一ファイルのコンテナフォーマットとして 2005 後半に作業は開始され、そしてそれは2006年に OEBPS Container Format (OCF) として IDPF により承認された。OEBPS の 2.0 版の作業は、OCF と一緒に Open Package Format (OPF)、Open Publication Format (OPF) の仕様書の三つ組から成り、2007年の10月に名前を変更した EPUB2.0 として承認をされ、並行して開始された。仕様書の正誤表を明確にし、改正することを主な意図とした 2.0 仕様書のセットをメンテナンスアップデートした EPUB 2.0.1 は、2010年9月に承認された。<a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr class="abbrev">OPF2</abbr>]</a> <a class="biblioref" href="#refOPS2" title="Open Publication Structure 2.0.1">[<abbr class="abbrev">OPS2</abbr>]</a> <a class="biblioref" href="#refOCF2" title="Open Container Format 2.0.1">[<abbr class="abbrev">OCF2</abbr>]</a></p>
+<p>配信・交換として使用できる標準フォーマットの要求が存在することに気が付き、OEPBS のための単一ファイルのコンテナフォーマットとして 2005 後半に作業は開始され、そしてそれは2006年に OEBPS Container Format (OCF) として IDPF により承認された。OEBPS の 2.0 版の作業は、OCF と一緒に Open Package Format (OPF)、Open Publication Format (OPF) の仕様書の三つ組から成り、2007年の10月に名前を変更した EPUB2.0 として承認をされ、並行して開始された。仕様書の正誤表を明確にし、改正することを主な意図とした 2.0 仕様書のセットをメンテナンス アップデートした EPUB 2.0.1 は、2010年9月に承認された。<a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr class="abbrev">OPF2</abbr>]</a> <a class="biblioref" href="#refOPS2" title="Open Publication Structure 2.0.1">[<abbr class="abbrev">OPS2</abbr>]</a> <a class="biblioref" href="#refOCF2" title="Open Container Format 2.0.1">[<abbr class="abbrev">OCF2</abbr>]</a></p>
 
-<p>EPUB 仕様の主要な版の作業は、HTML とより密接に EPUB を連携することを目標に、2010年に開始され、新しいネイティブのマルチメディア機能、洗礼された CSS レイアウトのレンダリング、フォント埋め込み、スクリプトのインタラクティビティ、拡張されたグローバルな言語のサポート、改良されたアクセシビリティをもたらす。新しい仕様、EPUB Media Overlays も取り入れられ、EPUB 出版物にテキストと音声の同期を可能にする。より標準の仕様名に合わせるため、Open Package Format specification は EPUB Publications と名前を変更し、Open Publication Format specification は EPUB Content Documents と名前を変更された。EPUB 3.0 仕様は、2011年10月に承認された。<a class="biblioref" href="#refPublications30" title="EPUB Publications 3.0">[<abbr class="abbrev">Publications 3.0</abbr>]</a> <a class="biblioref" href="#refContentDocs30" title="EPUB Content Documents 3.0">[<abbr class="abbrev">Content Docs 3.0</abbr>]</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr class="abbrev">OCF 3.0</abbr>]</a> <a class="biblioref" href="#refOverlays30" title="EPUB Media Overlays 3.0">[<abbr class="abbrev">Media Overlays 3.0</abbr>]</a></p>
+<p>EPUB 仕様の主要な版の作業は、HTML とより密接に EPUB を連携することを目標に、2010年に開始され、新しいネイティブのマルチメディア機能、洗礼された CSS レイアウトのレンダリング、フォント埋め込み、スクリプトのインタラクティビティ、拡張されたグローバルな言語のサポート、向上したアクセシビリティをもたらす。新しい仕様、EPUB Media Overlays も取り入れられ、EPUB 出版物にテキストと音声の同期を可能にする。より標準の仕様名に合わせるため、Open Package Format specification は EPUB Publications と名前を変更し、Open Publication Format specification は EPUB Content Documents と名前を変更された。EPUB 3.0 仕様は、2011年10月に承認された。<a class="biblioref" href="#refPublications30" title="EPUB Publications 3.0">[<abbr class="abbrev">Publications 3.0</abbr>]</a> <a class="biblioref" href="#refContentDocs30" title="EPUB Content Documents 3.0">[<abbr class="abbrev">Content Docs 3.0</abbr>]</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.0">[<abbr class="abbrev">OCF 3.0</abbr>]</a> <a class="biblioref" href="#refOverlays30" title="EPUB Media Overlays 3.0">[<abbr class="abbrev">Media Overlays 3.0</abbr>]</a></p>
 
 <p>EPUB 3.0.1 の改正は、2013年から2014年に行われた。主にマイナーな修正と更新の導入ではあるが、リフロー可能な EPUB がコンテンツに適していないとき、プレゼンテーションに対する大きなコントロールを与える、固定レイアウトドキュメントの統合を参照されたい。<a class="biblioref" href="#refPublications301" title="EPUB Publications 3.0.1">[<abbr class="abbrev">Publications 3.0.1</abbr>]</a> <a class="biblioref" href="#refContentDocs301" title="EPUB Content Documents 3.0.1">[<abbr class="abbrev">Content Docs 3.0.1</abbr>]</a> <a class="biblioref" href="#refOCF301" title="Open Container Format 3.0.1">[<abbr class="abbrev">OCF 3.0.1</abbr>]</a> <a class="biblioref" href="#refOverlays301" title="EPUB Media Overlays 3.0.1">[<abbr class="abbrev">Media Overlays 3.0.1</abbr>]</a></p>
 </section>
@@ -156,10 +155,10 @@
 
 <section class="chapter" id="sec-reorg">
 <h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-reorg"> </a> </span>2 仕様の再編成</h1>
-<p>EPUB 標準の読解と参照を簡単にするために、仕様の主な再編成は、この改定で着手した。最大の変更点として、新しい包括的な <span class="phrase"><a class="ulink" href="epub-spec.html#sec-overview" target="_top">EPUB 3.1 仕様</a></span>は、エントリへの主なポイントとして導入された。<a class="biblioref" href="#refPublications301" title="EPUB Publications 3.0.1">[<abbr class="abbrev">Publications 3.0.1</abbr>]</a> で定義された以前の EPUB 出版物およびリーディング システムの要件は、<span class="phrase"><a class="ulink" href="epub-spec.html#sec-publication-resources" target="_top">出版物リソース</a></span>に関するセクションがあったように、この新しいトップレベルの仕様に移動した。これらの変更は、EPUB 出版物が、パッケージ ドキュメントと等価であるという混乱を除去することを目的とした。全ての<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">共通用語</a></span>は、同様に、共通の参照点を提供するために、このトップレベルの仕様に集めた。<a class="ulink" href="epub-spec.html#index" target="_top">主要な概念のインデックス</a>と用語は、様々なサブ仕様のナビゲーションを支援するために追加さた。</p>
-<p><a class="biblioref" href="#refPublications301" title="EPUB Publications 3.0.1">[<abbr class="abbrev">Publications 3.0.1</abbr>]</a> は、パッケージ ドキュメントを介してコンテンツのレンディションを定義していることを反映するために、より良い <span class="phrase"><a class="ulink" href="epub-packages.html#sec-overview" target="_top">EPUB Packages 3.1</a></span> にリネームした。EPUB ナビゲーション ドキュメントの定義は、無作為に EPUB コンテンツ ドキュメント内に実装される機能ではなく、パッケージの中心的な構成要素であるとして、この仕様のために <a class="biblioref" href="#refContentDocs301" title="EPUB Content Documents 3.0.1">[<abbr class="abbrev">Content Docs 3.0.1</abbr>]</a> から移動した。以前、この仕様で定義されていたプロパティの定義は、それらが適用される要素に特化した語彙に移動した。</p>
-<p><a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> は、埋め込まれるプロパティの定義が別々の語彙として除去されるように見えるが、別の構造的な変化はない。</p>
-<p><a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a> は、EPUB ナビゲーション ドキュメントの定義の除去を別とすれば、主に表面的な変更がなされた。いくつかのセクションは、コンテンツ ドキュメントを向上する方法ではあるが、一意のドキュメントタイプではないことを反映し、より良くするために名前を変更された（例えば、セクション「スクリプト コンテンツ ドキュメント」は、「スクリプト」に変更された）。一部のセクションは、より良い彼らはユニークなドキュメントタイプが、コンテンツ ドキュメントを向上させる方法がないことを反映するために名前を変更したが、それ以外の部分の配置が大幅に変更されないまま行いました。</p>
+<p>EPUB 標準の読解と参照を簡単にするために、仕様の主な再編成は、この改定で着手した。最大の変更点として、新しい包括的な <span class="phrase"><a class="ulink" href="epub-spec.html#sec-overview" target="_top">EPUB 3.1 仕様</a></span>は、エントリへの主なポイントとして導入された。<a class="biblioref" href="#refPublications301" title="EPUB Publications 3.0.1">[<abbr class="abbrev">Publications 3.0.1</abbr>]</a> で定義された以前の EPUB 出版物およびリーディング システムの要件は、<span class="phrase"><a class="ulink" href="epub-spec.html#sec-publication-resources" target="_top">出版物リソース</a></span>に関するセクションがあったように、この新しいトップレベルの仕様に移動した。全ての<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">共通用語</a></span>は、同様に、共通の参照点を提供するために、このトップレベルの仕様に集めた。<a class="ulink" href="epub-spec.html#index" target="_top">主要な概念のインデックス</a>と用語は、様々なサブ仕様のナビゲーションを支援するために追加さた。</p>
+<p><a class="biblioref" href="#refPublications301" title="EPUB Publications 3.0.1">[<abbr class="abbrev">Publications 3.0.1</abbr>]</a> は、パッケージ ドキュメントを介してコンテンツのレンディションを定義していることを反映するために、より適した <span class="phrase"><a class="ulink" href="epub-packages.html#sec-overview" target="_top">EPUB Packages 3.1</a></span> にリネームした。EPUB ナビゲーション ドキュメントの定義は、EPUB コンテンツ ドキュメントの一般的な機能ではなく、パッケージの中心的な構成要素であるとして、この仕様のために <a class="biblioref" href="#refContentDocs301" title="EPUB Content Documents 3.0.1">[<abbr class="abbrev">Content Docs 3.0.1</abbr>]</a> から移動した。以前、この仕様で定義されていたプロパティの定義は、外部の語彙へ移動した。</p>
+<p><a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> は、埋め込まれるプロパティの定義が別々の語彙として除去されるように見えるが、その他の点では構造的な変化はない。</p>
+<p><a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a> は、EPUB ナビゲーション ドキュメントの定義の除去を別とすれば、主に表面的な変更がなされた。いくつかのセクションは、コンテンツ ドキュメントを向上する方法ではあるが、一意のドキュメントタイプではないことを反映し、より適するように名前を変更された（例えば、セクション「スクリプト コンテンツ ドキュメント」は、「スクリプト」に変更された）。一部のセクションは、より良い彼らはユニークなドキュメントタイプが、コンテンツ ドキュメントを向上させる方法がないことを反映するために名前を変更したが、それ以外の部分の配置が大幅に変更されないまま成された。</p>
 <p><a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> は、同様に、いくつかのマイナーな編集と構造のクリーンアップがなされたが、セクションの追加または削除はない。</p>
 </section>
 <section class="chapter" id="sec-epub31">
@@ -201,7 +200,11 @@
 </div>
 <section class="section" id="sec-pkg-refines">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-refines"> </a> </span>4.1 <code class="markup">refines</code> 属性</h2>
-<p><span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-meta-refines" target="_top">refines 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span>の使用は、現在、<span class="phrase"><a class="ulink" href="epub-spec.html#deprecated" target="_top">廃止予定（deprecated）</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span> である。次の属性、<code class="markup">opf:scheme</code>、<code class="markup">opf:role</code>、<code class="markup">opf:alt-rep</code>、<code class="markup">opf:file-as</code>、<code class="markup">opf:authority</code>、<code class="markup">opf:term</code> は、リーディングシステムに提供する機能を置き換えるために追加された。</p>
+<p><span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-meta-refines" target="_top">refines 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span>の使用は、現在、<span class="phrase"><a class="ulink" href="epub-spec.html#deprecated" target="_top">廃止予定（deprecated）</a></span> である。次の属性、<code class="markup">duration</code>、<code class="markup">opf:alt-rep</code>、<code class="markup">opf:authority</code>、<code class="markup">opf:file-as</code>、<code class="markup">opf:role</code>、<code class="markup">opf:scheme</code>、<code class="markup">opf:term</code> は、リーディングシステムに提供する機能を置き換えるために追加された。</p>
+<div class="note">
+<h3 class="title">note</h3>
+<p>新しい <code class="markup">opf:scheme</code> 属性は、<code class="markup">meta</code> タグに使用できる既存の <code class="markup">scheme</code> 属性と名前や目的が似ているが、識別子スキーマを識別することに限定されている。すでに属性は EPUB 2 で使用でき、そして、<code class="markup">opf:</code> 名前空間において <a class="biblioref" href="#refDCMES" title="Dublin Core Metadata Element Set, Version 1.1">[<abbr class="abbrev">DCMES</abbr>]</a> 要素に使用できる全ての属性を保持するために、互換性として、プリフィックス付きの名前を保持することを配慮している。これらの利点は、発生するであろう全ての初期オーサリング時の混乱をしのぐと考えられた。</p>
+</div>
 </section>
 <section class="section" id="sec-pkg-linked-records">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-linked-records"> </a> </span>4.2 リンクされたメタデータ レコード</h2>
@@ -216,8 +219,8 @@
 <p>EPUB 3.1 は、<a class="biblioref" href="#refOPF2" title="Open Packaging Format 2.0.1">[<abbr class="abbrev">OPF2</abbr>]</a> <code class="markup">meta</code> 要素を取り除く（EPUB 3.0.1 の <a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-opf-meta-elem" target="_top">OPF2 <code class="markup">meta</code> 要素</a>を参照）。</p>
 </section>
 <section class="section" id="sec-pkg-ncx">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-ncx"> </a> </span>4.4 NCX は非推奨</h2>
-<p>ナビゲーションのための EPUB 2 NCX ファイルは、現在、廃止される機能としてマークされた（<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#ncx-superseded" target="_top">EPUB 3.0.1 NCX</a> を参照）。そのサポートは、EPUB の次の大きな改定で取り除かれる。</p>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-ncx"> </a> </span>4.4 NCX は削除対象としてマークされた</h2>
+<p>ナビゲーションのための EPUB 2 NCX ファイルは、現在、<span class="phrase"><a class="ulink" href="epub-spec.html#superseded-removal" target="_top">削除対象としてマークされた</a></span>（<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#ncx-superseded" target="_top">EPUB 3.0.1 NCX</a> を参照）。そのサポートは、EPUB の次の大きな改定で取り除かれる。</p>
 </section>
 
 <section class="section" id="sec-pkg-guide">
@@ -228,7 +231,7 @@
 <section class="section" id="sec-pkg-bindings">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pkg-bindings"> </a> </span>4.6 <code class="markup">bindings</code> 要素の廃止</h2>
 <p>EPUB 3.1 は、object 要素（<a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html#sec-bindings-elem" target="_top">EPUB 3.0.1 <code class="markup">bindings</code></a> を参照）に埋め込まれた管理外リソースのために代替のスクリプト化したフォールバックを提供するパッケージ ドキュメント内で bindings の使用をサポートしない。</p>
-<p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">object</code> 要素<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-xhtml-fallbacks" target="_top">固有のフォールバック メカニズム</a></span>（埋め込みコンテンツ）は、コア メディア タイプのフォールバックを提供するために残る。</p>
+<p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">object</code> 要素<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-xhtml-fallbacks" target="_top">固有のフォールバック メカニズム</a></span>（埋め込みコンテンツ）は、コア メディア タイプのフォールバックを提供するために使用できる。</p>
 </section>
 </section>
 <section class="chapter" id="sec-cdoc">
@@ -334,13 +337,29 @@
 <p><span class="phrase"><a class="ulink" href="epub-ocf.html#sec-enc-compression" target="_top">暗号化と圧縮の順序</a></span>が明確化された。新しいルールは、リソースのサイズを減少させることが適切でないとき、圧縮が必要でないことを明確にする。新しい <code class="markup">Compression</code> 要素は、リソースが圧縮後かそれともオリジナルのバイトサイズかを示すために <code class="filename">encryption.xml</code> スキーマのために追加された。</p>
 </section>
 </section>
+<section class="chapter" id="sec-mo">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-mo"> </a> </span>7 Media Overlays</h1>
+<div class="note">
+<h3 class="title">note</h3>
+<p>このリビジョンで取り上げられた<a class="ulink" href="https://github.com/IDPF/epub-revision/issues?q=is%3Aissue+milestone%3A%22EPUB+3.1%22+label%3ASpec-MediaOverlays+is%3Aclosed" target="_top">メディア オーバレイ 仕様のイシュー</a>の説明とタイプミス、その他の完全なリストはイシュー トラッカーを参照されたい。</p>
+</div>
+<section class="section" id="sec-mo-pkg-meta">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-mo-pkg-meta"> </a> </span>7.1 パッケージ メタデータの表現</h2>
+<p>Packages 3.1 仕様における <a class="link" href="#sec-pkg-refines" title="4.1 The refines attribute"><code class="markup">refines</code> 属性の廃止予定</a>は、メディア オーバレイのメタデータを表現する方法に影響を与えている。具体的には、新しい <span class="phrase"><a class="ulink" href="epub-packages.html#attrdef-item-duration" target="_top">duration 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> が、現在、総再生時間を示すためにマニフェストの項目に取り付けられている（従来通り、総再生時間は、パッケージ メタデータに設定される）。ナレーターは、各個別の XHTML コンテンツ ドキュメントのためではなく、全体としての出版物のためのみ識別される。</p>
+</section>
+</section>
+<section class="chapter" id="sec-a11y">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-a11y"> </a> </span>8 EPUB Accessibility</h1>
+<p>EPUB 3.1 リビジョンは、EPUB 出版物にアクセスし、発見できるようにする方法の詳細として、<a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> 仕様を導入している。この仕様は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の作業を活用し、EPUB 出版物のための要件もまた追加している。これは、要件を満たすためのベスト プラクティスを記述した、規定ではない <a class="biblioref" href="#refA11YTech" title="EPUB Accessibility Techniques">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a> ドキュメントが添付されている。</p>
+<p>この仕様は、EPUB の古いバージョンに利用できるよう設計されている。EPUB 3.0.1 または 2.0.1 がアクセシブルかどうかを確認するために製作者によってすぐ使用することができる。</p>
+</section>
 
 <section class="chapter" id="sec-cfi">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-cfi"> </a> </span>7 EPUB Canonical Fragment Identifiers</h1>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-cfi"> </a> </span>9 EPUB Canonical Fragment Identifiers</h1>
 <p>このリビジョンで取り上げられた <a class="ulink" href="https://github.com/IDPF/epub-revision/issues?q=is%3Aissue+milestone%3A%22EPUB+3.1%22+label%3ASpec-CFI+is%3Aclosed" target="_top">EPUB Canonical Fragment Identifiers 仕様のイシュー</a>の説明とタイプミス、その他の完全なリストはイシュー トラッカーを参照されたい。</p>
 </section>
 <section class="chapter" id="sec-altss">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-altss"> </a> </span>8 Alternate Style Tags</h1>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-altss"> </a> </span>10 Alternate Style Tags</h1>
 
 <p>このリビジョンで取り上げられた <a class="ulink" href="https://github.com/IDPF/epub-revision/issues?q=is%3Aissue+milestone%3A%22EPUB+3.1%22+label%3ASpec-AltStyle+is%3Aclosed" target="_top">Alternate Style Tags 仕様のイシュー</a>の説明とタイプミス、その他の完全なリストはイシュー トラッカーを参照されたい。</p>
 </section>
@@ -358,9 +377,9 @@
 <p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
 <p>EPUB 3.1 仕様は下に述べるリーダーシップにより2015年7月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した：</p>
 <ul xml:lang="en" class="personlist">
-<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum)</span> <span class="wg-role">Chair (until August 2016)</span></li>
 <li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span>  <span class="wg-role">Chair</span></li>
-<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair; Chair (beginning August 2016)</span></li>
 <li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
 </ul>
 <p>ワーキング グループのアクティブメンバー：</p>
@@ -472,54 +491,54 @@
 </div>
 <div class="bibliodiv" id="normative-refs">
 <h3 class="title">参照文献</h3>
-<div class="biblioentry" id="refContentDocs30">
-<p>[<abbr class="abbrev">Content Docs 3.0</abbr>] 
+<div class="biblioentry" id="refContentDocs30"><p>[<abbr class="abbrev">Content Docs 3.0</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/30/spec/epub30-contentdocs.html" target="_top">EPUB Content Documents 3.0</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refContentDocs301">
-<p>[<abbr class="abbrev">Content Docs 3.0.1</abbr>] 
+<div class="biblioentry" id="refContentDocs301"><p>[<abbr class="abbrev">Content Docs 3.0.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-contentdocs.html" target="_top">EPUB Content Documents 3.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refContentDocs3">
-<p>[<abbr class="abbrev">Content Docs 3.1</abbr>] 
+<div class="biblioentry" id="refContentDocs3"><p>[<abbr class="abbrev">Content Docs 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-contentdocs.html" target="_top">EPUB Content Documents 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refCMT">
-<p>[<abbr class="abbrev">Core Media Types</abbr>] 
+<div class="biblioentry" id="refCMT"><p>[<abbr class="abbrev">Core Media Types</abbr>] 
       
 <span class="title"><em><a class="ulink" href="https://www.idpf.org/epub/cmt/v3/" target="_top">EPUB 3 Core Media Types</a></em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refEPUB3">
-<p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
+<div class="biblioentry" id="refDCMES"><p>[<abbr class="abbrev">DCMES</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://dublincore.org/documents/dces/" target="_top">Dublin Core Metadata Element Set, Version 1.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refEPUB3"><p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-spec.html" target="_top">EPUB 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refA11Y">
-<p>[<abbr class="abbrev">EPUB Accessibility</abbr>] 
+<div class="biblioentry" id="refA11Y"><p>[<abbr class="abbrev">EPUB Accessibility</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/latest/accessibility" target="_top">EPUB Accessibility</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refEPUBCFI">
-<p>[<abbr class="abbrev">EPUB-CFI</abbr>] 
+<div class="biblioentry" id="refEPUBCFI"><p>[<abbr class="abbrev">EPUB-CFI</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/linking/cfi/epub-cfi.html" target="_top">EPUB Canonical Fragment Identifier (epubcfi)
@@ -527,112 +546,98 @@
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refHTML">
-<p>[<abbr class="abbrev">HTML</abbr>] 
+<div class="biblioentry" id="refHTML"><p>[<abbr class="abbrev">HTML</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/html/" target="_top">HTML</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOverlays30">
-<p>[<abbr class="abbrev">Media Overlays 3.0</abbr>] 
+<div class="biblioentry" id="refOverlays30"><p>[<abbr class="abbrev">Media Overlays 3.0</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays.html" target="_top">EPUB Media Overlays 3.0</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOverlays301">
-<p>[<abbr class="abbrev">Media Overlays 3.0.1</abbr>] 
+<div class="biblioentry" id="refOverlays301"><p>[<abbr class="abbrev">Media Overlays 3.0.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-mediaoverlays.html" target="_top">EPUB Media Overlays 3.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOverlays3">
-<p>[<abbr class="abbrev">Media Overlays 3.1</abbr>] 
+<div class="biblioentry" id="refOverlays3"><p>[<abbr class="abbrev">Media Overlays 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-mediaoverlays.html" target="_top">EPUB Media Overlays 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOCF30">
-<p>[<abbr class="abbrev">OCF 3.0</abbr>] 
+<div class="biblioentry" id="refOCF30"><p>[<abbr class="abbrev">OCF 3.0</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/30/spec/epub30-ocf.html" target="_top">Open Container Format 3.0</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOCF301">
-<p>[<abbr class="abbrev">OCF 3.0.1</abbr>] 
+<div class="biblioentry" id="refOCF301"><p>[<abbr class="abbrev">OCF 3.0.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-ocf.html" target="_top">Open Container Format 3.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOCF3">
-<p>[<abbr class="abbrev">OCF 3.1</abbr>] 
+<div class="biblioentry" id="refOCF3"><p>[<abbr class="abbrev">OCF 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-ocf.html" target="_top">Open Container Format 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOCF2">
-<p>[<abbr class="abbrev">OCF2</abbr>] 
+<div class="biblioentry" id="refOCF2"><p>[<abbr class="abbrev">OCF2</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/doc_library/epub/OCF_2.0.1_draft.doc" target="_top">Open Container Format 2.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOPF2">
-<p>[<abbr class="abbrev">OPF2</abbr>] 
+<div class="biblioentry" id="refOPF2"><p>[<abbr class="abbrev">OPF2</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm" target="_top">Open Packaging Format 2.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refOPS2">
-<p>[<abbr class="abbrev">OPS2</abbr>] 
+<div class="biblioentry" id="refOPS2"><p>[<abbr class="abbrev">OPS2</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm" target="_top">Open Publication Structure 2.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refPackages3">
-<p>[<abbr class="abbrev">Packages 3.1</abbr>] 
+<div class="biblioentry" id="refPackages3"><p>[<abbr class="abbrev">Packages 3.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="epub-packages.html" target="_top">EPUB Packages 3.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refPublications30">
-<p>[<abbr class="abbrev">Publications 3.0</abbr>] 
+<div class="biblioentry" id="refPublications30"><p>[<abbr class="abbrev">Publications 3.0</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/30/spec/epub30-publications.html" target="_top">EPUB Publications 3.0</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refPublications301">
-<p>[<abbr class="abbrev">Publications 3.0.1</abbr>] 
+<div class="biblioentry" id="refPublications301"><p>[<abbr class="abbrev">Publications 3.0.1</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="http://www.idpf.org/epub/301/spec/epub-publications.html" target="_top">EPUB Publications 3.0.1</a>
 </em>. </span>
 </p>
 </div>
-<div class="biblioentry" id="refWCAG20">
-<p>[<abbr class="abbrev">WCAG 2.0</abbr>] 
+<div class="biblioentry" id="refWCAG20"><p>[<abbr class="abbrev">WCAG 2.0</abbr>] 
       
 <span class="title"><em>
 <a class="ulink" href="https://www.w3.org/TR/WCAG20/" target="_top">Web Content Accessibility Guidelines (WCAG) 2.0</a>
@@ -643,12 +648,18 @@
 </div>
 <div class="bibliodiv" id="informative-refs">
 <h3 class="title">参考文献</h3>
-<div class="biblioentry" id="refEPUB3Overview">
-<p>[<abbr class="abbrev">EPUB3 Overview</abbr>] 
+<div class="biblioentry" id="refA11YTech"><p>[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/accessibility/techniques" target="_top">EPUB Accessibility Techniques</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refEPUB3Overview"><p>[<abbr class="abbrev">EPUB3 Overview</abbr>] 
+      
 <span class="title"><em>
 <a class="ulink" href="epub-overview.html" target="_top">EPUB 3.1 Overview</a>
 </em>. </span>
-<span class="author">Garth Conboy, et al. </span>
 </p>
 </div>
 </div>
