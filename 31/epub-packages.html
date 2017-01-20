@@ -14,14 +14,14 @@
 <header>
 <div class="translation-attention">
 
-<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-packages-20161014.html">EPUB Packages 3.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/packages">http://www.idpf.org/epub3/latest/overview</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-packages-20161014.html">EPUB Packages 3.1</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-packages-20170105.html">EPUB Packages 3.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/packages">http://www.idpf.org/epub3/latest/overview</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-packages-20170105.html">EPUB Packages 3.1</a> を参照されたい。</p>
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
 
 <dt>公開日:</dt>
 <dd>2016年3月8日</dd>
 <dt>修正日:</dt>
-<dd>2016年11月11日</dd>
+<dd>2017年1月20日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 
@@ -30,14 +30,14 @@
 </div>
 <!--p><a href="http://www.idpf.org"><img src="../../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
 <h1 class="title">EPUB Packages 3.1</h1>
-<p class="identity"><span class="pubdate">2016年10月14日</span> <span class="releaseinfo">Proposed Specification</span></p>
+<p class="identity"><span class="pubdate">2017年1月5日</span> <span class="releaseinfo">Recommended Specification</span></p>
 <dl class="printhistory">
 <dt>この版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-packages-20161014.html">http://www.idpf.org/epub/31/spec/epub-packages-20161014.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-packages-20170105.html">http://www.idpf.org/epub/31/spec/epub-packages-20170105.html</a></dd>
 <dt>最新版</dt>
 <dd><a href="http://www.idpf.org/epub3/latest/packages">http://www.idpf.org/epub3/latest/packages</a></dd>
 <dt>前の版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-packages-20160906.html">http://www.idpf.org/epub/31/spec/epub-packages-20160906.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-packages-20161130.html">http://www.idpf.org/epub/31/spec/epub-packages-20161130.html</a></dd>
 <dt>以前の勧告</dt>
 <dd><a href="http://www.idpf.org/epub/301/spec/epub-publications-20140626.html">http://www.idpf.org/epub/301/spec/epub-publications-20140626.html</a></dd>
 </dl>
@@ -45,8 +45,8 @@
 <span class="history-title">履歴</span>
 <ul>
 <li><a href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-packages.xml">このドキュメントの変更</a></li>
-<li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed+label%3ASpec-Packages">このリビジョンで対処する課題</a></li>
-<li><a href="https://github.com/IDPF/epub-revision/issues">課題のレポート</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed+label%3ASpec-Packages">このリビジョンで取り上げられた課題</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues">課題の報告</a></li>
 <li><a href="./epub-packages-errata/">正誤表</a></li>
 </ul>
 </div>
@@ -58,7 +58,7 @@
 </div>
 <p class="formats">完全な EPUB 3.1 仕様は、<a href="http://www.idpf.org/epub/31/epub31.epub">EPUB 出版物</a>としてダウンロードしても利用できる。</p>
 <div class="legalnotice">
-<p>Copyright © 2010-2016 International Digital Publishing Forum™</p>
+<p>Copyright © 2010-2017 International Digital Publishing Forum™</p>
 <div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
 <p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
 <p>EPUB は International Digital Publishing Forum の登録商標である。</p>
@@ -68,7 +68,7 @@
 <section id="sotd">
 <h2>このドキュメントのステータス</h2>
 <p>このセクションでは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わるかもしれない。</p>
-<p>このドキュメントは、2015年7月8日に承認された<a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top"> EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成されたドラフトである。</p>
+<p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成されたドラフトである。</p>
 <p>このドキュメントは安定しておらず、いつでも、更新や置き換え、非推奨にされるかもしれない。ドラフトとしての発行は、IDPF メンバーシップまたは IDPF 理事会による承認を意味するものではない。このドキュメントを引用するときは、明確に進行中の作業として参照されたい。</p>
 <p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
 <p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
@@ -283,7 +283,7 @@
 
 <section xml:lang="en" class="section" id="sec-terminology">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.2 用語</h2>
-<p>EPUB 3.1 固有の意味を持つ用語は、このドキュメント（例えば、「著者」、「リーディング システム」）に利用できる。これらの<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">用語と定義</a></span>の完全なリストは、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> で提供されている。</p>
+<p>EPUB 3.1 固有の意味を持つ用語は、このドキュメント（例えば、「製作者」、「リーディング システム」）に利用できる。これらの<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">用語と定義</a></span>の完全なリストは、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> で提供されている。</p>
 <p>セクションにある用語の最初のインスタンスのみが、その定義にリンクされる。</p>
 </section>
 
@@ -472,7 +472,7 @@
 <p><a class="link" href="#sec-collection-elem" title="3.4.6.1 The collection Element">コレクション</a> — パッケージ内にあるサブコンポーネントのカプセル化と識別の方法。</p>
 </li>
 <li class="listitem"><p>
-<a class="link" href="#sec-foreign-restrictions-manifest" title="3.5 Manifest Fallbacks">マニフェスト フォールバック チェイン</a> — コンテンツと等価なものとしてトップレベルのリソースの順序付きリストを定義するためのメカニズム。リーディング システムは、それがレンダリング可能かどうかに基づいてリソースを選択することができる。</p>
+<a class="link" href="#sec-foreign-restrictions-manifest" title="3.5 Manifest Fallbacks">マニフェスト フォールバック チェーン</a> — コンテンツと等価なものとしてトップレベルのリソースの順序付きリストを定義するためのメカニズム。リーディング システムは、それがレンダリング可能かどうかに基づいてリソースを選択することができる。</p>
 </li>
 </ul>
 </div>
@@ -986,7 +986,7 @@
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-opf-dccreator"> </a> </span>3.4.3.3.3 <code class="markup">creator</code> 要素</h5>
 <p><a class="biblioref" href="#refDCMES" title="Dublin Core Metadata Element Set, Version 1.1">[<abbr class="abbrev">DCMES</abbr>]</a> <code class="markup">creator</code> 要素は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>のコンテンツを作成するための責任者、組織、等の名前を表している。</p>
 <p>リーディング システムがユーザーにそれを提示できるように、<code class="markup">creator</code> 要素に作成者の名前が含まれているべきである（<span class="rfc2119">should</span>）。<a class="xref" href="#attrdef-opf-file-as"><code class="markup">opf:file-as</code></a> 属性は、名前の正規化された形式を包含するために付けてもよく（<span class="rfc2119">may</span>）、<a class="xref" href="#attrdef-opf-alt-rep"><code class="markup">opf:alt-rep</code></a> 属性は、（<a class="xref" href="#attrdef-opf-alt-rep-lang"><code class="markup">opf:alt-rep-lang</code></a> 属性で示されるのように）別の言語または文字で制作者の名前を表現するために使用してもよい（<span class="rfc2119">may</span>）。</p>
-<p><code class="markup"><a class="markup" href="#attrdef-opf-role">role</a></code> 属性は、（例えば、著者やイラストレーターなど）制作者がコンテンツの制作において演じた役割を見分けるために付けられてもよい（<span class="rfc2119">may</span>）。</p>
+<p><code class="markup"><a class="markup" href="#attrdef-opf-role">role</a></code> 属性は、（例えば、製作者やイラストレーターなど）制作者がコンテンツの制作において果たした役割を区別するために付けられてもよい（<span class="rfc2119">may</span>）。</p>
 
 <div class="informalexample">
 <p>次の例は、著者名のソートとレンダリングを容易にするために包含する方法を示している。</p>
@@ -1000,7 +1000,7 @@
 &lt;/metadata&gt;</pre>
 </div>
 
-<p>EPUB 出版物が複数の作成者を持つ場合、それぞれが別々の <code class="markup">creator</code> 要素に含まれるべきである（<span class="rfc2119">should</span>）。</p>
+<p>EPUB 出版物が複数の作成者を持つ場合、それぞれが別々の <code class="markup">creator</code> 要素に包含するべきである（<span class="rfc2119">should</span>）。</p>
 <p>表示優先度を決定する際に、リーディング システムは、<code class="markup">metadata</code> セクション中にある <code class="markup">creator</code> 要素のドキュメント順序を使用しなければならず（<span class="rfc2119">must</span>）、最初に遭遇した <code class="markup">creator</code> 要素は、最重要な作成者である。
 リーディング システムが、ユーザーに作成者のメタデータを公開している場合、（例えば、表示結果による制約がない場合など）可能な限り、<code class="markup">metadata</code> セクションに記載されている全ての作成者を包含するべきである（<span class="rfc2119">should</span>）。</p>
 
@@ -1048,7 +1048,7 @@
 </li>
 </ul>
 </div>
-<p id="attrdef-opf-term">スキームが、<code class="markup">opf:authority</code> 属性で識別されるとき、対象のコードは、<code class="markup">opf:term</code> 属性に包含されなければならない（<span class="rfc2119">must</span>）。要素の値は、ヒューマンリーダブルな見出しやラベルにするべき（<span class="rfc2119">should</span>）だが、対象のタクソノミーは、独立した説明的なラベルを提供していない場合はコードの値でもよい（<span class="rfc2119">may</span>）。</p>
+<p id="attrdef-opf-term">スキームが、<code class="markup">opf:authority</code> 属性で識別されるとき、対象のコードは、<code class="markup">opf:term</code> 属性に包含されなければならない（<span class="rfc2119">must</span>）。要素の値は、ヒューマン リーダブルな見出しやラベルにするべき（<span class="rfc2119">should</span>）だが、対象のタクソノミーは、独立した説明的なラベルを提供していない場合はコードの値でもよい（<span class="rfc2119">may</span>）。</p>
 <div class="informalexample">
 <p>次の例は、BISAC コードと見出しを示している。</p>
 <pre class="synopsis">&lt;dc:subject opf:authority="BISAC" opf:term="FIC024000"&gt;&#xD;
@@ -1075,7 +1075,7 @@
 <section class="section" id="sec-meta-elem">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-elem"> </a> </span>3.4.3.4 <code class="markup">meta</code> 要素</h4>
 
-<p><code class="markup">meta</code> 要素は、パッケージメタデータを含める一般的な手段を提供する。</p>
+<p><code class="markup">meta</code> 要素は、パッケージ メタデータを含める一般的な手段を提供する。</p>
 
 <div class="elem-synopsis" id="elemdef-meta">
 <dl class="elem-synopsis">
@@ -1116,7 +1116,7 @@
 &lt;/metadata&gt;&#xD;
 </pre>
 </div>
-<p id="attrdef-scheme"><code class="markup">scheme</code> 属性は、要素の値が得られるシステムまたはスキームを識別する。属性の値は、スキームを定めるリソースへ解決する<a class="link" href="#sec-property-datatype" title="4.2.5 The property Data Type">プロパティ</a>のデータ タイプでなければならない（<span class="rfc2119">must</span>）。リーディング システムが <code class="markup">scheme</code> 属性の値を認識しない場合、それは文字列として要素の値を扱うべきである（<span class="rfc2119">should</span>）。</p>
+<p id="attrdef-scheme"><code class="markup">scheme</code> 属性は、要素の値が得られるシステムまたはスキームを識別する。属性の値は、スキームを定めるリソースへ解決する<a class="link" href="#sec-property-datatype" title="4.2.5 The property Data Type">プロパティ</a>のデータ タイプでなければならない（<span class="rfc2119">must</span>）。リーディング システムが、<code class="markup">scheme</code> 属性の値を認識しない場合、それは文字列として要素の値を扱うべきである（<span class="rfc2119">should</span>）。</p>
 <p>リーディング システムは、認識しない表現を定義する <code class="markup">property</code> 属性を含んでいる全ての <code class="markup">meta</code> 要素を無視すべきである（<span class="rfc2119">should</span>）。リーディング システムは、未知の表現に遭遇するとき、失敗してはならない（<span class="rfc2119">must not</span>）。</p>
 <p>個々のプロパティが明示的に別の空白の正規化アルゴリズムを定義している場合を除き、リーディング システムは、さらにそれらを処理する前に XML 仕様 <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> で定義されているとおり、<code class="markup">meta</code> 要素の値から全ての先頭と末尾の空白を取り除かなければならない（<span class="rfc2119">must</span>）。</p>
 <p>全ての <code class="markup">meta</code> 要素は空白の正規化後の長さが少なくともひとつ以上の文字の値を表現しなければならない（<span class="rfc2119">must</span>）。</p>
@@ -1202,7 +1202,7 @@
 </div>
 <p id="sec-linked-records">
 <a class="ulink" href="http://www.idpf.org/epub/vocab/package/link/#record" target="_top">リンクされたメタデータ レコード</a>の場合、リーディング システムは、パッケージ ドキュメントに表れているメタデータの処理をスキップしてはならなず（<span class="rfc2119">must not</span>）、レコードに表れている情報のみを使用する。リンクされたレコードは、リーディング システムで利用可能な情報の強化を意図しており、パッケージのメタデータは、典型的に、重要なレンダリングの情報を含む。リーディング システムは、複数のリンクされたレコードからメタデータをコンパイルしてもよい（<span class="rfc2119">may</span>）。単一のレコードのみを選択する必要はない。</p>
-<p>パッケージ ドキュメントに表れるメタデータとリンクされたメタデータ レコード間の矛盾や衝突を回避するとき、リーディング システムは、優先順位を確立するために、パッケージ ドキュメントにある link 要素のドキュメント順を使用しなければならない（<span class="rfc2119">must</span>）。（つまり、最初に遭遇したリンクされたレコード内のメタデータは、最も高い優先順位を持ち、パッケージ ドキュメント内のメタデータは、<code class="markup">link</code> 要素が、パッケージ メタデータ要素の前後に発生するかどうかにかかわらず、最低である）</p>
+<p>パッケージ ドキュメントに表れるメタデータとリンクされたメタデータ レコード間の矛盾や衝突を回避するとき、リーディング システムは、優先順位を確立するために、パッケージ ドキュメントにある <code class="markup">link</code> 要素のドキュメント順を使用しなければならない（<span class="rfc2119">must</span>）。（つまり、最初に遭遇したリンクされたレコード内のメタデータは、最も高い優先順位を持ち、パッケージ ドキュメント内のメタデータは、<code class="markup">link</code> 要素が、パッケージ メタデータ要素の前後に発生するかどうかにかかわらず、最低である）</p>
 <div class="informalexample">
 <p>次の例は、<code class="markup">metadata</code> 要素内に発見されるメタデータに比べ、高い優先順位を持つ順番であるところの、ローカルのレコードよりも高い優先順位を持つリモート レコードであることを示している。</p>
 
@@ -1253,7 +1253,7 @@
 </section>
 <section class="section" id="sec-item-elem">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-item-elem"> </a> </span>3.4.4.2 <code class="markup">item</code> 要素</h4>
-<p><code class="markup">item</code> 要素は<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>を表している。</p>
+<p><code class="markup">item</code> 要素は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>を表している。</p>
 
 <div class="elem-synopsis" id="elemdef-package-item">
 <dl class="elem-synopsis">
@@ -1360,7 +1360,7 @@
 
 <div class="informalexample" id="example-manifest-flbk"><p>
 
-次の例は、二つの<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>の参照およびコンテンツの選択肢を提供する<a class="link" href="#sec-foreign-restrictions-manifest" title="3.5 Manifest Fallbacks">フォールバック チェイン メカニズム</a>のメカニズムを使用している <code class="markup">manifest</code> を示している。フォールバック チェインはコア メディア タイプで終了する。</p>
+次の例は、二つの<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>の参照およびコンテンツの選択肢を提供する<a class="link" href="#sec-foreign-restrictions-manifest" title="3.5 Manifest Fallbacks">フォールバック チェーン メカニズム</a>のメカニズムを使用している <code class="markup">manifest</code> を示している。フォールバック チェーンはコア メディア タイプで終了する。</p>
 <pre class="synopsis">&lt;manifest&gt;&#xD;
     &lt;item id="item1"&#xD;
           href="chap1_docbook.xml"&#xD;
@@ -1412,9 +1412,9 @@ Manifest:&#xD;
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-foreign-restrictions-manifest"> </a> </span>3.4.4.3 マニフェスト フォールバック</h4>
 <p>管理外リソースは、固有のフォールバックコンテンツを（例えば、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-spine" target="_top">スパイン</a></span> <code class="markup"><a class="xref" href="#elemdef-spine-itemref">itemref</a></code> 要素からや、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">img</code> や <code class="markup">iframe</code>、<code class="markup">link</code> 要素から、EPUB スタイル シートの <span class="property">@import</span> ルールから直接などから）提供されないコンテクストで参照されてもよいし（<span class="rfc2119">may</span>）、そのようなケースのときはマニフェスト フォールバックを提供しなければならない（<span class="rfc2119">must</span>）。</p>
 <p>マニフェスト フォールバックは、出版物リソースを表す<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-manifest" target="_top">マニフェスト</a></span> <code class="markup"><a class="markup" href="#elemdef-package-item">item</a></code> 要素上の <code class="markup"><a class="markup" href="#attrdef-item-fallback">fallback</a></code> を使用して提供される。<code class="markup">fallback</code> 属性の IDREF <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> 値は、<code class="markup">manifest</code> 内の他の <code class="markup">item</code> へ解決しなければならない（<span class="rfc2119">must</span>）。このフォールバック <code class="markup">item</code> は、それ自体は別のフォールバックの <code class="markup">item</code> を指定してもよい（<span class="rfc2119">may</span>）。</p>
-<p>指定されたアイテムの <code class="markup">fallback</code> 属性から始まり到達できる全ての ID の参照の順序付きリストは、その項目の<span class="emphasis"><em>フォールバック チェイン</em></span>を表している。フォールバック チェイン内のリソースの順序は、製作者の好みのフォールバックの順序を表している。</p>
-<p>指定された出版物リソースのメディア タイプをサポートしていないリーディング システムは、サポートされていないリソースの代わりに使用する少なくともひとつのサポートされている出版物リソースを識別するまでフォールバック チェインを辿らなければならない（<span class="rfc2119">must</span>）。リーディング システムがフォールバック チェイン内の複数の出版物リソースをサポートしている場合、それはそのリソースの特定の<a class="link" href="#attrdef-item-properties">プロパティ</a>に基づいて使用するリソースを選択してもよく（<span class="rfc2119">may</span>）、それ以外の場合は製作者の好みのフォールバックの順序を優先するべきである（<span class="rfc2119">should</span>）。</p>
-<p>フォールバック チェインは、必要に応じて、次の要件のいずれかに準拠しなければならない（<span class="rfc2119">must</span>）。</p>
+<p>指定されたアイテムの <code class="markup">fallback</code> 属性から始まり到達できる全ての ID の参照の順序付きリストは、その項目の<span class="emphasis"><em>フォールバック チェーン</em></span>を表している。フォールバック チェーン内のリソースの順序は、製作者の好みのフォールバックの順序を表している。</p>
+<p>指定された出版物リソースのメディア タイプをサポートしていないリーディング システムは、サポートされていないリソースの代わりに使用する少なくともひとつのサポートされている出版物リソースを識別するまでフォールバック チェーンを辿らなければならない（<span class="rfc2119">must</span>）。リーディング システムがフォールバック チェーン内の複数の出版物リソースをサポートしている場合、それはそのリソースの特定の<a class="link" href="#attrdef-item-properties">プロパティ</a>に基づいて使用するリソースを選択してもよく（<span class="rfc2119">may</span>）、それ以外の場合は製作者の好みのフォールバックの順序を優先するべきである（<span class="rfc2119">should</span>）。</p>
+<p>フォールバック チェーンは、必要に応じて、次の要件のいずれかに準拠しなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
 <p>スパイン <code class="markup"><a class="link" href="#elemdef-spine-itemref">itemref</a></code> 要素から直接参照される管理外リソースのために、チェーンは、少なくともひとつの <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>を含まなければならない（<span class="rfc2119">must</span>）。</p>
@@ -1424,7 +1424,7 @@ Manifest:&#xD;
 </li>
 </ul>
 </div>
-<p>フォールバック チェインは、チェイン内の <code class="markup">item</code> 要素に循環参照または自己参照を含んではならない（<span class="rfc2119">must not</span>）。</p>
+<p>フォールバック チェーンは、チェーン内の <code class="markup">item</code> 要素に循環参照または自己参照を含んではならない（<span class="rfc2119">must not</span>）。</p>
 <p>フォールバックは EPUB コンテンツ ドキュメントである <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-top-level" target="_top">トップレベル コンテンツ ドキュメント</a></span>のために提供されてもよい（<span class="rfc2119">may</span>）。リーディング システムは、指定されたコンテキストでレンダリングするコンテンツ ドキュメントの最適なバージョンを見つけるためにこのようなフォールバックを利用してもよい（<span class="rfc2119">may</span>）。<span class="phrase"><a class="ulink" href="epub-contentdocs.html#confreq-cd-scripted-flbk" target="_top">スクリプト コンテンツのフォールバック</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を提供する場合が、この機能を利用できる場合の例である。</p>
 </section>
 </section>
@@ -1465,7 +1465,7 @@ Manifest:&#xD;
 <h3 class="title">note</h3>
 <p>ハイパーリンクから参照された<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-remote-resource" target="_top">リモート リソース</a></span>は、出版物リソースではないので、（例えば、Web ページやリソースなど）スパインに包含する要件の対象ではない。</p>
 </div>
-<p>（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-iframe-element" target="_top">iframe</a> 要素を介す）埋め込まれた出版物リソースは、<code class="markup">spine</code> に記載する必要はない。</p>
+<p>（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-iframe-element" target="_top">iframe</a></code> 要素を介す）埋め込まれた出版物リソースは、<code class="markup">spine</code> に記載する必要はない。</p>
 <p id="attrdef-spine-page-progression-direction"><code class="markup">page-progression-direction</code> 属性は、コンテンツ フローの全体の送り方向を設定する。許可された値は <code class="value">ltr</code>（左から右）、<code class="value">rtl</code>（右から左）と <code class="value">default</code> である。<code class="value">default</code> 値が指定されている場合、製作者の望む送り方向を表しておらず、リーディング システムは、レンダリング方向を選ぶことができる。属性が指定されていない場合は、<code class="value">default</code> 値を想定しなければならない（<span class="rfc2119">must</span>）。</p>
 <p><code class="markup">page-progression-direction</code> 属性はグローバルな流れの方向を定めているが、個々のコンテンツ ドキュメントとコンテンツ ドキュメントの部分は、この設定を（例えば、<span class="property">direction</span> と <span class="property">writing-mode</span> の CSS プロパティを介して）上書きしてもよい（<span class="rfc2119">may</span>）。リーディング システムは（例えばボタンまたは代替スタイルシートの適用を可能にする設定で）の初期設定の方向を上書きするためのまたメカニズムを提供してもよい（<span class="rfc2119">may</span>）。</p>
 <p>リーディング システムは、<a class="link" href="#fxl-property-layout" title="4.3.3.2 The rendition:layout Property"><code class="value">pre-paginated</code></a> を持つ XHTML コンテンツ ドキュメントで定義されているページ進行方向を無視しなければならない（<span class="rfc2119">must</span>）。<code class="markup">page-progression-direction</code> 属性は、ある固定レイアウトページから次のページへの流れの方向を定義する。</p>
@@ -1497,7 +1497,7 @@ Manifest:&#xD;
 </dl>
 </div>
 <p id="attrdef-itemref-idref">各 <code class="markup">itemref</code> 要素は、<code class="markup">idref</code> 属性の IDREF <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> を介して、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-manifest" target="_top">マニフェスト</a></span>にある一意な <code class="markup"><a class="xref" href="#elemdef-package-item">item</a></code> の ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> を参照しなければならない（<span class="rfc2119">must</span>）（すなわち、二つ以上の <code class="markup">itemref</code> 要素は、同じ <code class="markup">item</code> を参照できない）。</p>
-<p id="confreq-spine-itemtypes">参照される各マニフェストの <code class="markup">item</code> は、<span class="emphasis"><em><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>または<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>であるかどうか関係なく</em></span>、a）<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>または b）<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>の別の型のいずれかでなければならず（<span class="rfc2119">must</span>）、その<a class="link" href="#sec-foreign-restrictions-manifest" title="3.5 Manifest Fallbacks">フォールバック チェイン</a>の中に EPUB コンテンツ ドキュメントが含まれていなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-spine-itemtypes">参照される各マニフェストの <code class="markup">item</code> は、<span class="emphasis"><em><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>または<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>であるかどうか関係なく</em></span>、a）<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>または b）<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>の別の型のいずれかでなければならず（<span class="rfc2119">must</span>）、その<a class="link" href="#sec-foreign-restrictions-manifest" title="3.5 Manifest Fallbacks">フォールバック チェーン</a>の中に EPUB コンテンツ ドキュメントが含まれていなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="note">
 <h3 class="title">note</h3>
 <p>EPUB 出版物は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>を<a class="link" href="#confreq-nav-occur">包含する必要がある</a>が、それを <code class="markup">spine</code> に包含することは必須ではない。</p>
@@ -1564,10 +1564,10 @@ Manifest:&#xD;
 </dd>
 </dl>
 </div>
-<p><code class="markup">collection</code> 要素は、リソースを、意味を持つ単位へと再構築される複数の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>間に分割された（すなわち、複数のドキュメント間に分割されたインデックス）有効なコンテンツまたは、特殊な処理（すなわち、プレビューコンテンツ）のために識別されるリソース、指定された<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>に関する追加情報を表現する集約リソースなど、潜在的な数々の用途のために論理的なグループに整理することを許可する。</p>
+<p><code class="markup">collection</code> 要素は、リソースを、意味を持つ単位へと再構築される複数の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>間に分割された（すなわち、複数のドキュメント間に分割されたインデックス）有効なコンテンツまたは、特殊な処理（すなわち、プレビュー コンテンツ）のために識別されるリソース、指定された<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>に関する追加情報を表現する集約リソースなど、潜在的な数々の用途のために論理的なグループに整理することを許可する。</p>
 <p>このセクションで定義されているように、<code class="markup">collection</code> 要素は、（例えば、IDPF のサブ仕様を介して）特性が引き出されることを目的とされ、そこから一般的なフレームワークを表現する。このような特性は、レンディション内の <code class="markup">collection</code> 要素の目的だけでなく、妥当な生産物と用途（以下に表現される一般的なフレームワークと異なる特定の任意の要求）のための全ての要求のために定義しなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="attrdef-collection-role">各特性は、全ての適合する <code class="markup">collection</code> 要素を一意に識別する役割の値を定義しなければならない（<span class="rfc2119">must</span>）。パッケージ ドキュメントのそれぞれ <code class="markup">collection</code> 要素の役割は、<code class="markup">role</code> 属性で識別されなければならず（<span class="rfc2119">must</span>）、値は、ひとつ以上の NMTOKEN <a class="biblioref" href="#refXSDDatatypes" title="XML Schema Part 2: Datatypes Second Edition">[<abbr class="abbrev">XSD-DATATYPES</abbr>]</a> と/または絶対 IRIs <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> でなければならない（<span class="rfc2119">must</span>）。NMTOKEN 値の用途は、<a class="biblioref" href="#refRoleRegistry" title="EPUB Collection Roles Registry">[<abbr class="abbrev">Role Registry</abbr>]</a> でメンテナンスされるところの、IDPF が定義する役割で予約されている。レジストリで定義されていない NMTOKEN 値は、妥当ではない。役割のないものはこのセクションでは定義しない。</p>
-<p>サード パーティは、<code class="markup">collection</code> 要素に特殊な役割を定義してもよい（<span class="rfc2119">may</span>）が、このような役割は、絶対 IRI を使用して識別されなければならない（<span class="rfc2119">must</span>）。特殊な役割は、これらを識別する IRI のホストコンポーネント内に文字列「<code class="markup">idpf.org</code>」を組み込んではならない（<span class="rfc2119">must not</span>）。</p>
+<p id="attrdef-collection-role">各特性は、全ての適合する <code class="markup">collection</code> 要素を一意に識別する役割の値を定義しなければならない（<span class="rfc2119">must</span>）。パッケージ ドキュメントのそれぞれ <code class="markup">collection</code> 要素の役割は、<code class="markup">role</code> 属性で識別されなければならず（<span class="rfc2119">must</span>）、値は、ひとつ以上の NMTOKEN <a class="biblioref" href="#refXSDDatatypes" title="XML Schema Part 2: Datatypes Second Edition">[<abbr class="abbrev">XSD-DATATYPES</abbr>]</a> と/または絶対 IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> でなければならない（<span class="rfc2119">must</span>）。NMTOKEN 値の用途は、<a class="biblioref" href="#refRoleRegistry" title="EPUB Collection Roles Registry">[<abbr class="abbrev">Role Registry</abbr>]</a> でメンテナンスされるところの、IDPF が定義する役割で予約されている。レジストリで定義されていない NMTOKEN 値は、妥当ではない。役割のないものはこのセクションでは定義しない。</p>
+<p>サード パーティは、<code class="markup">collection</code> 要素に特殊な役割を定義してもよい（<span class="rfc2119">may</span>）が、このような役割は、絶対 IRI を使用して識別されなければならない（<span class="rfc2119">must</span>）。特殊な役割は、これらを識別する IRI のホスト コンポーネント内に文字列「<code class="markup">idpf.org</code>」を組み込んではならない（<span class="rfc2119">must not</span>）。</p>
 <div class="note">
 <h3 class="title">note</h3>
 <p>リーディング システム全体で特殊な役割の相互互換性を容易にするために、実装は、<a class="biblioref" href="#refRoleExtensions" title="EPUB Collection Element Role Extensions">[<abbr class="abbrev">Role Extensions</abbr>]</a> にある <code class="markup">collection</code> 要素の使用をドキュメント化することが強く推奨される。</p>
@@ -1595,13 +1595,13 @@ Manifest:&#xD;
 </li>
 <li class="listitem">
 <p>
-<p><code class="markup">properties</code> 属性はまた、（例えば、コレクションは、独自にナビゲーション ドキュメントやカバー画像を宣言できるように）プリフィックスのない <a class="ulink" href="http://www.idpf.org/epub/vocab/package/item/" target="_top">マニフェスト item properties</a> <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> を受け入れる。</p>
+<p><code class="markup">properties</code> 属性はまた、（例えば、コレクションは、独自にナビゲーション ドキュメントやカバー画像を宣言できるように）プリフィックスのない <a class="ulink" href="http://www.idpf.org/epub/vocab/package/item/" target="_top">マニフェスト <code class="markup">item</code> プロパティ</a> <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> を受け入れる。</p>
 </p>
 </li>
 </ul>
 </div>
 
-<p>それぞれの <code class="markup">link</code> は、グループのメンバーであるリソースを参照しなければならない（<span class="rfc2119">must</span>）。<code class="markup">link</code> 要素の順序は、重要ではない。</p>
+<p>それぞれの <code class="markup">link</code> 要素は、グループのメンバーであるリソースを参照しなければならない（<span class="rfc2119">must</span>）。<code class="markup">link</code> 要素の順序は、重要ではない。</p>
 
 <p><code class="markup">collection</code> 要素の特性は、よりよくこれらの要求（例えば、メタデータを要求したり、要素と属性の利用にさらなる制限を課したり、<code class="markup">link</code> 要素の順序を重視）を反映するために上記で定義されている要求を調整してもよい（<span class="rfc2119">may</span>）。しかしながら、結果として生じたコンテンツモデルは、このセクション（例えば、特性は、新しい要素や属性を取り入れたり、上記で明確に禁止されているそれらを再度取り入れることはできない）で定義されたひとつの妥当なサブセットを表現しなければならない（<span class="rfc2119">must</span>）。特性は、<code class="markup"><a class="markup" href="#elemdef-opf-manifest">manifest</a></code> と <code class="markup"><a class="markup" href="#elemdef-opf-spine">spine</a></code> の要件を上書きする方法でコレクションを定義してはならない（<span class="rfc2119">must not</span>）。</p>
 
@@ -1654,7 +1654,7 @@ Manifest:&#xD;
 一緒になる合計値は EPUB 出版物の任意の特定のバージョンを区別するために使用できる一意の識別子を表している。
 </p>
 
-<p id="last-modified-date">リリース識別子が構築されることを保証するために各<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>は最終更新日を含む <a class="biblioref" href="#refDCTERMS" title="DCMI Metadata Terms">[<abbr class="abbrev">DCTERMS</abbr>]</a> <span class="property">modified</span> プロパティを正確にひとつ含まれなければならない（<span class="rfc2119">must</span>）。このプロパティの値は <a class="biblioref" href="#refXSDDatatypes" title="XML Schema Part 2: Datatypes Second Edition">[<abbr class="abbrev">XSD-DATATYPES</abbr>]</a> 最終更新日に準拠する日付の形でなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="last-modified-date">リリース識別子が構築されることを保証するために各<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>は最終更新日を含む <a class="biblioref" href="#refDCTERMS" title="DCMI Metadata Terms">[<abbr class="abbrev">DCTERMS</abbr>]</a> <span class="property">modified</span> プロパティを正確にひとつ含まれなければならない（<span class="rfc2119">must</span>）。このプロパティの値は、<a class="biblioref" href="#refXSDDatatypes" title="XML Schema Part 2: Datatypes Second Edition">[<abbr class="abbrev">XSD-DATATYPES</abbr>]</a> 最終更新日に準拠する日付の形でなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="informalexample">
 <pre class="synopsis">CCYY-MM-DDThh:mm:ssZ</pre>
@@ -1706,7 +1706,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <p>プロパティ値の処理においてリーディング システムを支援するために、この仕様は、プリフィックスをマップする IRI を確立する3つのメカニズムを定義している。</p>
 <div class="itemizedlist" style="list-style-type: disc; ">
 <ul class="itemizedlist">
-<li class="listitem"><p><a class="link" href="#sec-metadata-default-vocab" title="4.2.2 Default Vocabularies">デフォルトの語彙</a> — がプリフィックスを含んでいないときのマッピングを定義する、</p>
+<li class="listitem"><p><a class="link" href="#sec-metadata-default-vocab" title="4.2.2 Default Vocabularies">デフォルトの語彙</a> — がプリフィックスを含んでいないときのマッピングを定義し、</p>
 </li>
 <li class="listitem"><p><a class="link" href="#sec-metadata-reserved-prefixes" title="4.2.3 Reserved Prefixes">予約済みプリフィックス</a> — これらのマッピングはあらかじめ定義されており（すなわち全てのリーディング システムがそれらを認識する）、宣言することなく使用することができ、そして、</p>
 </li>
@@ -1727,18 +1727,18 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem"><p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/meta/" target="_top">EPUB Meta Properties Vocabulary</a> <a class="biblioref" href="#refMetaVocab" title="EPUB Meta Properties Vocabulary">[<abbr class="abbrev">Meta Vocab</abbr>]</a> は、<code class="markup"><a class="markup" href="#elemdef-meta">meta</a></code> <code class="markup">properties</code> 属性のためのデフォルトの語彙として定義される。</p>
-<p>属性値にプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> stem は、結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/meta/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
+<p>属性値にプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> ステムは、結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/meta/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem"><p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/link/" target="_top">EPUB Metadata Link Vocabulary</a> <a class="biblioref" href="#refLinkVocab" title="EPUB Metadata Link Vocabulary">[<abbr class="abbrev">Link Vocab</abbr>]</a> は、<code class="markup">link</code> <code class="markup">rel</code> と <code class="markup">properties</code> 属性のためのデフォルトの語彙として定義される。</p>
-<p>属性値の何れかにプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> stem は、それらの結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/link/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
+<p>属性値の何れかにプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> ステムは、それらの結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/link/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
 <p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/item/" target="_top">EPUB Manifest Properties Vocabulary</a> <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> は、<code class="markup"><a class="markup" href="#elemdef-package-item">item</a></code> <code class="markup">properties</code> 属性のためのデフォルトの語彙として定義される。</p>
-<p>属性値の何れかにプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> stem は、それらの結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/item/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
+<p>属性値の何れかにプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> ステムは、それらの結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/item/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
 <p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/itemref/" target="_top">EPUB Spine Properties Vocabulary</a> <a class="biblioref" href="#refSpineVocab" title="EPUB Spine Properties Vocabulary">[<abbr class="abbrev">Spine Vocab</abbr>]</a> は、<code class="markup"><a class="markup" href="#elemdef-meta">itemref</a></code> <code class="markup">properties</code> 属性のためのデフォルトの語彙として定義される。</p>
-<p>属性値の何れかにプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> stem は、それらの結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/itemref/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
+<p>属性値の何れかにプリフィックスが包含されていない場合、次の IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> ステムは、それらの結果として生じる IRI：<code class="uri">http://idpf.org/epub/vocab/package/itemref/#</code> を生成するために使用されなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 </ul>
 
@@ -1749,17 +1749,9 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <section class="section" id="sec-metadata-reserved-prefixes">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-metadata-reserved-prefixes"> </a> </span>4.2.3 予約済みのプリフィックス</h3>
 <p>この仕様は、製作者が宣言することなくパッケージ メタデータに使用してもよい（<span class="rfc2119">may</span>）プリフィックスのセットを予約する。これらのプリフィックスは、<a class="biblioref" href="#refPackagePrefixes" title="EPUB Package Document Reserved Prefixes">[<abbr class="abbrev">予約済みのプリフィックス</abbr>]</a>で定義されている。</p>
-
 <p>このドキュメントで定義されているプリフィックスは、この仕様から独立してメンテナンスや更新され、いつでも変更を受けることがある。</p>
-
-<p>リーディング システムは、ローカルの<a class="link" href="#sec-prefix-attr" title="4.2.4 The prefix Attribute">プリフィックス</a>が宣言されていない限り、定義済み URI を使用してパッケージ ドキュメントに使用されている全ての予約済みのプリフィックスを解決しなければならない（<span class="rfc2119">must</span>）。
-
-
-
-予約済みのプリフィックスは、<a class="link" href="#sec-prefix-attr" title="4.2.4 The prefix Attribute">prefix 属性</a>を上書きするべきではない（<span class="rfc2119">should not</span>）が、リーディング システムは、遭遇したときにローカルでの上書きを使用しなければならない（<span class="rfc2119">must</span>）。</p>
-
+<p>リーディング システムは、ローカルの<a class="link" href="#sec-prefix-attr" title="4.2.4 The prefix Attribute">プリフィックス</a>が宣言されていない限り、定義済み URI を使用してパッケージ ドキュメントに使用されている全ての予約済みのプリフィックスを解決しなければならない（<span class="rfc2119">must</span>）。予約済みのプリフィックスは、<a class="link" href="#sec-prefix-attr" title="4.2.4 The prefix Attribute"><code class="markup">prefix</code> 属性</a>を上書きするべきではない（<span class="rfc2119">should not</span>）が、リーディング システムは、遭遇したときにローカルでの上書きを使用しなければならない（<span class="rfc2119">must</span>）。</p>
 <p>予約済みのプリフィックスとリーディング システムの更新は常に同期して起こるわけではなく、リーディング システムは、認識されていないプリフィックス（つまり、<code class="markup">prefix</code> 属性を使用して予約も宣言もしていない）に遭遇したとき失敗してはならない（<span class="rfc2119">must not</span>）。</p>
-
 </section>
 <section class="section" id="sec-prefix-attr">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-prefix-attr"> </a> </span>4.2.4 <code class="markup">prefix</code> 属性</h3>
@@ -1861,7 +1853,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <p><span class="property">dcterms:</span> プリフィックスは、IRI 「<code class="uri">http://purl.org/dc/terms/</code>」にマップしている<a class="link" href="#sec-metadata-reserved-prefixes" title="4.2.3 Reserved Vocabularies">予約済みのプリフィックス</a>である。</p>
 
 <p>プリフィックスがプロパティの値から省略された場合、表現される基準は、この属性のための<a class="link" href="#sec-metadata-default-vocab" title="4.2.2 Default Vocabularies">デフォルトの語彙</a>の用語を表している。</p>
-<p>次の例は、マニフェストの <a class="xref" href="#elemdef-package-item">item</a> 要素にある <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> <span class="property">mathml</span> プロパティを示している。</p>
+<p>次の例は、マニフェストの <code class="markup"><a class="xref" href="#elemdef-package-item">item</a></code> 要素にある <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> <span class="property">mathml</span> プロパティを示している。</p>
 
 <div class="informalexample">
 <pre class="synopsis">&lt;item … properties="mathml"/&gt;</pre>
@@ -1953,12 +1945,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#layout-property-flow-overrides"> </a> </span>4.3.2.1.3 スパインによる上書き</h5>
 <p id="layout-property-flow-local"><span class="property"><a class="property" href="http://www.idpf.org/vocab/rendition/#flow-auto" target="_top">rendition:flow-auto</a></span>、<span class="property"><a class="property" href="http://www.idpf.org/vocab/rendition/#flow-paginated" target="_top">rendition:flow-paginated</a></span>、<span class="property"><a class="property" href="http://www.idpf.org/vocab/rendition/#flow-scrolled-continuous" target="_top">rendition:flow-scrolled-continuous</a></span> と <span class="property"><a class="property" href="http://www.idpf.org/vocab/rendition/#flow-scrolled-doc" target="_top">rendition:flow-scrolled-doc</a></span> プロパティ <a class="biblioref" href="#refRenditionVocab" title="EPUB Package Rendering Vocabulary">[<abbr class="abbrev">Rendition Vocab</abbr>]</a> は、スパイン <code class="markup"><a class="markup" href="#elemdef-spine-itemref">itemref</a></code> 要素に局所的に指定されてもよく（<span class="rfc2119">may</span>）、そして、そのような場合は、指定されたスパイン項目のための<a class="link" href="#property-flow-global">グローバル値</a>を上書きする。</p>
 <p>これらの上書きのうちひとつのみが、全ての特定されたスパイン項目に適用される。</p>
-<p>
-
-<span class="property">rendition:flow-scrolled-continuous</span> プロパティの場合、スクロール方向は、<a class="link" href="#elemdef-spine-itemref">itemref 要素</a>によって参照される XHTML コンテンツ ドキュメントのルート要素におけるブロック フロー方向に関連して定義される。
-
-
-ブロック フロー方向が下向き（上から下）の場合、スクロール方向は縦である。ルート要素のブロック フロー方向が右向き（左から右）または左向き（右から左）の場合、水平である。</p>
+<p><span class="property">rendition:flow-scrolled-continuous</span> プロパティの場合、スクロール方向は、<a class="link" href="#elemdef-spine-itemref"><code class="markup">itemref</code> 要素</a>によって参照される XHTML コンテンツ ドキュメントのルート要素におけるブロック フロー方向に関連して定義される。ブロック フロー方向が下向き（上から下）の場合、スクロール方向は縦である。ルート要素のブロック フロー方向が右向き（左から右）または左向き（右から左）の場合、水平である。</p>
 </section>
 <section class="section" id="layout-property-flow-examples">
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#layout-property-flow-examples"> </a> </span>4.3.2.1.4 例</h5>
@@ -1987,7 +1974,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 
 <div class="note">
 <h3 class="title">note</h3>
-<p>このプロパティは主に、コンテンツのレンダリングで信頼性の高いセンタリングのコントロールが存在しない場合に、"Naka-Tobira (中扉)"（章タイトルページ）を処理するために開発された。ページメディアのサポートが、CSS で進化するにつれて、このプロパティは、廃止予定になることが予想される。製作者は、有効な CSS ソリューションを使用することを勧める。</p>
+<p>このプロパティは主に、コンテンツのレンダリングで信頼性の高いセンタリングのコントロールが存在しない場合に、"Naka-Tobira (中扉)"（章タイトルページ）を処理するために開発された。ページメディアのサポートが、CSS で進化するにつれて、このプロパティは、廃止予定になることが予想される。製作者は、有効な CSS ソリューションの使用を勧める。</p>
 </div>
 </section>
 </section>
@@ -2024,7 +2011,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 
 <p><code class="markup"><a class="markup" href="#elemdef-opf-metadata">metadata</a></code> セクション内に、このプロパティを含んでいる <code class="markup">meta</code> 要素が現れない場合は、初期設定値の <code class="value">reflowable</code> がグローバル値として <span class="phrase"><a class="glossterm" href="#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>によって想定されなければならない（<span class="rfc2119">must</span>）。</p>
 
-<p><span class="property">rendition:layout</span> プロパティに <code class="value">pre-paginated</code> が設定されているとき、リーディング システムは、レンダリングしている<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-synthetic-spread" target="_top">合成した見開き</a></span>の隣接したコンテンツの隙間に間隔を包含してはならない（<span class="rfc2119">must not</span>）。</p>
+<p><span class="property">rendition:layout</span> プロパティに <code class="value">pre-paginated</code> が設定されているとき、リーディング システムは、レンダリングしている<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-synthetic-spread" target="_top">合成見開き</a></span>の隣接したコンテンツの隙間に間隔を包含してはならない（<span class="rfc2119">must not</span>）。</p>
 
 <p>プロパティが、スパイン項目に <code class="value">pre-paginated</code> がセットされているとき、そのコンテンツの寸法は、<span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-fixed-layouts" target="_top">固定レイアウト</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> に定義されているように設定されなければならない（<span class="rfc2119">must</span>）。</p>
 <p><span class="property">rendition:layout</span> プロパティは、複数回宣言してはならない（<span class="rfc2119">must not</span>）。</p>
@@ -2130,7 +2117,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <section class="section" id="fxl-property-orientation-examples">
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#fxl-property-orientation-examples"> </a> </span>4.3.3.3.4 例</h5>
 <div class="informalexample" id="fxl-ex2">
-<p>次の例は、完全な固定レイアウトのコンテンツは、合成した見開きなしでレンダリングされ、横向きに固定されることを意図を示している。</p>
+<p>次の例は、完全な固定レイアウトのコンテンツは、合成見開きなしでレンダリングされ、横向きに固定されることを意図を示している。</p>
 
 <pre class="synopsis">&lt;metadata&gt;&#xD;
     &lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;&#xD;
@@ -2145,7 +2132,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#fxl-property-spread"> </a> </span>4.3.3.4 <span class="property">rendition:spread</span> プロパティ</h4>
 <section class="section" id="fxl-property-spread-usage">
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#fxl-property-spread-usage"> </a> </span>4.3.3.4.1 使用方法</h5>
-<p id="property-spread-global"><span class="property">rendition:spread</span> プロパティが <code class="markup">meta</code> 要素に指定されている時、意図した<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-synthetic-spread" target="_top">合成された見開き</a></span>の動作は、指定されたレンディション（例えば全てのスパイン項目）に包括的に適用されることを示している。</p>
+<p id="property-spread-global"><span class="property">rendition:spread</span> プロパティが <code class="markup">meta</code> 要素に指定されている時、意図した<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-synthetic-spread" target="_top">合成見開き</a></span>の動作は、指定されたレンディション（例えば全てのスパイン項目）に包括的に適用されることを示している。</p>
 <p><code class="markup">metadata</code> セクション内に、プロパティを含む <code class="markup">meta</code> 要素が現れない場合は、初期設定値 <code class="value">auto</code> がグローバル値としてリーディング システムによって想定されなければならない（<span class="rfc2119">must</span>）。</p>
 <p><span class="property">rendition:spread</span> プロパティは、複数回宣言してはならない（<span class="rfc2119">must not</span>）。</p>
 </section>
@@ -2161,25 +2148,25 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 </dd>
 <dt class="varlistentry"><span class="term">landscape</span></dt>
 <dd>
-<p>リーディング システムは、デバイスが横長（ランドスケープ）の方向の場合にのみ、スパイン項目のために合成した見開きをレンダリングするべきである（<span class="rfc2119">should</span>）。</p>
+<p>リーディング システムは、デバイスが横長（ランドスケープ）の方向の場合にのみ、スパイン項目のために合成見開きをレンダリングするべきである（<span class="rfc2119">should</span>）。</p>
 </dd>
 <dt class="varlistentry"><span class="term">both</span></dt>
 <dd>
-<p>リーディング システムは、デバイスの回転方向に関わらず合成した見開きをレンダリングするべきである（<span class="rfc2119">should</span>）。</p>
+<p>リーディング システムは、デバイスの回転方向に関わらず合成見開きをレンダリングするべきである（<span class="rfc2119">should</span>）。</p>
 </dd>
 <dt class="varlistentry"><span class="term">auto</span></dt>
 <dd>
-<p>明確な合成した見開きの動作は定義していない。リーディング システムは、表示領域の利用最適化プロセスの一部として、特定または全てのデバイスの回転方向に合成した見開きを使用してもよい（<span class="rfc2119">may</span>）。</p>
+<p>明確な合成見開きの動作は定義していない。リーディング システムは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-display-area" target="_top">コンテンツ表示領域</a></span>の利用最適化プロセスの一部として、特定または全てのデバイスの回転方向に合成見開きを使用してもよい（<span class="rfc2119">may</span>）。</p>
 </dd>
 </dl>
 </div>
 <div class="note">
 <h3 class="title">note</h3>
-<p>合成した見開きが HTML コンテンツ ドキュメントと SVG コンテンツ ドキュメントのコンテキストの中で使用された時、<span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-fxl-icb-html" target="_top">ビューポート メタ要素</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> と <span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-fxl-icb-svg" target="_top">viewBox 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を介して与えられた寸法は、それぞれの見開きの1ページのサイズを表現する。</p>
+<p>合成見開きが HTML コンテンツ ドキュメントと SVG コンテンツ ドキュメントのコンテキストの中で使用された時、<span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-fxl-icb-html" target="_top"><span class="property">viewport</span> <code class="markup">meta</code> 要素</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> と <span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-fxl-icb-svg" target="_top"><code class="markup">viewBox</code> 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を介して与えられた寸法は、それぞれの見開きの1ページのサイズを表現する。</p>
 </div>
 <div class="note">
 <h3 class="title">note</h3>
-<p><code class="markup">page-progression-direction</code> 属性を使用して全体の流れの方向性の宣言と、コンテンツ ドキュメントに含まれている局所的な page-progression-direction についての情報は <a class="xref" href="#sec-spine-elem" title="3.4.5.1 The spine Element">spine</a> を参照されたい。</p>
+<p><code class="markup">page-progression-direction</code> 属性を使用して全体の流れの方向性の宣言と、コンテンツ ドキュメントに含まれている局所的な page-progression-direction についての情報は<a class="xref" href="#sec-spine-elem" title="3.4.5.1 The spine Element">スパイン</a>を参照されたい。</p>
 </div>
 </section>
 <section class="section" id="fxl-property-spread-overrides">
@@ -2191,7 +2178,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#fxl-property-spread-examples"> </a> </span>4.3.3.4.4 例</h5>
 <div class="informalexample" id="fxl-ex3">
 
-<p>次の例は、完全な固定レイアウトのコンテンツは、横長の方向で合成した見開きを使用してレンダリングされ、縦長の方向で見開きにならないことを示している。</p>
+<p>次の例は、完全な固定レイアウトのコンテンツは、横長の方向で合成見開きを使用してレンダリングされ、縦長の方向で見開きにならないことを示している。</p>
 
 <pre class="synopsis">&lt;metadata&gt;&#xD;
     &lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;&#xD;
@@ -2218,12 +2205,12 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <section class="section" id="fxl-property-page-spread-usage">
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#fxl-property-page-spread-usage"> </a> </span>4.3.3.5.1 使用方法</h5>
 
-<p>リーディング システムが<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-synthetic-spread" target="_top">合成した見開き</a></span>をレンダリングするとき、初期設定の挙動は、指定された<a class="link" href="../../vocab/package/epub-vocab-package.html#sec-spine-elem" title="3.4.5.1 The spine Element">ページ進行方向</a>もしくはコンテンツ ドキュメント内の局所的な宣言によって決定された以降の何も存在しないビューポートに、次の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>をレンダリングすることによって見開きを追加することである。
+<p>リーディング システムが<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-synthetic-spread" target="_top">合成見開き</a></span>をレンダリングするとき、初期設定の挙動は、指定された<a class="link" href="../../vocab/package/epub-vocab-package.html#sec-spine-elem" title="3.4.5.1 The spine Element">ページ進行方向</a>もしくはコンテンツ ドキュメント内の局所的な宣言によって決定された以降の何も存在しないビューポートに、次の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>をレンダリングすることによって見開きを追加することである。
 スパインの <code class="markup">itemref</code> 要素に <span class="property"><a class="property" href="http://www.idpf.org/vocab/rendition/#page-spread-left" target="_top">rendition:page-spread-left</a></span> または <span class="property"><a class="property" href="http://www.idpf.org/vocab/rendition/#page-spread-right" target="_top">rendition:page-spread-right</a></span>、<span class="property"><a class="property" href="http://www.idpf.org/vocab/rendition/#page-spread-center" target="_top">rendition:page-spread-center</a></span> プロパティ <a class="biblioref" href="#refRenditionVocab" title="EPUB Package Rendering Vocabulary">[<abbr class="abbrev">Rendition Vocab</abbr>]</a> のいずれかを提供することにより、製作者はドキュメントを特定のビューポートに配置することを強制し、自動的な集団挙動（population behavior）を上書きしてもよい（<span class="rfc2119">may</span>）。</p>
 
-<p><span class="property">rendition:page-spread-left</span> プロパティは、指定されたスパイン項目が見開きの左手側のスロットでレンダリングされるべきであり（<span class="rfc2119">should</span>）、<span class="property">rendition:page-spread-right</span> は、右手側のスロットでレンダリングされるべきである（<span class="rfc2119">should</span>）ことを示している。<span class="property">rendition:page-spread-center</span> プロパティは、合成した見開きモードは、上書きされると、単一のビューポートは、画面の中央でレンダリングされ、配置されるべきである（<span class="rfc2119">should</span>）ことを示している。</p>
+<p><span class="property">rendition:page-spread-left</span> プロパティは、指定されたスパイン項目が見開きの左手側のスロットでレンダリングされるべきであり（<span class="rfc2119">should</span>）、<span class="property">rendition:page-spread-right</span> は、右手側のスロットでレンダリングされるべきである（<span class="rfc2119">should</span>）ことを示している。<span class="property">rendition:page-spread-center</span> プロパティは、合成見開きモードは、上書きされると、単一のビューポートは、画面の中央でレンダリングされ、配置されるべきである（<span class="rfc2119">should</span>）ことを示している。</p>
 
-<p><span class="property">rendition:page-spread-left</span> と <span class="property">rendition:page-spread-right</span>、<span class="property">rendition:page-spread-center</span> プロパティはページ区切りコンテンツとリフロー可能なコンテンツの両方に適用され、それらはリーディング システムが合成された見開きを生成するときのみ適用する。</p>
+<p><span class="property">rendition:page-spread-left</span> と <span class="property">rendition:page-spread-right</span>、<span class="property">rendition:page-spread-center</span> プロパティはページ区切りコンテンツとリフロー可能なコンテンツの両方に適用され、それらはリーディング システムが合成見開きを生成するときのみ適用する。</p>
 
 <p><span class="property">rendition:page-spread-*</span> プロパティは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>のために設定された <a class="ulink" href="https://www.w3.org/TR/CSS2/page.html#propdef-page-break-before" target="_top"><span class="property">page-break-before</span> プロパティ</a> <a class="biblioref" href="#refCSSSNAP" title="CSS Snapshot">[<abbr class="abbrev">CSS Snapshot</abbr>]</a> のどの値よりも優先的する。</p>
 
@@ -2246,7 +2233,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <section class="section" id="fxl-property-page-spread-examples">
 <h5 class="title"><span class="link-marker"><a class="hidden-reveal" href="#fxl-property-page-spread-examples"> </a> </span>4.3.3.5.2 例</h5>
 <div class="informalexample" id="fxl-ex5">
-<p>次の例は、2ページの固定レイアウトのセンタープレートを持つリフロー可能なコンテンツが、任意のデバイスの向きで合成した見開きを使用してレンダリングされることを意図している。<span class="property">rendition:spread</span> のグローバル値は、初期設定の <code class="value">auto</code> に初期化されるので、製作者は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>が未定義の他の（リフロー可能な）部分の動作は見開きのままになることに注意されたい。</p>
+<p>次の例は、2ページの固定レイアウトのセンタープレートを持つリフロー可能なコンテンツが、任意のデバイスの向きで合成見開きを使用してレンダリングされることを意図している。<span class="property">rendition:spread</span> のグローバル値は、初期設定の <code class="value">auto</code> に初期化されるので、製作者は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>が未定義の他の（リフロー可能な）部分の動作は見開きのままになることに注意されたい。</p>
 
 <pre class="synopsis">&lt;spine page-progression-direction="ltr"&gt;&#xD;
     …&#xD;
@@ -2262,7 +2249,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 
 <div class="informalexample" id="fxl-ex6">
 
-<p>次の例は、合成した見開きは、使用するとき、センタープレートのために無効にする完全な固定レイアウトのコンテンツを示している。<span class="property">rendition:page-spread-center</span> プロパティが、既に合成した見開きを無効することを指示するセマンティクスを指定しているように、<span class="property">rendition:spread</span> 宣言の <code class="value">none</code> 表現は、センタープレート項目に必要でないことに注意されたい。</p>
+<p>次の例は、合成見開きは、使用するとき、センタープレートのために無効にする完全な固定レイアウトのコンテンツを示している。<span class="property">rendition:page-spread-center</span> プロパティが、既に合成見開きを無効することを指示するセマンティクスを指定しているように、<span class="property">rendition:spread</span> 宣言の <code class="value">none</code> 表現は、センタープレート項目に必要でないことに注意されたい。</p>
 
 <pre class="synopsis">&lt;metadata&gt;&#xD;
     &lt;meta property="rendition:layout"&gt;pre-paginated&lt;/meta&gt;&#xD;
@@ -2284,7 +2271,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <section class="section" id="sec-package-nav-intro">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-nav-intro"> </a> </span>5.1 まえがき</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p>EPUB ナビゲーション ドキュメントは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-package" target="_top">EPUB パッケージ</a></span>の<a class="link" href="#sec-package-conformance-nav">必須の構成要素</a> である。それは、人間と機械が可読可能なグロバールナビゲーションレイヤーを包含するメカニズムを<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>に提供し、それによりユーザーへユーザビリティとアクセシビリティの増大を確保する。</p>
+<p>EPUB ナビゲーション ドキュメントは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-package" target="_top">EPUB パッケージ</a></span>の<a class="link" href="#sec-package-conformance-nav">必須の構成要素</a> である。それは、人間と機械が可読可能なグロバール ナビゲーション レイヤーを包含するメカニズムを<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>に提供し、それによりユーザーへユーザビリティとアクセシビリティの増大を確保する。</p>
 <p>EPUB ナビゲーション ドキュメントは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の適合で、<a class="link" href="#confreq-cd-nav-docprops-parent">定義上</a>、妥当な XHTML コンテンツ ドキュメントのインスタンスである。XHTML コンテンツ ドキュメントに適用する全てのコンテンツとリーディング システムの適合性要件は、EPUB ナビゲーション ドキュメントもまた適用される。</p>
 <p>この適応のナビゲーション機能は、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/sections.html#the-nav-element" target="_top">nav</a></code> 要素の特殊性を通じて表現されている。EPUB ナビゲーション ドキュメント内の各 <code class="markup">nav</code> 要素は、リーディング システムがナビゲーションの情報を取り出すことができるデータアイランド（一般的なマークアップ内の専門化した情報を埋め込んだソース）を意味する。一般的な XML データアイランドとは異なるが、<code class="markup">nav</code> 要素内の情報は <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> 文書のように人間が可読可能なままである。</p>
 <p>機械可読を容易にするために、EPUB ナビゲーション ドキュメント内の <code class="markup">nav</code> 要素のコンテンツモデルは、一般的な XHTML コンテンツ ドキュメントで許可される基準に制限される。</p>
@@ -2295,7 +2282,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 
 <section class="section" id="sec-package-nav-content-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-nav-content-conf"> </a> </span>5.2 コンテンツの適合性</h2>
-<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>は、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>は、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="conformance-list" id="confreq-cd-nav">
 <dl class="conformance-list">
@@ -2314,7 +2301,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 
 <section class="section" id="sec-package-nav-rs-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-nav-rs-conf"> </a> </span>5.3 リーディング システムの適合性</h2>
-<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>の処理のための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>の処理のための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="conformance-list" id="xhtml-nav-rs-confreqs">
 <ul class="conformance-list" style="list-style-type: disc; ">
@@ -2335,7 +2322,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-nav-def"> </a> </span>5.4 EPUB ナビゲーション ドキュメントの定義</h2>
 <section class="section" id="sec-package-nav-def-model">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-nav-def-model"> </a> </span>5.4.1 <code class="markup">nav</code> 要素：制限</h3>
-<p><code class="markup">nav</code> 要素が、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>に <span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-epub-type-attribute" target="_top">epub:type 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を含むとき、この仕様は、要素のコンテンツ モデルの制約と次のような子孫を持つ。</p>
+<p><code class="markup">nav</code> 要素が、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>に <span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-epub-type-attribute" target="_top"><code class="markup">epub:type</code> 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を含むとき、この仕様は、要素のコンテンツ モデルの制約と次のような子孫を持つ。</p>
 <div class="elem-synopsis" id="elemdef-nav">
 <dl class="elem-synopsis">
 <dt class="varlistentry"><span class="term">コンテンツ モデル</span></dt>
@@ -2409,7 +2396,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <p id="confreq-nav-a"><span class="link-marker"><a class="hidden-reveal" href="#confreq-nav-a"> </a> </span>各順序付きリストのリスト項目は、見出しや構造、関心のある他の一覧を表現する。<code class="markup">a</code> 要素は、リンクの位置へのターゲットを表現すし、<code class="markup">span</code> 要素は、（例えば、イラストの大きなリストは、それぞれの章ためにひとつなど、いくつかのリストに分割できる）異なるグループの分類リストのための見出しとして機能する。</p>
 </li>
 <li class="listitem">
-<p id="confreq-nav-a-cnt"><span class="link-marker"><a class="hidden-reveal" href="#confreq-nav-a-cnt"> </a> </span><code class="markup">a</code> または <code class="markup">span</code> 要素は、空白化規則の全ての子コンテンツとアプリケーションの連結した後に非ゼロ長のテキストラベルを提供しなければならない（<span class="rfc2119">must</span>）。非テキストの子孫要素は、ユーザーに階層をレンダリングされてもよいが（<span class="rfc2119">may</span>）、<code class="markup">title</code> または <code class="markup">alt</code> 属性を含むテキストコンテンツは、この要件への準拠を決定するときに使用されなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-nav-a-cnt"><span class="link-marker"><a class="hidden-reveal" href="#confreq-nav-a-cnt"> </a> </span><code class="markup">a</code> または <code class="markup">span</code> 要素は、空白化規則の全ての子コンテンツとアプリケーションの連結した後に非ゼロ長のテキスト ラベルを提供しなければならない（<span class="rfc2119">must</span>）。非テキストの子孫要素は、ユーザーに階層をレンダリングされてもよいが（<span class="rfc2119">may</span>）、<code class="markup">title</code> または <code class="markup">alt</code> 属性を含むテキスト コンテンツは、この要件への準拠を決定するときに使用されなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
 <p id="confreq-nav-a-title"><span class="link-marker"><a class="hidden-reveal" href="#confreq-nav-a-title"> </a> </span><code class="markup">a</code> 要素を固有のテキスト代替手段が提供されない <a class="ulink" href="https://www.w3.org/TR/html/dom.html#kinds-of-content-embedded-content" target="_top">HTML 埋め込みコンテンツ</a>のインスタンスに含む場合、その要素はリンク ラベルの代替のテキスト レンダリングを持った <code class="markup">title</code> 属性をも包含しなければならない（<span class="rfc2119">must</span>）。</p>
@@ -2476,7 +2463,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <section class="section" id="sec-package-nav-def-types-intro">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-package-nav-def-types-intro"> </a> </span>5.4.2.1 まえがき</h4>
 <p class="informative">このセクションは規定ではない。</p>
-<p>EPUB ナビゲーション ドキュメントで定義されている <code class="markup">nav</code> 要素は、それらの <span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-epub-type-attribute" target="_top">epub:type 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> の値によって意味的に識別される。</p>
+<p>EPUB ナビゲーション ドキュメントで定義されている <code class="markup">nav</code> 要素は、それらの <span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-epub-type-attribute" target="_top"><code class="markup">epub:type</code> 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> の値によって意味的に識別される。</p>
 <p>この仕様は、ナビゲーションを補助する三つの型を定義する。</p>
 <div class="variablelist">
 <dl class="variablelist">
@@ -2513,30 +2500,19 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 </div>
 <p><span class="property">toc</span> <code class="markup">nav</code> 要素は、EPUB ナビゲーション ドキュメント内に必ずひとつは発生しなければならない（<span class="rfc2119">must</span>）。</p>
 </section>
-
 <section class="section" id="sec-nav-pagelist">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-nav-pagelist"> </a> </span>5.4.2.3 <span class="property">page-list</span> <code class="markup">nav</code> 要素</h4>
 <p><span class="property">page-list</span> <code class="markup">nav</code> 要素は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>により表現される印刷物ソース内に存在するページの境界の位置に相当するコンテンツの位置へのナビゲーションを提供する。</p>
-
 <p><span class="property">page-list</span> <code class="markup">nav</code> 要素は、EPUB ナビゲーション ドキュメント内で省略可能（<span class="rfc2119">optional</span>）であり、複数発生してはならない（<span class="rfc2119">must not</span>）。</p>
-
 <p><span class="property">page-list</span> <code class="markup">nav</code> 内を参照するページは、<a class="xref" href="#sec-spine-elem" title="3.4.5.1 The spine Element">スパイン</a>の<a class="link" href="#confreq-nav-a-href">対象となっている EPUB コンテンツ ドキュメント</a>の順番とそれぞれの EPUB コンテンツ ドキュメント内の各ページの順番の両方に一致するように順序付けられねばならない（<span class="rfc2119">must</span>）。</p>
-
 <p><span class="property">page-list</span> <code class="markup">nav</code> 要素は、単一の <code class="markup">ol</code> 子孫のみに含むべきである（<span class="rfc2119">should</span>）。
 つまり、ネストされていないリストである。</p>
-
 <p><span class="property">page-list</span> 参照の目的地は、<a class="ulink" href="http://www.idpf.org/epub/vocab/structure#pagebreak" target="_top"><span class="property">pagebreak</span> 語彙</a> <a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">[<abbr class="abbrev">Structure Vocab</abbr>]</a> を使用して、それぞれの EPUB コンテンツ ドキュメント内で識別されてもよい（<span class="rfc2119">may</span>）。</p>
 </section>
-
 <section class="section" id="sec-nav-landmarks">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-nav-landmarks"> </a> </span>5.4.2.4 <span class="property">landmarks</span> <code class="markup">nav</code> 要素</h4>
 <p><code class="property">landmarks</code> <code class="markup">nav</code> 要素は、ユーザーの効率的なアクセスの提供をリーディング システムが可能にするため、特定の<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>内の基本的な構造のコンポーネントを識別する。</p>
-
-<p>
-<span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-epub-type-attribute" target="_top">epub:type 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> は、<code class="property">landmarks</code> <code class="markup">nav</code> 要素の子孫 <code class="markup">a</code> 要素が必須（<span class="rfc2119">required</span>）である。
-<span class="property">landmarks</span> <code class="markup">nav</code> 要素内の各リンク対象の構造上の意味論は、この属性の値によって決定される。
-</p>
-
+<p><span class="phrase"><a class="ulink" href="epub-contentdocs.html#sec-epub-type-attribute" target="_top"><code class="markup">epub:type</code> 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> は、<code class="property">landmarks</code> <code class="markup">nav</code> 要素の子孫 <code class="markup">a</code> 要素が必須（<span class="rfc2119">required</span>）である。<span class="property">landmarks</span> <code class="markup">nav</code> 要素内の各リンク対象の構造上の意味論は、この属性の値によって決定される。</p>
 <div class="informalexample">
 <p>次の例では、<a class="biblioref" href="#refEPUBStructureVocab" title="EPUB 3 Structural Semantics Vocabulary">EPUB Structural Semantics Vocabulary</a> から引用された構造上の意味論を持つ <span class="property">landmarks</span> <code class="markup">nav</code> 要素を示している。</p>
 <pre class="synopsis">&lt;nav epub:type="landmarks"&gt;&#xD;
@@ -2642,7 +2618,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#app-obs-deprecated"> </a> </span>A.1 廃止予定（Deprecated）の機能</h2>
 <section class="section" id="attrdef-meta-refines">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#attrdef-meta-refines"> </a> </span>A.1.1 <code class="markup">refines</code> 属性</h3>
-<p><a class="xref" href="#sec-meta-elem" title="3.4.3.4 The meta Element">メタ</a>の <code class="markup">refines</code> 属性の使用は、<span class="phrase"><a class="ulink" href="epub-spec.html#deprecated" target="_top">deprecated（廃止予定）</a></span>である。<a class="markup" href="#attrdef-item-duration">duration</a> と <code class="markup"><a class="markup" href="#attrdef-opf-alt-rep">opf:alt-rep</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-authority">opf:authority</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-file-as">opf:file-as</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-role">opf:role</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-scheme">opf:scheme</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-term">opf:term</a></code> 属性によって置換された。
+<p><a class="xref" href="#sec-meta-elem" title="3.4.3.4 The meta Element">メタ</a>の <code class="markup">refines</code> 属性の使用は、<span class="phrase"><a class="ulink" href="epub-spec.html#deprecated" target="_top">廃止予定（deprecated）</a></span>である。<a class="markup" href="#attrdef-item-duration">duration</a> と <code class="markup"><a class="markup" href="#attrdef-opf-alt-rep">opf:alt-rep</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-authority">opf:authority</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-file-as">opf:file-as</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-role">opf:role</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-scheme">opf:scheme</a></code>、<code class="markup"><a class="markup" href="#attrdef-opf-term">opf:term</a></code> 属性によって置換された。
 </p>
 <p>この属性に関するより詳細な情報は、<a class="biblioref" href="#refPublications301" title="EPUB Publications 3.0.1">[<abbr class="abbrev">Publications 3.0.1</abbr>]</a> の定義を参照されたい。</p>
 </section>
@@ -2734,8 +2710,8 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 
 <p>EPUB Publications 3.0 仕様は <a class="ulink" href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm" target="_top">http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm</a> にある <code class="media-type">application/oepbs-package+xml</code> メディアタイプを使用している Open Packaging Format 2.0.1 を置き換える。</p>
 </dd>
-<dt class="varlistentry"><span class="term">このメディアタイプを使用するアプリケーション:</span></dt>
-<dd><p>このメディアタイプは EPUB format の電子ブックの配布に広く使用されている。以下のアプリケーションのリストは全てを網羅していない。</p>
+<dt class="varlistentry"><span class="term">このメディア タイプを使用するアプリケーション:</span></dt>
+<dd><p>このメディアタイプは EPUB フォーマットの電子ブックの配布に広く使用されている。以下のアプリケーションのリストは全てを網羅していない。</p>
 
 <div class="itemizedlist">
 <ul style="list-style-type: disc; " class="itemizedlist">
@@ -2763,11 +2739,11 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z&#xD;
 <dt class="varlistentry"><span class="term">ファイル拡張子:</span></dt>
 <dd><p><code class="filename">.opf</code></p>
 </dd>
-<dt class="varlistentry"><span class="term">Macintosh ファイルタイプコード:</span></dt>
+<dt class="varlistentry"><span class="term">Macintosh ファイル タイプ コード:</span></dt>
 <dd><p>TEXT</p>
 </dd>
 <dt class="varlistentry"><span class="term">フラグメント識別子:</span></dt>
-<dd><p>IDPF は <code class="uri"><a class="uri" href="http://www.idpf.org/epub/linking/" target="_top">http://www.idpf.org/epub/linking/</a></code> でスキームをリンクのレジストリを維持する。これらのスキームの一部は <code class="media-type">application/oebps-package+xml</code> ドキュメントに解決されるカスタムフラグメント識別子を定義する。</p>
+<dd><p>IDPF は <code class="uri"><a class="uri" href="http://www.idpf.org/epub/linking/" target="_top">http://www.idpf.org/epub/linking/</a></code> でスキームをリンクのレジストリを維持する。これらのスキームの一部は <code class="media-type">application/oebps-package+xml</code> ドキュメントに解決されるカスタム フラグメント識別子を定義する。</p>
 </dd>
 </dl></div>
 </dd>
