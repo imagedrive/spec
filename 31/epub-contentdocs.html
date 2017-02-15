@@ -14,12 +14,11 @@
 <div class="translation-attention">
 <p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-contentdocs-20170105.html">EPUB Content Documents 3.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/contentdocs">http://www.idpf.org/epub3/latest/contentdocs</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/31/spec/epub-contentdocs-20170105.html">EPUB Content Documents 3.1</a> を参照されたい。</p>
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
-<p>この文書は <a href="http://www.idpf.org/epub/31/spec/epub-contentdocs-20170105.html">EPUB Content Documents 3.1</a> の訳であるが、「このドキュメントのステータス」のみ最新の文書に合わせている。</p>
 <dl>
 <dt>公開日:</dt>
 <dd>2016年4月5日</dd>
 <dt>修正日:</dt>
-<dd>2017年1月23日</dd>
+<dd>2017年2月15日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -67,12 +66,11 @@
 <section id="sotd">
 <h2>このドキュメントのステータス</h2>
 <p>このセクションは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わるかもしれない。</p>
-<p>このドキュメントは、2015年7月8日に承認された<a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top"> EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成された。</p>
-<p>このドキュメントは IDPF 会員によってレビューされ、勧告仕様としてIDPF 理事会によって承認された。このドキュメントは安定しているとみなされ、他の仕様や文書から参照することができる。</p>
-<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">イシュートラッカー</a>に提供することができる。</p>
+<p>このドキュメントは、2015年7月8日に承認された<a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top"> EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作られた。</p>
+<p>このドキュメントは IDPF 会員によってレビューされ、勧告仕様としてIDPF 理事会によって承認された。このドキュメントは安定しているとみなされ、他の仕様や文書から参照できる。</p>
+<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">イシュートラッカー</a>に提供できる。</p>
 <p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
 </section>
-
 <nav xmlns:spec="http://www.idpf.org/2016/epub/spec" class="toc" id="toc">
 <h2 class="toc-title">目次</h2>
 <ol class="toc">
@@ -113,7 +111,7 @@
 <li><span class="section"><a href="#sec-xhtml-sementic-enrichment-rdfa">2.4.2.2. RDFa</a></span></li>
 <li><span class="section"><a href="#sec-xhtml-sementic-enrichment-microdata">2.4.2.3. Microdata</a></span></li>
 </ol>
-</li
+</li>
 <li><span class="section"><a href="#sec-xhtml-ssml-attrib">2.4.3. SSML 属性</a></span>
 <ol>
 <li><span class="section"><a href="#sec-cd-ssml-intro">2.4.3.1. まえがき</a></span></li>
@@ -209,7 +207,7 @@
 </li>
 <li><span class="appendix"><a href="#app-epubReadingSystem">A. JavaScript epubReadingSystem オブジェクト</a></span>
 <ol>
-<li><span class="section"><a href="#app-ers-idl">A.1. インターフェイスの定義</a></span></li>
+<li><span class="section"><a href="#app-ers-idl">A.1. インターフェースの定義</a></span></li>
 <li><span class="section"><a href="#app-ers-desc">A.2. 概要</a></span></li>
 <li><span class="section"><a href="#app-ers-properties">A.3. プロパティ</a></span></li>
 <li><span class="section"><a href="#app-ers-methods">A.5. メソッド</a></span>
@@ -238,14 +236,13 @@
 <li><span class="bibliography"><a href="#references">参照・参考</a></span></li>
 </ol>
 </nav>
-
 <section class="chapter" id="sec-overview">
 <h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview"> </a> </span>1 要約</h1>
 <section class="section" id="sec-overview-purpose-and-scope">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview-purpose-and-scope"> </a> </span>1.1 目的とスコープ</h2>
 <p class="informative">このセクションは規定ではない。</p>
 <p>この仕様、EPUB Content Documents 3.1 は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB® Publications</a></span> のコンテクスト内で使用するための HTML、SVG、CSS のプロファイルを定義する。</p>
-<p xml:lang="en">この仕様は、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> を構成する<span class="phrase"><a class="ulink" href="epub-spec.html#sec-epub-specs" target="_top">仕様群</a></span>のひとつである。EPUB 3 は XML や Web 標準に基づいたデジタル出版物の交換や配信形式である。この仕様は EPUB 3.1 を構成する他の仕様と共に読み、理解することになっている。</p>
+<p xml:lang="en">この仕様は、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> を構成する<span class="phrase"><a class="ulink" href="epub-spec.html#sec-epub-specs" target="_top">仕様群</a></span>のひとつである。EPUB 3 は XML や Web 標準に基づいたデジタル出版物のやり取りや配信形式である。この仕様は EPUB 3.1 を構成する他の仕様と共に読み、理解することになっている。</p>
 <p>この仕様と前身の違いについての情報は <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.1 Differences from EPUB 3.0.1">[<abbr class="abbrev">EPUB3 Changes</abbr>]</a> を参照されたい。</p>
 </section>
 
@@ -260,8 +257,8 @@
 <p>HTML の進化によって、以前のバージョンでは有効だった機能が、非推奨（Obsolete）や取り除かれる可能性がある。IDPF は、製作者のために最小限の混乱を保証するために、そのような変更を慎重に行うことを W3C に期待しているが、後方互換性のない版の場合は、日付のない参照の使用は見直されるかもしれない。</p>
 </div>
 <p><a class="link" href="#sec-xhtml" title="2 XHTML Content Documents">この仕様によって定義された XHTML プロファイル</a>は、他の仕様がない限り、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> が提供するセマンティクスや構造、処理動作の全ての定義を継承する。</p>
-<p>さらに、この仕様は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>によって <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>に包含することができる W3C HTML 文書モデルの<a class="link" href="#sec-xhtml-extensions" title="2.4 HTML Extensions">拡張セットを定義</a>をする。</p>
-<p>この仕様は、スクリプトや HTML フォームもしくは HTML DOM のサポートを <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>に要求しない。この仕様に準拠した リーディング システムは、適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>を処理することのみ期待される。<a class="link" href="#sec-scripted-content-rs-reqs" title="5.3 Reading System Conformance">スクリプトや HTML フォームのサポート</a>が強制ではないように、適合するリーディング システムは、完全に準拠した HTML のユーザー エージェントでないかもしれない。</p>
+<p>さらに、この仕様は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>によって <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>に包含できる W3C HTML 文書モデルの<a class="link" href="#sec-xhtml-extensions" title="2.4 HTML Extensions">拡張セットを定義</a>をする。</p>
+<p>この仕様は、スクリプトや HTML フォームもしくは HTML DOM のサポートを <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>に要求しない。この仕様に準拠した リーディング システムは、適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>を処理することのみ期待される。<a class="link" href="#sec-scripted-content-rs-reqs" title="5.3 Reading System Conformance">スクリプトや HTML フォームのサポート</a>が強制ではないように、適合したリーディング システムは、完全に準拠した HTML のユーザー エージェントでないかもしれない。</p>
 </section>
 
 <section class="section" id="sec-overview-relations-svg">
@@ -283,7 +280,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <section xml:lang="en" class="section" id="sec-terminology">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.3 用語</h2>
-<p>EPUB 3.1 固有の意味を持つ用語は、このドキュメント（例えば、"製作者"、"リーディング システム"）に利用できる。これらの<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">用語と定義</a></span>の完全なリストは、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> で提供されている。</p>
+<p>EPUB 3.1 固有の意味を持つ用語は、このドキュメント（例えば、「製作者」、「リーディング システム」）に利用できる。これらの<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">用語と定義</a></span>の完全なリストは、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> で提供されている。</p>
 <p>セクションにある用語の最初のインスタンスのみが、その定義にリンクされる。</p>
 </section>
 
@@ -412,7 +409,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <section class="section" id="sec-xhtml-conf-rs">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-xhtml-conf-rs"> </a> </span>2.3 リーディング システムの適合性</h2>
-<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の処理のために、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）：</p>
+<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の処理のために、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）：</p>
 
 <div class="conformance-list" id="html-rs-confreqs">
 <ul class="conformance-list" style="list-style-type: disc; ">
@@ -442,9 +439,9 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-xhtml-semantic-inflection-intro"> </a> </span>2.4.1.1 まえがき</h4>
 <p class="informative">このセクションは規定ではない。</p>
 <p>意味の変化は <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>内で使用している要素に特定の意味と、または性質に関するさらなる意味を付与する行為である。<a class="xref" href="#sec-epub-type-attribute" title="2.4.1.2 The epub:type Attribute">epub:type 属性</a>は、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> の語彙を補足する変化をもたらし、XHTML コンテンツ ドキュメント内のドメイン固有の意味を表現するのに使用される。</p>
-<p>適用されるセマンティクスは、それらを含んでいる要素の意味を取り込むことが意図されており、（例えば、属性は、<code class="markup">section</code> が作品の章を示すために使用することができるが、適切なリスト構造を回避するために、リスト項目に <code class="markup">p</code> 要素を動作するもとして設計されていないように）それらの性質を上書きするために提供されていない。</p>
+<p>適用されるセマンティクスは、それらを含んでいる要素の意味を取り込むことが意図されており、（例えば、属性は、<code class="markup">section</code> が作品の章を示すために使用できるが、適切なリスト構造を回避するために、リスト項目に <code class="markup">p</code> 要素を動作するもとして設計されていないように）それらの性質を上書きするために提供されていない。</p>
 <p>セマンティック メタデータは直接人間に提供されることを目的にしておらず、その代わりにドキュメントの構造とコンテンツについてのより詳細にリーディング システムのために制御方法を提供し、読者のために読書体験を向上させる良い機会を提供する。</p>
-<p>この仕様は、新しい要素を追加する代わりに、<span class="emphasis"><em>axis 属性</em></span>を使用して意味の変化のための方法を定義し、<code class="markup">epub:type</code> 属性で求められる意味の変化を既存の要素に付与することができる。属性の制御値を提供する外部のボキャブラリを識別するためのメカニズムもまた定義されている。</p>
+<p>この仕様は、新しい要素を追加する代わりに、<span class="emphasis"><em>axis 属性</em></span>を使用して意味の変化のための方法を定義し、<code class="markup">epub:type</code> 属性で求められる意味の変化を既存の要素に付与できる。属性の制御値を提供する外部のボキャブラリを識別するためのメカニズムもまた定義されている。</p>
 </section>
 <section class="section" id="sec-epub-type-attribute">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-epub-type-attribute"> </a> </span>2.4.1.2 <code class="markup">epub:type</code> 属性</h4>
@@ -556,7 +553,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 <section class="section" id="sec-xhtml-sementic-enrichment-rdfa">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-xhtml-sementic-enrichment-rdfa"> </a> </span>2.4.2.2 RDFa</h4>
 <p><a class="biblioref" href="#refRDFa" title="RDFa Core 1.1 - Second Edition">[<abbr class="abbrev">RDFa 1.1</abbr>]</a> 属性の使用は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>で許可されているが、全ての使用方法は、<a class="biblioref" href="#refHTMLRDFa" title="HTML+RDFa 1.1">[<abbr class="abbrev">HTML+RDFa11</abbr>]</a> に定義されている要件に適合しなければならない（<span class="rfc2119">must</span>）。</p>
-<p><a class="biblioref" href="#refRDFa" title="RDFa Core 1.1 - Second Edition">[<abbr class="abbrev">RDFa 1.1</abbr>]</a> 仕様は、RDFa の属性を使用したときの <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> コンテンツ モデルの変更を定義している。この修正されたコンテンツ モデルは、XHTML コンテンツ ドキュメントに妥当である。</p>
+<p><a class="biblioref" href="#refRDFa" title="RDFa Core 1.1 - Second Edition">[<abbr class="abbrev">RDFa 1.1</abbr>]</a> 仕様は、RDFa 属性を使用したときの <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> コンテンツ モデルの変更を定義している。この修正されたコンテンツ モデルは、XHTML コンテンツ ドキュメントに妥当である。</p>
 <p><a class="ulink" href="https://www.w3.org/TR/2015/REC-rdfa-core-20150317/#s_model" target="_top">属性処理モデル</a> <a class="biblioref" href="#refRDFa" title="RDFa Core 1.1 - Second Edition">[<abbr class="abbrev">RDFa 1.1</abbr>]</a> の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>のサポートは、省略可能（<span class="rfc2119">optional</span>）である。</p>
 </section>
 <section class="section" id="sec-xhtml-sementic-enrichment-microdata">
@@ -704,7 +701,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 <section class="section" id="sec-xhtml-deviations">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-xhtml-deviations"> </a> </span>2.5 HTML の許容性と制約</h2>
 
-<p>このセクションは、EPUB 3.1 <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>に許可されている基本的な <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> ドキュメントモデルから許容性と制約を定義する。</p>
+<p>このセクションは、EPUB 3.1 の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>で許可されている基本的な <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> ドキュメントモデルから許容性と制約を定義する。</p>
 
 <section class="section" id="sec-xhtml-mathml">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-xhtml-mathml"> </a> </span>2.5.1 埋め込み MathML</h3>
@@ -756,7 +753,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <section class="section" id="sec-xhtml-mathml-rs-conf">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-xhtml-mathml-rs-conf"> </a> </span>2.5.1.3 リーディング システムの適合性</h4>
-<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、XHTML コンテンツ ドキュメントに埋め込まれた MathML の処理ために次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、XHTML コンテンツ ドキュメントに埋め込まれた MathML の処理ために次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="conformance-list" id="mathml-rs-confreqs">
 <ul class="conformance-list" style="list-style-type: disc; ">
@@ -805,7 +802,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <div class="note">
 <h3 class="title">note</h3>
-<p><span class="emphasis"><em>参照</em></span>によって包含された SVG は、別のドキュメントのように処理され、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-svg" target="_top">SVG コンテンツ ドキュメント</a></span>と同様に独自の CSS スタイル ルールを包含することができる。これは、外部の <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> 要素を参照する <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#elementdef-object" target="_top">object</a></code> 要素の状況と一致していると注意されたい。</p>
+<p><span class="emphasis"><em>参照</em></span>によって包含された SVG は、別のドキュメントのように処理され、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-svg" target="_top">SVG コンテンツ ドキュメント</a></span>と同様に独自の CSS スタイル ルールを包含できる。これは、外部の <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> 要素を参照する <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#elementdef-object" target="_top">object</a></code> 要素の状況と一致していると注意されたい。</p>
 </div>
 </section>
 </section>
@@ -840,7 +837,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 
 
-<code class="markup">object</code> 要素は、固有のフォールバック機能を包含するため、代わりに使用することができる。</p>
+<code class="markup">object</code> 要素は、固有のフォールバック機能を包含するため、代わりに使用できる。</p>
 </section>
 </section>
 
@@ -909,7 +906,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <dt class="varlistentry" id="confreq-svg-fileprops"><span class="term">ファイルのプロパティ</span></dt>
 <dd>
-<p id="confreq-svg-fileprops-name"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-fileprops-name"> </a> </span>SVG コンテンツ ドキュメントのファイル名は、ファイル拡張子に <code class="filename">.svg</code> を使用するべきである（<span class="rfc2119">should</span>）。</p>
+<p id="confreq-svg-fileprops-name"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-fileprops-name"> </a> </span>SVG コンテンツ ドキュメントのファイル名は、ファイル拡張子 <code class="filename">.svg</code> を使用するべきである（<span class="rfc2119">should</span>）。</p>
 </dd>
 </dl>
 </div>
@@ -945,15 +942,15 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <section class="section" id="sec-svg-rs-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-svg-rs-conf"> </a> </span>3.4 リーディング システムの適合性</h2>
-<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、SVG コンテンツ ドキュメントと <a class="link" href="#sec-xhtml-svg" title="2.5.2 Embedded SVG">XHTML コンテンツ ドキュメントに埋め込む</a> SVG の処理のための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、SVG コンテンツ ドキュメントと <a class="link" href="#sec-xhtml-svg" title="2.5.2 Embedded SVG">XHTML コンテンツ ドキュメントに埋め込む</a> SVG の処理のための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="conformance-list" id="svg-rs-confreqs">
 <ul class="conformance-list" style="list-style-type: disc; ">
 <li class="listitem"><p id="confreq-svg-rs-behavior"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-rs-behavior"> </a> </span>上書きとしてこの仕様によって明確に定義されない限り、<a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> 仕様によって定義されたセマンティクスを使用して、SVG コンテンツ ドキュメントを処理し、その中で述べられる全ての利用可能なユーザー エージェントの適合性の制約を尊重しなければならない（<span class="rfc2119">must</span>）。</p></li>
 <li class="listitem"><p id="confreq-svg-rs-scrpt"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-rs-scrpt"> </a> </span><a class="xref" href="#sec-scripted-content-rs-reqs" title="5.3 Reading System Conformance">スクリプト コンテンツ ドキュメント — リーディング システムの適合性</a>で定義されているリーディング システムの適合性の基準を満たさなければならない（<span class="rfc2119">must</span>）。</p></li>
 <li class="listitem"><p id="confreq-svg-rs-css"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-rs-css"> </a> </span><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-viewport" target="_top">ビューポート</a></span>を持つ場合、<a class="ulink" href="https://www.w3.org/TR/SVG/styling.html" target="_top">Styling</a> <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> で定義されているように CSS を使用した SVG の視覚レンダリングをサポートしなければならず（<span class="rfc2119">must</span>）、<a class="ulink" href="https://www.w3.org/TR/SVG/propidx.html" target="_top">Property Index</a> <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> で定義されている全てのプロパティをサポートすべきである（<span class="rfc2119">should</span>）。埋め込み SVG の場合、<a class="xref" href="#sec-xhtml-svg-css" title="2.5.2.1 Embedded SVG and CSS">埋め込み SVG と CSS</a> で定義されている制約にも適合しなければならない（<span class="rfc2119">must</span>）。</p></li>
-<li class="listitem"><p id="confreq-svg-rs-text"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-rs-text"> </a> </span>SVG 要素内で読者によるテキストの選択と検索をサポートするべきである（<span class="rfc2119">should</span>）。</p></li>
-<li class="listitem"><p id="confreq-svg-rs-reqdExt"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-rs-reqdExt"> </a> </span>（例えば、属性が、<code class="markup">foreignObject</code> 要素または <code class="markup">switch</code> 要素の子に包含されるとき）XHTML コンテンツ ドキュメント フラグメントの存在を表現する <code class="markup">requiredExtensions</code> 属性の値 「<code class="uri">http://www.idpf.org/2007/ops</code>」 を認識しなければならない（<span class="rfc2119">must</span>）。</p></li>
+<li class="listitem"><p id="confreq-svg-rs-text"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-rs-text"> </a> </span>SVG 要素内にあるテキストを、ユーザーによる選択と検索をサポートするべきである（<span class="rfc2119">should</span>）。</p></li>
+<li class="listitem"><p id="confreq-svg-rs-reqdExt"><span class="link-marker"><a class="hidden-reveal" href="#confreq-svg-rs-reqdExt"> </a> </span>（例えば属性が、<code class="markup">foreignObject</code> 要素または <code class="markup">switch</code> 要素の子に包含されるとき）XHTML コンテンツ ドキュメント フラグメントの存在を表現する <code class="markup">requiredExtensions</code> 属性の値 「<code class="uri">http://www.idpf.org/2007/ops</code>」 を認識しなければならない（<span class="rfc2119">must</span>）。</p></li>
 </ul>
 </div>
 </section>
@@ -968,7 +965,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 <section class="section" id="sec-css-intro">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-css-intro"> </a> </span>4.1 まえがき</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p>CSS は、20年近くオープン Web プラットフォームの不可欠な一部となっており、読者や出版社、ドキュメントの製作者は、HTML がうまく動作するように、CSS が「うまく動作する」ことを期待する。</p>
+<p>CSS は、20年近くオープン Web プラットフォームの不可欠な一部となっており、読者や出版社、ドキュメントの製作者は、HTML がうまく動作するように、CSS が「うまく動作する」と期待している。</p>
 <p>過去に、EPUB は、特定のプロパティのサポートを義務付け、他の多数のプロパティにおいてプレフィックス付きバージョンを提供する CSS のプロファイルを定義した。CSS ワーキング グループはプリフィックス付きプロパティの使用をもはや推奨されていないけれども、この仕様は、既存コンテンツとの断絶を避けるためにいくつかのプリフィックス付きプロパティを保持する。しかし、このセクションで定義されているマイナーな例外を除き、EPUB は、CSS を定義する W3C に従う。</p>
 </section>
 <section class="section" id="sec-css-content-conf">
@@ -986,6 +983,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 <li class="listitem">
 <p id="confreq-css-props-exc-unicode-bidi"><span class="link-marker"><a class="hidden-reveal" href="#confreq-css-props-exc-unicode-bidi"> </a> </span><a class="ulink" href="https://www.w3.org/TR/css3-writing-modes/#unicode-bidi" target="_top"><span class="property">unicode-bidi</span> プロパティ</a> <a class="biblioref" href="#refCSS3WritingModesModule" title="CSS Writing Modes Module Level 3">[<abbr class="abbrev">CSS3 Writing Modes</abbr>]</a> を使用してはならない（<span class="rfc2119">must not</span>）。双方向性をコントロールするには <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/html/textlevel-semantics.html#the-bdo-element" target="_top"><code class="markup">bdo</code> 要素</a>と <a class="ulink" href="https://www.w3.org/TR/html/dom.html#the-dir-attribute" target="_top"><code class="markup">dir</code> 属性</a>を使用する。</p>
 </li>
+</ul>
 </div>
 </li>
 <li class="listitem">
@@ -1013,10 +1011,9 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 </div>
 </div>
 </section>
-
 <section class="section" id="sec-css-rs-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-css-rs-conf"> </a> </span>4.3 リーディング システムの適合性</h2>
-<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、CSS スタイル シートを処理するために次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、CSS スタイル シートを処理するために次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="conformance-list">
 <ul class="conformance-list" style="list-style-type: disc; ">
 <li class="listitem">
@@ -1043,7 +1040,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 <div class="caution">
 <h3 class="title">caution</h3>
 <p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>は、プリフィックスのないプロパティと、現在の CSS 仕様をサポートする<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">リーディング システム</a></span>を使用することが強く推奨される。<a class="biblioref" href="#refContentDocs301" title="EPUB Content Documents 3.0.1">[<abbr class="abbrev">Content Docs 3.0.1</abbr>]</a> から広く使用されているプリフィックス付きプロパティは保留されたが、他のプロパティのサポートは取り除かれた。製作者は、必要な時に必要な場所で利用できる、取り除かれたプロパティのためのネイティブな CSS のソリューションを使用することを勧める。</p>
-<p>現在、これらプリフィックス付きプロパティを使用している製作者は、これらプロパティが、EPUB の次のメジャー バージョンでサポートされる見込がないため、すぐにサポートすることができるプリフィックスのないバージョンに移行することが推奨される。</p>
+<p>現在、これらプリフィックス付きプロパティを使用している製作者は、これらプロパティが、EPUB の次のメジャー バージョンでサポートされる見込がないため、すぐにサポートできるプリフィックスのないバージョンに移行することが推奨される。</p>
 </div>
 <section class="section" id="sec-css-prefixed-writing-modes">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-css-prefixed-writing-modes"> </a> </span>4.4.1 CSS Writing Modes</h3>
@@ -1501,7 +1498,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 </section>
 <section class="section" id="sec-fxl-content-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-fxl-content-conf"> </a> </span>6.2 コンテンツの適合性</h2>
-<p>適合する<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-fixed-layout-document" target="_top">固定レイアウト ドキュメント</a></span>は、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合した<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-fixed-layout-document" target="_top">固定レイアウト ドキュメント</a></span>は、次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="conformance-list" id="fxl-content-conf">
 <ul class="conformance-list" style="list-style-type: disc; ">
 <li class="listitem">
@@ -1513,7 +1510,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 <section class="section" id="sec-fxl-rs-conf">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-fxl-rs-conf"> </a> </span>6.3 リーディング システムの適合性</h2>
 
-<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-fixed-layout-document" target="_top">固定レイアウト ドキュメント</a></span>を処理するための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-fixed-layout-document" target="_top">固定レイアウト ドキュメント</a></span>を処理するための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="conformance-list" id="fxl-rs-confreqs">
 <ul class="conformance-list" style="list-style-type: disc; ">
@@ -1587,7 +1584,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
    …&#xD;
 &lt;/svg&gt;</pre>
 </div>
-<p><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute" target="_top">viewBox</a></code> 属性が存在する場合のみ、座標系の定義は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-viewport" target="_top">ビューポート</a></span>にマップされ、アスペクト比をキープし、ピクセル <a class="biblioref" href="#refCSSSNAP" title="CSS Snapshot">[<abbr class="abbrev">CSS Snapshot</abbr>]</a> 内の<a class="ulink" href="https://www.w3.org/TR/2011/REC-CSS2-20110607/visudet.html#containing-block-details" target="_top">初期包含ブロック</a>（ICB）を確立する。このマッピングの結果は、典型的に、ビューポートの境界となる。</p>
+<p><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute" target="_top">viewBox</a></code> 属性が存在する場合のみ、座標系の定義は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-viewport" target="_top">ビューポート</a></span>にマップされ、アスペクト比をキープし、ピクセル <a class="biblioref" href="#refCSSSNAP" title="CSS Snapshot">[<abbr class="abbrev">CSS Snapshot</abbr>]</a> 内の<a class="ulink" href="https://www.w3.org/TR/2011/REC-CSS2-20110607/visudet.html#containing-block-details" target="_top">初期包含ブロック</a>（ICB）を確立する。典型的に、このマッピングの結果は、ビューポートの境界となる。</p>
 <p><code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#SVGElementXAttribute" target="_top">x</a></code> と <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#SVGElementYAttribute" target="_top">y</a></code>、<code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#SVGElementHeightAttribute" target="_top">height</a></code>、<code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#SVGElementWidthAttribute" target="_top">width</a></code> 属性が存在する場合のみ、（ICB を確立する）ピクセル値に定義されるべきである（<span class="rfc2119">should</span>）。<code class="markup">x</code> と <code class="markup">y</code>、<code class="markup">height</code>、<code class="markup">width</code> 属性によって定義されたピクセル値が、ビューポートのピクセル値を超える場合、グラフィックは、ビューポートの境界に切り抜かれる（すなわち、グラフィックは再スケーリングしない）であろうことに注意されたい。</p>
 <p>座標系が、<code class="markup">viewBox</code> と <code class="markup">width</code>/<code class="markup">height</code> 値によって定義される場合、<code class="markup">viewBox</code> によって定義される座標系は、前の項目によって説明されているように境界で切り抜かれる。</p>
 <div class="note">
@@ -1616,7 +1613,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <section class="section" id="sec-pls-conf-pub">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pls-conf-pub"> </a> </span>7.2 EPUB 出版物の適合性</h2>
-<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>の<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>は、PLS ドキュメントに含むために次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>の<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>は、PLS ドキュメントに含むために次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="conformance-list">
 <ul class="conformance-list" style="list-style-type: disc; ">
@@ -1668,7 +1665,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 
 <section class="section" id="sec-pls-conf-rs">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-pls-conf-rs"> </a> </span>7.4 リーディング システムの適合性</h2>
-<p>適合する <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、PLS ドキュメントの処理のための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
+<p>適合した <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は、PLS ドキュメントの処理のための次の基準を全て満たさなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="conformance-list" id="pls-rs-confreqs">
 <ul class="conformance-list" style="list-style-type: disc; ">
@@ -1697,7 +1694,7 @@ EPUB 3.1 は、CSS ワーキング グループ スナップショット <a clas
 </div>
 
 <section class="section" id="app-ers-idl">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#app-ers-idl"> </a> </span>A.1 インターフェイスの定義</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#app-ers-idl"> </a> </span>A.1 インターフェースの定義</h2>
 <p>この仕様は、次のように、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> ナビゲーション オブジェクトを拡張する。</p>
 <div class="informalexample">
 <pre class="synopsis">[Exposed=(Window)]
@@ -1714,7 +1711,7 @@ partial interface Navigator {
 </div>
 <div class="note">
 <h3 class="title">note</h3>
-<p>この仕様は、<a class="ulink" href="https://www.w3.org/TR/2015/WD-workers-20150924/#the-workernavigator-object" target="_top"><code class="markup">WorkerNavigator</code> オブジェクト</a> <a class="biblioref" href="#refWebWorkers" title="Web Workers">[<abbr class="abbrev">Web Workers</abbr>]</a> の <code class="markup">epubReadingSystem</code> プロパティ拡張を定義していない。したがって、リーディング システムは、ワーカーのスクリプト コンテキストで <code class="markup">epubReadingSystem</code> オブジェクトの公開を必要とせず、製作者は、その存在に依存することはできない。</p>
+<p>この仕様は、<a class="ulink" href="https://www.w3.org/TR/2015/WD-workers-20150924/#the-workernavigator-object" target="_top"><code class="markup">WorkerNavigator</code> オブジェクト</a> <a class="biblioref" href="#refWebWorkers" title="Web Workers">[<abbr class="abbrev">Web Workers</abbr>]</a> の <code class="markup">epubReadingSystem</code> プロパティ拡張を定義していない。したがって、リーディング システムは、ワーカーのスクリプト コンテクストで <code class="markup">epubReadingSystem</code> オブジェクトの公開を必要とせず、製作者は、その存在に依存することはできない。</p>
 </div>
 </section>
 <section class="section" id="app-ers-desc">
@@ -1727,7 +1724,7 @@ partial interface Navigator {
 <p>現在のリーディング システムの名前を表示させる JavaScript の関数の例。</p>
 <pre class="synopsis">alert("Reading System name: " + navigator.epubReadingSystem.name);</pre>
 </div>
-<p>リーディング システムは、ネストされた<a class="link" href="#sec-scripted-content-type-container-constrained">コンテナ制約</a>のスクリプト コンテキストを包含する、ロードされた全てのスクリプト コンテント ドキュメントの <code class="markup">navigator</code> オブジェクト上に <code class="markup">epubReadingSystem</code> オブジェクトを公開しなければならない（<span class="rfc2119">must</span>）。リーディング システムは、<a class="ulink" href="https://www.w3.org/TR/html/syntax.html#the-end" target="_top"><code class="markup">DOMContentLoaded</code> イベントがトリガー</a> <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> されたときよりも遅延することなく、<code class="markup">epubReadingSystem</code> オブジェクトを利用できることを担保しなければならない（<span class="rfc2119">must</span>）。</p>
+<p>リーディング システムは、ネストされた<a class="link" href="#sec-scripted-content-type-container-constrained">コンテナ制約</a>のスクリプト コンテクストを包含する、ロードされた全てのスクリプト コンテント ドキュメントの <code class="markup">navigator</code> オブジェクト上に <code class="markup">epubReadingSystem</code> オブジェクトを公開しなければならない（<span class="rfc2119">must</span>）。リーディング システムは、<a class="ulink" href="https://www.w3.org/TR/html/syntax.html#the-end" target="_top"><code class="markup">DOMContentLoaded</code> イベントがトリガー</a> <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> されたときよりも遅延することなく、<code class="markup">epubReadingSystem</code> オブジェクトを利用できることを担保しなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="note">
 <h3 class="title">note</h3>
 <p>リーディング システムの実装は、技術的な実現可能性の理由から、スクリプト コンテンツ ドキュメント内に <code class="code">epubReadingSystem</code> オブジェクトの複製されたインスタンスを作るかもしれない。このような場合に、リーディング システムは、（そのプロパティとメソッドの値によって反映されるように）オブジェクトの状態が一貫してコピーされた全てのインスタンス間で維持されることを保証する必要がある。</p>
@@ -1768,7 +1765,7 @@ partial interface Navigator {
 <section class="section" id="app-ers-hasFeature-desc">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#app-ers-hasFeature-desc"> </a> </span>A.4.1.1 概要</h4>
 <p><code class="markup">hasFeature</code> メソッドは、指定された機能のいずれかのバージョンがサポートされているかどうかを示すブーリアン値、または指定した機能が認識されない場合は <code class="value">undefined</code> を返す。</p>
-<p>省略可能な（<span class="rfc2119">optional</span>) <code class="markup">version</code> パラメータは、時間とともに互換性のない方法で変更することができるカスタム機能を問い合わせるために包含されている。返り値は、機能の特定のバージョンのみサポートすることを示している。</p>
+<p>省略可能な（<span class="rfc2119">optional</span>) <code class="markup">version</code> パラメータは、時間とともに互換性のない方法で変更できるカスタム機能を問い合わせるために包含されている。返り値は、機能の特定のバージョンのみサポートすることを示している。</p>
 <p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>は、<a class="link" href="#app-ers-hasFeature-features" title="A.4.1.2 Features">この仕様に定義された機能</a>を問い合わせるとき、<code class="markup">version</code> パラメータを包含するべきではない（<span class="rfc2119">should not</span>）。これらの機能は、バージョンを持たないと見なされる。リーディング システムがこの仕様に定義された機能をサポートしない場合、全ての提供された <code class="markup">version</code> パラメータと <code class="value">true</code> 値の返りを無視しなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="informalexample">
