@@ -6,17 +6,19 @@
 <link rel="stylesheet" type="text/css" href="../css/epub-spec-2016.css"/>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/>
 <meta name="description" content="EPUB Open Container Format (OCF) 3.1 は、単一ファイルのコンテナにひとつ以上の EPUBR Publication を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義する。"/>
-<link rel="stylesheet" type="text/css" href="../css/translation-memo.css"/>
+<link rel="stylesheet" type="text/css" href="../css/translation-memo-2016.css"/>
 <meta charset="utf-8"/>
 <link rel="stylesheet" href="../../css/epub-print.css" type="text/css" media="print"/>
 </head>
 <body>
 <div class="translation-attention">
-<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-ocf-20160426.html">EPUB Open Container Format (OCF) 3.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/ocf">http://www.idpf.org/epub3/latest/ocf</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub/31/spec/epub-ocf-20160426.html">EPUB Open Container Format (OCF) 3.1</a> を参照されたい。</p>
+<p>この文書は「<a href="http://www.idpf.org/epub/31/spec/epub-ocf-20170105.html">EPUB Open Container Format (OCF) 3.1</a>」の日本語訳である。最新の文書は <a href="http://www.idpf.org/epub3/latest/ocf">http://www.idpf.org/epub3/latest/ocf</a> である。原文もしくは完全な情報は、 <a href="http://www.idpf.org/epub/31/spec/epub-ocf-20170105.html">EPUB Open Container Format (OCF) 3.1</a> を参照されたい。</p>
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
 <dt>公開日:</dt>
-<dd>2016-06-08</dd>
+<dd>2016年6月8日</dd>
+<dt>修正日:</dt>
+<dd>2017年2月20日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -25,22 +27,22 @@
 <header>
 <!--p><a href="http://www.idpf.org"><img src="../../images/idpflogo_web_125.jpg" class="logo" alt="IDPF"/></a></p-->
 <h1 class="title">EPUB Open Container Format (OCF) 3.1</h1>
-<p class="identity"><span class="pubdate">2016年4月26日</span> <span class="releaseinfo">Editor's Draft</span></p>
+<p class="identity"><span class="pubdate">2017年1月5日</span> <span class="releaseinfo">Recommended Specification</span></p>
 <dl class="printhistory"><dt>この版</dt>
-<dd><a href="http://www.idpf.org/epub/31/spec/epub-ocf-20160426.html">http://www.idpf.org/epub/31/spec/epub-ocf-20160426.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-ocf-20170105.html">http://www.idpf.org/epub/31/spec/epub-ocf-20170105.html</a></dd>
 <dt>最新版</dt>
 <dd><a href="http://www.idpf.org/epub3/latest/ocf">http://www.idpf.org/epub3/latest/ocf</a></dd>
 <dt>前の版</dt>
-<dd><a href="http://www.idpf.org/epub/301/spec/epub-ocf-20160130.html">http://www.idpf.org/epub/301/spec/epub-ocf-20160130.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/301/spec/epub-ocf-20161130.html">http://www.idpf.org/epub/301/spec/epub-ocf-20161130.html</a></dd>
 <dt>以前の勧告</dt>
-<dd><a href="http://www.idpf.org/epub/301/spec/epub-ocf-20140626.html">http://www.idpf.org/epub/301/spec/epub-ocf-20140626.html</a></dd>
+<dd><a href="http://www.idpf.org/epub/31/spec/epub-ocf-20140626.html">http://www.idpf.org/epub/31/spec/epub-ocf-20140626.html</a></dd>
 </dl>
 <div class="history">
 <span class="history-title">履歴</span>
 <ul>
 <li><a href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-ocf.xml">このドキュメントの変更</a></li>
-<li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed">このリビジョンで対処する課題</a></li>
-<li><a href="https://github.com/IDPF/epub-revision/issues">課題のレポート</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed+label%3ASpec-OCF">このリビジョンで取り上げられた課題</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues">課題の報告</a></li>
 <li><a href="./epub-ocf-errata/">正誤表</a></li>
 </ul>
 </div>
@@ -49,9 +51,8 @@
 <p class="editor">James Pritchett, Learning Ally (formerly Recording for the Blind &amp; Dyslexic)</p>
 <p class="editor">Markus Gylling, International Digital Publishing Forum (IDPF)</p>
 </div>
-<p class="formats">完全な EPUB 3.1 仕様は、<a href="http://www.idpf.org/epub/31/epub31.epub">EPUB 出版物</a>のようにダウンロードしてもまた利用できる。</p>
 <div class="legalnotice">
-<p>Copyright © 2010-2016 International Digital Publishing Forum™</p>
+<p>Copyright © 2010-2017 International Digital Publishing Forum™</p>
 <div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
 <p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
 <p>EPUBは International Digital Publishing Forum の登録商標である。</p>
@@ -61,12 +62,11 @@
 
 <section id="sotd">
 <h2>このドキュメントのステータス</h2>
-<p>このセクションでは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わることができる。</p>
-<p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成されたドラフトである。</p>
-<p>このドキュメントは安定しておらず、いつでも、更新や置き換えや、廃止されるかもしれない。ドラフトとしての発行は、IDPF メンバーシップまたは IDPF 理事会による承認を意味するものではない。ドキュメントは、進行中の作業としてのみ引用されるべきである。</p>
-<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">課題トラッカー</a>に提供することができる。</p>
-<p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。
-</p>
+<p>このセクションは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わるかもしれない。</p>
+<p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成された。</p>
+<p>このドキュメントは IDPF 会員によってレビューされ、勧告仕様として IDPF 理事会によって承認された。このドキュメントは安定しているとみなされ、他の仕様や文書から参照できる。</p>
+<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">イシュートラッカー</a>に提供できる。</p>
+<p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
 </section>
 
 <nav xmlns:spec="http://www.idpf.org/2016/epub/spec" class="toc" id="toc">
@@ -77,7 +77,7 @@
 <li><span class="section"><a href="#sec-overview-purpose-and-scope">1.1. 目的とスコープ</a></span></li>
 <li><span class="section"><a href="#sec-terminology">1.2. 用語</a></span></li>
 <li><span class="section"><a href="#sec-typography">1.3. 表記上の規則</a></span></li>
-<li><span class="section"><a href="#sec-conformance">1.4. 適合性宣言</a></span></li>
+<li><span class="section"><a href="#sec-conformance-statements">1.4. 適合性宣言</a></span></li>
 </ol>
 </li>
 <li><span class="chapter"><a href="#sec-ocf-conformance">2. OCF 適合性</a></span>
@@ -92,17 +92,17 @@
 <li><span class="section"><a href="#sec-container-file-and-dir-structure">3.2. ファイルとディレクトリの構造</a></span></li>
 <li><span class="section"><a href="#sec-container-iri">3.3. 他のコンポーネントを参照するための相対 IRI</a></span></li>
 <li><span class="section"><a href="#sec-container-filenames">3.4. ファイル名</a></span></li>
-<li><span class="section"><a href="#sec-container-metainf">3.5. META-INF ディレクトリ</a></span>
+<li><span class="section"><a href="#sec-container-metainf">3.5. <code class="filename">META-INF</code> ディレクトリ</a></span>
 <ol>
 <li><span class="section"><a href="#sec-container-metainf-inc">3.5.1. 導入</a></span></li>
 <li><span class="section"><a href="#sec-container-metainf-files">3.5.2. 予約済みファイル</a></span>
 <ol>
-<li><span class="section"><a href="#sec-container-metainf-container.xml">3.5.2.1. コンテナファイル</a></span></li>
-<li><span class="section"><a href="#sec-container-metainf-encryption.xml">3.5.2.2. 暗号化ファイル</a></span></li>
-<li><span class="section"><a href="#sec-container-metainf-manifest.xml">3.5.2.3. マニフェストファイル</a></span></li>
-<li><span class="section"><a href="#sec-container-metainf-metadata.xml">3.5.2.4. メタデータファイル</a></span></li>
-<li><span class="section"><a href="#sec-container-metainf-rights.xml">3.5.2.5. 著作権管理ファイル</a></span></li>
-<li><span class="section"><a href="#sec-container-metainf-signatures.xml">3.5.2.6. 電子署名ファイル</a></span></li>
+<li><span class="section"><a href="#sec-container-metainf-container.xml">3.5.2.1. コンテナファイル (<code class="filename" >container.xml</code>)</a></span></li>
+<li><span class="section"><a href="#sec-container-metainf-encryption.xml">3.5.2.2. 暗号化ファイル (<code class="filename" >encryption.xml</code>)</a></span></li>
+<li><span class="section"><a href="#sec-container-metainf-manifest.xml">3.5.2.3. マニフェストファイル (<code class="filename">manifest.xml</code>)</a></span></li>
+<li><span class="section"><a href="#sec-container-metainf-metadata.xml">3.5.2.4. メタデータファイル (<code class="filename">metadata.xml</code>)</a></span></li>
+<li><span class="section"><a href="#sec-container-metainf-rights.xml">3.5.2.5. 著作権管理ファイル (<code class="filename">rights.xml</code>)</a></span></li>
+<li><span class="section"><a href="#sec-container-metainf-signatures.xml">3.5.2.6. 電子署名ファイル (<code class="filename">signatures.xml</code>)</a></span></li>
 </ol>
 </li>
 </ol>
@@ -143,14 +143,15 @@
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview-purpose-and-scope"> </a> </span>1.1 目的とスコープ</h2>
 <p class="informative">このセクションは規定ではない。</p>
 <p>この仕様、EPUB Open Container Format (OCF) 3.1 は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-container" target="_top">EPUB コンテナ</a></span>という、単一ファイルのコンテナにひとつ以上の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB® 出版物</a></span>を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義する。</p>
-<p>この仕様書は、抽象的（<a class="link" href="#sec-container-abstract" title="3 OCF Abstract Container">抽象コンテナ</a>）なファイルコレクションを構造化のための規則と、ZIP アーカイブ（<a class="link" href="#sec-container-zip" title="4 OCF ZIP Container">ZIP コンテナ</a>）内のこの抽象コンテナを表現するための規則を定義する。ZIP コンテナのための規則は、<a class="biblioref" href="#refODF" title="Open Document Format for Office Applications (OpenDocument) v1.0">[<abbr class="abbrev">ODF</abbr>]</a> によって使用される ZIP 技術に基いて構築される。OCF は、この機能を必要とする EPUB 出版物のために、埋め込んだリソース、例えばフォントなどを難読化をする方法を定義する。</p>
-<p xml:lang="en">この仕様は、XML および Web 標準に基づいて、デジタル出版物の交換や配信形式を構成する EPUB 3.1 <span class="phrase"><a class="ulink" href="epub-spec.html#sec-epub-specs" target="_top">仕様のファミリー</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a></span> のひとつである。それは EPUB 3.1 を構成する他の仕様を読み、調和して理解されることになっている。</p>
-<p>この仕様は Open Container Format (OCF) 3.0.1 <a class="biblioref" href="#refOCF301" title="Open Container Format 3.0.1">[<abbr class="abbrev">OCF301</abbr>]</a> に取って代わる。この仕様書と前身の違いの詳細については <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3 Differences from EPUB 2.0.1">[<abbr class="abbrev">EPUB3Changes</abbr>]</a> を参照されたい。</p>
+<p>この仕様書は、抽象的（<a class="link" href="#sec-container-abstract" title="3 OCF Abstract Container">抽象コンテナ</a>）なファイルコレクションを構造化のための規則と、ZIP アーカイブ（<a class="link" href="#sec-container-zip" title="4 OCF ZIP Container">ZIP コンテナ</a>）内のこの抽象コンテナを表現するための規則を定義する。ZIP コンテナのための規則は、<a class="biblioref" href="#refODF" title="Open Document Format for Office Applications (OpenDocument) v1.0">[<abbr class="abbrev">ODF</abbr>]</a> によって使用される ZIP 技術に基づいて構築される。OCF は、この機能を必要とする EPUB 出版物のために、埋め込んだリソース、例えばフォントなどを難読化する方法を定義する。</p>
+<p xml:lang="en">この仕様は、XML および Web 標準に基づいて、デジタル出版物の交換や配信形式を構成する <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> の<span class="phrase"><a class="ulink" href="epub-spec.html#sec-epub-specs" target="_top">仕様群</a></span>のひとつである。これは EPUB 3.1 を構成する他の仕様を読み、調和して理解されることになっている。</p>
+<p>この仕様書と前身の違いの詳細については <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.1 Differences from EPUB 3.0.1">[<abbr class="abbrev">EPUB3 Changes</abbr>]</a> を参照されたい。</p>
 </section>
 
 <section class="section" id="sec-terminology">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.2 用語</h2>
-<p>EPUB 3.1 で固有の意味を持つ用語は、このドキュメントで利用される（例えば、「著者」や「リーディング システム」）。これら<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">用語と定義</a></span>の完全なリストは、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB31</abbr>]</a> で提供されている。</p>
+<p>EPUB 3.1 で固有の意味を持つ用語は、このドキュメントで利用される（例えば、「著者」や「リーディング システム」）。これら<span class="phrase"><a class="ulink" href="epub-spec.html#sec-terminology" target="_top">用語と定義</a></span>の完全なリストは、<a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> で提供されている。</p>
+<p>セクションにある用語の最初のインスタンスのみが、その定義にリンクされる。</p>
 <p>また、以下の用語は、この仕様で使用するために定義されている。</p>
 <div class="glosslist">
 <dl>
@@ -158,9 +159,13 @@
 <dd class="glossdef">
 <p>コーデックは、例えば、動画と音声メディア タイプなどを最適な圧縮のために設計され、また、最適化されたストリーミング機能を提供する、本質的なバイナリ形式の品質を持っているコンテンツを指す。</p>
 </dd>
+<dt class="glossentry" id="gloss-rendition-default"><span class="glossterm">初期設定のレンディション（Default Rendition）</span></dt>
+<dd class="glossdef">
+<p><a class="link" href="#sec-container-metainf-container.xml" title="3.5.2.1 Container File (container.xml)">container.xml</a> ファイルの最初の <code class="markup">rootfile</code> 要素に記載される<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>。</p>
+</dd>
 <dt class="glossentry" id="gloss-ocf-file-name"><span class="glossterm">ファイル名（File Name）</span></dt>
 <dd class="glossdef">
-<p>ディレクトリまたは <a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>内のディレクトリにある通常のファイルであろうとなかろうと、全てのファイルのタイプの名前。</p>
+<p>ディレクトリかディレクトリ内のファイルかにかかわらず、<a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>内にあるファイルの全てのタイプの名前。</p>
 </dd>
 <dt class="glossentry" id="gloss-non-codec"><span class="glossterm">非コーデック（Non-Codec）</span></dt>
 <dd class="glossdef">
@@ -181,7 +186,7 @@
 </dd>
 <dt class="glossentry" id="gloss-ocf-path-name"><span class="glossterm">パス名（Path Name）</span></dt>
 <dd class="glossdef">
-<p><a class="link" href="#sec-container-abstract" title="3 OCF Abstract Container">OCF 抽象コンテナ</a>内の特定のディレクトリのために、ディレクトリのファイル名を分離する <code class="literal">/</code>（<code class="codepoint">U+002F</code>）文字列で連結されたフルパスにある全てのディレクトリの<a class="glossterm" href="#gloss-ocf-file-name" title="File Name">ルート ディレクトリ</a>を保持する文字列。</p>
+<p><a class="link" href="#sec-container-abstract" title="3 OCF Abstract Container">OCF 抽象コンテナ</a>内の特定のディレクトリのために、ディレクトリのファイル名を分離する <code class="literal">/</code>（<code class="codepoint">U+002F</code>）文字列で連結されたフルパスにある全てのディレクトリの<a class="glossterm" href="#gloss-ocf-file-name" title="File Name">ファイル名</a>を保持する文字列。</p>
 <p>OCF 抽象コンテナ内の特定のファイルのために、パス名は、ファイルのファイル名の後に <code class="literal">/</code> 文字列に続く、ディレクトリのファイル名を分離する <code class="literal">/</code> 文字列で連結された全てのディレクトリのファイル名を保持する文字列である。</p>
 </dd>
 <dt class="glossentry" id="gloss-ocf-root-directory"><span class="glossterm">ルート ディレクトリ（Root Directory）</span></dt>
@@ -190,7 +195,6 @@
 </dd>
 </dl>
 </div>
-<p>セクション内にある最初の用語のインスタンスにだけが、その定義にリンクされている。</p>
 </section>
 
 <section xml:lang="en" class="section" id="sec-typography">
@@ -202,7 +206,7 @@
 <dd>
 <p>すべてのマークアップ（要素、属性、プロパティ）、コード（JavaScript、擬似コード）、機械可読可能な値（文字列、文字、メディアタイプ）とファイル名は、赤色の等幅フォントで示している。</p>
 </dd>
-<dt class="varlistentry"><span class="term"><code class="code-link">markup</code></span></dt>
+<dt class="varlistentry"><span class="term"><code class="code-link">markup link</code></span></dt>
 <dd>
 <p>マークアップとコードの定義へのリンクは、下線を引いた赤色の等幅フォントで示している。</p>
 </dd>
@@ -222,7 +226,7 @@
 <dd>
 <p><a class="xref" href="#sec-terminology" title="1.3 Terminology">用語集</a>で定義されている用語は、キャピタルケースで示している。</p>
 </dd>
-<dt class="varlistentry"><span class="term"><span class="link-def">Term</span></span></dt>
+<dt class="varlistentry"><span class="term"><span class="link-def">Term Link</span></span></dt>
 <dd>
 <p>用語の定義へのリンクはL、点線の青い下線である。</p>
 </dd>
@@ -230,7 +234,7 @@
 </div>
 <div class="elem-synopsis">
 <dl class="elem-synopsis" class="elem-synopsis">
-<dt class="varlistentry"><span class="term"/></dt>
+<dt class="varlistentry"><span class="term"></span></dt>
 <dd>
 <p>規範的な要素、属性とプロパティの定義は、青いボックスにある。</p>
 </dd>
@@ -249,10 +253,10 @@
 </div>
 </section>
 
-<section xml:lang="en" class="section" id="sec-conformance">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance"> </a> </span>1.4 適合性宣言</h2>
+<section xml:lang="en" class="section" id="sec-conformance-statements">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance-statements"> </a> </span>1.4 適合性宣言</h2>
 <p>この文書内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">may</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr class="abbrev">RFC2119</abbr>]</a> の記述に従って解釈される。</p>
-<p>この仕様のすべてのセクションは規定ある。但し"このセクションは有益な情報である"という参考情報状態ラベルで識別される箇所を除く。セクションと付録への参考情報状態の適用は、含まれる可能性のあるすべての子コンテンツおよびサブセクションに適用される。</p>
+<p>この仕様のすべてのセクションと付録は規定ある。但し"このセクションは有益な情報である"という参考情報状態ラベルで識別される箇所を除く。セクションと付録への参考情報状態の適用は、含まれる子コンテンツおよびサブセクションに適用される。</p>
 <p>この仕様のすべての例は規定ではない。</p>
 </section>
 
@@ -286,9 +290,8 @@
 <section class="section" id="sec-container-abstract-intro">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-abstract-intro"> </a> </span>3.1 導入</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p><a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>のファイル システムのモデルは、コンテンツのすべてに単一で共通の<a class="glossterm" href="#gloss-ocf-root-directory" title="Root Directory">ルート ディレクトリ</a>を使用する。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>の全てのローカル リソースは、ルート ディレクトリを先頭にしてディレクトリ ツリー内に配置されるが、この仕様によって強制される、それらのための特定のファイル システム構造はない。</p>
-<p>ファイル システムのモデルは、ルート ディレクトリの直接の子で、以下の特別なファイルを補完するに利用する <code class="filename">META-INF</code> という名前の必須ディレクトリを包含する：</p>
-
+<p><a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>のファイル システムのモデルは、コンテンツのすべてに単一で共通の<a class="glossterm" href="#gloss-ocf-root-directory" title="Root Directory">ルート ディレクトリ</a>を使用する。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>の全ての<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-local-resource" target="_top">ローカル リソース</a></span>は、ルート ディレクトリを先頭にしてディレクトリ ツリー内に配置されるが、この仕様によって強制される、それらのための特定のファイル システム構造はない。</p>
+<p>ファイル システムのモデルは、ルート ディレクトリの直接の子で、以下の特別なファイルを補完するに利用する <code class="filename">META-INF</code> という名前の必須ディレクトリを包含する。</p>
 <div class="variablelist">
 <dl class="variablelist">
 <dt class="varlistentry"><span class="term"><code class="filename">container.xml</code> <code class="option">[必須]</code> </span></dt>
@@ -296,7 +299,7 @@
 <dt class="varlistentry"><span class="term"><code class="filename">signatures.xml</code> <code class="option">[省略可]</code> </span></dt>
 <dd><p>様々な資産のためのデジタル署名が含まれている。</p></dd>
 <dt class="varlistentry"><span class="term"><code class="filename">encryption.xml</code> <code class="option">[省略可]</code> </span></dt>
-<dd><p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>の暗号化に関する情報が含まれている。（このファイルは、<a class="link" href="#sec-resource-obfuscation" title="5 Resource Obfuscation">難読化</a>をするとき、必要である。）</p></dd>
+<dd><p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>の暗号化に関する情報が含まれている。このファイルは、<a class="link" href="#sec-resource-obfuscation" title="5 Resource Obfuscation">難読化</a>をするとき、必須である。</p></dd>
 <dt class="varlistentry"><span class="term"><code class="filename">metadata.xml</code> <code class="option">[省略可]</code> </span></dt>
 <dd><p><a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a>に関するメタデータを格納するために使用する。</p></dd>
 <dt class="varlistentry"><span class="term"><code class="filename">rights.xml</code> <code class="option">[省略可]</code> </span></dt>
@@ -305,13 +308,12 @@
 <dd><p>オープン ドキュメント フォーマット <a class="biblioref" href="#refODF" title="Open Document Format for Office Applications (OpenDocument) v1.0">[<abbr class="abbrev">ODF</abbr>]</a> によって許可されるコンテナ コンテンツのマニフェスト。</p></dd>
 </dl>
 </div>
-<p><code class="filename">META-INF</code> ディレクトリの各ファイルのための適合性要件は、<a class="xref" href="#sec-container-metainf" title="3.5 The META-INF Directory">META-INF ディレクトリ</a>で定義されている。</p>
+<p><code class="filename">META-INF</code> ディレクトリの各ファイルのための適合性要件は、<a class="xref" href="#sec-container-metainf" title="3.5 META-INF Directory"><code class="filename">META-INF</code> ディレクトリ</a>で定義されている。</p>
 </section>
-
 <section class="section" id="sec-container-file-and-dir-structure">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-file-and-dir-structure"> </a> </span>3.2 ファイルとディレクトリの構造</h2>
 <p><a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>のための仮想ファイル システムは、コンテナのコンテンツのすべてに単一の共通の<a class="glossterm" href="#gloss-ocf-root-directory" title="Root Directory">ルート ディレクトリ</a>を持たなければならない（<span class="rfc2119">must</span>）。</p>
-<p>OCF 抽象コンテナは、コンテナのルート ディレクトリの直接の子である <code class="filename">META-INF</code> という名前のディレクトリを包含しなければならない（<span class="rfc2119">must</span>）。このディレクトリのコンテンツのための要件は、<a class="xref" href="#sec-container-metainf" title="3.5 The META-INF Directory">META-INF ディレクトリ</a> に記載されている。</p>
+<p>OCF 抽象コンテナは、コンテナのルート ディレクトリの直接の子である <code class="filename">META-INF</code> という名前のディレクトリを包含しなければならない（<span class="rfc2119">must</span>）。このディレクトリのコンテンツのための要件は、<a class="xref" href="#sec-container-metainf" title="3.5 META-INF Directory"><code class="filename">META-INF</code> ディレクトリ</a>に記載されている。</p>
 <p>ルート ディレクトリにあるファイル名の <code class="filename">mimetype</code> は、<a class="xref" href="#sec-container-zip" title="4 OCF ZIP Container"><em>OCF ZIP コンテナ</em></a>で説明されているとおり、<a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a>によって使用するために予約済みである。</p>
 <p>OCF 抽象コンテナ内の他の全てのファイルは、<code class="filename">META-INF</code> ディレクトリ内に存在せず提供され、ルート ディレクトリから任意の場所の子孫でもよい（<span class="rfc2119">may</span>）。</p>
 <p>EPUB 出版物のコンテンツは、ルート ディレクトリ配下の専用のディレクトリに格納されることを推奨する（<span class="rfc2119">recommended</span>）。</p>
@@ -324,15 +326,15 @@
 <p><a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>内のファイルは、相対 IRI 参照（<a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> と <a class="biblioref" href="#refRFC3986" title="Uniform Resource Identifier (URI): Generic Syntax (RFC 3986)">[<abbr class="abbrev">RFC3986</abbr>]</a>）経由して相互に参照しなければならない（<span class="rfc2119">must</span>）。</p>
 
 <div class="informalexample">
-<p>次の例は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>と同じディレクトリにあるファイル名 <code class="filename">image1.jpg</code> が、どのように <a class="biblioref" href="#refHTML5" title="HTML5: A vocabulary and associated APIs for HTML and XHTML">[<abbr class="abbrev">HTML5</abbr>]</a> の <code class="code">img</code> 要素から参照されるかを示している。</p>
+<p>次の例は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>と同じディレクトリにあるファイル名 <code class="filename">image1.jpg</code> が、どのように <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> の <code class="code">img</code> 要素から参照されるかを示している。</p>
 <pre class="synopsis">&lt;img src="image1.jpg" alt="…" /&gt;</pre>
 </div>
 
-<p>相対 IRI 参照は、ベース IRI <a class="biblioref" href="#refRFC3986" title="Uniform Resource Identifier (URI): Generic Syntax (RFC 3986)">[<abbr class="abbrev">RFC3986</abbr>]</a>  に与えられたファイル形式に関連のある言語仕様によって決定される。例えば、<a class="biblioref" href="#refCSS21" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">[<abbr class="abbrev">CSS2.1</abbr>]</a> は、CSS スタイルシートとプロパティ宣言のコンテクストでどのように相対 IRI 参照が動作するのかを定義する。</p>
+<p>相対 IRI 参照は、ベース IRI <a class="biblioref" href="#refRFC3986" title="Uniform Resource Identifier (URI): Generic Syntax (RFC 3986)">[<abbr class="abbrev">RFC3986</abbr>]</a>  に与えられたファイル形式に関連のある言語仕様によって決定される。例えば、CSS は、CSS スタイルシートとプロパティ宣言 <a class="biblioref" href="#refCSSSNAP" title="CSS Snapshot">[<abbr class="abbrev">CSS Snapshot</abbr>]</a> のコンテクストでどのように相対 IRI 参照が動作するのかを定義する。</p>
 <div class="note">
 <h3 class="title">note</h3>
 <p>
-いくつかの言語仕様は、先行する <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> の Requests For Comments (RFC) <a class="biblioref" href="#refRFC" title="Request for Comments">[<abbr class="abbrev">RFC</abbr>]</a> を参照し、その場合、以前の RFC は、特定の言語でコンテンツに適用される。</p>
+いくつかの言語仕様は、先行する <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> の リクエスト フォー コメンツ <a class="biblioref" href="#refRFC" title="Request for Comments">[<abbr class="abbrev">RFC</abbr>]</a> を参照し、その場合、以前の RFC は、特定の言語でコンテンツに適用される。</p>
 </div>
 
 <p>ほとんどの言語仕様とは異なり、<code class="filename">META-INF</code> ディレクトリ内の全てのファイルのためのベース IRI は、初期設定のベース IRI としてOCF 抽象コンテナの<a class="glossterm" href="#gloss-ocf-root-directory" title="Root Directory">ルート ディレクトリ</a>を使用する。</p>
@@ -342,7 +344,7 @@
 <pre class="synopsis">&lt;?xml version="1.0"?&gt;&#xD;
 &lt;container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;&#xD;
     &lt;rootfiles&gt;&#xD;
-        &lt;rootfile full-path="EPUB/Great Expectations.opf"&#xD;
+        &lt;rootfile full-path="EPUB/Great_Expectations.opf"&#xD;
             media-type="application/oebps-package+xml" /&gt;	&#xD;
     &lt;/rootfiles&gt;&#xD;
 &lt;/container&gt;&#xD;
@@ -350,18 +352,19 @@
 </div>
 
 <p>この場合、<code class="filename">EPUB/Great Expectations.opf</code> のパスは OCF 抽象コンテナのためのルートディレクトリから相対であり、<code class="filename">META-INF</code> ディレクトリからの相対ではない。</p>
+<p>全ての相対 IRI 参照は、OCF 抽象コンテナ内のリソース（すなわち、ルート ディレクトリ以下）を解決しなければならない（<span class="rfc2119">must</span>）。</p>
 
 </section>
 
 <section class="section" id="sec-container-filenames">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-filenames"> </a> </span>3.4 ファイル名</h2>
-<p>このセクションで説明された<a class="glossterm" href="#gloss-ocf-file-name" title="File Name">ルート ディレクトリ</a>の制約は、最も一般的に使用されているオペレーティング システム上で変更なしに使用されている<a class="glossterm" href="#gloss-ocf-path-name" title="Path Name">パス名</a>とファイル名を考慮にいれて設計されている。本仕様書は、OCF ファイルとパス名を表すことのできない <a class="glossterm" href="#gloss-ocf-processor" title="OCF Processor">OCF プロセッサ</a>の相互互換性を補う方法を指定しない。</p>
+<p>このセクションで説明された<a class="glossterm" href="#gloss-ocf-file-name" title="File Name">ファイル名</a>の制約は、最も一般的に使用されているオペレーティング システム上で変更なしに使用されている<a class="glossterm" href="#gloss-ocf-path-name" title="Path Name">パス名</a>とファイル名を考慮にいれて設計されている。本仕様書は、OCF ファイルとパス名を表すことのできない <a class="glossterm" href="#gloss-ocf-processor" title="OCF Processor">OCF プロセッサ</a>の相互互換性を補う方法を指定しない。</p>
 <p><a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>のコンテクストでは、<span id="ocf-fn-cs" class="phrase">ファイル名とパス名の大小文字を区別し</span>、次の基準を満たさなければならない（<span class="rfc2119">must</span>）：</p>
 <div class="conformance-list">
 <ul class="conformance-list" style="list-style-type: disc; ">
-<li class="listitem"><p id="ocf-fn-encoding"><span class="link-marker"><a class="hidden-reveal" href="#ocf-fn-encoding"> </a> </span>ファイル名は、UTF-8 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> でエンコードされていなければならない（<span class="rfc2119">must</span>）。</p></li>
+<li class="listitem"><p id="ocf-fn-encoding"><span class="link-marker"><a class="hidden-reveal" href="#ocf-fn-encoding"> </a> </span>ファイル名は、UTF-8 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> でエンコードしなければならない（<span class="rfc2119">must</span>）。</p></li>
 <li class="listitem"><p id="ocf-fn-length"><span class="link-marker"><a class="hidden-reveal" href="#ocf-fn-length"> </a> </span>ファイル名は、255バイトを超えてはならない（<span class="rfc2119">must not</span>）。</p></li>
-<li class="listitem"><p id="ocf-pn-length"><span class="link-marker"><a class="hidden-reveal" href="#ocf-pn-length"> </a> </span>OCF 抽象コンテナ内の任意のディレクトリまたはファイルのパス名は、65535バイトを超えてはならない（<span class="rfc2119">must not</span>）。</p></li>
+<li class="listitem"><p id="ocf-pn-length"><span class="link-marker"><a class="hidden-reveal" href="#ocf-pn-length"> </a> </span>OCF 抽象コンテナ内の任意のディレクトリまたはファイルのパス名は、65,535バイトを超えてはならない（<span class="rfc2119">must not</span>）。</p></li>
 <li class="listitem"><p id="ocf-fn-chars"><span class="link-marker"><a class="hidden-reveal" href="#ocf-fn-chars"> </a> </span>ファイル名は、これらの文字は、一般的に使用されるオペレーティング・システムの間で一貫してサポートされない場合があり、以下の <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> は使用してはならない（<span class="rfc2119">must not）</span>：</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: circle; ">
@@ -393,26 +396,26 @@
 
 <div class="note">
 <h3 class="title">note</h3>
-<p>いくつかの商用 ZIP ツールは、完全な Unicode の範囲をサポートしておらず、ファイル名のみ <a class="biblioref" href="#refUSASCII" title="&#34;Coded Character Set - 7-bit American Standard Code for Information Interchange&#34;, ANSI X3.4, 1986.">[<abbr class="abbrev">US-ASCII</abbr>]</a> の範囲のみサポートするかもしれない。これらの制限を持つ ZIP ツールを使うことを望む<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>は、<a class="biblioref" href="#refUSASCII" title="&#34;Coded Character Set - 7-bit American Standard Code for Information Interchange&#34;, ANSI X3.4, 1986.">[<abbr class="abbrev">US-ASCII</abbr>]</a> 範囲にこれらのファイル名を制限することが最善であることに気づくかもしれない。ファイルの名前は、解凍処理の中に保存することができない場合、そのファイルはコンテンツ内のURIにより参照されるときに行われた任意の名前に変換を相殺する必要がある。</p>
+<p>いくつかの商用 ZIP ツールは、完全な Unicode の範囲をサポートしておらず、ファイル名のみ <a class="biblioref" href="#refUSASCII" title="&#34;Coded Character Set - 7-bit American Standard Code for Information Interchange&#34;, ANSI X3.4, 1986.">[<abbr class="abbrev">US-ASCII</abbr>]</a> の範囲のみサポートするかもしれない。これらの制限を持つ ZIP ツールを使うことを望む<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>は、<a class="biblioref" href="#refUSASCII" title="&#34;Coded Character Set - 7-bit American Standard Code for Information Interchange&#34;, ANSI X3.4, 1986.">[<abbr class="abbrev">US-ASCII</abbr>]</a> 範囲にこれらのファイル名を制限することが最善であることに気づくだろう。ファイルの名前は、解凍処理の中に保存することができない場合、そのファイルはコンテンツ内のURIにより参照されるときに行われた任意の名前に変換を相殺する必要がある。</p>
 </div>
 </section>
 
 <section class="section" id="sec-container-metainf">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf"> </a> </span>3.5 META-INF ディレクトリ</h2>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf"> </a> </span>3.5 <code class="filename">META-INF</code> ディレクトリ</h2>
 <section class="section" id="sec-container-metainf-inc">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-inc"> </a> </span>3.5.1 導入</h3>
 <p>全ての <a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>は、それらの<a class="glossterm" href="#gloss-ocf-root-directory" title="Root Directory">ルート ディレクトリ</a>に <code class="filename">META-INF</code> と呼ばれるディレクトリを包含しなければならない（<span class="rfc2119">must</span>）。</p>
-<p>このディレクトリは、<a class="xref" href="#sec-container-metainf-files" title="3.5.2 Reserved Files">META-INF ファイル</a>で指定されたファイルを含む。そのセクションに記載されているもの以外のファイルは、<code class="filename">META-INF</code> ディレクトリに包含されてもよい（<span class="rfc2119">may</span>）。このようなファイルに遭遇したとき、<a class="glossterm" href="#gloss-ocf-processor" title="OCF Processor">OCF プロセッサ</a>は、機能しなくなってはならない（<span class="rfc2119">must not</span>）。</p>
+<p>このディレクトリは、<a class="xref" href="#sec-container-metainf-files" title="3.5.2 Reserved Files">META-INF 予約済みファイル</a>で指定されたファイルを含む。そのセクションに記載されているもの以外のファイルは、<code class="filename">META-INF</code> ディレクトリに包含されてもよい（<span class="rfc2119">may</span>）。このようなファイルに遭遇したとき、<a class="glossterm" href="#gloss-ocf-processor" title="OCF Processor">OCF プロセッサ</a>は、機能しなくなってはならない（<span class="rfc2119">must not</span>）。</p>
 </section>
 <section class="section" id="sec-container-metainf-files">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-files"> </a> </span>3.5.2 予約済みファイル</h3>
 <section class="section" id="sec-container-metainf-container.xml">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-container.xml"> </a> </span>3.5.2.1 コンテナ ファイル</h4>
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-container.xml"> </a> </span>3.5.2.1 コンテナ ファイル (<code class="filename">container.xml</code>)</h4>
 
-<p><code class="filename">META-INF</code> ディレクトリにある必須（<span class="rc2119">required</span>）の <code class="filename">container.xml</code> ファイルは、<a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-package" target="_top">EPUB パッケージ</a></span>を識別する。</p>
+<p><code class="filename">META-INF</code> ディレクトリにある必須の <code class="filename">container.xml</code> ファイルは、<a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>の <span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-package" target="_top">EPUB パッケージ</a></span>を識別する。</p>
 <p>このファイルのコンテンツは、（このような要素のすべての属性と内容を含む）他の名前空間から全ての要素と属性を取り除いた後に、<a class="xref" href="#app-schema-container" title="A.1 Schema for container.xml"><code class="filename">container.xml</code> のスキーマ</a>にあるスキーマに妥当でなければならない（<span class="rfc2119">must</span>）。</p>
 <p id="elemdef-container-rootfile">各 <code class="markup">rootfile</code> 要素は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>のひとつの<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition" target="_top">レンディション</a></span>を表している<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>の配置を特定しなければならない（<span class="rfc2119">must</span>）。</p>
-<p id="container-default-rendition">OCF プロセッサは、含まれている EPUB 出版物の初期設定のレンダリングを表現するために <code class="markup">rootfiles</code> 要素内の最初の <code class="markup">rootfile</code> 要素を考慮しなければならない（<span class="rfc2119">must</span>）。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">リーディング システム</a></span>は、初期設定のレンディションの表示は必須（<span class="rfc2119">required</span>）だが、コンテナ内の他のレンディションを表示してもよい（<span class="rfc2119">may</span>）。</p>
+<p id="container-default-rendition">OCF プロセッサは、含まれている EPUB 出版物の<a class="glossterm" href="#gloss-rendition-default" title="Default Rendition">初期設定のレンダリング</a>を表現するために <code class="markup">rootfiles</code> 要素内の最初の <code class="markup">rootfile</code> 要素を考慮しなければならない（<span class="rfc2119">must</span>）。<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">リーディング システム</a></span>は、初期設定のレンディションの表示は必須（<span class="rfc2119">required</span>）だが、コンテナ内の他のレンディションを表示してもよい（<span class="rfc2119">may</span>）。</p>
 
 <div class="informalexample">
 <p>以下のサンプルは、ルートファイルの <code class="filename">EPUB/My Crazy Life.opf</code>（パッケージ ドキュメント）を持つ EPUB 出版物のためのサンプル <code class="filename">container.xml</code> を示している：</p>
@@ -420,14 +423,14 @@
 <pre class="synopsis">&lt;?xml version="1.0"?&gt;&#xD;
 &lt;container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;&#xD;
     &lt;rootfiles&gt;&#xD;
-        &lt;rootfile full-path="EPUB/My Crazy Life.opf"&#xD;
+        &lt;rootfile full-path="EPUB/My_Crazy_Life.opf"&#xD;
             media-type="application/oebps-package+xml" /&gt;&#xD;
     &lt;/rootfiles&gt;&#xD;
 &lt;/container&gt;</pre>
 </div>
 
 <div class="informalexample">
-<p>以下のサンプルは、同じコンテナ内にバンドルされている <span class="emphasis"><em>The Sandman</em></span> の SVG と XHTMLのレンディションを示している：</p>
+<p>以下のサンプルは、同じコンテナ内にバンドルされている SVG と XHTMLのレンディションを示している：</p>
 
 <pre class="synopsis">&lt;?xml version="1.0"?&gt;&#xD;
 &lt;container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;&#xD;
@@ -439,19 +442,19 @@
     &lt;/rootfiles&gt;&#xD;
 &lt;/container&gt;</pre>
 </div>
-<p>省略可能な（<span class="rfc2119">optional</span>） <code class="markup" id="elemdef-container-links">links</code> 要素は、<a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a>の処理に必要なリソースを識別する。この要素の各 <code class="markup" id="elemdef-container-link">link</code> 要素の子は、値が、リソースの配置を識別する <code class="markup">href</code> 属性を包含しなければならない（<span class="rfc2119">must</span>）。各 <code class="markup">link</code> 要素は、値が、リソースの関係性を識別する <code class="markup">rel</code> 属性もまた包含しなければならず（<span class="rfc2119">must</span>）、値が、<code class="markup">link</code> によって参照されたリソースの種類と形式を指定するメディア タイプ <a class="biblioref" href="#refRFC2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types (RFC 2046)">[<abbr class="abbrev">RFC2046</abbr>]</a> でなければならない（<span class="rfc2119">must</span>） <code class="markup">media-type</code> 属性を包含してもよい（<span class="rfc2119">may</span>）。</p>
+<p>省略可能（<span class="rfc2119">optional</span>）な <code class="markup" id="elemdef-container-links">links</code> 要素は、<a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a>の処理に必要なリソースを識別する。その子 <code class="markup" id="elemdef-container-link">link</code> 要素のそれぞれは、値が、リソースの配置を識別する <code class="markup">href</code> 属性を包含しなければならない（<span class="rfc2119">must</span>）。各 <code class="markup">link</code> 要素は、値が、リソースの関係性を識別する <code class="markup">rel</code> 属性もまた包含しなければならず（<span class="rfc2119">must</span>）、値が、<code class="markup">link</code> によって参照されたリソースの種類と形式を指定するメディア タイプ <a class="biblioref" href="#refRFC2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types (RFC 2046)">[<abbr class="abbrev">RFC2046</abbr>]</a> でなければならない（<span class="rfc2119">must</span>） <code class="markup">media-type</code> 属性を包含してもよい（<span class="rfc2119">may</span>）。</p>
 <p><code class="markup">rootfile</code> 要素の <code class="markup">full-path</code> 属性と <code class="markup">link</code> 要素の <code class="markup">href</code> 属性の値は、<em class="firstterm" id="def-path-component">path component</em> <a class="biblioref" href="#refRFC3986" title="Uniform Resource Identifier (URI): Generic Syntax (RFC 3986)">[<abbr class="abbrev">RFC3986</abbr>]</a> を含まなければならなず（<span class="rfc2119">must</span>）、要は、<em class="firstterm" id="def-path-rootless">path-rootless</em> <a class="biblioref" href="#refRFC3986" title="Uniform Resource Identifier (URI): Generic Syntax (RFC 3986)">[<abbr class="abbrev">RFC3986</abbr>]</a> の形式のみから得なければならない（<span class="rfc2119">must</span>）。path component は、<a class="glossterm" href="#gloss-ocf-root-directory" title="Root Directory">ルート ディレクトリ</a>に相対的である。</p>
-<p><a class="glossterm" href="#gloss-ocf-processor" title="OCF Processor">OCF Processor</a> は <code class="filename">container.xml</code> ファイル内にある外部の要素と属性を無視しなければならない（<span class="rfc2119">must</span>）。</p>
+<p><a class="glossterm" href="#gloss-ocf-processor" title="OCF Processor">OCF プロセッサ</a>は、<code class="filename">container.xml</code> ファイル内にある外部の要素と属性を無視しなければならない（<span class="rfc2119">must</span>）。</p>
 </section>
 
 <section class="section" id="sec-container-metainf-encryption.xml">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-encryption.xml"> </a> </span>3.5.2.2 暗号化ファイル</h4>
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-encryption.xml"> </a> </span>3.5.2.2 暗号化ファイル (<code class="filename">encryption.xml</code>)</h4>
 <p><code class="filename">META-INF</code> ディレクトリ内にある省略可能（<span class="rfc2119">optional</span>）な <code class="filename">encryption.xml</code> ファイルは、コンテナのコンテンツの全ての暗号化情報を保持する。コンテナ内の任意のリソースが暗号化されているとき、<code class="filename">encryption.xml</code> は、リソースが暗号化されていることを示し、暗号化されている方法の情報を提供するために存在していなければならない（<span class="rfc2119">must</span>）。</p>
 <p>このファイルは、ルート要素の <code class="markup" id="elemdef-encryption-encryption">encryption</code> の XML 文書である。<code class="markup">encryption</code> 要素は、<a class="biblioref" href="#refXMLENCCORE" title="XML Encryption Syntax and Processing Version 1.1">[<abbr class="abbrev">XML ENC Core</abbr>]</a> で定義されている <code class="markup">EncryptedKey</code> と <code class="markup">EncryptedData</code> 型の子要素を含む。<code class="markup" id="elemdef-encryption-EncryptedKey">EncryptedKey</code> 要素が、暗号化された各ファイルを説明するのと同時に、<code class="markup" id="elemdef-encryption-EncryptedData">EncryptedData</code> 要素は、コンテナ内で使用される各暗号化キーを説明する。各 <code class="markup">EncryptedData</code> 要素は、XML Encryption で説明されているように、<code class="markup">EncryptedKey</code> 要素を参照する。</p>
 <p><code class="filename">encryption.xml</code> ファイルのコンテンツは、<a class="xref" href="#app-schema-encryption" title="A.2 Schema for encryption.xml"><code class="filename">encryption.xml</code> のスキーマ</a>のスキーマに妥当でなければならない（<span class="rfc2119">must</span>）。</p>
 <p>OCF は、独立して個々のファイルを暗号化し、これらはセキュリティとパフォーマンスのトレードオフだが、コンテナのコンテンツは一つ一つ復号化される。この方法による暗号化は、パッケージ全体のディレクトリの構造とファイルの命名を公開する。</p>
 <p>OCF は、様々なアルゴリズムを使用できるように、暗号化のフレームワークを提供する XML Encryption <a class="biblioref" href="#refXMLENCCORE" title="XML Encryption Syntax and Processing Version 1.1">[<abbr class="abbrev">XML ENC Core</abbr>]</a> を使用する。XML Encryption は、任意のデータを暗号化し、結果を XML で表現するための処理を規定している。<a class="glossterm" href="#gloss-abstract-container" title="OCF Abstract Container">OCF 抽象コンテナ</a>は、非 XML データが含まれてもよく、XML Encryption は、OCF 抽象コンテナに含まれるすべてのデータを暗号化するために使用できる。OCF 暗号化は、コンテナ内のファイル全体のみをサポートし、ファイルの一部の暗号化はサポートしない。<code class="filename">encryption.xml</code> ファイルは、もし存在するなら、暗号化はしてはならない（<span class="rfc2119">must not</span>）。</p>
-<p>暗号化データは、OCF 抽象コンテナ内の非暗号化データを置き換える。例えば、<code class="filename">photo.jpeg</code> という名前の画像が暗号化されているとき、<code class="filename">photo.jpeg</code> リソースのコンテンツは、その暗号化されたコンテンツにより置き換えられるべきである（<span class="rfc2119">should</span>）。ZIP ディレクトリ内では、暗号化されたフィルは、デフレートで圧縮するよりは、むしろ格納するべきである（<span class="rfc2119">should</span>）。</p>
+<p id="encryption-obfuscation">暗号化データは、OCF 抽象コンテナ内の非暗号化データを置き換える。例えば、<code class="filename">photo.jpeg</code> という名前の画像が暗号化されているとき、<code class="filename">photo.jpeg</code> リソースのコンテンツは、その暗号化されたコンテンツにより置き換えられるべきである（<span class="rfc2119">should</span>）。ZIP ディレクトリ内では、暗号化されたフィルは、デフレートで圧縮するよりは、むしろ格納するべきである（<span class="rfc2119">should</span>）。</p>
 <p>状況によっては、"親" の EPUB 出版物に繋ぎ、（例えば、フォントなどを）無制限に使用するための抽出をより困難にするために、<span class="phrase"><a class="glossterm" href="#gloss-rendition" target="_top">レンディション</a></span>によって参照される埋め込みリソースのストレージを難読化する必要があることに注意されたい。難読化は暗号化ではないので、<code class="filename">encryption.xml</code> ファイルは、それらを使用する前に、難読化解除に必要なリソースを識別するために <a class="link" href="epub-spec.html#sec-resource-obfuscation" title="5 Resource Obfuscation">IDPF リソース難読化アルゴリズム</a>と共に使用される。</p>
 <p id="encryption-restrictions">以下のファイルは、初期設定か特定の暗号化が求められているかどうかに関わらず暗号化してはならない（<span class="rfc2119">must not</span>）：</p>
 
@@ -486,7 +489,7 @@
 
 <div class="informalexample">
 
-<p>次の例では、<a class="biblioref" href="#refXMLENCCORE" title="XML Encryption Syntax and Processing Version 1.1">[<abbr class="abbrev">XML ENC Core</abbr>]</a> の<a class="ulink" href="http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/#sec-eg-Symmetric-Key" target="_top">セクション 2.2.1 </a> から適合したリソース <code class="filename">image.jpeg</code> は、対象鍵アルゴリズム (AES) を使用する暗号化と、対象鍵は、ジョン・スミスのキーを持つ非対称鍵アルゴリズム (RSA) を使用してさらに暗号化される。</p>
+<p>次の例では、<a class="biblioref" href="#refXMLENCCORE" title="XML Encryption Syntax and Processing Version 1.1">[<abbr class="abbrev">XML ENC Core</abbr>]</a> の<a class="ulink" href="https://www.w3.org/TR/2002/REC-xmlenc-core-20021210/#sec-eg-Symmetric-Key" target="_top">セクション 2.2.1 </a> から適合したリソース <code class="filename">image.jpeg</code> は、対象鍵アルゴリズム (AES) を使用する暗号化と、対象鍵は、ジョン・スミスのキーを持つ非対称鍵アルゴリズム (RSA) を使用してさらに暗号化される。</p>
 
 <pre class="synopsis">&lt;encryption&#xD;
     xmlns ="urn:oasis:names:tc:opendocument:xmlns:container"&#xD;
@@ -517,10 +520,6 @@
 <p>ZIP コンテナに格納されているとき、<a class="glossterm" href="#gloss-non-codec" title="Non-Codec">非コーデック</a>のコンテンツ タイプであるデータのストリームは、それらが圧縮される前に暗号化されるべきで（<span class="rfc2119">should</span>）、デフレート圧縮が使用されなければならない（<span class="rfc2119">must</span>）。この方法は、ZIP コンテナに格納されるファイル エントリが小さなサイズであることを保証する。</p>
 <p><a class="glossterm" href="#gloss-codec" title="Codec">コーデック</a>のコンテンツ タイプであるデータのストリームは、それらが暗号化される前に圧縮されるべきではない（<span class="rfc2119">should not</span>）。このような場合、追加の圧縮は、（特に大きなリソース ファイルを含む）制作時におけるオーバーヘッドの不要な処理を取り込むだろうし、消費時における音声/動画の再生パフォーマンスに影響を与えるであろう。場合によっては、いくつかの暗号化スキームを伴う圧縮の組み合わせは、（例えば、HTTP Content-Length header など）メディアの再生に先んじて完全なリソースの長さを決定することが技術的に不可能なために、（例えば、HTTP byte ranges など）部分的なコンテンツの要求を処理するリーディング システムの能力を損なうかもしれない</p>
 <p>暗号化する前に圧縮されたデータのストリームは、次で定義されている <code class="markup">Compression</code> XML 要素に従って、初期リソースのサイズ（すなわち、圧縮と暗号化する前）を指定する、追加の <code class="markup">EncryptionProperties</code> メタデータを提供するべきである（<span class="rfc2119">should</span>）。暗号化する前に圧縮されていないデータのストリームは、初期リソースのサイズ（すなわち、暗号化する前）を指定する、追加の <code class="markup">EncryptionProperties</code> メタデータを提供してもよい（<span class="rfc2119">may</span>）。</p>
-<div class="issue">
-<h6 id="encryption-stream-metadata"> OPEN ISSUE 1</h6>
-<p>ストリームが、追加のメタデータを提供「するべき」か「しなければならない」かは、更なる調査が必要である。詳細は、<a class="ulink" href="https://github.com/IDPF/epub-revision/issues/697" target="_top">Issue 697</a> を見よ。</p>
-</div>
 <div class="elem-synopsis" id="elemdef-enc-Compression">
 <dl class="elem-synopsis">
 <dt class="varlistentry"><span class="term">要素名</span></dt>
@@ -533,7 +532,7 @@
 </dd>
 <dt class="varlistentry"><span class="term">使用例</span></dt>
 <dd>
-<p>省略可能な <code class="markup">EncryptionProperty</code> の子。</p>
+<p>省略可能（<span class="rfc2119">Optional</span>）な <code class="markup">EncryptionProperty</code> の子。</p>
 </dd>
 <dt class="varlistentry"><span class="term">属性</span></dt>
 <dd>
@@ -560,61 +559,62 @@
 </div>
 <div class="informalexample">
 <p>次の例は、デフレート圧縮され、元のサイズが 3500000 バイトの MP4 ファイルを示している。</p>
-<pre class="synopsis">&lt;encryption xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;
-    &lt;enc:EncryptedData xmlns:enc="http://www.w3.org/2001/04/xmlenc#"&gt;
-        ...
-        &lt;enc:CipherData&gt;
-            &lt;enc:CipherReference URI="OEPBS/video.mp4"/&gt;
-        &lt;/enc:CipherData&gt;
-        &lt;enc:EncryptionProperties&gt;
-            &lt;enc:EncryptionProperty xmlns:ns="http://www.idpf.org/2016/encryption#compression"&gt;
-                &lt;ns:Compression Method="8" OriginalLength="3500000"/&gt;
-            &lt;/enc:EncryptionProperty&gt;
-        &lt;/enc:EncryptionProperties&gt;
-        ...
-    &lt;/enc:EncryptedData&gt;
+<pre class="synopsis">&lt;encryption xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;&#xD;
+    &lt;enc:EncryptedData xmlns:enc="http://www.w3.org/2001/04/xmlenc#"&gt;&#xD;
+        ...&#xD;
+        &lt;enc:CipherData&gt;&#xD;
+            &lt;enc:CipherReference URI="OEPBS/video.mp4"/&gt;&#xD;
+        &lt;/enc:CipherData&gt;&#xD;
+        &lt;enc:EncryptionProperties&gt;&#xD;
+            &lt;enc:EncryptionProperty xmlns:ns="http://www.idpf.org/2016/encryption#compression"&gt;&#xD;
+                &lt;ns:Compression Method="8" OriginalLength="3500000"/&gt;&#xD;
+            &lt;/enc:EncryptionProperty&gt;&#xD;
+        &lt;/enc:EncryptionProperties&gt;&#xD;
+        ...&#xD;
+    &lt;/enc:EncryptedData&gt;&#xD;
 &lt;/encryption&gt;</pre>
 </div>
 </section>
 
 <section class="section" id="sec-container-metainf-manifest.xml">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-manifest.xml"> </a> </span>3.5.2.3 マニフェスト ファイル</h4>
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-manifest.xml"> </a> </span>3.5.2.3 マニフェスト ファイル (<code class="filename">manifest.xml</code>)</h4>
 <p><code class="filename">META-INF</code> ディレクトリの省略可能（<span class="rfc2119">optional</span>）な <code class="filename">manifest.xml</code> ファイルは、コンテナ内にあるファイルのマニフェストを提供する。</p>
-<p>OCF 仕様は、マニフェストに必要な形式を指定しない。</p>
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>に含まれる <code class="markup">manifest</code> 要素は、規定のレンディションを処理するために使用される、ただひとつのマニフェストを識別することに注意されたい。ZIP アーカイブもしくはオプションの <code class="filename">manifest.xml</code> に含まれている補助的なマニフェスト情報は、レンディションを処理するために使用してはならない（<span class="rfc2119">must not</span>）。</p>
+<p>OCF 仕様は、マニフェストにメタデータ形式を指定しない。</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>に含まれる <code class="markup">manifest</code> 要素は、規定のレンディションを処理するために使用される、ただひとつのマニフェストを識別することに注意されたい。ZIP アーカイブもしくは省略可能（<span class="rfc2119">optional</span>）な <code class="filename">manifest.xml</code> に含まれている補助的なマニフェスト情報は、レンディションを処理するために使用してはならない（<span class="rfc2119">must not</span>）。</p>
 </section>
 
 <section class="section" id="sec-container-metainf-metadata.xml">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-metadata.xml"> </a> </span>3.5.2.4 メタデータ ファイル</h4>
-<p><code class="filename">META-INF</code> ディレクトリに省略可能な（<span class="rfc2119">optional</span>） <code class="filename">META-INF/metadata.xml</code> ファイルが、もし存在するなら、コンテナレベルのメタデータのために使用しなければならない（<span class="rfc2119">must</span>）。</p>
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-metadata.xml"> </a> </span>3.5.2.4 メタデータ ファイル (<code class="filename">metadata.xml</code>)</h4>
+<p><code class="filename">META-INF</code> ディレクトリに省略可能（<span class="rfc2119">optional</span>）な <code class="filename">META-INF/metadata.xml</code> ファイルが、もし存在するなら、コンテナレベルのメタデータのために使用しなければならない（<span class="rfc2119">must</span>）。</p>
 <p><code class="filename">metadata.xml</code> ファイルが存在するとき、そのコンテンツは、名前空間で装飾された要素 <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr class="abbrev">XMLNS</abbr>]</a> のみにするべきである（<span class="rfc2119">should</span>）。ファイルは、名前空間 <code class="uri">http://www.idpf.org/2013/metadata</code> のルート要素 <code class="markup">metadata</code> を含むべきだが（<span class="rfc2119">should</span>）、他のルート要素は、後方互換性のために許可する。リーディング システムは、認識されていないルート要素を持つ <code class="filename">metadata.xml</code> ファイルを無視するべきである（<span class="rfc2119">should</span>）。</p>
 <p>OCF 仕様のこのバージョンは、<code class="filename">metadata.xml</code> ファイルで使用するためのメタデータを定義しない。コンテナ レベルのメタデータは、この仕様の将来のバージョンと IDPF が定義する EPUB 拡張仕様で定義してもよい（<span class="rfc2119">may</span>）。</p>
 </section>
 
 <section class="section" id="sec-container-metainf-rights.xml">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-rights.xml"> </a> </span>3.5.2.5 著作権管理ファイル</h4>
-<p><code class="filename">META-INF</code> ディレクトリの省略可能な（<span class="rfc2119">optional</span>）<code class="filename">rights.xml</code> ファイルは、権利者、仲介者、そして利用者の間で EPUB 出版物の交換のための信頼できるデジタル著作権管理 (DRM) 情報のために予約されている。</p>
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-rights.xml"> </a> </span>3.5.2.5 著作権管理ファイル (<code class="filename">rights.xml</code>)</h4>
+<p><code class="filename">META-INF</code> ディレクトリの省略可能（<span class="rfc2119">optional</span>）な <code class="filename">rights.xml</code> ファイルは、権利者、仲介者、そして利用者の間で EPUB 出版物の交換のための信頼できるデジタル著作権管理 (DRM) 情報のために予約されている。</p>
 <p>OCF 仕様のこのバージョンでは、DRM 情報に特定の形式を要求しないが、将来のバージョンでは、そうするかもしれない。<code class="filename">rights.xml</code> ファイルのコンテンツは、将来の形式との衝突を回避するために、名前空間で装飾された要素 <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr class="abbrev">XMLNS</abbr>]</a> のみにするべきである（<span class="rfc2119">should</span>）。</p>
+<p><code class="filename">rights.xml</code> ファイルが存在しないとき、コンテナの何れの部分も、コンテナ レベルで管理される権利はない。権利の表現は、含まれているレンディション内に存在するかもしれない。</p>
 <p><code class="filename">rights.xml</code> ファイルが存在しない場合、OCF 抽象コンテナのいかなる部分も権利に抑制されない。</p>
 </section>
 
 <section class="section" id="sec-container-metainf-signatures.xml">
-<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-signatures.xml"> </a> </span>3.5.2.6 電子署名ファイル</h4>
-<p><code class="filename">META-INF</code> ディレクトリ内の省略可能な（<span class="rfc2119">optional</span>） <code class="filename">signatures.xml</code> ファイルは、コンテナとコンテンツのための電子署名を保持する。このファイルのコンテンツは、<a class="xref" href="#app-schema-signatures" title="A.3 Schema for signatures.xml"><code class="filename">signatures.xml</code> のスキーマ</a>のスキーマに妥当でなければならない（<span class="rfc2119">must</span>）。</p>
+<h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-container-metainf-signatures.xml"> </a> </span>3.5.2.6 電子署名ファイル (<code class="filename">signatures.xml</code>)</h4>
+<p><code class="filename">META-INF</code> ディレクトリ内の省略可能（<span class="rfc2119">optional</span>）な <code class="filename">signatures.xml</code> ファイルは、コンテナとコンテンツのための電子署名を保持する。このファイルのコンテンツは、<a class="xref" href="#app-schema-signatures" title="A.3 Schema for signatures.xml"><code class="filename">signatures.xml</code> のスキーマ</a>のスキーマに妥当でなければならない（<span class="rfc2119">must</span>）。</p>
 <p><code class="filename">signatures.xml</code> ファイルのルート要素は、<code class="markup">signatures</code> 要素である。この要素は、<a class="biblioref" href="#refXMLDSIGCORE" title="XML-Signature Syntax and Processing Version 1.1">[<abbr class="abbrev">XML DSIG Core</abbr>]</a> で定義されているように <code class="markup">Signature</code> 型の子要素を含んでいる。署名は、全体または部分的に、EPUB 出版物へ適用でき、（XML だけでなく）あらゆる種類のデータの署名を特定することができる。</p>
-<p><code class="filename">signatures.xml</code> ファイルが存在しないとき、コンテナのいかなる部分もコンテナ レベルで電子的に署名されていないが、電子署名は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>内に存在するかもしれない。</p>
-<p>データの署名がコンテナのために作られるとき、新しい署名は、<code class="markup">signatures</code> 要素の最後の子 <code class="markup">Signature</code> 要素として追加されるべきである（<span class="rfc2119">should</span>）。</p>
+<p><code class="filename">signatures.xml</code> ファイルが存在しないとき、コンテナのいかなる部分もコンテナ レベルで電子的に署名されていない。電子署名は、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-publication" target="_top">EPUB 出版物</a></span>内に存在するかもしれない。</p>
+<p id="sig-container">データの署名がコンテナのために作られるとき、署名は、<code class="markup">signatures</code> 要素の最後の子 <code class="markup">Signature</code> 要素として追加されるべきである（<span class="rfc2119">should</span>）。</p>
 
 <div class="note">
 <h3 class="title">note</h3>
-<p><code class="filename">signatures.xml</code> ファイルの各 <code class="markup">Signature</code> は、<a class="biblioref" href="#refXMLDSIGCORE" title="XML-Signature Syntax and Processing Version 1.1">[<abbr class="abbrev">XML DSIG Core</abbr>]</a> の <code class="markup">Manifest</code> 要素とその <code class="markup">Reference</code> サブ要素を使用して、IRI の署名が適用されるデータによって識別される。単一で含まれるファイルは、個々にまたは統合して署名してもよい。個々に署名された各ファイルは、独立して検証できるリソースのダイジェスト値が作られる。このアプローチでは、Signature 要素が大きくなってもよい。ファイルが統合して署名されるとき、署名されたファイルのセットは、単一の XML 署名の <code class="markup">Manifest</code> 要素のリスト化され、一つ以上の <code class="markup">Signature</code> 要素によって参照することができる。</p>
+<p><code class="filename">signatures.xml</code> ファイルの各 <code class="markup">Signature</code> は、<a class="biblioref" href="#refXMLDSIGCORE" title="XML-Signature Syntax and Processing Version 1.1">[<abbr class="abbrev">XML DSIG Core</abbr>]</a> の <code class="markup">Manifest</code> 要素とその <code class="markup">Reference</code> サブ要素を使用して、IRI の署名が適用されるデータによって識別される。単一で含まれるファイルは、個々にまたは統合して署名されるかもしれない。個々に署名された各ファイルは、独立して検証できるリソースのダイジェスト値が作られる。このアプローチでは、署名の要素が大きくなってもよい。ファイルが統合して署名されるとき、署名されたファイルのセットは、単一の XML 署名の <code class="markup">Manifest</code> 要素のリスト化され、一つ以上の <code class="markup">Signature</code> 要素によって参照することができる。</p>
 </div>
 
-<p>コンテナの任意または全てのファイルは、計算された署名情報を含んでいる <code class="filename">signatures.xml</code> ファイルを除外して、全体を署名することができる。<code class="filename">signatures.xml</code> ファイルを署名するべきか、またその署名方法は、署名者の目的に依存するべきである。</p>
+<p id="sig-restrictions">コンテナの任意または全てのファイルは、計算された署名情報を含んでいる <code class="filename">signatures.xml</code> ファイルを除外して、全体を署名することができる。<code class="filename">signatures.xml</code> ファイルを署名するべきか、またその署名方法は、署名者の目的に依存する。</p>
 
 <p>署名者が、署名者の署名を無効にせずにコンテナに署名を追加したり削除したりできるようにしたい場合は、<code class="filename">signatures.xml</code> ファイルに署名するべきではない（<span class="rfc2119">should not</span>）。</p>
 
-<p>署名者が、署名の任意の追加または削除をしたときに署名者の署名を無効にしたい場合は、<a class="biblioref" href="#refXMLDSIGCORE" title="XML-Signature Syntax and Processing Version 1.1">[<abbr class="abbrev">XML DSIG Core</abbr>]</a> の<a class="ulink" href="http://www.w3.org/TR/2008/REC-xmldsig-core-20080610/#sec-EnvelopedSignature" target="_top">セクション 6.6.4</a> で定義されている エンベロープ署名変換を作成済みの <code class="markup">Signature</code> を除いた全体の既存の署名ファイルに署名するために使用することができる。この変換は、既存の全ての署名を署名できるだろうが、パッケージに後で署名が追加されると無効になる。</p>
+<p>署名者が、署名の任意の追加または削除をしたときに署名者の署名を無効にしたい場合は、<a class="biblioref" href="#refXMLDSIGCORE" title="XML-Signature Syntax and Processing Version 1.1">[<abbr class="abbrev">XML DSIG Core</abbr>]</a> の<a class="ulink" href="https://www.w3.org/TR/2008/REC-xmldsig-core-20080610/#sec-EnvelopedSignature" target="_top">セクション 6.6.4</a> で定義されている エンベロープ署名変換を作成済みの <code class="markup">Signature</code> を除いた全体の既存の署名ファイルに署名するために使用することができる。この変換は、既存の全ての署名を署名できるだろうが、パッケージに後で署名が追加されると無効になる。</p>
 
 <div class="note">
 <h3 class="title">note</h3>
@@ -626,7 +626,7 @@
 
 <div class="informalexample">
 
-<p>以下の XML 表現は、<code class="filename">signatures.xml</code> フィルの例のコンテンツを示し、<a class="biblioref" href="#refXMLDSIGCORE" title="XML-Signature Syntax and Processing Version 1.1">[<abbr class="abbrev">XML DSIG Core</abbr>]</a> の<a class="ulink" href="http://www.w3.org/TR/2008/REC-xmldsig-core-20080610/#sec-Overview" target="_top">セクション 2</a> で見つかるサンプルを基にしている。それはコンテナに、一つの署名を含んでおり、署名は、<code class="filename">EPUB/book.xhtml</code> と <code class="filename">EPUB/images/cover.jpeg</code> の二つのリソースに提供される。</p>
+<p>以下の XML 表現は、<code class="filename">signatures.xml</code> フィルの例のコンテンツを示し、<a class="biblioref" href="#refXMLDSIGCORE" title="XML-Signature Syntax and Processing Version 1.1">[<abbr class="abbrev">XML DSIG Core</abbr>]</a> の<a class="ulink" href="https://www.w3.org/TR/2008/REC-xmldsig-core-20080610/#sec-Overview" target="_top">セクション 2</a> で見つかるサンプルを基にしている。それはコンテナに、一つの署名を含んでおり、署名は、<code class="filename">EPUB/book.xhtml</code> と <code class="filename">EPUB/images/cover.jpeg</code> の二つのリソースに提供される。</p>
 
 <pre class="synopsis">&lt;signatures xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;&#xD;
     &lt;Signature Id="sig" xmlns="http://www.w3.org/2000/09/xmldsig#"&gt;&#xD;
@@ -691,7 +691,7 @@
 <p>流通や販売チャンネルに出版社や変換業者（conversion house）から EPUB 出版物を提供し、そして、</p>
 </li>
 <li class="listitem">
-<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>や<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-user" target="_top">読者</a></span>に EPUB 出版物を配信するため、</p>
+<p><span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>やユーザーに EPUB 出版物を配信するため、</p>
 </li>
 </ul>
 <p>に使用される。</p>
@@ -721,7 +721,7 @@
 <p id="confreq-zip-64"><span class="link-marker"><a class="hidden-reveal" href="#confreq-zip-64"> </a> </span>OCF ZIP コンテナは、アプリケーションノート <a class="biblioref" href="#refZIP" title="ZIP File Format Specification">[<abbr class="abbrev">ZIP APPNOTE 6.3.3</abbr>]</a> のサブセクション G に、セクション V の「Version 1」として定義されている ZIP64 拡張を使用してもよく（<span class="rfc2119">may</span>）、コンテンツがそれらを要求するとき、それらの拡張のみ使用するべきである（<span class="rfc2119">should</span>）。OCF プロセッサは、「Version 1」として定義されている ZIP64 拡張をサポートしなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
-<p id="confreq-zip-enc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-zip-enc"> </a> </span>OCF ZIP コンテナは、ZIP フォーマットにより定義された暗号化機能を使用してはならず（<span class="rfc2119">must not</span>）、代わりに、暗号化は、<a class="xref" href="#sec-container-metainf-encryption.xml" title="3.5.2.2 Encryption - META-INF/encryption.xml">暗号化ファイル</a> で説明されている機能を使用しなければならない（<span class="rfc2119">must</span>）。OCF プロセッサは、ZIP 暗号化機能を使用している任意の他の OCF ZIP コンテナをエラーとして処理しなければならない（<span class="rfc2119">must</span>）。</p>
+<p id="confreq-zip-enc"><span class="link-marker"><a class="hidden-reveal" href="#confreq-zip-enc"> </a> </span>OCF ZIP コンテナは、ZIP フォーマットにより定義された暗号化機能を使用してはならず（<span class="rfc2119">must not</span>）、代わりに、暗号化は、<a class="xref" href="#sec-container-metainf-encryption.xml" title="3.5.2.2 Encryption File (encryption.xml)">暗号化ファイル (<code class="filename">encryption.xml</code>)</a> で説明されている機能を使用しなければならない（<span class="rfc2119">must</span>）。OCF プロセッサは、ZIP 暗号化機能を使用している任意の他の OCF ZIP コンテナをエラーとして処理しなければならない（<span class="rfc2119">must</span>）。</p>
 </li>
 <li class="listitem">
 <p id="confreq-zip-preserve"><span class="link-marker"><a class="hidden-reveal" href="#confreq-zip-preserve"> </a> </span>OCF プロセッサは、OCF 抽象コンテナで定義されていない読み込みと保存の操作を通じて OCF ZIP コンテナからの情報を保つことを要求しない。具体的には、OCF プロセッサは、特定のオペレーティングシステム（例えば、<em class="firstterm">External file attributes</em> と <em class="firstterm">Extra field</em> など）に対応するファイルシステム情報を保持する CRC 値、コメントフィールド、フィールドを保存しない。</p>
@@ -752,11 +752,11 @@
 
 <section class="section" id="sec-zip-container-mime">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-zip-container-mime"> </a> </span>4.3 OCF ZIP コンテナのメディア タイプの識別</h2>
-<p><a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a>は、コンテナ内に最初のファイルとして <code class="filename">mimetype</code> ファイルを包含しなければならない（<span class="rfc2119">must</span>）。このファイルのコンテンツは、US-ASCII <a class="biblioref" href="#refUSASCII" title="&#34;Coded Character Set - 7-bit American Standard Code for Information Interchange&#34;, ANSI X3.4, 1986.">[<abbr class="abbrev">US-ASCII</abbr>]</a> でエンコードされた <code class="media-type">application/epub+zip</code> 文字列の MIME メディア タイプ <a class="biblioref" href="#refRFC2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types (RFC 2046)">[<abbr class="abbrev">RFC2046</abbr>]</a> でなければならない（<span class="rfc2119">must</span>）。</p>
+<p><a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a> の最初のファイルは、<code class="filename">mimetype</code> ファイルでなければならない（<span class="rfc2119">must</span>）。このファイルのコンテンツは、US-ASCII <a class="biblioref" href="#refUSASCII" title="&#34;Coded Character Set - 7-bit American Standard Code for Information Interchange&#34;, ANSI X3.4, 1986.">[<abbr class="abbrev">US-ASCII</abbr>]</a> でエンコードされた <code class="media-type">application/epub+zip</code> 文字列の MIME メディア タイプ <a class="biblioref" href="#refRFC2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types (RFC 2046)">[<abbr class="abbrev">RFC2046</abbr>]</a> でなければならない（<span class="rfc2119">must</span>）。</p>
 <p><code class="filename">mimetype</code> ファイルのコンテンツは、どんな文字埋めや空白を含んではならず（<span class="rfc2119">must not</span>）、Unicode signature (または Byte Order Mark) で開始してはならず（<span class="rfc2119">must not</span>）、メディア タイプの場合は、上記の通り正確でなければならない（<span class="rfc2119">must</span>）。さらに <code class="filename">mimetype</code> ファイルは、圧縮または暗号化をしてはならず（<span class="rfc2119">must</span>）、そして ZIP ヘッダにエキストラ フィールドがあってはならない（<span class="rfc2119">must not</span>）。</p>
 <div class="note">
 <h3 class="title">note</h3>
-<p><code class="media-type">application/epub+zip</code> メディア タイプについてのより詳細な情報は、<a class="xref" href="#app-media-type" title="Appendix C. The application/epub+zip Media Type">付録 C の <em><code class="media-type">application/epub+zip</code> メディア タイプ</em></a> を参照されたい。</p>
+<p><code class="media-type">application/epub+zip</code> メディア タイプについてのより詳細な情報は、<a class="xref" href="#app-media-type" title="Appendix C. The application/epub+zip Media Type">付録 C の <em><code class="media-type">application/epub+zip</code> メディア タイプ</em></a>を参照されたい。</p>
 </div>
 </section>
 </section>
@@ -766,7 +766,7 @@
 <section class="section" id="fobfus-intro">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#fobfus-intro"> </a> </span>5.1 導入</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p><a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a>は、基本的に ZIP ファイルなので、一般的に入手可能な ZIP ツールを、パッケージから任意の非暗号化したコンテンツストリームを抽出するのに使用できる。また、ZIP ファイルの性質は、その内容が一部のシステム上の任意の他のネイティブコンテナ（例えば、フォルダなど）に表示されてもよいことを意味する。</p>
+<p><a class="glossterm" href="#gloss-zip-container" title="OCF ZIP Container">OCF ZIP コンテナ</a>は、基本的に ZIP ファイルなので、一般的に入手可能な ZIP ツールを、パッケージから任意の非暗号化したコンテンツストリームを抽出するのに使用できる。また、ZIP ファイルの性質は、その内容が一部のシステム上の任意の他のネイティブコンテナ（例えば、フォルダなど）に表示されるかもしれないことを意味する。</p>
 <p>この ZIP ファイルの単純さは非常に便利だが、それはまたリソースを抽出する容易さは、暗号化していないリソースの予期しない副作用の問題を引き起こす。サードパーティ製フォントの包含したい<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-author" target="_top">製作者</a></span>は、例えば、典型的にフォントが他人によって抽出され再利用されるのを望まない。
 より重要なことは、多くの商業フォントは埋め込みを許可しているが、フォントの埋め込むことは、単にコンテンツと一緒にオリジナルのフォントファイルを提供せず、出版物の重要な部分を形成していることを意味する。</p>
 <p>統合された ZIP のサポートは、モダンなオペレーティング システムに偏在しおり、ZIP アーカイブ内に単純に配置したフォントは、他のコンテクストで再利用されることは意図しないフォントであることを意味するには不十分である。この不確定要素は、他の非常に便利な EPUB 出版物のフォント埋め込みの機能を弱めることができる。</p>
@@ -775,28 +775,19 @@
 <p>この仕様や IDPF によって作られた要求ではなく、これが暗号化を構成するわけでも、リソースが著作権侵害から安全であることを保証するわけでもないことに注意されたい。しかしながら、このアルゴリズムが、コンテナを解凍することによってそれらのリソースを簡単に抽出できないようにするいくつかの保証を求める多くのベンダーの要求を満たすであろうというのが IDPF の期待である。</p>
 <p>フォントの場合、暗号化のための主要なユースケースは、定義されたメカニズムは、ライセンスの詳細に気付いていない人に障害を提供する。これは、フォントへの完全なアクセスを得ようと考えているユーザーは防げないだろう。OCF コンテナが提供されると、RAW フォントファイルを抽出するために定義したアルゴリズムを適応することが可能である。難読化のこの方法は、個々のフォント ライセンスの要件を満たすかどうかに関わらず、使用許諾者や被許諾者の課題が残る。</p>
 </section>
-
 <section class="section" id="obfus-keygen">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#obfus-keygen"> </a> </span>5.2. 難読化キー</h2>
-<p>難読化アルゴリズムに用いられるキーは、<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-rendition-default" target="_top">初期設定のレンディション</a></span>の<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-unique-identifier" target="_top">一意識別子</a></span>から得られる。
-</p>
-<p>
-XML 1.0 仕様書 <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> のセクション 2.3 によって定義されている全ての空白文字、具体的には Unicode コードポイント <code class="codepoint">U+0020</code> 、<code class="codepoint">U+0009</code>、<code class="codepoint">U+000D</code> と <code class="codepoint">U+000A</code> は、この識別子から削除されなければならない（<span class="rfc2119">must</span>）。
-
-</p>
-
-<p>
-結果として生じる文字列の UTF-8 表現の SHA-1 ダイジェストは、Secure Hash Standard <a class="biblioref" href="#refSHA1" title="Federal Information Processing Standards Publication 180-3: Secure Hash Standard (SHS)">[<abbr class="abbrev">SHA-1</abbr>]</a> で規定されているように生成するべきである（should）。
-このダイジェストは、その後、アルゴリズムのためのキーとして直接使用される。
-</p>
+<p>難読化アルゴリズムに用いられるキーは、<a class="glossterm" href="#gloss-rendition-default" title="Default Rendition">初期設定のレンディション</a>の<span class="phrase"><a class="glossterm" href="epub-spec.html#gloss-unique-identifier" target="_top">一意識別子</a></span>から得られる。</p>
+<p><a class="ulink" href="https://www.w3.org/TR/2008/REC-xml-20081126/#sec-common-syn" target="_top">XML 1.0 仕様書のセクション 2.3</a> <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> によって定義されている、全ての空白文字、具体的には Unicode コードポイント <code class="codepoint">U+0020</code> 、<code class="codepoint">U+0009</code>、<code class="codepoint">U+000D</code> と <code class="codepoint">U+000A</code> は、この識別子から削除されなければならない（<span class="rfc2119">must</span>）。</p>
+<p>結果として生じる文字列の UTF-8 表現の SHA-1 ダイジェストは、Secure Hash Standard <a class="biblioref" href="#refSHA1" title="Federal Information Processing Standards Publication 180-3: Secure Hash Standard (SHS)">[<abbr class="abbrev">SHA-1</abbr>]</a> で規定されているように生成するべきである（should）。このダイジェストは、その後、アルゴリズムのためのキーとして直接使用される。</p>
 </section>
 
 <section class="section" id="obfus-algorithm">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#obfus-algorithm"> </a> </span>5.3. 難読化アルゴリズム</h2>
-<p>アルゴリズムは、リソースを難読化するために、ファイルの最初の 1040 バイト (~1KB) の変更から成る。万一、ファイルが 1040 バイト に満たない場合、ファイル全体が変更される。</p>
+<p>アルゴリズムは、リソースを難読化するために、ファイルの最初の 1,040 バイト (~1KB) の変更から成る。万一、ファイルが 1,040 バイト に満たない場合、ファイル全体が変更される。</p>
 <p>元データを難読化するのに、RAW ファイルの最初のバイトと<a class="link" href="#obfus-keygen" title="5.2 Obfuscation Key">難読化キー</a>の最初のバイトの排他的論理和（XOR）の計算の結果は、埋め込まれたリソースの最初のバイトとして格納される。</p>
-<p>この処理は、ソースとキーの次のバイトで繰り返され、キー内の全てのバイトが使用されるまで続く。ここで、キーの最初のバイトとソースの 21 バイト目から処理が始まり継続する。1040 バイトがこの方法で（またはソースの終わりに到達して）エンコードされたら、ソース内の残りのデータは、格納先に直接コピーされる。</p>
-<p>リソースの難読化は、それらが圧縮または OCF Container に追加される前に生じなければならない（<span class="rfc2119">must</span>）。難読化は暗号化ではなく、この要件は、それらを暗号化する前にリソースを圧縮する <a class="xref" href="#sec-container-metainf-encryption.xml" title="3.5.2.2 The Encryption File">暗号化ファイル</a>のひとつに違反しないことに注意されたい。</p>
+<p>この処理は、ソースとキーの次のバイトで繰り返され、キー内の全てのバイトが使用されるまで続く。ここで、キーの最初のバイトとソースの 21 バイト目から処理が始まり継続する。1,040 バイトがこの方法で（またはソースの終わりに到達して）エンコードされたら、ソース内の残りのデータは、格納先に直接コピーされる。</p>
+<p>リソースの難読化は、それらが圧縮または OCF コンテナに追加される前に生じなければならない（<span class="rfc2119">must</span>）。難読化は暗号化ではなく、この要件は、それらを暗号化する前にリソースを圧縮する <a class="xref" href="#sec-container-metainf-encryption.xml" title="3.5.2.2 Encryption File (encryption.xml)">暗号化ファイル (<code class="filename">encryption.xml</code>)</a>のひとつに違反しないことに注意されたい。</p>
 
 <div class="informalexample">
 <p>次の擬似コードは、難読化アルゴリズムを示している。</p>
@@ -823,34 +814,21 @@ end if
 Deflate destination
 store destination as source in ocf</pre>
 </div>
-
 <p>元のフォントデータを得るには、処理は単純に逆になり、ソースファイルは、難読化データと RAW データが格納されている格納先のファイルからなる。</p>
-
-
 <div class="note">
 <h3 class="title">note</h3>
-<p>フォントの難読化は、EPUB 3.0.1 で先行して許可されるが、難読化と圧縮の順序は指定しない。その結果、無効なフォントは、圧縮解除と難読化解除の後に遭遇するであろう。このような場合、伸張する前の難読化解除データは、妥当なフォントを返してもよい。復旧のこの方法のサポートは、この仕様のこのバージョンで対応していないので省略可能だが、一般的には EPUB 3 コンテンツをサポートするときに考慮する必要がある。</p>
+<p>フォントの難読化は、EPUB 3.0.1 で先行して許可されるが、難読化と圧縮の順序は指定しない。その結果、無効なフォントは、圧縮解除と難読化解除の後に遭遇するであろう。このような場合、伸張する前の難読化解除データは、妥当なフォントを返すかもしれない。この仕様のこのバージョンで対応していないので、この仕様は、この復旧方法のサポートを要求しないが、一般的には EPUB 3 コンテンツをサポートするときに考慮する必要がある。</p>
 </div>
-
 </section>
-
 <section class="section" id="obfus-specifying">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#obfus-specifying"> </a> </span>5.4 難読化されたリソースの指定</h2>
-
-<p>すべての難読化リソースは、技術的には暗号化データではないけれど、EPUB 出版物に添付する <code class="filename">encryption.xml</code> ファイル（<a class="xref" href="#sec-container-metainf-encryption.xml" title="3.5.2.2 The Encryption File">暗号化ファイル</a>を参照）に記入しなければならない（<span class="rfc2119">must</span>）。</p>
-
+<p>すべての難読化リソースは、技術的には暗号化データではないけれど、EPUB 出版物に添付する <code class="filename">encryption.xml</code> ファイル（<a class="xref" href="#sec-container-metainf-encryption.xml" title="3.5.2.2 Encryption File (encryption.xml)">暗号化ファイル (<code class="filename">encryption.xml</code>)</a>を参照）に記入しなければならない（<span class="rfc2119">must</span>）。</p>
 <p><code class="markup">EncryptionMethod</code> 要素は、各難読化リソースのために包含されなければならない（<span class="rfc2119">must</span>）。
-
 それぞれが、値に <code class="uri">http://www.idpf.org/2008/embedding</code> を設定された <code class="markup">Algorithm</code> 属性を <code class="markup">EncryptedData</code> 要素の子に包含しなければならない（<span class="rfc2119">must</span>）。
 この属性の存在は、本仕様書に記載されているアルゴリズムの使用を示している。
 難読化リソースへのパスは、<code class="markup">CipherData</code> 要素の子の <code class="markup">CipherReference</code> に記載しなければならない（<span class="rfc2119">must</span>）。</p>
-
 <div class="informalexample">
-
-
 <p>次の例は、<code class="filename">encryption.xml</code> ファイル内の難読化フォントのためのエントリーを示している。</p>
-
-
 <pre class="synopsis">&lt;encryption &#xD;
     xmlns="urn:oasis:names:tc:opendocument:xmlns:container" &#xD;
     xmlns:enc="http://www.w3.org/2001/04/xmlenc#"&gt;&#xD;
@@ -951,7 +929,7 @@ EPUB/images/cover.png</pre>
 <pre class="synopsis">&lt;?xml version="1.0"?&gt;&#xD;
 &lt;container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"&gt;&#xD;
     &lt;rootfiles&gt;&#xD;
-        &lt;rootfile full-path="EPUB/As You Like It.opf"&#xD;
+        &lt;rootfile full-path="EPUB/As_You_Like_It.opf"&#xD;
             media-type="application/oebps-package+xml" /&gt;&#xD;
     &lt;/rootfiles&gt;&#xD;
 &lt;/container&gt;</pre>
@@ -1147,9 +1125,7 @@ EPUB/images/cover.png</pre>
 
 </div>
 </section>
-
 <section class="appendix" id="app-media-type">
-
 <div class="titlepage">
 <div>
 <div>
@@ -1157,12 +1133,8 @@ EPUB/images/cover.png</pre>
 </div>
 </div>
 </div>
-
-
 <p>この付録は、EPUB Open Container Format (OCF) のメディアタイプ <code class="media-type">application/epub+zip</code> を登録している。</p>
-
-<p>OCF ファイルは、ZIP アーカイブ形式に基づくコンテナの技術である。それは、EPUB 出版物の Rendition をカプセルに包むために使用する。OCF とその関連規格は、International Digital Publishing Forum (IDPF) によって維持・定義される。</p>
-
+<p>OCF ファイルは、ZIP アーカイブ形式に基づくコンテナの技術である。それは、EPUB 出版物のレンディションをカプセルに包むために使用する。OCF とその関連規格は、International Digital Publishing Forum (IDPF) によって維持・定義される。</p>
 <div class="variablelist">
 <dl class="variablelist">
 <dt class="varlistentry"><span class="term">MIME メディアタイプ名：</span></dt>
@@ -1188,9 +1160,9 @@ EPUB/images/cover.png</pre>
 <dt class="varlistentry"><span class="term">セキュリティの考慮：</span></dt>
 <dd>
 
-<p>OCF ファイルを読む全てのプロセッサは、検索されたデータのサイズと妥当性を厳密にチェックするべきである（should）。</p>
+<p>OCF ファイルを読む全てのプロセッサは、検索されたデータのサイズと妥当性を厳密にチェックするべきである。</p>
 
-<p>さらに、OCF ファイルに埋め込むことのできる様々なコンテンツタイプのために、<code class="media-type">application/epub+zip</code> が、ここに説明されたものを超えてセキュリティについての暗黙の意味をコンテンツに表現してもよい（may）。けれども、プロセッサが、追加コンテンツまたは他のプロセッサによって送られるコンテツの処理を認識・処理するばあいには、セキュリティの問題は潜在的に生じる。またその場合、それらは、この登録文書の範囲から外れるであろう。</p>
+<p>さらに、OCF ファイルに埋め込むことのできる様々なコンテンツタイプのために、<code class="media-type">application/epub+zip</code> が、ここに説明されたものを超えてセキュリティについての暗黙の意味をコンテンツに表現してもよい。けれども、プロセッサが、追加コンテンツまたは他のプロセッサによって送られるコンテツの処理を認識・処理するばあいには、セキュリティの問題は潜在的に生じる。またその場合、それらは、この登録文書の範囲から外れるであろう。</p>
 
 <p><code class="media-type"><a class="media-type" href="http://www.iana.org/assignments/media-types/application/zip" target="_top">application/zip</a></code> に適用されるセキュリティの考慮は、OCF ファイルにも適用される。</p>
 </dd>
@@ -1276,10 +1248,10 @@ EPUB/images/cover.png</pre>
 <p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
 <p>EPUB3.1 仕様は下に述べるリーダーシップにより2015年7月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した：</p>
 <ul xml:lang="en" class="personlist">
-<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum)</span> <span class="wg-role">Chair (until August 2016)</span></li>
 <li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span>  <span class="wg-role">Chair</span></li>
 <li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
-<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair; Chair (beginning August 2016)</span></li>
 </ul>
 <p>ワーキンググループのアクティブメンバー：</p>
 
@@ -1289,11 +1261,12 @@ EPUB/images/cover.png</pre>
 <li class="person"><span class="name"><span class="surname">Audrain</span>, <span class="givenname">Luc</span></span> <span class="affiliation">(Hachette Livre)</span></li>
 <li class="person"><span class="name"><span class="surname">Bailey</span>, <span class="givenname">Brent</span></span> <span class="affiliation">(Elsevier)</span></li>
 <li class="person"><span class="name"><span class="surname">Baker</span>, <span class="givenname">Mike</span></span> <span class="affiliation">(Houghton Mifflin Harcourt)</span></li>
+<li class="person"><span class="name"><span class="surname">Balakrishnan</span>, <span class="givenname">Ramu</span></span> <span class="affiliation">(MPS Limited)</span></li>
 <li class="person"><span class="name"><span class="surname">Belfanti</span>, <span class="givenname">Paul</span></span> <span class="affiliation">(Pearson)</span></li>
 <li class="person"><span class="name"><span class="surname">Bell</span>, <span class="givenname">Graham</span></span> <span class="affiliation">(EDItEUR)</span></li>
 <li class="person"><span class="name"><span class="surname">Bogan</span>, <span class="givenname">Robert</span></span> <span class="affiliation">(Baker &amp; Taylor)</span></li>
 <li class="person"><span class="name"><span class="surname">Bowers</span>, <span class="givenname">Micah</span></span> <span class="affiliation">(Bluefire Productions)</span></li>
-<li class="person"><span class="name"><span class="surname">Burrows</span>, <span class="givenname">Phil</span></span> <span class="affiliation">(Ingram Content Group)</span></li>
+<li class="person"><span class="name"><span class="surname">Burrows</span>, <span class="givenname">Phil</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span></li>
 <li class="person"><span class="name"><span class="surname">Challman</span>, <span class="givenname">Lauren</span></span> <span class="affiliation">(Kaplan Publishing)</span></li>
 <li class="person"><span class="name"><span class="surname">Cho</span>, <span class="givenname">Yong-Sang</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span></li>
 <li class="person"><span class="name"><span class="surname">Cleghorn</span>, <span class="givenname">Tom</span></span> <span class="affiliation">(Cambridge University Press)</span></li>
@@ -1312,16 +1285,14 @@ EPUB/images/cover.png</pre>
 <li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span></li>
 <li class="person"><span class="name"><span class="surname">Haase</span>, <span class="givenname">David</span></span> <span class="affiliation">(Penguin Random House)</span></li>
 <li class="person"><span class="name"><span class="surname">Hanson</span>, <span class="givenname">Lauren</span></span> <span class="affiliation">(Kaplan Publishing)</span></li>
-<li class="person"><span class="name"><span class="surname">Harris</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(Ingram Content Group)</span></li>
-<li class="person"><span class="name"><span class="surname">Hawkins</span>, <span class="givenname">Kevin</span></span> <span class="affiliation">(University of Michigan Library)</span></li>
+<li class="person"><span class="name"><span class="surname">Harris</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span></li>
 <li class="person"><span class="name"><span class="surname">Heinser</span>, <span class="givenname">Bernhard</span></span> <span class="affiliation">(Access for All)</span></li>
 <li class="person"><span class="name"><span class="surname">Herman</span>, <span class="givenname">Ivan</span></span> <span class="affiliation">(W3C)</span>  <span class="wg-role">W3C Liaison</span></li>
 <li class="person"><span class="name"><span class="surname">Idan</span>, <span class="givenname">Ori</span></span> <span class="affiliation">(Helicon Books)</span></li>
 <li class="person"><span class="name"><span class="surname">Jay</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(Educational Systemics)</span></li>
-<li class="person"><span class="name"><span class="surname">Johnson</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(Ingram Content Group)</span></li>
+<li class="person"><span class="name"><span class="surname">Johnson</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span></li>
 <li class="person"><span class="name"><span class="surname">Jung</span>, <span class="givenname">Eunmi</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span></li>
 <li class="person"><span class="name"><span class="surname">Kanai</span>, <span class="givenname">Takeshi</span></span> <span class="affiliation">(Sony)</span></li>
-<li class="person"><span class="name"><span class="surname">Kaplansky</span>, <span class="givenname">Jean</span></span> <span class="affiliation">(Safari)</span></li>
 <li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span></li>
 <li class="person"><span class="name"><span class="surname">Keating</span>, <span class="givenname">Patrick</span></span> <span class="affiliation">(Bluefire Productions)</span></li>
 <li class="person"><span class="name"><span class="surname">Kennedy</span>, <span class="givenname">Naomi</span></span> <span class="affiliation">(Penguin Random House)</span></li>
@@ -1332,7 +1303,7 @@ EPUB/images/cover.png</pre>
 <li class="person"><span class="name"><span class="surname">Labordrie</span>, <span class="givenname">Cyril</span></span> <span class="affiliation">(EDRLab)</span></li>
 <li class="person"><span class="name"><span class="surname">LaPierre</span>, <span class="givenname">Charles</span></span> <span class="affiliation">(Benetech)</span></li>
 <li class="person"><span class="name"><span class="surname">Leo</span>, <span class="givenname">Arthic</span></span> <span class="affiliation">(Amnet Systems)</span></li>
-<li class="person"><span class="name"><span class="surname">Levantovsky</span>, <span class="givenname">Vladimir</span></span> <span class="affiliation">(Monotype Monotype Imaging)</span></li>
+<li class="person"><span class="name"><span class="surname">Levantovsky</span>, <span class="givenname">Vladimir</span></span> <span class="affiliation">(Monotype)</span></li>
 <li class="person"><span class="name"><span class="surname">Levenson</span>, <span class="givenname">Yonah</span></span> <span class="affiliation">(Pearson)</span></li>
 <li class="person"><span class="name"><span class="surname">Lin</span>, <span class="givenname">Beatrice</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span></li>
 <li class="person"><span class="name"><span class="surname">Lui</span>, <span class="givenname">Edwina</span></span> <span class="affiliation">(Kaplan Publishing)</span></li>
@@ -1345,8 +1316,7 @@ EPUB/images/cover.png</pre>
 <li class="person"><span class="name"><span class="surname">Owens</span>, <span class="givenname">Evan</span></span> <span class="affiliation">(Cenveo Publisher Services)</span></li>
 <li class="person"><span class="name"><span class="surname">Prabhu</span>, <span class="givenname">John</span></span> <span class="affiliation">(HOV Services)</span></li>
 <li class="person"><span class="name"><span class="surname">Pritchett</span>, <span class="givenname">James</span></span> <span class="affiliation">(Learning Ally)</span></li>
-<li class="person"><span class="name"><span class="surname">Ramu</span>, <span class="givenname">Balakrishnan</span></span> <span class="affiliation">(MPS Limited)</span></li>
-<li class="person"><span class="name"><span class="surname">Rosenthol</span>, <span class="givenname">Leonard</span></span> <span class="affiliation">(Adobe Systems Incorporated)</span></li>
+<li class="person"><span class="name"><span class="surname">Rosenthol</span>, <span class="givenname">Leonard</span></span> <span class="affiliation">(Adobe Systems)</span></li>
 <li class="person"><span class="name"><span class="surname">Shyne</span>, <span class="givenname">Mary</span></span> <span class="affiliation">(Penguin Random House)</span></li>
 <li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span></li>
 <li class="person"><span class="name"><span class="surname">Singh</span>, <span class="givenname">Avneesh</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
@@ -1356,7 +1326,7 @@ EPUB/images/cover.png</pre>
 <li class="person"><span class="name"><span class="surname">Thurston</span>, <span class="givenname">Jonathan</span></span> <span class="affiliation">(Pearson)</span></li>
 <li class="person"><span class="name"><span class="surname">Webster</span>, <span class="givenname">Amaya</span></span> <span class="affiliation">(Benetech)</span></li>
 <li class="person"><span class="name"><span class="surname">Weck</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(DAISY Consortium)</span></li>
-<li class="person"><span class="name"><span class="surname">Wright</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(Readium)</span></li>
+<li class="person"><span class="name"><span class="surname">Wright</span>, <span class="givenname">Ric</span></span> <span class="affiliation">(Readium Foundation)</span></li>
 </ul>
 <h2 id="ack-experts-observers">Invited Experts/Observers</h2>
 <ul xml:lang="en" class="personlist">
@@ -1366,6 +1336,8 @@ EPUB/images/cover.png</pre>
 <li class="person"><span class="name"><span class="surname">Etemad</span>, <span class="givenname">Elika J.</span></span> <span class="wg-role">W3C CSS WG Liaison</span></li>
 <li class="person"><span class="name"><span class="surname">Garrish</span>, <span class="givenname">Matt</span></span></li>
 <li class="person"><span class="name"><span class="surname">Glazman</span>, <span class="givenname">Daniel</span></span></li>
+<li class="person"><span class="name"><span class="surname">Hawkins</span>, <span class="givenname">Kevin</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kaplansky</span>, <span class="givenname">Jean</span></span></li>
 <li class="person"><span class="name"><span class="surname">Kudou</span>, <span class="givenname">Tomoyuki</span></span></li>
 <li class="person"><span class="name"><span class="surname">Leva</span>, <span class="givenname">Paolo</span></span></li>
 <li class="person"><span class="name"><span class="surname">Marquès Solé</span>, <span class="givenname">Daniel</span></span></li>
@@ -1378,7 +1350,7 @@ EPUB/images/cover.png</pre>
 <li class="person"><span class="name"><span class="surname">Sheehan</span>, <span class="givenname">John</span></span></li>
 <li class="person"><span class="name"><span class="surname">White</span>, <span class="givenname">Jason</span></span></li>
 </ul>
-<p>より詳細な承認と EPUB の各バージョンへの貢献者については<span class="phrase"><a class="ulink" href="epub-overview.xhtml#acknowledgements" target="_top">謝辞と貢献者</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3Overview</abbr>]</a></span> を参照されたい。</p>
+<p>より詳細な承認と EPUB の各バージョンへの貢献者については<span class="phrase"><a class="ulink" href="epub-overview.xhtml#acknowledgements" target="_top">謝辞と貢献者</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a></span> を参照されたい。</p>
 </section>
 
 <section xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="bibliography" id="references">
@@ -1390,166 +1362,159 @@ EPUB/images/cover.png</pre>
 
 <div class="bibliodiv" id="normative-refs">
 <h3 class="title">参照文献</h3>
-<div class="biblioentry" id="refCSS21">
-<p>[<abbr class="abbrev">CSS2.1</abbr>] <span class="title"><em><a class="ulink" href="http://www.w3.org/TR/CSS2/" target="_top">Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification</a></em>.</span> <span class="author">Bert Bos, et al.</span> <span class="date">7 June 2011.</span></p>
+<div class="biblioentry" id="refCSSSNAP">
+<p>[<abbr class="abbrev">CSS Snapshot</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/CSS/" target="_top">CSS Snapshot</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refEPUB3">
-<p>[<abbr class="abbrev">EPUB31</abbr>] <span class="title"><em> <a class="ulink" href="epub-spec.html" target="_top">EPUB 3.1</a></em>.</span></p>
+<p>[<abbr class="abbrev">EPUB 3.1</abbr>] <span class="title"><em>
+<a class="ulink" href="epub-spec.html" target="_top">EPUB 3.1</a>
+</em>. </span>
+</p>
 </div>
-<div class="biblioentry" id="refHTML5">
-<p>[<abbr class="abbrev">HTML5</abbr>] <span class="title"><em><a class="ulink" href="http://www.w3.org/TR/html5/" target="_top">HTML5: A vocabulary and associated APIs for HTML and XHTML</a></em>.</span></p>
-</div>
-<div class="biblioentry" id="refOCF301">
-<p>[<abbr class="abbrev">OCF301</abbr>] <span class="title"><em><a class="ulink" href="../../301/spec/epub-ocf.html" target="_top">Open Container Format 3.0.1</a></em>.</span></p>
+<div class="biblioentry" id="refHTML">
+<p>[<abbr class="abbrev">HTML</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/html/" target="_top">HTML</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refRFC2046">
-<p>[<abbr class="abbrev">RFC2046</abbr>] <span class="title"><em><a class="ulink" href="http://tools.ietf.org/html/rfc2046" target="_top">Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</a> (RFC 2046) </em>.</span> <span class="author">N. Freed, N. Borenstein.</span> <span class="date">November 1996.</span></p>
+<p>[<abbr class="abbrev">RFC2046</abbr>] <span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2046" target="_top">Multipurpose
+                                    Internet Mail Extensions (MIME) Part Two: Media Types</a> (RFC 2046) </em>. </span>
+<span class="author">N. Freed, N. Borenstein. </span>
+<span class="date">November 1996. </span>
+</p>
 </div>
 <div class="biblioentry" id="refRFC2119">
-<p>[<abbr class="abbrev">RFC2119</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in RFCs to Indicate Requirement Levels</a>
-        (RFC 2119) </em>. </span>
+<p>[<abbr class="abbrev">RFC2119</abbr>] <span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in
+                                    RFCs to Indicate Requirement Levels</a> (RFC 2119) </em>. </span>
 <span class="date">March 1997. </span>
 </p>
 </div>
 <div class="biblioentry" id="refRFC3986">
-<p>[<abbr class="abbrev">RFC3986</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://tools.ietf.org/html/rfc3986" target="_top">Uniform Resource Identifier (URI): Generic Syntax</a> (RFC
-        3986) </em>. </span>
+<p>[<abbr class="abbrev">RFC3986</abbr>] <span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc3986" target="_top">Uniform Resource
+                                    Identifier (URI): Generic Syntax</a> (RFC 3986) </em>. </span>
 <span class="author">Berners-Lee, et al. </span>
 <span class="date">January 2005. </span>
 </p>
 </div>
 <div class="biblioentry" id="refRFC3987">
-<p>[<abbr class="abbrev">RFC3987</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://tools.ietf.org/html/rfc3987" target="_top">Internationalized Resource Identifiers (IRIs)</a> (RFC 3987) </em>. </span>
+<p>[<abbr class="abbrev">RFC3987</abbr>] <span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc3987" target="_top">Internationalized
+                                    Resource Identifiers (IRIs)</a> (RFC 3987) </em>. </span>
 <span class="author">M Duerst, et al. </span>
 <span class="date">January 2005. </span>
 </p>
 </div>
 <div class="biblioentry" id="refRelaxNG">
-<p>[<abbr class="abbrev">RelaxNG</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c052348_ISO_IEC_19757-2_2008(E).zip" target="_top">ISO/IEC 19757-2: Regular-grammar-based validation — RELAX NG. Second Edition</a>
+<p>[<abbr class="abbrev">RelaxNG</abbr>] <span class="title"><em>
+<a class="ulink"
+                                    href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c052348_ISO_IEC_19757-2_2008(E).zip"
+                                    target="_top">ISO/IEC 19757-2: Regular-grammar-based validation — RELAX NG. Second
+                                    Edition</a>
 </em>. </span>
 <span class="date">2008-12-15. </span>
 </p>
 </div>
 <div class="biblioentry" id="refSHA1">
-<p>[<abbr class="abbrev">SHA-1</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://csrc.nist.gov/publications/fips/fips180-3/fips180-3_final.pdf" target="_top">Federal Information
-          Processing Standards Publication 180-3: Secure Hash Standard (SHS)</a>
+<p>[<abbr class="abbrev">SHA-1</abbr>] <span class="title"><em>
+<a class="ulink" href="http://csrc.nist.gov/publications/fips/fips180-3/fips180-3_final.pdf"
+                                    target="_top">Federal Information Processing Standards Publication 180-3: Secure Hash
+                                    Standard (SHS)</a>
 </em>. </span>
 <span class="date">October 2008. </span>
 </p>
 </div>
 <div class="biblioentry" id="refTR15">
-<p>[<abbr class="abbrev">TR15</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.unicode.org/reports/tr15/" target="_top">Unicode Normalization Forms</a>
+<p>[<abbr class="abbrev">TR15</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.unicode.org/reports/tr15/" target="_top">Unicode
+                                    Normalization Forms</a>
 </em>. </span>
 </p>
 </div>
 <div class="biblioentry" id="refUSASCII">
-<p>[<abbr class="abbrev">US-ASCII</abbr>] 
-      
-<span class="title"><em>"Coded Character Set - 7-bit American Standard Code for Information Interchange", ANSI X3.4, 1986.</em>. </span>
+<p>[<abbr class="abbrev">US-ASCII</abbr>] <span class="title"><em>"Coded Character Set - 7-bit American
+                                Standard Code for Information Interchange", ANSI X3.4, 1986.</em>. </span>
 </p>
 </div>
 <div class="biblioentry" id="refUnicode5">
-<p>[<abbr class="abbrev">Unicode</abbr>] 
-      
-<span class="title"><em> The Unicode Consortium. <a class="ulink" href="http://www.unicode.org/versions/latest/" target="_top">The Unicode
-        Standard.</a></em>. </span>
+<p>[<abbr class="abbrev">Unicode</abbr>] <span class="title"><em> The Unicode Consortium. <a
+                                    class="ulink" href="http://www.unicode.org/versions/latest/" target="_top">The Unicode
+                                    Standard.</a></em>. </span>
 </p>
 </div>
 <div class="biblioentry" id="refXML">
-<p>[<abbr class="abbrev">XML</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.w3.org/TR/2008/REC-xml-20081126/" target="_top">Extensible Markup Language (XML) 1.0 (Fifth
-          Edition)</a>
+<p>[<abbr class="abbrev">XML</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2008/REC-xml-20081126/" target="_top">Extensible
+                                    Markup Language (XML) 1.0 (Fifth Edition)</a>
 </em>. </span>
 <span class="author">T. Bray, et al. </span>
 <span class="date">26 November 2008. </span>
 </p>
 </div>
 <div class="biblioentry" id="refXMLDSIGCORE">
-<p>[<abbr class="abbrev">XML DSIG Core</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.w3.org/TR/xmldsig-core1/" target="_top">XML-Signature Syntax and Processing Version 1.1</a>
+<p>[<abbr class="abbrev">XML DSIG Core</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2013/REC-xmldsig-core1-20130411/" target="_top"
+                                    >XML-Signature Syntax and Processing Version 1.1</a>
 </em>. </span>
 <span class="author">M. Bartel, et al. </span>
-<span class="date">3 March 2011. </span>
+<span class="date">11 April 2013. </span>
 </p>
 </div>
 <div class="biblioentry" id="refXMLENCCORE">
-<p>[<abbr class="abbrev">XML ENC Core</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.w3.org/TR/xmlenc-core1/" target="_top">XML Encryption Syntax and Processing Version 1.1</a>
+<p>[<abbr class="abbrev">XML ENC Core</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2013/REC-xmlenc-core1-20130411/" target="_top"
+                                    >XML Encryption Syntax and Processing Version 1.1</a>
 </em>. </span>
 <span class="author">D. Eastlake, et al. </span>
-<span class="date">3 March 2011. </span>
+<span class="date">11 April 2013. </span>
 </p>
 </div>
 <div class="biblioentry" id="refXMLSIGDecrypt">
-<p>[<abbr class="abbrev">XML SIG Decrypt</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.w3.org/TR/xmlenc-decrypt" target="_top">Decryption Transform for XML Signature</a>
+<p>[<abbr class="abbrev">XML SIG Decrypt</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2002/REC-xmlenc-decrypt-20021210" target="_top"
+                                    >Decryption Transform for XML Signature</a>
 </em>. </span>
 <span class="author">M. Hughes, et al. </span>
 <span class="date">10 December 2002. </span>
 </p>
 </div>
 <div class="biblioentry" id="refXMLSecRngSchemas">
-<p>[<abbr class="abbrev">XML Sec RNG Schemas</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.w3.org/TR/2013/NOTE-xmlsec-rngschema-20130411/" target="_top">XML Security RELAX NG Schemas (W3C
-          Working Group Note)</a>
+<p>[<abbr class="abbrev">XML Sec RNG Schemas</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2013/NOTE-xmlsec-rngschema-20130411/"
+                                    target="_top">XML Security RELAX NG Schemas (W3C Working Group Note)</a>
 </em>. </span>
 <span class="author">Makoto Murata, et al. </span>
 <span class="date">11 April 2013. </span>
 </p>
 </div>
 <div class="biblioentry" id="refXMLNamespaces">
-<p>[<abbr class="abbrev">XMLNS</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.w3.org/TR/xml-names/" target="_top">Namespaces in XML (Third Edition)</a>
+<p>[<abbr class="abbrev">XMLNS</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2009/REC-xml-names-20091208/" target="_top"
+                                    >Namespaces in XML (Third Edition)</a>
 </em>. </span>
-<span class="author">T. Bray, D. Hollander, A. Layman, R. Tobin. W3C. </span>
+<span class="author">T. Bray, et al. </span>
 <span class="date">8 December 2009. </span>
 </p>
 </div>
 <div class="biblioentry" id="refXSDDatatypes">
-<p>[<abbr class="abbrev">XSD-DATATYPES</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.w3.org/TR/xmlschema-2/" target="_top">XML Schema Part 2: Datatypes Second Edition</a>
+<p>[<abbr class="abbrev">XSD-DATATYPES</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/" target="_top"
+                                    >XML Schema Part 2: Datatypes Second Edition</a>
 </em>. </span>
 <span class="author">Paul V. Biron et al. </span>
 <span class="date">28 October 2004. </span>
 </p>
 </div>
 <div class="biblioentry" id="refZIP">
-<p>[<abbr class="abbrev">ZIP APPNOTE 6.3.3</abbr>] 
-      
-<span class="title"><em>
-<a class="ulink" href="http://www.pkware.com/documents/APPNOTE/APPNOTE-6.3.3.TXT" target="_top">ZIP File Format Specification</a>
+<p>[<abbr class="abbrev">ZIP APPNOTE 6.3.3</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.pkware.com/documents/APPNOTE/APPNOTE-6.3.3.TXT"
+                                    target="_top">ZIP File Format Specification</a>
 </em>. </span>
 <span class="date">September 1, 2012. </span>
 <span class="orgname">PKWARE, Inc.. </span>
@@ -1560,16 +1525,31 @@ EPUB/images/cover.png</pre>
 <div class="bibliodiv" id="informative-refs">
 <h3 class="title">参考文献</h3>
 <div class="biblioentry" id="refEPUB3Changes">
-<p>[<abbr class="abbrev">EPUB3Changes</abbr>] <span class="title"><em><a class="ulink" href="epub-changes.html" target="_top">EPUB 3.0.1 Differences from EPUB 3.0</a></em>.</span> <span class="author">Markus Gylling, et al.</span></p>
+<p>[<abbr class="abbrev">EPUB3 Changes</abbr>] <span class="title"><em>
+<a class="ulink" href="epub-changes.html" target="_top">EPUB 3.1 Differences from EPUB
+                                    3.0.1</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refEPUB3Overview">
-<p>[<abbr class="abbrev">EPUB3Overview</abbr>] <span class="title"><em><a class="ulink" href="epub-overview.html" target="_top">EPUB 3.1 Overview</a></em>.</span> <span class="author">Garth Conboy, et al.</span></p>
+<p>[<abbr class="abbrev">EPUB3 Overview</abbr>] <span class="title"><em>
+<a class="ulink" href="epub-overview.html" target="_top">EPUB 3.1 Overview</a>
+</em>. </span>
+</p>
 </div>
 <div class="biblioentry" id="refODF">
-<p>[<abbr class="abbrev">ODF</abbr>] <span class="title"><em><a class="ulink" href="https://www.oasis-open.org/committees/download.php/12572/OpenDocument-v1.0-os.pdf" target="_top">Open Document Format for Office Applications (OpenDocument) v1.0</a></em>.</span> <span class="date">1 May 2005.</span></p>
+<p>[<abbr class="abbrev">ODF</abbr>] <span class="title"><em>
+<a class="ulink"
+                                    href="https://www.oasis-open.org/committees/download.php/12572/OpenDocument-v1.0-os.pdf"
+                                    target="_top">Open Document Format for Office Applications (OpenDocument) v1.0</a>
+</em>. </span>
+<span class="date">1 May 2005. </span>
+</p>
 </div>
 <div class="biblioentry" id="refRFC">
-<p>[<abbr class="abbrev">RFC</abbr>] <span class="title"><em><a class="ulink" href="https://www.ietf.org/rfc.html" target="_top">Request for Comments</a></em>.</span></p>
+<p>[<abbr class="abbrev">RFC</abbr>] <span class="title"><em><a class="ulink"
+                                    href="https://www.ietf.org/rfc.html" target="_top">Request for Comments</a></em>. </span>
+</p>
 </div>
 </div>
 </section>
