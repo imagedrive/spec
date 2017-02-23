@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>EPUB Canonical Fragment Identifiers 1.1（日本語訳版）</title>
+<link rel="stylesheet" type="text/css" href="../css/epub-spec-2016.css"/>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/>
+<meta name="description" content="EPUB Canonical Fragment Identifier (epubcfi) Specification。EPUB Canonical Fragment Identifier (epubcfi) は、フラグメント識別子を使って EPUB Publication の任意のコンテンツを参照する標準方式を定める。"/>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="css/epub-print.css" type="text/css" media="print"/>
+<link rel="stylesheet" type="text/css" href="../css/translation-memo-2016.css"/>
+</head>
+<body>
+<div class="translation-attention">
+<p>この文書は「<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20170105.html">EPUB Canonical Fragment Identifiers 1.1</a>」の日本語訳である。最新の文書は <a href="http://idpf.org/epub/linking/cfi/epub-cfi.html">http://idpf.org/epub/linking/cfi/epub-cfi.html</a> である。原文もしくは完全な情報は、<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20170105.html">EPUB Canonical Fragment Identifiers 1.1</a> を参照されたい。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+<dt>公開日:</dt>
+<dd>2017年2月23日</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+</div>
+
+<header>
+<h1 class="title">EPUB Canonical Fragment Identifiers 1.1</h1>
+<p class="identity"><span class="pubdate">2017年1月5日</span> <span class="releaseinfo">Recommended Specification</span></p>
+<dl class="printhistory"><dt>この版</dt>
+<dd><a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20170105.html">http://www.idpf.org/epub/linking/cfi/epub-cfi-20170105.html</a></dd>
+<dt>最新版</dt>
+<dd><a href="http://www.idpf.org/epub/linking/cfi/epub-cfi.html">http://www.idpf.org/epub/linking/cfi/epub-cfi.html</a></dd>
+<dt>前の版</dt>
+<dd><a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20161130.html">http://www.idpf.org/epub/linking/cfi/epub-cfi-20161130.html</a></dd>
+<dt>以前の勧告</dt>
+<dd><a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20140628.html">http://www.idpf.org/epub/linking/cfi/epub-cfi-20140628.html</a></dd>
+</dl>
+<div class="history">
+<span class="history-title">履歴</span>
+<ul>
+<li><a href="https://github.com/IDPF/epub-revision/commits/master/src/spec/epub-cfi.xml">このドキュメントの変更</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues?q=milestone%3A%22EPUB+3.1%22+is%3Aclosed+label%3ASpec-CFI">このリビジョンで取り上げられた課題</a></li>
+<li><a href="https://github.com/IDPF/epub-revision/issues">課題の報告</a></li>
+<li><a href="./epub-cfi-errata/">正誤表</a></li>
+</ul>
+</div>
+<div class="authorgroup"><p class="bridgehead">Editors</p>
+<p class="editor">Peter Sorotokin, Adobe </p>
+<p class="editor">Garth Conboy, Google Inc. </p>
+<p class="editor">Brady Duga, Google Inc. </p>
+<p class="editor">John Rivlin, Google Inc. </p>
+<p class="editor">Don Beaver, Apple Inc. </p>
+<p class="editor">Kevin Ballard, Apple Inc. </p>
+<p class="editor">Alastair Fettes, Apple Inc. </p>
+<p class="editor">Daniel Weck, DAISY Consortium </p>
+</div>
+<div class="legalnotice">
+<p>Copyright &copy; 2010, 2011 International Digital Publishing Forum<sup>&trade;</sup></p>
+
+<div xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="legalnotice">
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a href="http://www.idpf.org">International Digital Publishing Forum （IDPF）</a>の書面による許可を得ない限り禁止されている。</p>
+<p>EPUBは International Digital Publishing Forum の登録商標である。</p>
+</div>
+</div>
+</header>
+<section id="sotd">
+<h2>このドキュメントのステータス</h2>
+<p>このセクションは、公開時点におけるこのドキュメントのステータスを説明する。他のドキュメントはこのドキュメントに取って代わるかもしれない。</p>
+<p>このドキュメントは、2015年7月8日に承認された <a class="ulink" href="http://www.idpf.org/charters/2015/epub/" target="_top">EPUB ワーキング グループ憲章</a>の下で EPUB ワーキング グループによって作成された。</p>
+<p>このドキュメントは IDPF 会員によってレビューされ、勧告仕様として IDPF 理事会によって承認された。このドキュメントは安定しているとみなされ、他の仕様や文書から参照できる。</p>
+<p>このドキュメントに関するフィードバックは、EPUB ワーキング グループの<a class="ulink" href="mailto:epub-working-group@googlegroups.com" target="_top">メーリングリスト</a>や<a class="ulink" href="https://github.com/IDPF/epub-revision" target="_top">イシュートラッカー</a>に提供できる。</p>
+<p>このドキュメントは、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">IDPF の方針と手順</a>によって管理される。</p>
+</section>
+<nav xmlns:spec="http://www.idpf.org/2016/epub/spec" class="toc" id="toc">
+<h2 class="toc-title">目次</h2>
+<ol class="toc">
+<li><span class="chapter"><a href="#sec-overview">1. 要約</a></span>
+<ol>
+<li><span class="section"><a href="#sec-overview-purpose-and-scope">1.1. 目的とスコープ</a></span></li>
+<li><span class="section"><a href="#sec-terminology">1.2. 用語</a></span></li>
+<li><span class="section"><a href="#sec-typography">1.3. 表記上の規則</a></span></li>
+<li><span class="section"><a href="#sec-conformance-statements">1.4. 適合性宣言</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-epubcfi-def">2. EPUB CFI の定義</a></span>
+<ol>
+<li><span class="section"><a href="#sec-epubcfi-intro">2.1. 前置き</a></span></li>
+<li><span class="section"><a href="#sec-epubcfi-syntax">2.2. 構文</a></span></li>
+<li><span class="section"><a href="#sec-epubcfi-escaping">2.3. 文字エスケープ</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-epubcfi-processing">3. EPUB CFI の処理</a></span>
+<ol>
+<li><span class="section"><a href="#sec-path-res">3.1. パスの解決</a></span>
+<ol>
+<li><span class="section"><a href="#sec-path-child-ref">3.1.1. 子要素と文字データへのステップ参照 (<code class="literal">/</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-xmlid">3.1.2. XML ID アサーション (<code class="literal">[</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-indirection">3.1.3. ステップ間接指定 (<code class="literal">!</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-terminating-char">3.1.4. 文字オフセット (<code class="literal">:</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-terminating-temporal">3.1.5. 時間オフセット (<code class="literal">~</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-terminating-spatial">3.1.6. 空間オフセット (<code class="literal">@</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-terminating-tempspatial">3.1.7. 時間-空間オフセット (<code class="literal">~</code> + <code class="literal">@</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-text-location">3.1.8. テキストロケーションアサーション (<code class="literal">[</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-side-bias">3.1.9. サイド指定 (<code class="literal">[</code> + <code class="literal">;s=</code>)</a></span></li>
+<li><span class="section"><a href="#sec-path-examples">3.1.10. 例</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-sorting">3.2. ソート規則</a></span></li>
+<li><span class="section"><a href="#sec-intra-cfis">3.3. Intra-Publication CFI</a></span></li>
+<li><span class="section"><a href="#sec-ranges">3.4. 単純なレンジ</a></span></li>
+<li><span class="section"><a href="#sec-target-correction">3.5. ターゲットロケーション補正</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-extensions">4. EPUB CFI の拡張</a></span></li>
+<li><span class="bibliography"><a href="#references">参考資料</a></span></li>
+</ol>
+</nav>
+
+<section class="chapter" id="sec-overview">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview"> </a> </span>1 要約</h1>
+<section class="section" id="sec-overview-purpose-and-scope">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-overview-purpose-and-scope"> </a> </span>1.1 目的とスコープ</h2>
+<p class="informative">このセクションは有益な情報である。</p>
+<p id="sibling-specs">この仕様、EPUB Canonical Fragment Identifier（epubcfi）は、フラグメント識別子を使って EPUB&reg; Publication の任意のコンテンツを参照する標準方式を定める。</p>
+<p>Web は、ハイパーリンクのコンセプトが非常に効果的であることを証明しているが、EPUB 出版物は、内部へリンクする標準化された方法がないためハイパーリンクの多くの恩恵を利用できないでいる。個々のリーディングシステムは独自の方法を開発・実装しているが、共通に理解できる構文がなくてはクロスプラットフォームの相互運用性を実現することはできない。しかし、この障壁を取り除くことによって恩恵を受けることのできる機能は様々である。読書中の位置の保持からナビゲーションへの注釈付けなど、どんな出版物の内部を指すことのできる機能は、開発者と製作者にこれまで利用できなかった全く新しい次元を開く。</p>
+<p>この仕様は、EPUB 出版物内のどのようなロケーションあるいはロケーションの単純な範囲でも一意に特定できる任意の構造参照（即ち、EPUB CFI）を定義してこの状況の改善を試みる。以下の配慮がこのスキームの設計と適応範囲に著しく影響する：</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>コンテンツ参照に使用するメカニズムは相互運用可能にするべきで、ひとつのリーディングシステムで作成された読書中の位置は他のシステムでも利用できるようにするべきである。</p></li>
+<li class="listitem"><p>EPUB コンテンツへのドキュメント参照は、既存のハイパーリンクが Web 全般で参照できるのと同じ方法で使用できるべきである。</p></li>
+<li class="listitem"><p>EPUB ファイル内のそれぞれのロケーションは、ドキュメントを変更する必要なく特定できるべきである。</p></li>
+<li class="listitem"><p>同じ論理ロケーションを参照するすべてのフラグメント識別子は比較したとき等しくなるべきである。</p></li>
+<li class="listitem"><p>ソートおよび比較の検証を含む比較演算は、参照先ファイルへのアクセスなしに行えるべきである。</p></li>
+<li class="listitem"><p>簡単な処理は元ファイルへのアクセスなしにできるべきである。（例えば、ファイル内部への深層参照がある場合、ファイルの先頭への参照は簡単な処理で生成できるべきである。）</p></li>
+<li class="listitem"><p>識別子の解決は合理的に効率化されているべきである。（例えば、最終章をポイントするフラグメント識別子の解決に第一章の処理は必要ない）</p></li>
+<li class="listitem"><p>参照のターゲットロケーションはパーサーの変化やドキュメントの改版を経て修復できるべきである。</p></li>
+<li class="listitem"><p>簡潔で切れ目のない表現をサポートするべきである。</p></li>
+<li class="listitem"><p>将来の参照を修復する発見的解決法に適応できる拡張可能なメカニズムを提供すべきである。</p></li>
+</ul>
+</div>
+<p><a class="glossterm" href="#gloss-cfi-pub" title="Standard EPUB CFI">Standard EPUB CFIs</a> と <a class="glossterm" href="#gloss-cfi-intra-pub" title="Intra-Publication EPUB CFI">Intra-Publication EPUB CFI</a> の両方の場合、この仕様は、<a class="ulink" href="https://www.w3.org/TR/fragid-best-practices/#structures" target="_top">セクション6 Best Practices for Fragid Structures</a> <a class="biblioref" href="#refFragIDBP" title="Best Practices for Fragment Identifiers and Media Type Definitions">[<abbr class="abbrev">FragIDBestPractices</abbr>]</a> で W3C によって示されているガイドラインに準拠する。</p>
+<p>言い換えれば、standard CFI URI （例えば、メディアタイプ "<code class="media-type">application/epub+zip</code>" を参照する "<code class="uri">book.epub#epubcfi(…)</code>"） と intra-publication CFI URI （例えば、メディアタイプ "<code class="media-type">application/oebps-package+xml</code>"を参照する "<code class="uri">package.opf#epubcfi(…)</code>"）の両方が、前述のメディアタイプ接頭辞登録（すなわち、"<code class="markup">-xml</code>" と "<code class="markup">-zip</code>"）のコンテクスト内の既存スキーマと重複しないフラグメント識別子の構文を利用する。</p>
+</section>
+<section class="section" id="sec-terminology">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.2 用語</h2>
+<p><span class="emphasis"><em>この仕様で使われる EPUB 固有の用語の定義については <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a> を参照されたい。</em></span></p>
+<div class="glosslist">
+<dl>
+<dt class="glossentry" id="gloss-cfi-pub"><span class="glossterm">Standard EPUB CFI</span></dt>
+<dd class="glossdef"><p>出版物レベルの EPUB CFI は、EPUB 出版物の内部へリンクする。EPUB CFI に先行するパスは EPUB 出版物のロケーションを参照する。</p></dd>
+<dt class="glossentry" id="gloss-cfi-intra-pub"><span class="glossterm">Intra-Publication EPUB CFI</span></dt>
+<dd class="glossdef"><p>Intra-Publication EPUB CFI は、一つのコンテンツ ドキュメントが同じ EPUB 出版物のレンディション内の他のドキュメントを参照できるようにする。EPUB CFI に先行するパスはそのレンディションのパッケージ ドキュメントを参照する。</p>
+<p>詳しくは <a class="xref" href="#sec-intra-cfis" title="3.3 Intra-Publication CFIs">Intra-Publication CFI</a> を参照されたい。</p></dd>
+</dl>
+</div>
+</section>
+
+<section xml:lang="en" class="section" id="sec-typography">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-typography"> </a> </span>1.3 表記上の規則</h2>
+<p>次の表記上の規則は、この仕様に用いられる：</p>
+<div class="variablelist">
+<dl class="variablelist">
+<dt class="varlistentry"><span class="term"><code class="markup">markup</code></span></dt>
+<dd>
+<p>全てのマークアップ（要素、属性、プロパティ）、コード（JavaScript、擬似コード）、機械可読可能な値（文字列、文字、メディアタイプ）とファイル名は、赤色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="code-link">markup link</code></span></dt>
+<dd>
+<p>マークアップとコードの定義へのリンクは、赤色の下線の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><code class="uri">http://www.idpf.org/</code></span></dt>
+<dd>
+<p>URI は紺色の等幅フォントで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link">hyperlink</span></span></dt>
+<dd>
+<p>ハイパーリンクは、青色と下線で示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-ref">[reference]</span></span></dt>
+<dd>
+<p>規範的で参考情報は、角括弧で囲まれている。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="terminology">Term</span></span></dt>
+<dd>
+<p><a class="xref" href="#sec-terminology" title="1.3 Terminology">用語集</a>で定義されている用語は、キャピタルケースで示している。</p>
+</dd>
+<dt class="varlistentry"><span class="term"><span class="link-def">Term Link</span></span></dt>
+<dd>
+<p>用語の定義へのリンクは、点線の青い下線である。</p>
+</dd>
+</dl>
+</div>
+<div class="elem-synopsis">
+<dl class="elem-synopsis">
+<dt class="varlistentry"><span class="term"/></dt>
+<dd>
+<p>規範的な要素、属性とプロパティの定義は、青いボックスにある。</p>
+</dd>
+</dl>
+</div>
+<div class="informalexample">
+<pre class="synopsis">有益なマークアップ例は、ライトグレーのボックス内にある。</pre>
+</div>
+<div class="note">
+<h3 class="title">note</h3>
+<p>有益な注記は、"Note"の見出しがある緑色のボックス内にある。</p>
+</div>
+<div class="caution">
+<h3 class="title">caution</h3>
+<p>有益な警告は、"Caution"の見出しがある赤いボックス内にある。</p>
+</div>
+</section>
+
+<section xml:lang="en" class="section" id="sec-conformance-statements">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-conformance-statements"> </a> </span>1.4 適合性宣言</h2>
+
+<p>この文書内のキーワード、<span class="rfc2119">must</span>、<span class="rfc2119">must not</span>、<span class="rfc2119">REQUIRED</span>、<span class="rfc2119">SHALL</span>、<span class="rfc2119">SHALL NOT</span>、<span class="rfc2119">should</span>、<span class="rfc2119">should not</span>、<span class="rfc2119">RECOMMENDED</span>、<span class="rfc2119">may</span>、<span class="rfc2119">OPTIONAL</span> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr class="abbrev">RFC2119</abbr>]</a> の記述に従って解釈される。</p>
+
+<p>この仕様のすべてのセクションと付録は規定ある。但し"このセクションは有益な情報である"という参考情報状態ラベルで識別される箇所を除く。セクションと付録への参考情報状態の適用は、含まれるすべての子コンテンツおよびサブセクションに適用される。</p>
+
+<p>この仕様のすべての例は有益な参考情報である。</p>
+
+</section>
+</section>
+<section class="chapter" id="sec-epubcfi-def">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-epubcfi-def"> </a> </span>2 EPUB CFI の定義</h1>
+<section class="section" id="sec-epubcfi-intro">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epubcfi-intro"> </a> </span>2.1 前置き</h2>
+<p class="informative">このセクションは有益な情報である。</p>
+<p>フラグメント識別子は、リソース内のロケーションを定義する IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> の一部である。構文的には、リソース IRI の終わりに付属するハッシュ(<code class="literal">#</code >)で始まるセグメントである。HTML ドキュメントには、ID および名前付きアンカーがフラグメント識別子として使用されている。XML ドキュメントには、ID を参照するために Shorthand XPointer <a class="biblioref" href="#refXPTRSH" title="XPointer Shorthand Notation">[<abbr class="abbrev">XPTRSH</abbr>]</a> の表記が用いられている。</p>
+<p>Canonical Fragment Identifier（CFI）は、これらと似たような構成であるが EPUB 出版物内部のロケーションを表現する。例えば、</p>
+<div class="informalexample">
+<pre class="synopsis">book.epub#epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/3:10)</pre>
+</div>
+<p>ハッシュの直後に続く関数のような文字列（<code class="markup">epubcfi(…)</code>）は、このフラグメント識別子がこの仕様の定義するスキームに従っていることを示し、括弧で囲まれた値は特定の EPUB 出版物（<code class="filename">book.epub</code>）内部のロケーションを参照するのに使われる構文である。<a class="xref" href="#sec-path-res" title="3.1 Path Resolution">パスの解決</a>によって定義された処理ルールを使って、リーディングシステムは構文を解析し、EPUB 出版物の中の該当するコンテンツ ドキュメントを開いて、指定されたロケーションをユーザーのために読み込むことができる。</p>
+<p>EPUB CFI 構文の完全な定義は次のセクションに規定されている。</p>
+<div class="note">
+<h3 class="title">NOTE</h3>
+<p>あらゆる XML+ZIP ベースのファイルフォーマットのための、より汎用的な CFI のようなスキームが将来定義されるかもしれないため、スキーム名の先頭に <code class="markup">epub</code> を付加している。</p>
+</div>
+</section>
+<section class="section" id="sec-epubcfi-syntax">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epubcfi-syntax"> </a> </span>2.2 構文</h2>
+<table xmlns:spec="http://www.idpf.org/2016/epub/spec" style="width: 100%; border-spacing: 0; border-collapse: collapse;" class="productionset">
+<caption>（EBNF 記法 <a href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=26153">ISO/IEC 14977</a>）
+<br/>すべての終端記号は、Unicode ブロック'基本ラテン文字'（U+0000 から U+007Fまで）である。</caption>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.fragment"><a href="#epubcfi.ebnf.fragment">fragment</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "epubcfi(" , ( <a href="#epubcfi.ebnf.path">path</a> , [ <a href="#epubcfi.ebnf.range">range</a> ] ) , ")" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.path"><a href="#epubcfi.ebnf.path">path</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.step">step</a> , <a href="#epubcfi.ebnf.local_path">local_path</a>;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.range"><a href="#epubcfi.ebnf.range">range</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "," , <a href="#epubcfi.ebnf.local_path">local_path</a> , "," , <a href="#epubcfi.ebnf.local_path">local_path</a>;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.local_path"><a href="#epubcfi.ebnf.local_path">local_path</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> { <a href="#epubcfi.ebnf.step">step</a> } , ( <a href="#epubcfi.ebnf.redirected_path">redirected_path</a> | [ <a href="#epubcfi.ebnf.offset">offset</a> ] );</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.redirected_path"><a href="#epubcfi.ebnf.redirected_path">redirected_path</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "!" , ( <a href="#epubcfi.ebnf.offset">offset</a> | <a href="#epubcfi.ebnf.path">path</a> );</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.step"><a href="#epubcfi.ebnf.step">step</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "/" , <a href="#epubcfi.ebnf.integer">integer</a> , [ "[" , <a href="#epubcfi.ebnf.assertion">assertion</a> , "]" ] ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.offset"><a href="#epubcfi.ebnf.offset">offset</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ( ( ":" , <a href="#epubcfi.ebnf.integer">integer</a> ) | ( "@" , <a href="#epubcfi.ebnf.number">number</a> , ":" , <a href="#epubcfi.ebnf.number">number</a> ) | ( "~" , <a href="#epubcfi.ebnf.number">number</a> , [ "@" , <a href="#epubcfi.ebnf.number">number</a> , ":" , <a href="#epubcfi.ebnf.number">number</a> ] ) ) , [ "[" , <a href="#epubcfi.ebnf.assertion">assertion</a> , "]" ] ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.number"><a href="#epubcfi.ebnf.number">number</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ( <a href="#epubcfi.ebnf.digit-non-zero">digit-non-zero</a> , { <a href="#epubcfi.ebnf.digit">digit</a> } , [ "." , { <a href="#epubcfi.ebnf.digit">digit</a> } , <a href="#epubcfi.ebnf.digit-non-zero">digit-non-zero</a> ] ) | ( <a href="#epubcfi.ebnf.zero">zero</a> , [ "." , { <a href="#epubcfi.ebnf.digit">digit</a> } , <a href="#epubcfi.ebnf.digit-non-zero">digit-non-zero</a> ] ) ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.integer"><a href="#epubcfi.ebnf.integer">integer</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.zero">zero</a> | ( <a href="#epubcfi.ebnf.digit-non-zero">digit-non-zero</a> , { <a href="#epubcfi.ebnf.digit">digit</a> } ) ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.assertion"><a href="#epubcfi.ebnf.assertion">assertion</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ( ( <a href="#epubcfi.ebnf.value">value</a> , [ "," , <a href="#epubcfi.ebnf.value">value</a> ] ) | ( "," , <a href="#epubcfi.ebnf.value">value</a> ) | ( <a href="#epubcfi.ebnf.parameter">parameter</a> ) ) { <a href="#epubcfi.ebnf.parameter">parameter</a> } ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.parameter"><a href="#epubcfi.ebnf.parameter">parameter</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ";" , <a href="#epubcfi.ebnf.value-no-space">value-no-space</a> , "=" , <a href="#epubcfi.ebnf.csv">csv</a> ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.csv"><a href="#epubcfi.ebnf.csv">csv</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.value">value</a> , { "," , <a href="#epubcfi.ebnf.value">value</a> } ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.value"><a href="#epubcfi.ebnf.value">value</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.string-escaped-special-chars">string-escaped-special-chars</a>;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.value-no-space"><a href="#epubcfi.ebnf.value-no-space">value-no-space</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.value">value</a> - ( [ <a href="#epubcfi.ebnf.value">value</a> ] , <a href="#epubcfi.ebnf.space">space</a> , [ <a href="#epubcfi.ebnf.value">value</a> ] ) ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.special-chars"><a href="#epubcfi.ebnf.special-chars">special-chars</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.circumflex">circumflex</a> | <a href="#epubcfi.ebnf.square-brackets">square-brackets</a> | <a href="#epubcfi.ebnf.parentheses">parentheses</a> | <a href="#epubcfi.ebnf.comma">comma</a> | <a href="#epubcfi.ebnf.semicolon">semicolon</a> | <a href="#epubcfi.ebnf.equal">equal</a> ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.escaped-special-chars"><a href="#epubcfi.ebnf.escaped-special-chars">escaped-special-chars</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ( <a href="#epubcfi.ebnf.circumflex">circumflex</a> , <a href="#epubcfi.ebnf.circumflex">circumflex</a> ) | ( <a href="#epubcfi.ebnf.circumflex">circumflex</a> , <a href="#epubcfi.ebnf.square-brackets">square-brackets</a> ) | ( <a href="#epubcfi.ebnf.circumflex">circumflex</a> , <a href="#epubcfi.ebnf.parentheses">parentheses</a> ) | ( <a href="#epubcfi.ebnf.circumflex">circumflex</a> , <a href="#epubcfi.ebnf.comma">comma</a> ) | ( <a href="#epubcfi.ebnf.circumflex">circumflex</a> , <a href="#epubcfi.ebnf.semicolon">semicolon</a> ) | ( <a href="#epubcfi.ebnf.circumflex">circumflex</a> , <a href="#epubcfi.ebnf.equal">equal</a> ) ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.character-escaped-special"><a href="#epubcfi.ebnf.character-escaped-special">character-escaped-special</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ( <a href="#epubcfi.ebnf.character">character</a> - <a href="#epubcfi.ebnf.special-chars">special-chars</a> ) | <a href="#epubcfi.ebnf.escaped-special-chars">escaped-special-chars</a> ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.string-escaped-special-chars"><a href="#epubcfi.ebnf.string-escaped-special-chars">string-escaped-special-chars</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.character-escaped-special">character-escaped-special</a> , { <a href="#epubcfi.ebnf.character-escaped-special">character-escaped-special</a> } ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.digit"><a href="#epubcfi.ebnf.digit">digit</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"><a href="#epubcfi.ebnf.zero">zero</a> | <a href="#epubcfi.ebnf.digit-non-zero">digit-non-zero</a> ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.digit-non-zero"><a href="#epubcfi.ebnf.digit-non-zero">digit-non-zero</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.zero"><a href="#epubcfi.ebnf.zero">zero</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "0" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.space"><a href="#epubcfi.ebnf.space">space</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> " " ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.circumflex"><a href="#epubcfi.ebnf.circumflex">circumflex</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "^" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.square-brackets"><a href="#epubcfi.ebnf.square-brackets">square-brackets</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "[" | "]" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.parentheses"><a href="#epubcfi.ebnf.parentheses">parentheses</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "(" | ")" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.comma"><a href="#epubcfi.ebnf.comma">comma</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "," ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.semicolon"><a href="#epubcfi.ebnf.semicolon">semicolon</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ";" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.equal"><a href="#epubcfi.ebnf.equal">equal</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> "=" ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+<tr>
+<td style="text-align: right; vertical-align: top;" id="epubcfi.ebnf.character"><a href="#epubcfi.ebnf.character">character</a></td>
+<td style="vertical-align: top; text-align: center;"><code>=</code></td>
+<td style="vertical-align: top"> ? Unicode 文字 ? ;</td>
+<td style="vertical-align: top; text-align: left;"> </td>
+</tr>
+</table>
+
+<div class="constraintdef" id="unicode-chars">
+<span class="link-marker"><a class="hidden-reveal" href="#unicode-chars"> </a> </span>
+<p><strong>Unicode 文字</strong></p>
+<p>利用できる Unicode 文字の定義は <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> と同じである。これには、サロゲートブロック、FFFE、および FFFF を除く：</p>
+
+<pre class="programlisting">#x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF]</pre>
+
+<p>ドキュメントの製作者は、<a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> のセクション 2.3 で定義される「互換文字」を避けることを推奨する。次の範囲で定義される文字も使用しないことを推奨する。これらは、制御文字または恒久的に未定義な Unicode 文字である。</p>
+<pre class="programlisting">[#x7F-#x84], [#x86-#x9F], [#xFDD0-#xFDEF],
+[#x1FFFE-#x1FFFF], [#x2FFFE-#x2FFFF], [#x3FFFE-#x3FFFF],
+[#x4FFFE-#x4FFFF], [#x5FFFE-#x5FFFF], [#x6FFFE-#x6FFFF],
+[#x7FFFE-#x7FFFF], [#x8FFFE-#x8FFFF], [#x9FFFE-#x9FFFF],
+[#xAFFFE-#xAFFFF], [#xBFFFE-#xBFFFF], [#xCFFFE-#xCFFFF],
+[#xDFFFE-#xDFFFF], [#xEFFFE-#xEFFFF], [#xFFFFE-#xFFFFF],
+[#x10FFFE-#x10FFFF].
+</pre>
+</div>
+<p>Canonical Fragment Identifier（CFI）は、この特殊な参照方法を示す初期シーケンス <code class="markup">epubcfi</code> と括弧に囲まれたパスまたはレンジによって構成される。パスは、ロケーションを参照する構造化されたステップのシーケンスとして組み立てられる。レンジは、開始と終了を指定する２つのローカル（または相対）パスを後ろに持ったパスである。</p>
+
+<p>ステップは、スラッシュ文字 (<code class="literal">/</code>) によって示され、XML コンテンツの横断に使用される。CFI パス内の最後のステップは、構造（XML 要素）、テキスト（文字データ）または聴覚・視覚（画像または音声、動画メディア）どちらかの文書内の位置を表現する。そのような終端のステップは、特定の文字位置、時間的または空間的な断片を示す省略可能（<span class="rfc2119">optional</span>）な「オフセット」によって補完されてもよい（<span class="rfc2119">may</span>）。</p>
+
+<p>括弧内の従属文字列は、伸長可能なアサーションであり、パスの移動や、同じ文書の異なる版へのパスの移行の精度を向上させる。これらのアサーションは、ドキュメント内でたどる要素に関する付加情報を保持しており、EPUB 出版物が変更されても目的のロケーションを修復することが可能になる。</p>
+
+<p>上記の構文で定義される <span class="strong"><strong>value</strong></span> はどのような文字のシーケンスでも許可するが、次に示す文字には曲折アクセント記号（<code class="literal">^</code>）を使ってエスケープし、解析を妨げぬようにしなければならない。</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>角括弧 (<code class="literal">[</code>,<code class="literal">]</code>)</p></li>
+<li class="listitem"><p>曲折アクセント記号 (<code class="literal">^</code>)</p></li>
+<li class="listitem"><p>コンマ (<code class="literal">,</code>)</p></li>
+<li class="listitem"><p>丸括弧 (<code class="literal">(</code>,<code class="literal">)</code>)</p></li>
+<li class="listitem"><p>セミコロン (<code class="literal">;</code>)</p></li>
+</ul>
+</div>
+<div class="informalexample">
+<p>テキスト "<code class="literal">2[1]</code>" の後ろのロケーションを指す EPUB CFI の例。</p>
+<pre class="synopsis">epubcfi(/6/14[chap05ref]!/4[body01]/10/2/1:3[2^[1^]])</pre>
+</div>
+<p>パスとレンジの中での数字と整数の利用には次のルールが適用される：</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>数字または整数の前に来るゼロは利用できない（一意性を保証するため）。</p></li>
+<li class="listitem"><p>数字の小数部分の末尾のゼロは利用できない。</p></li>
+<li class="listitem"><p>ゼロは整数 <code class="literal">0</code> で表現しなければならない（<span class="rfc2119">must</span>）。</p></li>
+<li class="listitem"><p><code class="literal">1 &gt; N &gt; 0</code> のレンジの数字は <code class="literal">0.</code> で始めなければならない（<span class="rfc2119">must</span>）。</p></li>
+<li class="listitem"><p>整数（integral numbers）は整数（integers）で表さなければならない（<span class="rfc2119">must</span>）。</p></li>
+</ul>
+</div>
+</section>
+<section class="section" id="sec-epubcfi-escaping">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-epubcfi-escaping"> </a> </span>2.3 文字エスケープ</h2>
+
+<p><a class="xref" href="#sec-epubcfi-syntax" title="2.2 Syntax">構文</a>で説明されているように、EPUB CFI の文法にはフラグメント識別子の表記の中の区切り文字となる特殊用途を持つ文字がある。これらの文字は、区切り文字として使用する意図がないとき、区切り文字に誤読されることなく EPUB CFI データの中で使用できるように、曲折アクセント記号 '<code class="literal">^</code>' 文字でエスケープしなければならない（<span class="rfc2119">must</span>）。そのような EPUB CFI の使用コンテクストに応じて、さらなる文字エスケープを、すべての潜在的に矛盾するテキストトークンが正しくエンコードされるのを保証するために求めてもよい（<span class="rfc2119">may</span>）。</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<div class="itemizedlist">
+<p>IRI と URI 参照：</p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem"><p>EPUB CFI（フラグメント識別子）スキームは URI および IRI 参照内で使用されるように設計されている。<a class="biblioref" href="#refRFC3986" title="Uniform Resource Identifier (URI): Generic Syntax (RFC 3986)">[<abbr class="abbrev">RFC3986</abbr>]</a> の仕様では区切り文字として特殊用途を持つ多数の“予約”文字を定義しており、もしそれらが URI/IRI 参照の構文構造と衝突する場合にはエスケープしてもよい（<span class="rfc2119">may</span>）。エスケープにはパーセント記号 '<code class="literal">%</code>' を使用し、エスケープ可能な文字はパーセントエンコーディングされる。例えば、パーセント記号はエスケープエンコードされると "<code class="literal">%25</code>" となる（EPUB CFI の曲折アクセント記号 '<code class="literal">^</code>' と、二重文字 '<code class="literal">^^</code>' を使用してエスケープするところの違いに注意されたい）。</p></li>
+<li class="listitem"><p>IRI 参照とは異なり、URI 参照は Unicode 文字を ASCII エンコードする必要がある。EPUB 仕様自体は IRI に基づいている（つまり、著者や制作ツールは IRI を使用することを想定している）が、いくつかのシステムや API は URI のみのサポートするかもしれない。その結果、実装者は、<a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> で定義されている IRI から URI 参照の変換処理をさらに必要としてもよい（<span class="rfc2119">may</span>）。禁止文字は次のようにエスケープする：</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem"><p>それぞれの禁止文字を1バイトまたは複数バイトの UTF-8 <a class="biblioref" href="#refRFC2279" title="UTF-8, a transformation format of ISO 10646 (RFC 2279)">[<abbr class="abbrev">RFC2279</abbr>]</a> へ変換する。URI 参照での禁止文字は、すべての非 ASCII 文字および <a class="biblioref" href="#refRFC2396" title="Uniform Resource Identifiers (URI): Generic Syntax (RFC 2396)">[<abbr class="abbrev">RFC2396</abbr>]</a> の 2.4 節にリストされた除外文字だが、ナンバー記号 '<code class="literal">#</code>'、パーセント記号 '<code class="literal">%</code>'、および <a class="biblioref" href="#refRFC2732" title="Format for Literal IPv6 Addresses in URL&#39;s (RFC 2732)">[<abbr class="abbrev">RFC2732</abbr>]</a> で再び許可された角括弧文字は除く。</p>
+<p>その結果として得られたバイトを URI エスケープメカニズムによってエスケープする。（つまり、 '<code class="literal">%HH</code>' へ変換する。この HH はバイト値の 16 進法表示である。）</p>
+<p>元の文字は変換結果の文字シーケンスで置き換える。</p></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li class="listitem"><p>(X)HTML コンテキスト：</p>
+<p>IRI 参照は、EPUB 出版物を構成するさまざまな種類のドキュメントで使用されるように設計されている。XML および (X)HTML は、独自の文字エスケープ規則を必要とする別の挿入コンテキストを意味する。例えば、二重引用文字または山括弧は、マークアップ構文内で重要な区切り文字と競合するので、 <code class="literal">&amp;xxx;</code> 特殊シーケンス（文字参照）を使ってエスケープしなければならない（<span class="rfc2119">must</span>）。</p></li>
+</ul>
+</div>
+<p>文字エスケープを複数回適用して、EPUB CFI をエスケープまたはエスケープの解除をする場合、元の形式に戻すにはその逆の順序で適用しなければならない（<span class="rfc2119">must</span>）。例えば、[ EPUB-CFI -&gt; IRI -&gt; (X)HTML ] ならば、 [ (X)HTML -&gt; IRI -&gt; EPUB-CFI ] の適用順序となる。</p>
+<div class="informalexample">
+<p>次の例は、（曲折アクセント記号 '<code class="literal">^</code>' によるエスケープだけの）EPUB CFI の「未加工」の形を示している。最後部のアサーションテキスト、およびエスケープされた左右角括弧と曲折アクセント記号に注目されたい（エスケープされていないテキストは 'Ф-"spa ce"-99%-aa[bb]^'である)：</p>
+<pre class="synopsis">epubcfi(/6/4!/4/10/2/1:3[Ф-"spa ce"-99%-aa^[bb^]^^])</pre>
+</div>
+<div class="informalexample">
+<p>IRI で使用される場合、アサーション内の空白文字はパーセントエスケープ ('<code class="literal">%20</code>') するかもしれず、パーセント文字自体はエスケープ（'<code class="literal">%25</code>'）しなければならない（<span class="rfc2119">must</span>）。角括弧 '<code class="literal">[</code>' '<code class="literal">]</code>' とセミコロン '<code class="literal">:</code>' は（URI の仕様によれば）「予約」文字となっているが、IRI プロセッサーがフラグメント識別子を抽出する際の区切り文字としては意味も持たないため、エスケープする必要はない。（つまり、IRI のフラグメン構成部品は、 '<code class="literal">#</code>' 文字以降のテキストすべて処理して曖昧さなく解析できる。）曲折アクセント記号 '<code class="literal">^</code>' もまた “賢明はでない”（または “安全ではない”）文字の部類に属するが、EPUB フラグメント識別子のスキームではエスケープする必要はない。次は IRI のエスケープされた EPUB CFI である：</p>
+<pre class="synopsis">#epubcfi(/6/4!/4/10/2/1:3[Ф-"spa%20ce"-99%25-aa^[bb^]^^])</pre>
+</div>
+<div class="informalexample">
+<p>XML 属性の中に IRI を指定する場合、二重引用文字（引用符）は属性値の区切り文字として重要であるため '<code class="literal">&amp;#x22;</code>' にエスケープする。 キリルの “EF” 文字（'Ф'）は EPUB XML ドキュメントでそのままサポートされていることに注目されたい。EPUB XML ドキュメントは（UTF-8 エンコーディングを使って Unicode 文字のレパートリーを表現するため）エンコードする必要はない：</p>
+<pre class="synopsis">#epubcfi(/6/4!/4/10/2/1:3[Ф-&amp;#x22;spa%20ce&amp;#x22;-99%25-aa^[bb^]^^])</pre>
+</div>
+<div class="informalexample">
+<p>IRI を URI に変換する必要がある場合、非 ASCII のキリルの “EF” 文字 ('Ф') は2バイト (16 進数で、'<code class="literal">0xd0 0xa4</code>') へパーセントエスケープする。結果として次のような URI となる：</p>
+<pre class="synopsis">#epubcfi(/6/4!/4/10/2/1:3[%d0%a4-%22spa%20ce%22-99%25-aa^[bb^]^^])</pre>
+<p>URI エンコード／デコード API は、次の例に示すとおり、通常「強引に」パーセントエンコードを行う。曲折アクセント記号 '<code class="literal">^</code>'（%5E）、角括弧 '<code class="literal">[</code>'（%5B）'<code class="literal">]</code>'（%5D）、二重引用符 '<code class="literal">"</code>'（%22）が、（URI の中では “安全ではない”／“賢明はでない” 性質を持つため）どのようにパーセントエンコードされるかにも注意する必要がある：</p>
+<pre class="synopsis">#epubcfi(/6/4!/4/10/2/1:3%5B%D0%A4-%22spa%20ce%22-99%25-aa%5E%5Bbb%5E%5D%5E%5E%5D)</pre>
+</div>
+</section>
+</section>
+<section class="chapter" id="sec-epubcfi-processing">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-epubcfi-processing"> </a> </span>3 EPUB CFI の処理</h1>
+<section class="section" id="sec-path-res">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-res"> </a> </span>3.1 パスの解決</h2>
+<p>EPUB CFI を EPUB 出版物内のロケーションへ解決する処理は、パッケージ ドキュメントの <code class="markup">package</code> ルート要素から開始する。CFI のそれぞれのステップは、次のサブセクションで定める規則を適用しながら、左から右へひとつずつ処理される。</p>
+<div class="note">
+<h3 class="title">NOTE</h3>
+<p>以下のサブセクションでの EPUB CFI の例は、<a class="xref" href="#sec-path-examples" title="3.1.10 Examples">用例</a>のサンプルドキュメントに基づく。</p>
+</div>
+<section class="section" id="sec-path-child-ref">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-child-ref"> </a> </span>3.1.1 子要素と文字データへのステップ参照 (<code class="literal">/</code>)</h3>
+
+<p>正の整数が続くスラッシュ (<code class="literal">/</code>) のステップは、ここに定義してある規則ごとに、子要素や文字データのチャンクを参照する：</p>
+
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+
+<li class="listitem"><p>要素と文字データ以外の <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> コンテンツは、無視される。<a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> 仕様に従って、CDATA セクション内に文字データは包含され、逆に言えば、XML コメントは無視されることに注意されたい。</p></li>
+
+
+<li class="listitem"><p>（一般的に、マークアップのフォーマットやインデントのために使用された）無意味な空白に対応する <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> 文字データは、保持される。文字とエンティティの参照は、拡張とみなされ、文字データは、（<a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> 仕様に定義された用語に従って）"包含された代替えテキスト"から得られる。</p></li>
+
+
+<li class="listitem"><p>兄弟子要素（すなわち、"混在したコンテンツ"のコンテクスト）の間に散りばめられた <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> 文字データは、論理的に連続した文字データの（潜在的に空の）チャンクに構成されており、最初のチャンクは、最初の子要素（左の兄弟）の前に配置され、最後のチャンクは、最後の子要素（右の兄弟）の後に配置され、子要素の各ペアの間のひとつのチャンクがある。子要素が存在しないとき、文字データのいずれか（潜在的に空の）チャンクがある。文字データの連続した（潜在的に空の）チャンクは、それぞれ割り当てられた奇数のインデックス（すなわち、1 から始まり、3…と続く）である。</p></li>
+<li class="listitem"><p>子 <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> 要素は、それぞれ割り当てられた数のインデックス（つまり、2 から始まり、4…と続くである。さらに、0 は、親要素のコンテンツ内の文字データの最初の潜在的に空のチャンクの実質的に前に来る存在しない要素を参照する妥当なインデックスである。同様に、<code class="literal">n+2</code> は、文字データの最後の潜在的に空のチャンクに実質的に続く存在しない要素を参照る妥当なインデックスであり、これらが子要素を持たないとき、<code class="literal">n</code> は、最後の子要素または 0 の偶数のインデックスである。CFI プロセッサ（例えば、リーディングシステム）は、文字データの最初（もしくはそれぞれ最後）のチャンクが空のときでさえ、0 と <code class="literal">n+2</code> の"仮想"要素への参照を含んでいる CFI 表現を消費する（例えば、構文解析と解釈）ことができなければならない（<span class="rfc2119">must</span>）。逆に言えば、そのような CFI 表現の*生産物*は、次の適合性要件によって制御されなければならない：文字データの最初のチャンクが空のとき、CFI 表現は、インデックス 0 の"仮想"要素への参照を使用して構成されるべきではなく（<span class="rfc2119">shouled not</span>）、代わりに"実在の"最初の子要素（インデックス 2 のとき）は、参照するべきである（<span class="rfc2119">should</span>）。同様に、文字データの最後のチャックが空のとき、CFI 表現は、インデックス <code class="literal">n+2</code> のとき"仮想"要素への参照を使用して構成されるべきではなく（<span class="rfc2119">shouled not</span>）、代わりに、"実在の"最後の子要素（インデックス <code class="literal">n</code> のとき）は、参照するべきである（<span class="rfc2119">should</span>）。</p></li>
+
+</ul>
+</div>
+
+<div class="note">
+<h3 class="title">note</h3>
+<p>"仮想"の最初/最後の要素のメカニズムは、存在しない要素が、最初と最後の境界で文字オフセットに依存することなくテキストコンテンツを横断して使用される DOM 範囲のいくつかのインスタンスの相互互換性を容易にするかもしれない。</p>
+</div>
+
+<p><a class="glossterm" href="#gloss-cfi-pub" title="Standard EPUB CFI">Standard EPUB CFI</a> では、CFI の先頭のステップは斜線（<code class="literal">/</code>）とそれに続く（パッケージ ドキュメントの <code class="markup">package</code> ルート要素の <code class="markup">spine</code> 子要素を参照する）偶数の番号で始まらなければならない（<span class="rfc2119">must</span>）。CFI がたどるパッケージ ドキュメントは、EPUB 出版物の <code class="filename">META-INF/container.xml</code> ファイルの中の初期設定のレンディションとして指定されていなければならない（<span class="rfc2119">must</span>）。（つまり、 <code class="filename">container.xml</code> の最初の <code class="markup">rootfile</code> 要素で参照されるパッケージ ドキュメントであること。）</p>
+<p><a class="glossterm" href="#gloss-cfi-intra-pub" title="Intra-Publication EPUB CFI">Intra-Publication EPUB CFI</a>では、最初のステップは斜線とそれに続く（<code class="markup">package</code> 要素から始まるパッケージ ドキュメント内の位置を参照する）ノード番号で始まらなければならない（<span class="rfc2119">must</span>）。</p>
+</section>
+<section class="section" id="sec-path-xmlid">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-xmlid"> </a> </span>3.1.2 XML ID アサーション（<code class="literal">[</code>）</h3>
+<p>EPUB CFI が、ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> を含んだ要素を参照する場合、該当するパスのステップは、（斜線（<code class="literal">/</code>）と要素を特定する偶数の後ろに）角括弧で囲んだその ID を含めなければならない（<span class="rfc2119">must</span>）。</p>
+<p>識別子の仕様は、CFI のスキームを堅牢にする。リーディングシステムは CFI で参照された位置が最初に目的とした位置でないと判断でき、コンテンツ内の求められる目的の箇所に到達するステップのセットを計算するために識別子を使用できる（<a class="xref" href="#sec-target-correction" title="3.5 Intended Target Location Correction">ターゲットロケーション補正</a>を参照されたい）。この追加された堅牢性のコストは、CFI 文字列の比較（とソート）はすべての括弧で囲まれた文字列を論理的に除去した後でのみ実行できる（<a class="xref" href="#sec-sorting" title="3.2 Sorting Rules">ソート規則</a>を参照されたい）。</p>
+</section>
+<section class="section" id="sec-path-indirection">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-indirection"> </a> </span>3.1.3 ステップ間接指定 (<code class="literal">!</code>)</h3>
+
+<p>ステップまたはステップの連続が、他のドキュメントを参照する要素への点であるとき、感嘆符 (<code class="literal">!</code>) は、そのステップが参照した文書（"間接"）に適用される表現がすぐに続くときはいつでも、使用されなければならない（<span class="rfc2119">must</span>）。次の表現は、参照した XML ドキュメントのルート要素または（特定の）ターゲットしたXMLフラグメントから解決される。</p>
+
+<p>次の参照のみが有効である：</p>
+<div class="itemizedlist">
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p>パッケージ ドキュメントの <code class="markup">spine</code> 内の <code class="markup">itemref</code> に対しては、参照は <code class="markup">manifest</code> 内で該当する（つまり、<code class="markup">itemref</code> の <code class="markup">idref</code> 属性が参照する）<code class="markup">item</code> 要素の <code class="markup">href</code> 属性によって定義される。</p></li>
+<li class="listitem"><p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-iframe-element" target="_top">iframes</a></code> 要素と <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-embed-element" target="_top">embed</a></code> 要素に対しては、参照は <code class="markup">src</code> 属性によって定義される。</p></li>
+<li class="listitem"><p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-object-element" target="_top">object</a></code> 要素に対しては、参照は <code class="markup">data</code> 属性によって定義される。</p></li>
+<li class="listitem"><p><a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#ImageElement" target="_top">image</a></code> と <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#UseElement" target="_top">use</a></code> 要素に対しては、参照は <code class="markup">xlink:href</code> 属性によって定義される。</p></li>
+</ul>
+</div>
+<div class="note">
+<h3 class="title">NOTE</h3>
+<p>このスキームは、単に埋め込み参照のみを対象としておりハイパーリンクは考慮していない。そのため、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a>（または <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a>）の <code class="markup">a</code> 要素のリンクをたどるのは違反となる。</p>
+</div>
+</section>
+<section class="section" id="sec-path-terminating-char">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-terminating-char"> </a> </span>3.1.4 文字オフセット (<code class="literal">:</code>)</h3>
+<p>先頭のコロン（<code class="literal">:</code>）とそれに続く整数のパスの終端は文字オフセットを参照する。指定された文字オフセットの要素ノードへの適用は、その要素が <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element" target="_top">img</a></code> 要素であり、文字オフセットを適用できるテキストを含んだ <code class="markup">alt</code> 属性を持つ場合のみ行なってもよい（<span class="rfc2119">may</span>）。</p>
+<p>XML 文字データでは、オフセットはゼロベースで常に文字の間の位置を参照する。従って、<code class="literal">0</code> は最初の文字の前を意味し、UTF-16での全長の数は最後の文字の後ろを意味する。使用できるテキストの UTF-16 の長さよりも大きな文字オフセット値を指定してはならない（<span class="rfc2119">must not）</span>。</p>
+<p>この仕様において、XML 文字データ内の「オフセット」の定義は、UTF-16 テキスト エンコーディングに基づいており、各「文字」（Unicode コード ポイント）は、単一の 16ビット コード単位、または二つの単位（BMP / 基本多言語面外の Unicode 文字の場合、サロゲート ペア） <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> を使用して表現してもよい（<span class="rfc2119">may</span>）。
+CFI の「文字オフセット」は、UtF-16 コード単位間の位置を参照するゼロベースの数である。ここで、テキストの「長さ」は、16ビット単位の合計数である。したがって、オフセットゼロは、最初の16ビット単位の前を意味し、テキストの「長さ」に等しい数は、最後の16ビット単位の後を意味する。テキストの「長さ」より大きいオフセット値を指定してはならない（<span class="rfc2119">must not</span>）。</p>
+<div class="note">
+<h3 class="title">note</h3>
+<p>（Unicode のコード ポイントの代わりに）UTF-8 のコード単位に基づくテキスト「文字」の数を数えることは、<a class="ulink" href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Traversal-Range-20001113/ranges.html#Level-2-Range-Position-h3" target="_top">DOM レンジ モデル</a> <a class="biblioref" href="#refDOM2TraversalRange" title="Document Object Model (DOM) Level 2 Traversal and Range Specification">[<abbr class="abbrev">DOM2 Traversal Range</abbr>]</a> および <a class="ulink" href="http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types-string-type" target="_top">String API</a> <a class="biblioref" href="#refECMA262" title="ECMA-262 6th Edition, ECMAScript® 2015 Language Specification">[<abbr class="abbrev">ECMA-262</abbr>]</a> と互換性がある。</p>
+</div>
+<p>文字オフセット終了ステップは <code class="literal">/N</code> ステップに続く場合のみ指定してもよい（<span class="rfc2119">may</span>）。XHTML コンテンツ ドキュメントでは、<code class="literal">N</code> は <code class="markup">img</code> 要素の <code class="markup">alt</code> のテキストを参照している時は偶数で、要素内の XML 文字データを参照している時は奇数となる。</p>
+<p>奇数番号の <code class="literal">/N</code> ステップを持つ終端の CFI 表現は、明示的な文字オフセットを包含するべきである（<span class="rfc2119">should</span>）。なぜならば、CFI プロセッサ（例えば、リーディングシステム）は、オフセットの暗黙的な <code class="literal">/N:0</code> 文字と仮定すれば、そのような CFI 表現を消費（つまり、構文解析と解釈またはレンダリング）ができなければならない（<span class="rfc2119">must</span>）。</p>
+</section>
+<section class="section" id="sec-path-terminating-temporal">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-terminating-temporal"> </a> </span>3.1.5 時間オフセット (<code class="literal">~</code>)</h3>
+<p>先頭のチルダ (<code class="literal">~</code>) とそれに続く数字のパスの終端は、オーディオまたはビデオの秒単位の時間位置を示している。</p>
+</section>
+
+<section class="section" id="sec-path-terminating-spatial">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-terminating-spatial"> </a> </span>3.1.6 空間オフセット (<code class="literal">@</code>)</h3>
+<p>コロン区切りの二つの数字に従う先頭のアットマーク（<code class="literal">@</code>）から続くパスの終端は、画像またはビデオの二次元空間位置を示す。二つの数字は <code class="literal">x</code> 軸と <code class="literal">y</code> 軸のスケーリングされた位置を表し、画像のネイティブまたは表示サイズに関わらず <code class="literal">0</code> から <code class="literal">100</code> の範囲でなければならない（<span class="rfc2119">must</span>）。（つまり、左上は <code class="literal">0:0</code> で右下は <code class="literal">100:100</code> となる。）</p>
+</section>
+
+<section class="section" id="sec-path-terminating-tempspatial">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-terminating-tempspatial"> </a> </span>3.1.7 時間-空間オフセット (<code class="literal">~</code> + <code class="literal">@</code>)</h3>
+<p>時間位置と空間位置は同時に使用してもよい（<span class="rfc2119">may</span>）。この場合、時間指定は空間指定よりも構文的に前に置かなければならない（<span class="rfc2119">must</span>）。（例えば、<code class="literal">~23.5@5.75:97.6</code> は、ビデオの 23.5 秒のフレームの左下を参照する。）</p>
+</section>
+<section class="section" id="sec-path-text-location">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-text-location"> </a> </span>3.1.8 テキストロケーションアサーション（<code class="literal">[</code>）</h3>
+<p>EPUB CFI は、一致箇所の前および／または後ろに予期されるサブストリングを指定してもよい（<span class="rfc2119">may</span>）が、そのようなアサーションの指定は<a class="link" href="#sec-path-terminating-char" title="3.1.4 Character Offset (:)">文字オフセット</a>の後ろのみでなければならない（<span class="rfc2119">must</span>）。</p>
+<p>例えば、<a class="link" href="#sec-path-examples" title="3.1.10 Examples">後述するサンプルコンテンツ</a>を使った次のアサーションは、一致箇所の直前に <code class="literal">yyy</code> が必要であることを表している。</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:3[yyy])</pre>
+</div>
+<p>一致箇所に続くサブストリングをコンマの後ろに追加することができる。例えば：</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:3[xx,y])</pre>
+</div>
+<p>これは、アスタリスクの付いた箇所を参照している：</p>
+<div class="informalexample">
+<pre class="synopsis">x x x y y y 0 1 2 3 4 5 6 7 8 9
+| | | * | | | | | | | | | | | |</pre>
+</div>
+<p>先行するテキストがない場合、または後続のテキストだけが指定される場合、テキストアサーションの直前にコンマを付けなければならない（<span class="rfc2119">must</span>）：</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:3[,y])</pre>
+</div>
+<p>マッチさせるために含むことのできる、先行または後続のテキストの長さに制約はない。テキストは、ドキュメントから要素の境界を無視して取り出され、空白文字は常にまとめられる。（つまり、空でない連続する空白文字列は常に単一の空白文字に置換される。）</p>
+<p>リーディングシステムは、（テキストがマッチしないために）CFI で参照されるロケーションが本来の目的のロケーションではない、と判断でき、コンテンツ内の目的となる宛先に到達する一連のステップを計算するために、先行／後続のテキストを利用できる（<a class="xref" href="#sec-target-correction" title="3.5 Intended Target Location Correction">ターゲットロケーション補正</a>を見よ）。この追加された堅牢性のコストは、CFI 文字列の比較（とソート）はすべての括弧で囲まれた文字列を論理的に除去した後でのみ実行できる（<a class="xref" href="#sec-sorting" title="3.2 Sorting Rules">ソート規則</a>を見よ）。</p>
+</section>
+<section class="section" id="sec-path-side-bias">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-side-bias"> </a> </span>3.1.9 サイド指定（<code class="literal">[</code> + <code class="literal">;s=</code>）</h3>
+<p>状況によっては、参照がロケーションのどちらの側を指しているのか、という情報の保持が重要となる。例えば、動的にページを作成する環境でロケーションを解決する場合、ロケーションが前のコンテンツに属している場合と後のコンテンツに属している場合では違いがある。（例えば、改ページに際して、ページの表を表示するのか裏を表示するのか判断する場合。）</p>
+<p>ロケーションのサイド情報を保持するには <code class="literal">s</code> パラメータを使用する。s は、二つの値をとることができ、'<code class="literal">b</code>'（「前」）は、ロケーションは、（XML シリアライゼーション文書の順番に従い）先にあるコンテンツに接続されることを意味し、'<code class="literal">a</code>'（「後」）は、次のコンテンツを参照する。このパラメーターは、ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> またはテキストロケーションのアサーションが空の場合でも、常に CFI の最後部で角括弧で囲んで使用しなければならない（<span class="rfc2119">must</span>）。</p>
+<p><a class="link" href="#sec-path-examples" title="3.1.10 Examples">後述のサンプルコンテンツ</a>における <code class="literal">yyy</code> の直後のロケーションが前のコンテンツに属することを、次のように表すことができる：</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:3[;s=b])</pre>
+</div>
+<p>同様に、次のようにテキストロケーションアサーションを含めて指定することもできる：</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:3[yyy;s=b])</pre>
+</div>
+<p><code class="markup">em</code> 要素の先頭のロケーションを、その <code class="markup">em</code> 要素に先行するコンテンツに付加することは、次のように表すことができる：</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2[;s=b])</pre>
+</div>
+<p>前述の例において、サイド指定に <code class="literal">b</code> ではなく <code class="literal">a</code> を指定していた場合、ロケーションは、<code class="markup">em</code> 要素の次のコンテンツではなく、<code class="markup">em</code> 要素の子コンテンツに付加される。</p>
+<p>サイド指定はパラメータとして表現されるため、CFI の比較には関与しない（<a class="xref" href="#sec-sorting" title="3.2 Sorting Rules">ソート規則</a>を見よ）。</p>
+<p>サイドは空間のオフセットへのロケーションには定義されない。</p>
+<div class="note">
+<h3 class="title">NOTE</h3>
+<p>サイド指定は、（例えば、改ページや改行など）ロケーションで何らかのブレークが起こる場合にのみ意味を持つ。</p>
+</div>
+</section>
+<section class="section" id="sec-path-examples">
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-path-examples"> </a> </span>3.1.10 例</h3>
+<p class="informative">このセクションは有益な情報である。</p>
+<p>次ようなパッケージ ドキュメントがあるとする:</p>
+<div class="informalexample">
+<pre class="synopsis">&lt;?xml version="1.0"?&gt;&#xD;
+&#xD;
+&lt;package version="2.0" &#xD;
+         unique-identifier="bookid" &#xD;
+         xmlns="http://www.idpf.org/2007/opf"&#xD;
+         xmlns:dc="http://purl.org/dc/elements/1.1/" &#xD;
+         xmlns:opf="http://www.idpf.org/2007/opf"&gt;&#xD;
+    &#xD;
+    &lt;metadata&gt;&#xD;
+    	&lt;dc:title&gt;…&lt;/dc:title&gt;&#xD;
+    	&lt;dc:identifier id="bookid"&gt;…&lt;/dc:identifier&gt;&#xD;
+    	&lt;dc:creator&gt;…&lt;/dc:creator&gt;&#xD;
+        &lt;dc:language&gt;en&lt;/dc:language&gt;&#xD;
+    &lt;/metadata&gt;&#xD;
+    &#xD;
+    &lt;manifest&gt;&#xD;
+        &lt;item id="toc"&#xD;
+              properties="nav"&#xD;
+              href="toc.xhtml" &#xD;
+              media-type="application/xhtml+xml"/&gt;&#xD;
+        &lt;item id="titlepage" &#xD;
+              href="titlepage.xhtml" &#xD;
+              media-type="application/xhtml+xml"/&gt;&#xD;
+        &lt;item id="chapter01" &#xD;
+              href="chapter01.xhtml" &#xD;
+              media-type="application/xhtml+xml"/&gt;&#xD;
+        &lt;item id="chapter02" &#xD;
+              href="chapter02.xhtml" &#xD;
+              media-type="application/xhtml+xml"/&gt;&#xD;
+        &lt;item id="chapter03" &#xD;
+              href="chapter03.xhtml" &#xD;
+              media-type="application/xhtml+xml"/&gt;&#xD;
+        &lt;item id="chapter04" &#xD;
+              href="chapter04.xhtml" &#xD;
+              media-type="application/xhtml+xml"/&gt;&#xD;
+    &lt;/manifest&gt;&#xD;
+    &#xD;
+    &lt;spine&gt;&#xD;
+        &lt;itemref id="titleref"  idref="titlepage"/&gt;&#xD;
+        &lt;itemref id="chap01ref" idref="chapter01"/&gt;&#xD;
+        &lt;itemref id="chap02ref" idref="chapter02"/&gt;&#xD;
+        &lt;itemref id="chap03ref" idref="chapter03"/&gt;&#xD;
+        &lt;itemref id="chap04ref" idref="chapter04"/&gt;&#xD;
+    &lt;/spine&gt;&#xD;
+    &#xD;
+&lt;/package&gt;&#xD;
+</pre>
+</div>
+<p>また、XHTML コンテンツ ドキュメントの <code class="filename">chapter01.xhtml</code> はこのような内容となっている：</p>
+<div class="informalexample">
+<pre class="synopsis">&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&#xD;
+    &lt;head&gt;&#xD;
+    	&lt;title&gt;…&lt;/title&gt;&#xD;
+    &lt;/head&gt;&#xD;
+    &#xD;
+    &lt;body id="body01"&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+        &lt;p id="para05"&gt;xxx&lt;em&gt;yyy&lt;/em&gt;0123456789&lt;/p&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+    	&lt;img id="svgimg" src="foo.svg" alt="…"/&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+    	&lt;p&gt;…&lt;/p&gt;&#xD;
+    &lt;/body&gt;&#xD;
+&lt;/html&gt;&#xD;
+</pre>
+</div>
+<p>この場合、次のEPUB CFIは</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/3:10)</pre>
+</div>
+<p>ID が <code class="literal">para05</code> の段落の <code class="literal">9</code> の数字の直後の位置を参照する。テキストのロケーションの CFI を作成する時、テキストが <code class="markup">img</code> 要素の <code class="markup">alt</code> タグに定義されていなければ、常にロケーションに該当するXML 文字データの（おそらく空である）チャンクへの参照から開始し、パッケージ ドキュメントのルートまで祖先と参照チェーンをたどるべきである（<span class="rfc2119">should</span>）。</p>
+<p>次の例は、更なるコンテンツロケーションを参照する EPUB CFI の構成を示す：</p>
+<div class="informalexample">
+<p><code class="markup">img</code> 要素のへ参照</p>
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/16[svgimg])</pre>
+</div>
+<div class="informalexample">
+<p><code class="literal">xxx</code> の直前の位置への参照</p>
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/1:0)</pre>
+</div>
+<div class="informalexample">
+<p><code class="literal">yyy</code> の直前の位置への参照</p>
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:0)</pre>
+</div>
+<div class="informalexample">
+<p><code class="literal">yyy</code> の直後の位置への参照</p>
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:3)</pre>
+</div>
+</section>
+</section>
+<section class="section" id="sec-sorting">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-sorting"> </a> </span>3.2 ソート規則</h2>
+<p>同じ EPUB 出版物を参照する複数の EPUB CFI の相対的なロケーションを、ソートしたり計算したりするには、次のルールに従わなければならない（<span class="rfc2119">must</span>）：</p>
+<div class="orderedlist">
+<ol class="orderedlist" type="1">
+<li class="listitem"><p>EPUB CFI スキームデータは、<a class="xref" href="#sec-epubcfi-escaping" title="2.3 Character Escaping">文字エスケープ</a>で説明されているルールの通りに、アンエスケープされた形式でなければならない（<span class="rfc2119">must</span>）。</p></li>
+<li class="listitem"><p>すべての角括弧で囲まれたアサーションは完全に除去（無視）される。</p></li>
+<li class="listitem"><p>シーケンスの中では、先に来るステップの方が重要である。</p></li>
+<li class="listitem"><p>XML 要素は、XML 文字データ、文字オフセットや時間位置のチャンクへの参照は、自然順序でソートする。</p></li>
+<li class="listitem"><p><code class="literal">y</code> 位置は <code class="literal">x</code> 位置よりも重要である。</p></li>
+<li class="listitem"><p>省略された空間位置は他のすべての空間位置に先行する。</p></li>
+<li class="listitem"><p>省略された時間位置は他のすべての時間位置に先行する。</p></li>
+<li class="listitem"><p>時間位置は空間位置よりも重要である。</p></li>
+<li class="listitem"><p>ステップの種類は、重要度の低いものから高いものへと、次のような順番となる：<br />文字オフセット（<code class="literal">:</code>）、子（<code class="literal">/</code>）、時間-空間（<code class="literal">~</code> または <code class="literal">@</code>）、参照／間接指定（<code class="literal">!</code>）.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="section" id="sec-intra-cfis">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-intra-cfis"> </a> </span>3.3 Intra-Publication CFI</h2>
+<p>EPUB CFI は、コンテナ内部のコンテンツの参照に使用することができる。このような参照は、パッケージ ドキュメントへの参照とそれに続く CFI を指定して実現されるが、CFI の解決は <code class="markup">package</code> ルート要素から開始しなければならない（<span class="rfc2119">must</span>）。</p>
+<p>例えば、<a class="link" href="#sec-path-examples" title="3.1.10 Examples">上記の例</a>のパッケージ ドキュメントを使って、<code class="filename">chapter01.xhtml</code> の最後のロケーションへの参照は次のように記述できるだろう：</p>
+<div class="informalexample">
+<pre class="synopsis">../pub.opf#epubcfi(/6/4[chap01ref]!/4[body01]/10[para05]/2/1:3[;s=b])</pre>
+</div>
+</section>
+<section class="section" id="sec-ranges">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-ranges"> </a> </span>3.4 単純なレンジ</h2>
+<p>EPUB CFI は、開始ロケーションから終了ロケーションまでの簡潔なレンジを表すことができる。レンジは <span class="emphasis"><em>parent</em></span> パス（<code class="literal">P</code>）、<span class="emphasis"><em>start</em></span> サブパス（<code class="literal">S</code>）、そして <span class="emphasis"><em>end</em></span> サブパス（<code class="literal">E</code>）の3つによって、次の形式で表さなければならない（<span class="rfc2119">must</span>）： </p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(P,S,E)</pre>
+</div>
+<p>parent パスは、空であってはならず（<span class="rfc2119">must</span>）、レンジの開始と終了のロケーションの両方のパスを解決するための共通のステップで終わらなければならず（<span class="rfc2119">must</span>）、start と end のそれぞれのサブパスはドキュメント内で減少しない順序でロケーションへと解決しければならない（<span class="rfc2119">must</span>）。</p>
+<p>レンジの開始と終了ロケーションを決めるには、parent パスを start と end サブパスに連結して開始ロケーションパス（<code class="literal">PS</code>）と終了ロケーションパス（<code class="literal">PE</code>）を生成しなければならない（<span class="rfc2119">must</span>）。
+
+parent パスは、開始と終了パス（言い換えれば、開始と終了位置は、共通パスに含むべではない（<span class="rfc2119">should not</span>））の両方に通じる可能な限り深い共通パスを包含するべきである（<span class="rfc2119">should</span>）。
+開始位置は、終了位置が開始位置に根付いたサブツリー内に位置している場合には、共通パスの繰り返しを避けるために空でもよい（<span class="rfc2119">may</span>）。
+
+</p>
+<p><a class="link" href="#sec-path-examples" title="3.1.10 Examples">上記のサンプルドキュメント</a>を使った次のレンジは <code class="literal">yyy</code> の2番目の <code class="literal">y</code> から数字 <code class="literal">3</code> まで（含めた）テキストを表す：</p>
+<div class="informalexample">
+<pre class="synopsis">epubcfi(/6/4[chap01ref]!/4[body01]/10[para05],/2/1:1,/3:4)</pre>
+</div>
+<p>レンジの比較は、それぞれの <code class="literal">PS</code>、次にそれぞれの <code class="literal">PE</code> の構成部品によって行わなければならない（<span class="rfc2119">must</span>）。開始と終了位置は、要素と文字オフセット（ドキュメント構造）や時間的オフセット（時間メディア）、空間的オフセット（視覚メディア）、一体化した時空間的オフセットと呼ばれる同じ"特定"を持つドキュメント内の点を参照するべきである（<span class="rfc2119">should</span>）。時間的オフセットの場合、開始と終了の位置は、同じ時間メディアを参照するべきである（<span class="rfc2119">should</span>）。空間的オフセットの場合、開始と終了の位置は、同じ視覚メディアを参照するべきである（<span class="rfc2119">should</span>）。この仕様は、このような二つの時空間的オフセット（すなわち、視覚メディア内の開始と終了位置）の組み合わせが、制作ツールやリーディングシステムを含め、処理エージェントによってどのように解釈されるかの、期待する挙動を定義しない。</p>
+<p>要素の最初から最後までのレンジを表すショートハンドとして要素へのパスを使用するのは適切ではない。単独で表記されたパスは常にロケーションの位置（ポイント）を表し、レンジは上記で解説した表記で表す。要素の終わりへの参照を示す特殊なステップが存在しないのは、それによってドキュメントのコンテンツを調べることなくソートするのが不可能になるためである。</p>
+<p>コンテキストで単独のロケーションが指定されるべきところにレンジが使用された場合、その開始ロケーションを使用しなければならない（<span class="rfc2119">must</span>）。</p>
+<p>サイド指定パラメータをレンジに使用してはならない（<span class="rfc2119">must not</span>）。レンジの開始は暗黙的に開始ロケーションンの後ろのコンテンツに属し、終了は暗黙的に終了ロケーションの前のコンテンツに属する。</p>
+</section>
+<section class="section" id="sec-target-correction">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-target-correction"> </a> </span>3.5 ターゲットロケーション補正</h2>
+<p>EPUB 出版物は時間とともに改訂、修正、或いは変更ができ、以前のバージョンの CFI から変更されたドキュメントの EPUB CFI を導き出すことは有用である。この仕様は、CFI に影響するコンテンツの変更を発見し補正する二つのメカニズムを提供している。それは、ID <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> と<a class="link" href="#sec-path-text-location" title="3.1.8 Text Location Assertion ([)">テキストロケーションアサーション</a>である。</p>
+<p>リーディングシステムが CFI を処理する際には、遭遇するすべてのアサーションの正確さをチェックするべきである（<span class="rfc2119">should</span>）。例えば、<code class="literal">/6/4[chap01ref]!…</code>のパスを例にすると、リーディングシステムは、要素 <code class="literal">4</code> の処理中にその要素は <code class="literal">chap01ref</code> に一致する ID を持っていることを確認するべきである（<span class="rfc2119">should</span>）。（この例では、<code class="markup">spine</code> 内の <code class="markup">itemref</code> が該当する）。もし確認できなければ、リーディングシステムはドキュメント内で <code class="literal">chap01ref</code> の ID を見つけて CFI を修正するべきである（<span class="rfc2119">should</span>）。（例えば、新しい <code class="markup">itemref</code> が <code class="literal">chap01ref</code> の <code class="markup">itemref</code> の前に挿入された場合は、望ましい要素の番号は <code class="literal">6</code> となり、CFI は <code class="literal">/6/6[chap01ref]!...</code> に修正される）。同様に、テキストロケーションアサーションは、参照されるターゲットロケーションを確認し、望ましいテキストロケーションを指す正しい CFI を得るために使用するべきである（<span class="rfc2119">should</span>）。</p>
+<p>もし処理中にアサーションの一つが失敗し、CFI を修正できない（ドキュメント内に ID が存在しない、または一致するテキストが見つからない）場合には、その CFI は無効な参照と見なさなければならない（<span class="rfc2119">must</span>）。リーディングシステムが正確性を検証できない（例えば、CFI の処理中にドキュメントに内在する XML ID が利用できない）場合には、リーディングシステムは CFI アサーションを無視しなければならない（<span class="rfc2119">must</span>）。</p>
+<p>CFI 補正という観念からは、二つの異なる CFI（修正前の “陳腐化した” CFI と修正された CFI）が、同じロケーションを指す状況が生まれることがある。可能であれば修正された CFI を使用するべきである（<span class="rfc2119">should</span>）。リーディングシステムやそれに関係するコンテンツ管理システムは、可能であれば陳腐化した CFI を修正された CFI に置き換えることを試みるべきである（<span class="rfc2119">should</span>）。</p>
+<div class="note">
+<h3 class="title">NOTE</h3>
+<p>この仕様は、本来の機能が不十分である場合、CFI補正を支援するカスタム機能を開発することを推奨する。このような機能の開発方法の詳細は<a class="xref" href="#sec-extensions" title="4 Extending EPUB CFIs"><em>EPUB CFI の拡張</em></a>を参照されたい。</p>
+</div>
+</section>
+</section>
+<section class="chapter" id="sec-extensions">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-extensions"> </a> </span>4 EPUB CFI の拡張</h1>
+<p>拡張機能（パラメータ名の接頭辞を持ち、セミコロンで区切られた、CSV パラメータリスト）の提供によって、リーディングシステムは、例えば EPUB CFI フラグメントを更新されたドキュメントへ移行する際に、新規または実験的なヒューリスティックを適用することができる。</p>
+<p>ベンダー固有のパラメータ名は、<code class="literal">vnd.</code> とそれに続くベンダー名で始めることを推奨（<span class="rfc2119">recommended</span>）する。</p>
+<p>実装は、解釈や構文解析できないあらゆるパラメーターを無視しなければならない（<span class="rfc2119">must</span>）。</p>
+</section>
+<section xmlns:spec="http://www.idpf.org/2016/epub/spec" xml:lang="en" class="bibliography" id="references">
+<div class="titlepage">
+<div>
+<div>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#references"> </a> </span>文献</h1>
+</div>
+</div>
+</div>
+<div class="bibliodiv" id="normative-refs">
+<h3 class="title">引用規定</h3>
+<div class="biblioentry" id="refEPUB3"><p>[<abbr class="abbrev">EPUB 3.1</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="../../31/spec/epub-spec.html" target="_top">EPUB 3.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refEPUBCFI"><p>[<abbr class="abbrev">EPUB-CFI</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/linking/cfi/epub-cfi.html" target="_top">EPUB Canonical Fragment Identifier (epubcfi)
+          Specification</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refHTML"><p>[<abbr class="abbrev">HTML</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/html/" target="_top">HTML</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC2119"><p>[<abbr class="abbrev">RFC2119</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in RFCs to Indicate Requirement Levels</a>
+        (RFC 2119) </em>. </span>
+<span class="date">March 1997. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC2279"><p>[<abbr class="abbrev">RFC2279</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2279" target="_top"> UTF-8, a transformation format of ISO 10646 </a> (RFC 2279) </em>. </span>
+<span class="author">F. Yergeau, et al. </span>
+<span class="date">January 1998. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC2396"><p>[<abbr class="abbrev">RFC2396</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2396" target="_top"> Uniform Resource Identifiers (URI): Generic Syntax </a>
+        (RFC 2396) </em>. </span>
+<span class="author">T. Berners-Lee, et al. </span>
+<span class="date">August 1998. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC2732"><p>[<abbr class="abbrev">RFC2732</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2732" target="_top"> Format for Literal IPv6 Addresses in URL's </a> (RFC 2732) </em>. </span>
+<span class="author">R. Hinden, et al. </span>
+<span class="date">December 1999. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC3986"><p>[<abbr class="abbrev">RFC3986</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc3986" target="_top">Uniform Resource Identifier (URI): Generic Syntax</a> (RFC
+        3986) </em>. </span>
+<span class="author">Berners-Lee, et al. </span>
+<span class="date">January 2005. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC3987"><p>[<abbr class="abbrev">RFC3987</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc3987" target="_top">Internationalized Resource Identifiers (IRIs)</a> (RFC 3987) </em>. </span>
+<span class="author">M Duerst, et al. </span>
+<span class="date">January 2005. </span>
+</p>
+</div>
+<div class="biblioentry" id="refSVG"><p>[<abbr class="abbrev">SVG</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/SVG/" target="_top">Scalable Vector Graphics (SVG)</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refUnicode5"><p>[<abbr class="abbrev">Unicode</abbr>] 
+      
+<span class="title"><em> The Unicode Consortium. <a class="ulink" href="http://www.unicode.org/versions/latest/" target="_top">The Unicode
+        Standard.</a></em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refXML"><p>[<abbr class="abbrev">XML</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2008/REC-xml-20081126/" target="_top">Extensible Markup Language (XML) 1.0 (Fifth
+          Edition)</a>
+</em>. </span>
+<span class="author">T. Bray, et al. </span>
+<span class="date">26 November 2008. </span>
+</p>
+</div>
+</div>
+<div class="bibliodiv" id="informative-refs">
+<h3 class="title">参考</h3>
+<div class="biblioentry" id="refDOM2TraversalRange"><p>[<abbr class="abbrev">DOM2 Traversal Range</abbr>] 
+      
+<span class="title"><em><a class="ulink" href="https://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html" target="_top">Document Object Model (DOM)
+          Level 2 Traversal and Range Specification</a></em>. </span>
+<span class="author">Joe Kesselman, et al. </span>
+<span class="date">13 November, 2000. </span>
+</p>
+</div>
+<div class="biblioentry" id="refECMA262"><p>[<abbr class="abbrev">ECMA-262</abbr>] 
+      
+<span class="title"><em><a class="ulink" href="http://www.ecma-international.org/ecma-262/6.0/" target="_top">ECMA-262 6th Edition, ECMAScript® 2015
+          Language Specification</a></em>. </span>
+<span class="date">June 2015. </span>
+</p>
+</div>
+<div class="biblioentry" id="refFragIDBP"><p>[<abbr class="abbrev">FragIDBestPractices</abbr>] 
+      
+<span class="title"><em><a class="ulink" href="https://www.w3.org/TR/fragid-best-practices/" target="_top">Best Practices for Fragment Identifiers and
+          Media Type Definitions</a></em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refXPTRSH"><p>[<abbr class="abbrev">XPTRSH</abbr>] 
+      
+<span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2003/REC-xptr-framework-20030325/" target="_top">XPointer Shorthand Notation</a>
+</em>. </span>
+<span class="date">25 March 2003. </span>
+</p>
+</div>
+</div>
+</section>
+</body>
+</html>
