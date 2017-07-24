@@ -20,7 +20,7 @@
 <dt>公開日:</dt>
 <dd>2016年5月16日</dd>
 <dt>修正日:</dt>
-<dd>2017年1月20日</dd>
+<dd>2017年7月24日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -397,7 +397,7 @@
 <p id="confreq-schema-accessibilityFeature"><span class="link-marker"><a class="hidden-reveal" href="#confreq-schema-accessibilityFeature"> </a> </span><a class="ulink" href="https://schema.org/accessibilityFeature" target="_top">accessibilityFeature</a> — （例えば、代替テキスト、拡張した概要、キャプションなど）コンテンツの全体的なアクセシビリティに貢献する機能や適合。</p>
 </li>
 <li class="listitem">
-<p id="confreq-schema-accessibilityHazard"><span class="link-marker"><a class="hidden-reveal" href="#confreq-schema-accessibilityHazard"> </a> </span><a class="ulink" href="https://schema.org/accessibilityHazard" target="_top">accessibilityHazard</a> — （例えば、発光、動作のシミュレーション、サウンドなど）コンテンツ表現の全ての潜在的な危険性。</p>
+<p id="confreq-schema-accessibilityHazard"><span class="link-marker"><a class="hidden-reveal" href="#confreq-schema-accessibilityHazard"> </a> </span><a class="ulink" href="https://schema.org/accessibilityHazard" target="_top">accessibilityHazard</a> — （例えば、発光、動作のシミュレーション、サウンドなど）コンテンツ表現における全ての潜在的な危険性。</p>
 </li>
 <li class="listitem">
 <p id="confreq-schema-accessibilitySummary"><span class="link-marker"><a class="hidden-reveal" href="#confreq-schema-accessibilitySummary"> </a> </span><a class="ulink" href="https://schema.org/accessibilitySummary" target="_top">accessibilitySummary</a> — （例えば、拡張された記述の欠如や特定の危険性など）全ての既知な欠陥の説明を包含する、全体的なアクセシビリティの人間が可読可能な要約。</p>
@@ -463,7 +463,7 @@
 <p>結果として、このセクションは、WCAG 適合性の深い知識がなくても読むことができるが、この仕様のアクセシビリティ要件を実装するために、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の理解は要求されるだろう。</p>
 <div class="note">
 <h3 class="title">note</h3>
-<p>この仕様は、WCAG の一部ではない要件が追加されているので、EPUB 出版物は、この仕様に適合することなく、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> に適合することができる。しかしながら、<a class="link" href="#sec-epub-req" title="4.4 EPUB Requirements">EPUB 出版物の要件</a>を満たしていない EPUB 出版物は、この仕様おいてアクセシブルでない。</p>
+<p>この仕様は、WCAG の一部ではない要件が追加されているので、EPUB 出版物は、この仕様に適合することなく、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> に適合することができる。しかしながら、<a class="link" href="#sec-epub-req" title="4.4 EPUB Requirements">EPUB 出版物の要件</a>を満たしていない EPUB 出版物は、この仕様においてアクセシブルではない。</p>
 <p>IDPF は、WCAG 同時に EPUB 出版物のための要件を調和させるために、W3C と Web アクセシビリティ イニシアティブによる作業を計画している。</p>
 </div>
 </section>
@@ -481,7 +481,7 @@
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-eval-page-pub"> </a> </span>4.3.2.1 ページと出版物</h4>
 <p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の<a class="ulink" href="https://www.w3.org/TR/WCAG20/#guidelines" target="_top">原則</a>は、個々の <a class="ulink" href="https://www.w3.org/TR/WCAG20/#webpagedef" target="_top">Web ページ</a>の評価にフォーカスしているが、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、より密接に <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> が <a class="ulink" href="https://www.w3.org/TR/WCAG20/#set-of-web-pagesdef" target="_top">Web ページのセット</a>として参照するのに似ている。「[a] 共通の目的を共有する Web ページの集合」</p>
 <p>従って、EPUB 出版物のアクセシビリティを評価するとき、個々のページ（または EPUB の名称として知られている、<a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">コンテンツ ドキュメント</a>）は、単独で検討することはできない。むしろ、大きな作品の一部として全体としてのアクセシビリティを評価する必要がある。</p>
-<p>例えば、出版物が誤った順番でそれらを表示するならば、論理的な読み上げ順を持つ個々のコンテンツ ドキュメントとして十分ではない。同様に、全てのコンテンツ ドキュメントのためにタイトルを包含することは、出版物のタイトルを提供することとしては補完的でする。いずれかが欠落している場合、全体的なアクセシビリティが影響を受ける。</p>
+<p>例えば、出版物が誤った順番でそれらを表示するならば、論理的な読み上げ順を持つ個々のコンテンツ ドキュメントとして十分ではない。同様に、全てのコンテンツ ドキュメントのためにタイトルを包含することは、出版物のタイトルを提供することとしては補完的である。いずれかが欠落している場合、全体的なアクセシビリティが影響を受ける。</p>
 <p>従って、<span class="emphasis"><em>知覚可能</em></span>、<span class="emphasis"><em>操作可能</em></span>、<span class="emphasis"><em>理解可能</em></span>および<span class="emphasis"><em>堅牢性</em></span>であるコンテンツの <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> ガイドラインは、それぞれのコンテンツ ドキュメントだけでなく、完全な EPUB 出版物に対しての評価でなければならない（<span class="rfc2119">must</span>）。</p>
 <p>EPUB 出版物にこれらのガイドラインを適用することについての詳細な情報は、<a class="biblioref" href="#refA11YTech" title="EPUB Accessibility Techniques">[<abbr class="abbrev">EPUB Accessibility Techniques</abbr>]</a> で利用できる。</p>
 </section>
@@ -518,7 +518,7 @@
 <p>静的にページ付けされたコンテンツは、一般的なユーザー層と教育環境内の間における両方の本として最も消費され続ける印刷物のように、まだ至る所に存在する。印刷物は、静的なページ付けの唯一のソースではなく、静的なページの境界は、固定レイアウトのデジタル出版物にも存在している。</p>
 <p>結果として、静的にページ付けされたコンテンツが使用されている環境にある非視覚ユーザーは、（例えば、教師が、特定のページをめくるように生徒へ指示するときなど）出版物内の同じ位置を容易に探すことができないことにより、クラスメイトたちに較べて、不利な状況に置かれている。</p>
 <p>ページ境界位置を包含することは、リフロー可能なメディアを使用する選択によって不利な状況に置かれないことを保証することにより、この格差を埋めるのを助ける。</p>
-<p>ページ ナビゲーションを提供することはまた、静的なページ分割と同等のものを持っていないリフロー出版物も助ける。リーディング システムによるこれら出版物のデフォルトのページネーションは、ビューポート サイズやユーザーのフォント設定に応じて変化するので、静的ではない。結果として、同じ <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のユーザー同士で位置を連動させることは、静的な参照なしでは困難である。</p>
+<p>ページ ナビゲーションを提供することはまた、静的なページ分割と同等のものを持っていないリフロー出版物も助ける。リーディング システムによるこれら出版物のデフォルトのページネーションは、ビューポート サイズやユーザーのフォント設定に応じて変化するので、静的ではない。結果として、同じ <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のユーザー同士で位置を連動させることは、静的な参照なしには困難である。</p>
 </section>
 <section class="section" id="sec-page-nav-conf">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-nav-conf"> </a> </span>4.4.1.3 この目的を満たす</h4>
@@ -557,7 +557,7 @@
 <section class="section" id="sec-page-nav-wcag">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-page-nav-wcag"> </a> </span>4.4.1.4 WCAG との関連性</h4>
 <p class="informative">このセクションは規定ではない。</p>
-<p>ページ ナビゲーションの包含は、（例えば、目次や直線的な読み上げ順序、他のナビゲーション支援を加えて）コンテンツにアクセスするユーザーのために他の有意義な方法を提供するような、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-mult-loc" target="_top">複数の到達手段の達成基準</a>を達成するためのひとつの方法を表している。</p>
+<p>ページ ナビゲーションの包含は、（例えば、目次や線形的な読み上げ順序、他のナビゲーション支援を加えて）コンテンツにアクセスするユーザーのために他の有意義な方法を提供するような、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-mult-loc" target="_top">複数の到達手段の達成基準</a>を達成するためのひとつの方法を表している。</p>
 <p>印刷物/デジタルが混在した環境でのページ ナビゲーションの重要性を考えると、この機能を包含している要件は、複数の到達手段の達成基準を満たすためにある複数の方法のひとつとしてのみ与えられることよりも高い優先順位を持つ。</p>
 </section>
 </section>
@@ -598,7 +598,7 @@
 </section>
 <section class="section" id="sec-mo-wcag">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-mo-wcag"> </a> </span>4.4.2.4 WCAG との関連性</h4>
-<p>メディア オーバーレイ ドキュメントに構造とセマンティックを追加することは、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic" target="_top">情報及び関係性の達成基準</a>の目的におおむね該当する。構造化とセマンティクスな意味のある再生シーケンスがないことによる影響は、ユーザーのコンテンツのリッチなナビゲーションを奪うことである。</p>
+<p>メディア オーバーレイ ドキュメントに構造とセマンティックを追加することは、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic" target="_top">情報及び関係性の達成基準</a>の目的におおむね該当する。構造化とセマンティクスな意味のある再生シーケンスがないことによる影響は、ユーザーからコンテンツのリッチなナビゲーションを奪うことである。</p>
 </section>
 </section>
 </section>
@@ -696,7 +696,7 @@
 <h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-opt-pubs"> </a> </span>5 最適化された出版物</h1>
 <p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> は、コンテンツを広くアクセシブルにするためのガイドラインの一般的なセットを提供するが、適合するコンテンツが必ずしも特定のユーザー グループにとって最適であるとは限らない。逆に、特定のニーズや読書モダリティに最適化されたコンテンツは、幅広いユーザーのために設計されてないので、多くの場合は <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> に適合しない。</p>
 <p>例えば、テキストと音声を同期させた <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、コンテンツの完全な音声録音を含むかもしれないが、主要な見出しのみにテキスト コンテンツを限定してもよい。この場合、EPUB 出版物は、コンテンツを聞く必要のある（すなわち、完全な出版物を聞くことができ、見出しの間を移動することができる）ユーザーによって消費可能であるが、音声を聞くことができない人にとっては使用できない。</p>
-<p>言い換えれば、EPUB 出版物が特定の読書様式に対して最適化されている場合、WCAG 適合性レベルを達成しなかったとしても、意図された読者にそれほどアクセシブルなくなることはない。</p>
+<p>言い換えれば、EPUB 出版物が特定の読書様式に対して最適化されている場合、WCAG 適合性レベルを達成しなかったとしても、意図された読者に対するアクセシブルを低下させることはない。</p>
 <p>この矛盾を説明するために、この仕様は、発見のメタデータの包含を重視する。<a class="glossterm" href="#gloss-optimization" title="Optimized EPUB Publication">最適化された EPUB 出版物</a>は、たとえこの仕様に従って広くアクセシブルとして識別されていなくとも、豊かなメタデータの包含を介して対象となるユーザーに発見される。</p>
 <p><a class="xref" href="#sec-discovery" title="3 Discovery"><em>発見</em></a>で定義されたメタデータの要件に加えて、最適化された EPUB 出版物は、<a class="biblioref" href="#refDCTERMS" title="DCMI Metadata Terms">[<abbr class="abbrev">DCTERMS</abbr>]</a> <span class="property">conformsTo</span> プロパティの方針を守るコンテンツの規格またはガイドラインを識別しなければならない（<span class="rfc2119">must</span>）。プロパティの値は、次の規格またはガイドラインを参照する IRI <a class="biblioref" href="#refRFC3987" title="Internationalized Resource Identifiers (IRIs) (RFC 3987)">[<abbr class="abbrev">RFC3987</abbr>]</a> でなければならない（<span class="rfc2119">must</span>）。</p>
 <div class="informalexample">
