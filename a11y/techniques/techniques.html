@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>EPUB Accessibility Techniques 1.0</title>
+<title>EPUB Accessibility Techniques 1.0 日本語訳</title>
 <link rel="stylesheet" type="text/css" href="../../css/epub-spec-2016.css"/>
 <meta charset="UTF-8" />
 <link rel="stylesheet" type="text/css" href="../../css/translation-memo-2016.css"/>
@@ -16,6 +16,8 @@
 <dl>
 <dt>公開日:</dt>
 <dd>2017年7月3日</dd>
+<dt>修正日:</dt>
+<dd>2017年8月1日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -109,7 +111,7 @@
 </li>
 <li><span class="section"><a href="#sec-wcag-titles">4.4. タイトルと見出し</a></span><ol>
 <li><span class="section"><a href="#titles-001">TITLES-001: 出版物とドキュメントのタイトルを包含する</a></span></li>
-<li><span class="section"><a href="#titles-002">TITLES-002: 番号付きの見出しが出版の階層を反映するように保証する</a></span></li>
+<li><span class="section"><a href="#titles-002">TITLES-002: 番号付きの見出しが出版物の階層を反映するように保証する</a></span></li>
 </ol>
 </li>
 <li><span class="section"><a href="#sec-wcag-descriptions">4.5. 説明</a></span><ol>
@@ -868,7 +870,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <p>タイトルに関するより詳細な情報は、<a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/html.html#H25" target="_top">Technique H25</a> <a class="biblioref" href="#refWCAG20Tech" title="Techniques for WCAG 2.0.">[<abbr class="abbrev">WCAG 2.0 Techniques</abbr>]</a> を見よ。</p>
 </section>
 <section class="suppress-numbering" id="titles-002">
-<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#titles-002"> </a> </span>TITLES-002: 番号付きの見出しが出版の階層を反映するように保証する</h3>
+<h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#titles-002"> </a> </span>TITLES-002: 番号付きの見出しが出版物の階層を反映するように保証する</h3>
 <p>コンテンツは多数の <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>に分割されているにもかかわらず、ユーザーに対して、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は最初から最後まで読む、単一のドキュメントとして表示される。結果として、実際のところ出版物は単一のドキュメントでないにもかかわらず、（例えば、ある部分の見出しが <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup">h1</code> 要素で表現される場合、その部分に属する各章は <code class="markup">h2</code> の見出しを持つなど）出版物の全体的な階層における見出しの位置を反映しているというのが自然な期待である。</p>
 <p><a class="biblioref" href="#refWCAG20Tech" title="Techniques for WCAG 2.0.">[<abbr class="abbrev">WCAG 2.0 Techniques</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20-TECHS/G141.html" target="_top">G141：見出しを用いてウェブページを構造化する</a>は、ドキュメント内で番号付き見出しを正しく使用することを<a class="glossterm" href="#gloss-author" title="Author">製作者</a>に指示しているが、EPUB 出版物の番号付き見出しは、ドキュメントを横断して一貫性を保つ必要がある。実質的に、最初の見出しがトップレベルの見出しでない限り、各 EPUB コンテンツ ドキュメントは、<code class="markup">h1</code> 見出しで始める必要がないことを意味し、最初の見出しには、出版物内における実際の位置を反映する番号付き見出しの要素を持つことが必要である。</p>
 <p>製作者はまた、ドキュメント内の最初の見出しが、常にもっとも高い数字を持つように、コンテンツをチャンクする必要がある。例えば、ドキュメントが、<code class="markup">h3</code> 見出しで始まる場合、（例えば、前のサブセクションを引き継いで新しいセクションの開始を包含しないなど）ドキュメントの後に <code class="markup">h2</code> 見出しがあるべきではない。最初と同じレベルで、それに続く見出しが存在することは可能である（例えば、あるドキュメント内の複数のサブセクションが、全て <code class="markup">h3</code> 見出しを持つことは可能である）。</p>
