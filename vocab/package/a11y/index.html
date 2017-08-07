@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>EPUB Accessibility Vocabulary</title>
+<link rel="stylesheet" type="text/css" href="../../css/vocabs.css" />
+<meta charset="utf-8" />
+</head>
+<body>
+<div class="translation-attention">
+
+<p>この文書は「<a href="https://idpf.github.io/epub-vocabs/package/a11y/">EPUB Accessibility Vocabulary</a>」の日本語訳である。最新の文書は <a href="https://idpf.github.io/epub-vocabs/package/a11y/">https://idpf.github.io/epub-vocabs/package/a11y/</a> である。原文もしくは完全な情報は、<a href="https://idpf.github.io/epub-vocabs/package/a11y/">EPUB Accessibility Vocabulary</a> を参照されたい。</p>
+
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+<dt>公開日:</dt>
+<dd>2017年8月7日</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+<header>
+<h1 class="title">EPUB Accessibility Vocabulary</h1>
+<p class="identity">
+<span class="pubdate">5 October 2016</span>
+</p>
+<div class="history">
+<span class="history-title">履歴</span>
+<ul>
+<li><a href="https://github.com/IDPF/epub-vocabs/commits/master/vocab/package/a11y/index.html">このドキュメントの変更</a></li>
+<li><a href="https://github.com/IDPF/epub-vocabs/issues">課題の報告</a></li>
+</ul>
+</div>
+<div class="authorgroup">
+<p class="bridgehead">Editors</p>
+<p class="editor">Matt Garrish, Invited Expert </p>
+</div>
+<div class="legalnotice">
+<p>Copyright © 2010-2016 International Digital Publishing Forum™ </p>
+<div xml:lang="en" class="legalnotice">
+<p>無断複写・転載を禁止する。本作品は合衆国法典第17編の下に保護されている。変更を伴うこの著作物の複製と頒布は、<a href="http://www.idpf.org">International Digital Publishing Forum (IDPF)</a> の書面による許可を得ない限り禁止されている。</p>
+<p>EPUB は International Digital Publishing Forum の登録商標である。</p>
+</div>
+</div>
+</header>
+<section id="sotd" class="section">
+<h2>このドキュメントのステータス</h2>
+<p>このドキュメントは、常に変更されることがある。ここで定義された用語は、削除されることはないが、廃止になるかもしれない。</p>
+<p><span class="status draft">[draft]</span> マークの用語の使用はいずれも、実験的であると考慮するべきである。</p>
+<p>廃止予定の用語は、<span class="status deprecated">[deprecated]</span> によって識別できる。これらの用語は、もはや使用することは推奨されない。</p>
+<p>追加、変更、および明確化のリクエストは、<a href="https://github.com/IDPF/epub-vocabs/issues">イシュートラッカー</a>を通じて行うことができる。<a href="https://github.com/IDPF/epub-vocabs/pulls">プルリクエスト</a>も歓迎している。</p>
+<p>変更リクエストのプロセスの詳細については、<a href="https://idpf.github.io/epub-guides/reporting-issues/">IDPF Issue Reporting Guidelines</a> を参照されたい。</p>
+</section>
+<nav class="toc" id="toc"><h2 class="toc-title">目次</h2>
+<ol class="toc">
+<li><span class="chapter"><a href="#elemdef-opf-meta-overview">1. 要約</a></span>
+<ol>
+<li><span class="section"><a href="#sec-about">1.1 この語彙について</a></span></li>
+<li><span class="section"><a href="#sec-ref">1.2 参照</a></span></li>
+<li><span class="section"><a href="#sec-terminology">1.3 用語</a></span></li>
+</ol>
+</li>
+<li><span class="chapter"><a href="#sec-meta-property-values">2. 適合性プロパティ</a></span>
+<ol>
+<li><span class="section"><a href="#sec-certifiedBy">2.1 certifiedBy</a></span></li>
+<li><span class="section"><a href="#sec-certifierCredential">2.2 certifierCredential</a></span></li>
+<li><span class="section"><a href="#sec-certifierReport">2.3 certifierReport</a></span></li>
+</ol>
+</li>
+</ol>
+</nav>
+<section class="chapter" id="elemdef-opf-meta-overview">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#elemdef-opf-meta-overview"> </a> </span>1 要約</h1>
+<section class="section" id="sec-about">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-about"> </a> </span>1.1 この語彙について</h2>
+<p class="informative">このセクションは規定ではない。</p>
+<p>この語彙は、パッケージ ドキュメントのメタデータに EPUB 出版物のアクセシビリティを記述するためのプロパティを定義する。</p>
+<p>この語彙は、<a class="ulink" href="http://www.idpf.org/epub/a11y/epub-a11y.html" target="_top">EPUB アクセシビリティ</a>仕様の仲間であり、そのドキュメントと共に読まれることを意図している。</p>
+</section>
+<section class="section" id="sec-ref">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-ref"> </a> </span>1.2 参照</h2>
+<p>この語彙を参照するためのベース IRI は、<code class="uri">http://www.idpf.org/epub/vocab/package/a11y/#</code> である。</p>
+<p>接頭辞「<span class="property">a11y:</span>」は、この語彙のプロパティで<a class="ulink" href="http://www.idpf.org/epub/vocab/package/pfx" target="_top">使用するために予約済み</a>であり、パッケージ ドキュメントで宣言する必要はない。</p>
+</section>
+<section class="section" id="sec-terminology">
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-terminology"> </a> </span>1.3 用語</h2>
+<p>EPUB 固有の意味を持つ用語は、（例えば、「製作者（Author）」「リーディング システム（Reading System）」など）このドキュメントでは大文字にしている。それらの意味については、<a class="ulink" href="http://www.idpf.org/epub/a11y/epub-a11y.html" target="_top">EPUB Accessibility</a> 仕様を見よ。</p>
+<p>セクションにある用語の最初のインスタンスのみが、その定義にリンクされる。</p>
+</section>
+</section>
+<section class="chapter" id="sec-meta-property-values">
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-property-values"> </a> </span>2 適合性プロパティ</h1>
+
+
+<section class="section" id="sec-certifiedBy">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-certifiedBy"> </a> </span>2.1 certifiedBy</h2>
+
+<div class="informaltable" id="certifiedBy">
+<table style="border-collapse: collapse; border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; ">
+<colgroup>
+<col class="c1" />
+<col class="c2" />
+</colgroup>
+<tbody>
+<tr>
+<td class="vocab-property-header">名前：</td>
+<td class="vocab-property">
+<span class="property">certifiedBy</span>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">概要：</td>
+<td class="vocab-property-desc">EPUB 出版物のアクセシビリティの検査と証明を担当する当事者を識別する。</td>
+</tr>
+<tr>
+<td class="vocab-property-header">許可された値：</td>
+<td class="entry">
+<code class="datatype">xsd:string</code>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">個数：</td>
+<td class="entry">
+<code class="option">ひとつ以上</code>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;meta property="a11y:certifiedBy"&gt;Accessibility Testers Group&lt;/meta&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section" id="sec-certifierCredential">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-certifierCredential"> </a> </span>2.2 certifierCredential</h2>
+
+<div class="informaltable" id="certifierCredential">
+<table style="border-collapse: collapse; border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; ">
+<colgroup>
+<col class="c1" />
+<col class="c2" />
+</colgroup>
+<tbody>
+<tr>
+<td class="vocab-property-header">名前：</td>
+<td class="vocab-property">
+<span class="property">certifierCredential</span>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">概要：</td>
+<td class="vocab-property-desc">アクセシブルなコンテンツを認定するために、<a href="#sec-certifiedBy"><code class="markup">certifiedBy</code> プロパティ</a>で識別された当事者の権限を確立する資格や印を識別する。</td>
+</tr>
+<tr>
+<td class="vocab-property-header">許可された値：</td>
+<td class="entry">
+<code class="datatype">xsd:string</code>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">個数：</td>
+<td class="entry">
+<code class="option">0 個以上</code>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;meta property="a11y:certifierCredential"&gt;DAISY OK&lt;/meta&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="section" id="sec-certifierReport">
+<h2 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-certifierReport"> </a> </span>2.3 certifierReport</h2>
+
+<div class="informaltable" id="certifierReport">
+<table style="border-collapse: collapse; border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; ">
+<colgroup>
+<col class="c1" />
+<col class="c2" />
+</colgroup>
+<tbody>
+<tr>
+<td class="vocab-property-header">名前：</td>
+<td class="vocab-property">
+<span class="property">certifierReport</span>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">概要：</td>
+<td class="vocab-property-desc"><a href="#sec-certifiedBy"><code class="markup">certifiedBy</code> プロパティ</a>で識別される当事者によって作成されたアクセシビリティ レポートへのリンクを提供する。</td>
+</tr>
+<tr>
+<td class="vocab-property-header">許可された値：</td>
+<td class="entry">
+<code class="datatype">xsd:anyURI</code>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">個数：</td>
+<td class="entry">
+<code class="option">0 個以上</code>
+</td>
+</tr>
+<tr>
+<td class="vocab-property-header">例：</td>
+<td class="entry">
+<code class="prop-example">&lt;link rel="a11y:certifierReport" href="http://example.com/a11y/reports/9780000000001"/&gt;</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</body>
+</html>
