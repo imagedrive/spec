@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>EPUB 3 Core Media Types 日本語訳版</title>
+<link rel="stylesheet" type="text/css" href="../../css/epub-spec-2016.css" />
+<link rel="stylesheet" type="text/css" href="../../css/translation-memo-2016.css"/>
+<style type="text/css">
+            body {
+                max-width: 55em;
+            }
+            dl#roles dt,
+            dl#types dt{
+                margin-bottom: 1em;
+                font-weight: bold;
+            }
+            div.history{
+                margin-top: 2em;
+                margin-bottom: 2em
+            }
+            a.italic{
+                font-style: italic;
+            }
+            div.table {
+                margin-top: 3em;
+            }
+            .tbl-group {
+                text-align: left;
+                border-bottom: none;
+                color: rgb(0,0,0);
+                background-color: rgb(240,248,255);
+            }
+            ul {
+                list-style-type: none;
+            }
+            ul > li {
+                margin-top: 1em;
+            }
+</style>
+</head>
+<body>
+<div class="translation-attention">
+<p>この文書は「<a href="https://idpf.github.io/epub-cmt/v3/">EPUB 3 Core Media Types</a>」の日本語訳である。最新の文書は <a href="https://idpf.github.io/epub-cmt/v3/">https://idpf.github.io/epub-cmt/v3/</a> である。原文もしくは完全な情報は、 <a href="https://idpf.github.io/epub-cmt/v3/">EPUB 3 Core Media Types</a> を参照されたい。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+<dt>公開日:</dt>
+<dd>2017年8月7日</dd>
+<dt>修正日:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+</div>
+<header>
+<!--p><a href="http://www.idpf.org"><img src="https://www.idpf.org/epub/images/idpflogo_web_125.jpg" alt="IDPF" class="logo" /></a></p-->
+<h1>EPUB 3 Core Media Types</h1>
+<p class="identity">
+<span class="pubdate">2016年10月5日</span>
+</p>
+<div class="history">
+<span class="history-title">履歴</span>
+<ul>
+<li><a href="https://github.com/IDPF/epub-cmt/commits/master/cmt/v3/index.html">このドキュメントの変更</a></li>
+<li><a href="https://github.com/IDPF/epub-cmt/issues" >イシュートラッカー</a></li>
+</ul>
+</div>
+</header>
+<section id="sotd" class="section">
+<h2>このドキュメントのステータス</h2>
+<p>このドキュメントは、EPUB ワーキング グループの承認を得て、随時変更される。</p>
+<p>このドキュメントで定義されたメディア タイプは、削除されないが、非推奨になることがある。</p>
+<p>追加、変更および明確化のためのリクエストは、<a href="https://github.com/IDPF/epub-cmt/issues">イシュートラッカー</a>を介して行うことができる。<a href="https://github.com/IDPF/epub-cmt/pulls">プルリクエスト</a>も大歓迎である。新しいコア メディア タイプのリクエストは、リクエストされたメディア タイプが、プラットフォームの間で幅広いサポートをされているかことを示す必要があることに注意されたい。</p>
+<p>変更のリクエスト プロセスに関する詳細は、<a href="https://idpf.github.io/epub-guides/reporting-issues/">IDPF Issue Reporting Guidelines</a> を参照されたい。</p>
+</section>
+<nav id="toc" class="toc">
+<h2 class="toc-title">目次</h2>
+<ol class="toc">
+<li><a href="#sec-overview">1. 概要</a></li>
+<li><a href="#sec-cmt-supported">2. サポート済みのメディア タイプ</a></li>
+<li><a href="#references">参照・参考</a>
+<ol>
+<li><a href="#normative-refs">規定の参照</a></li>
+<li><a href="#informative-refs">規定ではない参照</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+<section id="sec-overview" class="chapter">
+<h1 class="title">1. 概要</h1>
+<p>このドキュメントは、EPUB 3 リーディング システムがサポートするコア メディア タイプのセットを識別する。</p>
+</section>
+<section id="sec-cmt-supported" class="chapter">
+<h1 class="title">2. サポート済みのメディア タイプ</h1>
+<p>次の表は EPUB 3 のコア メディア タイプを示している。</p>
+<p>表の列には、以下の情報を表している。</p>
+<ul>
+<li><span class="bold">メディア タイプ</span> &#8211; MIME メディア タイプ <a class="biblioref" href="#refRFC2046">[RFC2046]</a> は、<a href="http://www.idpf.org/epub3/latest/packages#sec-manifest-elem">マニフェスト</a> <a class="biblioref" href="#refPackages3">[Packages3]</a> で指定された出版物リソースを表すために使用される。</li>
+<li><span class="bold">コンテンツ タイプの定義</span> &#8211; 特定の<a class="glossterm" href="http://www.idpf.org/epub3/latest#gloss-publication-resource-cmt">コア メディア タイプ リソース</a>が適合する必要のある仕様。</li>
+<li><span class="bold">適用</span> &#8211; メディア タイプとコンテンツ タイプの定義に適合する出版物リソースのタイプ。</li>
+</ul>
+<div class="table" id="tbl-core-media-types">
+<div class="table-contents">
+<table>
+<thead>
+<tr>
+<th id="tbl-cmt-string">メディア タイプ</th>
+<th id="tbl-cmt-def">コンテンツ タイプの定義</th>
+<th id="tbl-cmt-appl">適用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="3" id="cmt-grp-image" class="tbl-group">画像タイプ</th>
+</tr>
+<tr>
+<td id="cmt-gif">
+<code class="media-type">image/gif</code>
+</td>
+<td>
+<a class="biblioref" href="#refGIF">[GIF]</a>
+</td>
+<td>GIF 画像</td>
+</tr>
+<tr>
+<td id="cmt-jpeg">
+<code class="media-type">image/jpeg</code>
+</td>
+<td>
+<a class="biblioref" href="#refJPEG">[JPEG]</a>
+</td>
+<td>JPEG 画像</td>
+</tr>
+<tr>
+<td id="cmt-png">
+<code class="media-type">image/png</code>
+</td>
+<td>
+<a class="biblioref" href="#refPNG">[PNG]</a>
+</td>
+<td>PNG 画像</td>
+</tr>
+<tr>
+<td id="cmt-svg">
+<code class="media-type">image/svg+xml</code>
+</td>
+<td><a href="http://www.idpf.org/epub3/latest/contentdocs#sec-svg">SVG コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3">[ContentDocs3]</a></td>
+<td>SVG ドキュメント</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-content-documents" class="tbl-group">アプリケーション タイプ</th>
+</tr>
+<tr>
+<td id="cmt-xhtml">
+<code class="media-type">application/xhtml+xml</code>
+</td>
+<td><a href="http://www.idpf.org/epub3/latest/contentdocs#sec-xhtml">XHTML コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3">[ContentDocs3]</a></td>
+<td><a href="http://www.w3.org/TR/html/the-xhtml-syntax.html#the-xhtml-syntax">XHTML 構文</a> <a class="biblioref" href="#refHTML">[HTML]</a> を使用する<a class="glossterm" href="http://www.idpf.org/epub3/latest#gloss-content-document-epub-xhtml">XHTML コンテンツ ドキュメント</a>。</td>
+</tr>
+<tr>
+<td id="cmt-js"><code class="media-type">application/javascript</code></td>
+<td><a class="biblioref" href="#refRFC4329">[RFC4329]</a></td>
+<td>スクリプト。<code class="media-type">text/javascript</code> は<a href="http://www.idpf.org/epub3/latest#deprecated">非推奨</a></td>
+</tr>
+<tr>
+<td id="cmt-ncx"><code class="media-type">application/x-dtbncx+xml</code></td>
+<td><a class="biblioref" href="#refOPF2">[OPF2]</a></td>
+<td>NCX は<a href="http://www.idpf.org/epub3/latest#superseded-removal">置き換え</a>。</td>
+</tr>
+<tr>
+<td id="cmt-sfnt"><code class="media-type">application/font-sfnt</code></td>
+<td><a class="biblioref" href="#refOpenType">[OpenType]</a> <a class="biblioref" href="#refTrueType">[TrueType]</a></td>
+<td>OpenType と TrueType フォント。<code>application/vnd.ms-opentype</code> の<a href="http://www.idpf.org/epub3/latest#deprecated">非推奨</a>。</td>
+</tr>
+<tr>
+<td id="cmt-woff"><code class="media-type">application/font-woff</code></td>
+<td><a class="biblioref" href="#refWOFF">[WOFF]</a></td>
+<td>WOFF フォント</td>
+</tr>
+<tr>
+<td id="cmt-smil"><code class="media-type">application/smil+xml</code></td>
+<td><a class="biblioref" href="#refOverlays3">[MediaOverlays3]</a></td>
+<td>EPUB メディア オーバーレイ ドキュメント</td>
+</tr>
+<tr>
+<td id="cmt-pls"><code class="media-type">application/pls+xml</code></td>
+<td><a class="biblioref" href="#refPLS">[PLS]</a></td>
+<td><a class="glossterm" href="http://www.idpf.org/epub3/latest#gloss-tts">テキスト読み上げ（TTS）</a>の発音辞書</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-audio" class="tbl-group">オーディオ タイプ</th>
+</tr>
+<tr>
+<td id="cmt-mp3"><code class="media-type">audio/mpeg</code></td>
+<td><a class="biblioref" href="#refMP3">[MP3]</a></td>
+<td>MP3 オーディオ</td>
+</tr>
+<tr>
+<td id="cmt-mp4-aac"><code class="media-type">audio/mp4</code></td>
+<td><a class="biblioref" href="#refAAC">[AAC LC]</a>, <a class="biblioref" href="#refMP4" >[MP4]</a></td>
+<td>MP4 コンテナを使用する AAC LC オーディオ</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-video" class="tbl-group">ビデオ タイプ</th>
+</tr>
+<tr>
+<td colspan="3" id="cmt-vide-note">EPUB 3 は、コア メディア タイプとして全てのビデオ コーデックを今は定義していない。EPUB 出版物でのビデオ コーデックのサポートに関する、規定ではない推奨については、<a href="http://www.idpf.org/epub3/latest#note-video-codecs">EPUB Publications — リーディング システムの適合性</a>にあるノートを参照されたい。</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-text" class="tbl-group">テキスト タイプ</th>
+</tr>
+<tr>
+<td id="cmt-css"><code class="media-type">text/css</code></td>
+<td><a href="http://www.idpf.org/epub3/latest/contentdocs#sec-css">CSS スタイル シート</a> <a class="biblioref" href="#refContentDocs3">[ContentDocs3]</a></td>
+<td>CSS スタイル シート。</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-font" class="tbl-group">フォント タイプ</th>
+</tr>
+<tr>
+<td id="cmt-woff2"><code class="media-type">font/woff2</code></td>
+<td><a class="biblioref" href="#refWOFF2">[WOFF2]</a></td>
+<td>WOFF2 フォント</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="bibliography" id="references">
+<h1 class="title">参照・参考</h1>
+<div class="bibliodiv" id="normative-refs">
+<h2 class="title">規定の参照</h2>
+<div id="refAAC">
+<p>[AAC LC] <a class="italic"
+                            href="http://www.iso.org/iso/iso_catalogue/catalogue_ics/catalogue_detail_ics.htm?csnumber=53943"
+                            >ISO/IEC 14496-3:2009 - Information technology -- Coding of audio-visual objects -- Part 3:
+                            Audio</a>. </p>
+</div>
+                
+<div id="refContentDocs3">
+<p>[ContentDocs3] <a class="italic" href="epub-contentdocs.html">EPUB Content Documents 3</a>. </p>
+</div>
+                
+<div id="refGIF">
+<p>[GIF] <a class="italic" href="http://www.w3.org/Graphics/GIF/spec-gif89a.txt">GRAPHICS INTERCHANGE
+                            FORMAT(sm) Version 89a</a>. </p>
+</div>
+                
+<div id="refHTML">
+<p>[HTML] <a class="italic" href="http://www.w3.org/TR/html/">HTML</a>. </p>
+</div>
+                
+<div id="refJPEG">
+<p>[JPEG] <a class="italic" href="http://www.w3.org/Graphics/JPEG/itu-t81.pdf">JPEG Standard (JPEG
+                            ISO/IEC 10918-1 ITU-T Recommendation T.81)</a>. </p>
+</div>
+                
+<div id="refMP3">
+<p>[MP3] <a class="italic"
+                            href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=22412"
+                            >ISO/IEC 11172-3:1993 - Information technology -- Coding of moving pictures and associated audio
+                            for digital storage media at up to about 1,5 Mbit/s -- Part 3: Audio</a>. </p>
+</div>
+                
+<div id="refMP4">
+<p>[MP4] <a class="italic"
+                            href="http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=38538"
+                            >Information technology -- Coding of audio-visual objects -- Part 14: MP4 file format</a>. </p>
+</div>
+                
+<div id="refOverlays3">
+<p>[MediaOverlays3] <a class="italic" href="epub-mediaoverlays.html">EPUB Media Overlays 3</a>. </p>
+</div>
+                
+<div id="refOpenType">
+<p>[OpenType] <a class="italic" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=52136">ISO/IEC
+                            14496-22:2009 - Information technology -- Coding of audio-visual objects -- Part 22: Open Font
+                            Format</a>.</p>
+</div>
+                
+<div id="refOPF2">
+<p>[OPF2] <a class="italic" href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm">Open Packaging Format 2.0.1</a>.</p>
+</div>
+<div id="refPLS">
+<p>[PLS] <a class="italic" href="http://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification 1.0 (PLS)</a>. <span class="author">Paolo Baggia.</span>
+<span class="date">14 October 2008.</span>
+</p>
+</div>
+<div id="refPNG">
+<p>[PNG] <a class="italic" href="http://www.w3.org/TR/PNG/">Portable Network Graphics (PNG) Specification (Second Edition)</a>. <span class="author">David Duce.</span>
+<span class="date">10 November 2003.</span>
+</p>
+</div>
+<div id="refPackages3">
+<p>[Packages3] <a class="italic" href="epub-packages.html">EPUB Packages 3</a>.</p>
+</div>
+<div id="refRFC2046">
+<p>[RFC2046] <a class="italic" href="http://tools.ietf.org/html/rfc2046">Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</a> (RFC 2046). <span class="author">N. Freed, N.  Borenstein.</span>
+<span class="date">November 1996.</span>
+</p>
+</div>
+<div id="refSVG">
+<p>[SVG] <a class="italic" href="http://www.w3.org/TR/SVG/">Scalable Vector Graphics (SVG)</a>.</p>
+</div>
+<div id="refTrueType">
+<p>[TrueType] <a class="italic" href="https://developer.apple.com/fonts/TrueType-Reference-Manual/">Apple TrueType Reference manual</a>. <span class="org">
+<span class="orgname">Apple</span>
+</span>
+<span class="date">2002.</span>
+</p>
+</div>
+<div id="refWOFF">
+<p>[WOFF] <a class="italic" href="http://www.w3.org/TR/WOFF/">WOFF File Format 1.0</a>. <span class="author">Jonathan Kew, et al.</span>
+</p>
+</div>
+<div id="refWOFF2">
+<p>[WOFF2] <a class="italic" href="http://www.w3.org/TR/WOFF2/">WOFF File Format 2.0</a>. <span class="author">Vladimir Levantovsky, et al.</span>
+</p>
+</div>
+</div>
+<div class="bibliodiv" id="informative-refs">
+<h3 class="title">規定ではない参照</h3>
+<div id="refRFC4329">
+<p>[RFC4329] <a class="italic" href="http://tools.ietf.org/html/rfc4329">Scripting Media Types</a>. <span class="author">B. Höhrmann.</span> <span class="date">April 2006.</span>
+</p>
+</div>
+</div>
+</section>
+</body>
+</html>
