@@ -622,7 +622,7 @@
 </dd>
 </dl>
 </div>
-<p><span class="property">a11y:certifiedBy</span> プロパティは、コンテンツを認定する関係者の名前を特定する。コンテンツの認証者は、EPUB 出版物を制作した同じ関係者である可能性があるが、サード パーティのアクセシビリティ認証である可能性もある。</p>
+<p><span class="property">a11y:certifiedBy</span> プロパティは、コンテンツを認定する当事者の名前を特定する。コンテンツの認証者は、EPUB 出版物を制作した同じ当事者である可能性があるが、サード パーティのアクセシビリティ認証である可能性もある。</p>
 <div class="informalexample">
 <p>次の例は、出版社による自己証明を持つ EPUB 3 出版物を示している（<code class="markup">dc:publisher</code> と <code class="markup">a11y:certifiedBy</code> プロパティの値は同じである）。</p>
 <pre class="synopsis">&lt;metadata&gt;
@@ -667,12 +667,12 @@
 <h3 class="title">note</h3>
 <p>EPUB 出版物が組織によって証明された場合、ユーザーは通常、その組織の名前を知りたいと望むだろう。ユーザーのクレームで信用を低下させることができるため、証明を行う組織名の代わりに評価を実行する人物の名前を包含することは、一般的に推奨されない。</p>
 </div>
-<p>コンテンツを認定する関係者が、コンテンツがアクセシブルであることを証明するために、彼らの権威を確立する資格や記章が公表されている場合、その情報は、<a class="ulink" href="http://www.idpf.org/epub/vocab/package/a11y/#certifierCredential" target="_top"><span class="property">a11y:certifierCredential</span> プロパティ</a> <a class="biblioref" href="#refA11YVocab" title="EPUB Accessibility Vocabulary">[<abbr class="abbrev">Accessibility Vocab</abbr>]</a> で供給されることができる。</p>
+<p>コンテンツを認定する当事者が、コンテンツがアクセシブルであることを証明するために、彼らの権威を確立する資格や印が公表されている場合、その情報は、<a class="ulink" href="http://www.idpf.org/epub/vocab/package/a11y/#certifierCredential" target="_top"><span class="property">a11y:certifierCredential</span> プロパティ</a> <a class="biblioref" href="#refA11YVocab" title="EPUB Accessibility Vocabulary">[<abbr class="abbrev">Accessibility Vocab</abbr>]</a> で供給することができる。</p>
 <div class="informalexample">
 <p>次の例は、証明書を示している。</p>
 <pre class="synopsis">&lt;meta property="a11y:certifierCredential"&gt;A+ Accessibility Rating&lt;/meta&gt;</pre>
 </div>
-<p>コンテンツの証明を行う団体が、評価の詳細なレポートを提供する場合、評価へのリンクは、<a class="ulink" href="http://www.idpf.org/epub/vocab/package/a11y/#certifierReport" target="_top"><span class="property">a11y:certifierReport</span> プロパティ</a> <a class="biblioref" href="#refA11YVocab" title="EPUB Accessibility Vocabulary">[<abbr class="abbrev">Accessibility Vocab</abbr>]</a> で提供することができる。</p>
+<p>コンテンツの証明を行う当事者が、評価の詳細なレポートを提供する場合、評価へのリンクは、<a class="ulink" href="http://www.idpf.org/epub/vocab/package/a11y/#certifierReport" target="_top"><span class="property">a11y:certifierReport</span> プロパティ</a> <a class="biblioref" href="#refA11YVocab" title="EPUB Accessibility Vocabulary">[<abbr class="abbrev">Accessibility Vocab</abbr>]</a> で提供することができる。</p>
 <div class="informalexample">
 <p>次の例は、リモートホストされているアクセシビリティ レポートへのリンクを示している。</p>
 <pre class="synopsis">&lt;link rel="a11y:certifierReport"&#xD;
