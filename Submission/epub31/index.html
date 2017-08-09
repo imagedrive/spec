@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="en" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta lang="" property="dc:language" content="en">
+<style>
+    /*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+    
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      color: #333;
+      background: #f8f8f8;
+    }
+    
+    .hljs-comment,
+    .hljs-quote {
+      color: #998;
+      font-style: italic;
+    }
+    
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-subst {
+      color: #333;
+      font-weight: bold;
+    }
+    
+    .hljs-number,
+    .hljs-literal,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-tag .hljs-attr {
+      color: #008080;
+    }
+    
+    .hljs-string,
+    .hljs-doctag {
+      color: #d14;
+    }
+    
+    .hljs-title,
+    .hljs-section,
+    .hljs-selector-id {
+      color: #900;
+      font-weight: bold;
+    }
+    
+    .hljs-subst {
+      font-weight: normal;
+    }
+    
+    .hljs-type,
+    .hljs-class .hljs-title {
+      color: #458;
+      font-weight: bold;
+    }
+    
+    .hljs-tag,
+    .hljs-name,
+    .hljs-attribute {
+      color: #000080;
+      font-weight: normal;
+    }
+    
+    .hljs-regexp,
+    .hljs-link {
+      color: #009926;
+    }
+    
+    .hljs-symbol,
+    .hljs-bullet {
+      color: #990073;
+    }
+    
+    .hljs-built_in,
+    .hljs-builtin-name {
+      color: #0086b3;
+    }
+    
+    .hljs-meta {
+      color: #999;
+      font-weight: bold;
+    }
+    
+    .hljs-deletion {
+      background: #fdd;
+    }
+    
+    .hljs-addition {
+      background: #dfd;
+    }
+    
+    .hljs-emphasis {
+      font-style: italic;
+    }
+    
+    .hljs-strong {
+      font-weight: bold;
+    }
+</style>
+<style>
+    /* --- ISSUES/NOTES --- */
+    
+    div.issue-title,
+    div.note-title,
+    div.ednote-title,
+    div.warning-title {
+      padding-right: 1em;
+      min-width: 7.5em;
+      color: #b9ab2d;
+    }
+    
+    div.issue-title {
+      color: #e05252;
+    }
+    
+    div.note-title,
+    div.ednote-title {
+      color: #2b2;
+    }
+    
+    div.warning-title {
+      color: #f22;
+    }
+    
+    div.issue-title span,
+    div.note-title span,
+    div.ednote-title span,
+    div.warning-title span {
+      text-transform: uppercase;
+    }
+    
+    div.note,
+    div.issue,
+    div.ednote,
+    div.warning {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    
+    .note>p:first-child,
+    .ednote>p:first-child,
+    .issue>p:first-child,
+    .warning>p:first-child {
+      margin-top: 0
+    }
+    
+    .issue,
+    .note,
+    .ednote,
+    .warning {
+      padding: .5em;
+      border-left-width: .5em;
+      border-left-style: solid;
+    }
+    
+    div.issue,
+    div.note,
+    div.ednote,
+    div.warning {
+      padding: 1em 1.2em 0.5em;
+      margin: 1em 0;
+      position: relative;
+      clear: both;
+    }
+    
+    span.note,
+    span.ednote,
+    span.issue,
+    span.warning {
+      padding: .1em .5em .15em;
+    }
+    
+    .issue {
+      border-color: #e05252;
+      background: #fbe9e9;
+    }
+    
+    .note,
+    .ednote {
+      border-color: #52e052;
+      background: #e9fbe9;
+    }
+    
+    .warning {
+      border-color: #f11;
+      border-width: .2em;
+      border-style: solid;
+      background: #fbe9e9;
+    }
+    
+    .warning-title:before {
+      content: "⚠";
+      /*U+26A0 WARNING SIGN*/
+      font-size: 3em;
+      float: left;
+      height: 100%;
+      padding-right: .3em;
+      vertical-align: top;
+      margin-top: -0.5em;
+    }
+    
+    li.task-list-item {
+      list-style: none;
+    }
+    
+    input.task-list-item-checkbox {
+      margin: 0 0.35em 0.25em -1.6em;
+      vertical-align: middle;
+    }
+</style>
+<style id="respec-mainstyle">
+    /*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+    /* Override code highlighter background */
+    
+    .hljs {
+      background: transparent !important;
+    }
+    /* --- INLINES --- */
+    
+    em.rfc2119 {
+      text-transform: lowercase;
+      font-variant: small-caps;
+      font-style: normal;
+      color: #900;
+    }
+    
+    h1 acronym,
+    h2 acronym,
+    h3 acronym,
+    h4 acronym,
+    h5 acronym,
+    h6 acronym,
+    a acronym,
+    h1 abbr,
+    h2 abbr,
+    h3 abbr,
+    h4 abbr,
+    h5 abbr,
+    h6 abbr,
+    a abbr {
+      border: none;
+    }
+    
+    dfn {
+      font-weight: bold;
+    }
+    
+    a.internalDFN {
+      color: inherit;
+      border-bottom: 1px solid #99c;
+      text-decoration: none;
+    }
+    
+    a.externalDFN {
+      color: inherit;
+      border-bottom: 1px dotted #ccc;
+      text-decoration: none;
+    }
+    
+    a.bibref {
+      text-decoration: none;
+    }
+    
+    cite .bibref {
+      font-style: normal;
+    }
+    
+    code {
+      color: #C83500;
+    }
+    
+    th code {
+      color: inherit;
+    }
+    /* --- TOC --- */
+    
+    .toc a,
+    .tof a {
+      text-decoration: none;
+    }
+    
+    a .secno,
+    a .figno {
+      color: #000;
+    }
+    
+    ul.tof,
+    ol.tof {
+      list-style: none outside none;
+    }
+    
+    .caption {
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+    /* --- TABLE --- */
+    
+    table.simple {
+      border-spacing: 0;
+      border-collapse: collapse;
+      border-bottom: 3px solid #005a9c;
+    }
+    
+    .simple th {
+      background: #005a9c;
+      color: #fff;
+      padding: 3px 5px;
+      text-align: left;
+    }
+    
+    .simple th[scope="row"] {
+      background: inherit;
+      color: inherit;
+      border-top: 1px solid #ddd;
+    }
+    
+    .simple td {
+      padding: 3px 10px;
+      border-top: 1px solid #ddd;
+    }
+    
+    .simple tr:nth-child(even) {
+      background: #f0f6ff;
+    }
+    /* --- DL --- */
+    
+    .section dd>p:first-child {
+      margin-top: 0;
+    }
+    
+    .section dd>p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .section dd {
+      margin-bottom: 1em;
+    }
+    
+    .section dl.attrs dd,
+    .section dl.eldef dd {
+      margin-bottom: 0;
+    }
+    
+    .respec-hidden {
+      display: none;
+    }
+    
+    #respec-ui {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 202px;
+      text-align: right;
+    }
+    
+    #respec-pill,
+    .respec-info-button {
+      background: #fff;
+      height: 2.5em;
+      color: rgb(120, 120, 120);
+      border: 1px solid #ccc;
+      box-shadow: 1px 1px 8px 0 rgba(100, 100, 100, .5);
+    }
+    
+    .respec-info-button {
+      border: none;
+      border-radius: 2em;
+      margin-right: 1em;
+      min-width: 3.5em;
+    }
+    
+    #respec-pill:disabled {
+      margin: 10px auto;
+      font-size: 2.8px;
+      position: relative;
+      text-indent: -9999em;
+      border-top: 1.1em solid rgba(40, 40, 40, 0.2);
+      border-right: 1.1em solid rgba(40, 40, 40, 0.2);
+      border-bottom: 1.1em solid rgba(40, 40, 40, 0.2);
+      border-left: 1.1em solid #ffffff;
+      transform: translateZ(0);
+      animation: respec-spin 1.1s infinite linear;
+      box-shadow: none;
+    }
+    
+    #respec-pill:disabled,
+    #respec-pill:disabled:after {
+      border-radius: 50%;
+      width: 10em;
+      height: 10em;
+    }
+    
+    @keyframes respec-spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    #respec-pill:hover,
+    #respec-pill:focus {
+      color: rgb(0, 0, 0);
+      transition: color .2s
+    }
+    
+    #respec-menu {
+      font-family: sans-serif;
+      background: #fff;
+      box-shadow: 1px 1px 8px 0 rgba(100, 100, 100, .5);
+      width: 200px;
+      display: none;
+      text-align: left;
+      margin-top: 5px;
+      font-size: .8em;
+    }
+    
+    .respec-save-button {
+      background: #fff;
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 5px;
+      margin: 5px;
+      display: block;
+      width: 100%;
+      color: #000;
+      text-decoration: none;
+      text-align: center;
+      font-size: inherit;
+    }
+    
+    #respec-ui button:focus,
+    #respec-pill:focus,
+    .respec-option:focus {
+      outline: 0;
+      outline-style: none;
+    }
+    
+    #respec-ui button.respec-pill-error {
+      background-color: red;
+      color: white;
+    }
+    
+    #respec-ui button.respec-pill-warning {
+      background-color: orange;
+      color: white;
+    }
+    
+    #respec-menu button.respec-option {
+      background: white;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: inherit;
+      padding: 1.2em 1.2em;
+    }
+    
+    #respec-menu button.respec-option:hover {
+      background-color: #eeeeee;
+    }
+    
+    .respec-cmd-icon {
+      padding-right: .5em;
+    }
+    
+    #respec-ui button.respec-option:last-child {
+      border: none;
+      border-radius: inherit;
+    }
+    
+    .respec-offending-element {
+      display: inline-block;
+      position: relative;
+      background: url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x;
+    }
+    
+    @media print {
+      .removeOnSave {
+        display: none;
+      }
+    }
+</style>
+<title>EPUB 3.1 日本語訳</title>
+<!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
+<script id="initialUserConfig" type="application/json">
+    {
+      "specStatus": "Member-SUBM",
+      "editors": [
+      {
+        "name": "Markus Gylling",
+        "company": "International Digital Publishing Forum (IDPF)",
+        "companyURL": "http://idpf.org"
+      },
+      {
+        "name": "Tzviya Siegman",
+        "company": "John Wiley &amp; Sons",
+        "companyURL": "http://wiley.com"
+      },
+      {
+        "name": "Matt Garrish",
+        "company": "Invited Expert"
+      }],
+      "processVersion": 2015,
+      "shortName": "epub31",
+      "noRecTrack": true
+    }
+</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-Member-SUBM">
+<meta name="generator" content="ReSpec 8.7.1">
+<link rel="stylesheet" type="text/css" href="../css/translation-memo-2016.css"/>
+</head>
+<body class="h-entry" role="document" id="respecDocument">
+<div class="translation-attention">
+<p>この文書は「<a href="https://www.w3.org/Submission/2017/SUBM-epub31-20170125/">EPUB 3.1</a>」の日本語訳である。最新の文書は <a href="https://www.w3.org/Submission/epub31/">https://www.w3.org/Submission/epub31/</a> である。原文もしくは完全な情報は、<a href="https://www.w3.org/Submission/2017/SUBM-epub31-20170125/">EPUB 3.1</a> を参照されたい。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+<dt>公開日:</dt>
+<dd>2016年4月11日</dd>
+<dt>修正日:</dt>
+<dd>2017年8月9日</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+<div class="head" role="contentinfo" id="respecHeader">
+<p><a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a> <a href="https://www.w3.org/Submission/"> <img height="48" width="211" alt="W3C Member Submission" src="https://www.w3.org/Icons/member_subm"></a></p>
+<h1 class="title p-name" id="title" property="dcterms:title">EPUB 3.1</h1>
+<h2 id="w3c-member-submission-25-january-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Member Submission <time property="dcterms:issued" class="dt-published" datetime="2017-01-25">2017年1月25日</time></h2>
+<dl>
+<dt>この版：</dt>
+<dd><a class="u-url" href="https://www.w3.org/Submission/2017/SUBM-epub31-20170125/">https://www.w3.org/Submission/2017/SUBM-epub31-20170125/</a></dd>
+<dt>最新の発行版：</dt>
+<dd><a href="https://www.w3.org/Submission/epub31/">https://www.w3.org/Submission/epub31/</a></dd>
+<dt>Editors:</dt>
+<dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Markus Gylling</span>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://idpf.org">International Digital Publishing Forum (IDPF)</a></span> <span property="rdf:rest" resource="_:editor1"></span></dd>
+<dd class="p-author h-card vcard" resource="_:editor1"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Tzviya Siegman</span>, <a property="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://wiley.com">John Wiley &amp; Sons</a></span> <span property="rdf:rest" resource="_:editor2"></span></dd>
+<dd class="p-author h-card vcard" resource="_:editor2"><span property="rdf:first" typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Matt Garrish</span>, Invited Expert</span> <span property="rdf:rest" resource="rdf:nil"></span></dd>
+</dl>
+<p class="copyright">Copyright © 2017 <span class="notetoeditor"></span>. This document is available under the <a href="http://www.w3.org/Consortium/Legal/copyright-documents">W3C Document License</a>. See the <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">W3C Intellectual Rights Notice and Legal Disclaimers</a> for additional information.</p>
+<hr title="Separator for header">
+</div>
+<section id="abstract" class="introductory" property="dc:abstract">
+<h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">要約</span></h2>
+<p>EPUB 3.1 は、XML 及び Web 標準に基づいたデジタル出版物の交換および配信フォーマットである。</p>
+</section>
+<section id="sotd" class="introductory">
+<h2 id="h-sotd" resource="#h-sotd"><span property="xhv:role" resource="xhv:heading">このドキュメントのステータス</span></h2>
+<p><em>このセクションは、発行時点におけるこのドキュメントのステータスについて説明する。他のドキュメントは、このドキュメントより優先されるだろう。現在の <abbr title="World Wide Web Consortium">W3C</abbr> 発行物のリストは、https://www.w3.org/TR/ の <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> テクニカル レポート インデックス</a>にある。</em></p>
+<p>このドキュメントを発行することで、<abbr title="World Wide Web Consortium">W3C</abbr> は、<a href="https://www.w3.org/Submission/2017/SUBM-epub31-20170125/">サブミッション メンバー</a>が議論のために <abbr title="World Wide Web Consortium">W3C</abbr> へ正式な提案リクエストを行ったことを承認する。<abbr title="World Wide Web Consortium">W3C</abbr> がこのドキュメントを発行したことは、<abbr title="World Wide Web Consortium">W3C</abbr> によってその内容の承認、または <abbr title="World Wide Web Consortium">W3C</abbr> がそれによって扱われる問題に何らかのリソースを割り当てている、または持っていることを示していない。このドキュメントは、公認の <abbr title="World Wide Web Consortium">W3C</abbr> グループの成果物ではなく、<a href="https://www.w3.org/Consortium/Process"><abbr title="World Wide Web Consortium">W3C</abbr> プロセス</a>への潜在的なインプットとして発行された。<a href="https://www.w3.org/Submission/2017/02/Comment/"><abbr title="World Wide Web Consortium">W3C</abbr> チーム コメント</a>は、このメンバー サブミッションと共に合同で発行されている。<abbr title="World Wide Web Consortium">W3C</abbr> サイトで承認されたメンバー サブミッションを発行することは、<a href="https://www.w3.org/Consortium/Prospectus/Joining"><abbr title="World Wide Web Consortium">W3C</abbr> メンバーシップ</a>の利点のひとつである。<a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-submissions"><abbr title="World Wide Web Consortium">W3C</abbr> 特許ポリシーのセクション 3.3</a> のメンバー サブミッションに関連する要件を参照されたい。完全な<a href="https://www.w3.org/Submission">承認された <abbr title="World Wide Web Consortium">W3C</abbr> メンバー サブミッションのリスト</a>を参照されたい。</p>
+</section>
+<nav id="toc">
+<h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">目次</span></h2>
+<ol class="toc" role="directory">
+<li class="tocline"><a href="#sec-overview" class="tocxref"><span class="secno">1. </span>&nbsp;&nbsp;概要</a>
+<ol class="toc">
+<li class="tocline"><a href="#sec-purpose-scope" class="tocxref"><span class="secno">1.1 </span>&nbsp;&nbsp;目的とスコープ</a></li>
+<li class="tocline"><a href="#sec-terminology" class="tocxref"><span class="secno">1.2 </span>&nbsp;&nbsp;用語</a></li>
+<li class="tocline"><a href="#sec-conformance-statements" class="tocxref"><span class="secno">1.3 </span>&nbsp;&nbsp;適合性宣言</a></li>
+</ol>
+</li>
+<li class="tocline"><a href="#sec-epub-org" class="tocxref"><span class="secno">2. </span>&nbsp;&nbsp;組織</a>
+<ol class="toc">
+<li class="tocline"><a href="#sec-epub-specs" class="tocxref"><span class="secno">2.1 </span>&nbsp;&nbsp;仕様</a></li>
+<li class="tocline"><a href="#sec-epub-roadmap" class="tocxref"><span class="secno">2.2 </span>&nbsp;&nbsp;ロードマップ</a></li>
+</ol>
+</li>
+<li class="tocline"><a href="#sec-epub-conf" class="tocxref"><span class="secno">3. </span>&nbsp;&nbsp;適合性</a>
+<ol class="toc">
+<li class="tocline"><a href="#sec-epub-pub-conf" class="tocxref"><span class="secno">3.1 </span>&nbsp;&nbsp;EPUB 出版物</a></li>
+<li class="tocline"><a href="#sec-epub-rs-conf" class="tocxref"><span class="secno">3.2 </span>&nbsp;&nbsp;EPUB リーディング システム</a></li>
+</ol>
+</li>
+<li class="tocline"><a href="#sec-publication-resources" class="tocxref"><span class="secno">4. </span>&nbsp;&nbsp;出版物リソース</a>
+<ol class="toc">
+<li class="tocline"><a href="#sec-core-media-types" class="tocxref"><span class="secno">4.1 </span>&nbsp;&nbsp;コア メディア タイプ</a>
+<ol class="toc">
+<li class="tocline"><a href="#sec-cmt-intro" class="tocxref"><span class="secno">4.1.1 </span>&nbsp;&nbsp;まえがき</a></li>
+<li class="tocline"><a href="#sec-cmt-supported" class="tocxref"><span class="secno">4.1.2 </span>&nbsp;&nbsp;サポートされたメディア タイプ</a></li>
+<li class="tocline"><a href="#sec-foreign-restrictions" class="tocxref"><span class="secno">4.1.3 </span>&nbsp;&nbsp;管理外リソース</a></li>
+</ol>
+</li>
+<li class="tocline"><a href="#sec-resource-locations" class="tocxref"><span class="secno">4.2 </span>&nbsp;&nbsp;リソース配置</a></li>
+<li class="tocline"><a href="#sec-xml-constraints" class="tocxref"><span class="secno">4.3 </span>&nbsp;&nbsp;XML 適合性</a></li>
+</ol>
+</li>
+<li class="tocline"><a href="#sec-overview-deprecated" class="tocxref"><span class="secno">A. </span>&nbsp;&nbsp;付録&nbsp;A.&nbsp;非推奨（Obsolete）の機能</a></li>
+<li class="tocline"><a href="#index" class="tocxref"><span class="secno">B. </span>&nbsp;&nbsp;インデックス</a></li>
+<li class="tocline"><a href="#app-contributors" class="tocxref"><span class="secno">C. </span>&nbsp;&nbsp;謝辞と貢献者</a></li>
+<li class="tocline"><a href="#references" class="tocxref"><span class="secno">D. </span>&nbsp;&nbsp;参照・参考</a>
+<ol class="toc">
+<li class="tocline"><a href="#normative-refs" class="tocxref"><span class="secno">D.1 </span>規定の参照</a></li>
+<li class="tocline"><a href="#informative-refs" class="tocxref"><span class="secno">D.2 </span>規定ではない参照</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+<section class="chapter" id="sec-overview" typeof="bibo:Chapter" resource="#sec-overview" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-sec-overview" resource="#h-sec-overview"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>&nbsp;&nbsp;概要</span></h2>
+<section id="sec-purpose-scope" class="section informative" typeof="bibo:Chapter" resource="#sec-purpose-scope" property="bibo:hasPart">
+<h3 id="h-sec-purpose-scope" resource="#h-sec-purpose-scope"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.1 </span>&nbsp;&nbsp;目的とスコープ</span></h3>
+<p><em>このセクションは規定ではない。</em></p>
+<p>この仕様、EPUB 3.1 は、デジタル出版物やドキュメントのための、配信と交換形式を定義する。EPUB® フォーマットは、単一コンテナで配信するために体系化と意味論的に強化された Web コンテンツ（HTML、CSS、SVG や他のリソースを含む）のパッケージングとエンコーディングの手段を提供する。</p>
+<p>EPUB は、デジタルの本（電子書籍）の形式として広く採用され、EPUB 3.1 は、複雑なレイアウト、リッチメディアと双方向性、グローバルなタイポグラフィの機能を含む、出版物が要求する幅広い範囲をサポートするために、フォーマットの能力を向上させ続けている。EPUB 3.1 フォーマットの期待は、本、雑誌、学術書、専門書や科学的な出版を含むコンテンツの幅広い範囲のために利用されるということである。</p>
+<p>EPUB 3.1 は、事実上モジュール化されており、コア機能と規格の機能を定義する仕様群で構成されている。この仕様は、規格への主なエントリ ポイントを表すが、<a class="xref" href="#sec-epub-specs" title="2.1 Specifications">仕様</a>に記載されている仕様は EPUB 3.1 の全てである。これらの仕様を横断して定義された<a class="link" href="#index" title="Index">主な概念と定義へのインデックス</a>は、この仕様の最後で提供される。</p>
+<p>規定ではない <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a> は、EPUB 3.1 への一般的な紹介を提供する。規格の以前のバージョンである EPUB 3.0.1 からの技術的な変更点の一覧は、規定ではない <a class="biblioref" href="#refEPUB3Changes" title="EPUB 3.1 Differences from EPUB 3.0.1">[<abbr class="abbrev">EPUB3 Changes</abbr>]</a> でも利用できる。</p>
+</section>
+<section class="section" id="sec-terminology" typeof="bibo:Chapter" resource="#sec-terminology" property="bibo:hasPart">
+<h3 id="h-sec-terminology" resource="#h-sec-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.2 </span>&nbsp;&nbsp;用語</span></h3>
+<p>次の用語は、EPUB 3.1 の固有である。どこで使用するにしても、大文字で始める。</p>
+<p>セクションにある用語の最初のインスタンスのみ、定義にリンクされる。</p>
+<dl>
+<dt class="glossentry" id="gloss-author"><span class="glossterm">製作者</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の制作に対して責任がある人または組織。制作者は、コンテンツの制作者である必要はない。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-display-area"><span class="glossterm">コンテンツ表示領域</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>の表示することを専門とする<a class="glossterm" href="#gloss-viewport" title="Viewport">ビューポート</a>内の領域。コンテンツ表示領域には、<a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">EPUB リーディング システム</a>がビューポート内に挿入するかもしれない枠線、余白、ヘッダー、フッターまたはその他の装飾は含まれない。</p>
+<p><a class="glossterm" href="#gloss-synthetic-spread" title="Synthetic Spread">合成見開き</a>の場合、ビューポートは、2つのコンテンツ表示領域を含む。</p>
+</dd>
+<dt class="glossentry" id="gloss-core-media-type"><span class="glossterm">コア メディア タイプ</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">EPUB リーディング システム</a>がサポートするメディア タイプ <a class="biblioref" href="#refRFC2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types (RFC 2046)">[<abbr class="abbrev">RFC2046</abbr>]</a>。詳細については<a class="xref" href="#sec-publication-resources" title="4 Publication Resources"><em>出版物リソース</em></a>を参照されたい。</p>
+</dd>
+<dt class="glossentry" id="gloss-publication-resource-cmt"><span class="glossterm">コア メディア タイプ リソース</span></dt>
+<dd class="glossdef">
+<p><a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>の提供が必要ではない、<a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>を持つ<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>（<a class="glossterm" href="#gloss-publication-resource-foreign" title="Foreign Resource">管理外リソース</a>を参照）。</p>
+</dd>
+<dt class="glossentry" id="gloss-container"><span class="glossterm">EPUB コンテナ</span></dt>
+<dd class="glossdef">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-zip" target="_top">OCF ZIP コンテナ</a> <a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a></span> で定義されている <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>用 ZIP ベースのパッケージングと配布の形式。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-document-epub"><span class="glossterm">EPUB コンテンツ ドキュメント</span></dt>
+<dd class="glossdef">
+<p>EPUB コンテンツ ドキュメントの定義（<a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">HTML</a> または <a class="glossterm" href="#gloss-content-document-epub-svg" title="SVG Content Document">SVG</a>）のひとつに一致した<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>。</p>
+<p>EPUB コンテンツ ドキュメントは<a class="glossterm" href="#gloss-publication-resource-cmt" title="Core Media Type Resource">コア メディア タイプ リソース</a>であるため、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック</a>を提供することなく <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>に含むことができる。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-document-epub-nav"><span class="glossterm">EPUB ナビゲーション ドキュメント</span></dt>
+<dd class="glossdef">
+<p>人間と機械が読み取り可能であるグローバルなナビゲーション情報を含む特化した <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML コンテンツ ドキュメント</a>。EPUB ナビゲーション ドキュメントは、<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-nav" target="_top">EPUB ナビゲーション ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> で述べられた制約に準じる。</p>
+</dd>
+<dt class="glossentry" id="gloss-epub-package"><span class="glossterm">EPUB パッケージ</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>で定義されているような、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>をレンダリングする相互関係にある<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">リソース</a>のセットから構成されている論理的なドキュメントのエンティティ。</p>
+</dd>
+<dt class="glossentry" id="gloss-epub-publication"><span class="glossterm">EPUB 出版物</span></dt>
+<dd class="glossdef">
+<p><span class="phrase">この仕様</span>に準拠する、ひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>のコレクションは、<a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>をパッケージ化している。</p>
+<p>EPUB 出版物は典型的に単一の知的・芸術作品を表しているが、この仕様は、コンテンツの性質を制限しない。</p>
+</dd>
+<dt class="glossentry" id="gloss-epub-reading-system"><span class="glossterm">EPUB リーディング システム (またはリーディング システム)</span></dt>
+<dd class="glossdef">
+<p>この仕様に準拠する方法で読者に提示するために <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>を処理するシステム。</p>
+</dd>
+<dt class="glossentry" id="gloss-fixed-layout-document"><span class="glossterm">固定レイアウト ドキュメント</span></dt>
+<dd>
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-property-layout" target="_top"><span class="property">rendition:layout</span> プロパティ</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> で定義されているように、<a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>内の <code class="markup">pre-paginated</code> を指定されている<a class="glossterm" href="#gloss-spine" title="Spine">スパイン</a>から直接参照される <a class="glossterm" href="#gloss-content-document-top-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
+<p>固定レイアウト ドキュメントをレンダリングするために使用する寸法は、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-fixed-layouts" target="_top">固定レイアウト</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義される。</p>
+</dd>
+<dt class="glossentry" id="gloss-publication-resource-foreign"><span class="glossterm">管理外リソース</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-publication-resource-cmt" title="Core Media Type Resource">コア メディア タイプ リソース</a>ではない<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>。管理外リソースは、<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>で定義されているフォールバックの要件に依存する。</p>
+</dd>
+<dt class="glossentry" id="gloss-local-resource"><span class="glossterm">ローカル リソース</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>内に配置されたリソース。</p>
+<p>リソースの位置ための特定のルールは、メディア タイプのための<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの位置</a>を参照されたい。</p>
+</dd>
+<dt class="glossentry" id="gloss-manifest"><span class="glossterm">マニフェスト</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の指定された<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>を構成する全ての<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>のリスト。</p>
+
+<p>詳細については<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-manifest-elem" target="_top">マニフェスト</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span>を参照されたい。</p>
+</dd>
+<dt class="glossentry" id="gloss-media-overlay-document"><span class="glossterm">メディア オーバーレイ ドキュメント</span></dt>
+<dd class="glossdef">
+<p><a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> で定義された同期再生を提供するために録音済みの音声ナレーションを <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML コンテンツ ドキュメント</a>と関連付ける XML ドキュメント</p>
+</dd>
+<dt class="glossentry" id="gloss-package-document"><span class="glossterm">パッケージ ドキュメント</span></dt>
+<dd class="glossdef">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-doc" target="_top">パッケージ ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> で定義されているように、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>を記述する<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>。パッケージ ドキュメントは、レンディションに関するメタ情報を伝達し、リソースのマニフェストの提供と標準の読み取り順序を定義する。</p>
+</dd>
+<dt class="glossentry" id="gloss-publication-resource-cmt-or-foreign"><span class="glossterm">出版物リソース</span></dt>
+<dd class="glossdef">
+<p>コンテンツまたは <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の少なくともひとつの<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>のロジックと表示に関する命令を含んでいるリソース。このリソースがない場合には、EPUB 出版物は<a class="glossterm" href="#gloss-author" title="製作者">製作者</a>の意図したとおりに表示されないことがある。出版物リソースの例としてはレンディションの<a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>、CSS スタイル シート、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
+<p>パッケージ ドキュメント自身を除いて、レンディションをレンダリングするために必要な出版物リソースはレンディションの<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-manifest-elem" target="_top">マニフェスト</a></span> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> に記載され、（<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>で特に指定がない限り）<a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>ファイルにバンドルする。</p>
+<p>出版物リソースでないリソースの例としては、パッケージ ドキュメントの <span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-link-elem" target="_top">link</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> によって識別されるか（例えば <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element" target="_top">a</a></code> 要素の <code class="markup">href</code> 属性など）<a class="glossterm" href="#gloss-remote-resource" title="Remote Resource">リモート リソース</a>を解決する外部へのハイパーリンクで識別されるものが含まれている。</p>
+</dd>
+<dt class="glossentry" id="gloss-release-identifier"><span class="glossterm">公開識別子</span></dt>
+<dd class="glossdef">
+<p>公開識別子は <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>の任意のインスタンスが、別のインスタンスに対して、それらが同一であるのか、異なる版なのか、または無関係なのかどうかを判断するために比較できるようにする。</p>
+<p>詳細については<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-metadata-elem-identifiers-pid" target="_top">公開識別子</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> を参照されたい。</p>
+</dd>
+<dt class="glossentry" id="gloss-remote-resource"><span class="glossterm">リモート リソース</span></dt>
+<dd class="glossdef">
+<p>一般的に、オンラインである必要はないが、<a class="glossterm" href="#gloss-container" title="EPUB Container">EPUB コンテナ</a>の外部に配置するリソース</p>
+<p>リソース配置に関するメディア タイプの特定のルールは、<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>を参照されたい。</p>
+</dd>
+<dt class="glossentry" id="gloss-rendition"><span class="glossterm">レンディション</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-epub-package" title="EPUB Package">EPUB パッケージ</a>で述べられているように、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>コンテンツのひとつのレンダリング。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-document-epub-scripted"><span class="glossterm">スクリプト コンテンツ ドキュメント</span></dt>
+<dd class="glossdef">
+<p>スクリプトや <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/html/sec-forms.html#sec-forms" target="_top">forms</a> を持つ <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML コンテンツ ドキュメント</a>が含まれる <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
+<p>詳細については<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-scripted-content" target="_top">スクリプト</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> を参照されたい。</p>
+</dd>
+<dt class="glossentry" id="gloss-spine"><span class="glossterm">スパイン</span></dt>
+<dd class="glossdef">
+<p>EPUB 出版物の指定された<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>の初期設定の読み上げ順序を表す<a class="glossterm" href="#gloss-publication-resource-cmt-or-foreign" title="Publication Resource">出版物リソース</a>、<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#confreq-spine-itemtypes" target="_top">一般的な EPUB コンテンツ ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> の順序付きリスト。</p>
+<p>詳細については<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-spine-elem" target="_top">スパイン</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> を参照されたい。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-document-epub-svg"><span class="glossterm">SVG コンテンツ ドキュメント</span></dt>
+<dd class="glossdef">
+<p><span class="phrase"><a class="ulink" href="epub301-contentdocs.xhtml#sec-svg" target="_top">SVG コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で表現された制約に準拠する、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
+</dd>
+<dt class="glossentry" id="gloss-synthetic-spread"><span class="glossterm">合成見開き</span></dt>
+<dd class="glossdef">
+<p>デバイスの画面上で同時に二つの隣接するページのレンダリング。</p>
+</dd>
+<dt class="glossentry" id="gloss-tts"><span class="glossterm">テキスト読み上げ（TTS）</span></dt>
+<dd class="glossdef">
+<p>人工的な人間の発音で <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>のテキストコンテンツのレンダリングは合成音声を用いる。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-document-top-level"><span class="glossterm">トップレベル コンテンツ ドキュメント</span></dt>
+<dd class="glossdef">
+<p>直接か<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-foreign-restrictions-manifest" target="_top">フォールバック チェーン</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> を介して、<a class="glossterm" href="#gloss-spine" title="Spine">スパイン</a>から参照される <a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
+</dd>
+<dt class="glossentry" id="gloss-unique-identifier"><span class="glossterm">一意識別子</span></dt>
+<dd class="glossdef">
+<p><span class="phrase"><a class="ulink" href="epub-packages.xhtml#attrdef-package-unique-identifier" target="_top"><code class="markup">unique-identifier</code> 属性</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span>によって識別される一意識別子は <a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>のための主要な識別子である。一意識別子は、同じ EPUB 出版物のひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>によって共有が可能である。</p>
+<p>コンテンツの大幅な見直し、要訳などは新しい一意識別子が必要である。</p>
+</dd>
+<dt class="glossentry" id="gloss-viewport"><span class="glossterm">ビューポート</span></dt>
+<dd class="glossdef">
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB 出版物">EPUB 出版物</a>が視覚的に読者に与えられる <a class="glossterm" href="#gloss-epub-reading-system" title="EPUB リーディング システム (またはリーディング システム)">EPUB リーディング システム</a>の領域。</p>
+</dd>
+<dt class="glossentry" id="gloss-content-document-epub-xhtml"><span class="glossterm">XHTML コンテンツ ドキュメント</span></dt>
+<dd class="glossdef">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml" target="_top">XHTML コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> のプロファイルに準拠する、<a class="glossterm" href="#gloss-content-document-epub" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>。</p>
+<p><a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> に定義された <a class="ulink" href="https://www.w3.org/TR/html/xhtml.html#xhtml" target="_top">XHTML 構文</a>を使用する XHTML コンテンツ ドキュメント。</p>
+</dd>
+</dl>
+</section>
+<section lang="en" class="section" id="sec-conformance-statements" typeof="bibo:Chapter" resource="#sec-conformance-statements" property="bibo:hasPart">
+<h3 id="h-sec-conformance-statements" resource="#h-sec-conformance-statements"><span property="xhv:role" resource="xhv:heading"><span class="secno">1.3 </span>&nbsp;&nbsp;適合性宣言</span></h3>
+<p>このドキュメント内のキーワード、<em class="rfc2119" title="MUST">MUST</em>、<em class="rfc2119" title="MUST NOT">MUST NOT</em>、<em class="rfc2119" title="REQUIRED">REQUIRED</em>、<em class="rfc2119" title="SHALL">SHALL</em>、<em class="rfc2119" title="SHALL NOT">SHALL NOT</em>、<em class="rfc2119" title="SHOULD">SHOULD</em>、<em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em>、<em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em>、<em class="rfc2119" title="MAY">MAY</em>、<em class="rfc2119" title="OPTIONAL">OPTIONAL</em> は、<a class="biblioref" href="#refRFC2119" title="Key words for use in RFCs to Indicate Requirement Levels (RFC 2119)">[<abbr class="abbrev">RFC2119</abbr>]</a> の記述に従って解釈される。</p>
+<p>この仕様の全てのセクションと補足は規定である。但し"このセクションは規定ではない情報である"という規定ではない状態のラベルで識別される箇所を除く。セクションと補足への規定ではない状態の適用は、含まれている全ての子コンテンツおよびサブセクションに適用される。</p>
+<p>この仕様の全ての例は規定ではない。</p>
+</section>
+</section>
+<section class="chapter" id="sec-epub-org" typeof="bibo:Chapter" resource="#sec-epub-org" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-sec-epub-org" resource="#h-sec-epub-org"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>&nbsp;&nbsp;組織</span></h2>
+<section class="section" id="sec-epub-specs" typeof="bibo:Chapter" resource="#sec-epub-specs" property="bibo:hasPart">
+<h3 id="h-sec-epub-specs" resource="#h-sec-epub-specs"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.1 </span>&nbsp;&nbsp;仕様</span></h3>
+<p>EPUB 3.1 規格は、サブ仕様のファミリーを横断して定義されたコア機能と機能性を持つ性質のモジュールである。</p>
+<p>この仕様は、ファミリーの中で最上位の仕様を表している。これは、（規格のプロダクトである）<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>と（EPUB 出版物を消費し、読者にその内容を提示するアプリケーションである）<a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">EPUB リーディング システム</a>のための適合性要件が含まれている。</p>
+<p>完全な EPUB 3.1 の他の仕様は、次の通りである。</p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/" target="_top">EPUB Packages 3.1</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> — コンテンツの各<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-rendition" target="_top">レンディション</a></span>のための要件を定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/" target="_top">EPUB Content Documents 3.1</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a> — EPUB 出版物のコンテキストで使用する XHTML、SVG と CSS のプロファイルを定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/" target="_top">EPUB Media Overlays 3.1</a> <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> — 形式とテキストと音声の同期のための処理モデルを定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/" target="_top">EPUB Open Container Format (OCF) 3.1</a> <a class="biblioref" href="#refOCF30" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> — 関連するリソースの集合を単一のファイル（ZIP）の <a class="glossterm" href="#gloss-container" title="EPUB コンテナ（またはコンテナ）">EPUB コンテナ</a>にカプセル化するためのファイル形式と処理モデルを定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/latest/accessibility" target="_top">EPUB Accessibility</a> <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> — EPUB 出版物のアクセシビリティ適合性と発見のメタデータ要件を定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="/Submission/2017/SUBM-altss-tags-20170125/" target="_top">Alternate Style Tags</a> <a class="biblioref" href="#refAlternateStyleTags" title="Alternate Style Tags">[<abbr class="abbrev">Alt Style Tags</abbr>]</a> — マイクロフォーマットを使用して代替のスタイルシートをタグ付けするためのパターンを定義。</p>
+</li>
+</ul>
+<p>これらの仕様は、EPUB 3.1 に関連しているように広く認められている正式なリストであり、規格の一部として関連する機能を含んでいる。</p>
+<p>IDPF は、EPUB 3.1 のコア機能を補完する仕様のセットも開発しているが、リーディング システムのサポートとオーサリング時の使用は、省略可能（<em class="rfc2119" title="OPTIONAL">OPTIONAL</em>）である。</p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/linking/cfi/" target="_top">EPUB Canonical Fragment Identifiers</a> <a class="biblioref" href="#refEPUBCFI" title="EPUB Canonical Fragment Identifier (epubcfi) Specification">[<abbr class="abbrev">EPUB-CFI</abbr>]</a> — フラグメント識別子の使用を介して、EPUB 出版物の任意のコンテンツを参照するための標準化された方法を定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/dict/" target="_top">EPUB Dictionaries and Glossaries</a> <a class="biblioref" href="#refDictGloss" title="EPUB Dictionaries and Glossaries">[<abbr class="abbrev">Dictionaries</abbr>]</a> — 辞書のリッチなユーザー エクスペリエンスのためのフレームワークを提供。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/idx/" target="_top">EPUB Indexes</a> <a class="biblioref" href="#refIndexes" title="EPUB Indexes">[<abbr class="abbrev">Indexes</abbr>]</a> — EPUB 出版物内にあるインデックスの構造とコンテンツをエンコードする一貫性のある方法を定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/renditions/multiple/" target="_top">EPUB Multiple Renditions</a> <a class="biblioref" href="#refMultipleRenditions" title="EPUB Multiple Renditions">[<abbr class="abbrev">Multiple Renditions</abbr>]</a> — 複数のレンディションで構成されている EPUB 出版物の作成とレンダリングを定義。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/previews/" target="_top">EPUB Previews</a> <a class="biblioref" href="#refPreviews" title="EPUB Previews">[<abbr class="abbrev">Previews</abbr>]</a> — プレビュー コンテンツを EPUB 出版物に包含させる方法を説明。</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/renditions/region-nav/" target="_top">EPUB Region-Based Navigation</a> <a class="biblioref" href="#refRegionNav" title="EPUB Region-Based Navigation">[<abbr class="abbrev">Region Nav</abbr>]</a> — 興味を引く領域に基づいて、EPUB出版物の視覚表現を介する領域ベースのナビゲーションのための規則を導入。</p>
+</li>
+</ul>
+<p>新しい機能もまた拡張仕様の開発を通じて定期的に追加される。この仕様で正式に認められていないが、規格のためにコアのリビジョンの外側で定義されている特徴と機能は、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>とリーディング システムの開発者によって使用するために利用可能である（しかし、<a class="ulink" href="http://idpf.org/about_us/corp_docs/policies_and_procedures" target="_top">勧告仕様</a>の状態に到達するまで安定していない）。</p>
+</section>
+<section id="sec-epub-roadmap" class="section informative" typeof="bibo:Chapter" resource="#sec-epub-roadmap" property="bibo:hasPart">
+<h3 id="h-sec-epub-roadmap" resource="#h-sec-epub-roadmap"><span property="xhv:role" resource="xhv:heading"><span class="secno">2.2 </span>&nbsp;&nbsp;ロードマップ</span></h3>
+<p><em>このセクションは規定ではない。</em></p>
+<p>このセクションでは、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>として定義する中心的な成果物を通じて EPUB 仕様の組織をレビューする。</p>
+<p>EPUB 出版物は、<a class="glossterm" href="#gloss-epub-package" title="EPUB Package">EPUB パッケージ</a>と呼ばれるものによって表示されるそれぞれのコンテンツのひとつ以上の<a class="glossterm" href="#gloss-rendition" title="Rendition">レンディション</a>で構成されている。EPUB パッケージは、コンテンツを読むために必要な全てのリソースで構成されている。これらの間で重要なファイルは、（例えば、本棚に表示するタイトルと著者名、コンテンツが固定レイアウトなのか、あるいはリフローすることが可能かどうかなどのレンダリングのメタデータも同様に）読者に EPUB 出版物を提示する<a class="glossterm" href="#gloss-epub-reading-system" title="EPUB Reading System (or Reading System)">リーディング システム</a>によって使用される全てのメタデータを包含する<a class="glossterm" href="#gloss-package-document" title="Package Document">パッケージ ドキュメント</a>である。リソースの完全なマニフェストもまた提供し、読者がコンテンツを介して進むにつれてドキュメントをレンダリングするための配列を記載する<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-spine" target="_top">スパイン</a></span>を包含する。</p>
+<p>EPUB パッケージは、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub-nav" target="_top">EPUB ナビゲーション ドキュメント</a></span>と呼ばれる他の主要なファイルも包含する。このドキュメントは、読者が迅速かつ容易にコンテンツを移動できる、例えば目次のような、重要なナビゲーション機能を提供する。</p>
+<p>EPUB パッケージの要件は、<a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> で定義されている。</p>
+<p>EPUB 出版物のリソースは、ファイル拡張子 <code class="filename">.epub</code> の ZIP ベースのアーカイブ内で配布のためにひとまとめにされる。ZIP アーカイブ準拠なので、EPUB 出版物は多くのソフトウェアプログラムによって解凍でき、生産と消費の両方を単純にすることができる。</p>
+<p>コンテナ フォーマットは、zip 圧縮されたコンテンツが EPUB 出版物であることを決定する手段（<code class="filename">mimetype</code> ファイル）だけでなく、有益なリソースの普遍的な名前のディレクトリも提供する（<code class="filename">/META-INF</code>）。これらリソース間のキーになるのは、利用可能なパッケージ ドキュメントをリーディング システムに指示する <code class="filename">container.xml</code> である。</p>
+<p>コンテナ フォーマットは、<a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> で定義されている。</p>
+<figure id="fig-the-following-example-visually-represents-the-structure-of-the-epub-format.x">
+<figcaption>
+図. <span class="figno">1</span> <span class="fig-title">次の例は、EPUB フォーマットの構造を視覚的に表している。</span>
+</figcaption>
+<img src="epub.svg" width="350" alt="">
+</figure>
+<p>EPUB 出版物の構造と格納容器は、フォーマットの半分で、残りの半分は、読者に表示されるコンテンツである。このコンテンツは、オープン Web フォーマット上に構築され、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub-xhtml" target="_top">XHTML</a></span> と <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub-svg" target="_top">SVG</a></span> の二種類を供給されている。<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub" target="_top">EPUB コンテンツ ドキュメント</a></span>と呼ばれ、典型的にこれらのドキュメントは、例えば、画像、音声やビデオクリップ、スクリプトやスタイルシートなど、適切なレンダリングのために必要となる多くの追加リソースを参照する。</p>
+<p>EPUB コンテンツ ドキュメントの製作のための規則と要件に関する詳細情報は、<a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a> で提供され、アクセシビリティの要件は、<a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> で定義されている。</p>
+<p><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-media-overlay-document" target="_top">メディア オーバーレイ ドキュメント</a></span>は、 EPUB コンテンツ ドキュメントを補完する。これらは、録音済みの音声を持つ EPUB コンテンツ ドキュメント内のテキストを同期させるための宣言型マークアップを提供する。効果は、ナレーションされているように、テキストがハイライトされる読み上げの体験を作る機能である。メディア オーバーレイ ドキュメントは、<a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> で定義されている。</p>
+<p>概念的には単純であるが、EPUB 出版物は、ここで提示されるように、ZIP パッケージ内の HTML ページや依存資産の単純な集積以上のものである。このドキュメントの次のセクションは、読書体験を高めるのに提供する EPUB 出版物の主要な特徴と機能性に関する追加の情報は、参照仕様から入手可能であり、EPUB 3.1 の機能のより一般的な導入は、規定の <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a> で提供される。</p>
+</section>
+</section>
+<section class="chapter" id="sec-epub-conf" typeof="bibo:Chapter" resource="#sec-epub-conf" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-sec-epub-conf" resource="#h-sec-epub-conf"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>&nbsp;&nbsp;適合性</span></h2>
+<section class="section" id="sec-epub-pub-conf" typeof="bibo:Chapter" resource="#sec-epub-pub-conf" property="bibo:hasPart">
+<h3 id="h-sec-epub-pub-conf" resource="#h-sec-epub-pub-conf"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.1 </span>&nbsp;&nbsp;EPUB 出版物</span></h3>
+<p><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-publication" target="_top">EPUB 出版物</a></span>は、次の条件を全て満たさなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<dl class="conformance-list">
+<dt class="varlistentry" id="sec-epub-package-conformance"><span class="term">パッケージ</span></dt>
+<dd>
+<p id="confreq-renditions">ひとつ以上の <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-package" target="_top">EPUB パッケージ</a></span>を包含しなければならなず（<em class="rfc2119" title="MUST">MUST</em>）、それぞれが <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> に定義された要件に適合しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+</dd>
+<dt class="varlistentry" id="sec-epub-a11y"><span class="term">アクセシビリティ</span></dt>
+<dd>
+<p id="confreq-a11y">
+<a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> に定義されているアクセシビリティ要件に適合するべきである（<em class="rfc2119" title="SHOULD">SHOULD</em>）。</p>
+</dd>
+<dt class="varlistentry" id="sec-epub-pub-conformance-all"><span class="term">出版物リソース</span></dt>
+<dd><p id="confreq-manifest">
+そこに含まれる全ての<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、<a class="link" href="#sec-publication-resources" title="4 Publication Resources">コア メディア タイプと管理外リソースの制約</a>に従い、<a class="xref" href="#sec-resource-locations" title="4.2 Resource Locations">出版物リソースの配置</a>ごとに配置しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+</dd>
+<dt class="varlistentry" id="sec-epub-pub-conformance-container"><span class="term">コンテナ</span></dt>
+<dd><p id="confreq-ocf"><a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> で定義されているように、それは <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-container" target="_top">EPUB コンテナ</a></span>にパッケージ化しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+</dd>
+</dl>
+</section>
+<section class="section" id="sec-epub-rs-conf" typeof="bibo:Chapter" resource="#sec-epub-rs-conf" property="bibo:hasPart">
+<h3 id="h-sec-epub-rs-conf" resource="#h-sec-epub-rs-conf"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2 </span>&nbsp;&nbsp;EPUB リーディング システム</span></h3>
+<p><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>は次の条件を全て満たさなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<dl class="conformance-list">
+<dt class="varlistentry" id="sec-epub-rs-conf-epub3"><span class="term">EPUB 3.1 の処理</span></dt>
+<dd><p id="confreq-rs-epub3-ocf"><a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a> で規定されているように <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-container" target="_top">EPUB コンテナ</a></span>を処理しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-epub3-package"><a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a> で定義されているように、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-package" target="_top">EPUB パッケージ</a></span>を処理しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-epub3-cmt">全ての<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>をサポートしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-foreign"><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>タイプの任意のセットをサポートしてもよい（<em class="rfc2119" title="MAY">MAY</em>）、そして<a class="xref" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">管理外リソース</a>で定義されているように、サポートされていない管理外リソースのためのフォールバックを処理しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-epub3-xhtml"><span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-xhtml-conf-rs" target="_top">XHTML コンテンツ ドキュメント - リーディング システムの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>を処理しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-epub3-svg"><span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-svg-rs-conf" target="_top">SVG コンテンツ ドキュメント - リーディング システムの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub-svg" target="_top">SVG コンテンツ ドキュメント</a></span>を処理しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-epub3-css"><span class="conditional"><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-viewport" target="_top">ビューポート</a></span>を持つ場合</span>、<span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-css-rs-conf" target="_top">CSS スタイル シート - リーディング システムの適合性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> で定義されている <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の視覚的なレンダリングをサポートしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-epub3-images"><span class="conditional">ビューポートを持つ場合</span>、<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-image" target="_top">画像のコア メディア タイプ</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> をサポートしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-epub3-mp3-aac"><span class="conditional">録音済みの音声をレンダリングする機能を持つ場合</span>、<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-audio" target="_top">音声のコア メディア タイプ</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> をサポートしなければならず（<em class="rfc2119" title="MUST">MUST</em>）、メディア オーバーレイ <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a> をサポートするべきである（<em class="rfc2119" title="SHOULD">SHOULD</em>）。</p>
+<p id="confreq-rs-epub3-tts">
+<span class="conditional"><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-tts" target="_top">テキスト読み上げ（TTS）</a></span>のレンダリングをサポートしている場合</span>、<a class="biblioref" href="#refCSS3Speech" title="CSS3 Speech Module">[<abbr class="abbrev">CSS3 Speech</abbr>]</a> と <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-content-document-epub-xhtml" target="_top">XHTML コンテンツ ドキュメント</a></span>の <span class="phrase"><a class="ulink" href="epub-contentdocs.xhtml#sec-xhtml-ssml-attrib" target="_top">SSML 属性</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span> をサポートするべきである（<em class="rfc2119" title="SHOULD">SHOULD</em>）。</p>
+<div class="note">
+<div class="note-title marker" aria-level="4" role="heading" id="h-note1"><span>Note</span></div>
+<div id="note-video-codecs">
+<p>リーディング システムは <a class="biblioref" href="#refH264" title="H.264 : Advanced video coding for generic audiovisual services">[<abbr class="abbrev">H.264</abbr>]</a> と <a class="biblioref" href="#refVP8" title="VP8 Data Format and Decoding Guide (RFC 6386)">[<abbr class="abbrev">VP8</abbr>]</a> ビデオコーデックの少なくともひとつをサポートすることが望ましいが、これは適合要件ではなく、リーディング システムは他の動画コーデックをサポートするかもしれないが、全くしないかもしれない。どちらかの形式または両方の動画を包含もしくは実装するために選択を行う際に、製作者やリーディング システムの開発者は、採用の幅、ビデオの再生品質、および技術の使用のロイヤリティの要件のような要因を考慮することが必要である。</p>
+</div>
+</div>
+</dd>
+<dt class="varlistentry" id="sec-epub-rs-conf-a11y"><span class="term">アクセシビリティ</span></dt>
+<dd>
+<p id="confreq-rs-a11y">
+<a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> にあるリーディング システムのアクセシビリティ要件を満たすべきである（<em class="rfc2119" title="SHOULD">SHOULD</em>）。
+</p>
+</dd>
+<dt class="varlistentry" id="sec-epub-rs-conf-backward"><span class="term">後方互換性</span></dt>
+<dd>
+<p id="confreq-rs-backward-epub">バージョンが「<code class="value">3.1</code>」よりも低い EPUB 出版物の処理を試みなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-backward-conf">
+古いバージョン番号の EPUB 出版物は、常に、それぞれの仕様に従って処理をしない限り、意図したような完全にレンダリングをしないだろう。リーディング システムは、この仕様で定義されているような EPUB 出版物をサポートするべきである（<em class="rfc2119" title="SHOULD">SHOULD</em>）。</p>
+</dd>
+<dt class="varlistentry" id="sec-epub-rs-conf-forward"><span class="term">前方互換性</span></dt>
+<dd><p id="confreq-rs-forward-epubn">パッケージ ドキュメントの <code class="markup">version</code> 属性がバージョン「<code class="value">3.1</code>」以上を指定されているどんな EPUB 出版物の指定されたレンディションでも処理しようと試みるべきである（<em class="rfc2119" title="SHOULD">SHOULD</em>）。</p>
+</dd>
+<dt class="varlistentry" id="sec-epub-rs-conf-xml"><span class="term">XML の処理</span></dt>
+<dd><p id="confreq-rs-xml-nval"><a class="ulink" href="https://www.w3.org/TR/2008/REC-xml-20081126/#proc-types" target="_top">適合性を検証しない処理</a> <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> でなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-xml-ns"><a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr class="abbrev">XMLNS</abbr>]</a> に定義されているような、<a class="ulink" href="https://www.w3.org/TR/2009/REC-xml-names-20091208/#ProcessorConformance" target="_top">適合性の処理</a>をしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<p id="confreq-rs-xml-base"><a class="biblioref" href="#refXMLBase" title="XML Base (Second Edition)">[<abbr class="abbrev">XML Base</abbr>]</a> に定義されているような、適合性の適用をしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+</dd>
+</dl>
+<div class="note">
+<div class="note-title marker" aria-level="4" role="heading" id="h-note2"><span>Note</span></div>
+<div class="">
+<p>適合するリーディング システムは単一の専用プログラムまたはデバイスである必要はなく、分散システムとして存在するかもしれない。</p>
+</div>
+</div>
+</section>
+</section>
+<section class="chapter" id="sec-publication-resources" typeof="bibo:Chapter" resource="#sec-publication-resources" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-sec-publication-resources" resource="#h-sec-publication-resources"><span property="xhv:role" resource="xhv:heading"><span class="secno">4. </span>&nbsp;&nbsp;出版物リソース</span></h2>
+<section class="section" id="sec-core-media-types" typeof="bibo:Chapter" resource="#sec-core-media-types" property="bibo:hasPart">
+<h3 id="h-sec-core-media-types" resource="#h-sec-core-media-types"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1 </span>&nbsp;&nbsp;コア メディア タイプ</span></h3>
+<section class="section" id="sec-cmt-intro" typeof="bibo:Chapter" resource="#sec-cmt-intro" property="bibo:hasPart">
+<h4 id="h-sec-cmt-intro" resource="#h-sec-cmt-intro"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1.1 </span>&nbsp;&nbsp;まえがき</span></h4>
+<p>一般的に、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-publication" target="_top">EPUB 出版物</a></span>の各<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-rendition" target="_top">レンディション</a></span>は、多くの<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>から構成されている。それらのリソースは、二つのカテゴリーに分類される。それらは <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>がサポートするもの（<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>）と、そうでないものである（<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>）。</p>
+<p><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-author" target="_top">製作者</a></span>は、EPUB 出版物を構成するためのリソースに両方のタイプを使用するのは自由だが、いくつかのリーディング システムは、使用する管理外リソースをレンダリングしないかもしれないことを知っておく必要がある。</p>
+<p>EPUB 出版物は、全ての適合するリーディング システムで完全に消費するために設計されており、従って、フォールバックのシステムは、管理外リソースの使用が、コンテンツを消費する読者の能力に影響を与えないことをを担保する必要性がある。このセクションは、消費の要件を満たすために使用することできるリーディング システムを横断してサポートされ、<a class="link" href="#sec-foreign-restrictions" title="4.1.3 Foreign Resources">フォールバック メカニズム</a>が識別する<a class="link" href="#sec-cmt-supported" title="4.1.2 Supported Media Types">コア メディア タイプのセット</a>を提示している。</p>
+</section>
+<section class="section" id="sec-cmt-supported" typeof="bibo:Chapter" resource="#sec-cmt-supported" property="bibo:hasPart">
+<h4 id="h-sec-cmt-supported" resource="#h-sec-cmt-supported"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1.2 </span>&nbsp;&nbsp;サポートされたメディア タイプ</span></h4>
+<p>
+コア メディア タイプの仕様に適合する<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>であり、フォールバックなしに EPUB 出版物に含めることができる。
+</p>
+<p>最新の<a class="glossterm" href="#gloss-core-media-type" title="Core Media Type">コア メディア タイプ</a>のリストは、<a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> を参照されたい。</p>
+</section>
+<section class="section" id="sec-foreign-restrictions" typeof="bibo:Chapter" resource="#sec-foreign-restrictions" property="bibo:hasPart">
+<h4 id="h-sec-foreign-restrictions" resource="#h-sec-foreign-restrictions"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.1.3 </span>&nbsp;&nbsp;管理外リソース</span></h4>
+<p id="confreq-foreign-no-fallback">管理外リソースは、<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-itemref-elem" target="_top">スパイン <code class="markup">itemref</code> 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> から参照されず、また、（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class=t"ulink" href="https://www.w3.org/TR/html/dom.html#kinds-of-content-embedded-content" target="_top">埋め込みコンテンツ</a>や <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/struct.html#ImageElement" target="_top">image</a></code> と <code class="markup"><a class="markup" href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement" target="_top">foreignObject</a></code> 要素を介して）EPUB コンテンツ ドキュメントにネイティブ形式で直接レンダリングされていないとき、フォールバックなしに EPUB 出版物に包含されてもよい（<em class="rfc2119" title="MAY">MAY</em>）。</p>
+<p id="confreq-cmt"><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>が、スパインに包含されるか、または、EPUB コンテンツ ドキュメントにネイティブ形式で直接レンダリングされるとき、コア メディア タイプのフォールバックは、包含されなければならない（<em class="rfc2119" title="MUST">MUST</em>）。フォールバックは、次の二つのいずれかの形式を取る。</p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>固有のフォールバック メカニズムは、（例えば、ひとつ以上のメディア タイプを提供したり、メディア タイプをレンダリングできないときに代替の埋め込まれたメッセージを表示する能力のように）フォーマットに基いて提供される。それらの要素が提供する固有のフォールバック機能については <a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> と <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> 仕様を参照されたい。</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-foreign-restrictions-manifest" target="_top">マニフェスト フォールバック</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> は、コア メディア タイプ リソースへのフォールバック チェインを作る<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-package-document" target="_top">パッケージ ドキュメント</a></span>の機能である。それらは、<span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-spine-elem" target="_top">スパイン</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> 内と（例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <code class="markup"><a class="markup" href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element" target="_top">img</a></code> 要素など）固有のフォールバック機能が利用できないとき、管理外リソースのフォールバックを作るために使用される。</p>
+</li>
+</ul>
+</section>
+</section>
+<section class="section" id="sec-resource-locations" typeof="bibo:Chapter" resource="#sec-resource-locations" property="bibo:hasPart">
+<h3 id="h-sec-resource-locations" resource="#h-sec-resource-locations"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>&nbsp;&nbsp;リソース配置</span></h3>
+<p>全ての<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、次の例外を除いて<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-container" target="_top">EPUB コンテナ</a></span>に配置しなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+<ul class="conformance-list" style="list-style-type: disc; ">
+<li class="listitem"><p id="sec-resource-locations-audio"><a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-audio" target="_top">音声リソース</a> <a class="biblioref" href="#refCMT" title="EPUB 3 Core Media Types">[<abbr class="abbrev">Core Media Types</abbr>]</a> は、EPUB コンテナの外部に配置されてもよい（<em class="rfc2119" title="MAY">MAY</em>）。</p>
+</li>
+<li class="listitem"><p id="sec-resource-locations-video">動画リソースは、EPUB コンテナの外部に配置されてもよい（<em class="rfc2119" title="MAY">MAY</em>）。</p>
+</li>
+<li class="listitem">
+<p id="sec-resource-locations-script">
+
+スクリプトによって読み出されるリソースは、EPUB コンテナの外部に配置されてもよいが（<em class="rfc2119" title="MAY">MAY</em>）、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> と <a class="biblioref" href="#refSVG" title="Scalable Vector Graphics (SVG)">[<abbr class="abbrev">SVG</abbr>]</a> の <code class="markup">script</code> 要素は、（すなわち、個々に、それらの <code class="markup">src</code> または <code class="markup">href</code> 属性などで）実行時において利用できることを保証するために<a class="glossterm" href="#gloss-remote-resource" title="Remote Resource">リモート リソース</a>を参照してはならない（<em class="rfc2119" title="MUST NOT">MUST NOT</em>）。
+</p>
+</li>
+<li class="listitem">
+<p id="sec-resource-locations-fonts">
+<a class="ulink" href="http://www.idpf.org/epub/cmt/v3/#cmt-grp-font" target="_top">フォント リソース</a>は、EPUB コンテナの外部に配置されてもよい（<em class="rfc2119" title="MAY">MAY</em>）。</p>
+</li>
+</ul>
+<div class="example">
+<p>次の例は、EPUB コンテナの内部に配置されている <a class="glossterm" href="#gloss-content-document-epub-xhtml" title="XHTML Content Document">XHTML コンテンツ ドキュメント</a>の音声ファイルへの参照を示している。</p>
+<pre class="synopsis hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"audio/ch01.mp4"</span> <span class="hljs-attr">controls</span>=<span class="hljs-string">"controls"</span>/&gt;</span></pre>
+</div>
+<div class="example">
+<p>次の例は、EPUB コンテナの外部に配置されている XHTML コンテンツ ドキュメントの音声ファイルへの参照を示している。</p>
+<pre class="synopsis hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://www.example.com/book/audio/ch01.mp4"</span> <span class="hljs-attr">controls</span>=<span class="hljs-string">"controls"</span>/&gt;</span></pre>
+</div>
+<div class="note">
+<div class="note-title marker" aria-level="4" role="heading" id="h-note3"><span>Note</span></div>
+<div class="">
+<p>製作者は、接続状態にかかわらずプレゼンテーション全体へ読者がアクセスできるよう可能な限り、EPUB コンテナ内部に音声や動画、スクリプトのリソースを配置することを推奨する。</p>
+</div>
+</div>
+<div class="note">
+<div class="note-title marker" aria-level="4" role="heading" id="h-note4"><span>Note</span></div>
+<div class="">
+<p>指定されたリソースが<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>または<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>であるかどうか関係なく出版物リソースの配置については、上記のルールが適用される。</p>
+</div>
+</div>
+<div class="note">
+<div class="note-title marker" aria-level="4" role="heading" id="h-note5"><span>Note</span></div>
+<div class="">
+<p><span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-publication" target="_top">EPUB 出版物</a></span>で<a class="glossterm" href="#gloss-remote-resource" title="Remote Resource">リモート リソース</a>の取り込みは、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-manifest" target="_top">マニフェスト</a></span> <span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-item-elem" target="_top"><code class="markup">item</code> 要素</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span> の <a class="ulink" href="http://www.idpf.org/epub/vocab/package/item/#remote-resources" target="_top"><span class="property">remote-resources</span> プロパティ</a> <a class="biblioref" href="#refManifestVocab" title="EPUB Manifest Properties Vocabulary">[<abbr class="abbrev">Manifest Vocab</abbr>]</a> を介して指示される。</p>
+</div>
+</div>
+</section>
+<h3 id="h-sec-xml-constraints" resource="#h-sec-xml-constraints"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3 </span>&nbsp;&nbsp;XML 適合性</span></h3>
+<p>XML ベースのメディアタイプである全ての<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt-or-foreign" target="_top">出版物リソース</a></span>は、次の制約を満たさなければならない（<em class="rfc2119" title="MUST">MUST</em>）：</p>
+<ul class="conformance-list" style="list-style-type: disc; ">
+<li class="listitem"><p id="confreq-xml-wellformed"><a class="ulink" href="https://www.w3.org/TR/2009/REC-xml-names-20091208/#Conformance" target="_top">ドキュメントの適合性</a> <a class="biblioref" href="#refXMLNamespaces" title="Namespaces in XML (Third Edition)">[<abbr class="abbrev">XMLNS</abbr>]</a> で定義されている XML1.0 に準拠したドキュメントでなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+</li>
+<li class="listitem"><p id="confreq-xml-extmarkupdecl"><a class="ulink" href="https://www.w3.org/TR/2008/REC-xml-20081126/#NT-ExternalID" target="_top">拡張識別子</a>は文書型宣言 <a class="biblioref" href="#refXML" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">[<abbr class="abbrev">XML</abbr>]</a> に現れてはならない（<em class="rfc2119" title="MUST NOT">MUST NOT</em>）。</p>
+</li>
+<li class="listitem"><p id="confreq-xml-xinc">XInclude <a class="biblioref" href="#refXInclude" title="XML Inclusions (XInclude) Version 1.0 (Second Edition)">[<abbr class="abbrev">XInclude</abbr>]</a> を利用してはならない（<em class="rfc2119" title="MUST NOT">MUST NOT</em>）。</p>
+</li>
+<li class="listitem"><p id="confreq-xml-enc"><span class="phrase">UTF-8 または UTF-16 <a class="biblioref" href="#refUnicode5" title="The Unicode Consortium. The Unicode Standard.">[<abbr class="abbrev">Unicode</abbr>]</a> でエンコードしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</span></p>
+</li>
+</ul>
+<p>特定の出版物リソースが、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-cmt" target="_top">コア メディア タイプ リソース</a></span>または<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-publication-resource-foreign" target="_top">管理外リソース</a></span>であるか否かを問わず上記の制約はあてはまる。</p>
+</section>
+</section>
+<section class="appendix" id="sec-overview-deprecated" typeof="bibo:Chapter" resource="#sec-overview-deprecated" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-sec-overview-deprecated" resource="#h-sec-overview-deprecated"><span property="xhv:role" resource="xhv:heading"><span class="secno">A. </span>&nbsp;&nbsp;付録&nbsp;A.&nbsp;非推奨（Obsolete）の機能</span></h2>
+<p>この仕様と兄弟仕様で定義された機能は、それらがもはや必要なくなったり、新しい機能によって置き換えられた場合、折にふれて削除される。削除する前に、<a class="link" href="#deprecated">廃止予定（deprecated）</a>または<a class="link" href="#superseded">置き換え（superseded）</a>としてマークされた機能は、EPUB コミュニティに早期警告される。廃止予定となった機能は、仕様の現在のバージョンから削除されているものだが、置き換えの機能は、以前のバージョンと互換性のあるコンテンツのオーサリングのためだけに保持するものである。</p>
+<p id="deprecated">機能が、<span class="bold"><strong>廃止予定（deprecated）</strong></span>としてマークされた場合、次が当てはまる。</p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>機能は、仕様の将来のバージョンで削除されるであろう。機能は、<span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-author" target="_top">製作者</a></span>や <span class="phrase"><a class="glossterm" href="/Submission/2017/SUBM-epub31-20170125/#gloss-epub-reading-system" target="_top">EPUB リーディング システム</a></span>開発者が削除する準備の時間を与えるために、廃止予定としてマークされる。</p>
+</li>
+<li class="listitem">
+<p>製作者が、それらの <span class="olink">EPUB 出版物</span>に、その機能の使用を中止することが強く推奨される（<em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em>）。</p>
+</li>
+<li class="listitem">
+<p>リーディング システムは、それが正式に削除されるまで、定義されているとして、機能のサポートを続けなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+</li>
+<li class="listitem">
+<p>検証ツールは、EPUB 出版物に遭遇したとき、廃止予定の機能を包含する製作者にアラートしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。アラートは、エラーやウォーニングより重大性が低いことが推奨される（<em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em>）。</p>
+</li>
+</ul>
+<p id="superseded">機能が、<span class="bold"><strong>置き換え（superseded）</strong></span>としてマークされた場合、次が当てはまる。</p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>置き換えられる機能は、仕様の将来のバージョンで削除されてもよいが（<em class="rfc2119" title="MAY">MAY</em>）、削除の予定は確定していない。</p>
+</li>
+<li class="listitem">
+<p>
+製作者は、仕様の過去のバージョンとの互換性のために、置き換えの機能を包含してもよい（<em class="rfc2119" title="MAY">MAY</em>）。</p>
+</li>
+<li class="listitem">
+<p>リーディング システムは、仕様の最新バージョンと適合するコンテンツにある置き換えられる機能をサポートしてはならない（<em class="rfc2119" title="MUST NOT">MUST NOT</em>）。</p>
+</li>
+<li class="listitem">
+<p>検証ツールは、後方互換性のために妥当であるとして、EPUB 出版物の置き換えられる機能の存在ついて、製作者へアラートをしてはならない（<em class="rfc2119" title="MUST NOT">MUST NOT</em>）。検証ツールは、置き換えられる機能が、定義に適合していないか、さもなければ使用法の要件を破る場合は、製作者へアラートをしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。</p>
+</li>
+</ul>
+<p id="superseded-removal">置き換え及び除去するためにマークされた機能は、次の方法で<a class="link" href="#superseded">置き換え</a>られる機能とは異なる。</p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p>機能は、仕様の将来のバージョンで除去されるかもしれない。</p>
+</li>
+<li class="listitem">
+<p>検証ツールは、除去するためにマークされた置き換えられる機能の存在に関するアラートを製作者にしなければならない（<em class="rfc2119" title="MUST">MUST</em>）。アラートには、<a class="link" href="#deprecated">廃止予定</a>の機能と同じ重大性を与えることが推奨される（<em class="rfc2119" title="RECOMMENDED">RECOMMENDED</em>）。</p>
+</li>
+</ul>
+</section>
+<section lang="en" id="index" class="index informative" typeof="bibo:Chapter" resource="#index" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-index" resource="#h-index"><span property="xhv:role" resource="xhv:heading"><span class="secno">B. </span>&nbsp;&nbsp;インデックス</span></h2>
+<p><em>このインデックスは非規定である。</em></p>
+<p>このインデックスは、要素や属性、プロパティの定義を包含する EPUB 3.1 で定義されている主な概念を識別する。</p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem" id="idx-a11y">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-a11y-20170125/#sec-overview" target="_top">アクセシビリティ</a> <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-a11y-20170125/#sec-access-pub" target="_top">アクセシブルな出版物</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-a11y-20170125/#app-auth-consump" target="_top">オーサリングと消費</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-a11y-20170125/#sec-discovery" target="_top">発見のメタデータ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-a11y-20170125/#sec-distribution" target="_top">配信の懸念</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-a11y-20170125/#sec-opt-pubs" target="_top">最適化された出版物</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-cmt">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/#sec-core-media-types" target="_top">コア メディア タイプ</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/#sec-foreign-restrictions" target="_top">管理外リソース</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-foreign-restrictions-manifest" target="_top">マニフェスト フォールバック</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/#sec-core-media-types" target="_top">サポートされたメディア タイプ</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-core">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/#sec-epub-specs" target="_top">主要な仕様</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span></p>
+</li>
+<li class="listitem" id="idx-css">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-css" target="_top">CSS スタイル シート</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#confreq-css-rs-support" target="_top">CSS スナップショット サポート</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-css-prefixed" target="_top">プリフィックス付きプロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-css-rs-overrides" target="_top">リーディング システムの上書き</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-navdoc">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-nav" target="_top">EPUB ナビゲーション ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-nav-def-types-other" target="_top">カスタム nav 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-nav-def-hidden" target="_top">hidden 属性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-nav-landmarks" target="_top">landmarks nav 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-nav-def-model" target="_top">nav 要素の制約</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-nav-pagelist" target="_top">page-list nav 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-nav-toc" target="_top">toc nav 要素</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-fxl">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-intro" target="_top">固定レイアウト</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-fxl-html-svg-dimensions" target="_top">コンテンツの寸法</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-fxl-icb-svg" target="_top">SVG 初期包含ブロック</a></span>（viewBox）</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-fxl-icb-html" target="_top">XHTML 初期包含ブロック</a></span>（viewport meta）</p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-metadata-fxl" target="_top">パッケージ メタデータ</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-property-layout" target="_top">rendition:layout プロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-property-orientation" target="_top">rendition:orientation プロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-properties-page-spread" target="_top">rendition:page-spread-center プロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-properties-page-spread" target="_top">rendition:page-spread-left プロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-properties-page-spread" target="_top">rendition:page-spread-right プロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#fxl-property-spread" target="_top">rendition:spread プロパティ</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-fxl-viewport" target="_top">ビューポートのレンダリング</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-mo">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-media-overlays-document-definition" target="_top">メディア オーバーレイ ドキュメント</a> <a class="biblioref" href="#refOverlays3" title="EPUB Media Overlays 3.1">[<abbr class="abbrev">Media Overlays 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-overlay-behaviors" target="_top">基本的な再生の挙動</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-rsconf-rendering-audio" target="_top">音声再生</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-rsconf-rendering-text" target="_top">コンテンツのレンダリング</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-rsconf-timing-synch" target="_top">タイミングと同期</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-escabaility" target="_top">回避</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-behaviors-interaction" target="_top">コンテンツ ドキュメントとのインタラクション</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-embedded-media" target="_top">埋め込み音声と動画</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-rsconf-navigation" target="_top">ナビゲーション</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-text-to-speech" target="_top">テキスト読み上げの再生</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-behaviors-loading" target="_top">読み込み</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-nav-doc" target="_top">ナビゲーション ドキュメントの再生</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-docs-package" target="_top">パッケージング</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-package-including" target="_top">コンテンツ ドキュメントに加える</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-package-metadata" target="_top">メタデータ</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/overlays/#active-class" target="_top">active-class プロパティ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/overlays/#duration" target="_top">duration プロパティ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/overlays/#narrator" target="_top">narrator プロパティ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/overlays/#playback-active-class" target="_top">playback-active-class プロパティ</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-media-overlays-granularity" target="_top">再生の粒度</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-docs-relations" target="_top">コンテンツ ドキュメントとの関係性</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-audio-video" target="_top">埋め込みメディア</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-rsconf-navigation" target="_top">ナビゲーション</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-tts" target="_top">テキスト読み上げの再生</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-skippability" target="_top">読み飛ばし</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-smil-elem" target="_top">smil 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-body-elem" target="_top">body 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-par-elem" target="_top">par 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-audio-elem" target="_top">audio 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-text-elem" target="_top">text 要素</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-body-elem" target="_top">seq 要素</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-head-elem" target="_top">head 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-smil-metadata-elem" target="_top">metadata 要素</a></span></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-docs-semantic-inflection" target="_top">セマンティクスの変化</a></span>（epub:type）</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-media-overlays-structure" target="_top">構造</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/#sec-docs-assoc-style" target="_top">スタイリング</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-ocf-abstract">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-abstract" target="_top">OCF 抽象コンテナ</a> <a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-file-and-dir-structure" target="_top">ファイルとディレクトリの構造</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-filenames" target="_top">ファイル名の要件</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf" target="_top">META-INF ディレクトリ</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-container.xml" target="_top">container.xml ファイル</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#elemdef-container-link" target="_top">link 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#elemdef-container-rootfile" target="_top">rootfile 要素</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-encryption.xml" target="_top">encryption.xml ファイル</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#elemdef-encryption-EncryptedData" target="_top">EncryptedData 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#elemdef-encryption-EncryptedKey" target="_top">EncryptedKey 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#elemdef-encryption-encryption" target="_top">encryption 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#encryption-obfuscation" target="_top">難読化されたリソースの一覧</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-enc-compression" target="_top">圧縮と暗号化の順序</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#elemdef-enc-Compression" target="_top">Compression 要素</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#encryption-restrictions" target="_top">制限されたファイル</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-manifest.xml" target="_top">manifest.xml ファイル</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-metadata.xml" target="_top">metadata.xml ファイル</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-rights.xml" target="_top">rights.xml ファイル</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-signatures.xml" target="_top">signatures.xml ファイル</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sig-container" target="_top">コンテナの署名</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sig-restrictions" target="_top">署名の制約</a></span></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-iri" target="_top">相対パスの参照</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-ocf-zip">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-zip" target="_top">OCF ZIP コンテナ</a> <a class="biblioref" href="#refOCF3" title="Open Container Format 3.1">[<abbr class="abbrev">OCF 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-encryption.xml" target="_top">暗号化</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#encryption-restrictions" target="_top">制限されたファイル</a></span></p>
+</li>
+</ul>
+<p></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-zip-container-mime" target="_top">メディア タイプの識別</a></span>（mimetype）</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-resource-obfuscation" target="_top">難読化</a></span>（フォント難読化）</p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#obfus-algorithm" target="_top">アルゴリズム</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#obfus-specifying" target="_top">リソースの識別</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#obfus-keygen" target="_top">キー</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/#sec-zip-container-zipreqs" target="_top">ZIP 要件</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-pkg">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-doc" target="_top">パッケージ ドキュメント</a> <a class="biblioref" href="#refPackages3" title="EPUB Packages 3.1">[<abbr class="abbrev">Packages 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-collection-elem" target="_top">collection 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#elemdef-collection-link" target="_top">リソースのリンク</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#elemdef-collection-metadata" target="_top">メタデータ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-collection-role" target="_top">役割</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-metadata-default-vocab" target="_top">デフォルトの語彙</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-metadata-fxl" target="_top">固定レイアウト プロパティ</a></span> — <a class="link" href="#idx-fxl">固定レイアウト</a>も見よ</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-metadata-identifiers" target="_top">識別子</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-metadata-elem-identifiers-pid" target="_top">公開識別子</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-metadata-elem-identifiers-uid" target="_top">一意識別子</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-package-unique-identifier" target="_top">unique-identifier 属性</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-metadata-rendering" target="_top">layout プロパティ</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#layout-property-align-x-center" target="_top">rendition:align-x-center プロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#layout-property-flow" target="_top">rendition:flow プロパティ</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-metadata-elem" target="_top">metadata 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#core-metadata-reqs" target="_top">主なメタデータの要件</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dcidentifier" target="_top">dc:identifier 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-identifier-scheme" target="_top">identifier 要素</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dclanguage" target="_top">dc:language 要素</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dctitle" target="_top">dc:title 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#title-order" target="_top">順序の重要性</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-metadata-elem-identifiers-pid" target="_top">dcterms:modified プロパティ</a></span>（最終更新日）</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dcmes-optional" target="_top">ダブリン コアの省略可能な要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dccontributor" target="_top">貢献者</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dccreator" target="_top">クリエイター</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dcdate" target="_top">出版日</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dctype" target="_top">出版物のタイプ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-opf-dcsubject" target="_top">主題</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-link-elem" target="_top">link 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-link-rel" target="_top">リンクの関連性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#linked-res-manifest" target="_top">マニフェストの要件</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-linked-records" target="_top">リンクされたメタデータ レコード</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#linked-res-location" target="_top">リソースの配置</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-meta-elem" target="_top">meta 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-meta-property" target="_top">プロパティの表現</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-meta-refines" target="_top">refines 属性（廃止予定）</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-scheme" target="_top">値のスキーマ</a></span></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-manifest-elem" target="_top">manifest 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-item-elem" target="_top">item 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-item-duration" target="_top">持続時間</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-item-fallback" target="_top">フォールバック</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-item-media-overlay" target="_top">メディア オーバーレイの関連付け</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-item-media-type" target="_top">メディア タイプ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-item-properties" target="_top">プロパティ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#manifest-inclusion" target="_top">リソースを包含する要件</a></span></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#app-obs-ncx" target="_top">NCX（置き換え）</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-package-elem" target="_top">package 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-package-version" target="_top">プリフィックスの宣言</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-package-version" target="_top">バージョン番号</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-property-datatype" target="_top">プロパティのデータ タイプ</a></span></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/prefixes/packages/" target="_top">予約済みのプリフィックス</a></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-shared-attrs" target="_top">共通の属性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-spine-elem" target="_top">spine 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#sec-itemref-elem" target="_top">itemref 要素</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-itemref-linear" target="_top">直線性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-itemref-idref" target="_top">マニフェスト項目の参照</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#attrdef-spine-page-progression-direction" target="_top">ページの進行</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/#spine-inclusion-req" target="_top">リソースを包含する要件</a></span></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-registries">
+<p><a class="ulink" href="http://www.idpf.org/epub/registries/" target="_top">レジストリ</a></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/registries/roles/" target="_top">Collection Roles</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/registries/identifiers/" target="_top">Identifier Schemes</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/registries/optimizations/" target="_top">Optimized Publication Standards</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/registries/types/" target="_top">Publication Types</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/registries/authorities/" target="_top">Subject Authorities</a></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-remote-res">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/#sec-resource-locations" target="_top">リモート リソース</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span></p>
+</li>
+<li class="listitem" id="idx-script">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-scripted-content" target="_top">スクリプト</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-scripted-context" target="_top">コンテキスト</a></span>（コンテナ制約とスパイン レベル）</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#app-epubReadingSystem" target="_top">epubReadingSystem オブジェクト</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#app-ers-desc" target="_top">説明</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#app-ers-hasFeature" target="_top">hasFeature メソッド</a></span></p>
+<ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#app-ers-hasFeature-desc" target="_top">説明</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#app-ers-hasFeature-features" target="_top">機能</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#app-ers-idl" target="_top">インターフェイスの定義</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#app-ers-properties" target="_top">プロパティ</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-scripted-content-events" target="_top">イベント モデル</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-scripted-content-security" target="_top">セキュリティ</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-svg">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-svg" target="_top">SVG コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-svg-restrictions" target="_top">制約</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-svg-semantic-inflection" target="_top">セマンティクスの変化</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-overview-relations-svg" target="_top">SVG バージョンの適合性</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-terminology">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/#sec-terminology" target="_top">用語</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span></p>
+</li>
+<li class="listitem" id="idx-vocabs">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/" target="_top">語彙</a></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/a11y/" target="_top">アクセシビリティ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/link/" target="_top">リンク</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/item/" target="_top">マニフェスト プロパティ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/overlays/" target="_top">メディア オーバーレイのメタデータ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/meta/" target="_top">メタ プロパティ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/vocab/rendition/" target="_top">出版物のレンダリング</a>（rendition: properties）</p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/package/itemref/" target="_top">スパイン プロパティ</a></p>
+</li>
+<li class="listitem">
+<p><a class="ulink" href="http://www.idpf.org/epub/vocab/structure/" target="_top">構造のセマンティクス</a></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-xhtml">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml" target="_top">XHTML コンテンツ ドキュメント</a> <a class="biblioref" href="#refContentDocs3" title="EPUB Content Documents 3.1">[<abbr class="abbrev">Content Docs 3.1</abbr>]</a></span></p>
+<ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-alternate-style-tags" target="_top">代替のスタイル タグ</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-custom-attributes" target="_top">カスタム属性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-deviations-discouraged" target="_top">推奨されない構成</a></span>（<code class="markup">rp</code> と <code class="markup">embed</code>）</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-mathml" target="_top">埋め込まれた MathML</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-mathml-alt" target="_top">フォールバック画像</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-svg" target="_top">埋め込まれた SVG</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-svg-css" target="_top">CSS スタイルの適用</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-fallbacks" target="_top">管理外リソースの制約</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-overview-relations-html" target="_top">HTML バージョンの適合性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-pls" target="_top">発音辞書（PLS）</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-semantic-enrichment" target="_top">RDFa とマイクロデータ</a></span>（セマンティクスの強化）</p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-semantic-inflection" target="_top">セマンティクスの変化</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-contentdocs-default-vocab" target="_top">デフォルトの語彙</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-epub-type-attribute" target="_top">epub:type 属性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-contentdocs-prefix-attr" target="_top">プリフィックスの宣言</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-contentdocs-reserved-prefixes" target="_top">予約済みのプリフィックス</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-ssml-attrib" target="_top">Speech Synthesis Markup Language（SSML）</a></span></p>
+<ul class="itemizedlist" style="list-style-type: square; ">
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-cd-ssml-ph-attrib" target="_top">ssml:ph 属性</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-cd-ssml-alphabet-attrib" target="_top">ssml:alphabet 属性</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-svg" target="_top">SVG</a></span></p>
+</li>
+<li class="listitem">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/#sec-xhtml-deviations-unicode" target="_top">Unicode の制約</a></span></p>
+</li>
+</ul>
+</li>
+<li class="listitem" id="idx-xml">
+<p><span class="phrase"><a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/#sec-xml-constraints" target="_top">XML 適合性</a> <a class="biblioref" href="#refEPUB3" title="EPUB 3.1">[<abbr class="abbrev">EPUB 3.1</abbr>]</a></span></p>
+</li>
+</ul>
+</section>
+<section lang="en" id="app-contributors" class="acknowledgements informative" typeof="bibo:Chapter" resource="#app-contributors" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-app-contributors" resource="#h-app-contributors"><span property="xhv:role" resource="xhv:heading"><span class="secno">C. </span>&nbsp;&nbsp;謝辞と貢献者</span></h2>
+<p><em>このセクションは規定ではない。</em></p>
+<p>EPUB は、出版社、ベンダー、ソフトウェア開発者、および関連する標準規格の専門家を集め、協力的な努力で国際電子出版フォーラム（International Digital Publishing Forum, IDPF） によって開発されました。</p>
+<p>EPUB3.1 仕様は下に述べるリーダーシップにより2015年7月のメンバーシップによって承認された憲章の下で動作し国際電子出版フォーラム（International Digital Publishing Forum, IDPF）の EPUB Maintenance Working Group によって調整した：</p>
+<ul lang="en" class="personlist">
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum)</span>  <span class="wg-role">Chair (until August 2016)</span></li>
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span>  <span class="wg-role">Chair</span></li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair; Chair (beginning August 2016)</span></li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google Inc.)</span>  <span class="wg-role">Vice-chair</span></li>
+</ul>
+<p>ワーキング グループのアクティブメンバー：</p>
+<h2 id="idpf-members">IDPF Members</h2>
+<ul lang="en" class="personlist">
+<li class="person"><span class="name"><span class="surname">Albert</span>, <span class="givenname">Paolo</span></span> <span class="affiliation">(PubCoder)</span> </li>
+<li class="person"><span class="name"><span class="surname">Audrain</span>, <span class="givenname">Luc</span></span> <span class="affiliation">(Hachette Livre)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bailey</span>, <span class="givenname">Brent</span></span> <span class="affiliation">(Elsevier)</span> </li>
+<li class="person"><span class="name"><span class="surname">Baker</span>, <span class="givenname">Mike</span></span> <span class="affiliation">(Houghton Mifflin Harcourt)</span> </li>
+<li class="person"><span class="name"><span class="surname">Balakrishnan</span>, <span class="givenname">Ramu</span></span> <span class="affiliation">(MPS Limited)</span> </li>
+<li class="person"><span class="name"><span class="surname">Belfanti</span>, <span class="givenname">Paul</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bell</span>, <span class="givenname">Graham</span></span> <span class="affiliation">(EDItEUR)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bogan</span>, <span class="givenname">Robert</span></span> <span class="affiliation">(Baker &amp; Taylor)</span> </li>
+<li class="person"><span class="name"><span class="surname">Bowers</span>, <span class="givenname">Micah</span></span> <span class="affiliation">(Bluefire Productions)</span> </li>
+<li class="person"><span class="name"><span class="surname">Burrows</span>, <span class="givenname">Phil</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Challman</span>, <span class="givenname">Lauren</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cho</span>, <span class="givenname">Yong-Sang</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span> </li>
+<li class="person"><span class="name"><span class="surname">Cleghorn</span>, <span class="givenname">Tom</span></span> <span class="affiliation">(Cambridge University Press)</span> </li>
+<li class="person"><span class="name"><span class="surname">Comerford</span>, <span class="givenname">Rachel</span></span> <span class="affiliation">(Macmillan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Conboy</span>, <span class="givenname">Garth</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Corona</span>, <span class="givenname">Juan</span></span> <span class="affiliation">(Evident Point)</span> </li>
+<li class="person"><span class="name"><span class="surname">Cramer</span>, <span class="givenname">Dave</span></span> <span class="affiliation">(Hachette Book Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Creasy</span>, <span class="givenname">Keith</span></span> <span class="affiliation">(American Printing House for the Blind, Inc.)</span> </li>
+<li class="person"><span class="name"><span class="surname">Davis</span>, <span class="givenname">Greg</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">DeMeglio</span>, <span class="givenname">Marisa</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Deltour</span>, <span class="givenname">Romain</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Duga</span>, <span class="givenname">Brady</span></span> <span class="affiliation">(Google)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gardeur</span>, <span class="givenname">Hadrien</span></span> <span class="affiliation">(Feedbooks)</span> </li>
+<li class="person"><span class="name"><span class="surname">Geffroy</span>, <span class="givenname">Jean-Marie</span></span> <span class="affiliation">(Mantano)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gusso</span>, <span class="givenname">Lina</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Gylling</span>, <span class="givenname">Markus</span></span> <span class="affiliation">(International Digital Publishing Forum (IDPF))</span> </li>
+<li class="person"><span class="name"><span class="surname">Haase</span>, <span class="givenname">David</span></span> <span class="affiliation">(Penguin Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Hanson</span>, <span class="givenname">Lauren</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Harris</span>, <span class="givenname">Eric</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Heinser</span>, <span class="givenname">Bernhard</span></span> <span class="affiliation">(Access for All)</span> </li>
+<li class="person"><span class="name"><span class="surname">Herman</span>, <span class="givenname">Ivan</span></span> <span class="affiliation">(<abbr title="World Wide Web Consortium">W3C</abbr>)</span> <span class="wg-role"><abbr title="World Wide Web Consortium">W3C</abbr> Liaison</span></li>
+<li class="person"><span class="name"><span class="surname">Idan</span>, <span class="givenname">Ori</span></span> <span class="affiliation">(Helicon Books)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jay</span>, <span class="givenname">Michael</span></span> <span class="affiliation">(Educational Systemics)</span> </li>
+<li class="person"><span class="name"><span class="surname">Johnson</span>, <span class="givenname">Rick</span></span> <span class="affiliation">(VitalSource/Ingram Content Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Jung</span>, <span class="givenname">Eunmi</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span> </li>
+<li class="person"><span class="name"><span class="surname">Kanai</span>, <span class="givenname">Takeshi</span></span> <span class="affiliation">(Sony)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kasdorf</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(Apex CoVantage)</span> </li>
+<li class="person"><span class="name"><span class="surname">Keating</span>, <span class="givenname">Patrick</span></span> <span class="affiliation">(Bluefire Productions)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kennedy</span>, <span class="givenname">Naomi</span></span> <span class="affiliation">(Penguin Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kerscher</span>, <span class="givenname">George</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Khramov</span>, <span class="givenname">Yuri</span></span> <span class="affiliation">(Readium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Kleinfeld</span>, <span class="givenname">Sanders</span></span> <span class="affiliation">(O'Reilly)</span> </li>
+<li class="person"><span class="name"><span class="surname">Koike</span>, <span class="givenname">Toshiaki</span></span> <span class="affiliation">(Voyager Japan)</span> </li>
+<li class="person"><span class="name"><span class="surname">Labordrie</span>, <span class="givenname">Cyril</span></span> <span class="affiliation">(EDRLab)</span> </li>
+<li class="person"><span class="name"><span class="surname">LaPierre</span>, <span class="givenname">Charles</span></span> <span class="affiliation">(Benetech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Leo</span>, <span class="givenname">Arthic</span></span> <span class="affiliation">(Amnet Systems)</span> </li>
+<li class="person"><span class="name"><span class="surname">Levantovsky</span>, <span class="givenname">Vladimir</span></span> <span class="affiliation">(Monotype)</span> </li>
+<li class="person"><span class="name"><span class="surname">Levenson</span>, <span class="givenname">Yonah</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Lin</span>, <span class="givenname">Beatrice</span></span> <span class="affiliation">(KERIS (Korea Education and Research Information Service))</span> </li>
+<li class="person"><span class="name"><span class="surname">Lui</span>, <span class="givenname">Edwina</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
+<li class="person"><span class="name"><span class="surname">McCoy</span>, <span class="givenname">Bill</span></span> <span class="affiliation">(IDPF)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mietkiewicz</span>, <span class="givenname">Elie</span></span> <span class="affiliation">(Gutenberg Technology)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mitchell</span>, <span class="givenname">Chris</span></span> <span class="affiliation">(Hachette Book Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Moua</span>, <span class="givenname">Nou</span></span> <span class="affiliation">(Kaplan Publishing)</span> </li>
+<li class="person"><span class="name"><span class="surname">Murata</span>, <span class="givenname">Makoto</span></span> <span class="affiliation">(JEPA EPUB Study Group)</span> </li>
+<li class="person"><span class="name"><span class="surname">Mussinelli</span>, <span class="givenname">Christina</span></span> <span class="affiliation">(Associazione Italiana Editori)</span> </li>
+<li class="person"><span class="name"><span class="surname">Owens</span>, <span class="givenname">Evan</span></span> <span class="affiliation">(Cenveo Publisher Services)</span> </li>
+<li class="person"><span class="name"><span class="surname">Prabhu</span>, <span class="givenname">John</span></span> <span class="affiliation">(HOV Services)</span> </li>
+<li class="person"><span class="name"><span class="surname">Pritchett</span>, <span class="givenname">James</span></span> <span class="affiliation">(Learning Ally)</span> </li>
+<li class="person"><span class="name"><span class="surname">Rosenthol</span>, <span class="givenname">Leonard</span></span> <span class="affiliation">(Adobe Systems)</span> </li>
+<li class="person"><span class="name"><span class="surname">Shyne</span>, <span class="givenname">Mary</span></span> <span class="affiliation">(Penguin Random House)</span> </li>
+<li class="person"><span class="name"><span class="surname">Siegman</span>, <span class="givenname">Tzviya</span></span> <span class="affiliation">(John Wiley &amp; Sons)</span> </li>
+<li class="person"><span class="name"><span class="surname">Singh</span>, <span class="givenname">Avneesh</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Soiffer</span>, <span class="givenname">Neil</span></span> <span class="affiliation">(Design Science)</span> </li>
+<li class="person"><span class="name"><span class="surname">Swick</span>, <span class="givenname">Ralph</span></span> <span class="affiliation">(<abbr title="World Wide Web Consortium">W3C</abbr>)</span> </li>
+<li class="person"><span class="name"><span class="surname">Tallent</span>, <span class="givenname">Joshua</span></span> <span class="affiliation">(eBookArchitects)</span> </li>
+<li class="person"><span class="name"><span class="surname">Thurston</span>, <span class="givenname">Jonathan</span></span> <span class="affiliation">(Pearson)</span> </li>
+<li class="person"><span class="name"><span class="surname">Webster</span>, <span class="givenname">Amaya</span></span> <span class="affiliation">(Benetech)</span> </li>
+<li class="person"><span class="name"><span class="surname">Weck</span>, <span class="givenname">Daniel</span></span> <span class="affiliation">(DAISY Consortium)</span> </li>
+<li class="person"><span class="name"><span class="surname">Wright</span>, <span class="givenname">Ric</span></span> <span class="affiliation">(Readium Foundation)</span> </li>
+</ul>
+<h2 id="invited-experts-observers">Invited Experts/Observers</h2>
+<ul lang="en" class="personlist">
+<li class="person"><span class="name"><span class="surname">Andrews</span>, <span class="givenname">David</span></span></li>
+<li class="person"><span class="name"><span class="surname">Bonelli</span>, <span class="givenname">Giuseppe</span></span></li>
+<li class="person"><span class="name"><span class="surname">Brady</span>, <span class="givenname">Laura</span></span></li>
+<li class="person"><span class="name"><span class="surname">Etemad</span>, <span class="givenname">Elika J.</span></span> <span class="wg-role"><abbr title="World Wide Web Consortium">W3C</abbr> CSS WG Liaison</span></li>
+<li class="person"><span class="name"><span class="surname">Garrish</span>, <span class="givenname">Matt</span></span></li>
+<li class="person"><span class="name"><span class="surname">Glazman</span>, <span class="givenname">Daniel</span></span></li>
+<li class="person"><span class="name"><span class="surname">Hawkins</span>, <span class="givenname">Kevin</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kaplansky</span>, <span class="givenname">Jean</span></span></li>
+<li class="person"><span class="name"><span class="surname">Kudou</span>, <span class="givenname">Tomoyuki</span></span></li>
+<li class="person"><span class="name"><span class="surname">Leva</span>, <span class="givenname">Paolo</span></span></li>
+<li class="person"><span class="name"><span class="surname">Marquès Solé</span>, <span class="givenname">Daniel</span></span></li>
+<li class="person"><span class="name"><span class="surname">McGlone</span>, <span class="givenname">Jonathan</span></span></li>
+<li class="person"><span class="name"><span class="surname">Morris</span>, <span class="givenname">Julie</span></span></li>
+<li class="person"><span class="name"><span class="surname">Munchenburger</span>, <span class="givenname">Manfred</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rasmussen</span>, <span class="givenname">Lloyd</span></span></li>
+<li class="person"><span class="name"><span class="surname">Reddy</span>, <span class="givenname">Ramesh</span></span></li>
+<li class="person"><span class="name"><span class="surname">Rothberg</span>, <span class="givenname">Madeleine</span></span></li>
+<li class="person"><span class="name"><span class="surname">Sheehan</span>, <span class="givenname">John</span></span></li>
+<li class="person"><span class="name"><span class="surname">White</span>, <span class="givenname">Jason</span></span></li>
+</ul>
+<p>より詳細な承認と EPUB の各バージョンへの貢献者については<span class="phrase"><a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-overview.html#acknowledgements" target="_top">謝辞と貢献者s</a> <a class="biblioref" href="#refEPUB3Overview" title="EPUB 3.1 Overview">[<abbr class="abbrev">EPUB3 Overview</abbr>]</a></span> を参照されたい。</p>
+</section>
+<section lang="en" class="bibliography" id="references" typeof="bibo:Chapter" resource="#references" property="bibo:hasPart">
+<!--OddPage-->
+<h2 id="h-references" resource="#h-references"><span property="xhv:role" resource="xhv:heading"><span class="secno">D. </span>&nbsp;&nbsp;参照・参考</span></h2>
+<section class="bibliodiv" id="normative-refs" typeof="bibo:Chapter" resource="#normative-refs" property="bibo:hasPart">
+<h3 id="h-normative-refs" resource="#h-normative-refs"><span property="xhv:role" resource="xhv:heading"><span class="secno">D.1 </span>規定の参照</span></h3>
+<div class="biblioentry" id="refAlternateStyleTags">
+<p>[<abbr class="abbrev">Alt Style Tags</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/altss-tags/" target="_top">Alternate Style
+            Tags</a>
+</em>. </span>
+<span class="author">Elika J. Etemad. </span>
+</p>
+</div>
+<div class="biblioentry" id="refCSS3Speech">
+<p>[<abbr class="abbrev">CSS3 Speech</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/css3-speech/" target="_top">CSS3 Speech
+            Module</a>
+</em>. </span>
+<span class="author">Dave Raggett, et al.. </span>
+</p>
+</div>
+<div class="biblioentry" id="refContentDocs3">
+<p>[<abbr class="abbrev">Content Docs 3.1</abbr>] <span class="title"><em>
+<a class="ulink" href="/Submission/2017/SUBM-epub-contentdocs-20170125/Overview.html" target="_top">EPUB Content Documents 3.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refCMT">
+<p>[<abbr class="abbrev">Core Media Types</abbr>] <span class="title"><em><a class="ulink"
+          href="https://www.idpf.org/epub/cmt/v3/" target="_top">EPUB 3 Core Media Types</a></em>.
+</span>
+</p>
+</div>
+<div class="biblioentry" id="refDictGloss">
+<p>[<abbr class="abbrev">Dictionaries</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/dict" target="_top">EPUB Dictionaries and
+            Glossaries</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refEPUB3">
+<p>[<abbr class="abbrev">EPUB 3.1</abbr>] <span class="title"><em>
+<a class="ulink" href="/Submission/2017/SUBM-epub31-20170125/Overview.html" target="_top">EPUB 3.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refA11Y">
+<p>[<abbr class="abbrev">EPUB Accessibility</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/latest/accessibility" target="_top">EPUB
+            Accessibility</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refEPUBCFI">
+<p>[<abbr class="abbrev">EPUB-CFI</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/linking/cfi/epub-cfi.html" target="_top">EPUB
+            Canonical Fragment Identifier (epubcfi) Specification</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refHTML">
+<p>[<abbr class="abbrev">HTML</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/html/" target="_top">HTML</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refIndexes">
+<p>[<abbr class="abbrev">Indexes</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/idx" target="_top">EPUB Indexes</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refManifestVocab">
+<p>[<abbr class="abbrev">Manifest Vocab</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/vocab/package/item" target="_top">EPUB
+            Manifest Properties Vocabulary</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refOverlays3">
+<p>[<abbr class="abbrev">Media Overlays 3.1</abbr>] <span class="title"><em>
+<a class="ulink" href="/Submission/2017/SUBM-epub-mediaoverlays-20170125/Overview.html" target="_top">EPUB Media Overlays 3.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refMultipleRenditions">
+<p>[<abbr class="abbrev">Multiple Renditions</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/renditions/multiple" target="_top">EPUB
+            Multiple Renditions</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refOCF3">
+<p>[<abbr class="abbrev">OCF 3.1</abbr>] <span class="title"><em>
+<a class="ulink" href="/Submission/2017/SUBM-epub-ocf-20170125/Overview.html" target="_top">Open Container Format 3.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refPackages3">
+<p>[<abbr class="abbrev">Packages 3.1</abbr>] <span class="title"><em>
+<a class="ulink" href="/Submission/2017/SUBM-epub-packages-20170125/Overview.html" target="_top">EPUB Packages 3.1</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refPreviews">
+<p>[<abbr class="abbrev">Previews</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/previews" target="_top">EPUB Previews</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC2046">
+<p>[<abbr class="abbrev">RFC2046</abbr>] <span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2046" target="_top">Multipurpose
+            Internet Mail Extensions (MIME) Part Two: Media Types</a> (RFC 2046) </em>. </span>
+<span class="author">N. Freed, N. Borenstein. </span>
+<span class="date">November 1996. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRFC2119">
+<p>[<abbr class="abbrev">RFC2119</abbr>] <span class="title"><em>
+<a class="ulink" href="http://tools.ietf.org/html/rfc2119" target="_top">Key words for use in
+            RFCs to Indicate Requirement Levels</a> (RFC 2119) </em>. </span>
+<span class="date">March 1997. </span>
+</p>
+</div>
+<div class="biblioentry" id="refRegionNav">
+<p>[<abbr class="abbrev">Region Nav</abbr>] <span class="title"><em>
+<a class="ulink" href="http://www.idpf.org/epub/renditions/region-nav" target="_top">EPUB
+            Region-Based Navigation</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refSVG">
+<p>[<abbr class="abbrev">SVG</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/SVG/" target="_top">Scalable Vector Graphics
+            (SVG)</a>
+</em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refUnicode5">
+<p>[<abbr class="abbrev">Unicode</abbr>] <span class="title"><em> The Unicode Consortium. <a
+          class="ulink" href="http://www.unicode.org/versions/latest/" target="_top">The Unicode
+          Standard.</a></em>. </span>
+</p>
+</div>
+<div class="biblioentry" id="refXInclude">
+<p>[<abbr class="abbrev">XInclude</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2006/REC-xinclude-20061115/" target="_top">XML
+            Inclusions (XInclude) Version 1.0 (Second Edition)</a>
+</em>. </span>
+<span class="author">J. Marsh, et al. </span>
+<span class="date">15 November 2006. </span>
+</p>
+</div>
+<div class="biblioentry" id="refXML">
+<p>[<abbr class="abbrev">XML</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2008/REC-xml-20081126/" target="_top">Extensible
+            Markup Language (XML) 1.0 (Fifth Edition)</a>
+</em>. </span>
+<span class="author">T. Bray, et al. </span>
+<span class="date">26 November 2008. </span>
+</p>
+</div>
+<div class="biblioentry" id="refXMLBase">
+<p>[<abbr class="abbrev">XML Base</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.w3.org/TR/2009/REC-xmlbase-20090128/" target="_top">XML
+            Base (Second Edition)</a>
+</em>. </span>
+<span class="author">Jonathan Marsh, et al. </span>
+<span class="date">28 January 2009. </span>
+</p>
+</div>
+<div class="biblioentry" id="refXMLNamespaces">
+<p>[<abbr class="abbrev">XMLNS</abbr>] <span class="title"><em><a class="ulink" href="https://www.w3.org/TR/2009/REC-xml-names-20091208/" target="_top" >Namespaces in XML (Third Edition)</a></em>. </span> <span class="author">T. Bray, et al. </span> <span class="date">8 December 2009. </span></p>
+</div>
+</section>
+<section class="bibliodiv" id="informative-refs" typeof="bibo:Chapter" resource="#informative-refs" property="bibo:hasPart">
+<h3 id="h-informative-refs" resource="#h-informative-refs"><span property="xhv:role" resource="xhv:heading"><span class="secno">D.2 </span>規定ではない参照</span></h3>
+<div class="biblioentry" id="refEPUB3Changes">
+<p>[<abbr class="abbrev">EPUB3 Changes</abbr>] <span class="title"><em><a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-changes.html" target="_top">EPUB 3.1 Differences from EPUB 3.0.1</a></em>. </span></p>
+</div>
+<div class="biblioentry" id="refEPUB3Overview">
+<p>[<abbr class="abbrev">EPUB3 Overview</abbr>] <span class="title"><em><a class="ulink" href="http://www.idpf.org/epub/31/spec/epub-overview.html" target="_top">EPUB 3.1 Overview</a></em>. </span></p>
+</div>
+<div class="biblioentry" id="refH264">
+<p>[<abbr class="abbrev">H.264</abbr>] <span class="title"><em>
+<a class="ulink" href="https://www.itu.int/rec/T-REC-H.264-201602-P/en" target="_top">H.264 :
+            Advanced video coding for generic audiovisual services</a>
+</em>. </span>
+<span class="date">2016-02-13. </span>
+</p>
+</div>
+<div class="biblioentry" id="refVP8">
+<p>[<abbr class="abbrev">VP8</abbr>] <span class="title"><em>
+<a class="ulink" href="https://tools.ietf.org/html/rfc6386" target="_top">VP8 Data Format and
+            Decoding Guide (RFC 6386)</a>
+</em>. </span>
+<span class="author">J. Bankoski, et al. </span>
+<span class="date">November 2011. </span>
+</p>
+</div>
+</section>
+</section>
+<p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p>
+<script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
+</body>
+</html>
