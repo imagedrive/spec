@@ -365,7 +365,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-<p>発光 — （例えば、動画やアニメーションなど）リソースが、1秒に3回以上発光する場合、それは発作を引き起こす可能性がある。<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="http://www.w3.org/TR/WCAG20/#seizure" target="_top">ガイドライン 2.3</a> も見よ。</p>
+<p>閃光 — （例えば、動画やアニメーションなど）リソースが、1秒間に3回以上閃光する場合、それは発作を引き起こす可能性がある。<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="http://www.w3.org/TR/WCAG20/#seizure" target="_top">ガイドライン 2.3</a> も見よ。</p>
 </li>
 <li class="listitem">
 <p>動作シミュレーション — （例えば、<a class="biblioref" href="#refHTML" title="HTML">[<abbr class="abbrev">HTML</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/html5/scripting-1.html#the-canvas-element" target="_top"><code class="markup">canvas</code> 要素</a>に描画されたビデオ ゲームなど）リソースが動作をシミュレーションする場合、ユーザーが吐き気を引き起こす可能性がある。</p>
@@ -379,7 +379,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <p>危険性は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <a class="ulink" href="https://schema.org/accessibilityHazard" target="_top"><code class="markup">accessibilityHazard</code> プロパティ</a>で識別される。それぞれの危険性に対してこのプロパティを繰り返す。</p>
 <p>他のアクセシビリティ プロパティとは異なり、危険性の存在は、正と負の両方を表すことができる。この設計は、ユーザーが最も頻繁に、彼らに影響を与える危険性を取り除いたコンテンツの検索をするために決定されたが、彼らが発見する任意の出版物に存在する危険性が何であるかを知ることも望まれた。</p>
 <div class="informalexample">
-<p>次の例は、発光の危険性を持つが、動作シミュレーションまたは音の危険性のない EPUB 3 出版物のメタデータのエントリを示している。</p>
+<p>次の例は、閃光の危険性を持つが、動作シミュレーションまたは音の危険性のない EPUB 3 出版物のメタデータのエントリを示している。</p>
 <pre class="synopsis">&lt;meta property="schema:accessibilityHazard"&gt;flashing&lt;/meta&gt;
 &lt;meta property="schema:accessibilityHazard"&gt;noMotionSimulationHazard&lt;/meta&gt;
 &lt;meta property="schema:accessibilityHazard"&gt;noSoundHazard&lt;/meta&gt;</pre>
@@ -454,7 +454,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 
 <section class="suppress-numbering" id="sec-meta-ex">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-meta-ex"> </a> </span>例</h2>
-<p>次の例は、テキストと、テキストとして読むために十分である視覚的なアクセス モードを持つ <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に追加されたメタデータを示し、代替テキストと MathML マークアップ、発光のハザードが含まれている。</p>
+<p>次の例は、テキストと、テキストとして読むために十分である視覚的なアクセス モードを持つ <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に追加されたメタデータを示し、代替テキストと MathML マークアップ、閃光の危険性が含まれている。</p>
 <h2 id="sec-meta-ex-epub3">EPUB 3</h2>
 <div class="informalexample">
 <pre class="synopsis">&lt;package … &gt;
