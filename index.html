@@ -14,7 +14,7 @@
 <meta lang="ja" content="EPUB 3 仕様書および関連文書の日本語訳">
 <meta itemprop="author" lang="en" content="YOSHIMURA wataru">
 <meta itemprop="inLanguage" content="jp">
-<meta itemprop="datePublished" content="2017-09-11T00:00:00+09:00">
+<meta itemprop="datePublished" content="2017-12-21T00:00:00+09:00">
 <meta itemprop="keywords" lang="ja" content="電子書籍,仕様書">
 <meta itemprop="description" lang="ja" content="電子書籍の規格である EPUB 3.1、EPUB 3.0.1、EPUB 3 仕様書、EPUB 3 Overview、EPUB Publications、EPUB Content Documents、EPUB Open Container Format (OCF)、EPUB Media Overlays、EPUB Canonical Fragment Identifier (epubcfi) Specification、EPUB 3 Fixed-Layout Documents、EPUB 3 Structural Semantics Vocabulary などの日本語訳を公開しています。">
 <meta itemprop="url" content="http://imagedrive.github.io/spec/index.xhtml">
@@ -39,6 +39,7 @@ h4 {font-size:110%;font-weight:bold;}
 <link itemprop="hasPart" href="#itemSpecEPUB301">
 <link itemprop="hasPart" href="#itemSpecEPUB31">
 <link itemprop="hasPart" href="#itemSpecEpubRelated">
+<link itemprop="hasPart" href="#itemOther">
 
 <header role="banner" class="pagetitle">
 
@@ -59,8 +60,8 @@ h4 {font-size:110%;font-weight:bold;}
 <li><a href="#itemExtensions">拡張</a></li>
 <li><a href="#itemRegistries">レジストリ</a></li>
 </ol>
-
 </li>
+<li><a href="#itemOther">作業中・その他</a>
 </ol>
 </nav>
 
@@ -156,8 +157,6 @@ h4 {font-size:110%;font-weight:bold;}
 
 </section>
 
-
-
 <section id="itemSpecEPUB301" itemid="#itemSpecEPUB301" itemtype="http://schema.org/hasPart" itemscope="">
 <link itemprop="hasPart" href="#epub301-overview">
 <link itemprop="hasPart" href="#epub301-publications">
@@ -248,7 +247,6 @@ h4 {font-size:110%;font-weight:bold;}
 <link itemprop="hasPart" href="#epub31-contentdocs">
 <link itemprop="hasPart" href="#epub31-mediaoverlays">
 <link itemprop="hasPart" href="#epub31-ocf">
-<link itemprop="hasPart" href="#accessibility">
 <link itemprop="hasPart" href="#AlternateStyleTags">
 
 <header class="itemtitle">
@@ -304,15 +302,6 @@ h4 {font-size:110%;font-weight:bold;}
 <p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-ocf-20170125/">EPUB Open Container Format (OCF) 3.1</a>” (W3C Member Submission 25 January 2017)</p>
 </article>
 
-<article id="accessibility" class="item" itemid="#accessibility" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub-a11y/">EPUB Accessibility</a></h3>
-<p itemprop="description">EPUB Accessibility は、EPUB 出版物の発見とコンテンツのアクセシビリティ要件を定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-08-10T00:00:00.000Z">2017年8月10日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-05-16T00:00:00.000Z">2016年5月16日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-a11y-20170125/">EPUB Accessibility</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
 <article id="AlternateStyleTags" class="item" itemid="#AlternateStyleTags" itemtype="http://schema.org/hasPart" itemscope="">
 <h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/altss-tags/">Alternate Style Tags</a></h3>
 <p itemprop="description">Alternate Style Tags は、マイクロフォーマットを使用して代替スタイル シートにタグ付けするパターンを定義する。</p>
@@ -327,10 +316,11 @@ h4 {font-size:110%;font-weight:bold;}
 </section>
 
 <section id="itemSpecEpubRelated" itemid="#itemSpecEpubRelated" itemtype="http://schema.org/hasPart" itemscope="">
+<link itemprop="hasPart" href="#accessibility">
+<link itemprop="hasPart" href="#accessibility-techniques">
 <link itemprop="hasPart" href="#epub31-overview">
 <link itemprop="hasPart" href="#epub31-changes">
 <link itemprop="hasPart" href="#epub31-cfi">
-<link itemprop="hasPart" href="#accessibility-techniques">
 <link itemprop="hasPart" href="#epub-indexes">
 <link itemprop="hasPart" href="#previews">
 <link itemprop="hasPart" href="#vocab-package-roles-manifest">
@@ -343,6 +333,24 @@ h4 {font-size:110%;font-weight:bold;}
 </header>
 
 <article role="main" class="itemlist">
+
+<article id="accessibility" class="item" itemid="#accessibility" itemtype="http://schema.org/hasPart" itemscope="">
+<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub-a11y/">EPUB Accessibility</a></h3>
+<p itemprop="description">EPUB Accessibility は、EPUB 出版物の発見とコンテンツのアクセシビリティ要件を定義する。</p>
+<p>
+修正日：<time itemprop="dateModified" datetime="2017-08-10T00:00:00.000Z">2017年8月10日</time>　
+公開日：<time itemprop="datePublished" datetime="2016-05-16T00:00:00.000Z">2016年5月16日</time></p>
+<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-a11y-20170125/">EPUB Accessibility</a>” (W3C Member Submission 25 January 2017)</p>
+</article>
+
+<article id="accessibility-techniques" class="item" itemid="#accessibility-techniques" itemtype="http://schema.org/hasPart" itemscope="">
+<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/a11y/techniques/techniques.html">EPUB Accessibility Techniques 1.0</a></h3>
+<p itemprop="description">EPUB Accessibility Techniques は、EPUB® 出版物のための EPUB Accessibility の発見とアクセシビリティ要件を満たす方法のガイドラインを提供する。</p>
+<p>
+修正日：<time itemprop="dateModified" datetime="2017-08-29T00:00:00.000Z">2017年8月29日</time>　
+公開日：<time itemprop="datePublished" datetime="2017-07-03T00:00:00.000Z">2017年7月3日</time></p>
+<p>翻訳底本：“<a href="http://www.idpf.org/epub/a11y/techniques/techniques-20170105.html">EPUB Accessibility Techniques 1.0</a>” (IDPF Informational Document 5 January 2017)</p>
+</article>
 
 <article id="epub31-overview" class="item" itemid="#epub31-overview" itemtype="http://schema.org/hasPart" itemscope="">
 <h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-overview.html">EPUB 3.1 Overview</a></h3>
@@ -368,15 +376,6 @@ h4 {font-size:110%;font-weight:bold;}
 <p>
 公開日：<time itemprop="datePublished" datetime="2017-02-23T00:00:00.000Z">2017年2月23日</time></p>
 <p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20170105.html">EPUB Canonical Fragment Identifiers 1.1</a>” (IDPF Recommended Specification 5 January 2017)</p>
-</article>
-
-<article id="accessibility-techniques" class="item" itemid="#accessibility-techniques" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/a11y/techniques/techniques.html">EPUB Accessibility Techniques 1.0</a></h3>
-<p itemprop="description">EPUB Accessibility Techniques は、EPUB® 出版物のための EPUB Accessibility の発見とアクセシビリティ要件を満たす方法のガイドラインを提供する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-08-29T00:00:00.000Z">2017年8月29日</time>　
-公開日：<time itemprop="datePublished" datetime="2017-07-03T00:00:00.000Z">2017年7月3日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/a11y/techniques/techniques-20170105.html">EPUB Accessibility Techniques 1.0</a>” (IDPF Informational Document 5 January 2017)</p>
 </article>
 
 <article id="epub-indexes" class="item" itemid="#epub-indexes" itemtype="http://schema.org/hasPart" itemscope="">
@@ -599,12 +598,28 @@ h4 {font-size:110%;font-weight:bold;}
 
 </section>
 
+<section id="itemOther" itemid="#itemOther" itemtype="http://schema.org/hasPart" itemscope="">
+<link itemprop="hasPart" href="#uaag20">
 
+<header class="itemtitle">
+<h2 itemprop="name">作業中・その他</h2>
+</header>
+
+<article role="main" class="itemlist">
+
+<article id="uaag20" class="item" itemid="#uaag20" itemtype="http://schema.org/hasPart" itemscope="">
+<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/TR/UAAG20/">User Agent Accessibility Guidelines (UAAG) 2.0</a></h3>
+<p itemprop="description">User Agent Accessibility Guidelines (UAAG) 2.0 は、ユーザー エージェントの開発者がアクセシビリティの障壁を低くするための要件を規定している。</p>
+<p>
+公開日：<time itemprop="datePublished" datetime="2016-05-16T00:00:00.000Z">2017年11月21日</time></p>
+<p>翻訳底本：“<a href="http://www.w3.org/TR/2015/NOTE-UAAG20-20151215/">User Agent Accessibility Guidelines (UAAG) 2.0</a>” (W3C Working Group Note 15 December 2015)</p>
+</article>
+
+</article>
 
 </section>
 
-
-
+</section>
 
 <footer role="contentinfo" id="footer">
 
