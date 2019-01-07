@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>EPUB Accessibility Frequently Asked Questions（日本語訳版）</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/epub-spec-2016.css" />
+<style type="text/css">
+			body{
+			    max-width: 45em;
+			}
+			ul{
+			    padding-left: 1em;
+			}
+			div.history{
+			    margin-top: 2em;
+			    margin-bottom: 2em
+			}
+			.subtitle{
+			    display: block;
+			    font-size: 120%;
+			}</style>
+<link rel="stylesheet" type="text/css" href="../../css/translation-memo-2016.css"/>
+</head>
+<body>
+<div class="translation-attention">
+
+<p>この文書は「<a href="https://idpf.github.io/epub-guides/a11y-faq/">EPUB Accessibility Frequently Asked Questions</a>」の日本語訳である。最新の文書は <a href="https://idpf.github.io/epub-guides/a11y-faq/">EPUB Accessibility Frequently Asked Questions</a> である。原文もしくは完全な情報は、<a href="https://idpf.github.io/epub-guides/a11y-faq/">EPUB Accessibility Frequently Asked Questions</a> を参照されたい。</p>
+<p>このドキュメントは（おそらく）メンテナンスされておらず、情報が古い可能性があることに注意されたい。また、変更またはリンク切れになっている URL は、修正やその旨を記載した。</p>
+<p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
+<dl>
+<dt>公開日:</dt>
+<dd>2019-1-7</dd>
+<dt>翻訳者:</dt>
+<dd>Wataru Yoshimura</dd>
+</dl>
+
+</div>
+
+<header>
+<p><a href="http://www.idpf.org"><img src="https://www.idpf.org/epub/images/idpflogo_web_125.jpg" alt="IDPF" class="logo" /></a></p>
+<h1 class="title">EPUB Accessibility <span class="subtitle">よくある質問</span></h1>
+<p class="identity">
+<span class="pubdate">2016年9月6日</span>
+</p>
+<div class="history">
+<span class="history-title">改訂履歴</span>
+<ul>
+<li><a href="https://github.com/IDPF/epub-guides/commits/master/guides/a11y-faq/index.html">Changes to this document</a></li>
+</ul>
+</div>
+</header>
+<nav id="toc" class="toc">
+<h2 class="toc-title">目次</h2>
+<ol class="toc">
+<li><span class="section"><a href="#sec-overview">1. 概要</a></span></li>
+<li><span class="section"><a href="#sec-general">2. 一般</a></span>
+<ol>
+<li><span class="section"><a href="#sec-general-epub-version">2.1 この仕様はどのバージョンの EPUB に適用されますか？</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-disc">3. 発見のメタデータ</a></span>
+<ol>
+<li><span class="section"><a href="#sec-disc-schema">3.1 なぜ schema.org メタデータが選択されたのか？</a></span></li>
+<li><span class="section"><a href="#sec-disc-onix">3.2 なぜ ONIX は、発見のメタデータに必要ないのか？</a></span></li>
+<li><span class="section"><a href="#sec-disc-publicize">3.3 私の発見可能な出版物をアクセシブルと呼ぶことはできますか？</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-a11y">4. アクセシビリティの適合性</a></span>
+<ol>
+<li><span class="section"><a href="#sec-a11y-meeting">4.1 これら全ての要件を満たすことができない場合はどうなりますか？</a></span></li>
+<li><span class="section"><a href="#sec-a11y-wcag-ext">4.2 この仕様は WCAG の拡張ですか？</a></span></li>
+<li><span class="section"><a href="#sec-a11y-wcag-coop">4.3 なぜ WCAG に EPUB の要件を含めないのですか？</a></span></li>
+<li><span class="section"><a href="#sec-a11y-partial">4.3 なぜテクニックの中でいくつかの HTML 要素だけのガイドラインがあるのですか？</a></span></li>
+<li><span class="section"><a href="#sec-a11y-alternatives">4.4 掲載されていないコンテンツをアクセス可能にする他の方法の場合はどうなりますか？</a></span></li>
+<li><span class="section"><a href="#sec-a11y-checklist">4.5 要件のチェックリストはありますか？</a></span></li>
+<li><span class="section"><a href="#sec-a11y-url">4.6 なぜ適合性のメタデータは URL なのですか？</a></span></li>
+</ol>
+</li>
+<li><span class="section"><a href="#sec-opt">5. 最適化された出版物</a></span>
+<ol>
+<li><span class="section"><a href="#sec-opt-identify-why">5.1 なぜ最適化を特定するのですか？</a></span></li>
+<li><span class="section"><a href="#sec-opt-identify-how">5.2 どのように最適化の標準を識別するのですか？</a></span></li>
+<li><span class="section"><a href="#sec-opt-publicize">5.3 最適化された出版物をアクセシブルと呼ぶことはできますか？</a></span></li>
+<li><span class="section"><a href="#sec-opt-registry">5.4 なにが最適化の標準レジストリですか？</a></span></li>
+<li><span class="section"><a href="#sec-opt-register-req">5.5 標準を登録する必要はありますか？</a></span></li>
+<li><span class="section"><a href="#sec-opt-register-how">5.6 どのように標準を登録するのですか？</a></span></li>
+</ol>
+</li>
+</ol>
+</nav>
+<section id="sec-overview" class="chapter">
+<h1 class="title">1. 概要</h1>
+
+<p>このドキュメントは、<a href="https://www.w3.org/Submission/epub-a11y/">EPUB アクセシビリティ</a>（訳者注：リンク先変更）仕様および<a href="http://www.idpf.org/epub/latest/accessibility/techniques">関連するテクニクス</a>に関する一般的なよくある質問に対する回答を提供する。それはドキュメントがどのように作成されたかについてのガイダンスと洞察および実装における様々な選択の理由を提供する。</p>
+
+<p>このドキュメントは、アクセシブルなコンテンツを作るための手引きを意図していない。要件の実装方法に関して質問するには、<a href="http://www.idpf.org/forums/accessibility">IDPF アクセシビリティ フォーラム（訳者注：リンク切れ）</a>を利用してください。</p>
+</section>
+<section id="sec-general" class="chapter">
+<h1 class="title">2. 一般</h1>
+
+<section id="sec-general-epub-version">
+<h2 class="title">2.1 この仕様はどのバージョンの EPUB に適用されますか？</h2>
+
+<p>EPUB Accessibility 仕様は、EPUB 3.1 の改訂中に開発されたが、以前のバージョンのフォーマットへ適用できるように設計された。要件と手法は、EPUB 3.1 に依存せず、それらは、EPUB 3.0 準拠の出版物をアクセシブルにする為や、EPUB 2.0 出版にも適用できる。</p>
+
+<p>製作者は、直ちに自分のコンテンツに仕様を適用し始めることができる。言い換えると、EPUB 3.1のサポートが一般的になるまで待つ必要はない。</p>
+</section>
+</section>
+<section id="sec-disc" class="chapter">
+<h1 class="title">3. 発見のメタデータ</h1>
+
+<section id="sec-disc-schema" class="section">
+<h2 class="title">3.1 なぜ schema.org メタデータが選択されたのか？</h2>
+<p>Schema.org メタデータは、EPUB のメタデータ モデルに適合する包括的な一連の記述メタデータを提供するので、パッケージ ドキュメントに必須である。</p>
+<p>EPUB は、Open Web Platform と融合し続けるので、（schema.org メタデータは、情報をカタログ化する時に、主要な検索エンジンによって使用される）規格の将来のバージョンにも安定して適合することを表している。</p>
+</section>
+
+<section id="sec-disc-onix" class="section">
+<h2 class="title">3.2 なぜ ONIX は、発見のメタデータに必要ないのか？</h2>
+<p>ONIX は、電子書籍の流通チャンネルにおける重要なメタデータであるものの、EPUB 出版物は、本である必要はなく、主要な電子書籍チャンネルを介して流通されている。ONIX レコードの包含を全ての EPUB コンテンツの製作者に要求すると、制作が複雑になり、アクセシビリティ メタデータを包含することから製作者を遠ざけるかもしれない。ONIX レコードを作成および編集できるオーサリング ツールと情報を取得するためにレコードを解析するリーディング システムが必要になるであろう。既存のエコシステムへの影響を最小限にし、メタデータを常に容易に検索できる方法で利用できるようにするため、schema.org メタデータが選択された。</p>
+<p>パッケージ ドキュメントで schema.org メタデータを選択しても、ONIX レコードのリッチなアクセシビリティ メタデータの必要性は損なわれるものではなく、これらは、EPUB 出版物に添付する全ての配信レコードにアクセシビリティ メタデータを包含するための要件である。</p>
+<p>アクセシビリティ グループは、同様の情報を、フォーマットを横断してエンコードできるように、将来の目標として、これらのアクセシビリティ語彙に調和するために様々なメタデータ機関に働き掛けることを予定している。</p>
+</section>
+
+<section id="sec-disc-publicize" class="section">
+<h2 class="title">3.3 私の発見可能な出版物をアクセシブルと呼ぶことはできますか？</h2>
+<p>あなたの出版物が、発見可能性のメタデータのみを包含している場合（つまり、アクセシビリティ要件を満たさず、最適化ではない）、それは、この仕様を通じてアクセシブルであると宣伝してはならない。</p>
+<p>発見の要件を満たすことで、読者は、コンテンツを自分で利用できるかどうかを判断できるが、それ自体は認識しておく必要がある成果ではない。</p>
+</section>
+</section>
+<section id="sec-a11y" class="chapter">
+<h1 class="title">4. アクセシビリティの適合性</h1>
+
+<section id="sec-a11y-meeting" class="section">
+<h2 class="title">4.1 これら全ての要件を満たすことができない場合はどうなりますか？</h2>
+<p>製造方法を変えることは決して容易ではないが、達成を開始するために満たす明確なベンチマークも必要である。EPUB ワーキング グループは、これらの要件を満たす能力は、製作されたコンテンツの性質と、それがどのように作られたかによって変わると理解している。</p>
+<p>ワーキング グループはまた、コンテンツのユーザビリティを損なうことなく、できるだけ行動を緩和する仕様もまた計画された。例えば、仕様は、多くの規制の枠組みが、ウェブ コンテンツ（そのような管轄においては、出版社はすでに、より高いレベルを満たす必要がある）にレベル AA 適合を要求しているけれども、WCAG 2.0 レベル A 適合のみ要求している。適合は、出版社がプロセスを改善している間、アクセシビリティが流通の障壁とならないように、EPUB 出版物が妥当であるための強制ではない。</p>
+<p>ワーキング グループは、従うルールの選別と選択の試みは、特定の視聴者のみアクセシブになるコンテンツに繋がり、そして、それらの視聴者が誰であるかを証明することは複雑な作業であるため、閾値を WCAG 適合以下に下げることはできない。</p>
+<p>制作品質の向上に関する核心は、なぜ発見のメタデータの包含が非常に重要かにある。出版社は、コンテンツが仕様に対して完全に準拠しているか述べることができないかもしれないが、実施された作品を表面化できる場合、ユーザーはそれがいつでも自分のニーズを満たすかどうかについて決定できる。</p>
+</section>
+
+<section id="sec-a11y-wcag-ext" class="section">
+<h2 class="title">4.2 この仕様は WCAG の拡張ですか？</h2>
+
+<p>いいえ、WCAG を利用し、追加の要件を包含しているが、公式の拡張ではなく、それらの一つとして参照するべきではない。</p>
+</section>
+
+<section id="sec-a11y-wcag-coop" class="section">
+<h2 class="title">4.3 なぜ WCAG に EPUB の要件を含めないのですか？</h2>
+
+<p>IDPF は将来的に、デジタル出版物のアクセシビリティを調和させるために、W3C および Web Accessibility Initiative と協力する予定である。</p>
+
+<p>異なる改訂スケジュールと EPUB 出版物の適合性要件を確立する必要性のために、EPUB ワーキング グループは、別々のアクセシビリティ仕様を追求することに決定した。</p>
+</section>
+
+<section id="sec-a11y-partial" class="section">
+<h2 class="title">4.4 なぜテクニックの中でいくつかの HTML 要素だけのガイドラインがあるのですか？</h2>
+<p>テクニクス ドキュメントは、WCAG 2.0 の要件を重複していない。ガイダンスが出版物によって異なる場合、またはガイダンスが存在しない場合のみ対処する。</p>
+</section>
+
+<section id="sec-a11y-alternatives" class="section">
+<h2 class="title">4.5 掲載されていないコンテンツをアクセス可能にする他の方法の場合はどうなりますか？</h2>
+<p>EPUB Accessibility 仕様および WCAG 2.0 の両方のテクニクス ドキュメントは、本来は助言である。新しいテクニクスは、新しい状況へ対処するため、常に開発されている。新しいテクニクスで、アクセシビリティの同じレベルを提供する場合、それは利用において受け入れることができる。
+</p>
+</section>
+
+<section id="sec-a11y-checklist" class="section">
+<h2 class="title">4.6 要件のチェックリストはありますか？</h2>
+<p>（例えば、包含されるコンテンツの形式に応じて）適合性の要件は出版物毎に変わるため、テクニクスは、チェックリストを包含していない。</p>
+<p>検証を処理するドキュメントは、適合性の要件をチェックするガイドとして、現在開発中である。さらに、ソフトウェアは、処理を支援するために開発している。検証の処理とソフトウェアを一緒に使用する場合、特定のテストには依然として人間の知性が必要になることが予想される。</p>
+</section>
+
+<section id="sec-a11y-url" class="section">
+<h2 class="title">4.7 なぜ適合性のメタデータは URL なのですか？</h2>
+<p><a href="https://www.w3.org/Submission/epub-a11y/#sec-conf-reporting">a11y:conformsTo プロパティ</a>（訳者注：リンク先変更）は、適合性のステートメントを常に同じにできるように URL を取得し、（例えば、検証や、流通システムへの取り込みなどのために）機械によるチェックを容易にできる。</p>
+<p>適合性に関する人間が可読可能なステートメントは、<a href="http://www.idpf.org/epub/a11y/techniques/#meta-005">schema:accessibilitySummary プロパティ</a>（訳者注：リンク先変更）に包含されている。EPUB Accessibility 仕様は、そのようなステートメントに対する言い回しを要求していない。</p>
+</section>
+</section>
+<section id="sec-opt" class="chapter">
+<h1 class="title">5. 最適化された出版物</h1>
+
+<section id="sec-opt-identify-why" class="section">
+<h2 class="title">5.1 なぜ最適化を特定するのですか？</h2>
+<p>最適化の識別は、発見のメタデータの重要性と紐付いている。特定のユーザー グループのアクセシビリティ要件を満たすコンテンツは、たとえコンテンツが（例えば、点字や音声に最適化した出版物など）広くアクセシブルを考慮していなくても、それらのグループによって発見可能である必要がある。</p>
+<p>コンテンツが適合しているサードパーティの標準を識別することで、不足しているコンテクストをユーザーに提供する。</p>
+</section>
+
+<section id="sec-opt-identify-how" class="section">
+<h2 class="title">5.2 どのように最適化の標準を識別するのですか？</h2>
+<p>サードパーティ標準への適合性は、標準が定義されている場所を指す URL を持つメタデータに、リンク タグを包含することで識別される。</p>
+<pre>&lt;link
+   rel="a11y:conformsTo"
+   href="http://www.daisy.org/guidelines/epub/navigable-audio-only-epub3-guidelines"/></pre>
+<p>前述の例は、ナビゲーション可能な音声のみの出版物に対する DAISY ガイドラインに適合する出版物を示している。</p>
+<p>さらに、<a href="http://www.idpf.org/epub/a11y/techniques/#meta-005">schema:accessibilitySummary プロパティ</a>（訳者注：リンク先変更）で、適合性の人間が可読可能な要約を包含することが推奨される。</p>
+</section>
+
+<section id="sec-opt-publicize" class="section">
+<h2 class="title">5.3 Can I call my optimized publication accessible?</h2>
+<p>EPUB Accessibility 仕様は、最適化を支持するものではなく、メタデータ内でそれらを識別する方法のみを扱う。</p>
+<p>最適化のアクセシビリティに関するいかなる主張も、EPUB Accessibility 仕様または IDPF を参照してはならない。そのような主張は、出版物が適合している規格およびその標準を作成した組織を識別するべきである。</p>
+</section>
+
+<section id="sec-opt-registry" class="section">
+<h2 class="title">5.4 なにが最適化の標準レジストリですか？</h2>
+<p>IDPFは、識別子の検索を容易にするため、<a href="http://idpf.github.io/epub-registries/optimizations/">既知の最適化の標準レジストリ</a>を管理している。</p>
+<p>このリストは、情報提供のみを目的にしている。IDPF は、最適化の標準を開発しておらず、それらの使用の支持も推奨もしていない。</p>
+</section>
+
+<section id="sec-opt-register-req" class="section">
+<h2 class="title">5.5 標準を登録する必要はありますか？</h2>
+<p>いいえ、レジストリは、規定ではない。唯一の要件は、コンテンツが適合する標準を識別することである。</p>
+</section>
+
+<section id="sec-opt-register-how" class="section">
+<h2 class="title">5.6 どのように標準を登録するのですか？</h2>
+<p>新しい標準の包含は、<a href="https://github.com/IDPF/epub-registries">GitHub レポジトリ</a>のイシューを開くことで登録できる（GitHub アカウントが必要）。高度な GitHub ユーザーは、<a href="https://github.com/IDPF/epub-registries/blob/master/registries/optimizations/index.html">レジストリ ページ（訳者注：リンク切れ）</a>を直接更新して、プル リクエストをすることもできる。</p>
+<p>リクエストは、標準に関してできるだけ多くの情報を提供するべきである。</p>
+</section>
+</section>
+</body>
+</html>
