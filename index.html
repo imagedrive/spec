@@ -1,735 +1,1331 @@
 <!DOCTYPE html>
-<html
- itemid=""
- itemtype="http://schema.org/WebPage"
- itemscope=""
- xmlns="http://www.w3.org/1999/xhtml"
- lang="ja"
->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
-<meta charset="UTF-8">
-<title itemprop="name">EPUB 仕様書（EPUB 3.0, EPUB 3.0.1, EPUB 3.1, EPUB 3.2）および関連文書の日本語訳</title>
-<link itemprop="creator" href="#pageAuthor">
-<link itemprop="mainContentOfPage" href="#Spec">
-<meta lang="ja" content="EPUB 3 仕様書および関連文書の日本語訳">
-<meta itemprop="author" lang="en" content="YOSHIMURA wataru">
-<meta itemprop="inLanguage" content="jp">
-<meta itemprop="datePublished" content="2019-01-07T00:00:00+09:00">
-<meta itemprop="keywords" lang="ja" content="電子書籍,仕様書">
-<meta itemprop="description" lang="ja" content="電子書籍の規格である EPUB 3.2、EPUB 3.1、EPUB 3.0.1、EPUB 3 仕様書、EPUB 3 Overview、EPUB Publications、EPUB Content Documents、EPUB Open Container Format (OCF)、EPUB Media Overlays、EPUB Canonical Fragment Identifier (epubcfi) Specification、EPUB 3 Fixed-Layout Documents、EPUB 3 Structural Semantics Vocabulary などの日本語訳を公開しています。">
-<meta itemprop="url" content="http://imagedrive.github.io/spec/index.xhtml">
-<style>
-body{padding:3em;}
-header.pagetitle {margin-bottom:3em;}
-nav {margin-bottom:2em;}
-nav ol {margin:0 0 0 1.5em;padding:0;}
-nav li {margin-bottom:0.5em;}
-article.item {margin:3em 0;line-height:1.6;}
-article.item:first-child {margin-top:0em;}
-h1 {font-size:160%;font-weight:normal;}
-h2 {font-size:140%;font-weight:bold;border-bottom:thin solid #666;}
-h3 {font-size:120%;font-weight:bold;}
-h4 {font-size:110%;font-weight:bold;}
-</style>
+<meta charset="utf-8" />
+<title>EPUB 3.2 日本語訳（2019年2月1日版）</title>
+<script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove"></script>
+<script src="https://w3c.github.io/publ-epub-revision/epub32/spec/common/js/biblio.js" class="remove"></script>
+<script src="https://w3c.github.io/publ-epub-revision/epub32/spec/common/js/dfn-crossref.js" class="remove"></script>
+<script src="https://w3c.github.io/publ-epub-revision/epub32/spec/common/js/confreq-permalinks.js" class="remove"></script>
+<script src="https://w3c.github.io/publ-epub-revision/epub32/spec/common/js/copyright.js" class="remove"></script>
+<link href="https://w3c.github.io/publ-epub-revision/epub32/spec/common/css/common.css" rel="stylesheet" type="text/css" />
+<script class="remove">
+      	// <![CDATA[
+          var respecConfig = {
+              wg: "EPUB 3 Community Group",
+              wgURI: "https://www.w3.org/community/epub3/",
+              wgPublicList: "public-epub3",
+              specStatus: "CG-DRAFT",
+              noRecTrack: true,
+              shortName: "epub32",
+              prevRecURI: "https://www.idpf.org/epub/31/spec/epub-spec-20170105.html",
+              edDraftURI: "https://w3c.github.io/publ-epub-revision/epub32/spec/epub-spec.html",
+              copyrightStart: "1999",
+              editors: [
+                  {
+                      name: "Matt Garrish",
+                      company: "DAISY Consortium",
+                      companyURL: "https://www.daisy.org"
+                  },
+                  {
+                      name: "Dave Cramer",
+                      company: "Hachette Livre",
+                      companyURL: "https://www.hachettebookgroup.com",
+                  }
+              ],
+              formerEditors: [
+                  {
+                      name: "Markus Gylling",
+                      company: "International Digital Publishing Forum (IDPF)",
+                      companyURL: "https://www.idpf.org"
+                  },
+                  {
+                      name: "Tzviya Siegman",
+                      company: "John Wiley & Sons",
+                      companyURL: "https://www.wiley.com"
+                  }
+              ],
+              processVersion: 2017,
+              includePermalinks: true,
+              permalinkEdge:     true,
+              permalinkHide:     false,
+              diffTool:          "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  github:			 {
+  repoURL: "https://github.com/w3c/publ-epub-revision",
+  branch: "master"
+  },
+              localBiblio: biblio,
+              preProcess: [fixDefinitionCrossrefs, addConformanceLinks],
+              postProcess: [fixCopyright]
+          };
+         // ]]>
+</script>
 </head>
 <body>
-
-<section itemid="#Spec" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#itemSpecEPUB32">
-<link itemprop="hasPart" href="#itemSpecEPUB3">
-<link itemprop="hasPart" href="#itemSpecEPUB301">
-<link itemprop="hasPart" href="#itemSpecEPUB31">
-<link itemprop="hasPart" href="#itemSpecEpubRelated">
-<link itemprop="hasPart" href="#itemOther">
-
-<header role="banner" class="pagetitle">
-
-<h1 itemprop="name">EPUB 3 仕様書および関連文書の日本語訳</h1>
-
-</header>
-
-<nav>
-<p>目次</p>
-<ol>
-<li><a href="#itemSpecEPUB32">EPUB 3.2 仕様書</a></li>
-<li><a href="#itemSpecEPUB3">EPUB 3.0 仕様書</a></li>
-<li><a href="#itemSpecEPUB301">EPUB 3.0.1 仕様書</a></li>
-<li><a href="#itemSpecEPUB31">EPUB 3.1 仕様書</a></li>
-<li><a href="#itemSpecEpubRelated">EPUB 関連文書</a>
-<ol>
-<li><a href="#itemVocabulary">語彙</a></li>
-<li><a href="#itemPrefixes">接頭辞</a></li>
-<li><a href="#itemExtensions">拡張</a></li>
-<li><a href="#itemRegistries">レジストリ</a></li>
-</ol>
+<section id="abstract">
+<p>EPUB® 3 は、デジタル出版物やドキュメントのための、配信と交換形式を定義する。EPUB フォーマットは、単一コンテナで配信するために体系化と意味論的に強化された Web コンテンツ（HTML、CSS、SVG や他のリソースを含む）のパッケージングとエンコーディングの手段を提供する。この仕様は、規格の第2番目のメジャー リビジョンを示している。</p>
+<p>EPUB 3 は、デジタルの本（電子書籍）の形式として広く採用され、このリビジョンは、複雑なレイアウト、リッチメディアと双方向性、グローバルなタイポグラフィの機能を含む、出版物が要求する幅広い範囲をサポートするために、フォーマットの能力を向上させ続けている。EPUB 3 フォーマットの期待は、本、雑誌、学術書、専門書や科学的な出版を含むコンテンツの幅広い範囲のために利用されるということである。</p>
+<p>EPUB 3 は、事実上モジュール化されており、コア機能と規格の機能を定義する仕様群で構成されている。この仕様は、規格への主なエントリ ポイントを表すが、<a href="#sec-intro-epub-specs">仕様</a>に記載されている仕様は EPUB 3 の全てである。これらの仕様を横断して定義された<a href="#index">主な概念と定義へのインデックス</a>は、この仕様の最後で提供される。</p>
+<p>規定ではない [[EPUB3Overview]] は、EPUB 3 への一般的な紹介を提供する。以前のリビジョンからの技術的な変更点の一覧は、規定ではない [[EPUB32Changes]] でも利用できる。</p>
+</section>
+<section id="sotd"></section>
+<section id="sec-introduction">
+<h1>まえがき</h1>
+<section id="sec-intro-epub-specs">
+<h2>仕様</h2>
+<p>EPUB 3 規格は、サブ仕様のファミリーを横断して定義されたコア機能と機能性を持つ性質のモジュールである。</p>
+<p>この仕様は、ファミリーの中で最上位の仕様を表している。これは、（規格のプロダクトである）<a>EPUB 出版物</a>と（EPUB 出版物を消費し、読者にその内容を提示するアプリケーションである）<a>EPUB リーディング システム</a>のための適合性要件が含まれている。</p>
+<p>完全な EPUB 3 の他の仕様は、次の通りである。</p>
+<ul>
+<li>
+<p><a href="epub-packages.html">EPUB Packages</a> [[!Packages32]] — コンテンツの各<a>レンディション</a>のための要件を定義。</p>
 </li>
-<li><a href="#itemOther">作業中・その他</a>
-</ol>
-</nav>
-
-<section id="itemSpecEPUB32" itemid="#itemSpecEPUB32" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#epub32-spec">
-<link itemprop="hasPart" href="#epub32-packages">
-<link itemprop="hasPart" href="#epub32-contentdocs">
-<link itemprop="hasPart" href="#epub32-mediaoverlays">
-<link itemprop="hasPart" href="#epub32-ocf">
-<link itemprop="hasPart" href="#epub32-overview">
-<link itemprop="hasPart" href="#epub32-changes">
-
-<header class="itemtitle">
-
-<h2 itemprop="name">EPUB 3.2 仕様書</h2>
-
-</header>
-
-<article role="main" class="itemlist">
-
-<p>EPUB 3.2 の翻訳文書にはいくつかの不具合があります。他の文書を参照して動的にリンクを生成しているため、一部のリンクは機能していません。他のファイルを参照して動的にテキストを生成している箇所があるため、一部が原文のままです。各仕様の更新日は動的に変更されているため、翻訳に使用した元ファイルの日付とは一致していません。</p>
-
-<article id="epub32-spec" class="item" itemid="#epub32spec" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub32/epub-spec.html">EPUB 3.2（2018年11月15日版）</a></h3>
-<p itemprop="description">EPUB 3.2 は、XML 及び Web 標準に基づいたデジタル出版物の交換および配信フォーマットである。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-10-12T00:00:00+09:00">2018年11月22日</time>　
-公開日：<time itemprop="datePublished" datetime="2018-08-06T00:00:00.000Z">2018年8月6日</time></p>
-<p>翻訳底本：“<a href="https://w3c.github.io/publ-epub-revision/epub32/spec/epub-spec.html">EPUB 3.2</a>” (W3C Community Group Draft Report)</p>
-</article>
-
-<article id="epub32-packages" class="item" itemid="#epub32-packages" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/Submission/epub32/epub-packages.html">EPUB Packages 3.2（2018年11月15日版）</a></h3>
-<p itemprop="description">EPUB Packages 3.2 は、セマンティクスと EPUB® パッケージの適合必要条件を定める。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-11-27T00:00:00+09:00">2018年11月27日</time>　
-公開日：<time itemprop="datePublished" datetime="2018-09-27T00:00:00+09:00">2018年9月27日</time></p>
-<p>翻訳底本：“<a href="https://w3c.github.io/publ-epub-revision/epub32/spec/epub-packages.html">EPUB Packages 3.2</a>” (W3C Community Group Draft Report)</p>
-</article>
-
-<article id="epub32-contentdocs" class="item" itemid="#epub32-contentdocs" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/Submission/epub32/epub-contentdocs.html">EPUB Content Documents 3.2（2018年11月15日版）</a></h3>
-<p itemprop="description">EPUB Content Documents 3.2 は、EPUB® 出版物のコンテキストで使用する HTML、SVG、CSS のプロファイルを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-11-28T00:00:00+09:00">2018年11月28日</time>　
-公開日：<time itemprop="datePublished" datetime="2018-10-05T00:00:00+09:00">2018年10月5日</time></p>
-<p>翻訳底本：“<a href="https://w3c.github.io/publ-epub-revision/epub32/spec/epub-contentdocs.html">EPUB Content Documents 3.2</a>” (W3C Community Group Draft Report)</p>
-</article>
-
-<article id="epub32-mediaoverlays" class="item" itemid="#epub32-mediaoverlays" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/Submission/epub32/epub-mediaoverlays.html">EPUB Media Overlays 3.2（2018年11月15日版）</a></h3>
-<p itemprop="description">EPUB Media Overlays 3.2 は、EPUB コンテンツ ドキュメントと同期した音声の表現のために、SMIL（Synchronized Multimedia Integration Language）、パッケージ ドキュメント、CSS スタイル シート及び EPUB® コンテンツ ドキュメントの使用法を定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-11-28T00:00:00+09:00">2018年11月28日</time>　
-公開日：<time itemprop="datePublished" datetime="2018-10-12T00:00:00+09:00">2018年10月12日</time></p>
-<p>翻訳底本：“<a href="https://w3c.github.io/publ-epub-revision/epub32/spec/epub-mediaoverlays.html">EPUB Media Overlays 3.2</a>” (W3C Community Group Draft Report)</p>
-</article>
-
-<article id="epub32-ocf" class="item" itemid="#epub32-ocf" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/Submission/epub32/epub-ocf.html">EPUB Open Container Format (OCF) 3.2（2018年11月15日版）</a></h3>
-<p itemprop="description">EPUB Open Container Format (OCF) 3.2 は、単一のファイル コンテナ、EPUB コンテナ内のEPUB® 出版物から成る関連したリソースのセットをカプセル化するためのファイル フォーマットと処理モデルを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-11-28T00:00:00+09:00">2018年11月28日</time>　
-公開日：<time itemprop="datePublished" datetime="2018-10-10T00:00:00+09:00">2018年10月10日</time></p>
-<p>翻訳底本：“<a href="https://w3c.github.io/publ-epub-revision/epub32/spec/epub-ocf.html">EPUB Open Container Format (OCF) 3.2</a>” (W3C Community Group Draft Report)</p>
-</article>
-
-<article id="epub32-overview" class="item" itemid="#epub32-overview" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/Submission/epub32/epub-overview.html">EPUB 3 Overview（2018年11月15日版）</a></h3>
-<p itemprop="description">EPUB 3 Overview は、他の EPUB 3 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3 の全体の導入として役立ちます。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-10-12T00:00:00+09:00">2018年11月22日</time>　
-公開日：<time itemprop="datePublished" datetime="2018-08-06T00:00:00+09:00">2018年8月6日</time></p>
-<p>翻訳底本：“<a href="https://w3c.github.io/publ-epub-revision/epub32/spec/epub-overview.html">EPUB 3 Overview</a>” (W3C Community Group Draft Report)</p>
-</article>
-
-<article id="epub32-changes" class="item" itemid="#epub32-changes" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/Submission/epub32/epub-changes.html">EPUB 3.2 Changes（2018年11月15日版）</a></h3>
-<p itemprop="description">EPUB 3.2 Changes は、重要な変更と追加を強調し、EPUB® 3 仕様の二番目のマイナー リビジョンで行った変更を説明する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-09-26T00:00:00+09:00">2018年11月22日</time>　
-公開日：<time itemprop="datePublished" datetime="2018-08-07T00:00:00.000Z">2018年8月7日</time></p>
-<p>翻訳底本：“<a href="https://w3c.github.io/publ-epub-revision/epub32/spec/epub-changes.html">EPUB 3.2 Changes</a>” (W3C Community Group Draft Report)</p>
-</article>
-
+<li>
+<p><a href="epub-contentdocs.html">EPUB Content Documents</a> [[!ContentDocs32]] — EPUB 出版物のコンテキストで使用する XHTML、SVG と CSS のプロファイルを定義。</p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html">EPUB Media Overlays</a> [[!MediaOverlays32]] — 形式とテキストと音声の同期のための処理モデルを定義。</p>
+</li>
+<li>
+<p><a href="epub-ocf.html">EPUB Open Container Format (OCF)</a> <a class="biblioref" href="#refOCF30">[<abbr class="abbrev">OCF 3.1</abbr>]</a> — 関連するリソースの集合を単一のファイル（ZIP）の <a>EPUB コンテナ</a>にカプセル化するためのファイル形式と処理モデルを定義。</p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/latest/accessibility">EPUB Accessibility</a> [[!EPUBAccessibility]] — EPUB 出版物のアクセシビリティ適合性と発見の要件を定義。</p>
+</li>
+</ul>
+<p>これらの仕様は、EPUB 3 に関連しているように広く認められている正式なリストであり、規格の一部として関連する機能を含んでいる。新しい機能もまた拡張仕様の開発を通じて定期的に追加される。この仕様で正式に認められていないが、規格のためにコアのリビジョンの外側で定義されている特徴と機能は、<a>製作者</a>とリーディング システムの開発者によって使用するために利用可能である。</p>
 </section>
-
-<section id="itemSpecEPUB3" itemid="#itemSpecEPUB3" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#epub30-overview">
-<link itemprop="hasPart" href="#epub30-publications">
-<link itemprop="hasPart" href="#epub30-contentdocs">
-<link itemprop="hasPart" href="#epub30-ocf">
-<link itemprop="hasPart" href="#epub30-mediaoverlays">
-<link itemprop="hasPart" href="#epub30-epubcfi">
-<link itemprop="hasPart" href="#epub30-changes">
-<link itemprop="hasPart" href="#epub30-fixed-layout-documents">
-
-<header class="itemtitle">
-
-<h2 itemprop="name">EPUB 3.0 仕様書</h2>
-
-</header>
-
-<article role="main" class="itemlist">
-
-<article id="epub30-overview" class="item" itemid="#epub30-overview" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-overview.xhtml">EPUB 3 Overview</a></h3>
-<p itemprop="description">EPUB 3 Overview は、他の EPUB 3 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3 の全体の導入として役立ちます。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-overview-20111011.html">EPUB 3 Overview</a>” (IDPF Recommended Specification 11 October 2011)</p>
-</article>
-
-<article id="epub30-publications" class="item" itemid="#epub30-publications" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-publications.xhtml">EPUB Publications 3.0</a></h3>
-<p itemprop="description">EPUB Publications 3.0 は、出版物のメタデータ、出版物に含まれるリソース、表示されるリソースの順番を Package Document に定義する仕様です。主に .opf ファイル内の metadata、manifest、spine 要素に含まれるそれぞれ dc:、item、itemref 要素を扱います。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-02-25T00:00:00+09:00">2012年2月25日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-publications-20111011.html">EPUB Publications 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
-</article>
-
-<article id="epub30-contentdocs" class="item" itemid="#epub30-contentdocs" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-contentdocs.xhtml">EPUB Content Documents 3.0</a></h3>
-<p itemprop="description">EPUB Content Documents 3.0 は、EPUBR Publications のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義します。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-10-15T00:00:00+09:00">2012年10月15日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-contentdocs-20111011.html">EPUB Content Documents 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
-</article>
-
-<article id="epub30-ocf" class="item" itemid="#epub30-ocf" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-ocf.xhtml">EPUB Open Container Format (OCF) 3.0</a></h3>
-<p itemprop="description">EPUB Open Container Format (OCF) 3.0 は、単一ファイルのコンテナに1つ以上の EPUBR Publication を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義しています。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-ocf-20111011.html">EPUB Open Container Format (OCF) 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
-</article>
-
-<article id="epub30-mediaoverlays" class="item" itemid="#epub30-mediaoverlays" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-mediaoverlays.xhtml">EPUB Media Overlays 3.0</a></h3>
-<p itemprop="description">EPUB Media Overlays 3.0 は、EPUB Content Document と同期する音声表現用に、SMIL（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義しています。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-07-07T00:00:00+09:00">2012年7月7日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html">EPUB Media Overlays 3.0</a>” (IDPF Recommended Specification 11 October 2011)</p>
-</article>
-
-<article id="epub30-epubcfi" class="item" itemid="#epub30-epubcfi" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-epubcfi.xhtml">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></h3>
-<p itemprop="description">EPUB Canonical Fragment Identifier (epubcfi) は、フラグメント識別子を使って EPUB Publication の任意のコンテンツを参照する標準方式を定めています。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-07-12T00:00:00+09:00">2012年7月12日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20111011.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a>” (IDPF Recommended Specification 11 October 2011)</p>
-</article>
-
-<article id="epub30-changes" class="item" itemid="#epub30-changes" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-changes.xhtml">EPUB 3 Changes from EPUB 2.0.1</a></h3>
-<p itemprop="description">EPUB 3 Changes from EPUB 2.0.1、EPUB 3 は、XML と Web 標準に基いて、デジタル出版物の交換と配信形式である EPUB の第三の主要な版を定義している。本仕様書は、以前にリリースされた EPUB 2.0.1 から EPUB 3 での変更点について有益な方法で説明する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-12-10T00:00:00+09:00">2012年12月10日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/30/spec/epub30-changes-20111011.html">EPUB 3 Changes from EPUB 2.0.1</a>” (IDPF Recommended Specification 11 October 2011)</p>
-</article>
-
-<article id="epub30-fixed-layout-documents" class="item" itemid="#epub30-fixed-layout-documents" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub30-fixed-layout-documents.xhtml">EPUB 3 Fixed-Layout Documents</a></h3>
-<p itemprop="description">EPUB 3 Fixed-Layout Documents は、EPUB 3 固定レイアウトを表現するためのメタデータ要素を定義する仕様です。また固定レイアウトの時の XHTML、SVG、画像のレンダリング寸法を表現する方法も定義しています。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2013-04-05T00:00:00+09:00">2013年4月5日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-04-20T00:00:00+09:00">2012年4月20日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/fxl/epub-fxl-20120313.html">EPUB 3 Fixed-Layout Documents</a>” (IDPF Informational Document)</p>
-</article>
-
-</article>
-
+<section id="sec-intro-spec-org" class="informative">
+<h2>組織</h2>
+<p>このセクションでは、<a>EPUB 出版物</a>として定義する中心的な成果物を通じて EPUB 仕様の組織をレビューする。</p>
+<p>EPUB 出版物は、<a>EPUB パッケージ</a>と呼ばれるものによって表示されるそれぞれのコンテンツのひとつ以上の<a>レンディション</a>で構成されている。EPUB パッケージは、コンテンツを読むために必要な全てのリソースで構成されている。これらの間で重要なファイルは、（例えば、本棚に表示するタイトルと著者名、コンテンツが固定レイアウトなのか、あるいはリフローすることが可能かどうかなどのレンダリングのメタデータも同様に）読者に EPUB 出版物を提示する<a>リーディング システム</a>によって使用される全てのメタデータを包含する<a>パッケージ ドキュメント</a>である。リソースの完全なマニフェストもまた提供し、読者がコンテンツを介して進むにつれてドキュメントをレンダリングする配列を記載する<a>スパイン</a>を包含する。</p>
+<p>EPUB パッケージは、<a>EPUB ナビゲーション ドキュメント</a>と呼ばれる他の主要なファイルも包含する。このドキュメントは、読者が迅速かつ容易にコンテンツを移動できる、例えば目次のような、重要なナビゲーション機能を提供する。</p>
+<p>EPUB パッケージの要件は、[[Packages32]] で定義されている。</p>
+<p>EPUB 出版物のリソースは、ファイル拡張子 <code>.epub</code> の ZIP ベースのアーカイブ内で配布のためにひとまとめにされる。ZIP アーカイブ準拠なので、EPUB 出版物は多くのソフトウェアプログラムによって解凍でき、生産と消費の両方を単純にできる。</p>
+<p>コンテナ フォーマットは、ZIP 圧縮されたコンテンツが EPUB 出版物であることを決定する手段（<code>mimetype</code> ファイル）だけでなく、有益なリソースの普遍的な名前のディレクトリも提供する（<code>/META-INF</code>）。これらリソース間のキーになるのは、利用可能なパッケージ ドキュメントをリーディング システムに指示する <code>container.xml</code> である。</p>
+<p>コンテナ フォーマットは、[[OCF32]] で定義されている。</p>
+<figure>
+<figcaption>
+<p>次の例は、EPUB フォーマットの構造を視覚的に表している。</p>
+</figcaption>
+<object data="images/epub.svg" width="350">
+<img src="images/epub.png" width="350" alt="" />
+</object>
+</figure>
+<p>EPUB 出版物の構造と格納容器は、フォーマットの半分で、残りの半分は、読者に表示されるコンテンツである。このコンテンツは、オープン Web フォーマット上に構築され、<a data-lt="XHTML コンテンツ ドキュメント">XHTML</a> と <a data-lt="SVG コンテンツ ドキュメント">SVG</a> の二種類を供給されている。<a>EPUB コンテンツ ドキュメント</a>と呼ばれ、典型的にこれらのドキュメントは、例えば、画像、音声やビデオクリップ、スクリプトやスタイルシートなど、適切なレンダリングのために必要となる多くの追加リソースを参照する。</p>
+<p>EPUB コンテンツ ドキュメントの製作のための規則と要件に関する詳細情報は、[[ContentDocs32]] で提供され、アクセシビリティの要件は、[[EPUBAccessibility]] で定義されている。</p>
+<p><a>メディア オーバーレイ ドキュメント</a>は、 EPUB コンテンツ ドキュメントを補完する。これらは、録音済みの音声を持つ EPUB コンテンツ ドキュメント内のテキストを同期させるための宣言型マークアップを提供する。効果は、ナレーションされているように、テキストがハイライトされる読み上げの体験を作る機能である。メディア オーバーレイ ドキュメントは、[[MediaOverlays32]] で定義されている。</p>
+<p>概念的には単純であるが、EPUB 出版物は、ここで提示されるように、ZIP パッケージ内の HTML ページや依存資産の単純な集積以上のものである。このドキュメントの次のセクションは、読書体験を高めるのに提供する EPUB 出版物の主要な特徴と機能性に関する追加の情報は、参照仕様から入手可能であり、EPUB 3 の機能のより一般的な導入は、規定の [[EPUB3Overview]] で提供される。</p>
 </section>
-
-<section id="itemSpecEPUB301" itemid="#itemSpecEPUB301" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#epub301-overview">
-<link itemprop="hasPart" href="#epub301-publications">
-<link itemprop="hasPart" href="#epub301-contentdocs">
-<link itemprop="hasPart" href="#epub301-ocf">
-<link itemprop="hasPart" href="#epub301-mediaoverlays">
-<link itemprop="hasPart" href="#epub301-epubcfi">
-<link itemprop="hasPart" href="#epub301-changes">
-
-<header class="itemtitle">
-
-<h2 itemprop="name">EPUB 3.0.1 仕様書</h2>
-
-</header>
-
-<article role="main" class="itemlist">
-
-<article id="epub301-overview" class="item" itemid="#epub301-overview" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-overview.xhtml">EPUB 3 Overview</a></h3>
-<p itemprop="description">EPUB 3 Overview は、他の EPUB 3 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3 の全体の導入として役立ちます。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-06-26T00:00:00.000Z">2014年6月26日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-overview-20140626.html">EPUB 3 Overview</a>” (IDPF Recommended Specification 26 June 2014)</p>
-</article>
-
-<article id="epub301-publications" class="item" itemid="#epub301-publications" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-publications.xhtml">EPUB Publications 3.0.1</a></h3>
-<p itemprop="description">EPUB Publications 3.0.1 は、出版物のメタデータ、出版物に含まれるリソース、表示されるリソースの順番を Package Document に定義する仕様です。主に .opf ファイル内の metadata、manifest、spine 要素に含まれるそれぞれ dc:、item、itemref 要素を扱います。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-06-26T00:00:00.000Z">2014年6月26日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-publications-20140626.html">EPUB Publications 3.0.1</a>” (IDPF Recommended Specification 26 June 2014)</p>
-</article>
-
-<article id="epub301-contentdocs" class="item" itemid="#epub301-contentdocs" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-contentdocs.xhtml">EPUB Content Documents 3.0.1</a></h3>
-<p itemprop="description">EPUB Content Documents 3.0.1 は、EPUBR Publications のコンテクスト内で使用するための HTML5、SVG、CSS のプロファイルを定義します。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2015-10-09T00:00:00.000Z">2015年10月9日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-contentdocs-20140626.html">EPUB Content Documents 3.0.1</a>” (IDPF Recommended Specification 26 June 2014)</p>
-</article>
-
-<article id="epub301-ocf" class="item" itemid="#epub301-ocf" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-ocf.xhtml">EPUB Open Container Format (OCF) 3.0.1</a></h3>
-<p itemprop="description">EPUB Open Container Format (OCF) 3.0.1 は、単一ファイルのコンテナに1つ以上の EPUBR Publication を構成する関連リソースのセットをカプセル化するためのファイル形式と処理モデルを定義しています。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-06-26T00:00:00.000Z">2014年6月26日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-ocf-20140626.html">EPUB Open Container Format (OCF) 3.0.1</a>” (IDPF Recommended Specification 26 June 2014)</p>
-</article>
-
-<article id="epub301-mediaoverlays" class="item" itemid="#epub301-mediaoverlays" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-mediaoverlays.xhtml">EPUB Media Overlays 3.0.1</a></h3>
-<p itemprop="description">EPUB Media Overlays 3.0.1 は、EPUB Content Document と同期する音声表現用に、SMIL（同期マルチメディア統合言語）、Package Document、EPUBR Style Sheet、および EPUB Content Document の使用方法を定義しています。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-06-26T00:00:00.000Z">2014年6月26日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-mediaoverlays-20140626.html">EPUB Media Overlays 3.0.1</a>” (IDPF Recommended Specification 26 June 2014)</p>
-</article>
-
-<article id="epub301-epubcfi" class="item" itemid="#epub301-epubcfi" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-epubcfi.xhtml">EPUB Canonical Fragment Identifier (epubcfi) Specification</a></h3>
-<p itemprop="description">EPUB Canonical Fragment Identifier (epubcfi) は、フラグメント識別子を使って EPUB Publication の任意のコンテンツを参照する標準方式を定めています。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-06-26T00:00:00.000Z">2014年6月26日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20140626.html">EPUB Canonical Fragment Identifier (epubcfi) Specification</a>” (IDPF Recommended Specification 26 June 2014)</p>
-</article>
-
-<article id="epub301-changes" class="item" itemid="#epub301-changes" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-changes.xhtml">EPUB 3.0.1 Changes from EPUB 3.0</a></h3>
-<p itemprop="description">EPUB 3.0.1 Changes from EPUB 3 は、重要な変更と追加を強調し、EPUB  3.0 仕様の最初の小改訂で行った変更を説明する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-06-26T00:00:00.000Z">2014年6月26日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/301/spec/epub-changes-20140626.html">EPUB 3.0.1 Changes from EPUB 3.0</a>” (IDPF Recommended Specification 26 June 2014)</p>
-</article>
-
-</article>
-
+<section id="sec-terminology">
+<h2>用語</h2>
+<p>次の用語は、EPUB 3 の固有である。どこで使用するにしても、大文字で始める。</p>
+<p>セクションにある用語の最初のインスタンスのみ、定義にリンクされる。</p>
+<dl class="termlist">
+<dt><dfn id="dfn-author" data-lt="製作者">製作者</dfn></dt>
+<dd>
+<p><a>EPUB 出版物</a>の制作に対して責任がある人または組織。制作者は、コンテンツの制作者である必要はない。</p>
+</dd>
+<dt><dfn id="dfn-content-display-area">コンテンツ表示領域</dfn></dt>
+<dd>
+<p><a>EPUB コンテンツ ドキュメント</a>の表示することを専門とする<a>ビューポート</a>内の領域。コンテンツ表示領域には、<a>EPUB リーディング システム</a>がビューポート内に挿入するかもしれない枠線、余白、ヘッダー、フッターまたはその他の装飾は含まれない。</p>
+<p><a>合成見開き</a>の場合、ビューポートは、2つのコンテンツ表示領域を含む。</p>
+</dd>
+<dt><dfn id="dfn-core-media-type-resource" data-lt="コア メディア タイプ リソース">コア メディア タイプ リソース</dfn></dt>
+<dd>
+<p><a href="#sec-foreign-restrictions">フォールバック</a>の提供が必要ではない、出版物リソース</a>（<a>管理外リソース</a>を参照）。</p>
+</dd>
+<dt><dfn id="dfn-epub-container" data-lt="EPUB コンテナ">EPUB コンテナ</dfn></dt>
+<dd>
+<p><a href="epub-ocf.html#sec-container-zip">OCF ZIP コンテナ</a> [[!OCF32]] で定義されている <a>EPUB 出版物</a>用 ZIP ベースのパッケージングと配布の形式。</p>
+</dd>
+<dt><dfn id="dfn-epub-content-document" data-lt="EPUB コンテンツ ドキュメント|EPUB Content Documents">EPUB コンテンツ ドキュメント</dfn></dt>
+<dd>
+<p>EPUB コンテンツ ドキュメントの定義（<a data-lt="XHTML コンテンツ ドキュメント">XHTML</a> または <a data-lt="SVG コンテンツ ドキュメント">SVG</a>）のひとつに一致した<a>出版物リソース</a>。</p>
+<p>EPUB コンテンツ ドキュメントは<a>コア メディア タイプ リソース</a>であるため、<a href="#sec-foreign-restrictions">フォールバック</a>を提供することなく <a>EPUB 出版物</a>に含むことができる。</p>
+</dd>
+<dt><dfn id="dfn-epub-navigation-document" data-lt="EPUB ナビゲーション ドキュメント">EPUB ナビゲーション ドキュメント</dfn></dt>
+<dd>
+<p>人間と機械が読み取り可能であるグローバルなナビゲーション情報を含む特化した <a>XHTML コンテンツ ドキュメント</a>。EPUB ナビゲーション ドキュメントは、<a href="epub-packages.html#sec-package-nav">EPUB ナビゲーション ドキュメント</a> [[!Packages32]] で述べられた制約に準じる。</p>
+</dd>
+<dt><dfn id="dfn-epub-package" data-lt="EPUB パッケージ|EPUB Package">EPUB パッケージ</dfn></dt>
+<dd>
+<p><a>パッケージ ドキュメント</a>で定義されているような、<a>EPUB 出版物</a>のひとつの<a>レンディション</a>をレンダリングする相互関係にある<a data-lt="出版物リソース">リソース</a>のセットから構成されている論理的なドキュメントのエンティティ。</p>
+</dd>
+<dt><dfn id="dfn-epub-publication" data-lt="EPUB 出版物|EPUB Publication">EPUB 出版物</dfn></dt>
+<dd>
+<p><span class="phrase">この仕様</span>に準拠する、ひとつ以上の<a>レンディション</a>のコレクションは、<a>EPUB コンテナ</a>をパッケージ化している。</p>
+<p>EPUB 出版物は典型的に単一の知的・芸術作品を表しているが、この仕様は、コンテンツの性質を制限しない。</p>
+</dd>
+<dt><dfn id="dfn-epub-reading-system" data-lt="EPUB リーディング システム|リーディング システム">EPUB リーディング システム</dfn> (またはリーディング システム)</dt>
+<dd>
+<p>この仕様に準拠する方法で読者に提示するために <a>EPUB 出版物</a>を処理するシステム。</p>
+</dd>
+<dt><dfn id="dfn-fixed-layout-document" data-lt="固定レイアウト ドキュメント">固定レイアウト ドキュメント</dfn></dt>
+<dd>
+<p><a href="epub-packages.html#layout"><code>rendition:layout</code> プロパティ</a> [[!Packages32]] で定義されているように、<a>パッケージ ドキュメント</a>内の <code>pre-paginated</code> を指定されている<a>スパイン</a>から直接参照される <a>EPUB コンテンツ ドキュメント</a>。</p>
+<p>固定レイアウト ドキュメントをレンダリングするために使用する寸法は、<a href="epub-contentdocs.html#sec-fixed-layouts">固定レイアウト</a> [[!ContentDocs32]] で定義される。</p>
+</dd>
+<dt><dfn id="dfn-foreign-resource" data-lt="管理外リソース">管理外リソース</dfn></dt>
+<dd>
+<p><a>コア メディア タイプ リソース</a>ではない<a>出版物リソース</a>。管理外リソースは、<a href="#sec-foreign-restrictions">管理外リソース</a>で定義されているフォールバックの要件に依存する。</p>
+</dd>
+<dt><dfn id="dfn-local-resource" data-lt="ローカル リソース|Local Resource">ローカル リソース</dfn></dt>
+<dd>
+<p><a>EPUB コンテナ</a>内に配置されたリソース。</p>
+<p>リソースの位置ための特定のルールは、メディア タイプのための<a href="#sec-resource-locations">出版物リソースの位置</a>を参照されたい。</p>
+</dd>
+<dt><dfn id="dfn-manifest" data-lt="マニフェスト">マニフェスト</dfn></dt>
+<dd>
+<p><a>EPUB 出版物</a>の指定された<a>レンディション</a>を構成する全ての<a>出版物リソース</a>のリスト。</p>
+<p>詳細については<a href="epub-packages.html#sec-manifest-elem">マニフェスト</a> [[!Packages32]]を参照されたい。</p>
+</dd>
+<dt><dfn id="dfn-media-overlay-document" data-lt="メディア オーバーレイ ドキュメント">メディア オーバーレイ ドキュメント</dfn></dt>
+<dd>
+<p>[[!MediaOverlays32]] で定義された同期再生を提供するために録音済みの音声ナレーションを <a>XHTML コンテンツ ドキュメント</a>と関連付ける XML ドキュメント</p>
+</dd>
+<dt><dfn id="dfn-package-document" data-lt="パッケージ ドキュメント">パッケージ ドキュメント</dfn></dt>
+<dd>
+<p><a href="epub-packages.html#sec-package-doc">パッケージ ドキュメント</a> [[!Packages32]] で定義されているように、<a>EPUB 出版物</a>のひとつの<a>レンディション</a>を記述する<a>出版物リソース</a>。パッケージ ドキュメントは、レンディションに関するメタ情報を伝達し、リソースのマニフェストの提供と標準の読み取り順序を定義する。</p>
+</dd>
+<dt><dfn id="dfn-publication-resource" data-lt="出版物リソース">出版物リソース</dfn></dt>
+<dd>
+<p>コンテンツまたは <a>EPUB 出版物</a>の少なくともひとつの<a>レンディション</a>のロジックと表示に関する命令を含んでいるリソース。このリソースがない場合には、EPUB 出版物は<a>製作者</a>の意図したとおりに表示されないことがある。出版物リソースの例としてはレンディションの<a>パッケージ ドキュメント</a>、<a>EPUB コンテンツ ドキュメント</a>、CSS スタイル シート、音声、動画、画像、埋め込みフォントとスクリプトが含まれている。</p>
+<p>パッケージ ドキュメント自身を除いて、レンディションをレンダリングするために必要な出版物リソースはレンディションの<a href="epub-packages.html#sec-manifest-elem">マニフェスト</a> [[!Packages32]] に記載され、（<a href="#sec-resource-locations">出版物リソースの配置</a>で特に指定がない限り）<a>EPUB コンテナ</a>ファイルにバンドルする。</p>
+<p>出版物リソースでないリソースの例としては、パッケージ ドキュメントの <a href="epub-packages.html#sec-link-elem">link</a> [[!Packages32]] によって識別されるか（例えば [[!HTML]] <a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element"><code>a</code></a> 要素の <code>href</code> 属性など）<a>リモート リソース</a>を解決する外部へのハイパーリンクで識別されるものが含まれている。</p>
+</dd>
+<dt><dfn id="dfn-release-identifier" data-lt="リリース識別子">リリース識別子</dfn></dt>
+<dd>
+<p>公開識別子は <a>EPUB 出版物</a>の任意のインスタンスが、別のインスタンスに対して、それらが同一であるのか、異なる版なのか、または無関係なのかどうかを判断するために比較できるようにする。</p>
+<p>詳細については<a href="epub-packages.html#sec-metadata-elem-identifiers-pid">公開識別子</a> [[!Packages32]] を参照されたい。</p>
+</dd>
+<dt><dfn id="dfn-remote-resource" data-lt="リモート リソース|Remote Resource">リモート リソース</dfn></dt>
+<dd>
+<p>一般的に、オンラインである必要はないが、<a>EPUB コンテナ</a>の外部に配置するリソース</p>
+<p>リソース配置に関するメディア タイプの特定のルールは、<a href="#sec-resource-locations">出版物リソースの配置</a>を参照されたい。</p>
+</dd>
+<dt><dfn id="dfn-rendition" data-lt="レンディション">レンディション</dfn></dt>
+<dd>
+<p><a>EPUB パッケージ</a>で述べられているように、<a>EPUB 出版物</a>コンテンツのひとつのレンダリング。</p>
+</dd>
+<dt><dfn id="dfn-scripted-content-document" data-lt="スクリプト コンテンツ ドキュメント">スクリプト コンテンツ ドキュメント</dfn></dt>
+<dd>
+<p>スクリプトや [[!HTML]] <a href="https://www.w3.org/TR/html/sec-forms.html#sec-forms">forms</a> を持つ <a>XHTML コンテンツ ドキュメント</a>が含まれる <a>EPUB コンテンツ ドキュメント</a>。</p>
+<p>詳細については<a href="epub-contentdocs.html#sec-scripted-content">スクリプト</a> [[!ContentDocs32]] を参照されたい。</p>
+</dd>
+<dt><dfn id="dfn-spine" data-lt="スパイン">スパイン</dfn></dt>
+<dd>
+<p>EPUB 出版物の指定された<a>レンディション</a>の初期設定の読み上げ順序を表す<a>出版物リソース</a>、<a href="epub-packages.html#confreq-spine-itemtypes">一般的な EPUB コンテンツ ドキュメント</a> [[!Packages32]] の順序付きリスト。</p>
+<p>詳細については<a href="epub-packages.html#sec-spine-elem">スパイン</a> [[!Packages32]] を参照されたい。</p>
+</dd>
+<dt><dfn id="dfn-svg-content-document" data-lt="SVG コンテンツ ドキュメント">SVG コンテンツ ドキュメント</dfn></dt>
+<dd>
+<p><a href="epub-contentdocs.html#sec-svg">SVG コンテンツ ドキュメント</a> [[!ContentDocs32]] で表現された制約に準拠する、<a>EPUB コンテンツ ドキュメント</a>。</p>
+</dd>
+<dt><dfn id="dfn-synthetic-spread" data-lt="合成見開き">合成見開き</dfn></dt>
+<dd>
+<p>デバイスの画面上で同時に二つの隣接するページのレンダリング。</p>
+</dd>
+<dt><dfn id="dfn-text-to-speech">テキスト読み上げ</dfn>（TTS）</dt>
+<dd>
+<p>人工的な人間の発音で <a>EPUB 出版物</a>のテキストコンテンツのレンダリングは合成音声を用いる。</p>
+</dd>
+<dt><dfn id="dfn-top-level-content-document" data-lt="トップレベル コンテンツ ドキュメント|Top-level Content Document">トップレベル コンテンツ ドキュメント</dfn></dt>
+<dd>
+<p>直接か<a href="epub-packages.html#sec-foreign-restrictions-manifest">フォールバック チェーン</a> [[!Packages32]] を介して、<a>スパイン</a>から参照される <a>EPUB コンテンツ ドキュメント</a>。</p>
+</dd>
+<dt><dfn id="dfn-unique-identifier" data-lt="一意識別子">一意識別子</dfn></dt>
+<dd>
+<p><a href="epub-packages.html#attrdef-package-unique-identifier"><code>unique-identifier</code> 属性</a> [[!Packages32]]によって識別される一意識別子は <a>EPUB 出版物</a>のための主要な識別子である。一意識別子は、同じ EPUB 出版物のひとつ以上の<a>レンディション</a>によって共有が可能である。</p>
+<p>コンテンツの大幅な見直し、要訳などは新しい一意識別子が必要である。</p>
+</dd>
+<dt><dfn id="dfn-viewport" data-lt="ビューポート">ビューポート</dfn></dt>
+<dd>
+<p><a>EPUB 出版物</a>が視覚的に読者に与えられる <a>EPUB リーディング システム</a>の領域。</p>
+</dd>
+<dt><dfn id="dfn-xhtml-content-document" data-lt="XHTML コンテンツ ドキュメント">XHTML コンテンツ ドキュメント</dfn></dt>
+<dd>
+<p><a href="epub-contentdocs.html#sec-xhtml">XHTML コンテンツ ドキュメント</a> [[!ContentDocs32]] で定義されている [[!HTML]] のプロファイルに準拠する、<a>EPUB コンテンツ ドキュメント</a>。</p>
+<p>[[!HTML]] に定義された <a href="https://www.w3.org/TR/html/xhtml.html#xhtml">XHTML 構文</a>を使用する XHTML コンテンツ ドキュメント。</p>
+</dd>
+</dl>
 </section>
-
-<section id="itemSpecEPUB31" itemid="#itemSpecEPUB31" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#epub31-spec">
-<link itemprop="hasPart" href="#epub31-packages">
-<link itemprop="hasPart" href="#epub31-contentdocs">
-<link itemprop="hasPart" href="#epub31-mediaoverlays">
-<link itemprop="hasPart" href="#epub31-ocf">
-<link itemprop="hasPart" href="#AlternateStyleTags">
-
-<header class="itemtitle">
-
-<h2 itemprop="name">EPUB 3.1 仕様書</h2>
-
-</header>
-
-<article role="main" class="itemlist">
-
-<article id="epub31-spec" class="item" itemid="#epub31spec" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub31/">EPUB 3.1</a></h3>
-<p itemprop="description">EPUB 3.1 は、XML 及び Web 標準に基づいたデジタル出版物の交換および配信フォーマットである。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-08-22T00:00:00.000Z">2017年8月22日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-04-11T00:00:00.000Z">2016年4月11日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub31-20170125/">EPUB 3.1</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
-<article id="epub31-packages" class="item" itemid="#epub31-packages" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub-packages/">EPUB Packages 3.1</a></h3>
-<p itemprop="description">EPUB Packages 3.1 は、パッケージのセマンティクスと適合性要件を定義している。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-08-22T00:00:00.000Z">2017年8月22日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-03-14T00:00:00.000Z">2016年3月14日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-packages-20170125/">EPUB Packages 3.1</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
-<article id="epub31-contentdocs" class="item" itemid="#epub31-contentdocs" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub-contentdocs/">EPUB Content Documents 3.1</a></h3>
-<p itemprop="description">EPUB Content Documents 3.1 は、構造化され、構成可能及びアクセシブルなドキュメントの表現に最適化された HTML、SVG、CSS の使用方法を規定する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-12-25T00:00:00.000Z">2017年12月25日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-04-05T00:00:00.000Z">2016年4月5日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-contentdocs-20170125/">EPUB Content Documents 3.1</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
-<article id="epub31-mediaoverlays" class="item" itemid="#epub31-mediaoverlays" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub-mediaoverlays/">EPUB Media Overlays 3.1</a></h3>
-<p itemprop="description">EPUB Media Overlays 3.1 は、EPUB コンテンツ ドキュメントと同期したオーディオの表現のために、SMIL、パッケージ ドキュメント、CSS スタイルシート及び EPUB コンテンツ ドキュメントの使用法を指定する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-12-25T00:00:00.000Z">2017年12月25日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-06-13T00:00:00.000Z">2016年6月13日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-mediaoverlays-20170125/">EPUB Media Overlays 3.1</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
-<article id="accessibility" class="item" itemid="#epub31-ocf" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub-ocf/">EPUB Open Container Format (OCF) 3.1</a></h3>
-<p itemprop="description">EPUB Open Container Format (OCF) 3.1 は、単一のファイル コンテナに関連するリソースのセットをカプセル化するためのファイル フォーマットと処理モデルを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-09-11T00:00:00.000Z">2017年9月11日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-06-08T00:00:00.000Z">2016年6月8日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-ocf-20170125/">EPUB Open Container Format (OCF) 3.1</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
-<article id="AlternateStyleTags" class="item" itemid="#AlternateStyleTags" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/altss-tags/">Alternate Style Tags</a></h3>
-<p itemprop="description">Alternate Style Tags は、マイクロフォーマットを使用して代替スタイル シートにタグ付けするパターンを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-09-07T00:00:00.000Z">2017年9月7日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-07-06T00:00:00.000Z">2016年7月6日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-altss-tags-20170125/">Alternate Style Tags</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
-</article>
-
+<section id="conformance"></section>
 </section>
-
-<section id="itemSpecEpubRelated" itemid="#itemSpecEpubRelated" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#accessibility">
-<link itemprop="hasPart" href="#accessibility-techniques">
-<link itemprop="hasPart" href="#a11y-faq">
-<link itemprop="hasPart" href="#epub31-overview">
-<link itemprop="hasPart" href="#epub31-changes">
-<link itemprop="hasPart" href="#epub31-cfi">
-<link itemprop="hasPart" href="#epub-indexes">
-<link itemprop="hasPart" href="#previews">
-<link itemprop="hasPart" href="#vocab-package-roles-manifest">
-<link itemprop="hasPart" href="#cmt">
-
-<header class="itemtitle">
-
-<h2 itemprop="name">EPUB 関連文書</h2>
-
-</header>
-
-<article role="main" class="itemlist">
-
-<article id="accessibility" class="item" itemid="#accessibility" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/Submission/epub-a11y/">EPUB Accessibility</a></h3>
-<p itemprop="description">EPUB Accessibility は、EPUB 出版物の発見とコンテンツのアクセシビリティ要件を定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-08-10T00:00:00.000Z">2017年8月10日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-05-16T00:00:00.000Z">2016年5月16日</time></p>
-<p>翻訳底本：“<a href="https://www.w3.org/Submission/2017/SUBM-epub-a11y-20170125/">EPUB Accessibility</a>” (W3C Member Submission 25 January 2017)</p>
-</article>
-
-<article id="accessibility-techniques" class="item" itemid="#accessibility-techniques" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/a11y/techniques/techniques.html">EPUB Accessibility Techniques 1.0</a></h3>
-<p itemprop="description">EPUB Accessibility Techniques は、EPUB® 出版物のための EPUB Accessibility の発見とアクセシビリティ要件を満たす方法のガイドラインを提供する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2018-02-01T00:00:00.000Z">2018年2月1日</time>　
-公開日：<time itemprop="datePublished" datetime="2017-07-03T00:00:00.000Z">2017年7月3日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/a11y/techniques/techniques-20170105.html">EPUB Accessibility Techniques 1.0</a>” (IDPF Informational Document 5 January 2017)</p>
-</article>
-
-<article id="a11y-faq" class="item" itemid="#a11y-faq" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub-guides/a11y-faq/index.html">EPUB Accessibility Frequently Asked Questions</a></h3>
-<p itemprop="description">EPUB Accessibility Frequently Asked Questions は、このドキュメントは、EPUB アクセシビリティ仕様および関連するテクニクスに関する一般的なよくある質問に対する回答を提供する。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2019-01-07T00:00:00.000Z">2019年1月7日</time></p>
-<p>翻訳底本：“<a href="https://idpf.github.io/epub-guides/a11y-faq/">EPUB Accessibility Frequently Asked Questions</a>”</p>
-</article>
-
-<article id="epub31-overview" class="item" itemid="#epub31-overview" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-overview.html">EPUB 3.1 Overview</a></h3>
-<p itemprop="description">EPUB 3.1 Overview は、他の EPUB 3.1 文書に記述され、アクセシビリティ、メタデータ、そして多言語サポートを包含している横断的なコンテンツを再検討している EPUB 3.1 の全体の導入として役立つ。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-01-23T00:00:00.000Z">2017年1月23日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-03-14T00:00:00.000Z">2016年3月14日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/31/spec/epub-overview-20170105.html">EPUB 3 Overview</a>” (IDPF Informational Document 5 January 2017)</p>
-</article>
-
-<article id="epub31-changes" class="item" itemid="#epub31-changes" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-changes.html">EPUB 3.1 Changes from EPUB 3.0.1</a></h3>
-<p itemprop="description">EPUB 3.1 Changes from EPUB 3.0.1 は、XML と Web 規格に基づいたデジタル出版物の交換と配信フォーマットである EPUB の三度目の主な改定を定義する。このドキュメントは、以前にリリースした EPUB 3.0.1 から EPUB 3.1 での変更点を説明する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-01-23T00:00:00.000Z">2017年1月23日</time>　
-公開日：<time itemprop="datePublished" datetime="2016-04-04T00:00:00.000Z">2016年4月4日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/31/spec/epub-changes-20170105.html">EPUB 3.1 Changes from EPUB 3.0.1</a>” (IDPF Informational Document 5 January 2017)</p>
-</article>
-
-<article id="epub31-cfi" class="item" itemid="#epub31-cfi" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/31/epub-cfi.html">EPUB Canonical Fragment Identifiers 1.1</a></h3>
-<p itemprop="description">EPUB 出版物の適合性と発見の要件</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2017-02-23T00:00:00.000Z">2017年2月23日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/linking/cfi/epub-cfi-20170105.html">EPUB Canonical Fragment Identifiers 1.1</a>” (IDPF Recommended Specification 5 January 2017)</p>
-</article>
-
-<article id="epub-indexes" class="item" itemid="#epub-indexes" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub-indexes.xhtml">EPUB Indexes 1.0</a></h3>
-<p itemprop="description">EPUB Indexes 1.0 の目的は、すべての EPUB リーディングシステムでレンダリングされるインデックスを可能にする方法で、EPUB 出版物のインデックスの構造とコンテンツをエンコードの一貫性のある方法を定義し、仕様に準拠している EPUB リーディングシステム上で最適な方法で取り扱うことである。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2015-09-28T00:00:00+09:00">2015年9月28日</time>　
-公開日：<time itemprop="datePublished" datetime="2014-02-17T00:00:00+09:00">2014年2月17日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/idx/epub-indexes-20150826.html">EPUB Indexes 1.0</a>” (IDPF Recommended Specification 26 August 2015 )</p>
-</article>
-
-<article id="previews" class="item" itemid="#previews" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/previews.xhtml">EPUB Previews 1.0</a></h3>
-<p itemprop="description">EPUB Previews は、立ち読みコンテンツを、EPUB® 出版物に包含することができる方法について説明している。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2015-09-30T00:00:00+09:00">2015年9月30日</time>　
-公開日：<time itemprop="datePublished" datetime="2015-09-08T00:00:00+09:00">2015年9月8日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/previews/epub-previews-20150826.html">EPUB Previews 1.0</a>” (IDPF Recommended Specification 26 August 2015)</p>
-</article>
-
-<article id="vocab-package-roles-manifest" class="item" itemid="#vocab-package-roles-manifest" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab-package-roles-manifest.xhtml">EPUB Manifest Role</a></h3>
-<p itemprop="description">EPUB Manifest Role は、EPUB &#174; 出版物の collection [Publications301] の処理とレンダリングに必要なリソースのマニフェストを包含するための必要要件を定義する。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2015-01-30T00:00:00+09:00">2015年1月30日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/roles/manifest/manifest-20140423.html">EPUB Manifest Role</a>” (IDPF)</p>
-</article>
-
-<article id="cmt" class="item" itemid="#cmt" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/cmt/v3/index.html">EPUB 3 Core Media Types</a></h3>
-<p itemprop="description">EPUB 3 出版物のコア メディア タイプの一覧。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2017-08-07T00:00:00+09:00">2017年8月7日</time></p>
-<p>翻訳底本：“<a href="https://idpf.github.io/epub-cmt/v3/">EPUB 3 Core Media Types</a>” (IDPF)</p>
-</article>
-
-<article id="itemVocabulary" itemid="#itemVocabulary" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#vocab-package-a11y">
-<link itemprop="hasPart" href="#vocab-package-item">
-<link itemprop="hasPart" href="#vocab-package-meta">
-<link itemprop="hasPart" href="#vocab-package-link">
-<link itemprop="hasPart" href="#vocab-rendition">
-<link itemprop="hasPart" href="#vocab-itemref">
-<link itemprop="hasPart" href="#vocab-structure">
-<link itemprop="hasPart" href="#vocab-structure-magazine">
-<link itemprop="hasPart" href="#vocab-overlays">
-
-<header class="itemtitle">
-
-<h3 itemprop="name">語彙</h3>
-
-</header>
-
-<article id="vocab-package-a11y" class="item" itemid="#vocab-package-a11y" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab/package/a11y/index.html">EPUB Accessibility Vocabulary</a></h4>
-<p itemprop="description">EPUB Accessibility Vocabulary は、パッケージ ドキュメントで使用するアクセシビリティ セマンティクスを定義する。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2017-08-07T00:00:00.000Z">2017年8月7日</time></p>
-<p>翻訳底本：“<a href="https://idpf.github.io/epub-vocabs/package/a11y/">EPUB Accessibility Vocabulary</a>” (IDPF)</p>
-</article>
-
-<article id="vocab-package-item" class="item" itemid="#vocab-package-item" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Manifest Properties Vocabulary</h4>
-<p itemprop="description">EPUB Manifest Properties Vocabulary は、パッケージ ドキュメントの item 要素 property 属性で使用するプロパティを定義する。</p>
-</article>
-
-<article id="vocab-package-meta" class="item" itemid="#vocab-package-meta" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Meta Properties Vocabulary</h4>
-<p itemprop="description">EPUB Meta Properties Vocabulary は、パッケージ ドキュメントの meta 要素 property 属性で使用するプロパティを定義する。</p>
-</article>
-
-<article id="vocab-package-link" class="item" itemid="#vocab-package-link" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab-package-link-rel-vocab.xhtml">EPUB Link Relationships Vocabulary</a></h4>
-<p itemprop="description">EPUB Link Relationships Vocabulary は、EPUB&#174; Package Document の link 要素 rel 属性を利用するとき、リーディングシステムが認識するのに必要な関連する値のセットを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-03-31T00:00:00+09:00">2014年3月31日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-03-13T00:00:00+09:00">2012年3月13日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/link/rel-vocab-20131108.html">EPUB Link Relationships Vocabulary</a>” (IDPF)</p>
-</article>
-
-<article id="vocab-rendition" class="item" itemid="#vocab-rendition" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Package Rendering Vocabulary</h4>
-<p itemprop="description">EPUB Package Rendering Vocabulary は、EPUB 出版物のレイアウトとレンダリングを制御するプロパティを定義する。</p>
-</article>
-
-<article id="vocab-itemref" class="item" itemid="#vocab-itemref" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Spine Properties Vocabulary</h4>
-<p itemprop="description">EPUB Spine Properties Vocabulary は、パッケージ ドキュメントの itemref 要素 property 属性で使用するプロパティを定義する。</p>
-</article>
-
-<article id="vocab-structure" class="item" itemid="#vocab-structure" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab/structure/index.html">EPUB 3 Structural Semantics Vocabulary</a></h4>
-<p itemprop="description">EPUB 3 Structural Semantics Vocabulary は、EPUB コンテンツ ドキュメントの epub:type 属性で使用する構造的セマンティクスを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2017-08-03T00:00:00.000Z">2017年8月3日</time>　
-公開日：<time itemprop="datePublished" datetime="2013-11-08T00:00:00.000Z">2013年11月8日</time></p>
-<p>翻訳底本：“<a href="https://idpf.github.io/epub-vocabs/structure/">EPUB 3 Structural Semantics Vocabulary</a>” (IDPF)</p>
-</article>
-
-<article id="vocab-structure-magazine" class="item" itemid="#vocab-structure-magazine" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/epub301-epub-vocab-magazine.xhtml">EPUB 3 Magazine Navigation Vocabulary</a></h4>
-<p itemprop="description">EPUB 3 Magazine Navigation Vocabulary は、リージョンベースのナビゲーションで使用するセマンティクスを定義する。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2014-11-25T00:00:00+09:00">2014年11月25日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/magazine/epub-vocab-magazine-20141119.html">EPUB 3 Magazine Navigation Vocabulary</a>” (IDPF)</p>
-</article>
-
-<article id="vocab-overlays" class="item" itemid="#vocab-overlays" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">Media Overlays Vocabulary</h4>
-<p itemprop="description">Media Overlays Vocabulary は、パッケージ ドキュメントで使用するメディア オーバーレイに関連するプロパティを定義する。</p>
-</article>
-
-</article>
-
-<article id="itemPrefixes" itemid="#itemPrefixes" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#vocab-package-pfx-reserved">
-<link itemprop="hasPart" href="#vocab-structure-pfx-reserved">
-
-<header class="itemtitle">
-
-<h3 itemprop="name">接頭辞</h3>
-
-</header>
-
-<article id="vocab-package-pfx-reserved" class="item" itemid="#vocab-package-pfx-reserved" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab-package-pfx-reserved.xhtml">EPUB Publications Reserved Prefixes</a></h4>
-<p itemprop="description">EPUB Publications Reserved Prefixes は、EPUB&#174; Package Document のメタデータを使用するときに、リーディングシステムが認識するために必要な接頭辞のセットを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2015-07-07T00:00:00+09:00">2015年7月7日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-03-13T00:00:00+09:00">2012年3月13日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/pfx/reserved-20150702.html">EPUB Publications Reserved Prefixes</a>” (IDPF)</p>
-</article>
-
-<article id="vocab-structure-pfx-reserved" class="item" itemid="#vocab-structure-pfx-reserved" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab-structure-pfx-reserved.xhtml">EPUB Content Documents Reserved Prefixes</a></h4>
-<p itemprop="description">EPUB Content Documents Reserved Prefixes は、Content Document の EPUB&#174; epub:type 属性を使用するときに、リーディングシステムが認識するために必要な接頭辞のセットを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-11-25T00:00:00+09:00">2014年11月25日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-03-13T00:00:00+09:00">2012年3月13日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/structure/pfx/reserved-20141120.html">EPUB Content Documents Reserved Prefixes</a>” (IDPF)</p>
-</article>
-
-</article>
-
-<article id="itemExtensions" itemid="#itemExtensions" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#extensions-roles">
-<link itemprop="hasPart" href="#extensions-attributes">
-
-<header class="itemtitle">
-
-<h3 itemprop="name">拡張</h3>
-
-</header>
-
-<article id="extensions-roles" class="item" itemid="#extensions-roles" itemtype="http://schema.org/hasPart" itemscope="">
-
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/extensions-roles.xhtml">EPUB Collection Element Role Extensions</a></h4>
-<p itemprop="description">EPUB Collection Element Role Extensions は、EPUB Package Document の collection 要素のために定義されたカスタムロールを識別する。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2015-01-30T00:00:00+09:00">2015年1月30日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/extensions/roles/registry-20150127.html">EPUB Collection Element Role Extensions</a>” (IDPF)</p>
-</article>
-
-<article id="extensions-attributes" class="item" itemid="#extensions-attributes" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Custom Attribute Extensions for Content Documents</h4>
-<p itemprop="description">EPUB Custom Attribute Extensions for Content Documents は、EPUB コンテンツ ドキュメントで使用されるカスタム属性を定義する。</p>
-</article>
-
-</article>
-
-<article id="itemRegistries" itemid="#itemRegistries" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#registries-roles">
-<link itemprop="hasPart" href="#registries-identifiers">
-<link itemprop="hasPart" href="#registries-optimizations">
-<link itemprop="hasPart" href="#registries-types">
-<link itemprop="hasPart" href="#registries-authorities">
-
-<header class="itemtitle">
-
-<h3 itemprop="name">レジストリ</h3>
-
-</header>
-
-<article id="registries-roles" class="item" itemid="#registries-roles" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab-package-roles-registry.xhtml">EPUB Registry of Collection Roles</a></h4>
-<p itemprop="description">EPUB Registry of Collection Roles は、Package Document の collection 要素で使用するために IDPF が定義したすべての役割を掲載している。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2015-07-07T00:00:00+09:00">2015年7月7日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-03-13T00:00:00+09:00">2012年3月13日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/roles/registry-20150702.html">EPUB Registry of Collection Roles</a>” (IDPF)</p>
-</article>
-
-<article id="registries-identifiers" class="item" itemid="#registries-identifiers" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Identifier Schemes Registry</h4>
-<p itemprop="description">EPUB Identifier Schemes Registry は、Defines identifier schemes for the dc:identifier and dc:source elements.</p>
-</article>
-
-<article id="registries-optimizations" class="item" itemid="#registries-optimizations" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Optimized Publication Standards Registry</h4>
-<p itemprop="description">EPUB Optimized Publication Standards Registry は、Identifies standards that Optimized Publications conform to.</p>
-</article>
-
-<article id="registries-types" class="item" itemid="#registries-types" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name"><a itemprop="url" href="http://imagedrive.github.io/spec/vocab-package-types-registry.xhtml">EPUB Registry of Publication Types</a></h4>
-<p itemprop="description">EPUB Registry of Publication Types は、Package Document メタデータ内の dc:type 要素で使用するために IDPF で認められた型のセットを定義する。</p>
-<p>
-修正日：<time itemprop="dateModified" datetime="2014-12-22T00:00:00+09:00">2014年12月22日</time>　
-公開日：<time itemprop="datePublished" datetime="2012-03-13T00:00:00+09:00">2012年3月13日</time></p>
-<p>翻訳底本：“<a href="http://www.idpf.org/epub/vocab/package/types/registry-20141219.html">EPUB Registry of Publication Types</a>” (IDPF)</p>
-</article>
-
-<article id="registries-authorities" class="item" itemid="#registries-authorities" itemtype="http://schema.org/hasPart" itemscope="">
-<h4 itemprop="name">EPUB Subject Authorities Registry</h4>
-<p itemprop="description">EPUB Subject Authorities Registry は、Defines authorities for the dc:subject element.</p>
-</article>
-
-</article>
-
-</article>
-
+<section id="sec-epub-conf">
+<h1>適合性要件</h1>
+<section id="sec-epub-pub-conf">
+<h2>EPUB 出版物</h2>
+<p><a>EPUB 出版物</a>は、次の条件を全て満たさなければならない（MUST）。</p>
+<dl class="conformance-list">
+<dt id="sec-epub-package-conformance">パッケージ</dt>
+<dd>
+<p id="confreq-renditions">ひとつ以上の <a>EPUB パッケージ</a>を包含しなければならなず（MUST）、それぞれが [[!Packages32]] に定義された要件に適合しなければならない（MUST）。</p>
+</dd>
+<dt id="sec-epub-a11y">アクセシビリティ</dt>
+<dd>
+<p id="confreq-a11y">[[!EPUBAccessibility]] に定義されているアクセシビリティ要件に適合するべきである（SHOULD）。</p>
+</dd>
+<dt id="sec-epub-pub-conformance-all">出版物リソース</dt>
+<dd><p id="confreq-manifest">
+そこに含まれる全ての<a>出版物リソース</a>は、<a href="#sec-publication-resources">コア メディア タイプと管理外リソースの制約</a>に従い、<a href="#sec-resource-locations">出版物リソースの配置</a>ごとに配置しなければならない（MUST）。</p>
+</dd>
+<dt id="sec-epub-pub-conformance-container">コンテナ</dt>
+<dd><p id="confreq-ocf">[[!OCF32]] で定義されているように、それは <a>EPUB コンテナ</a>にパッケージ化しなければならない（MUST）。</p>
+</dd>
+</dl>
 </section>
-
-<section id="itemOther" itemid="#itemOther" itemtype="http://schema.org/hasPart" itemscope="">
-<link itemprop="hasPart" href="#uaag20">
-<link itemprop="hasPart" href="#uaag20-reference">
-
-<header class="itemtitle">
-<h2 itemprop="name">作業中・その他</h2>
-</header>
-
-<article role="main" class="itemlist">
-
-<article id="uaag20" class="item" itemid="#uaag20" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/TR/UAAG20/">User Agent Accessibility Guidelines (UAAG) 2.0</a></h3>
-<p itemprop="description">User Agent Accessibility Guidelines (UAAG) 2.0 は、ユーザー エージェントの開発者がアクセシビリティの障壁を低くするための要件を規定している。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2016-05-16T00:00:00.000Z">2017年11月21日</time></p>
-<p>翻訳底本：“<a href="http://www.w3.org/TR/2015/NOTE-UAAG20-20151215/">User Agent Accessibility Guidelines (UAAG) 2.0</a>” (W3C Working Group Note 15 December 2015)</p>
-</article>
-
-<article id="uaag20-reference" class="item" itemid="#uaag20-reference" itemtype="http://schema.org/hasPart" itemscope="">
-<h3 itemprop="name"><a itemprop="url" href="https://imagedrive.github.io/TR/UAAG20-Reference/">UAAG 2.0 Reference: Explanations, Examples, and Resources for User Agent Accessibility Guidelines 2.0</a></h3>
-<p itemprop="description">UAAG 2.0 Reference は、User Agent Accessibility Guidelines (UAAG) 2.0 のサポート情報を提供する。</p>
-<p>
-公開日：<time itemprop="datePublished" datetime="2016-05-16T00:00:00.000Z">2017年12月21日</time></p>
-<p>翻訳底本：“<a href="http://www.w3.org/TR/2015/NOTE-UAAG20-Reference-20151215/">UAAG 2.0 Reference: Explanations, Examples, and Resources for User Agent Accessibility Guidelines 2.0</a>” (W3C Working Group Note 15 December 2015)</p>
-</article>
-
-</article>
-
+<section id="sec-epub-rs-conf">
+<h2>EPUB リーディング システム</h2>
+<p><a>EPUB リーディング システム</a>は次の条件を全て満たさなければならない（MUST）。</p>
+<dl class="conformance-list">
+<dt id="sec-epub-rs-conf-epub3">EPUB 3 の処理</dt>
+<dd>
+<p id="confreq-rs-epub3-ocf">[[!OCF32]] で規定されているように <a>EPUB コンテナ</a>を処理しなければならない（MUST）。</p>
+<p id="confreq-rs-epub3-package">[[!Packages32]] で定義されているように、<a>EPUB パッケージ</a>を処理しなければならない（MUST）。</p>
+<p id="confreq-rs-foreign"><a>管理外リソース</a>タイプの任意のセットをサポートしてもよい（MAY）、そして<a href="#sec-foreign-restrictions">管理外リソース</a>で定義されているように、サポートされていない管理外リソースのためのフォールバックを処理しなければならない（MUST）。</p>
+<p id="confreq-rs-remote"><a href="#sec-resource-locations">リソース配置</a>で定義されているような、<a href="#dfn-remote-resource">リモート リソース</a>をサポートするべきである。</p>
+<p id="confreq-rs-epub3-xhtml"><a href="epub-contentdocs.html#sec-xhtml-conf-rs">XHTML コンテンツ ドキュメント - リーディング システムの適合性</a> [[!ContentDocs32]] で定義されている <a>XHTML コンテンツ ドキュメント</a>を処理しなければならない（MUST）。</p>
+<p id="confreq-rs-epub3-svg"><a href="epub-contentdocs.xhtml#sec-svg-rs-conf">SVG コンテンツ ドキュメント - リーディング システムの適合性</a> [[!ContentDocs32]] で定義されている <a>SVG コンテンツ ドキュメント</a>を処理しなければならない（MUST）。</p>
+<p id="confreq-rs-epub3-css"><a>ビューポート</a>を持つ場合、<a href="epub-contentdocs.html#sec-css-rs-conf">CSS スタイル シート - リーディング システムの適合性</a> [[!ContentDocs32]] で定義されている <a>XHTML コンテンツ ドキュメント</a>の視覚的なレンダリングをサポートしなければならない（MUST）。</p>
+<p id="confreq-rs-epub3-images">ビューポートを持つ場合、<a href="#cmt-grp-image">画像のコア メディア タイプ リソース</a>をサポートしなければならない（MUST）。</p>
+<p id="confreq-rs-epub3-mp3-aac">録音済みの音声をレンダリングする機能を持つ場合、<a href="#cmt-grp-audio">音声のコア メディア タイプ リソース</a>をサポートしなければならず（MUST）、メディア オーバーレイ [[!MediaOverlays32]] をサポートするべきである（SHOULD）。</p>
+<p id="confreq-rs-epub3-tts"><a>テキスト読み上げ</a>（TTS）のレンダリングをサポートしている場合、[[!CSS3Speech]] と <a>XHTML コンテンツ ドキュメント</a>の <a href="epub-contentdocs.html#sec-xhtml-ssml-attrib">SSML 属性</a> [[!ContentDocs32]] をサポートするべきである（SHOULD）。</p>
+<p class="note" id="note-video-codecs">リーディング システムは H.264 [[H264]] と VP8 [[RFC6386]] ビデオコーデックの少なくともひとつをサポートすることが望ましいが、これは適合要件ではなく、リーディング システムは他の動画コーデックをサポートするかもしれないが、全くしないかもしれない。どちらかの形式または両方の動画を包含もしくは実装するために選択を行う際に、製作者やリーディング システムの開発者は、採用の幅、ビデオの再生品質、および技術の使用のロイヤリティの要件のような要因を考慮することが必要である。</p>
+</dd>
+<dt id="sec-epub-rs-conf-a11y">アクセシビリティ</dt>
+<dd>
+<p id="confreq-rs-a11y">[[!EPUBAccessibility]] にあるリーディング システムのアクセシビリティ要件を満たすべきである（SHOULD）。</p>
+</dd>
+<dt id="sec-epub-rs-conf-backward">後方互換性</dt>
+<dd>
+<p id="confreq-rs-backward-epub">パッケージ ドキュメントの <code>version</code> 属性が、「<code>3.0</code>」に満たない EPUB 出版物における全ての指定されたレンディションの処理を試みなければならない（MUST）。</p>
+<p id="confreq-rs-backward-conf">古いバージョン番号の EPUB 出版物は、常に、それぞれの仕様に従って処理をしない限り、意図したような完全にレンダリングをしないだろう。リーディング システムは、この仕様で定義されているような EPUB 出版物をサポートするべきである（SHOULD）。</p>
+</dd>
+<dt id="sec-epub-rs-conf-forward">前方互換性</dt>
+<dd>
+<p id="confreq-rs-forward-epubn">パッケージ ドキュメントの <code>version</code> 属性がバージョン「<code>3.0</code>」以上のどんな EPUB 出版物の指定されたレンディションでも処理しようと試みるべきである（SHOULD）。</p>
+</dd>
+<dt id="sec-epub-rs-conf-xml">XML の処理</dt>
+<dd>
+<p id="confreq-rs-xml-nval"><a href="https://www.w3.org/TR/2008/REC-xml-20081126/#proc-types">適合性を検証しない処理</a> [[!XML]] でなければならない（MUST）。</p>
+<p id="confreq-rs-xml-ns">[[!XML-NAMES]] に定義されているような、<a href="https://www.w3.org/TR/2009/REC-XML-NAMES-20091208/#ProcessorConformance">適合性の処理</a>をしなければならない（MUST）。</p>
+<p id="confreq-rs-xml-base">[[!XMLBase]] に定義されているような、適合性の適用をしなければならない（MUST）。</p>
+</dd>
+</dl>
+<div class="note">
+<p>適合するリーディング システムは単一の専用プログラムまたはデバイスである必要はなく、分散システムとして存在するかもしれない。</p>
+</div>
 </section>
-
 </section>
-
-<footer role="contentinfo" id="footer">
-
-<p id="pageAuthor" itemid="#pageAuthor" itemscope="" itemtype="http://schema.org/Person">Translation of the specification and management of this page by <small itemprop="name">Wataru Yoshimura</small> (<span class="adr"><span class="country-name">JAPAN</span></span>)</p>
-
-</footer>
-
+<section id="sec-publication-resources">
+<h1>出版物リソース</h1>
+<section id="sec-core-media-types">
+<h2>コア メディア タイプ</h2>
+<section id="sec-cmt-intro">
+<h3>まえがき</h3>
+<p>一般的に、<a>EPUB 出版物</a>の各<a>レンディション</a>は、多くの<a>出版物リソース</a>から構成されている。それらのリソースは、二つのカテゴリーに分類される。それらは、フォールバックなし（<a>コア メディア タイプ リソース</a>）で包含できるものと、そうできないもの（<a>管理外リソース</a>）がある。</p>
+<p><a>製作者</a>は、EPUB 出版物を構成するためのリソースに両方のタイプを使用するのは自由だが、いくつかのリーディング システムは、使用する管理外リソースをレンダリングしないかもしれないことを知っておく必要がある。</p>
+<p>EPUB 出版物は、全ての適合するリーディング システムで完全に消費するために設計されており、従って、フォールバックのシステムは、管理外リソースの使用が、コンテンツを消費する読者の能力に影響を与えないことをを担保する必要性がある。このセクションは、<a href="#sec-cmt-supported">コア メディア タイプ リソースのセット</a>を掲載し、安全な導入容易性（consumability）要件を満たすために使用できる<a href="#sec-foreign-restrictions">フォールバック メカニズム</a>を示す。</p>
+</section>
+<section id="sec-cmt-supported">
+<h3>サポートされたメディア タイプ</h3>
+<p>コア メディア タイプの仕様に適合する<a>出版物リソース</a>は、<a>コア メディア タイプ リソース</a>であり、フォールバックなしに EPUB 出版物に含めることができる。次の MIME メディア タイプ [[!RFC2046]] 仕様に適合する<a>出版物リソース</a>は、フォールバックなしに EPUB 出版物に含めることができる。</p>
+<p>次の表の列は、次の情報を表している。</p>
+<ul>
+<li><p><strong>メディア タイプ</strong>&#8212;MIME メディア タイプ [[!RFC2046]] は、<a href="epub-packages.html#sec-manifest-elem">マニフェスト</a> [[!Packages32]]で、特定の出版物リソースを表すために使用される。</p>
+<p>複数のメディア タイプが掲載されている場合、最初のものが優先メディア タイプである。優先メディア タイプは、全ての新しい EPUB 出版物で強く推奨される。</p>
+</li>
+<li><strong>コンテンツ タイプの定義</strong>&#8212;特定のコア メディア タイプ リソースが適合しなければならない仕様。</li>
+<li><strong>適用</strong>&#8212;メディア タイプとコンテンツ タイプの定義に適用する出版物リソースのタイプ。</li>
+</ul>
+<table id="tbl-core-media-types">
+<thead>
+<tr>
+<th id="tbl-cmt-string">メディア タイプ</th>
+<th id="tbl-cmt-def">コンテンツ タイプの定義</th>
+<th id="tbl-cmt-appl">適用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th colspan="3" id="cmt-grp-image" class="tbl-group">画像</th>
+</tr>
+<tr>
+<td id="cmt-gif">
+<code>image/gif</code>
+</td>
+<td> [[!GIF]] </td>
+<td>GIF 画像</td>
+</tr>
+<tr>
+<td id="cmt-jpeg">
+<code>image/jpeg</code>
+</td>
+<td> [[!JPEG]] </td>
+<td>JPEG 画像</td>
+</tr>
+<tr>
+<td id="cmt-png">
+<code>image/png</code>
+</td>
+<td> [[!PNG]] </td>
+<td>PNG 画像</td>
+</tr>
+<tr>
+<td id="cmt-svg">
+<code>image/svg+xml</code>
+</td>
+<td>
+<a href="epub-contentdocs.html#sec-svg">SVG コンテンツ ドキュメント</a> [[!ContentDocs32]] </td>
+<td>SVG ドキュメント</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-audio" class="tbl-group">オーディオ</th>
+</tr>
+<tr>
+<td id="cmt-mp3">
+<code>audio/mpeg</code></td>
+<td> [[!MP3]] </td>
+<td>MP3 オーディオ</td>
+</tr>
+<tr>
+<td id="cmt-mp4-aac">
+<code>audio/mp4</code>
+</td>
+<td> [[!MPEG4-Audio]], [[!MP4]] </td>
+<td>MP4 コンテナを使用している AAC LC オーディオ</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-video" class="tbl-group">ビデオ</th>
+</tr>
+<tr>
+<td colspan="3" id="cmt-vide-note">EPUB 3 は、技術的にコア メディア タイプ リソースではないものの、フォールバックなしで包含された任意のビデオ コーデックを許可する。EPUB 出版物のビデオ コーデックのサポートに関する規定の推奨については、「<a href="#note-video-codecs">EPUB 出版物 — リーディング システムの適合性</a>」の注を参照されたい。</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-text" class="tbl-group">スタイル</th>
+</tr>
+<tr>
+<td id="cmt-css">
+<code>text/css</code>
+</td>
+<td>
+<a href="epub-contentdocs.html#sec-css">CSS スタイル シート</a> [[!ContentDocs]] </td>
+<td>CSS スタイル シート</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-font" class="tbl-group">フォント</th>
+</tr>
+<td colspan="3" id="cmt-font-note">EPUB 3 は、CSS がすでにフォントのフォールバック ルールを定義しているため、フォールバックなしで包含するために任意のフォントリソースを許可している。EPUB 出版物の<a href="epub-contentdocs.html#confreq-css-rs-fonts">サポート要件</a>は、EPUB コンテンツ ドキュメントを参照されたい。</td>
+</tr>
+<tr>
+<tr>
+<td id="cmt-sfnt">
+<code>font/ttf</code><br />
+<code>application/font-sfnt</code>
+</td>
+<td>[[!TrueType]] </td>
+<td>TrueType fonts</td>
+</tr>
+<tr>
+<td id="cmt-otf">
+<code>font/otf</code><br />
+<code>application/font-sfnt</code><br />
+<code>application/vnd.ms-opentype</code>
+</td>
+<td>[[!OpenType]]</td>
+<td>OpenType フォント</td>
+</tr>
+<tr>
+<td id="cmt-woff">
+<code>font/woff</code><br />
+<code>application/font-woff</code>
+</td>
+<td> [[!WOFF]] </td>
+<td>WOFF フォント</td>
+</tr>
+<tr>
+<td id="cmt-woff2">
+<code>font/woff2</code>
+</td>
+<td> [[!WOFF2]] </td>
+<td>WOFF2 フォント</td>
+</tr>
+<tr>
+<th colspan="3" id="cmt-grp-other" class="tbl-group">その他</th>
+</tr>
+<tr>
+<td id="cmt-xhtml">
+<code>application/xhtml+xml</code>
+</td>
+<td><a href="epub-contentdocs.html#sec-xhtml">XHTML コンテンツ ドキュメント</a> [[!ContentDocs32]] </td>
+<td><a href="https://www.w3.org/TR/html/xhtml.html#xhtml">XHTML 構文</a> [[!HTML]] を使用する <a href="#dfn-xhtml-content-document">XHTML コンテンツ ドキュメント</a>。</td>
+</tr>
+<tr>
+<td id="cmt-js">
+<code>application/javascript</code><br />
+<code>text/javascript</code>
+</td>
+<td> [[!RFC4329]] </td>
+<td>スクリプト</td>
+</tr>
+<tr>
+<td id="cmt-ncx">
+<code>application/x-dtbncx+xml</code>
+</td>
+<td> [[!OPF2]] </td>
+<td><a href="#legacy">レガシー</a> NCX</td>
+</tr>
+<tr>
+<td id="cmt-smil">
+<code>application/smil+xml</code>
+</td>
+<td> [[!MediaOverlays]] </td>
+<td>EPUB メディア オーバーレイ ドキュメント</td>
+</tr>
+<tr>
+<td id="cmt-pls">
+<code>application/pls+xml</code>
+</td>
+<td> [[!PRONUNCIATION-LEXICON]] </td>
+<td><a>テキスト読み上げ</a> (TTS) 発音語彙</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-foreign-restrictions">
+<h3>管理外リソース</h3>
+<p id="confreq-foreign-no-fallback">管理外リソースは、<a href="epub-packages.html#sec-itemref-elem">スパイン <code>itemref</code> 要素</a> [[!Packages32]] から参照されず、また、（例えば、[[!HTML]] <a class="ulink" href="https://www.w3.org/TR/html/dom.html#embedded-content">埋め込みコンテンツ</a>や [[!SVG]] <a href="https://www.w3.org/TR/SVG/struct.html#ImageElement"><code>image</code></a> と <a href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement"><code>foreignObject</code></a> 要素を介して）EPUB コンテンツ ドキュメントにネイティブ形式で直接レンダリングされていないとき、フォールバックなしに EPUB 出版物に包含されてもよい（MAY）。</p>
+<p class="note">この例外で、製作者は、<a>EPUB コンテナ</a>に、EPUB リーディング システムで使用されないリソースを包含することができる。この例外の主要なケースは、EPUB コンテンツ ドキュメントで構成されているスクリプトで使用されるか、外部アプリケーションで使用されるかに関係なく、EPUB 出版物と共に移動できるデータ ファイルを許可することである（例えば、科学ジャーナルは、EPUB コンテナから抽出する方法に関するインストラクションを含むデータ セットを包含できるなど）。</p>
+<p id="confreq-cmt"><a>管理外リソース</a>が、スパインに包含されるか、または、EPUB コンテンツ ドキュメントにネイティブ形式で直接レンダリングされるとき、フォールバックの<a>コア メディア タイプ リソース</a>は、包含されなければならない（MUST）。フォールバックは、次の二つのいずれかの形式を取る。</p>
+<ul>
+<li>
+<p>固有のフォールバック メカニズムは、（例えば、ひとつ以上のメディア タイプを提供したり、メディア タイプをレンダリングできないときに代替の埋め込まれたメッセージを表示する能力のように）フォーマットに基いて提供される。</p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-foreign-restrictions-manifest">マニフェスト フォールバック</a> [[!Packages32]]。</p>
+</li>
+</ul>
+<p>マニフェスト フォールバックは、コア メディア タイプ リソースへのフォールバック チェインを作る<a>パッケージ ドキュメント</a>の機能である。それらは、<a href="epub-packages.html#sec-spine-elem">スパイン</a> [[!Packages32]] 内と（例えば、[[!HTML]] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element"><code>img</code></a> 要素など）固有のフォールバック機能が利用できないとき、管理外リソースのフォールバックを作るために使用される。</p>
+<p>それらの要素が提供する固有のフォールバック機能については [[!HTML]] と [[!SVG]] 仕様を参照されたい。</p>
+</section>
+</section>
+<section id="sec-resource-locations">
+<h2>リソース配置</h2>
+<p>全ての<a>出版物リソース</a>は、次の例外を除いて<a>EPUB コンテナ</a>に配置しなければならない（MUST）。</p>
+<ul class="conformance-list">
+<li><p id="sec-resource-locations-audio"><a href="#cmt-grp-audio">音声リソース</a>は、EPUB コンテナの外部に配置されてもよい（MAY）。</p>
+</li>
+<li><p id="sec-resource-locations-video"><a href="#cmt-grp-video">動画リソース</a>は、EPUB コンテナの外部に配置されてもよい（MAY）。</p>
+</li>
+<li>
+<p id="sec-resource-locations-script">スクリプトによって読み出されるリソースは、EPUB コンテナの外部に配置されてもよいが（MAY）、[[!HTML]] と [[!SVG]] の <code>script</code> 要素は、（すなわち、個々に、それらの <code>src</code> または <code>href</code> 属性などで）実行時において利用できることを保証するために<a>リモート リソース</a>を参照してはならない（MUST NOT）。</p>
+</li>
+<li>
+<p id="sec-resource-locations-fonts"><a href="#cmt-grp-font">フォント リソース</a>は、EPUB コンテナの外部に配置されてもよい（MAY）。</p>
+</li>
+</ul>
+<aside class="example">
+<p>次の例は、EPUB コンテナの内部に配置されている <a>XHTML コンテンツ ドキュメント</a>の音声ファイルへの参照を示している。</p>
+<pre>&lt;audio src="audio/ch01.mp4" controls="controls"/&gt;</pre>
+</aside>
+<aside class="example">
+<p>次の例は、EPUB コンテナの外部に配置されている XHTML コンテンツ ドキュメントの音声ファイルへの参照を示している。</p>
+<pre>&lt;audio src="http://www.example.com/book/audio/ch01.mp4" controls="controls"/&gt;</pre>
+</aside>
+<div class="note">
+<p>製作者は、接続状態にかかわらずプレゼンテーション全体へ読者がアクセスできるよう可能な限り、EPUB コンテナ内部に音声や動画、スクリプトのリソースを配置することを推奨する。</p>
+</div>
+<div class="note">
+<p>出版物リソースの配置に対するこのセクションのルールは、指定されたリソースが<a>コア メディア タイプ リソース</a>または<a>管理外リソース</a>であるかどうか関係なく適用される。</p>
+</div>
+<div class="note">
+<p><a>EPUB 出版物</a>でリモート リソースの取り込みは、<a>マニフェスト</a> <a href="epub-packages.html#sec-item-elem"><code>item</code> 要素</a> [[Packages32]] の <a href="epub-packages.html#remote-resources"><code>remote-resources</code> プロパティ</a> を介して指示される。</p>
+</div>
+</section>
+<section id="sec-xml-constraints">
+<h2>XML 適合性</h2>
+<p>XML ベースのメディアタイプである全ての<a>出版物リソース</a>は、次の制約を満たさなければならない（MUST）：</p>
+<ul class="conformance-list">
+<li><p id="confreq-xml-wellformed"><a href="https://www.w3.org/TR/2009/REC-XML-NAMES-20091208/#Conformance">ドキュメントの適合性</a> [[!XML-NAMES]] で定義されている XML1.0 に準拠したドキュメントでなければならない（MUST）。</p>
+</li>
+<li><p id="confreq-xml-extmarkupdecl"><a href="https://www.w3.org/TR/2008/REC-xml-20081126/#NT-ExternalID">拡張識別子</a>は文書型宣言 [[!XML]] に現れてはならない（MUST NOT）。</p>
+</li>
+<li><p id="confreq-xml-xinc">XInclude [[!XInclude]] を利用してはならない（MUST NOT）。</p>
+</li>
+<li><p id="confreq-xml-enc">UTF-8 または UTF-16 [[!Unicode]] でエンコードしなければならない（MUST）。</p>
+</li>
+</ul>
+<p>特定の出版物リソースが、<a>コア メディア タイプ リソース</a>または<a>管理外リソース</a>であるか否かを問わず上記の制約はあてはまる。</p>
+</section>
+</section>
+<section class="appendix" id="sec-overview-unsupported">
+<h1>未対応の機能</h1>
+<p>この仕様と兄弟仕様は、もはや推奨されないか、又はレガシーをサポートする理由で残された。いくつかの機能を含む。このセクションは、こらの機能に付随する指示の意図及びその機能に対するサポートの期待を定義する。</p>
+<section id="deprecated">
+<h2>非推奨（deprecated）の機能</h2>
+<p><strong>非推奨（deprecated）</strong>の機能は、このバージョンの仕様での使用をもはや推奨されない機能のことである。非推奨（deprecated）の機能は、典型的に、リーディング システム及び/又はEPUB 出版物の使用において、限定的か全くサポートされない。機能が非推奨（deprecated）にマークされている場合、次が当てはまる。</p>
+<ul>
+<li><p><a>製作者</a>は、<a>EPUB 出版物</a>でこの機能を使用しないことを強く推奨する（RECOMMENDED）。</p></li>
+<li>
+<p><a>リーディング システム</a>は、機能をサポートしてもよい（MAY）。</p>
+<p class="note">開発者は、新しいサポートを追加する前に、非推奨（deprecated）の機能を含むコンテンツに遭遇する可能性は低いと見なすことを勧める。</p>
+</li>
+</ul>
+<p>適合性ツールは、EPUB 出版物で遭遇した場合、その機能の包含は非推奨であることを、製作者に警告するべきである（SHOULD）。</p>
+</section>
+<section id="legacy">
+<h2>レガシー機能</h2>
+<p><strong>レガシー</strong>機能は、3.0 より前のバージョンの EPUB と互換性のあるオーサリング コンテンツに対してのみ保持される機能である。機能がレガシーとしてマークされている場合、次のことが当てはまる。</p>
+<ul>
+<li><p><a>製作者</a>は、互換性の目的でレガシー機能を包含してもよい（MAY）。</p></li>
+<li><p><a>リーディング システム</a>は、この EPUB のバージョンに準拠するコンテンツのレガシー機能をサポートしてはならない（MUST NOT）。</p></li>
+</ul>
+<p>適合性ツールは、それらの包含は後方互換性として適合なので、<a>EPUB 出版物</a>にレガシー機能が存在することを、製作者に警告するべきではない（SHOULD NOT）。適合性ツールは、レガシー機能が、その定義に準拠していない、又は使用要件に違反する場合、製作者に警告するべきである（MUST）。</p>
+</section>
+</section>
+<section id="index" class="index informative">
+<h1>インデックス</h1>
+<p>このインデックスは、要素や属性、プロパティの定義を包含する EPUB 3 で定義されている主な概念を識別する。</p>
+<ul>
+<li id="idx-a11y">
+<p><a href="accessibility.html#sec-overview">アクセシビリティ</a> [[EPUBAccessibility]]</p>
+<ul>
+<li>
+<p><a href="accessibility.html#sec-access-pub">アクセシブルな出版物</a></p>
+</li>
+<li>
+<p><a href="accessibility.html#app-auth-consump">オーサリングと消費</a></p>
+</li>
+<li>
+<p><a href="accessibility.html#sec-discovery">発見のメタデータ</a></p>
+</li>
+<li>
+<p><a href="accessibility.html#sec-distribution">配信の懸念</a></p>
+</li>
+<li>
+<p><a href="accessibility.html#sec-opt-pubs">最適化された出版物</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-cmt">
+<p><a href="#sec-core-media-types">コア メディア タイプ リソース</a></p>
+<ul>
+<li>
+<p><a href="#sec-foreign-restrictions">管理外リソース</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-foreign-restrictions-manifest">マニフェスト フォールバック</a> [[Packages32]]</p>
+</li>
+<li>
+<p><a href="#sec-core-media-types">サポートされたメディア タイプ</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-core">
+<p><a href="#sec-intro-epub-specs">主要な仕様</a></p>
+</li>
+<li id="idx-css">
+<p><a href="epub-contentdocs.html#sec-css">CSS スタイル シート</a> [[ContentDocs32]]</p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#confreq-css-rs-support">CSS スナップショット サポート</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-css-prefixed">プリフィックス付きプロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-css-rs-overrides">リーディング システムの上書き</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-navdoc">
+<p><a href="epub-packages.html#sec-package-nav">EPUB ナビゲーション ドキュメント</a> [[Packages32]]</p>
+<ul>
+<li>
+<p><a href="epub-packages.html#sec-package-nav-def-types-other">カスタム nav 要素</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-package-nav-def-hidden">hidden 属性</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-nav-landmarks">landmarks nav 要素</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-package-nav-def-model">nav 要素の制約</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-nav-pagelist">page-list nav 要素</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-nav-toc">toc nav 要素</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-fxl">
+<p><a href="epub-packages.html#fxl-intro">固定レイアウト</a> [[Packages32]]</p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-fxl-html-svg-dimensions">コンテンツの寸法</a> [[ContentDocs32]]</p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-fxl-icb-svg">SVG 初期包含ブロック</a>（viewBox）</p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-fxl-icb-html">XHTML 初期包含ブロック</a>（viewport meta）</p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-package-metadata-fxl">パッケージ メタデータ</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#flayout">rendition:layout プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#orientation">rendition:orientation プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#page-spread">rendition:page-spread-center プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#page-spread">rendition:page-spread-left プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#page-spread">rendition:page-spread-right プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#spread">rendition:spread プロパティ</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-fxl-viewport">ビューポートのレンダリング</a> [[ContentDocs32]]</p>
+</li>
+</ul>
+</li>
+<li id="idx-mo">
+<p><a href="epub-mediaoverlays.html#sec-media-overlays-document-definition">メディア オーバーレイ ドキュメント</a> [[MediaOverlays32]]</p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-overlay-behaviors">基本的な再生の挙動</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-rsconf-rendering-audio">音声再生</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-rsconf-rendering-text">コンテンツのレンダリング</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-rsconf-timing-synch">タイミングと同期</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-escabaility">回避</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-behaviors-interaction">コンテンツ ドキュメントとのインタラクション</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-embedded-media">埋め込み音声と動画</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-rsconf-navigation">ナビゲーション</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-text-to-speech">テキスト読み上げの再生</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-behaviors-loading">読み込み</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-nav-doc">ナビゲーション ドキュメントの再生</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-docs-package">パッケージング</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-package-including">コンテンツ ドキュメントに加える</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-package-metadata">メタデータ</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#active-class">active-class プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#duration">duration プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#narrator">narrator プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#playback-active-class">playback-active-class プロパティ</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-media-overlays-granularity">再生の粒度</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-docs-relations">コンテンツ ドキュメントとの関係性</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-audio-video">埋め込みメディア</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-rsconf-navigation">ナビゲーション</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-tts">テキスト読み上げの再生</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-skippability">読み飛ばし</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-smil-elem">smil 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-body-elem">body 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-par-elem">par 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-audio-elem">audio 要素</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-text-elem">text 要素</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-body-elem">seq 要素</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-head-elem">head 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-smil-metadata-elem">metadata 要素</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-docs-semantic-inflection">セマンティクスの変化</a>（epub:type）</p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-media-overlays-structure">構造</a></p>
+</li>
+<li>
+<p><a href="epub-mediaoverlays.html#sec-docs-assoc-style">スタイリング</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-ocf-abstract">
+<p><a href="epub-ocf.html#sec-container-abstract">OCF 抽象コンテナ</a> [[OCF32]]</p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#sec-container-file-and-dir-structure">ファイルとディレクトリの構造</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-filenames">ファイル名の要件</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf">META-INF ディレクトリ</a></p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf-container.xml">container.xml ファイル</a></p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#elemdef-container-link">link 要素</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#elemdef-container-rootfile">rootfile 要素</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf-encryption.xml">encryption.xml ファイル</a></p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#elemdef-encryption-EncryptedData">EncryptedData 要素</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#elemdef-encryption-EncryptedKey">EncryptedKey 要素</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#elemdef-encryption-encryption">encryption 要素</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#encryption-obfuscation">難読化されたリソースの一覧</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-enc-compression">圧縮と暗号化の順序</a></p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#elemdef-enc-Compression">Compression 要素</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-ocf.html#encryption-restrictions">制限されたファイル</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf-manifest.xml">manifest.xml ファイル</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf-metadata.xml">metadata.xml ファイル</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf-rights.xml">rights.xml ファイル</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf-signatures.xml">signatures.xml ファイル</a></p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#sig-container">コンテナの署名</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sig-restrictions">署名の制約</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-container-iri">相対パスの参照</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-ocf-zip">
+<p><a href="epub-ocf.html#sec-container-zip">OCF ZIP コンテナ</a> [[OCF32]]</p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#sec-container-metainf-encryption.xml">暗号化</a></p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#encryption-restrictions">制限されたファイル</a></p>
+</li>
+</ul>
+<p></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-zip-container-mime">メディア タイプの識別</a>（mimetype）</p>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-resource-obfuscation">難読化</a>（フォント難読化）</p>
+<ul>
+<li>
+<p><a href="epub-ocf.html#obfus-algorithm">アルゴリズム</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#obfus-specifying">リソースの識別</a></p>
+</li>
+<li>
+<p><a href="epub-ocf.html#obfus-keygen">キー</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-ocf.html#sec-zip-container-zipreqs">ZIP 要件</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-pkg">
+<p><a href="epub-packages.html#sec-package-doc">パッケージ ドキュメント</a> [[Packages32]]</p>
+<ul>
+<li>
+<p><a href="epub-packages.html#sec-collection-elem">collection 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#elemdef-collection-link">リソースのリンク</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#elemdef-collection-metadata">メタデータ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-collection-role">役割</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-metadata-default-vocab">デフォルトの語彙</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-package-metadata-fxl">固定レイアウト プロパティ</a> — <a href="#idx-fxl">固定レイアウト</a>も見よ</p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-package-metadata-identifiers">識別子</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#sec-metadata-elem-identifiers-pid">公開識別子</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-metadata-elem-identifiers-uid">一意識別子</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-package-unique-identifier">unique-identifier 属性</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-package-metadata-rendering">layout プロパティ</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#align-x-center">rendition:align-x-center プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#flow">rendition:flow プロパティ</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-metadata-elem">metadata 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#core-metadata-reqs">主なメタデータの要件</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dcidentifier">dc:identifier 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#attrdef-identifier-scheme">identifier 要素</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dclanguage">dc:language 要素</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dctitle">dc:title 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#title-order">順序の重要性</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-metadata-elem-identifiers-pid">dcterms:modified プロパティ</a>（最終更新日）</p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dcmes-optional">ダブリン コアの省略可能な要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#sec-opf-dccontributor">貢献者</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dccreator">クリエイター</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dcdate">出版日</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dctype">出版物のタイプ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf-dcsubject">主題</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-link-elem">link 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#attrdef-link-rel">リンクの関連性</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#linked-res-manifest">マニフェストの要件</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-linked-records">リンクされたメタデータ レコード</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#linked-res-location">リソースの配置</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-meta-elem">meta 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#attrdef-meta-property">プロパティの表現</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-refines">refines 属性</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-scheme">値のスキーマ</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-manifest-elem">manifest 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#sec-item-elem">item 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#attrdef-item-fallback">フォールバック</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-item-media-overlay">メディア オーバーレイの関連付け</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-item-media-type">メディア タイプ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-item-properties">プロパティ</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#manifest-inclusion">リソースを包含する要件</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-opf2-ncx">NCX（legacy）</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-package-elem">package 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#attrdef-package-version">プリフィックスの宣言</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-package-version">バージョン番号</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-property-datatype">プロパティのデータ タイプ</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/prefixes/packages/">予約済みのプリフィックス</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-shared-attrs">共通の属性</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#sec-spine-elem">spine 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#sec-itemref-elem">itemref 要素</a></p>
+<ul>
+<li>
+<p><a href="epub-packages.html#attrdef-itemref-linear">直線性</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-itemref-idref">マニフェスト項目の参照</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-packages.html#attrdef-spine-page-progression-direction">ページの進行</a></p>
+</li>
+<li>
+<p><a href="epub-packages.html#spine-inclusion-req">リソースを包含する要件</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="idx-registries">
+<p><a href="http://www.idpf.org/epub/registries/">レジストリ</a></p>
+<ul>
+<li>
+<p><a href="http://www.idpf.org/epub/registries/roles/">Collection Roles</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/registries/identifiers/">Identifier Schemes</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/registries/optimizations/">Optimized Publication Standards</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/registries/types/">Publication Types</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/registries/authorities/">Subject Authorities</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-remote-res">
+<p><a href="#sec-resource-locations">リモート リソース</a></p>
+</li>
+<li id="idx-script">
+<p><a href="epub-contentdocs.html#sec-scripted-content">スクリプト</a> [[ContentDocs32]]</p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-scripted-context">コンテキスト</a>（コンテナ制約とスパイン レベル）</p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#app-epubReadingSystem">epubReadingSystem オブジェクト</a></p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#app-ers-desc">説明</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#app-ers-hasFeature">hasFeature メソッド</a></p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#app-ers-hasFeature-desc">説明</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#app-ers-hasFeature-features">機能</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#app-ers-idl">インターフェイスの定義</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#app-ers-properties">プロパティ</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-scripted-content-events">イベント モデル</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-scripted-content-security">セキュリティ</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-svg">
+<p><a href="epub-contentdocs.html#sec-svg">SVG コンテンツ ドキュメント</a> [[ContentDocs32]]</p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-svg-restrictions">制約</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-svg-semantic-inflection">セマンティクスの変化</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-overview-relations-svg">SVG バージョンの適合性</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-terminology">
+<p><a href="#sec-terminology">用語</a></p>
+</li>
+<li id="idx-vocabs">
+<p>語彙</p>
+<ul>
+<li>
+<p><a href="http://www.idpf.org/epub/vocab/package/a11y/">アクセシビリティ</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/vocab/package/link/">リンク</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/vocab/package/item/">マニフェスト プロパティ</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/vocab/overlays/">メディア オーバーレイのメタデータ</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/vocab/package/meta/">メタ プロパティ</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/vocab/rendition/">出版物のレンダリング</a>（rendition: properties）</p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/vocab/package/itemref/">スパイン プロパティ</a></p>
+</li>
+<li>
+<p><a href="http://www.idpf.org/epub/vocab/structure/">構造のセマンティクス</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-xhtml">
+<p><a href="epub-contentdocs.html#sec-xhtml">XHTML コンテンツ ドキュメント</a> [[ContentDocs32]]</p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-custom-attributes">カスタム属性</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-deviations-discouraged">推奨されない構成</a>（<code>rp</code> と <code>embed</code>）</p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-mathml">埋め込まれた MathML</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-svg">埋め込まれた SVG</a></p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-svg-css">CSS スタイルの適用</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-fallbacks">管理外リソースの制約</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-overview-relations-html">HTML バージョンの適合性</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-pls">発音辞書（PLS）</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-semantic-enrichment">RDFa とマイクロデータ</a>（セマンティクスの強化）</p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-semantic-inflection">セマンティクスの変化</a></p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-contentdocs-default-vocab">デフォルトの語彙</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-epub-type-attribute">epub:type 属性</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-contentdocs-prefix-attr">プリフィックスの宣言</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-contentdocs-reserved-prefixes">予約済みのプリフィックス</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-ssml-attrib">Speech Synthesis Markup Language（SSML）</a></p>
+<ul>
+<li>
+<p><a href="epub-contentdocs.html#sec-cd-ssml-ph-attrib">ssml:ph 属性</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-cd-ssml-alphabet-attrib">ssml:alphabet 属性</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-svg">SVG</a></p>
+</li>
+<li>
+<p><a href="epub-contentdocs.html#sec-xhtml-deviations-unicode">Unicode の制約</a></p>
+</li>
+</ul>
+</li>
+<li id="idx-xml">
+<p><a href="#sec-xml-constraints">XML 適合性</a></p>
+</li>
+</ul>
+</section>
+<div data-include="acknowledgements.html" data-oninclude="fixIncludes" data-include-replace="true"></div>
 </body>
 </html>
