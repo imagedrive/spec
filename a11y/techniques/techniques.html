@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
 <title>EPUB Accessibility Techniques 1.0 日本語訳</title>
 <link rel="stylesheet" type="text/css" href="../../css/epub-spec-2016.css"/>
@@ -17,7 +17,7 @@
 <dt>公開日:</dt>
 <dd>2017年7月3日</dd>
 <dt>修正日:</dt>
-<dd>2018年2月1日</dd>
+<dd>2020年2月28日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -73,7 +73,7 @@
 </ol>
 </li>
 <li><span class="chapter"><a href="#sec-about">2. 達成方法について</a></span></li>
-<li><span class="chapter"><a href="#sec-discovery">3. 発見のメタデータ達成方法</a></span><ol>
+<li><span class="chapter"><a href="#sec-discovery">3. 検出のメタデータ達成方法</a></span><ol>
 <li><span class="section"><a href="#meta-001">META-001: 主なアクセス モードを特定する</a></span></li>
 <li><span class="section"><a href="#meta-002">META-002: 十分なアクセス モードを特定する</a></span></li>
 <li><span class="section"><a href="#meta-003">META-003: アクセシビリティ機能を特定する</a></span></li>
@@ -156,7 +156,7 @@
 <section class="section" id="sec-purpose-scope">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-purpose-scope"> </a> </span>1.1 目的とスコープ</h2>
 <p class="informative">このセクションは規定ではない。</p>
-<p>このドキュメント、EPUB Accessibility Techniques は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB® 出版物</a>のための <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> 発見とアクセシビリティ要件を満たす方法のガイドラインを提供する。</p>
+<p>このドキュメント、EPUB Accessibility Techniques は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB® 出版物</a>の <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> 検出とアクセシビリティ要件を満たす方法のガイドラインを提供する。</p>
 <p>このドキュメントは、アプリケーションの本質的な違いが存在しない <a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> と <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> ですでに取り組まれているテクニックとベスト プラクティスはカバーしていない。</p>
 </section>
 <section class="section" id="sec-terminology">
@@ -286,7 +286,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <p>製作者がこれらや関連する達成方法でカバーできない問題に遭遇したとき、アクセシビリティ規格を満たす方法の指導を受けるために適切なコミュニティに対してこの問題の報告をすることが推奨される。<a class="ulink" href="https://www.w3.org/WAI/IG/" target="_top">W3C アクセシビリティ インタレスト グループ</a>は、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> と <a class="biblioref" href="#refARIA11" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">[<abbr class="abbrev">WAI-ARIA 1.1</abbr>]</a> の要件を話題にする問題のミーティングである公開メーリング リストを持っている。IDPF は、同様に、EPUB 関連の問題を話題にする<a class="ulink" href="http://idpf.org/forums/epub-accessibility" target="_top">アクセシビリティ フォーラム</a>を持っている。</p>
 </section>
 <section class="chapter" id="sec-discovery">
-<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-discovery"> </a> </span>3. 発見のメタデータ達成方法</h1>
+<h1 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-discovery"> </a> </span>3. 検出のメタデータ達成方法</h1>
 <section class="suppress-numbering" id="meta-001">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#meta-001"> </a> </span>META-001: 主なアクセス モードを特定する</h2>
 <p>アクセス モードは「人間の感覚知覚システムまたは認知能力を介して、ユーザーが、デジタル リソースのコンテンツを処理または知覚する」 <a class="biblioref" href="#refISO24751-3" title="ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: &#34;Access for all&#34; digital resource description">[<abbr class="abbrev">ISO24751-3</abbr>]</a> として定義された。例えば、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に画像と動画が含まれている場合、視覚は、作成されたとおりの完全なかたちでコンテンツを消費するために必要とされる。</p>
@@ -310,16 +310,16 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 </section>
 
 <section class="suppress-numbering" id="meta-002">
-<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#meta-002"> </a> </span>META-002: 十分なアクセス モードを特定する</h2>
-<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を消費するための十分なアクセス モードは、<a class="link" href="#meta-001" title="META-001: Identify primary access modes">基本的なアクセス モード</a>よりも潜在的なユーザビリティの広範な状況を表す。基本的なアクセス モードが、出版物で使用されているメディアのデフォルトの性質を識別する場合、十分なアクセス モードは、ユーザーが出版物全体を読むために必要なモードまたはモードのセットを識別する。十分なアクセス モードは、コンテンツがそのデフォルトの性質にかかわらず利用可能かどうかを判断することをユーザーに許可するため、提供されたアフォーダンスとアダプテーションを考慮する。</p>
-<p>十分なアクセス モードは、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <a class="ulink" href="https://schema.org/accessModeSufficient" target="_top"><code class="markup">accessModeSufficient</code> プロパティ</a>で識別される。十分なアクセス モードの各セットのためにプロパティを繰り返す。</p>
+<h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#meta-002"> </a> </span>META-002: 充足なアクセス モードを特定する</h2>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を消費するための充足なアクセス モードは、<a class="link" href="#meta-001" title="META-001: Identify primary access modes">基本的なアクセス モード</a>よりも潜在的なユーザビリティの広範な状況を表す。基本的なアクセス モードが、出版物で使用されているメディアのデフォルトの性質を識別する場合、充足なアクセス モードは、ユーザーが出版物全体を読むために必要なモードまたはモードのセットを識別する。充足なアクセス モードは、コンテンツがそのデフォルトの性質にかかわらず利用可能かどうかを判断することをユーザーに許可するため、提供されたアフォーダンスとアダプテーションを考慮する。</p>
+<p>充足なアクセス モードは、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <a class="ulink" href="https://schema.org/accessModeSufficient" target="_top"><code class="markup">accessModeSufficient</code> プロパティ</a>で識別される。充足なアクセス モードの各セットのためにプロパティを繰り返す。</p>
 <p>例えば、全ての画像のための説明だけでなく、グラフィックやチャートを含む EPUB 出版物も考慮する。出版物は、テキストと視覚コンテンツの両方を持ち、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、これを示すために次のメタデータのエントリを包含するだろう。</p>
 <div class="informalexample">
 <pre class="synopsis">&lt;meta property="schema:accessMode"&gt;textual&lt;/meta&gt;
 &lt;meta property="schema:accessMode"&gt;visual&lt;/meta&gt;</pre>
 </div>
-<p>このメタデータは、テキストのアクセス モードが出版物全体を読むのに十分であるかどうか、または視覚的なアクセス モードが、二つのモードのみがデフォルトで必要かどうかを明確にしていない。</p>
-<p>製作者が入力した十分なメタデータの最初のセットは、テキストと視覚の要件を確立するであろう。</p>
+<p>このメタデータは、テキストのアクセス モードが出版物全体を読むのに充足であるかどうか、または視覚的なアクセス モードが、二つのモードのみがデフォルトで必要かどうかを明確にしていない。この不一致が、充足性を知ることも重要である理由である。</p>
+<p>製作者が入力した充足なメタデータの最初のセットは、テキストと視覚の要件を確立するであろう。</p>
 <div class="informalexample">
 <pre class="synopsis">&lt;meta property="schema:accessModeSufficient"&gt;textual,visual&lt;/meta&gt;</pre>
 </div>
@@ -328,7 +328,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <div class="informalexample">
 <pre class="synopsis">&lt;meta property="schema:accessModeSufficient"&gt;textual&lt;/meta&gt;</pre>
 </div>
-<p>このメタデータがないと、ユーザーはテキストコンテンツを介してのみ出版物を読むことができるということを知らされないであろう。</p>
+<p>このメタデータがないと、ユーザーはテキスト コンテンツを介してのみ出版物を読むことができるということを知らされないであろう。</p>
 <p>この例におけるエントリの完全なセットは、以下のとおりである。</p>
 <div class="informalexample">
 <pre class="synopsis">&lt;meta property="schema:accessMode"&gt;textual&lt;/meta&gt;
@@ -337,11 +337,11 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 &lt;meta property="schema:accessModeSufficient"&gt;textual&lt;/meta&gt;
 </pre>
 </div>
-<p>アクセスの十分性は、多くの場合、情報はテキストを理解するために不可欠であるという理解に基づく、著者の主観的な判断であることに注意されたい。例えば、一部の情報損失は、動画を見ることができないことによって発生するが、製作者は、転写物が伝達された概念を理解するために全ての必要な情報を提供する場合、取るに足りないとして視覚的または聴覚的な損失を見なすかもしれない。</p>
+<p>アクセスの充足は、多くの場合、情報はテキストを理解するために不可欠であるという理解に基づく、著者の主観的な判断であることに注意されたい。例えば、一部の情報損失は、動画を見ることができないことによって発生するが、製作者は、転写物が伝達された概念を理解するために全ての必要な情報を提供する場合、取るに足りないとして視覚的または聴覚的な損失を見なすかもしれない。</p>
 <p>このプロパティと値に関する詳細な情報は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> に定義される <code class="markup"><a class="markup" href="https://schema.org/accessModeSufficient" target="_top">accessModeSufficient</a></code> を参照されたい。</p>
 <div class="note">
 <h3 class="title">note</h3>
-<p><a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> に定義されている <span class="property">accessModeSufficient</span> プロパティは、（例えば、値リストの定義と人間が可読可能な概要の包含など）EPUB 2 または 3 のパッケージ ドキュメントで表現できる以上の、より複雑な表現を可能にする。EPUB の将来のバージョンでは、より豊かなメタデータが可能になるかもしれないが、このセクションに示されている基本的な表現は、発見の目的には十分である。</p>
+<p><a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> に定義されている <span class="property">accessModeSufficient</span> プロパティは、（例えば、値リストの定義と人間が可読可能な概要の包含など）EPUB 2 又は EPUB 3 のパッケージ ドキュメントで表現できる以上の、より複雑な表現を可能にする。EPUB の将来のバージョンでは、より豊かなメタデータが可能になるかもしれないが、このセクションに示されている基本的な表現は、検出の目的には十分である。</p>
 </div>
 </section>
 <section class="suppress-numbering" id="meta-003">
@@ -354,7 +354,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <pre class="synopsis">&lt;meta property="schema:accessibilityFeature"&gt;MathML&lt;/meta&gt;
 &lt;meta property="schema:accessibilityFeature"&gt;alternativeText&lt;/meta&gt;</pre>
 </div>
-<p>EPUB フォーマットは、（例えば、目次など）いくつかのアクセシビリティ機能が常に存在ことが必要である。ユーザーは一般的に、フォーマットに組み込まれている機能が何であるか気づいていないので、アクセシビリティ メタデータからそれらの機能を除外しないよう。エントリの包含をしないと、ユーザーが特定の機能で検索をするとき、出版物の発見性は減少するだろう。</p>
+<p>EPUB フォーマットは、（例えば、目次など）いくつかのアクセシビリティ機能が常に存在ことが必要である。ユーザーは一般的に、フォーマットに組み込まれている機能が何であるか気づいていないので、アクセシビリティ メタデータからそれらの機能を除外してはならない。エントリの包含をしないと、ユーザーが特定の機能で検索をするとき、出版物の検出性は減少するだろう。</p>
 <p>このプロパティとその値に関する詳細情報は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> に定義される <code class="markup"><a class="markup" href="https://schema.org/accessibilityFeature" target="_top">accessibilityFeature</a></code> を参照されたい。</p>
 </section>
 
@@ -377,21 +377,21 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 </div>
 <p><a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、実際に物理的な影響を引き起こす可能性があるため、ユーザーに対してこれら危険性の全てを表現するリソースが、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>に含まれているかどうかを報告する必要がある。</p>
 <p>危険性は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> <a class="ulink" href="https://schema.org/accessibilityHazard" target="_top"><code class="markup">accessibilityHazard</code> プロパティ</a>で識別される。それぞれの危険性に対してこのプロパティを繰り返す。</p>
-<p>他のアクセシビリティ プロパティとは異なり、危険性の存在は、正と負の両方を表すことができる。この設計は、ユーザーが最も頻繁に、彼らに影響を与える危険性を取り除いたコンテンツの検索をするために決定されたが、彼らが発見する任意の出版物に存在する危険性が何であるかを知ることも望まれた。</p>
+<p>他のアクセシビリティ プロパティとは異なり、危険性の存在は、正と負の両方を表すことができる。この設計は、ユーザーが最も頻繁に、彼らに影響を与える危険性を取り除いたコンテンツの検索をするために決定されたが、彼らが検出する任意の出版物に存在する危険性が何であるかを知ることも望まれた。</p>
 <div class="informalexample">
 <p>次の例は、閃光の危険性を持つが、動作シミュレーションまたは音の危険性のない EPUB 3 出版物のメタデータのエントリを示している。</p>
 <pre class="synopsis">&lt;meta property="schema:accessibilityHazard"&gt;flashing&lt;/meta&gt;
 &lt;meta property="schema:accessibilityHazard"&gt;noMotionSimulationHazard&lt;/meta&gt;
 &lt;meta property="schema:accessibilityHazard"&gt;noSoundHazard&lt;/meta&gt;</pre>
 </div>
-<p>EPUB 出版物は、リスクが存在する可能性のある任意のコンテンツを含んでいないという理由で、危険性の報告を省略しないよう。メタデータが存在しないと、ユーザーは意味を推測することができない。値「<code class="markup">none</code>」は、それぞれの非危険性を繰り返す代わりに、使用することができる。</p>
+<p>EPUB 出版物は、リスクが存在する可能性のある任意のコンテンツを含んでいないという理由で、危険性の報告を省略してはならない。メタデータが存在しないと、ユーザーは意味を推測することができない。値「<code class="markup">none</code>」は、それぞれの非危険性を繰り返す代わりに、使用することができる。</p>
 <p>EPUB 出版物が危険性を含んでいる場合、<a class="link" href="#meta-005" title="META-005: Include an accessibility summary">アクセシビリティ サマリー</a>にあるソースと性質に関する追加情報を提供する。</p>
 <p>危険性を明確に決定できない場合、値「<code class="markup">unknown</code>」を報告されたい。</p>
 <p>このプロパティと値に関する詳細情報は、<a class="biblioref" href="#refSCHEMA-ORG" title="schema.org">[<abbr class="abbrev">schema.org</abbr>]</a> に定義される <code class="markup"><a class="markup" href="https://schema.org/accessibilityHazard" target="_top">accessibilityHazard</a></code> を参照されたい。</p>
 </section>
 <section class="suppress-numbering" id="meta-005">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#meta-005"> </a> </span>META-005: アクセシビリティ サマリーの包含</h2>
-<p>アクセシビリティ サマリーは、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のアクセシビリティ特性または不足を、簡素で人間が可読可能な説明で提供する。</p>
+<p>アクセシビリティ サマリーは、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のアクセシビリティ特性又は不足を、簡素で人間が可読可能な説明で提供する。</p>
 
 <p>EPUB 出版物が <a class="biblioref" href="#refA11Y" title="EPUB Accessibility">[<abbr class="abbrev">EPUB Accessibility</abbr>]</a> にあるコンテンツのアクセシビリティ要件を満たしていない場合、その不足の理由を要約に書き留めるべきである。</p>
 
@@ -434,7 +434,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 </section>
 <section class="suppress-numbering" id="meta-007">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#meta-007"> </a> </span>META-007: 入力コントロール方法を特定する</h2>
-<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を読む誰もが、同じ入力のコントロール方法を使用しているわけではない。（例えば、モバイルやデスクトップなど）入力方法に影響のあるデバイスかもしれないし、ユーザーの物理的な能力かもしれない。ユーザーは、タッチ、マウス、キーボード、音声コントロールが提供している入力方法の全てを使用するかもしれない。</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>を読む誰もが、同じ入力コントロール方法を使用しているわけではない。（例えば、モバイルやデスクトップなど）入力方法に影響のあるデバイスかもしれないし、ユーザーの物理的な能力かもしれない。ユーザーは、タッチ、マウス、キーボード、音声コントロールが提供している入力方法の全てを使用するかもしれない。</p>
 
 <p>結果として、全てのユーザーは、コンテンツが操作できるかどうかだけでなくどのデバイス上で影響を与えるかについて、入力コントロールがコンテンツにおいて動作するかを知る必要がある。</p>
 
@@ -507,9 +507,9 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-general"> </a> </span>4.1 一般的なガイダンス</h2>
 <p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> の要件を満たすための達成方法は、<a class="biblioref" href="#refWCAG20Tech" title="Techniques for WCAG 2.0.">[<abbr class="abbrev">WCAG 2.0 Techniques</abbr>]</a> に定義されている。このドキュメントは、これら達成方法を繰り返さない。</p>
 
-<p>一般的に、Web ページ上の WCAG 達成方法の適用と <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>への適用の違いは最小限だが、次のセクションでは、いくつかの重要な相違について説明する。</p>
+<p>一般的に、ウェブ ページ上の WCAG 達成方法の適用と <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>への適用の違いは最小限だが、次のセクションでは、いくつかの重要な相違について説明する。</p>
 
-<p>WCAG 達成方法は、一般的に <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>で発見される以上の技術とコンテンツ タイプの広大な範囲をカバーするので、多くを適用できないことが注意点である。</p>
+<p>WCAG 達成方法は、一般的に <a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>で検出される以上の技術とコンテンツ タイプの広大な範囲をカバーするので、多くを適用できないことが注意点である。</p>
 
 <p>次の達成方法のセットは、EPUB コンテンツ ドキュメントへ最大限に適応可能である。</p>
 
@@ -553,7 +553,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
-<p><a class="ulink" href="http://www.idpf.org/accessibility/guidelines/" target="_top">EPUB 3 Accessibility Guidelines</a> — 適用可能な WCAG 達成方法へのリンクのある、コンテンツ タイプごとのベストプラクティスの概要。</p>
+<p><a class="ulink" href="http://www.idpf.org/accessibility/guidelines/" target="_top">EPUB 3 Accessibility Guidelines</a> — 適用可能な WCAG 達成方法へのリンクのある、コンテンツ タイプごとのベスト プラクティスの概要。</p>
 </li>
 <li class="listitem">
 <p><a class="ulink" href="https://www.bisg.org/publications/bisg-quick-start-guide-accessible-publishing" target="_top">BISG Quickstart Guide to Accessible Publishing</a> — コンテンツをアクセシブルに制作するための最高のプラクティスを包含する。</p>
@@ -567,9 +567,9 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-content-access"> </a> </span>4.2 コンテンツ アクセス</h2>
 <section class="suppress-numbering" id="access-001">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#access-001"> </a> </span>ACCESS-001: 出版物の線型な読む順序を保証する</h3>
-<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence" target="_top">達成基準 1.3.2</a> は、各 Web ページに意味のある順序が存在することを指定しているが、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のコンテンツは、典型的に複数のドキュメントに及ぶ。それ故に、各 <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>だけでなく、ドキュメントからドキュメントの順序も意味があることが重要である。</p>
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence" target="_top">達成基準 1.3.2</a> は、各ウェブ ページに意味のある順序が存在することを指定しているが、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>のコンテンツは、典型的に複数のドキュメントに及ぶ。それ故に、各 <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>だけでなく、ドキュメントからドキュメントの順序も意味があることが重要である。</p>
 
-<p><a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、全ての EPUB コンテンツ ドキュメントが<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">スパイン</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages</abbr>]</a> に包含されており、読む順序が維持されるよう順番に置くことを保証する必要がある。</p>
+<p><a class="glossterm" href="#gloss-author" title="Author">製作者</a>は、全ての EPUB コンテンツ ドキュメントが<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">スパイン</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages</abbr>]</a> に包含されており、読み取り順序が維持されるよう順番に置くことを保証する必要がある。</p>
 
 <div class="informalexample">
 <p>次の例は、EPUB のスパインにおいて、参照している章が線形に進行することを示している。</p>
@@ -608,11 +608,11 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 
 <section class="suppress-numbering" id="access-002">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#access-002"> </a> </span>ACCESS-002: コンテンツにアクセスする複数の方法を提供する</h3>
-<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-mult-loc" target="_top">達成基準 2.4.5</a> は、Web ページのセット内の Web ページを見つけるために、複数の方法が存在することを要求している。デフォルトでは、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>が<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">スパインに全ての EPUB コンテンツ ドキュメントを包含</a>し、<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-itemref-elem" target="_top">全ての非線型ドキュメントへのアクセスを保証する</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages</abbr>]</a> EPUB 要件に従うのであれば、このWCAG 要件を満たす。</p>
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-mult-loc" target="_top">達成基準 2.4.5</a> は、ウェブ ページのセット内のウェブ ページを見つけるために、複数の方法が存在することを要求している。デフォルトでは、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>は、<a class="glossterm" href="#gloss-author" title="Author">製作者</a>が<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">スパインに全ての EPUB コンテンツ ドキュメントを包含</a>し、<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-itemref-elem" target="_top">全ての非線型ドキュメントへのアクセスを保証する</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages</abbr>]</a> EPUB 要件に従うのであれば、このWCAG 要件を満たす。</p>
 <p>EPUB 出版物がこれらの要件を満たす理由は、ユーザーが EPUB 出版物内のドキュメントのセットとインタラクトする方法の違いに関係している。具体的に言うと、典型的に EPUB 出版物は、多くの<a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">コンテンツ ドキュメント</a>で構成されているが、<a class="glossterm" href="#gloss-reading-system" title="Reading System">リーディング システム</a>は、それらが<a class="ulink" href="http://www.idpf.org/epub3/latest/packages#sec-spine-elem" target="_top">スパイン</a> <a class="biblioref" href="#refPackagesLatest" title="EPUB Packages 3">[<abbr class="abbrev">Packages</abbr>]</a> に記載されているならば、自動的にあるドキュメントから次へとシームレスに移動するユーザーのための機能を提供する。ユーザーのために、EPUB 出版物は、進むためにリンクが必要な分離されたページのセットはなく、完全なアクセスを持つ単一のドキュメントである。</p>
 <p>必須である目次は、出版物の主な見出しにアクセスするための第二の方法を提供する。ユーザーは、出版物がどのように分割されているかにかかわらず、任意の見出しにジャンプし、そこから移動を続けることができる。</p>
 <p>従って、これら二つの要件を守ることにより、コンテンツにアクセスする複数の方法の必要性を満たす。典型的に、リーディング システムは、製作者が提供できない検索機能もまた提供し、そのようにして、ユーザーは多く場合、利用可能な第三の選択肢をも持つ。</p>
-<p>製作者はこの基準を満たすためだけに、EPUB 要件に従う必要があるが、それらは最低限以上のアクセスを向上するための追加の方法を提供することが推奨される。いくつかの提案は、</p>
+<p>製作者はこの基準を満たすためだけに、EPUB 要件に従う必要があるが、それらは最低限以上のアクセスを向上するための追加の方法を提供することが推奨される。いくつかの提案は、次を包含する。</p>
 <div class="itemizedlist">
 <ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem">
@@ -622,11 +622,10 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <p>主要なトピックスを検索するインデックスを追加し、</p>
 </li>
 <li class="listitem">
-<p>（例えば、図表のリストなど）<a class="glossterm" href="#gloss-nav-doc" title="EPUB Navigation Document">EPUB ナビゲーション ドキュメント</a>を支援するナビゲーションの追加、</p>
+<p>（例えば、図表のリストなど）<a class="glossterm" href="#gloss-nav-doc" title="EPUB Navigation Document">EPUB ナビゲーション ドキュメント</a>を支援するナビゲーションを追加する。</p>
 </li>
 </ul>
 </div>
-<p>を包含する。</p>
 <section class="suppress-numbering" id="sec-access-002-toc">
 <h4 class="title"><span class="link-marker"><a class="hidden-reveal" href="#sec-access-002-toc"> </a> </span>目次に関する注記</h4>
 <p>EPUB の目次に関するよくある質問は、出版物の見出しに関してどのような完全性が必要かということである。全てのセクションの全ての見出しを単純に集約するべきなのが明白な答えではあるが、実質的に、このアプローチにはユーザービリティ上の課題がいくつかある。</p>
@@ -722,7 +721,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
    …
 &lt;/section&gt;</pre>
 </div>
-<p>これは大規模なコンテンツ ファイルの原因となるので、部の見出しは、それ自身のページとして表示されるように、それ自身のコンテンツ ドキュメント内で、典型的に分割される。</p>
+<p>これは肥大したコンテンツ ファイルの原因となるので、部の見出しは、それ自身のページとして表示されるように、それ自身のコンテンツ ドキュメント内で、典型的に分割される。</p>
 <div class="informalexample">
 <pre class="synopsis">&lt;html … &gt;
    …
@@ -834,7 +833,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#sec-wcag-titles"> </a> </span>4.4 タイトルと見出し</h2>
 <section class="suppress-numbering" id="titles-001">
 <h3 class="title"><span class="link-marker"><a class="hidden-reveal" href="#titles-001"> </a> </span>TITLES-001: 出版物とドキュメントのタイトルを包含する</h3>
-<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title" target="_top">達成基準 2.4.2</a> は、各 Web ページにタイトルが包含することを要求している。同様に EPUB は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>の要件があり、出版物は、<a class="glossterm" href="#gloss-package-doc" title="Package Document">パッケージ ドキュメント</a>のメタデータに <a class="biblioref" href="#refDCMES" title="Dublin Core Metadata Element Set, Version 1.1">[<abbr class="abbrev">DCMES</abbr>]</a> <code class="markup">title</code> 要素が必要である。しかしながら、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> 要件は、EPUB 要件では満たされない。</p>
+<p><a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> <a class="ulink" href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title" target="_top">達成基準 2.4.2</a> は、各ウェブ ページにタイトルの包含を要求している。同様に EPUB は、<a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>の要件があり、出版物は、<a class="glossterm" href="#gloss-package-doc" title="Package Document">パッケージ ドキュメント</a>のメタデータに <a class="biblioref" href="#refDCMES" title="Dublin Core Metadata Element Set, Version 1.1">[<abbr class="abbrev">DCMES</abbr>]</a> <code class="markup">title</code> 要素が必要である。しかしながら、<a class="biblioref" href="#refWCAG20" title="Web Content Accessibility Guidelines (WCAG) 2.0">[<abbr class="abbrev">WCAG 2.0</abbr>]</a> 要件は、EPUB 要件では満たされない。</p>
 <p>EPUB 出版をオーサリングする場合、各 <a class="glossterm" href="#gloss-content-doc" title="EPUB Content Document">EPUB コンテンツ ドキュメント</a>には、そのコンテンツに記述する説明的なタイトルも必要である。提供されていない場合、<a class="glossterm" href="#gloss-at" title="Assistive Technology">支援技術</a>は大抵、ファイル名をユーザーに通知する。</p>
 <div class="informalexample">
 <p>次の例は、EPUB コンテンツ ドキュメントのタイトルを示している。</p>
@@ -1095,7 +1094,7 @@ EPUB コンテンツ ドキュメントの定義のひとつに適合するド�
 
 <section class="suppress-numbering" id="dist-002">
 <h2 class="title" style="clear: both"><span class="link-marker"><a class="hidden-reveal" href="#dist-002"> </a> </span>DIST-002: 配信レコードにアクセシビリティ メタデータを包含する</h2>
-<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>が、書店や図書館などの配信システムに取り込まれる場合、メタデータ レコードは、しばしば、配信業者へ別々に提供される。このシナリオにおいては、出版物の発見可能にするために使用されるメタデータは、通常、パッケージ ドキュメントのメタデータからではなく、配信レコードのみから取得される。</p>
+<p><a class="glossterm" href="#gloss-epub-publication" title="EPUB Publication">EPUB 出版物</a>が、書店や図書館などの配信システムに取り込まれる場合、メタデータ レコードは、しばしば、配信業者へ別々に提供される。このシナリオにおいては、出版物の検出可能にするために使用されるメタデータは、通常、パッケージ ドキュメントのメタデータからではなく、配信レコードのみから取得される。</p>
 <p>その結果、語彙が許す限り、配信レコードに多くのアクセシビリティ メタデータを包含する必要がある。</p>
 
 <div class="note">
