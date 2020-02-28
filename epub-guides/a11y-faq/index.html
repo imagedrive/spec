@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>EPUB Accessibility Frequently Asked Questions（日本語訳版）</title>
+<title>EPUB Accessibility Frequently Asked Questions 日本語訳</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" type="text/css" href="../../css/epub-spec-2016.css" />
 <style type="text/css">
@@ -29,7 +29,9 @@
 <p>この日本語訳は参考である。公式な文書ではなく、翻訳・解釈の正確性を保証していない。</p>
 <dl>
 <dt>公開日:</dt>
-<dd>2019-1-7</dd>
+<dd>2019年1月7日</dd>
+<dt>修正日:</dt>
+<dd>2020年2月28日</dd>
 <dt>翻訳者:</dt>
 <dd>Wataru Yoshimura</dd>
 </dl>
@@ -58,11 +60,11 @@
 <li><span class="section"><a href="#sec-general-epub-version">2.1 この仕様はどのバージョンの EPUB に適用されますか？</a></span></li>
 </ol>
 </li>
-<li><span class="section"><a href="#sec-disc">3. 発見のメタデータ</a></span>
+<li><span class="section"><a href="#sec-disc">3. 検出のメタデータ</a></span>
 <ol>
 <li><span class="section"><a href="#sec-disc-schema">3.1 なぜ schema.org メタデータが選択されたのか？</a></span></li>
-<li><span class="section"><a href="#sec-disc-onix">3.2 なぜ ONIX は、発見のメタデータに必要ないのか？</a></span></li>
-<li><span class="section"><a href="#sec-disc-publicize">3.3 私の発見可能な出版物をアクセシブルと呼ぶことはできますか？</a></span></li>
+<li><span class="section"><a href="#sec-disc-onix">3.2 なぜ ONIX は、検出のメタデータに必要ないのか？</a></span></li>
+<li><span class="section"><a href="#sec-disc-publicize">3.3 私の検出可能な出版物をアクセシブルと呼ぶことはできますか？</a></span></li>
 </ol>
 </li>
 <li><span class="section"><a href="#sec-a11y">4. アクセシビリティの適合性</a></span>
@@ -107,7 +109,7 @@
 </section>
 </section>
 <section id="sec-disc" class="chapter">
-<h1 class="title">3. 発見のメタデータ</h1>
+<h1 class="title">3. 検出のメタデータ</h1>
 
 <section id="sec-disc-schema" class="section">
 <h2 class="title">3.1 なぜ schema.org メタデータが選択されたのか？</h2>
@@ -116,16 +118,16 @@
 </section>
 
 <section id="sec-disc-onix" class="section">
-<h2 class="title">3.2 なぜ ONIX は、発見のメタデータに必要ないのか？</h2>
+<h2 class="title">3.2 なぜ ONIX は、検出のメタデータに必要ないのか？</h2>
 <p>ONIX は、電子書籍の流通チャンネルにおける重要なメタデータであるものの、EPUB 出版物は、本である必要はなく、主要な電子書籍チャンネルを介して流通されている。ONIX レコードの包含を全ての EPUB コンテンツの製作者に要求すると、制作が複雑になり、アクセシビリティ メタデータを包含することから製作者を遠ざけるかもしれない。ONIX レコードを作成および編集できるオーサリング ツールと情報を取得するためにレコードを解析するリーディング システムが必要になるであろう。既存のエコシステムへの影響を最小限にし、メタデータを常に容易に検索できる方法で利用できるようにするため、schema.org メタデータが選択された。</p>
 <p>パッケージ ドキュメントで schema.org メタデータを選択しても、ONIX レコードのリッチなアクセシビリティ メタデータの必要性は損なわれるものではなく、これらは、EPUB 出版物に添付する全ての配信レコードにアクセシビリティ メタデータを包含するための要件である。</p>
 <p>アクセシビリティ グループは、同様の情報を、フォーマットを横断してエンコードできるように、将来の目標として、これらのアクセシビリティ語彙に調和するために様々なメタデータ機関に働き掛けることを予定している。</p>
 </section>
 
 <section id="sec-disc-publicize" class="section">
-<h2 class="title">3.3 私の発見可能な出版物をアクセシブルと呼ぶことはできますか？</h2>
-<p>あなたの出版物が、発見可能性のメタデータのみを包含している場合（つまり、アクセシビリティ要件を満たさず、最適化ではない）、それは、この仕様を通じてアクセシブルであると宣伝してはならない。</p>
-<p>発見の要件を満たすことで、読者は、コンテンツを自分で利用できるかどうかを判断できるが、それ自体は認識しておく必要がある成果ではない。</p>
+<h2 class="title">3.3 私の検出可能な出版物をアクセシブルと呼ぶことはできますか？</h2>
+<p>あなたの出版物が、検出可能性のメタデータのみを包含している場合（つまり、アクセシビリティ要件を満たさず、最適化ではない）、それは、この仕様を通じてアクセシブルであると宣伝してはならない。</p>
+<p>検出の要件を満たすことで、読者は、コンテンツを自分で利用できるかどうかを判断できるが、それ自体は認識しておく必要がある成果ではない。</p>
 </section>
 </section>
 <section id="sec-a11y" class="chapter">
@@ -133,10 +135,10 @@
 
 <section id="sec-a11y-meeting" class="section">
 <h2 class="title">4.1 これら全ての要件を満たすことができない場合はどうなりますか？</h2>
-<p>製造方法を変えることは決して容易ではないが、達成を開始するために満たす明確なベンチマークも必要である。EPUB ワーキング グループは、これらの要件を満たす能力は、製作されたコンテンツの性質と、それがどのように作られたかによって変わると理解している。</p>
+<p>製造方法を変えることは決して簡単ではないが、達成を開始するために満たす明確なベンチマークも必要である。EPUB ワーキング グループは、これらの要件を満たす能力は、製作されたコンテンツの性質と、それがどのように作られたかによって変わると理解している。</p>
 <p>ワーキング グループはまた、コンテンツのユーザビリティを損なうことなく、できるだけ行動を緩和する仕様もまた計画された。例えば、仕様は、多くの規制の枠組みが、ウェブ コンテンツ（そのような管轄においては、出版社はすでに、より高いレベルを満たす必要がある）にレベル AA 適合を要求しているけれども、WCAG 2.0 レベル A 適合のみ要求している。適合は、出版社がプロセスを改善している間、アクセシビリティが流通の障壁とならないように、EPUB 出版物が妥当であるための強制ではない。</p>
 <p>ワーキング グループは、従うルールの選別と選択の試みは、特定の視聴者のみアクセシブになるコンテンツに繋がり、そして、それらの視聴者が誰であるかを証明することは複雑な作業であるため、閾値を WCAG 適合以下に下げることはできない。</p>
-<p>制作品質の向上に関する核心は、なぜ発見のメタデータの包含が非常に重要かにある。出版社は、コンテンツが仕様に対して完全に準拠しているか述べることができないかもしれないが、実施された作品を表面化できる場合、ユーザーはそれがいつでも自分のニーズを満たすかどうかについて決定できる。</p>
+<p>制作品質の向上に関する核心は、なぜ検出のメタデータの包含が非常に重要かにある。出版社は、コンテンツが仕様に対して完全に準拠しているか述べることができないかもしれないが、実施された作品を表面化できる場合、ユーザーはそれがいつでも自分のニーズを満たすかどうかについて決定できる。</p>
 </section>
 
 <section id="sec-a11y-wcag-ext" class="section">
@@ -181,7 +183,7 @@
 
 <section id="sec-opt-identify-why" class="section">
 <h2 class="title">5.1 なぜ最適化を特定するのですか？</h2>
-<p>最適化の識別は、発見のメタデータの重要性と紐付いている。特定のユーザー グループのアクセシビリティ要件を満たすコンテンツは、たとえコンテンツが（例えば、点字や音声に最適化した出版物など）広くアクセシブルを考慮していなくても、それらのグループによって発見可能である必要がある。</p>
+<p>最適化の識別は、検出のメタデータの重要性と紐付いている。特定のユーザー グループのアクセシビリティ要件を満たすコンテンツは、たとえコンテンツが（例えば、点字や音声に最適化した出版物など）広くアクセシブルを考慮していなくても、それらのグループによって検出可能である必要がある。</p>
 <p>コンテンツが適合しているサードパーティの標準を識別することで、不足しているコンテクストをユーザーに提供する。</p>
 </section>
 
@@ -214,7 +216,7 @@
 
 <section id="sec-opt-register-how" class="section">
 <h2 class="title">5.6 どのように標準を登録するのですか？</h2>
-<p>新しい標準の包含は、<a href="https://github.com/IDPF/epub-registries">GitHub レポジトリ</a>のイシューを開くことで登録できる（GitHub アカウントが必要）。高度な GitHub ユーザーは、<a href="https://github.com/IDPF/epub-registries/blob/master/registries/optimizations/index.html">レジストリ ページ（訳者注：リンク切れ）</a>を直接更新して、プル リクエストをすることもできる。</p>
+<p>新しい標準の包含は、<a href="https://github.com/IDPF/epub-registries">GitHub リポジトリ</a>のイシューを開くことで登録できる（GitHub アカウントが必要）。高度な GitHub ユーザーは、<a href="https://github.com/IDPF/epub-registries/blob/master/registries/optimizations/index.html">レジストリ ページ（訳者注：リンク切れ）</a>を直接更新して、プル リクエストをすることもできる。</p>
 <p>リクエストは、標準に関してできるだけ多くの情報を提供するべきである。</p>
 </section>
 </section>
